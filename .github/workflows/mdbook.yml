@@ -20,9 +20,6 @@ jobs:
       - name: Build mdBook
         run: mdbook build
 
-      - name: List book directory
-        run: ls -R book
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
