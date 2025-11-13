@@ -32,9 +32,6 @@ jobs:
       - name: Build mdBook
         run: mdbook build
 
-      - name: List build directory
-        run: ls -R ./book
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
