@@ -17,6 +17,9 @@ jobs:
         with:
           mdbook-version: 'latest'
 
+      - name: List files in src
+        run: ls -R src
+
       - name: Build mdBook
         run: mdbook build
 
