@@ -5,8 +5,6 @@ multilingual = false
 src = "src"
 title = "deepDive"
 
-[preprocessor.mathjax]
-
 [output.html]
 mathjax-support = true
 cname = "deepdive.shutri.com"
