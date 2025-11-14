@@ -1,16 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>STRC - deepDive</title>
-
-
         <!-- Custom HTML head -->
-
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#ffffff" />
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -18,49 +16,30 @@
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
         <link rel="stylesheet" href="css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="fonts/fonts.css">
-
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-
         <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-        <!-- Provide site root and default themes to javascript -->
-        <script>
-            const path_to_root = "";
-            const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
-        </script>
-        <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
-    <div id="mdbook-help-container">
-        <div id="mdbook-help-popup">
-            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
-            <div>
-                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
-                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
-                <p>Press <kbd>?</kbd> to show this help</p>
-                <p>Press <kbd>Esc</kbd> to hide this help</p>
-            </div>
-        </div>
-    </div>
-    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
+        <script type="text/javascript">
             try {
-                let theme = localStorage.getItem('mdbook-theme');
-                let sidebar = localStorage.getItem('mdbook-sidebar');
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -73,69 +52,56 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
-            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
-            let theme;
+        <script type="text/javascript">
+            var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            const html = document.documentElement;
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add("js");
+            html.classList.add('js');
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
-
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
-            let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
-            } else {
-                sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <!-- populated by js -->
-            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
-            <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
-            </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Can-AI-get-rich-superfast.html"><strong aria-hidden="true">1.</strong> Can AI get rich superfast</a></li><li class="chapter-item expanded "><a href="STRC.html" class="active"><strong aria-hidden="true">2.</strong> STRC</a></li><li class="chapter-item expanded "><a href="Lata.html"><strong aria-hidden="true">3.</strong> Lata</a></li></ol>
             </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </label>
+                        </button>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -146,18 +112,12 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-
                     </div>
                 </div>
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -165,9 +125,8 @@
                         </ul>
                     </div>
                 </div>
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
+                <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -185,7 +144,7 @@
 <p>Jack Bogle, the founder of The Vanguard Group, popularized the low-cost index fund, concluding that costs were the primary drag on investor returns. His conservative core portfolio, as outlined in the sources, often featured a 40% stock allocation and a 60% bond allocation.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Asset</th><th style="text-align: left">Boglehead Allocation</th><th style="text-align: left">Role in Portfolio</th></tr></thead><tbody>
 <tr><td style="text-align: left"><strong>VTI</strong> (Total U.S. Stock)</td><td style="text-align: left">40%</td><td style="text-align: left">Engine of growth, tracking the entire U.S. stock market (over 3,500 companies) via the CRSP US Total Market Index.</td></tr>
-<tr><td style="text-align: left"><strong>BND</strong> (Total U.S. Bond)</td><td style="text-align: left">60%</td><td style="text-align: left">Ballast of stability, tracking the Bloomberg U.S. Aggregate Float Adjusted Index ("The Agg") and designed for low volatility and non-correlation to stocks.</td></tr>
+<tr><td style="text-align: left"><strong>BND</strong> (Total U.S. Bond)</td><td style="text-align: left">60%</td><td style="text-align: left">Ballast of stability, tracking the Bloomberg U.S. Aggregate Float Adjusted Index (&quot;The Agg&quot;) and designed for low volatility and non-correlation to stocks.</td></tr>
 </tbody></table>
 </div>
 <p>The Modern Mix challenges this standard by substituting 30% of the ultra-safe BND allocation with two high-concentration, alternative assets: <strong>GLD (Gold)</strong> and <strong>STRC (Strategy Inc. Preferred Stock)</strong>.</p>
@@ -203,7 +162,7 @@
 </ul>
 <hr />
 <h2 id="section-2-the-complexity-and-risk-of-strc"><a class="header" href="#section-2-the-complexity-and-risk-of-strc">Section 2: The Complexity and Risk of STRC</a></h2>
-<p>The superior performance of the Modern Mix is heavily reliant on STRC, the <strong>Variable Rate Series A Perpetual Stretch Preferred Stock</strong> issued by Strategy Inc.. The company positions STRC as a "guaranteed, high-income asset" protected by its massive treasury holdings.</p>
+<p>The superior performance of the Modern Mix is heavily reliant on STRC, the <strong>Variable Rate Series A Perpetual Stretch Preferred Stock</strong> issued by Strategy Inc.. The company positions STRC as a &quot;guaranteed, high-income asset&quot; protected by its massive treasury holdings.</p>
 <h3 id="the-security-paradox"><a class="header" href="#the-security-paradox">The Security Paradox</a></h3>
 <p>STRC is a <strong>preferred equity</strong> security that trades more like a bond, offering a high yield and priority claim over common stockholders in a liquidation. Its safety claims are based on structural positioning, but the Boglehead counter-argument is that STRC introduces <strong>single-issuer credit risk</strong>, which BND (backed by government debt) does not have.</p>
 <p>The critical feature of STRC is the company's stated claim that the principal held by preferred shareholders would not be wiped out unless the underlying asset treasury (Bitcoin) dropped by a massive amount, upwards of <strong>80%</strong>.</p>
@@ -212,8 +171,8 @@
 <ul>
 <li><strong>Legal vs. Economic Security:</strong> STRC is legally <strong>unsecured</strong> (it has no direct lien on any specific Bitcoin), but it is <strong>economically backed</strong> by the company’s entire asset base and structurally secured by its senior position in the equity liquidation waterfall.</li>
 <li><strong>The Liquidation Waterfall:</strong> In a catastrophic scenario, STRC sits senior to <strong>$2.64 billion</strong> of junior preferred stock (STRK and STRD) and all common stock (MSTR). These junior tranches absorb losses first.</li>
-<li><strong>Actual Impairment Point:</strong> The analysis demonstrates that STRC's structural "fail safe" is robust up to an <strong>82.8% drawdown</strong> (equivalent to a Bitcoin price of <strong>$19,200</strong>). Michael Saylor’s 80% figure is, therefore, a conservative buffer.</li>
-<li><strong>The "Last Fail Safe":</strong> The company's legal risk disclosures confirm that the ultimate "last fail safe" is the <strong>forced sale of Bitcoin</strong> to satisfy financial obligations, including cumulative preferred dividends, should financing options (like issuing new common equity) fail. This is a taxable event for the company, which could erode equity further.</li>
+<li><strong>Actual Impairment Point:</strong> The analysis demonstrates that STRC's structural &quot;fail safe&quot; is robust up to an <strong>82.8% drawdown</strong> (equivalent to a Bitcoin price of <strong>$19,200</strong>). Michael Saylor’s 80% figure is, therefore, a conservative buffer.</li>
+<li><strong>The &quot;Last Fail Safe&quot;:</strong> The company's legal risk disclosures confirm that the ultimate &quot;last fail safe&quot; is the <strong>forced sale of Bitcoin</strong> to satisfy financial obligations, including cumulative preferred dividends, should financing options (like issuing new common equity) fail. This is a taxable event for the company, which could erode equity further.</li>
 </ul>
 <h3 id="the-financial-health-and-risk"><a class="header" href="#the-financial-health-and-risk">The Financial Health and Risk</a></h3>
 <p>The high yield on STRC (recently increased to <strong>10.50%</strong>) compensates for significant underlying risk, reflected in S&amp;P Global’s 'B-' (junk) credit rating. The company’s financial model relies on a <strong>circular funding model</strong>: it must service an estimated <strong>$640 million</strong> in annual preferred dividend liabilities, but its operational cash is critically low ($54.3 million as of Q3 2025). It funds these dividends by <strong>continuously issuing new equity</strong> (ATM issuances), making the stability of STRC entirely dependent on the market sentiment toward the underlying Bitcoin price.</p>
@@ -254,8 +213,9 @@
                             <a rel="prev" href="Can-AI-get-rich-superfast.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-
-
+                            <a rel="next" href="Lata.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -265,31 +225,23 @@
                     <a rel="prev" href="Can-AI-get-rich-superfast.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-
+                    <a rel="next" href="Lata.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
 
-
-
-
-        <script>
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-
-
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
-
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-
-
-
-    </div>
     </body>
 </html>
