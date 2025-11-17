@@ -3,6 +3,6 @@
 
 <center> 
 
-_An integrated exploration of intelligence_
+_An integrated exploration of intelligence - that sticks :-)_
 
 </center>
