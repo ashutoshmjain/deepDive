@@ -1,4 +1,6 @@
-## Bhagavad Gita, Plato's Republic, and Modern Science: The Three Sides of the Same Triangle
+## Bhagavad Gita, Plato's Republic, and Modern Science!
+
+**The Three Sides of the Same Triangle**
 
 This essay argues that the philosophical frameworks presented in the ***Bhagavad Gita*** and ***Plato’s Republic*** offer convergent, foundational blueprints for reality, the self, and justice, and that Modern Science, particularly at the frontiers of physics and computation, serves as the third, complementary side of this triangle by encountering phenomena that uniquely resonate with these ancient models.
 

@@ -1,4 +1,6 @@
-# The Nightingale's Echo: An Analysis of Lata Mangeshkar's Ascent as the World's Foremost Playback Singer
+# The Nightingale's Echo ! 
+
+**An Analysis of Lata Mangeshkar's Ascent as the World's Foremost Playback Singer**
 
 ## Section 1: Introduction: The Voice of a Subcontinent
 

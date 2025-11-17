@@ -1,4 +1,6 @@
-# Can AI Get Rich Superfast? The Options Paradox and Algorithmic Fragility in Modern Markets
+# Can AI Get Rich Superfast? 
+
+**The Options Paradox and Algorithmic Fragility in Modern Markets**
 
 ## Introduction: The AI Challenge and the Call Option Foundation
 

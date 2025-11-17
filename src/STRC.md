@@ -1,4 +1,6 @@
-# Challenging the Sacred Cow: Is the Boglehead 60/40 Portfolio Obsolete in the Age of High-Yield ROC and Macro Risk?
+# Challenging the Sacred Cow! 
+
+**Is the Boglehead 60/40 Portfolio Obsolete in the Age of High-Yield ROC and Macro Risk?**
 
 For decades, the standard investment playbook, largely defined by the philosophy of Jack Bogle, revolved around the **60/40 portfolio**—a foundation built on 60% stocks (growth) and 40% bonds (stability). But recent years have presented a painful reality: the bond side, historically relied upon for stability and income, has struggled due to rising interest rates, causing bond prices to plummet.
 
