@@ -1,5 +1,5 @@
 [book]
-authors = ["ashutosh jain"]
+authors = ["shutosha"]
 language = "en"
 multilingual = false
 src = "src"
@@ -9,4 +9,3 @@ description = "A deep dive into various topics with Gemini."
 [output.html]
 mathjax-support = true
 cname = "deepdive.shutri.com"
-additional-css = ["theme/custom.css"]
