@@ -5,7 +5,7 @@ multilingual = false
 src = "src"
 title = "deepDive"
 description = "A deep dive into various topics with Gemini."
+cname = "deepdive.shutri.com"
 
 [output.html]
 mathjax-support = true
-cname = "deepdive.shutri.com"
