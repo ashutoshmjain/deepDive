@@ -1,0 +1,17 @@
+Tone: Inspiring
+
+Charming Intro: 
+
+0:00 – 0:10  A single, intriguing question or paradox : what exactly a bitcoin worth ? What is the right value - I mean lests say it takes 40,000 dollars to make a custom car , then sure the fair value is 50 grands cuz the enginners need to have a good incentive ... how would you give me fair value of a bitcoin ?
+0:10 – 2:30  Verbal teaser hinting at the answer : Well the answer is actually very simple - all we need to do is how much electicity and compute cost goes into minting a bitcoin ... but it is a uniqe "car" so to say .. every ten minutes , lets say we make three ish bitcoins  .. but these bitcoins progressively become harder to make - they need more work - which is kinda of counterintuitive because in most products say cars , things get easier to make as we hit mass manufacturing ... in case of bitcoin ..as we near 21 million mark .. it becomes almost impossibly harder to make one ... it is kinda reverse of "mass manufacturing concept" but ... lets still look under the hood to get you a fair value as of say yesteday .. or this week ... 
+2:30 – 3:15 Welcome the listeners and express gratitude for amazing response. Share a story : what motivated us to do this episode on bitcoin again .. particularly "what exactly is bitcoin" - we mentioned in our last bitcoin  episode - will share the link in description - that bitcoin is 1200 exa hash and a trillion dolar bug bounty  .. which brought in questions from many listeners as to " fine - that is good - but what exactly it means from fair value stand point" ... so that led to this episode where we want to venture into absolute basics .. but again .. we wish we had the video for this episode cuz there is only so much we can communicate without visuals  .. and as you know we need to hit 1000 subscribers to get access to the funds for the Mosaic AI video editor which our marketing team is so appreciative of ... looks like they have figured out the holy grail of AI video editor ..all we need is your help .. please subscribe if you not already done and share the episode in your whatsapp groups or whereever you geek out such topics of deep finance , deep science or deep spirituality ... 
+
+Main Episode with drum rolls :
+
+Present the podcast Episode in line with source: The Miner's Equilibrium: Energy Arbitrage and the 50-Car Paradox
+
+Closing to leave a lasting thought:
+
+- I think the point we want to drive home is yes - we can give a faikr value to bitcoin but that fair value is actually simply the value we humans and AI agents of future , would want to store ( and protect ) on this fool proof , iron clad , cryptographically secured network ... the fair value of a bitcoin is literally - all the value we want to move to future divided by 21 million ... so  there is no upper limit .. 
+- Remind the listeners that the content we create on this podcast is fully open source because we use your sources spread all over the web to learn and frame the orginal content for this podcast. And we invite you the listeners to share more sources in the comments if you feel our analysis is even a teeny tiny offbase. The goal is to have a symbiosis of Artificial and natural intelligence .....! And yes, we are always looking for human collaborators who could review and critique our content before we publish - so please drop a comment if you want to help .. as always .. keep searching ! Keep the quest on ..
+

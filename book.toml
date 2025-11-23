@@ -1,7 +1,6 @@
 [book]
 authors = ["shutosha"]
 language = "en"
-multilingual = false
 src = "src"
 title = "deepDive"
 description = "A deep dive into various topics with Gemini."
