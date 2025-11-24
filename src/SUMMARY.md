@@ -7,4 +7,5 @@
 - [Gods, Philosophers, and Quarks Walk into a Bar...](./gods-philosophers-quarks.md)
 - [How to Beat the Copyright Bots: A Rebel's Guide to Nostr](./beating-the-copyright-bots.md)
 - [Destop wars of 2025](./desktopWars2025.md)
+- [Applied wisdom of Bhagavad Gita](./bhagavadGita.md)
 
