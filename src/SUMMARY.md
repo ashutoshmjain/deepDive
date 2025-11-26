@@ -9,4 +9,5 @@
 - [Destop wars of 2025](./desktopWars2025.md)
 - [Cognitive Complexity and the Divergence of Computation and Meaning: A Structural Analysis of Binary Decentralization](./meaning.md)
 - [Applied wisdom of Bhagavad Gita](./bhagavadGita.md)
+- [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
 
