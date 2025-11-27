@@ -5,6 +5,7 @@ src = "src"
 title = "deepDive"
 description = "A deep dive into various topics with Gemini."
 
+[preprocessor.katex]
+
 [output.html]
 cname = "deepdive.shutri.com"
-mathjax-support = true
