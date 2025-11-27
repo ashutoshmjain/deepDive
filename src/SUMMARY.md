@@ -10,4 +10,5 @@
 - [Cognition vs. Computation: Meaning](./meaning.md)
 - [Applied wisdom of Bhagavad Gita](./bhagavadGita.md)
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
+- [Bitcoin: Democratizing Sovereign Ownership](./apexAsset.md)
 
