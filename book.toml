@@ -6,6 +6,7 @@ title = "deepDive"
 description = "A deep dive into various topics with Gemini."
 
 [preprocessor.katex]
+optional = true
 
 [output.html]
 cname = "deepdive.shutri.com"
