@@ -1,6 +1,8 @@
-# Capital Rotation: An Economic Impact Assessment of Diverting US Lottery Expenditure to the Bitcoin Network
+# An Economic Impact Assessment of Diverting US Lottery Expenditure to the Bitcoin Network
 
-## Executive Summary
+![](img/bitcoinLottery.png)
+
+## Summary
 
 This report presents a comprehensive economic simulation and impact analysis regarding a hypothetical, systemic capital rotation: the redirection of aggregate United States lottery expenditures into the Bitcoin network. The premise involves the reallocation of approximately \$113.3 billion in annual gross lottery sales—a sum currently categorized as consumption—into Bitcoin, a digital store of value.
 
