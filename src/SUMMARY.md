@@ -11,4 +11,5 @@
 - [Applied wisdom of Bhagavad Gita](./bhagavadGita.md)
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
 - [Bitcoin: Democratizing Sovereign Ownership](./apexAsset.md)
+- [Reality, a statistical illusion](./samkhyaBellCurve.md)
 
