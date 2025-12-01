@@ -1,7 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
+- [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
 - [Battle of the Portfolios: Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 - [The Nightingale's Secret Sauce: How One Voice Conquered Bollywood](./lata-nightingales-secret-sauce.md)
@@ -13,4 +13,5 @@
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
 - [Bitcoin: Democratizing Sovereign Ownership](./apexAsset.md)
 - [Reality, a statistical illusion](./samkhyaBellCurve.md)
+- [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 
