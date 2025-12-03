@@ -15,6 +15,5 @@
 - [Reality, a statistical illusion](./samkhyaBellCurve.md)
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 - [Value Function: Unlocking Knowledge from Noise](./valueFunction.md)
+- [Strategy Inc's \$1.44B Digital Credit Fortress](./STRC.md)
 - [Around and About](./how.md)
-
-
