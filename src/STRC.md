@@ -1,5 +1,7 @@
 # Financial Fortress: Strategy Inc.'s 1.44 Billion USD Reserve and the Evolution of Digital Credit
 
+![Strategy Inc. Financial Fortress](./img/STRC.png)
+
 ### I. Introduction: The Strategic Evolution of Strategy Inc.
 
 In December 2025, Strategy Inc. (formerly MicroStrategy Incorporated) executed a financial maneuver of profound significance, announcing the creation of a **1.44 billion U.S. dollar reserve**. Designated explicitly as a “USD Reserve,” this substantial fund was established with a singular, crucial mandate: to secure dividend payments on its growing portfolio of preferred stock and to meet interest obligations on its outstanding debt. This action represents a fundamental pivot in the corporate strategy of the company, signaling a transformation from an aggressive, pure accumulation model of Bitcoin treasury to a more sophisticated, hybrid entity that balances volatile digital asset exposure with disciplined, conservative cash management.
