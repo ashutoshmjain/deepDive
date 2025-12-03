@@ -14,6 +14,7 @@
 - [Bitcoin: Democratizing Sovereign Ownership](./apexAsset.md)
 - [Reality, a statistical illusion](./samkhyaBellCurve.md)
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
+- [Value Function: Unlocking Knowledge from Noise](./valueFunction.md)
 - [Around and About](./how.md)
 
 
