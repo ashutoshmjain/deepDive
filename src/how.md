@@ -1,8 +1,8 @@
 This publication[^mission] is a collection of deep dives into various topics that have piqued my curiosity. It's a journey of exploration and learning, shared with you. This is a [clean internet](http://localhost:3000/how.html#clean-internet) publication.
 
-# Orthogonal publication:
+# About "Deep Dive with Gemini" Podcast Research:
 
-This isn't a publication in the traditional sense. I don't have a fixed schedule for new articles. Instead, I follow an iterative approach to refine the text and the insights within. I call this "Orthogonal Publishing." The idea is to revisit articles as many times as possible to uncover new insights. This process is repeated until the articles converge and take the shape of a well-formed chapter in the book. The journey of transformation from information to knowledge is captured in a git repository. The key is to iterate on the text. It doesn’t matter if the first draft was just a blank page, a copy from the web, or an AI-generated print. As I iterate, coherence improves, connections emerge, and there is always something new to capture.
+This podcast website hosts the open-source research and deep dives for the "deep dive with Gemini" show. We don't have a fixed schedule for new episodes. Instead, we follow an iterative approach to refine our research and insights. The idea is to revisit topics as many times as possible to uncover new insights. This process is repeated until the research converges and takes the shape of a well-formed episode. The journey of transformation from information to knowledge is captured in a git repository. The key is to iterate on the text. It doesn’t matter if the first draft was just a blank page, a copy from the web, or an AI-generated print. As we iterate, coherence improves, connections emerge, and there is always something new to capture.
 
 ## Navigation and icons:
 
@@ -13,9 +13,7 @@ This isn't a publication in the traditional sense. I don't have a fixed schedule
 - You can also navigate with the left and right arrow keys on your keyboard.
 - The theme selection (brush icon) is currently disabled.
 
-## Content:
 
-This book is a collection of standalone essays, or "deep dives," on a variety of subjects. Each chapter is a self-contained exploration of a topic. You can read them in any order you like.
 
 ## Clean internet
 
