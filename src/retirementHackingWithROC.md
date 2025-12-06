@@ -1,3 +1,5 @@
+![Retirement Hacking](./img/retirementHackingWithROC.png)
+
 # The Perpetual Income Stream: Modeling Tax-Advantaged Retirement Using ROC Dividends (STRC Case Study)
 
 ## Abstract
@@ -35,7 +37,7 @@ We model a **10-year investment period** (120 months) for a couple **approaching
 The **10-year investment plan** is deliberately capped because, assuming a fixed 10% annual ROC, the cost basis of the very first investment lot would be reduced to **USD 0.00** around the **11th year** of holding (10 years of distributions).
 
 $$ 
-	ext{Total ROC Reduction} = 10 	ext{ years} \times 10\%/\text{year} \times \text{USD } 100 = \text{USD } 100.00
+	ext{Total ROC Reduction} = 10 	ext{ years} \times 10\% / \text{year} \times \text{USD } 100 = \text{USD } 100.00
 $$ 
 
 Capping the accumulation phase at 10 years simplifies planning and manages this critical tax event.
@@ -112,10 +114,12 @@ The primary goal is met by establishing a **fixed, tax-free base income stream**
 
 The base income stream utilizes only a small portion of the total available tax shield, providing a large buffer for managing other retirement assets:
 
-$$\text{Tax Cushion Remaining} = G_{\text{goal}} - \text{Taxable Gain Realized}
+$$ 
+	ext{Tax Cushion Remaining} = G_{\text{goal}} - \text{Taxable Gain Realized}
 $$ 
 
-$$\text{Tax Cushion Remaining} = \text{USD } 63,350 - \text{USD } 18,137.53 = \mathbf{\text{USD } 45,212.47}
+$$ 
+	ext{Tax Cushion Remaining} = \text{USD } 63,350 - \text{USD } 18,137.53 = \boldsymbol{\text{USD } 45,212.47}
 $$ 
 
 The investor can realize an additional **USD 45,212** in taxable income annually (e.g., from selling other assets or receiving pension income) and still maintain a **USD 0** federal tax liability.
