@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Perpetual Income Stream: ROC Dividends](./retirementHackingWithROC.md)
 - [Strategy Inc's \$1.44B Digital Credit Fortress](./STRC.md)
 - [Value Function: Unlocking Knowledge from Noise](./valueFunction.md)
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
