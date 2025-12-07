@@ -20,6 +20,8 @@ This paper will demonstrate that a decentralized, protocol-based identity system
 
 ## II. The Economic Impact of Fragmented Identity: A Quantitative Analysis
 
+![trillionDollarIDTax.png](img/trillionDollarIDTax.png)
+
 To understand the scale of the problem, we introduce the concept of the "Password Tax"—a measure of the global economic value lost to the friction of managing fragmented digital identities. This tax is not levied by any government but is an inherent cost of the internet's flawed architecture. We can quantify this cost by calculating the Total Human Hours Wasted (THHW) and converting it to a monetary value.
 
 It is important to note that this paper is NOT trying to assess the dollar impact of fraud and identity theft due to the fragmented ID model. While we believe a unified identity layer like Nostr will significantly reduce such incidents, we cannot preemptively quantify these numbers as of today. The goal of this research is solely to put a number on the wastage of time and the dollar burden purely from the perspective of identity maintenance.
