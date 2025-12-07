@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [The Trillion Dollar ID Tax](./trillionDollarIdTax_scientific.md)
 - [Perpetual Income Stream: ROC Dividends](./retirementHackingWithROC.md)
 - [Strategy Inc's \$1.44B Digital Credit Fortress](./STRC.md)
 - [Value Function: Unlocking Knowledge from Noise](./valueFunction.md)
