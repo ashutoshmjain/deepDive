@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Google's Lisp Machine: A Comeback](./googleAsLispMachine.md)
 - [From Mainframes to AI Models](./mainframesToAI.md)
 - [The Trillion Dollar ID Tax](./trillionDollarIdTax_scientific.md)
 - [Perpetual Income Stream: ROC Dividends](./retirementHackingWithROC.md)
