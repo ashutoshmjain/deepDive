@@ -1,6 +1,10 @@
-# The Cathedral and the Cloud: A Comparative Structural Analysis of Enterprise Computing Cycles (1960–1990) and the Artificial Intelligence Infrastructure Boom
+![](./img/mainframesToAI.png)
 
-## Executive Summary
+# The Cathedral and the Cloud
+
+A Comparative Structural Analysis of Enterprise Computing Cycles (1960–1990) and the Artificial Intelligence Infrastructure Boom
+
+## Summary
 
 The history of enterprise computing is characterized not by linear progress, but by a pendular oscillation between centralization and decentralization, scarcity and abundance, and the physical manifestation of "the machine" versus its abstraction. This report provides an exhaustive comparative analysis of the foundational era of enterprise computing—spanning the mainframe dominance of IBM in the 1960s, the minicomputer revolution led by Digital Equipment Corporation (DEC) in the 1970s, and the workstation era defined by Sun Microsystems in the 1980s—against the contemporary artificial intelligence infrastructure boom.
 

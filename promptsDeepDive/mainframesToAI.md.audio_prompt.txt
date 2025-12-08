@@ -1,0 +1,25 @@
+Tone: Intriguing & Analytical
+
+Charming Intro:
+
+0:00 – 0:30 A single, intriguing question: Is the AI revolution we're living through actually a regression to the 1960s?
+0:30 – 2:30 Verbal teaser hinting at the answer: Many financial analysts are comparing the recent AI revolution with the dot com bubble of 1999 -2000. We think they are wrong. We think of the history of computing as a story of relentless progress, from clunky mainframes to the powerful devices in our pockets. But what if the AI boom, with its massive data centers and specialized hardware, is actually a return to the past? What if the 'AI cloud' with thosands of GPUs is just a modern name for the 'Glass House' of the 1960s?
+2:30 - 6:30 Build on the teaser: In our last episode on Nostr, we explored how the protocol is empowering creators and users. Today, we take a step back and look at the very infrastructure that powers the AI revolution. We'll be discussing our latest paper, 'The Cathedral and the Cloud,' which draws stunning parallels between the mainframe era of the 60s, 70s, and 80s and the AI infrastructure boom of today. We'll explore how the industry is oscillating back to a centralized, capital-intensive model, and what that means for the future of innovation.
+6:30 – 7:15 Welcome the listeners again and express gratitude for the amazing response to the show... We're seeing a ton of engagement on every platform, and it's clear you're all as fascinated by these deep dives as we are. To keep producing this content and to start creating high-quality companion videos for YouTube, we need your help. We're trying to unlock funding for "MOSAIC AI Video Editor" by hitting 1000 subscribers across all podcasting platforms. So please, if you enjoy these discussions, subscribe on YouTube, YouTube Music, Spotify, Apple Podcasts, or wherever you listen or watch.
+
+Main Episode with drum rolls:
+
+The story of enterprise computing isn't a straight line; it's a pendulum swinging between centralization and decentralization. In the 1960s, we had the mainframe, the "Cathedral" of computing, housed in a "Glass House" data center. These were massive, expensive machines, and access to them was controlled by a "priesthood" of operators.
+
+Then came the minicomputer and the workstation, the "Bazaar" of computing, which brought power to the people and ushered in an era of decentralization. But now, with the rise of AI, we're seeing a return to the Cathedral.
+
+Our new paper, "The Cathedral and the Cloud," argues that the modern AI data center is the new Glass House. The NVIDIA H100 GPU cluster is the new mainframe. It's too expensive for individuals to own, and it's controlled by a new priesthood of AI researchers and MLOps engineers. We're back to a centralized, capital-intensive model, where the machine is the master.
+
+And the parallels don't stop there. The "automation anxiety" of the 1960s is back as AGI fears. The "Nifty Fifty" stock market bubble of the 1970s, which was fueled by the tech giants of the day like IBM and DEC, looks a lot like the "Magnificent Seven" of today.
+
+We even see parallels in the hardware itself. The specialized Lisp machines of the 1980s, which were designed for AI, were ultimately crushed by the volume economics of general-purpose chips. Is the same fate awaiting the specialized AI chips of today?
+
+Closing to leave a lasting thought:
+
+- Reflect on: The history of computing is a story of cycles. Centralization gives way to decentralization, which then swings back to centralization. Are we destined to repeat these cycles forever? Or can we learn from the past to build a more open and accessible future for AI? The paper argues that the open ecosystem of the 'Bazaar' eventually won against the 'Cathedral' of the mainframe. Will the same happen with AI? And if this AI cycle is more like the rise of machine of the sixties, then we can stay calm and sure that we are decades away from any BUBBLE .. at least for now ..
+- Remind listeners that this is a community effort. The analysis in this episode is based on publicly available information, but the story is still unfolding. We invite you, our listeners, to share your own analysis and sources in the comments. Are we being too optimistic? Too critical? We want to hear from you. We're always looking for collaborators to review our content, so if you're a finance expert or a crypto native with a sharp eye for detail, please reach out... as always… keep searching! Keep the quest on…
