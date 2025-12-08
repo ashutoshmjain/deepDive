@@ -1,5 +1,7 @@
 # Return of the Lisp Machine: How the Antitrust Remedy of 2025 Forced Google into Hardware Determinism
 
+![Google Lisp Machine](./img/googleLispMachine.png)
+
 Date: December 8, 2025
 Location: Mountain House, CA
 Theme: Legal History & Computer Architecture

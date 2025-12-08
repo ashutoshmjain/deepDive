@@ -4,7 +4,7 @@ Charming Intro:
 
 0:00 – 0:30 A single, intriguing question: What if a court ruling, intended to curb a tech giant's power, actually forced it to build the future of computing?
 
-0:30 – 2:30 Verbal teaser hinting at the answer: Last week, we drew a straight line from the "Cathedral" of proprietary computing in the 70s and 80s to the AI ecosystems of today. We argued that the modern AI era is a direct replication of that history. Well, this week, a landmark court ruling didn't just confirm our hypothesis—it put an exclamation point on it.
+0:30 – 2:30 Verbal teaser hinting at the answer: In ou last episode ( we will put a link in the description) , we drew a straight line from the "Cathedral" of proprietary computing in the 70s and 80s to the AI ecosystems of today. We argued that the modern AI era is a direct replication of that history. Well, this week, a landmark court ruling didn't just confirm our hypothesis—it put an exclamation point on it.
 
 2:30 - 6:30 Build on the teaser: We're talking about the December 5th ruling by Judge Amit Mehta in the United States v. Google case. On the surface, it’s a slap on the wrist for Google. It forces them to renegotiate their lucrative default search deals every single year, and it explicitly prohibits them from bundling their AI, Gemini, with those deals. But here's the twist we predicted: when you close one door, you force a company like Google to build a whole new house. The court ruling has, in effect, expressly forced Google to build the modern equivalent of a Lisp Machine—a specialized computer built for one purpose: to run AI.
 
