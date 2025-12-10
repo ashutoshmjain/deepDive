@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Probability: Logic of Scientific Uncertainty](./informatioVsKnowledge.md)
 - [Google's Lisp Machine: A Comeback](./googleAsLispMachine.md)
 - [From Mainframes to AI Models](./mainframesToAI.md)
 - [The Trillion Dollar ID Tax](./trillionDollarIdTax_scientific.md)
