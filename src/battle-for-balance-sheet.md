@@ -2,6 +2,8 @@
 
 The confrontation between Strategy Inc., the self-proclaimed "world's first and largest Bitcoin treasury company", and MSCI, the venerable global financial index provider, represents a pivotal clash between radical financial innovation and the established mechanisms of the old guard financial gatekeepers. At its heart, the battle is over classification: whether the aggressive, leveraged holding of digital assets constitutes an "operating business" or a "passive investment fund". The outcome will not only determine the flow of billions of dollars but will also shape the future legitimacy and funding models of all Digital Asset Treasury companies (DATs).
 
+![Battle for the Balance Sheet](img/battle-for-the-balance-sheet.png)
+
 ### The Challenger’s Innovation: Digital Credit
 
 Strategy Inc. operates as a **"financial transformer"**, systematically borrowing fiat capital from traditional markets via structured securities—a process Strategy terms **"Digital Credit"**. The entire model is built on an institutional-scale arbitrage bet: borrowing money at a known cost and hoarding Bitcoin, betting that Bitcoin's long-term appreciation will massively outpace the cost of servicing that fiat capital.
