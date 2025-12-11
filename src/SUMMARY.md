@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [STRC: Bridging Fiat and Bitcoin](./the-physics-of-value-the-strc-bridge.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
 - [Probability: Logic of Scientific Uncertainty](./informatioVsKnowledge.md)
 - [Google's Lisp Machine: A Comeback](./googleAsLispMachine.md)
