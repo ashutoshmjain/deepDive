@@ -1,4 +1,6 @@
 # Gatekeepers of Your 401(k) v/s Bitcoin Braves: The Battle for the Core Menu
+
+![bitcoinBravesVs401kGatekeepers](img/bitcoinBravesVs401kGatekeepers.png)
 **Date:** December 11, 2025
 **Subject:** The Legislative and Regulatory Conflict Over Digital Assets in Defined Contribution Plans
 
