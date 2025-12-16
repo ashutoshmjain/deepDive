@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Sovereign Liquidity Through Digital Synthesis](./store-of-value-medium-of-exchange.md)
 - [Bitcoin Versus 401K Gatekeepers](./gatekeepers-vs-bitcoin-braves.md)
 - [STRC: Bridging Fiat and Bitcoin](./the-physics-of-value-the-strc-bridge.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
