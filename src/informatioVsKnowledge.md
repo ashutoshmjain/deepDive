@@ -1,4 +1,9 @@
-# The Architecture of Uncertainty: A Comprehensive Analysis of Probability Theory, Its Axiomatic Foundations, and Its Role as the Logic of Science
+# The Architecture of Uncertainty: 
+
+**A Comprehensive Analysis of Probability Theory, Its Axiomatic Foundations, and Its Role as the Logic of Science.**
+
+![](img/informationVsKnowledge.png)
+
 # 1. Introduction: The Taming of Chance
 Probability theory represents one of the most significant intellectual leaps in the history of human thought. It is the discipline that transformed the chaotic, unpredictable nature of chance into a rigorous mathematical structure, allowing humanity to quantify uncertainty, predict the behavior of complex systems, and ultimately build the technologies that define the modern era. From the motion of atoms to the generation of language by artificial intelligence, probability serves as the invisible syntax of reality.
 
