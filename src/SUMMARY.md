@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [AI, Deepfakes, and Nostr's Solution](./the-industrialization-of-reality.md)
 - [Sovereign Liquidity Through Digital Synthesis](./store-of-value-medium-of-exchange.md)
 - [Bitcoin Versus 401K Gatekeepers](./gatekeepers-vs-bitcoin-braves.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
@@ -9,7 +10,7 @@
 - [From Mainframes to AI Models](./mainframesToAI.md)
 - [The Trillion Dollar ID Tax](./trillionDollarIdTax_scientific.md)
 - [Perpetual Income Stream: ROC Dividends](./retirementHackingWithROC.md)
-- [Strategy Inc's \$1.44B Digital Credit Fortress](./STRC.md)
+- [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
 - [Value Function: Unlocking Knowledge from Noise](./valueFunction.md)
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
