@@ -1,4 +1,8 @@
-# Store of Value and Medium of Exchange: A Complementary Synthesis for Sovereign Liquidity
+# Store of Value and Medium of Exchange 
+
+**A Complementary Synthesis for Sovereign Liquidity**
+
+![](img/store-of-value-medium-of-exchange.png)
 
 ## Introduction: The Functionality of the Existing System
 Contrary to the fragmented view of classical economics, the store of value (SoV) and the medium of exchange (MoE) are not opposing forces; they are complementary elements of a unified financial architecture. In the traditional financial world, this symbiotic relationship supports a credit system with nearly USD 200 trillion in assets. It is a system that works. It is anchored by the sovereign nation-state—specifically its assets, tax base, and military might—and operationalized through credit.
