@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Robots: The Inevitable Next Evolution](./the-age-of-autonomous-robots.md)
 - [AI, Deepfakes, and Nostr's Solution](./the-industrialization-of-reality.md)
 - [Sovereign Liquidity Through Digital Synthesis](./store-of-value-medium-of-exchange.md)
 - [Bitcoin Versus 401K Gatekeepers](./gatekeepers-vs-bitcoin-braves.md)
