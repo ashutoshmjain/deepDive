@@ -1,5 +1,5 @@
-The Industrialization of Reality: Mosaic AI, the C2PA Failure, and the Nostr Solution
-Executive Summary
+# The Industrialization of Reality: Mosaic AI, the C2PA Failure, and the Nostr Solution
+![The Industrialization of Reality](./img/the-industrialization-of-reality.png)
 The digital media landscape has crossed a threshold of "Zero-Shot" creation. With tools like Mosaic AI, the capability to generate photorealistic, lip-synced video content of a human subject using only a single static image and a brief voice sample has become democratized. This is no longer the domain of Hollywood visual effects studios or state-level actors; it is a feature available to any marketer or creator via a "UGC Tile" in a browser-based editor.
 This report analyzes three distinct aspects of this paradigm shift:
 The Breakthrough: Acknowledging Mosaic AI not just as an editor, but as a "reality synthesizer" that offers infinite scalability for creators and brands.
