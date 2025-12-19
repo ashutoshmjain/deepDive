@@ -1,5 +1,7 @@
 # The Age of Autonomous Robots
 
+![smartPhoneToSmartRobot-landscape](img/smartPhoneToSmartRobot-landscape.png)
+
 The silence before the storm is rarely truly silent. It is a hum, low frequency, felt rather than heard. It is the sound of inevitability gathering momentum. For nearly two decades, we have been living inside that hum, mistaking it for the final destination.
 
 We look back at 2007, at a stage in San Francisco, as the moment the world changed. A man in a black turtleneck pulled a slab of glass and aluminum from his pocket and declared it a "revolutionary mobile phone," a "widescreen iPod," and an "internet communicator." The world gasped, then applauded, and then, over the next fifteen years, bent its entire collective existence around that glowing rectangle.
@@ -55,5 +57,3 @@ The device in your pocket is dying. It is becoming a vestigial organ, a remote c
 They will be sovereign. They will "meditate" on the blockchain when idle, securing their own economic existence through proof of work, keeping their internal fires burning. They will pay their own way, understand the consequences of damage, and trade their labor for value in a marketplace that never sleeps.
 
 The hum is gone now. If you listen closely, you can hear the footsteps. They are metal, they are rhythmic, and they are absolutely inevitable. The glass cage is broken. The agents are here.
-
-## References
