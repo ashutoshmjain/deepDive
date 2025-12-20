@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Gita's Wisdom: Action, Duty, Liberation](./What exactly is Karmyoga.md)
 - [Robots: The Inevitable Next Evolution](./the-age-of-autonomous-robots.md)
 - [AI, Deepfakes, and Nostr's Solution](./the-industrialization-of-reality.md)
 - [Sovereign Liquidity Through Digital Synthesis](./store-of-value-medium-of-exchange.md)
