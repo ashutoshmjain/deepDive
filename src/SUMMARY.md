@@ -1,7 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [Gita's Wisdom: Action, Duty, Liberation](./What exactly is Karmyoga.md)
+- [What exactly is Karmyoga!](./What-exactly-is-Karmyoga.md)
 - [Robots: The Inevitable Next Evolution](./the-age-of-autonomous-robots.md)
 - [AI, Deepfakes, and Nostr's Solution](./the-industrialization-of-reality.md)
 - [Sovereign Liquidity Through Digital Synthesis](./store-of-value-medium-of-exchange.md)
@@ -20,7 +20,6 @@
 - [Bitcoin: Democratizing Sovereign Ownership](./apexAsset.md)
 - [Cognition vs. Computation: Meaning](./meaning.md)
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
-- [Applied wisdom of Bhagavad Gita](./bhagavadGita.md)
 - [Destop wars of 2025](./desktopWars2025.md)
 - [Battle of the Portfolios: Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 - [How to Beat the Copyright Bots: A Rebel's Guide to Nostr](./beating-the-copyright-bots.md)
