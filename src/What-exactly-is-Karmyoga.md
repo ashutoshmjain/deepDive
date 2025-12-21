@@ -1,5 +1,7 @@
 # The Discipline of Action: A Detailed Analysis of Karm Yoga
 
+![Karm Yoga](img/what-exactly-is-karmyoga.png)
+
 **Karm Yoga** is a central philosophical and spiritual pillar of the Bhagavad Gita, defining a path to liberation (*Moksha*) through the medium of disciplined action. Derived from the Sanskrit root *kṛ* (to do), **karma** refers broadly to action or deed. When combined with the modifier ***Kāryam***—a term that translates definitively to "it must be done" or "it is my duty"—it establishes a mandate for performing obligatory actions as a matter of inescapable necessity, irrespective of personal inclination.
 
 ---
@@ -60,4 +62,4 @@ Karm Yoga serves a dual purpose: it achieves internal **mind purification** for 
 
 **References:**
 1. Excerpts from "An Expert Analysis of Kāryam Karma in the Bhagavad Gita: Obligatory Duty and the Path to Transcendence"
-2. Excerpts from "arjun uvaach"
+2. Excerpts from "arjun uvaach" (https://gita.shutri.com/ritualOfActions.html)
