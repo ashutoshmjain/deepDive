@@ -1,5 +1,7 @@
 Chiral Ontology of Self: A Geometric Proof of Authentic Alignment**
 
+![](../img/the-chiral-ontology-of-self.png)
+
 ## **Abstract**
 
 This report presents an exhaustive investigation into the geometric structure of authenticity, positing that the relationship between the individual agent (Microcosm) and the universal totality (Macrocosm) is governed not by linear causality or moral obligation, but by the physics of chirality (mirror symmetry) and parity. By synthesizing principles from computational complexity theory, non-equilibrium thermodynamics, neurobiology, and Spinozist metaphysics, we construct a rigorous argument demonstrating that the most "selfishly" authentic act—the precise definition of one's internal contour—is the only geometric mechanism by which the collective will of the universe can be fulfilled. We further apply this framework to the ancient discipline of **Karma Yoga**, reinterpreting it not as religious dogma but as a cybernetic feedback loop that resolves the friction between individual intent and universal reality.
