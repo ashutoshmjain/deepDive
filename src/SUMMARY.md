@@ -1,7 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [Strategy Inc's Digital Credit Fortress](./STRCUpdateDec2025.md)
+- [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
 - [Authenticity: The Universe's Chiral Key](./the-chiral-ontology-of-self.md)
 - [What exactly is Karmyoga!](./What-exactly-is-Karmyoga.md)
 - [Robots: The Inevitable Next Evolution](./the-age-of-autonomous-robots.md)
