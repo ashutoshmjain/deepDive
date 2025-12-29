@@ -1,7 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [Gold's Digital Rebirth: Ancient to Bitcoin](./storyOfGold.md)
+- [Story of "store of value" - from Gold to Code](./storyOfGold.md)
 - [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
 - [Authenticity: The Universe's Chiral Key](./the-chiral-ontology-of-self.md)
 - [What exactly is Karmyoga!](./What-exactly-is-Karmyoga.md)

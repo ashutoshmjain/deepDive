@@ -1,4 +1,6 @@
-l Standard: From the Golden Womb of Creation to the Digital Consensus of the Blockchain**
+# Story of "store of value" - from Gold to Code
+
+![Gold to Bitcoin](img/goldToBitcoin.png)
 
 ## **Chapter 1: The Metaphysics of Value and the Primordial Inventor**
 
