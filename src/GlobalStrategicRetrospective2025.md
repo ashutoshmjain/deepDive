@@ -2,7 +2,7 @@
 
 **Date:** December 31, 2025 **Subject:** Comprehensive Analysis of Business, Finance, Science, Engineering, and Spiritual Trends (2025) **To:** Global Investment Committee / Strategic Planning Division
 
-## Executive Summary: The Year of "Tangible Infrastructure"
+## Summary: The Year of "Tangible Infrastructure"
 
 The year 2025 will be recorded by economic historians not merely as a continuation of the digital age, but as the moment the digital age collided violently and profitably with physical reality. After nearly a decade of speculative fervor focused on purely software-driven valuations and ephemeral digital assets, 2025 marked a decisive pivot toward the physical backbone required to sustain the artificial intelligence revolution and the human spirit in an increasingly automated world.  
 The overarching theme connecting the disparate worlds of high finance, deep science, and personal spirituality was a quest for *substance*. In finance, capital fled from theoretical promises to companies building the literal nuts and bolts of the AI economy—specifically, data storage and energy transmission. In science and engineering, the focus shifted from theoretical models to applied breakthroughs: concrete batteries, operational gene therapies, and the physical construction of massive solar arrays. Even in the realm of spirituality, the dominant trend was "Analog Wellness"—a rejection of the screen in favor of the tactile, the ancient, and the physical.  
@@ -291,7 +291,7 @@ For the individual, the "Great Logging Off" will intensify. The most successful 
 **Implication for 2026:** Investors should look for similar "Conglomerate Breakups" in the Energy sector (e.g., separating Green Hydrogen units from Oil Majors) or Healthcare (separating Bio-Tech from managed care). The market rewards purity of focus.  
 *Report compiled by the Office of the Chief Investment Officer, Global Strategic Trends Division.* *December 31, 2025.*
 
-#### Works cited
+#### Web links
 
 1. [Celebrating 2025's Top-Performing Investment Champions](https://www.wealthmanagement.com/investment-news/a-thanksgiving-feast-of-market-gratitude-celebrating-2025-s-top-performing-investment-champions)
 
@@ -299,7 +299,7 @@ For the individual, the "Great Logging Off" will intensify. The most successful 
 
 3. [Corient Private Wealth LLC Purchases New Position in Sandisk Corporation $SNDK](https://www.marketbeat.com/instant-alerts/filing-corient-private-wealth-llc-purchases-new-position-in-sandisk-corporation-sndk-2025-12-31/)
 
-4. [SanDisk (SNDK): The Rebirth of a Flash Memory Titan in the AI Era - FinancialContent](https://markets.financialcontent.com/wral/article/predictstreet-2025-12-26-sandisk-sndk-the-rebirth-of-a-flash-memory-titan-in-the-ai-era)
+4. [SanDisk SNDK: The Rebirth of a Flash Memory Titan in the AI Era - FinancialContent](https://markets.financialcontent.com/wral/article/predictstreet-2025-12-26-sandisk-sndk-the-rebirth-of-a-flash-memory-titan-in-the-ai-era)
 
 5. [There's a Growth Stock Trading at Value Prices | The Motley Fool](https://www.fool.com/investing/2025/12/22/the-growth-stock-thats-trading-at-value-prices/)
 
@@ -345,7 +345,7 @@ For the individual, the "Great Logging Off" will intensify. The most successful 
 
 26. [Mega Projects 2025: Tunneling And Infrastructure Projects To Watch - Stiver Engineering](https://stiverengineering.com/mega-projects-2025-tunneling-and-infrastructure-projects-to-watch/)
 
-27. [Top 10 Largest Construction Projects in the World (2025)](https://www.blackridgeresearch.com/blog/largest-construction-projects-in-the-world)
+27. [Top 10 Largest Construction Projects in the World 2025](https://www.blackridgeresearch.com/blog/largest-construction-projects-in-the-world)
 
 28. [2025 OCEA awards recognize civil engineering's great innovations - ASCE](https://www.asce.org/publications-and-news/civil-engineering-source/civil-engineering-magazine/issues/magazine-issue/article/2025/11/2025-ocea-awards-recognize-civil-engineerings-great-innovations)
 

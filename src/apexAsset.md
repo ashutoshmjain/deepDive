@@ -1,6 +1,6 @@
 # The Asset Economy: Bitcoin as the Democratization of Sovereign Ownership
 
-## Executive Summary
+## Summary
 
 The prevailing discourse around global finance often conflates "money" (a medium of exchange) with "wealth" (a store of value). This confusion leads to the erroneous conclusion that for Bitcoin to succeed, it must replace fiat currency as a daily unit of account. This report argues a different thesis: Bitcoin is the "Apex Asset" not because it replaces the liquidity of fiat currency, but because it democratizes access to "Asset Economics."
 

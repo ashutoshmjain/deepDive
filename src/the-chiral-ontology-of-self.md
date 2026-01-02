@@ -289,54 +289,102 @@ Medium: Zero Latency Dream
 Monitask: Decision Latency  
 ResearchGate: Trust Your Gut
 
-#### **Works cited**
+#### Web links
 
-1. Laplace's demon in biology: Models of evolutionary prediction | Evolution \- Oxford Academic, accessed December 22, 2025, [https://academic.oup.com/evolut/article/76/12/2794/6975927](https://academic.oup.com/evolut/article/76/12/2794/6975927)  
-2. Why Laplace Demon is ultimately an inefficient and useless being : r/freewill \- Reddit, accessed December 22, 2025, [https://www.reddit.com/r/freewill/comments/1jvvais/why\_laplace\_demon\_is\_ultimately\_an\_inefficient/](https://www.reddit.com/r/freewill/comments/1jvvais/why_laplace_demon_is_ultimately_an_inefficient/)  
-3. On The Formal Necessity of Trans-Computational Processing for Sentience | Nova Spivack, accessed December 22, 2025, [https://www.novaspivack.com/science/on-the-formal-necessity-of-trans-computational-processing-for-sentience](https://www.novaspivack.com/science/on-the-formal-necessity-of-trans-computational-processing-for-sentience)  
-4. A Tribute to Friedrich Hayek \- FEE.org, accessed December 22, 2025, [https://fee.org/articles/a-tribute-to-friedrich-hayek/](https://fee.org/articles/a-tribute-to-friedrich-hayek/)  
-5. Artificial Intelligence and Economic Calculation \- Kennesaw State University, accessed December 22, 2025, [https://www.kennesaw.edu/coles/centers/markets-economic-opportunity/docs/gmeiner-082420.pdf](https://www.kennesaw.edu/coles/centers/markets-economic-opportunity/docs/gmeiner-082420.pdf)  
-6. Pete Boettke on Austrian Economics and the Knowledge Problem | Mercatus Center, accessed December 22, 2025, [https://www.mercatus.org/ideasofindia/pete-boettke-austrian-economics-and-knowledge-problem](https://www.mercatus.org/ideasofindia/pete-boettke-austrian-economics-and-knowledge-problem)  
-7. The Essential Hayek, accessed December 22, 2025, [https://www.essentialscholars.org/sites/default/files/2022-12/essential-hayek-ch2-rev.pdf](https://www.essentialscholars.org/sites/default/files/2022-12/essential-hayek-ch2-rev.pdf)  
-8. Coordination Requires Simplification: Thermodynamic Bounds on Multi-Objective Compromise in Natural and Artificial Intelligence \- arXiv, accessed December 22, 2025, [https://arxiv.org/html/2509.23144v1](https://arxiv.org/html/2509.23144v1)  
-9. A Criticism of Weak Emergence \- Polanyiana Journal, accessed December 22, 2025, [https://polanyiana.org/articles/polanyiana-2019-1-2-28\_mihly-hder-amp-dniel-paksi-a-criticism-of-weak-emergence.pdf](https://polanyiana.org/articles/polanyiana-2019-1-2-28_mihly-hder-amp-dniel-paksi-a-criticism-of-weak-emergence.pdf)  
-10. Impulsivity-Compulsivity Axis: Evidence of Its Clinical Validity to Individually Classify Subjects on the Use/Abuse of Information and Communication Technologies \- Frontiers, accessed December 22, 2025, [https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.647682/full](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.647682/full)  
-11. Is Spinoza's concept of "Conatus" comparable to Nietzsche's "Will to Power"? \- Reddit, accessed December 22, 2025, [https://www.reddit.com/r/askphilosophy/comments/10rsplf/is\_spinozas\_concept\_of\_conatus\_comparable\_to/](https://www.reddit.com/r/askphilosophy/comments/10rsplf/is_spinozas_concept_of_conatus_comparable_to/)  
-12. In "Ethics", Spinoza offers a radical and revolutionary exploration of God, nature and human desire. He introduces the concept of "Conatus", our innate drive to persevere in existence, and redefines desire as an expression of this fundamental force. : r/philosophy \- Reddit, accessed December 22, 2025, [https://www.reddit.com/r/philosophy/comments/1g76g4t/in\_ethics\_spinoza\_offers\_a\_radical\_and/](https://www.reddit.com/r/philosophy/comments/1g76g4t/in_ethics_spinoza_offers_a_radical_and/)  
-13. SPINOZA'S CONATUS AND NIETZSCHE'S WILL TO POWER: SELF-PRESERVATION VS. INCREASE OF POWER?, accessed December 22, 2025, [https://karolinum.cz/data/clanek/1205/Interpret\_2\_2013\_05\_Wiesmann.pdf](https://karolinum.cz/data/clanek/1205/Interpret_2_2013_05_Wiesmann.pdf)  
-14. The Soul's Code \- Bookey, accessed December 22, 2025, [https://cdn.bookey.app/files/pdf/book/en/the-soul's-code.pdf](https://cdn.bookey.app/files/pdf/book/en/the-soul's-code.pdf)  
-15. The Soul's Code by James Hillman | The First Gates, accessed December 22, 2025, [https://thefirstgates.com/2014/09/25/the-souls-code-by-james-hillman/](https://thefirstgates.com/2014/09/25/the-souls-code-by-james-hillman/)  
-16. The Archetypal Psychology of James Hillman: Re-Visioning the Foundations of Mind and Culture \- \- Taproot Therapy Collective, accessed December 22, 2025, [https://gettherapybirmingham.com/the-archetypal-psychology-of-james-hillman-re-visioning-the-foundations-of-mind-and-culture/](https://gettherapybirmingham.com/the-archetypal-psychology-of-james-hillman-re-visioning-the-foundations-of-mind-and-culture/)  
-17. The Soul's Code | The First Gates, accessed December 22, 2025, [https://thefirstgates.com/tag/the-souls-code/](https://thefirstgates.com/tag/the-souls-code/)  
-18. The Dual Process model: the effect of cognitive load on the ascription of intentionality, accessed December 22, 2025, [https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1451590/full](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1451590/full)  
-19. The intuitive use of contextual information in decisions made with verbal and numerical quantifiers \- PMC \- NIH, accessed December 22, 2025, [https://pmc.ncbi.nlm.nih.gov/articles/PMC7502984/](https://pmc.ncbi.nlm.nih.gov/articles/PMC7502984/)  
-20. Intuition and Insight: Two Processes That Build on Each Other or Fundamentally Differ?, accessed December 22, 2025, [https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01395/full](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01395/full)  
-21. The Science of Intuition: Tapping Into the Subconscious Mind \- Neuroba, accessed December 22, 2025, [https://www.neuroba.com/post/thescienceofintuition-tappingintothesubconsciousmind-neuroba](https://www.neuroba.com/post/thescienceofintuition-tappingintothesubconsciousmind-neuroba)  
-22. Trust your gut: How instinct can lead to faster and better decisions | Dropbox Blog, accessed December 22, 2025, [https://blog.dropbox.com/topics/work-culture/trust-your-gut-instinct](https://blog.dropbox.com/topics/work-culture/trust-your-gut-instinct)  
-23. The influence of affective touch on interoceptive and exteroceptive sensory integration in infants: evidence from heartbeat-evoked and event-related potentials \- Frontiers, accessed December 22, 2025, [https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1603183/full](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1603183/full)  
-24. Integrative Model for Interoception and Exteroception: predictive coding, points of modulation, and testable predictions \- ResearchGate, accessed December 22, 2025, [https://www.researchgate.net/publication/397713064\_Integrative\_Model\_for\_Interoception\_and\_Exteroception\_predictive\_coding\_points\_of\_modulation\_and\_testable\_predictions](https://www.researchgate.net/publication/397713064_Integrative_Model_for_Interoception_and_Exteroception_predictive_coding_points_of_modulation_and_testable_predictions)  
-25. (PDF) Psychological-Functional Model of Alienation: A Structural Psychological Cycle, accessed December 22, 2025, [https://www.researchgate.net/publication/394407226\_Psychological-Functional\_Model\_of\_Alienation\_A\_Structural\_Psychological\_Cycle](https://www.researchgate.net/publication/394407226_Psychological-Functional_Model_of_Alienation_A_Structural_Psychological_Cycle)  
-26. Mirror-Image Asymmetry, Chirality, and Suttree \- OpenEdition Journals, accessed December 22, 2025, [https://journals.openedition.org/ejas/12336?lang=fr](https://journals.openedition.org/ejas/12336?lang=fr)  
-27. Fundamental Cause of Bio-Chirality: Space-Time Symmetry—Concept Review \- MDPI, accessed December 22, 2025, [https://www.mdpi.com/2073-8994/15/1/79](https://www.mdpi.com/2073-8994/15/1/79)  
-28. Honor the Negative Space, accessed December 22, 2025, [https://digscholarship.unco.edu/cgi/viewcontent.cgi?article=1004\&context=joci](https://digscholarship.unco.edu/cgi/viewcontent.cgi?article=1004&context=joci)  
-29. Research Point- Negative and Positive Space in Contemporary Art and the Artists who Exploit It. | Sara's OCA Drawing 1 Blog, accessed December 22, 2025, [https://saraoca.wordpress.com/2019/03/22/research-point-negative-and-positive-space-in-current-art/](https://saraoca.wordpress.com/2019/03/22/research-point-negative-and-positive-space-in-current-art/)  
-30. Electromagnetic trapping of chiral molecules: orientational effects of the irradiating beam, accessed December 22, 2025, [https://www.researchgate.net/publication/274730891\_Electromagnetic\_trapping\_of\_chiral\_molecules\_orientational\_effects\_of\_the\_irradiating\_beam](https://www.researchgate.net/publication/274730891_Electromagnetic_trapping_of_chiral_molecules_orientational_effects_of_the_irradiating_beam)  
-31. Three Remarks on the Interpretation of Kant on ... \- ResearchGate, accessed December 22, 2025, [https://www.ufsm.br/app/uploads/sites/556/2019/01/Severo-2005-Three-Remarks.pdf](https://www.ufsm.br/app/uploads/sites/556/2019/01/Severo-2005-Three-Remarks.pdf)  
-32. Space \- Kant Lexicon \- GJ Mattey's, accessed December 22, 2025, [https://hume.ucdavis.edu/phi175/space.html](https://hume.ucdavis.edu/phi175/space.html)  
-33. The Universe and Life is asymmetric: Chirality \- The Astronomist, accessed December 22, 2025, [http://theastronomist.fieldofscience.com/2011/01/universe-and-life-is-asymmetric.html](http://theastronomist.fieldofscience.com/2011/01/universe-and-life-is-asymmetric.html)  
-34. (PDF) History, Landscapes, Metaphors and Ghosts Around the Concept of Specificity, accessed December 22, 2025, [https://www.researchgate.net/publication/352888217\_History\_Landscapes\_Metaphors\_and\_Ghosts\_Around\_the\_Concept\_of\_Specificity](https://www.researchgate.net/publication/352888217_History_Landscapes_Metaphors_and_Ghosts_Around_the_Concept_of_Specificity)  
-35. On the Chirality of Drugs and the Structures of Biomacromolecules | Request PDF, accessed December 22, 2025, [https://www.researchgate.net/publication/362880913\_On\_the\_Chirality\_of\_Drugs\_and\_the\_Structures\_of\_Biomacromolecules](https://www.researchgate.net/publication/362880913_On_the_Chirality_of_Drugs_and_the_Structures_of_Biomacromolecules)  
-36. Inside Plato's Cave \- The Imaginative Conservative, accessed December 22, 2025, [https://theimaginativeconservative.org/2017/10/inside-platos-cave-thaddeus-kozinksi.html](https://theimaginativeconservative.org/2017/10/inside-platos-cave-thaddeus-kozinksi.html)  
-37. Periagoge \- Brill, accessed December 22, 2025, [https://brill.com/downloadpdf/display/title/62310.pdf](https://brill.com/downloadpdf/display/title/62310.pdf)  
-38. The Silent Shadows: Epistemic Clientelism and Plato's Cave \- ResearchGate, accessed December 22, 2025, [https://www.researchgate.net/publication/395359514\_The\_Silent\_Shadows\_Epistemic\_Clientelism\_and\_Plato's\_Cave](https://www.researchgate.net/publication/395359514_The_Silent_Shadows_Epistemic_Clientelism_and_Plato's_Cave)  
-39. Metanoia : rhetoric, authenticity, and the transformation of the self, accessed December 22, 2025, [https://www.asau.ru/files/pdf/2392965.pdf](https://www.asau.ru/files/pdf/2392965.pdf)  
-40. What does repent of your sins ACTUALLY mean? : r/Christian \- Reddit, accessed December 22, 2025, [https://www.reddit.com/r/Christian/comments/1d7q2nf/what\_does\_repent\_of\_your\_sins\_actually\_mean/](https://www.reddit.com/r/Christian/comments/1d7q2nf/what_does_repent_of_your_sins_actually_mean/)  
-41. As the Revulsion Turns | UnbornMind Zen, accessed December 22, 2025, [https://unbornmind.com/as-the-revulsion-turns/](https://unbornmind.com/as-the-revulsion-turns/)  
-42. Store-consciousness (Alaya-Vijnana) \- A Grand Concept of the Yogacara Buddhists, accessed December 22, 2025, [https://www.repository.cam.ac.uk/bitstreams/568deff1-e456-4e10-81a8-2745afd14b0a/download](https://www.repository.cam.ac.uk/bitstreams/568deff1-e456-4e10-81a8-2745afd14b0a/download)  
-43. Wu Wei: Effortless Action \- Creature and Creator | Science, Art and Religion, accessed December 22, 2025, [https://creatureandcreator.ca/?p=7033](https://creatureandcreator.ca/?p=7033)  
-44. Taoism \- Chinese Customs and Beliefs \- Nationsonline.org, accessed December 22, 2025, [https://www.nationsonline.org/oneworld/Chinese\_Customs/taoism.htm](https://www.nationsonline.org/oneworld/Chinese_Customs/taoism.htm)  
-45. The Performance of Realness The Par | PDF | Authenticity (Philosophy) \- Scribd, accessed December 22, 2025, [https://www.scribd.com/document/945547783/The-Performance-of-Realness-The-Par](https://www.scribd.com/document/945547783/The-Performance-of-Realness-The-Par)  
-46. The Symmetry of Knowing: A Theory of Epistemic Transformation in the Age of Artificial Intelligence \- ResearchGate, accessed December 22, 2025, [https://www.researchgate.net/publication/397755505\_The\_Symmetry\_of\_Knowing\_A\_Theory\_of\_Epistemic\_Transformation\_in\_the\_Age\_of\_Artificial\_Intelligence](https://www.researchgate.net/publication/397755505_The_Symmetry_of_Knowing_A_Theory_of_Epistemic_Transformation_in_the_Age_of_Artificial_Intelligence)  
-47. In Search of the Neural Circuits of Intrinsic Motivation \- PMC \- PubMed Central, accessed December 22, 2025, [https://pmc.ncbi.nlm.nih.gov/articles/PMC2518057/](https://pmc.ncbi.nlm.nih.gov/articles/PMC2518057/)  
-48. space and anti-space \- Peterson Littenberg, accessed December 22, 2025, [https://www.petersonlittenberg.com/Architecture-UrbanDesign/home\_files/SAS%20links%20mockup.pdf](https://www.petersonlittenberg.com/Architecture-UrbanDesign/home_files/SAS%20links%20mockup.pdf)  
-49. What Is Decision Latency? \- Monitask, accessed December 22, 2025, [https://www.monitask.com/en/business-glossary/decision-latency](https://www.monitask.com/en/business-glossary/decision-latency)
+1. [Laplace's demon in biology: Models of evolutionary prediction | Evolution \- Oxford Academic](https://academic.oup.com/evolut/article/76/12/2794/6975927)
+
+2. [Why Laplace Demon is ultimately an inefficient and useless being : r/freewill \- Reddit](https://www.reddit.com/r/freewill/comments/1jvvais/why_laplace_demon_is_ultimately_an_inefficient/)
+
+3. [On The Formal Necessity of Trans-Computational Processing for Sentience | Nova Spivack](https://www.novaspivack.com/science/on-the-formal-necessity-of-trans-computational-processing-for-sentience)
+
+4. [A Tribute to Friedrich Hayek \- FEE.org](https://fee.org/articles/a-tribute-to-friedrich-hayek/)
+
+5. [Artificial Intelligence and Economic Calculation \- Kennesaw State University](https://www.kennesaw.edu/coles/centers/markets-economic-opportunity/docs/gmeiner-082420.pdf)
+
+6. [Pete Boettke on Austrian Economics and the Knowledge Problem | Mercatus Center](https://www.mercatus.org/ideasofindia/pete-boettke-austrian-economics-and-knowledge-problem)
+
+7. [The Essential Hayek](https://www.essentialscholars.org/sites/default/files/2022-12/essential-hayek-ch2-rev.pdf)
+
+8. [Coordination Requires Simplification: Thermodynamic Bounds on Multi-Objective Compromise in Natural and Artificial Intelligence \- arXiv](https://arxiv.org/html/2509.23144v1)
+
+9. [A Criticism of Weak Emergence \- Polanyiana Journal](https://polanyiana.org/articles/polanyiana-2019-1-2-28_mihly-hder-amp-dniel-paksi-a-criticism-of-weak-emergence.pdf)
+
+10. [Impulsivity-Compulsivity Axis: Evidence of Its Clinical Validity to Individually Classify Subjects on the Use/Abuse of Information and Communication Technologies \- Frontiers](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.647682/full)
+
+11. [Is Spinoza's concept of "Conatus" comparable to Nietzsche's "Will to Power"? \- Reddit](https://www.reddit.com/r/askphilosophy/comments/10rsplf/is_spinozas_concept_of_conatus_comparable_to/)
+
+12. [In "Ethics", Spinoza offers a radical and revolutionary exploration of God, nature and human desire. He introduces the concept of "Conatus", our innate drive to persevere in existence, and redefines desire as an expression of this fundamental force. : r/philosophy \- Reddit](https://www.reddit.com/r/philosophy/comments/1g76g4t/in_ethics_spinoza_offers_a_radical_and/)
+
+13. [SPINOZA'S CONATUS AND NIETZSCHE'S WILL TO POWER: SELF-PRESERVATION VS. INCREASE OF POWER?](https://karolinum.cz/data/clanek/1205/Interpret_2_2013_05_Wiesmann.pdf)
+
+14. [The Soul's Code \- Bookey](https://cdn.bookey.app/files/pdf/book/en/the-soul's-code.pdf)
+
+15. [The Soul's Code by James Hillman | The First Gates](https://thefirstgates.com/2014/09/25/the-souls-code-by-james-hillman/)
+
+16. [The Archetypal Psychology of James Hillman: Re-Visioning the Foundations of Mind and Culture \- \- Taproot Therapy Collective](https://gettherapybirmingham.com/the-archetypal-psychology-of-james-hillman-re-visioning-the-foundations-of-mind-and-culture/)
+
+17. [The Soul's Code | The First Gates](https://thefirstgates.com/tag/the-souls-code/)
+
+18. [The Dual Process model: the effect of cognitive load on the ascription of intentionality](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1451590/full)
+
+19. [The intuitive use of contextual information in decisions made with verbal and numerical quantifiers \- PMC \- NIH](https://pmc.ncbi.nlm.nih.gov/articles/PMC7502984/)
+
+20. [Intuition and Insight: Two Processes That Build on Each Other or Fundamentally Differ?](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.01395/full)
+
+21. [The Science of Intuition: Tapping Into the Subconscious Mind \- Neuroba](https://www.neuroba.com/post/thescienceofintuition-tappingintothesubconsciousmind-neuroba)
+
+22. [Trust your gut: How instinct can lead to faster and better decisions | Dropbox Blog](https://blog.dropbox.com/topics/work-culture/trust-your-gut-instinct)
+
+23. [The influence of affective touch on interoceptive and exteroceptive sensory integration in infants: evidence from heartbeat-evoked and event-related potentials \- Frontiers](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1603183/full)
+
+24. [Integrative Model for Interoception and Exteroception: predictive coding, points of modulation, and testable predictions \- ResearchGate](https://www.researchgate.net/publication/397713064_Integrative_Model_for_Interoception_and_Exteroception_predictive_coding_points_of_modulation_and_testable_predictions)
+
+25. [(PDF) Psychological-Functional Model of Alienation: A Structural Psychological Cycle](https://www.researchgate.net/publication/394407226_Psychological-Functional_Model_of_Alienation_A_Structural_Psychological_Cycle)
+
+26. [Mirror-Image Asymmetry, Chirality, and Suttree \- OpenEdition Journals](https://journals.openedition.org/ejas/12336?lang=fr)
+
+27. [Fundamental Cause of Bio-Chirality: Space-Time Symmetry—Concept Review \- MDPI](https://www.mdpi.com/2073-8994/15/1/79)
+
+28. [Honor the Negative Space](https://digscholarship.unco.edu/cgi/viewcontent.cgi?article=1004&context=joci)
+
+29. [Research Point- Negative and Positive Space in Contemporary Art and the Artists who Exploit It. | Sara's OCA Drawing 1 Blog](https://saraoca.wordpress.com/2019/03/22/research-point-negative-and-positive-space-in-current-art/)
+
+30. [Electromagnetic trapping of chiral molecules: orientational effects of the irradiating beam](https://www.researchgate.net/publication/274730891_Electromagnetic_trapping_of_chiral_molecules_orientational_effects_of_the_irradiating_beam)
+
+31. [Three Remarks on the Interpretation of Kant on ... \- ResearchGate](https://www.ufsm.br/app/uploads/sites/556/2019/01/Severo-2005-Three-Remarks.pdf)
+
+32. [Space \- Kant Lexicon \- GJ Mattey's](https://hume.ucdavis.edu/phi175/space.html)
+
+33. [The Universe and Life is asymmetric: Chirality \- The Astronomist](http://theastronomist.fieldofscience.com/2011/01/universe-and-life-is-asymmetric.html)
+
+34. [(PDF) History, Landscapes, Metaphors and Ghosts Around the Concept of Specificity](https://www.researchgate.net/publication/352888217_History_Landscapes_Metaphors_and_Ghosts_Around_the_Concept_of_Specificity)
+
+35. [On the Chirality of Drugs and the Structures of Biomacromolecules | Request PDF](https://www.researchgate.net/publication/362880913_On_the_Chirality_of_Drugs_and_the_Structures_of_Biomacromolecules)
+
+36. [Inside Plato's Cave \- The Imaginative Conservative](https://theimaginativeconservative.org/2017/10/inside-platos-cave-thaddeus-kozinksi.html)
+
+37. [Periagoge \- Brill](https://brill.com/downloadpdf/display/title/62310.pdf)
+
+38. [The Silent Shadows: Epistemic Clientelism and Plato's Cave \- ResearchGate](https://www.researchgate.net/publication/395359514_The_Silent_Shadows_Epistemic_Clientelism_and_Plato's_Cave)
+
+39. [Metanoia : rhetoric, authenticity, and the transformation of the self](https://www.asau.ru/files/pdf/2392965.pdf)
+
+40. [What does repent of your sins ACTUALLY mean? : r/Christian \- Reddit](https://www.reddit.com/r/Christian/comments/1d7q2nf/what_does_repent_of_your_sins_actually_mean/)
+
+41. [As the Revulsion Turns | UnbornMind Zen](https://unbornmind.com/as-the-revulsion-turns/)
+
+42. [Store-consciousness (Alaya-Vijnana) \- A Grand Concept of the Yogacara Buddhists](https://www.repository.cam.ac.uk/bitstreams/568deff1-e456-4e10-81a8-2745afd14b0a/download)
+
+43. [Wu Wei: Effortless Action \- Creature and Creator | Science, Art and Religion](https://creatureandcreator.ca/?p=7033)
+
+44. [Taoism \- Chinese Customs and Beliefs \- Nationsonline.org](https://www.nationsonline.org/oneworld/Chinese_Customs/taoism.htm)
+
+45. [The Performance of Realness The Par | PDF | Authenticity (Philosophy) \- Scribd](https://www.scribd.com/document/945547783/The-Performance-of-Realness-The-Par)
+
+46. [The Symmetry of Knowing: A Theory of Epistemic Transformation in the Age of Artificial Intelligence \- ResearchGate](https://www.researchgate.net/publication/397755505_The_Symmetry_of_Knowing_A_Theory_of_Epistemic_Transformation_in_the_Age_of_Artificial_Intelligence)
+
+47. [In Search of the Neural Circuits of Intrinsic Motivation \- PMC \- PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC2518057/)
+
+48. [space and anti-space \- Peterson Littenberg](https://www.petersonlittenberg.com/Architecture-UrbanDesign/home_files/SAS%20links%20mockup.pdf)
+
+49. [What Is Decision Latency? \- Monitask](https://www.monitask.com/en/business-glossary/decision-latency)

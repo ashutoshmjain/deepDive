@@ -250,92 +250,92 @@ Today, that story continues in the digital realm. The "miners" of Bhutan and Tex
 | **Censorship Resistance** | High (Physical possession) | High (Cryptographic possession) |
 | **Mythological/Origins** | *Hiranyagarbha* (Cosmic Egg) | *Genesis Block* (Satoshi) |
 
-#### **Works cited**
+#### Web links
 
-1. Hiranyagarbha - Wikipedia, https://en.wikipedia.org/wiki/Hiranyagarbha
+1. [Hiranyagarbha - Wikipedia](https://en.wikipedia.org/wiki/Hiranyagarbha)
 
-2. Hiranyagarbha - Yogaharta, https://yogaharta.com.au/2019/09/24/hiranyagarbha/
+2. [Hiranyagarbha - Yogaharta](https://yogaharta.com.au/2019/09/24/hiranyagarbha/)
 
-3. Hiranyagarbha - MythFolklore.net, http://www.mythfolklore.net/india/encyclopedia/hiranyagarbha.htm
+3. [Hiranyagarbha - MythFolklore.net](http://www.mythfolklore.net/india/encyclopedia/hiranyagarbha.htm)
 
-4. Hiranyagarbha: Significance and symbolism, https://www.wisdomlib.org/concept/hiranyagarbha
+4. [Hiranyagarbha: Significance and symbolism](https://www.wisdomlib.org/concept/hiranyagarbha)
 
-5. History of gold - SimTrade blog, https://www.simtrade.fr/blog_simtrade/history-of-gold/
+5. [History of gold - SimTrade blog](https://www.simtrade.fr/blog_simtrade/history-of-gold/)
 
-6. Unearthing the Rich History of Gold as Currency Through Ages - Boonit Online Pawnbroking, https://boonit.co.uk/blog/the-history-of-gold-as-currency/
+6. [Unearthing the Rich History of Gold as Currency Through Ages - Boonit Online Pawnbroking](https://boonit.co.uk/blog/the-history-of-gold-as-currency/)
 
-7. A Short History of the Use of Gold - Provident Metals, https://www.providentmetals.com/knowledge-center/collectible-coins/gold-history.html
+7. [A Short History of the Use of Gold - Provident Metals](https://www.providentmetals.com/knowledge-center/collectible-coins/gold-history.html)
 
-8. How Gold became the standard for monetary systems - Phoenix Refining, https://www.phoenixrefining.com/blog/how-gold-became-the-standard-for-monetary-systems
+8. [How Gold became the standard for monetary systems - Phoenix Refining](https://www.phoenixrefining.com/blog/how-gold-became-the-standard-for-monetary-systems)
 
-9. The History of Gold Coins in Currency - Metals Edge, https://metalsedge.com/the-history-of-gold-coins-in-currency/
+9. [The History of Gold Coins in Currency - Metals Edge](https://metalsedge.com/the-history-of-gold-coins-in-currency/)
 
-10. Tale of the Syamantaka gem - - Jewelry in Narratives, https://jewelryinnarratives.com/syamantaka-gem/
+10. [Tale of the Syamantaka gem - - Jewelry in Narratives](https://jewelryinnarratives.com/syamantaka-gem/)
 
-11. KB 2-1 / The Story of the Syamantaka Jewel KRSNA, The Supreme Personality of Godhead, https://prabhupadabooks.com/kb/2/1
+11. [KB 2-1 / The Story of the Syamantaka Jewel KRSNA, The Supreme Personality of Godhead](https://prabhupadabooks.com/kb/2/1)
 
-12. The Syamantaka Jewel - Vedabase, https://vedabase.io/en/library/sb/10/56/
+12. [The Syamantaka Jewel - Vedabase](https://vedabase.io/en/library/sb/10/56/)
 
-13. Syamantaka - Wikipedia, https://en.wikipedia.org/wiki/Syamantaka
+13. [Syamantaka - Wikipedia](https://en.wikipedia.org/wiki/Syamantaka)
 
-14. The Syamantaka Jewel story from the Krishna book. - Blog - ISKCON Desire Tree | IDT, https://iskcondesiretree.com/profiles/blogs/the-syamantaka-jewel-story-from-the-krishna-book
+14. [The Syamantaka Jewel story from the Krishna book. - Blog - ISKCON Desire Tree | IDT](https://iskcondesiretree.com/profiles/blogs/the-syamantaka-jewel-story-from-the-krishna-book)
 
-15. Five Lessons From The Syamantaka Jewel Story - Krishna's Mercy, https://krishnasmercy.com/2017/02/10/five-lessons-from-the-syamantaka-jewel-story/
+15. [Five Lessons From The Syamantaka Jewel Story - Krishna's Mercy](https://krishnasmercy.com/2017/02/10/five-lessons-from-the-syamantaka-jewel-story/)
 
-16. Syamantaka Story - English – Rosebazaar India - Hoovu Fresh, https://hoovufresh.com/blogs/blog/syamanthaka-story-english
+16. [Syamantaka Story - English – Rosebazaar India - Hoovu Fresh](https://hoovufresh.com/blogs/blog/syamanthaka-story-english)
 
-17. Syamantaka jewel: Significance and symbolism, https://www.wisdomlib.org/concept/syamantaka-jewel
+17. [Syamantaka jewel: Significance and symbolism](https://www.wisdomlib.org/concept/syamantaka-jewel)
 
-18. History of the rupee - Wikipedia, https://en.wikipedia.org/wiki/History_of_the_rupee
+18. [History of the rupee - Wikipedia](https://en.wikipedia.org/wiki/History_of_the_rupee)
 
-19. Chanakya's Economic Doctrine: Insights from the Arthashastra - IJFMR, https://www.ijfmr.com/papers/2024/5/27364.pdf
+19. [Chanakya's Economic Doctrine: Insights from the Arthashastra - IJFMR](https://www.ijfmr.com/papers/2024/5/27364.pdf)
 
-20. Indian rupee - Wikipedia, https://en.wikipedia.org/wiki/Indian_rupee
+20. [Indian rupee - Wikipedia](https://en.wikipedia.org/wiki/Indian_rupee)
 
-21. Coinage of India - Wikipedia, https://en.wikipedia.org/wiki/Coinage_of_India
+21. [Coinage of India - Wikipedia](https://en.wikipedia.org/wiki/Coinage_of_India)
 
-22. coinage of india - INTERNATIONAL JOURNAL OF MULTIDISCIPLINARY ADVANCED SCIENTIFIC RESEARCH AND INNOVATION (IJMASRI), https://advancedscientificjournal.com/paper-download.php?doc_name=aca74e16162f5e10edd30cefe1dbcad9.pdf
+22. [coinage of india - INTERNATIONAL JOURNAL OF MULTIDISCIPLINARY ADVANCED SCIENTIFIC RESEARCH AND INNOVATION (IJMASRI)](https://advancedscientificjournal.com/paper-download.php?doc_name=aca74e16162f5e10edd30cefe1dbcad9.pdf)
 
-23. Uniform weight, measures, and currency, https://bladams.tripod.com/empire/mauryan_e/measuresetc.html
+23. [Uniform weight, measures, and currency](https://bladams.tripod.com/empire/mauryan_e/measuresetc.html)
 
-24. Maurya Period Coins - Ancient Coins - Ancient History Notes - Prepp, https://prepp.in/news/e-492-maurya-period-coins-ancient-coins-ancient-history-notes
+24. [Maurya Period Coins - Ancient Coins - Ancient History Notes - Prepp](https://prepp.in/news/e-492-maurya-period-coins-ancient-coins-ancient-history-notes)
 
-25. Unearthing Financial Deception: Unraveling The Hundi System, https://financialcrimeacademy.org/hundi-system/
+25. [Unearthing Financial Deception: Unraveling The Hundi System](https://financialcrimeacademy.org/hundi-system/)
 
-26. Hundi - Wikipedia, https://en.wikipedia.org/wiki/Hundi
+26. [Hundi - Wikipedia](https://en.wikipedia.org/wiki/Hundi)
 
-27. An Economic History of Hundi, 1858-1978 - The world's largest collection of open access research papers, https://files.core.ac.uk/download/pdf/4187772.pdf
+27. [An Economic History of Hundi, 1858-1978 - The world's largest collection of open access research papers](https://files.core.ac.uk/download/pdf/4187772.pdf)
 
-28. Historical Traces of Hundi, Sociocultural Understanding, and Criminal Abuses of Hawala, https://www.ojp.gov/ncjrs/virtual-library/abstracts/historical-traces-hundi-sociocultural-understanding-and-criminal
+28. [Historical Traces of Hundi, Sociocultural Understanding, and Criminal Abuses of Hawala](https://www.ojp.gov/ncjrs/virtual-library/abstracts/historical-traces-hundi-sociocultural-understanding-and-criminal)
 
-29. How a Bitcoin System Is Like and Unlike a Gold Standard | Cato at Liberty Blog, https://www.cato.org/blog/how-bitcoin-system-unlike-gold-standard
+29. [How a Bitcoin System Is Like and Unlike a Gold Standard | Cato at Liberty Blog](https://www.cato.org/blog/how-bitcoin-system-unlike-gold-standard)
 
-30. From gold to the Bitcoin standard - Blocktrainer, https://www.blocktrainer.de/en/learning-knowledge/more-knowledge-about-bitcoin-co/from-gold-to-the-bitcoin-standard
+30. [From gold to the Bitcoin standard - Blocktrainer](https://www.blocktrainer.de/en/learning-knowledge/more-knowledge-about-bitcoin-co/from-gold-to-the-bitcoin-standard)
 
-31. Central Banks, Gold, and Bitcoin: Redefining Money in the 21st Century, http://www.subr.edu/assets/subr/COBJournal/summer25/Central-Banks-Gold-and-Bitcoin--Redefining-Money--EJournal--GRIFFIN.pdf
+31. [Central Banks, Gold, and Bitcoin: Redefining Money in the 21st Century](http://www.subr.edu/assets/subr/COBJournal/summer25/Central-Banks-Gold-and-Bitcoin--Redefining-Money--EJournal--GRIFFIN.pdf)
 
-32. El Salvador Volcano Bond to be issued in the first quarter of 2024 - InvestinElSalvador, https://investinelsalvador.gob.sv/bono-volcan-de-el-salvador-sera-emitido-en-el-primer-trimestre-de-2024/
+32. [El Salvador Volcano Bond to be issued in the first quarter of 2024 - InvestinElSalvador](https://investinelsalvador.gob.sv/bono-volcan-de-el-salvador-sera-emitido-en-el-primer-trimestre-de-2024/)
 
-33. The First 1 Billion USD Bitcoin Volcano Bond is Here | by Nomadic Money - Medium, https://medium.com/coinmonks/the-first-1-billion-usd-bitcoin-volcano-bond-is-here-56964d8f7bbe
+33. [The First 1 Billion USD Bitcoin Volcano Bond is Here | by Nomadic Money - Medium](https://medium.com/coinmonks/the-first-1-billion-usd-bitcoin-volcano-bond-is-here-56964d8f7bbe)
 
-34. El Salvador Set To Launch Bitcoin Bonds | by Wheatstones | Coinmonks - Medium, https://medium.com/coinmonks/el-salvador-launches-bitcoin-bonds-a-paradigm-shift-in-financial-evolution-76df294799d5
+34. [El Salvador Set To Launch Bitcoin Bonds | by Wheatstones | Coinmonks - Medium](https://medium.com/coinmonks/el-salvador-launches-bitcoin-bonds-a-paradigm-shift-in-financial-evolution-76df294799d5)
 
-35. El Salvador's USD 1bn volcano-powered Bitcoin bonds greenlit for launch in early 2024, https://www.dlnews.com/articles/markets/el-salvador-bitcoin-volcano-bonds-set-to-launch-in-early-2024/ 36. Cryptocurrency Reserve by Country (2025): Who Has a Crypto National Reserve and Who Holds the Largest? - Bleap, https://www.bleap.finance/blog/cryptocurrency-reserve-by-country
+35. [El Salvador's USD 1bn volcano-powered Bitcoin bonds greenlit for launch in early 2024](https://www.dlnews.com/articles/markets/el-salvador-bitcoin-volcano-bonds-set-to-launch-in-early-2024/ 36. Cryptocurrency Reserve by Country (2025): Who Has a Crypto National Reserve and Who Holds the Largest? - Bleap, https://www.bleap.finance/blog/cryptocurrency-reserve-by-country)
 
-37. El Salvador's Bitcoin Bond is Finally Here! - LARC @ Cardozo Law, https://larc.cardozo.yu.edu/cgi/viewcontent.cgi?article=1107\&context=ciclr-online
+37. [El Salvador's Bitcoin Bond is Finally Here! - LARC @ Cardozo Law](https://larc.cardozo.yu.edu/cgi/viewcontent.cgi?article=1107&context=ciclr-online)
 
-38. Government Bitcoin Holdings in 2025: Who Owns the Most? | Coinpedia Fintech News on Binance Square, https://www.binance.com/en/square/post/19061854445809
+38. [Government Bitcoin Holdings in 2025: Who Owns the Most? | Coinpedia Fintech News on Binance Square](https://www.binance.com/en/square/post/19061854445809)
 
-39. Bhutan Emerges as Third-Largest Bitcoin Sovereign Holder, Pioneering Green Mining Revolution - Tiger Brokers, https://www.itiger.com/news/1154141435
+39. [Bhutan Emerges as Third-Largest Bitcoin Sovereign Holder, Pioneering Green Mining Revolution - Tiger Brokers](https://www.itiger.com/news/1154141435)
 
-40. Bhutan Promises Up To 10,000 Bitcoin For New Mega-City, https://bitcoinmagazine.com/featured/bhutan-10000-bitcoin-to-build-mega-city
+40. [Bhutan Promises Up To 10,000 Bitcoin For New Mega-City](https://bitcoinmagazine.com/featured/bhutan-10000-bitcoin-to-build-mega-city)
 
-41. Bhutan commits USD 900M in digital assets for Mindfulness City - CoinGeek, https://coingeek.com/bhutan-commits-900m-in-digital-assets-for-mindfulness-city/
+41. [Bhutan commits USD 900M in digital assets for Mindfulness City - CoinGeek](https://coingeek.com/bhutan-commits-900m-in-digital-assets-for-mindfulness-city/)
 
-42. U.S. Strategic Bitcoin Reserve - Wikipedia, https://en.wikipedia.org/wiki/U.S.\_Strategic\_Bitcoin\_Reserve
+42. [U.S. Strategic Bitcoin Reserve - Wikipedia](https://en.wikipedia.org/wiki/U.S._Strategic_Bitcoin_Reserve)
 
-43. Establishment of the Strategic Bitcoin Reserve and United States Digital Asset Stockpile, https://www.whitehouse.gov/presidential-actions/2025/03/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile/
+43. [Establishment of the Strategic Bitcoin Reserve and United States Digital Asset Stockpile](https://www.whitehouse.gov/presidential-actions/2025/03/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile/)
 
-44. What is ZIG, Zimbabwe's Gold-Backed Digital Token?, https://business.cornell.edu/article/2025/03/what-is-zig/
+44. [What is ZIG, Zimbabwe's Gold-Backed Digital Token?](https://business.cornell.edu/article/2025/03/what-is-zig/)
 
-45. Zimbabwean ZiG - Wikipedia, https://en.wikipedia.org/wiki/Zimbabwean\_ZiG
+45. [Zimbabwean ZiG - Wikipedia](https://en.wikipedia.org/wiki/Zimbabwean_ZiG)

@@ -1,5 +1,8 @@
 # The Pivot from eCash to Digital Credit: Bitcoin’s Evolution and the Rise of the Corporate Treasury Yield Curve
-## Executive Summary: The "Killer App" Has Arrived
+
+![STRC, the killer app](./img/STRC-the-killer-app.png)
+
+## Summary: The "Killer App" Has Arrived
 
 For fifteen years, critics and proponents alike searched for Bitcoin’s "killer app." The initial search focused on payments—a decentralized version of Visa to facilitate daily coffee purchases. When that stalled due to scaling friction and volatility, the narrative shifted to gold replacement—a sovereign store of value. While successful for institutions, this use case remained elusive for the average person due to the terrifying complexity of self-custody.
 As we enter 2026, a third and definitive era has emerged. Bitcoin has found its true killer app: The Global Savings Account.
@@ -85,22 +88,14 @@ Strategy Inc. has successfully built the bridge—the "email client" for the Bit
 - Are we at the cusp of gargantuan change? With an USD 11 trillion US bond market and a USD 290 trillion global savings market looking for a life raft against inflation, the migration of wealth into Digital Credit has likely only just begun.
 For the saver, the message is simple and hopeful: You no longer need to be a cryptographer to save in Bitcoin. You just need to buy the stock that acts like a savings account.
 
-#### Works cited
+#### Web links
 
-1.	The Psychology of Security: Why Users Resist Better Authentication - Deepak Gupta, accessed January 1, 2026, https://guptadeepak.com/the-psychology-of-security-why-users-resist-better-authentication/
-
-2.	Password psychology: Why professionals still make terrible passwords - Silicon, accessed January 1, 2026, https://www.silicon.eu/brandvoice/password-psychology-why-professionals-still-make-terrible-passwords
-
-3.	Bitcoin & Stablecoins: Challenging Visa & Mastercard in Global Payments? - Markets.com, accessed January 1, 2026, https://www.markets.com/news/bitcoin-stablecoins-global-payment-networks-3113-en
-
-4.	The Lightning Network: - Fidelity Digital Assets, accessed January 1, 2026, https://www.fidelitydigitalassets.com/sites/g/files/djuvja3256/files/acquiadam/FDA_TheLightningNetwork_ExpandingBitcoinUseCases_1187503.1.0_V5.pdf
-
-5.	Charted: Stablecoins Are Now Bigger Than Visa or Mastercard - Visual Capitalist, accessed January 1, 2026, https://www.visualcapitalist.com/charted-stablecoins-are-now-bigger-than-visa-or-mastercard/
-
-6.	Saving and Checking Account - Retail banking market outlook, accessed January 1, 2026, https://www.grandviewresearch.com/horizon/statistics/retail-banking-market/service/saving-and-checking-account/global
-
-7.	Return of Capital Information - Strategy, accessed January 1, 2026, https://www.strategy.com/investor-relations/dividend-return-of-capital/
-
-8.	Strategy Announces Third Quarter 2025 Financial Results, accessed January 1, 2026, https://www.strategy.com/press/strategy-announces-third-quarter-2025-financial-results_10-30-2025
-
-9.	8-K - SEC.gov, accessed January 1, 2026, https://www.sec.com/Archives/edgar/data/1050446/000119312525303157/d69948d8k.htm
+1. [The Psychology of Security: Why Users Resist Better Authentication - Deepak Gupta](https://guptadeepak.com/the-psychology-of-security-why-users-resist-better-authentication/)
+2. [Password psychology: Why professionals still make terrible passwords - Silicon](https://www.silicon.eu/brandvoice/password-psychology-why-users-still-make-terrible-passwords)
+3. [Bitcoin & Stablecoins: Challenging Visa & Mastercard in Global Payments? - Markets.com](https://www.markets.com/news/bitcoin-stablecoins-global-payment-networks-3113-en)
+4. [The Lightning Network: - Fidelity Digital Assets](https://www.fidelitydigitalassets.com/sites/g/files/djuvja3256/files/acquiadam/FDA_TheLightningNetwork_ExpandingBitcoinUseCases_1187503.1.0_V5.pdf)
+5. [Charted: Stablecoins Are Now Bigger Than Visa or Mastercard - Visual Capitalist](https://www.visualcapitalist.com/charted-stablecoins-are-now-bigger-than-visa-or-mastercard/)
+6. [Saving and Checking Account - Retail banking market outlook](https://www.grandviewresearch.com/horizon/statistics/retail-banking-market/service/saving-and-checking-account/global)
+7. [Return of Capital Information - Strategy](https://www.strategy.com/investor-relations/dividend-return-of-capital/)
+8. [Strategy Announces Third Quarter 2025 Financial Results](https://www.strategy.com/press/strategy-announces-third-quarter-2025-financial-results_10-30-2025)
+9. [8-K - SEC.gov](https://www.sec.com/Archives/edgar/data/1050446/000119312525303157/d69948d8k.htm)
