@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [STRC: Credit Market Vampire Attack](./STRCImpactOnCredit.md)
 - [Bitcoin's Global Savings Account Revolution](./the-pivot-from-ecash-to-digital-credit.md)
 - [2025: Tangible Value, Digital Horizons](./GlobalStrategicRetrospective2025.md)
 - [Story of "store of value" - from Gold to Code](./storyOfGold.md)
