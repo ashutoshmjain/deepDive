@@ -4,5 +4,5 @@ book/
 # Ignore Gemini temporary files
 .gemini/
 
-# Ignore audio prompt files
-*.audio_prompt.txt
+# Ignore Zone.Identifier files
+*:Zone.Identifier
