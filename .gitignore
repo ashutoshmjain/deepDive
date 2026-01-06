@@ -1,2 +1,8 @@
-book
-src/img/STRC-the-killer-app.png:Zone.Identifier
+# Ignore mdbook output
+book/
+
+# Ignore Gemini temporary files
+.gemini/
+
+# Ignore audio prompt files
+*.audio_prompt.txt
