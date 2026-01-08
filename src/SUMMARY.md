@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Forced Pivot to Digital Credit](./corporate-treasury-report.md)
 - [Sovereign Allocation: Post-Fiat Portfolio Strategy](./the-sovereign-allocation.md)
 - [STRC: Credit Market Vampire Attack](./STRCImpactOnCredit.md)
 - [Bitcoin's Global Savings Account Revolution](./the-pivot-from-ecash-to-digital-credit.md)
