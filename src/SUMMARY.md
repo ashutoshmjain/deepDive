@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Walled Gardens to Sovereign Protocols](./the-great-inversion.md)
 - [Embedded Wallets Redefine Digital Value](./the-embedded-value-layer.md)
 - [Bluesky Fades, LinkedIn Rises, Nostr Stalls](./the-great-fragmentation.md)
 - [Forced Pivot to Digital Credit](./corporate-treasury-report.md)

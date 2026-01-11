@@ -1,0 +1,35 @@
+Tone: Intriguing & Analytical
+
+Charming Intro:
+
+0:00 – 0:30 A single, intriguing question: What if the entire FinTech industry, as we know it, is being replaced by something fundamentally different? What if the internet itself is evolving, moving from an "Information Only" network to a native "Information and Value" network, making clumsy, band-aid solutions like credit card processing obsolete?
+
+0:30 – 2:30 Verbal teaser hinting at the answer: For decades, we've treated value transfer online as an afterthought, a separate step bolted onto our apps. But a quiet revolution is underway. We're seeing a massive shift from FinTech to "FiNa"—Financial Native. This isn't just about easier micropayments; it's about re-architecting the internet's base layer. We're talking about a world where every major application, from Uber to Airbnb to X, has value transfer built into its very protocol, not just tacked on. This is a global trend that has been almost entirely missed because AI has sucked all the air out of the room, and it’s arguably just as transformative.
+
+2:30 - 6:30 Build on the teaser: This isn't just sending money; it's a fundamental shift in online interaction. We're moving beyond the "like" economy to a "zap" economy. Platforms like Primal, Fountain, and ZBD embed Bitcoin's Lightning Network as their core, powered by simple, human-readable "Lightning Addresses."
+
+6:30 – 8:00 Subscription Request: Welcome back. Your response to our deep dives has been incredible. To keep this research hub running and build video explorations, we need your help. We're unlocking funding for a "MOSAIC AI Video Editor" by hitting 1000 subscribers. Please subscribe on YouTube, Spotify, Apple Podcasts, Fountain.fm, or wherever you listen.
+
+8:00 – 9:00 Links to References: Our YouTube course on Nostr explores its role in this value-enabled web, offering solutions for AI-generated media issues. Link in description—highly recommended.
+
+Main Episode with drum rolls:
+
+For this 30-minute episode, we'll skim technical specifics from our research. We invite you to explore the full paper and ask questions in comments. Our goal: showcase incredible real-world apps in full production, demonstrating this new "Financial Native" internet.
+
+Let's forget the jargon and look at the apps.
+
+Think about your social media. On platforms like Primal, when you "zap" a post—their version of a 'like'—you're not just sending a signal, you're sending a tiny amount of real value, a few cents, directly to the creator. It’s a real-time, peer-to-peer tip jar built into the fabric of the app.
+
+Or consider how you listen to podcasts. With an app like Fountain, you can stream micropayments to your favorite creators for every minute you listen. The creator, the guest, the app developer—everyone in the value chain can get paid, automatically and instantly.
+
+Even gaming is being transformed. ZBD has created a "Gamertag" that lets you earn a little bit of Bitcoin in one game and seamlessly spend it in a completely different one. The value you earn in one digital world is no longer trapped there.
+
+You don't need to be a tech expert to use this. You sign up, you get a simple address that looks like an email, and you're ready to go. The wallet is just a quiet process running in the background. It’s a "checking account" for the internet, not a complicated savings vault. It's the on-ramp for the next billion users.
+
+Closing to leave a lasting thought:
+
+- Reflect on the future: We are witnessing the "FiNa" or "Financial Native" application layer of the internet being built. The wallet is being commoditized, becoming an invisible utility. What happens when every app is a wallet? What does it mean for our digital identity when it's inextricably linked to our financial identity?
+
+- A Frontier of Opportunity: This rapidly evolving frontier sees constant new apps, with many inevitably winding down. Yet, this volatility excites us. For those seeking an AI-driven coding project—be it a side hustle, new career, or retirement project—FiNa is ideal. Its coolness and open-source nature offer immediate engagement.
+
+- Remind listeners: This is a community effort. Our analysis is based on public info, but the story unfolds with you. Share your insights, critiques, or sources in the comments. Collaborators—finance experts or crypto natives—please reach out. As always, keep searching! Keep the quest on…
