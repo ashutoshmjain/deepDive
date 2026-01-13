@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [The Gatekeepers of Capital](./gatekeepers-of-capital.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
 - [Walled Gardens to Sovereign Protocols](./the-great-inversion.md)
 - [Embedded Wallets Redefine Digital Value](./the-embedded-value-layer.md)
