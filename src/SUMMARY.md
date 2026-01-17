@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
 - [Apple's Creative Storm: AI Shakeout](./apple-creator-studio.md)
 - [The Gatekeepers of Capital](./gatekeepers-of-capital.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
