@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Retirement Hacking 2.0](./retirementHackingWithROC-02.md)
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
 - [Apple's Creative Storm: AI Shakeout](./apple-creator-studio.md)
 - [The Gatekeepers of Capital](./gatekeepers-of-capital.md)
