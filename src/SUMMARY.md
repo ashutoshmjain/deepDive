@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Vim: Keyboard's Timeless Musical Mastery](./musicOfVim.md)
 - [Retirement Hacking 2.0](./retirementHackingWithROC-02.md)
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
 - [Apple's Creative Storm: AI Shakeout](./apple-creator-studio.md)
