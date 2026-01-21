@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [SAP: AI's Fortified Enterprise Cradle](./SAPinAIera.md)
 - [Vim: Keyboard's Timeless Musical Mastery](./musicOfVim.md)
 - [Retirement Hacking 2.0](./retirementHackingWithROC-02.md)
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
