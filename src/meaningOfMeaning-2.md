@@ -1,6 +1,6 @@
 # The Social Synapse: Distributed Cognition, Symbol Grounding, and the Gossip Protocol
 
-
+![architectureOfMeaning.png](../img/architectureOfMeaning.png)
 
 
 ## 1. Introduction: The Crisis of the Isolated Mind

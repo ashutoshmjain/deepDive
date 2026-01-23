@@ -8,7 +8,7 @@ However, as the enterprise technology landscape pivots violently toward the era 
 
 This report advances a counter-intuitive thesis: the "hard to run" nature of SAP ERPs constitutes a necessary breeding ground for safe, reliable, and effective Agentic AI. Unlike generative AI operating in unstructured environments—often described as building "floating castles in thin air"—agents within an SAP ecosystem operate within a deterministic physics engine. This rigid structure provides the "grounding" necessary to prevent hallucination, the "signals" necessary for orchestration, and the "boundaries" necessary for security.
 
-The following analysis exhaustively explores this symbiosis. It details how the administrative burden of the Profile Generator (PFCG) becomes a zero-trust security framework for "Micro-Agents." It demonstrates how process friction acts as a precise communication protocol between Master Agents and Sub-Agents. It argues that the ABAP Dictionary’s strict typing serves as an immutable guardrail against generative error. Finally, it maps the technical architecture of the SAP Business Technology Platform (BTP), SAP Joule, and the Knowledge Graph, illustrating how these components operationalize the rigorous, structured legacy of SAP into a dynamic, ...autonomous future.[^14][^2]
+The following analysis exhaustively explores this symbiosis. It details how the administrative burden of the Profile Generator (PFCG) becomes a zero-trust security framework for "Micro-Agents." It demonstrates how process friction acts as a precise communication protocol between Master Agents and Sub-Agents. It argues that the ABAP Dictionary’s strict typing serves as an immutable guardrail against generative error. Finally, it maps the technical architecture of the SAP Business Technology Platform (BTP), SAP Joule, and the Knowledge Graph, illustrating how these components operationalize the rigorous, structured legacy of SAP into a dynamic, ...autonomous future.[^2]
 
 
 ## 1. The Inversion of Usability: From User Experience to Agent Experience
@@ -19,7 +19,7 @@ In the emergent era of Agentic AI, the design paradigm must shift from User Expe
 
 ### **1.1 The Deterministic Substrate for Probabilistic Intelligence**
 
-Generative AI, driven by Large Language Models (LLMs), is inherently probabilistic. These models function by predicting the next token in a sequence based on statistical likelihood derived from vast training corpora. While this allows for unprecedented flexibility and "reasoning" capabilities, it introduces the critical risk of "hallucination" or "confabulation."[^3][^4] In a creative context, a hallucination is a curiosity; in an enterprise ledger, it is a compliance violation or financial fraud.
+Generative AI, driven by Large Language Models (LLMs), is inherently probabilistic. These models function by predicting the next token in a sequence based on statistical likelihood derived from vast training corpora. While this allows for unprecedented flexibility and "reasoning" capabilities, it introduces the critical risk of "hallucination" or "confabulation."[^4] In a creative context, a hallucination is a curiosity; in an enterprise ledger, it is a compliance violation or financial fraud.
 
 When probabilistic agents are introduced into an enterprise environment, they require a deterministic substrate to function safely. SAP acts as this substrate. It functions as a **physics engine for business reality**. Just as a robot in a physical simulation relies on gravity and collision detection to learn to walk, an AI agent in SAP relies on validation logic and foreign key checks to learn to transact.
 
@@ -74,7 +74,7 @@ If this agent attempts to book an order for the *Wholesale* channel (02), the SA
 
 ### **2.3 Dynamic Role Resolution and Principal Propagation**
 
-The technical realization of this involves sophisticated identity management.[^8] The research highlights **Principal Propagation** as a critical mechanism on the SAP Business Technology Platform (BTP).[^9][^11][^10]
+The technical realization of this involves sophisticated identity management.[^8] The research highlights **Principal Propagation** as a critical mechanism on the SAP Business Technology Platform (BTP).[^10]
 
 When a human user interacts with an AI agent, the agent must not operate with a "Super User" service account. It must inherit the context of the human user. Through the SAP Cloud Connector and BTP Connectivity service, the user's identity is propagated to the backend SAP S/4HANA system. The agent effectively "becomes" the user for the duration of the transaction.
 
@@ -197,7 +197,7 @@ The fourth pillar addresses the data itself. "Companies trying to implement Agen
 
 ### **5.1 The SAP Knowledge Graph**
 
-To make this structural richness accessible to AI, SAP has introduced the **SAP Knowledge Graph**.[^19][^21][^20]
+To make this structural richness accessible to AI, SAP has introduced the **SAP Knowledge Graph**.[^20]
 
 * **The Problem:** LLMs speak natural language. SAP speaks "technical codes" (Tables MARA, KNA1, BKPF). An LLM does not inherently know that KUNNR is a Customer Number or that a Sales Order Item connects to a Delivery Item via the Document Flow table VBFA.  
 * **The Solution:** The Knowledge Graph creates a semantic layer that maps technical entities to business concepts. It encodes the relationships: Customer --places--> Order --contains--> Material.
@@ -206,7 +206,7 @@ This "grounds" the AI. When an agent is asked, "Check the status of the order fo
 
 ### **5.2 Vector RAG and the HANA Vector Engine**
 
-SAP HANA Cloud’s **Vector Engine** enables **Retrieval-Augmented Generation (RAG)** that combines structured and unstructured data.[^22][^23]
+SAP HANA Cloud’s **Vector Engine** enables **Retrieval-Augmented Generation (RAG)** that combines structured and unstructured data.[^23]
 
 * **Structured Grounding:** "Show me quality defects for Material X" (SQL Query to QMEL table).  
 * **Unstructured Grounding:** "Show me complaints where the customer mentioned 'strange smell'" (Vector search on text descriptions).
@@ -221,7 +221,7 @@ To realize this thesis, organizations must deploy a specific technical architect
 
 ### **6.1 SAP Joule and the Orchestration Layer**
 
-**SAP Joule** serves as the primary interface and orchestrator.[^16][^24][^25] It is not merely a chatbot; it is a runtime environment that manages:
+**SAP Joule** serves as the primary interface and orchestrator.[^25] It is not merely a chatbot; it is a runtime environment that manages:
 
 * **Intent Recognition:** Mapping user prompts to specific skills.  
 * **Context Management:** Keeping track of the session variables (e.g., "We are talking about Sales Order 123").  
@@ -242,7 +242,7 @@ A critical innovation is the **Model Context Protocol (MCP)**.[^27] This protoco
 * **Use Case:** An SAP agent needs to check a shipping rate from a logistics provider. Instead of a hard-coded interface, it uses an MCP server to query the provider dynamically.  
 * **Headless vs. GUI Agents:** The research distinguishes between two modes of agent operation:  
   * **API-Based (Headless) Agents:** These communicate via OData/REST APIs. They are fast, robust, and preferred for "Clean Core" environments.[^29]  
-  * **GUI-Based Agents:** For legacy ECC systems where APIs are missing, **SAP GUI Advanced MCP Servers** allow agents to drive the SAP GUI directly (scripting). This enables agents to perform "swivel chair" tasks on legacy screens, bridging the gap until migration is complete.[^28][^30]
+  * **GUI-Based Agents:** For legacy ECC systems where APIs are missing, **SAP GUI Advanced MCP Servers** allow agents to drive the SAP GUI directly (scripting). This enables agents to perform "swivel chair" tasks on legacy screens, bridging the gap until migration is complete.[^30]
 
 
 ## 7. Operationalizing the Agentic Enterprise: Use Cases
@@ -277,7 +277,7 @@ Sustainability reporting (e.g., CSRD) is data-intensive and rigid.[^34] **Sustai
 
 ### 7.4 Post-Merger Integration (M&A)
 
-M&A integrations are notoriously difficult due to mismatched ERPs. **PMI Agents** [^36][^37] accelerate this.
+M&A integrations are notoriously difficult due to mismatched ERPs. **PMI Agents** [^37] accelerate this.
 
 * They "crawl" the legacy ERP and the target ERP.  
 * They identify semantic mappings (e.g., "Legacy Material Group 01 = SAP Material Group Z05").  
@@ -286,9 +286,9 @@ M&A integrations are notoriously difficult due to mismatched ERPs. **PMI Agents*
 
 ## 8. The Clean Core Imperative: Agents as Architects
 
-The "Clean Core" strategy—keeping the ERP baseline free of custom modifications—is essential for Agentic AI.[^38][^39] Custom "Z-code" is often opaque to standard agents.
+The "Clean Core" strategy—keeping the ERP baseline free of custom modifications—is essential for Agentic AI.[^39] Custom "Z-code" is often opaque to standard agents.
 
-However, agents are also the solution to this problem. **ABAP AI Agents** can assist in the migration.[^40][^41]
+However, agents are also the solution to this problem. **ABAP AI Agents** can assist in the migration.[^41]
 
 * **Code Analysis:** Agents scan millions of lines of legacy code.  
 * **Refactoring:** They identify non-compliant code (e.g., direct database updates) and rewrite it to use standard APIs or RAP (RESTful ABAP Programming) models.  
@@ -335,7 +335,7 @@ Organizations that embrace this paradox—viewing the "Iron Cage" of SAP not as 
 
 [^2]: The Rise of Agentic AI ERP - Rimini Street, accessed January 19, 2026, [https://www.riministreet.com/resources/whitepaper/the-rise-of-agentic-ai-erp/](https://www.riministreet.com/resources/whitepaper/the-rise-of-agentic-ai-erp/)
 
-[^3]: Hallucination Guardrail - CrewAI Documentation, accessed January 19, 2026, [https://docs.crewai.com/en/enterprise/features/hallucination-guardrail](https://docs.crewai.com/en/enterprise/features/hallucination-guardrail)
+
 
 [^4]: Does AI Confabulate or Hallucinate? - testRigor AI-Based Automated Testing Tool, accessed January 19, 2026, [https://testrigor.com/blog/does-ai-confabulate-or-hallucinate/](https://testrigor.com/blog/does-ai-confabulate-or-hallucinate/)
 
@@ -385,7 +385,7 @@ Organizations that embrace this paradox—viewing the "Iron Cage" of SAP not as 
 
 [^27]: Agent builder in Joule Studio is now generally ava... - SAP Community, accessed January 19, 2026, [https://community.sap.com/t5/artificial-intelligence-blogs-posts/agent-builder-in-joule-studio-is-now-generally-available-build-your-own/ba-p/14289282](https://community.sap.com/t5/artificial-intelligence-blogs-posts/agent-builder-in-joule-studio-is-now-generally-available-build-your-own/ba-p/14289282)
 
-[^28]: Unlocking SAP with AI: A Deep Dive into the SAP GUI Advanced MCP Server - Skywork.ai, accessed January 19, 2026, [https://skywork.ai/skypage/en/unlocking-sap-ai-mcp-server/1979033157061877760](https://skywork.ai/skypage/en/unlocking-sap-ai-mcp-server/1979033157061877760)
+
 
 [^29]: API Agents vs. GUI Agents: Divergence and Convergence - arXiv, accessed January 19, 2026, [https://arxiv.org/html/2503.11069v1](https://arxiv.org/html/2503.11069v1)
 
@@ -401,7 +401,7 @@ Organizations that embrace this paradox—viewing the "Iron Cage" of SAP not as 
 
 [^35]: SAP Sustainability Control Tower, accessed January 19, 2026, [https://www.sap.com/products/scm/sustainability-control-tower.html](https://www.sap.com/products/scm/sustainability-control-tower.html)
 
-[^36]: Post-Merger Integration Planning AI Agents - Akira AI, accessed January 19, 2026, [https://www.akira.ai/ai-agents/post-merger-integration-ai-agents](https://www.akira.ai/ai-agents/post-merger-integration-ai-agents)
+
 
 [^37]: Pharma IT Integration Playbook: Consolidating Veeva and SAP | IntuitionLabs, accessed January 19, 2026, [https://intuitionlabs.ai/articles/pharma-it-integration-veeva-sap](https://intuitionlabs.ai/articles/pharma-it-integration-veeva-sap)
 
@@ -409,7 +409,7 @@ Organizations that embrace this paradox—viewing the "Iron Cage" of SAP not as 
 
 [^39]: SAP Clean Core Strategy For SAP Cloud ERP And Technical Debt ..., accessed January 19, 2026, [https://www.redwood.com/article/sap-clean-core-strategy-cloud-erp/](https://www.redwood.com/article/sap-clean-core-strategy-cloud-erp/)
 
-[^40]: Agentic AI for accelerated SAP Clean Core transformation - Kyndryl, accessed January 19, 2026, [https://www.kyndryl.com/gb/en/services/applications/sap/agentic-ai](https://www.kyndryl.com/gb/en/services/applications/sap/agentic-ai)
+
 
 [^41]: SAP BTP‚ ABAP environment, Joule for developers‚ ABAP AI capabilities, accessed January 19, 2026, [https://www.sap.com/products/technology-platform/btp-abap-environment-joule-for-developers-abap-ai-capabilities.html](https://www.sap.com/products/technology-platform/btp-abap-environment-joule-for-developers-abap-ai-capabilities.html)
 
