@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [Social Synapse: Meaning Emerges From Gossip](./meaningOfMeaning-2.md)
 - [SAP: AI's Fortified Enterprise Cradle](./SAPinAIera.md)
 - [Vim: Keyboard's Timeless Musical Mastery](./musicOfVim.md)
