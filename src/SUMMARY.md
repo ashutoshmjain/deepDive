@@ -1,9 +1,9 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [ClawdBot: Sovereign Personal AI OS](./src/clawdBot.md)
+- [ClawdBot: Sovereign Personal AI OS](./clawdBot.md)
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
-- [STRC: Corporate Stablecoin Triumph](./src/STRC_update.md)
+- [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [Social Synapse: Meaning Emerges From Gossip](./meaningOfMeaning-2.md)
 - [SAP: AI's Fortified Enterprise Cradle](./SAPinAIera.md)
 - [Vim: Keyboard's Timeless Musical Mastery](./musicOfVim.md)
