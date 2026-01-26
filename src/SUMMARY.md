@@ -1,7 +1,8 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
-- [Bitcoin: Digital Credit's Apex Capital](./bitcoinAsApexCapital.md)
+- [ClawdBot: Sovereign Personal AI OS](./src/clawdBot.md)
+- [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [Social Synapse: Meaning Emerges From Gossip](./meaningOfMeaning-2.md)
 - [SAP: AI's Fortified Enterprise Cradle](./SAPinAIera.md)
