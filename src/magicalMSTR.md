@@ -90,3 +90,77 @@ In conclusion, the price chart is merely a reflection of the "fiat world" re-pri
 
 #### **Works cited**
 
+1. MSTR Stock Price Quote | Morningstar, https://www.morningstar.com/stocks/xnas/mstr/quote
+
+2. Strategy Stock Price History - Investing.com, https://www.investing.com/equities/microstrategy-inc-historical-data
+
+3. Strategy Inc (MSTR) Market Cap Today: Live Data & Historical Trends - Public Investing, https://public.com/stocks/mstr/market-cap
+
+4. Strategy (MSTR) Sells USD 257M In Stock To Buy 2,932 Bitcoin, https://bitcoinmagazine.com/news/strategy-sells-257-million-to-buy-2932-btc
+
+5. MicroStrategy's Bitcoin Accumulation - ERIC KIM, https://erickimphotography.com/microstrategys-bitcoin-accumulation/
+
+6. Michael Saylor's Bitcoin flywheel explained - Verdict, https://www.verdict.co.uk/microstrategy-bitcoin-accumulation/
+
+7. What Does Strategy (Formerly MicroStrategy) Do and Why Does It Hold So Much Bitcoin?, https://www.investopedia.com/what-does-strategy-formerly-microstrategy-do-11750239
+
+8. Michael Saylor Boosts Yield, Says Strategy Is at an 'Inflection Point' - Advisor Perspectives, https://www.advisorperspectives.com/articles/2025/11/03/michael-saylor-boosts-yield-strategy-inflection-point
+
+9. How Hedge Funds Made 50% Returns Betting Against MicroStrategy While Buying Bitcoin, https://navnoorbawa.substack.com/p/how-hedge-funds-made-50-returns-betting
+
+10. MicroStrategy's Bitcoin Bet: Is MSTR a Buy After 60% Stock Drop?, https://phemex.com/news/article/microstrategys-bitcoin-bet-is-mstr-a-buy-after-60-stock-drop-56513
+
+11. Shares - Strategy, https://www.strategy.com/shares
+
+12. Why Strategy (MSTR) Is Down 6.1% After Pivoting To Equity-Funded Bitcoin Purchases And Preferred Dividends, https://simplywall.st/stocks/us/software/nasdaq-mstr/strategy/news/why-strategy-mstr-is-down-61-after-pivoting-to-equity-funded
+
+13. EX-99.1 - SEC.gov, https://www.sec.gov/Archives/edgar/data/1050446/000119312525303157/d69948dex991.htm
+
+14. BTC yield by Saylor - ERIC KIM ₿, https://erickimphotography.com/blog/2024/11/03/btc-yield-by-saylor/
+
+15. The "crazy rise" of MSTR has invented a new term: BTC yield., https://www.moomoo.com/news/post/46177383/the-crazy-rise-of-mstr-has-invented-a-new-term
+
+16. Page 254 – Tekedia, https://www.tekedia.com/page/254/?p=..%252Fpage%252F200%252F%252Fpage%252F3882%252F
+
+17. Public companies quietly grow Bitcoin holdings as prices stay flat - TradingView, https://www.tradingview.com/news/cointelegraph:67031d3bd094b:0-public-companies-quietly-grow-bitcoin-holdings-as-prices-stay-flat/
+
+18. Strategy’s New 2,932 BTC Bet Tests Dilution And Valuation Thesis, https://simplywall.st/stocks/us/software/nasdaq-mstr/strategy/news/strategys-new-2932-btc-bet-tests-dilution-and-valuation-thes
+
+19. Strategy's latest 2025 Bitcoin purchase caps active year of accumulation - TradingView, https://www.tradingview.com/news/cointelegraph:97599d9fb094b:0-strategy-s-latest-2025-bitcoin-purchase-caps-active-year-of-accumulation/
+
+20. Michael Saylor's Strategy buys another 2,932 bitcoin for USD 264 million as total holdings reach 712,647 BTC | The Block, https://www.theblock.co/post/387014/michael-saylors-strategy-buys-more-bitcoin-unstoppable-orange
+
+21. 2023 Annual Report ANCED DATA ANALYTICS AND AI - SEC.gov, https://www.sec.gov/Archives/edgar/data/1050446/000119312524094698/d806750dars.pdf
+
+22. The Great Bitcoin Bond Gamble: Michael Saylor's MSTR Strategy Explained, https://www.vantagepointsoftware.com/blog/microstrategy-convertible-debt-bitcoin-strategy-explained/
+
+23. Strategy reports bitcoin holdings reach 673783 coins worth USD 50.55 billion - Investing.com, https://www.investing.com/news/cryptocurrency-news/strategy-reports-bitcoin-holdings-reach-673783-coins-worth-5055-billion-432SI-4429737
+
+24. Michael Saylor's MicroStrategy Bitcoin Trade - AMINA Bank, https://aminagroup.com/research/michael-saylors-microstrategy-bitcoin-trade/
+
+25. Bitcoin.com News Weekly Update - Apple Podcasts, https://podcasts.apple.com/ph/podcast/bitcoin-com-news-weekly-update/id1541896251
+
+26. Strategy Announces First Quarter 2025 Financial Results, https://www.strategy.com/press/strategy-announces-first-quarter-2025-financial-results_05-01-2025
+
+27. Earnings call transcript: MicroStrategy's Q2 2025 beats expectations, stock rises, https://www.investing.com/news/transcripts/earnings-call-transcript-microstrategys-q2-2025-beats-expectations-stock-rises-93CH-4164706
+
+28. Strategy stock price target lowered to USD 560 from USD 697 at Cantor Fitzgerald - Investing.com, https://www.investing.com/news/analyst-ratings/strategy-stock-price-target-lowered-to-560-from-697-at-cantor-fitzgerald-93CH-4324456
+
+29. Estimating MicroStrategy's Timeline to 1 Million Bitcoin - ERIC KIM ₿, https://erickimphotography.com/blog/2025/09/12/estimating-microstrategys-timeline-to-1-million-bitcoin/
+
+30. MicroStrategy's SWOT analysis: bitcoin-focused stock builds yield curve amid expansion, https://www.investing.com/news/swot-analysis/microstrategys-swot-analysis-bitcoinfocused-stock-builds-yield-curve-amid-expansion-93CH-4362947
+
+31. Strategy Announces Third Quarter 2025 Financial Results, https://www.strategy.com/press/strategy-announces-third-quarter-2025-financial-results_10-30-2025
+
+32. MSTR Q3-2025 Earnings Call - Alpha Spread, https://www.alphaspread.com/security/nasdaq/mstr/investor-relations/earnings-call/q3-2025
+
+33. After A Snake-Like 2025, Is The Bitcoin Price Ready To Break Out In 2026?, https://bitcoinmagazine.com/markets/is-the-bitcoin-price-ready-to-break-out-in-2026
+
+34. Earnings call transcript: Strategy Inc's Q2 2025 results see record EPS - Investing.com, https://www.investing.com/news/transcripts/earnings-call-transcript-strategy-incs-q2-2025-results-see-record-eps-93CH-4321178
+
+35. Strategy (MSTR) - Trefis, https://www.trefis.com/data/companies/MSTR/?source=forbes&from=MSTR-2026-01-07
+
+36. Protecting Investors: MSTR : r/Buttcoin - Reddit, https://www.reddit.com/r/Buttcoin/comments/1qgwk55/protecting_investors_mstr/
+
+37. Strategy Announces Establishment of USD 1.44 Billion Reserve and Updates FY 2025 Guidance, https://www.strategy.com/press/strategy-announces-establishment-of-1-44-billion-usd-reserve-and-updates-fy-2025-guidance_12-1-2025
+
