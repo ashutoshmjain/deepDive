@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Bitcoin Refinery: Strategy's Capital Evolution](./magicalMSTR.md)
 - [ClawdBot: Sovereign Personal AI OS](./clawdBot.md)
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
