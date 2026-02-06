@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
 - [Bitcoin: Survival in the Crucible](./bitcoinSurvival.md)
 - [Value vs. Leverage: A New World Order](./valueLeverage.md)
 - [Bitcoin Refinery: Strategy's Capital Evolution](./magicalMSTR.md)
