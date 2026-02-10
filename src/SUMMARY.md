@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [LLMs: Brain's Stochastic Mirror](./LLMvsBrain.md)
 - [Banking Nirvana: Credit, Stablecoins, Future Finance](./bankingNirvana.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
 - [Bitcoin: Survival in the Crucible](./bitcoinSurvival.md)
