@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Banking Nirvana: Credit, Stablecoins, Future Finance](./bankingNirvana.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
 - [Bitcoin: Survival in the Crucible](./bitcoinSurvival.md)
 - [Value vs. Leverage: A New World Order](./valueLeverage.md)
