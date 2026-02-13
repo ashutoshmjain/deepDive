@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [East's Golden Pivot Challenges Dollar](./indoChinaGoldRace.md)
 - [The Geometry of Human Thought](./gaugeTheoryOfThought.md)
 - [LLMs: Brain's Stochastic Mirror](./LLMvsBrain.md)
 - [Banking Nirvana: Credit, Stablecoins, Future Finance](./bankingNirvana.md)
