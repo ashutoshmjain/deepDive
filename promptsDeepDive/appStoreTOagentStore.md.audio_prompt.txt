@@ -1,0 +1,33 @@
+**Tone:** Intriguing & Analytical
+
+**Charming Intro:**
+
+**0:00 – 0:30** A single, intriguing question: What if the next version of your phone has no apps?
+
+**0:30 – 2:30** Verbal teaser hinting at the answer: We are moving from a world of tapping on icons to a world of autonomous agents that get things done for you. The "App Store" is dead, long live the "Agent Store".
+
+**2:30 - 6:30** Build on the teaser: This isn't just a new UI. It's a fundamental shift in how we interact with technology. We're moving from a world where we tell our devices what to do, to a world where we tell them what we want, and they figure out how to do it. This is the story of the shift from the App Store to the Agent Store, and the race to build the next iPhone.
+
+**6:30 – 7:30 Subscription Request:** As you know we are an audio only show - so we want our listeners to hear us at audio platforms such as Apple Podcasts , Spotify , Fountain.fm .. we dont recommend youtube because it has lots of advertising and click baits but wait ..we do want to create beautiful explainer videos for youtube because we love our subscribers on youtube .. so if you want us do videos , please sunscribe to the show cuz you know we need 1000 subs to get funding for the Mosaic AI video editor .. which we have tested first hand and we can vouch .. it is a pradigm shift in video editing
+
+
+
+**Main Episode with drum rolls:**
+
+Let's dig into the "Agent Store." The core idea is a move from managed app ecosystems to transactional agent marketplaces. The value is no longer in the app itself, but in the autonomous agent that can use multiple apps to achieve a goal.
+
+This is the culmination of a long history, starting with Steve Jobs' NeXTSTEP in the 80s, which introduced the idea of "inter-personal computing" and software "orchestration." The iPhone and the App Store were the ultimate expression of this, creating a "walled garden" that was easy for consumers to use and a lucrative platform for developers.
+
+But the App Store model is based on a "command hub" where the user is the orchestrator. The "Agent Store" model is different. It's a "transactional" model where autonomous agents discover services, negotiate prices, and transact value on behalf of humans.
+
+This requires a new infrastructure, a "machine-to-machine financial rail." We're already seeing the first steps with things like the x402 protocol, which enables autonomous crypto transactions, and Stripe's "Agentic Commerce Protocol."
+
+And it's not just about software. The race is on to build the next "iPhone-esque" device, a new class of hardware designed for this new world of agents. Startups like Rabbit and Humane are already in the game, and the most anticipated entry is the collaboration between Jony Ive and Sam Altman of OpenAI. We did an episode on clawd bot before it was renamed to open claw.. that was really our starting point - kind of iPhone or chatGPT moment for us .. we will put a link below in case you haven't yet installed the lobster .. the name has chnged but the installation and philosphy stays more or less same
+
+The winner of this race will be the one who builds the best "Agent Operating System," an OS that can manage "intelligence and purpose" in the same way that a classical OS manages hardware resources.
+
+**Closing to leave a lasting thought:**
+
+- **Reflect on the future:** The transition to an "Agent Store" is the final evolution of Steve Jobs’ vision of interpersonal computing. The economic value is shifting from "attention" to "intent," and the digital economy is being re-architected to support machine-mediated transactions at a scale and frequency that would be impossible for humans to manage manually.
+
+- **Remind listeners:** This is a community effort. Our analysis relies on public info, but the story unfolds. Share your analysis, sources in comments. Too optimistic? Too critical? We want to hear. Collaborators—finance experts, crypto natives—reach out. As always… keep searching! Keep the quest on…

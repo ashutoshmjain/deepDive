@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Agent Store Rising: App Store's Fall](./appStoreTOagentStore.md)
 - [East's Golden Pivot Challenges Dollar](./indoChinaGoldRace.md)
 - [The Geometry of Human Thought](./gaugeTheoryOfThought.md)
 - [LLMs: Brain's Stochastic Mirror](./LLMvsBrain.md)
