@@ -4,6 +4,18 @@ This publication[^mission] is a collection of deep dives into various topics tha
 
 This podcast website hosts the open-source research and deep dives for the "deep dive with Gemini" show. We don't have a fixed schedule for new episodes. Instead, we follow an iterative approach to refine our research and insights. The idea is to revisit topics as many times as possible to uncover new insights. This process is repeated until the research converges and takes the shape of a well-formed episode. The journey of transformation from information to knowledge is captured in a git repository. The key is to iterate on the text. It doesn’t matter if the first draft was just a blank page, a copy from the web, or an AI-generated print. As we iterate, coherence improves, connections emerge, and there is always something new to capture.
 
+### Our Workflow: From Idea to Episode
+
+Our process begins with research, the most critical aspect of our work. We actively encourage our listeners to contribute by sending sources through comments or direct emails to amj@shutri.com.
+
+1.  **Initial Research:** We gather listener-submitted sources, identify a common theme, and then use Gemini Pro, powered by Google's latest paid models, to conduct deep research. This AI-driven research can sometimes lead to interesting tangents, which requires active dialogue and prompt engineering to stay focused. We prefer Gemini for its best-in-class deep search agent, which validates our point of view by cross-referencing thousands of web sources.
+
+2.  **Writing and Publication:** Once the research is solid, we publish the paper at [https://deepdive.shutri.com](https://deepdive.shutri.com). This step allows for manual tweaking and refinement. We heavily rely on the Gemini CLI to format markdown, fix tables, and manage web references. As a writer-centric podcast, we can attest that this is the most time-consuming part of the process. Without AI assistance, a 5,000-word paper can take 30-40 hours to prepare.
+
+3.  **Audio Production:** The published research is then imported into NotebookLM to generate initial audio overviews. After reviewing these, we craft detailed audio prompts to create a concise and flowing episode. Our guiding principle is to respect our listeners' time, so we meticulously edit out every non-essential word without compromising the artistic expression of the synthetic voices. The final audio is edited and mixed using the open-source tool Audacity, where we embed music, set the tone, and apply various audio effects.
+
+4.  **Episode Artwork:** The last step is creating a compelling graphic for the episode. The artwork is designed to convey the complete message of the episode at a glance, ensuring the core idea is communicated even if a listener doesn't finish the entire episode. Our primary goal is to deliver the message, not to tie our audience to any specific platform.
+
 ## Navigation and icons:
 
 - The hamburger icon on the top left <i class="fa fa-fw fa-bars"></i> toggles the chapters' sidebar. On mobile devices, you can also swipe right.
