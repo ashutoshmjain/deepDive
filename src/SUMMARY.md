@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
 - [UBI's Flaw: Assets Over Handouts](./UBIvsUBA.md)
 - [Agent Store Rising: App Store's Fall](./appStoreTOagentStore.md)
 - [East's Golden Pivot Challenges Dollar](./indoChinaGoldRace.md)
