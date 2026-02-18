@@ -1,0 +1,28 @@
+Tone: Intriguing & Analytical
+
+Charming Intro:
+
+0:00 – 0:30 A single, intriguing question: What happens when a CEO goes on national television and makes a claim so bold it forces us to throw out our own models and start from scratch?
+
+0:30 – 2:30 Verbal teaser hinting at the answer: Just 13 days ago, we published a deep dive into Strategy Inc.'s financial fortress, modeling their stability down to the last satoshi. We used real-time data, with Bitcoin trading around $75,000. But in the world of Bitcoin, two weeks is an eternity.
+
+2:30 - 6:30 Build on the teaser: Since then, Michael Saylor went on Fox Business and confirmed a massive $8 billion debt-to-equity conversion. The market shuddered, with Bitcoin testing $68,000. This isn't just news; it's a live stress test. And it forces us to address the "Saylor Claim"—that his digital empire remains solvent even if Bitcoin plummets to a mere $8,000.
+
+II. Acknowledgment of Error: Correcting the "Cash Double Count"
+
+Before we dive into the new numbers, we have to give credit where it's due. A sharp-eared listener pointed out a flaw in our February 3rd model: we "double-counted" the cash reserves, assuming they could be used for both paying dividends and protecting principal in a liquidation. They were right. So today, we're doing what any good analyst does: admitting the mistake, correcting the model, and running the numbers again with a much harsher, more realistic assumption. In our new model, the entire $2.25 billion cash pile is burned through to sustain the company, leaving only Bitcoin to back the floor.
+
+Main Episode with drum rolls:
+
+So, with no cash cushion in our final calculation, does the fortress still stand? We are re-running our entire waterfall model. We’ll show you, tier by tier, how the massive $8 billion debt conversion dramatically de-leverages the company, pushing the common stockholders (MSTR) further up the priority ladder, but more importantly, solidifying the concrete foundation under the preferred shares.
+
+We're going to recalculate the "Bitcoin Floor" for the STRC shares under this new, more brutal scenario. Does Saylor's $8,000 claim hold up to scrutiny when the cash is gone? We'll give you the definitive answer. This is a masterclass in corporate finance and risk management, happening in real-time.
+
+Links to References: We reference our YouTube course on STRC - a selection of our deep dives on the topics around STRC and how to leverage this wonderful fixed yield deferred tax instrument for early retirement.
+
+Subscription Request: Thank you to our listeners for your tremendous support! Your interest is living proof that there's an appetite for deep research outside the usual campus settings. So please share these deep dives to help us spread the word wherever you geek out on topics of deep finance, AI, or Bitcoin—be it on WhatsApp, Slack, Signal, or elsewhere. And please, subscribe to the show! We are available on Spotify, YouTube, YouTube Music, Apple Podcasts, and Fountain.fm, or any platform that supports Podcast 2.0. We have a special target to hit 1,000 subscribers on YouTube. This number unlocks funding for Mosaic AI Video Editor, a fantastic tool for creating companion videos for these pure audio deep dives, offering features like automated clips, infographics, and AI b-rolls.
+
+Closing to leave a lasting thought:
+
+- Reflect on the future: Is this the most audacious financial maneuver in modern history? By swapping debt for equity at this scale, is Saylor creating an unsinkable Bitcoin capital ship, or is he playing a high-stakes game of chicken with the market? We're witnessing the birth of a new kind of corporation, one that runs on the rails of a completely different financial logic.
+- Remind listeners that this is a community effort. The analysis in this episode is based on publicly available information, but the story is still unfolding. We invite you, our listeners, to share your own analysis and sources in the comments. Are we being too optimistic? Too critical? We want to hear from you. We're always looking for collaborators to review our content, so if you're a finance expert or a crypto native with a sharp eye for detail, please reach out... as always… keep searching! Keep the quest on…
