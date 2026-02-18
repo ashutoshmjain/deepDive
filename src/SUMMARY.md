@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [15% GDP: The Sovereign Playbook](./pathTo15percentGDP.md)
 - [Bitcoin: Mesh Vault, Star Engine](./bitcoinAsTechStock.md)
 - [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
 - [UBI's Flaw: Assets Over Handouts](./UBIvsUBA.md)
