@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [AI Renaissance: Beyond Job Fears](./doomVsBoom.md)
 - [15% GDP: The Sovereign Playbook](./pathTo15percentGDP.md)
 - [Bitcoin: Mesh Vault, Star Engine](./bitcoinAsTechStock.md)
 - [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
