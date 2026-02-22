@@ -1,5 +1,7 @@
 # What is the Purpose of Quantum Mechanics: Uniqueness, Prime Identities, and the Architecture of Decay
 
+![enricoFermi.png](img/enricoFermi.png)
+
 In the language of arithmetic, prime numbers are the definitive examples of uniqueness; they are irreducible and exist as sovereign identities. Modern science, through Quantum Mechanics (QM), is increasingly pointing toward a fundamental reality where the universe is a **dynamic network in search of irreducible and uniquely identifiable nodes**. The "Purpose" of Quantum Mechanics is a systematic discovery mission to find and verify the "primal entities"—quarks, electrons, and bosons—that constitute the irreducible alphabet of the universal field.¹
 
 ## The Universal Rule of Node Stability
