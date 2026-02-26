@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Invincible Dollar: Triffin's Dilemma Explained](./invincibleDollar.md)
 - [Mag 7 Split: Frontier Sovereignty](./mag7split.md)
 - [Z Boson: Universal ZKP Audit](./QM2-verification.md)
 - [Quantum Mechanics: The Search for Uniqueness](./QM1-Uniqueness.md)
