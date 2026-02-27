@@ -9,4 +9,4 @@ description = "A deep dive into various topics with Gemini."
 
 [output.html]
 cname = "deepdive.shutri.com"
-number-chapters = false
+no-section-label = true

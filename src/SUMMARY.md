@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [Invincible Dollar: Triffin's Dilemma Explained](./invincibleDollar.md)
 - [Mag 7 Split: Frontier Sovereignty](./mag7split.md)
 - [Z Boson: Universal ZKP Audit](./QM2-verification.md)
