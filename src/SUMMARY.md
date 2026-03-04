@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [Chromodynamic Blueprint: Recipe for Mass](./accountingMass.md)
 - [The Physics of Flavor Transmutation](./universalAccounting.md)
 - [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [Invincible Dollar: Triffin's Dilemma Explained](./invincibleDollar.md)
