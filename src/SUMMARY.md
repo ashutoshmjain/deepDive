@@ -1,6 +1,7 @@
 # Summary
 
 - [Deepdive with Gemini](./cover.md)
+- [STRC: Digital Bridge for Legacy](./strcRetirement.md)
 - [STRC: Superior Digital Credit Yield](./strcPE.md)
 - [Chromodynamic Blueprint: Recipe for Mass](./accountingMass.md)
 - [The Physics of Flavor Transmutation](./universalAccounting.md)
