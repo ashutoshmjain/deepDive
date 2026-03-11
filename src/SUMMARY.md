@@ -32,6 +32,7 @@
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 
 # Digital Credit & The STRC Bridge
+- [The Physics of Value: The STRC Bridge](./the-physics-of-value-the-strc-bridge.md)
 - [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
 - [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
@@ -44,6 +45,7 @@
 - [Bitcoin Refinery: Strategy's Capital Evolution](./magicalMSTR.md)
 
 # Economics, Capital & The Global Shift
+- [Block X: 2026 Financial Merger Analysis](./blockX.md)
 - [Invincible Dollar: Triffin's Dilemma Explained](./invincibleDollar.md)
 - [15% GDP: The Sovereign Playbook](./pathTo15percentGDP.md)
 - [Mag 7 Split: Frontier Sovereignty](./mag7split.md)
