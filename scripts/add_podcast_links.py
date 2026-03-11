@@ -17,52 +17,57 @@ def process_file(file_path):
         # print(f"Skipping {file_path}: already contains 'Listen on:'")
         return
 
-    title_idx = -1
+    # Find first header or first non-empty line
+    header_idx = -1
     for idx, line in enumerate(lines):
-        if line.startswith("# "):
-            title_idx = idx
+        if line.strip().startswith("#"):
+            header_idx = idx
             break
     
-    if title_idx == -1:
-        print(f"Warning: No title found in {file_path}")
-        return
-
-    # Check for image after title
+    # Check for image after potential header or at start
     image_idx = -1
-    for idx in range(title_idx + 1, len(lines)):
+    search_start = header_idx + 1 if header_idx != -1 else 0
+    # Look ahead up to 5 lines for an image
+    for idx in range(search_start, min(search_start + 5, len(lines))):
         line = lines[idx].strip()
-        if not line:
-            continue
-        if line.startswith("!["):
+        if line.startswith("![") or line.startswith("![]"):
             image_idx = idx
             break
+        elif line == "" or line.startswith("#"):
+            continue
         else:
-            # Something else found, stop looking for image
+            # Found text before image, stop looking
             break
 
-    insertion_idx = image_idx if image_idx != -1 else title_idx
-    
-    # Construct new content
-    new_lines = lines[:insertion_idx + 1]
-    
-    # Add spacing before snippet if not already there
-    if new_lines[-1].strip() != "":
-         new_lines.append("\n")
+    insertion_idx = -1
+    if image_idx != -1:
+        insertion_idx = image_idx
+    elif header_idx != -1:
+        insertion_idx = header_idx
     else:
-        # If it's just a newline, maybe add one more if we want double spacing or just leave it
-        pass
+        # No header or image found in first few lines, insert at top
+        insertion_idx = -1 # Will insert before line 0
 
-    new_lines.append(snippet + "\n")
-    
-    # Add spacing after snippet
-    new_lines.append("\n")
-    
-    # Add rest of the file, skipping leading empty lines
-    rest = lines[insertion_idx + 1:]
-    while rest and rest[0].strip() == "":
-        rest.pop(0)
-    
-    new_lines.extend(rest)
+    # Construct new content
+    new_lines = []
+    if insertion_idx == -1:
+        new_lines.append(snippet + "\n\n")
+        new_lines.extend(lines)
+    else:
+        new_lines = lines[:insertion_idx + 1]
+        
+        # Add spacing before snippet if not already there
+        if new_lines[-1].strip() != "":
+             new_lines.append("\n")
+        
+        new_lines.append(snippet + "\n\n")
+        
+        # Add rest of the file, skipping leading empty lines
+        rest = lines[insertion_idx + 1:]
+        while rest and rest[0].strip() == "":
+            rest.pop(0)
+        
+        new_lines.extend(rest)
 
     with open(file_path, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
