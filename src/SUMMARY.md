@@ -15,6 +15,7 @@
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
 
 # The AI Revolution & Machine Intelligence
+- [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
 - [LLMs: Brain's Stochastic Mirror](./LLMvsBrain.md)
 - [AI Renaissance: Beyond Job Fears](./doomVsBoom.md)
