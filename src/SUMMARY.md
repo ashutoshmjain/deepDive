@@ -3,6 +3,12 @@
 [Deepdive with Gemini](./cover.md)
 [Around and About](./how.md)
 
+
+# Recent ..
+- [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
+- [Google's Quest for Physical AI](./intrinsicGoogle.md)
+- [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
+
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
