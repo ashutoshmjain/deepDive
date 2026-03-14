@@ -9,6 +9,7 @@
 - [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 
+
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
@@ -21,11 +22,9 @@
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
 
 # The AI Revolution & Machine Intelligence
-- [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
 - [LLMs: Brain's Stochastic Mirror](./LLMvsBrain.md)
 - [AI Renaissance: Beyond Job Fears](./doomVsBoom.md)
-- [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [Google's Lisp Machine: A Comeback](./googleAsLispMachine.md)
 - [Agent Store Rising: App Store's Fall](./appStoreTOagentStore.md)
 - [ClawdBot: Sovereign Personal AI OS](./clawdBot.md)
@@ -42,7 +41,6 @@
 - [The Physics of Value: The STRC Bridge](./the-physics-of-value-the-strc-bridge.md)
 - [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
 - [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
-- [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
 - [STRC: Digital Bridge for Legacy](./strcRetirement.md)
 - [STRC: Superior Digital Credit Yield](./strcPE.md)
