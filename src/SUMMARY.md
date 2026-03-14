@@ -21,6 +21,7 @@
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
 
 # The AI Revolution & Machine Intelligence
+- [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
 - [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
@@ -38,6 +39,8 @@
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 
 # Digital Credit & The STRC Bridge
+- [STRC: Digital Bridge for Legacy](./strcRetirement.md)
+- [STRC: Superior Digital Credit Yield](./strcPE.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [The Physics of Value: The STRC Bridge](./the-physics-of-value-the-strc-bridge.md)
 - [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
