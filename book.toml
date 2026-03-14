@@ -8,5 +8,6 @@ description = "A deep dive into various topics with Gemini."
 [preprocessor.katex]
 
 [output.html]
+additional-css = ["css/custom.css"]
 cname = "deepdive.shutri.com"
 no-section-label = true
