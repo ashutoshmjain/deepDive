@@ -3,11 +3,10 @@
 [Deepdive with Gemini](./cover.md)
 [Around and About](./how.md)
 
-
 # Recent ..
 - [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
-- [Google's Quest for Physical AI](./intrinsicGoogle.md)
-- [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
+- [STRC: Digital Bridge for Legacy](./strcRetirement.md)
+- [STRC: Superior Digital Credit Yield](./strcPE.md)
 
 
 # The Bitcoin Standard & Sovereign Assets
@@ -34,7 +33,6 @@
 - [AI, Deepfakes, and Nostr's Solution](./the-industrialization-of-reality.md)
 - [From Mainframes to AI Models](./mainframesToAI.md)
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
-- [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 
 # Digital Credit & The STRC Bridge
@@ -42,8 +40,6 @@
 - [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
 - [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
 - [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
-- [STRC: Digital Bridge for Legacy](./strcRetirement.md)
-- [STRC: Superior Digital Credit Yield](./strcPE.md)
 - [STRC: Credit Market Vampire Attack](./STRCImpactOnCredit.md)
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
@@ -82,7 +78,6 @@
 - [Gods, Philosophers, and Quarks Walk into a Bar...](./gods-philosophers-quarks.md)
 
 # Social, Culture & Digital Sovereignty
-- [2025: Tangible Value, Digital Horizons](./GlobalStrategicRetrospective2025.md)
 - [Walled Gardens to Sovereign Protocols](./the-great-inversion.md)
 - [Social Synapse: Meaning Emerges From Gossip](./meaningOfMeaning-2.md)
 - [Bluesky Fades, LinkedIn Rises, Nostr Stalls](./the-great-fragmentation.md)
