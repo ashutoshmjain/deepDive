@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [Bit to It: Informational Cosmos](././bitToIt.md)
 - [Sexual Reproduction: Genetic Lottery](././cloningVsSexualReproduction.md)
 - [Agentic AI: The Wealth Catalyst](././cantillonAI.md)
-- [STRC: Digital Bridge for Legacy](././strcRetirement.md)
 
 
 # The Bitcoin Standard & Sovereign Assets
@@ -38,6 +38,7 @@
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
 
 # Digital Credit & The STRC Bridge
+- [STRC: Digital Bridge for Legacy](./strcRetirement.md)
 - [STRC: Superior Digital Credit Yield](./strcPE.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [The Physics of Value: The STRC Bridge](./the-physics-of-value-the-strc-bridge.md)
