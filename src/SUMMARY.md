@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [STRC: The 5.37 Sharpe Benchmark](././strcSharpRatio.md)
 - [Bit to It: Informational Cosmos](././bitToIt.md)
 - [Sexual Reproduction: Genetic Lottery](././cloningVsSexualReproduction.md)
-- [Agentic AI: The Wealth Catalyst](././cantillonAI.md)
 
 
 # The Bitcoin Standard & Sovereign Assets
@@ -21,6 +21,7 @@
 - [Lottery Tickets to Bitcoin Millions](./bitcoinLottery.md)
 
 # The AI Revolution & Machine Intelligence
+- [Agentic AI: The Wealth Catalyst](./cantillonAI.md)
 - [Google's Quest for Physical AI](./intrinsicGoogle.md)
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 - [AI, Bitcoin, Sovereignty, Economics, Future](./the-great-divergence.md)
