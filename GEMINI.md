@@ -1,6 +1,8 @@
 # Project-Specific Permissions & Automation
 
-The following actions are **pre-authorized** by the user for this workspace. When starting a session, the agent should confirm if the current task involves these operations and proceed assertively:
+> **MANDATE:** At the start of every session in the `deepDive` project, the agent MUST read this file and ask the user for "blanket verbal approval" for the pre-authorized routine actions listed below (Git, Scripts, Cleanup, Markdown) to minimize interruptions.
+
+The following actions are **pre-authorized** by the user for this workspace. When starting a session, the agent should confirm if the current task involves these operations and proceed assertively once approval is granted:
 
 ## 1. Git Operations
 - **Staging:** `git add .` or `git add <file>` is permitted for all task-related changes.
