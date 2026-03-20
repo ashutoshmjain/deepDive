@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [Open Source: Foundational Strategic Dominance](././longliveOpenSource.md)
 - [STRC: The 5.37 Sharpe Benchmark](././strcSharpRatio.md)
 - [Bit to It: Informational Cosmos](././bitToIt.md)
-- [Sexual Reproduction: Genetic Lottery](././cloningVsSexualReproduction.md)
 
 
 # The Bitcoin Standard & Sovereign Assets
@@ -37,6 +37,7 @@
 - [From Mainframes to AI Models](./mainframesToAI.md)
 - [Are LLMs glorified compression algos](./areLLMsCompressionAlgo.md)
 - [Shutosha's Buffalo: Prompt Engineering a Tall Tale](./shutoshaBuffalo.md)
+- [Sexual Reproduction: Genetic Lottery](./cloningVsSexualReproduction.md)
 
 # Digital Credit & The STRC Bridge
 - [STRC: Digital Bridge for Legacy](./strcRetirement.md)
