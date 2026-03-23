@@ -16,6 +16,8 @@ Our process begins with research, the most critical aspect of our work. We activ
 
 4.  **Episode Artwork:** The last step is creating a compelling graphic for the episode. The artwork is designed to convey the complete message of the episode at a glance, ensuring the core idea is communicated even if a listener doesn't finish the entire episode. Our primary goal is to deliver the message, not to tie our audience to any specific platform.
 
+5.  **Mosaic Infographics:** Creation of short clips using Mosaic Infographics. As part of capability tests we are trying out Mosaic for short clips.
+
 ## Navigation and icons:
 
 - The hamburger icon on the top left <i class="fa fa-fw fa-bars"></i> toggles the chapters' sidebar. On mobile devices, you can also swipe right.
