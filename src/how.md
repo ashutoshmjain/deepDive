@@ -1,4 +1,4 @@
-This publication[^mission] is a collection of deep dives into various topics that have piqued my curiosity. It's a journey of exploration and learning, shared with you. This is a [clean internet](http://localhost:3000/how.html#clean-internet) publication.
+This publication[^mission] is a collection of deep dives into various topics that have piqued my curiosity. It's a journey of exploration and learning, shared with you. This is a [clean internet](#clean-internet) publication.
 
 # About "Deep Dive with Gemini" Podcast Research:
 
