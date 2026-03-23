@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [STRC: The Digital Capital Blackhole](././strcBlackhole.md)
 - [Open Source: Foundational Strategic Dominance](././longliveOpenSource.md)
 - [STRC: The 5.37 Sharpe Benchmark](././strcSharpRatio.md)
-- [Bit to It: Informational Cosmos](././bitToIt.md)
 
 
 # The Bitcoin Standard & Sovereign Assets
@@ -71,6 +71,7 @@
 - [Retirement Hacking 2.0](./retirementHackingWithROC-02.md)
 
 # Philosophy, Science & The Nature of Reality
+- [Bit to It: Informational Cosmos](./bitToIt.md)
 - [Quantum Mechanics: The Search for Uniqueness](./QM1-Uniqueness.md)
 - [Z Boson: Universal ZKP Audit](./QM2-verification.md)
 - [Chromodynamic Blueprint: Recipe for Mass](./accountingMass.md)

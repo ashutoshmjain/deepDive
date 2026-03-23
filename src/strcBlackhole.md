@@ -144,6 +144,8 @@ This software pivot protects the company’s operating cash flows from the disru
 
 The March 23, 2026, 8-K is the blueprint for a new era of corporate finance. By capturing share from the distressed private equity market and anchoring the 84 trillion USD wealth transfer, Strategy Inc. is transforming itself into a global clearinghouse for digital-asset yield.[^4] [^10] [^32]
 
+The 42.0 billion USD in ATM capacity provides a multi-year runway for the "Orange March"—the relentless accumulation of Bitcoin.[^35] As traditional software and private credit models fail under the pressure of AI disruption and rising default rates, the STRC "Digital Credit" model offers a transparent, liquid, and high-yield alternative that is mathematically superior to legacy instruments.[^5] [^6] [^19]
+
 The continued issuance of STRC will likely lead to a "reflexive supply shock" in the Bitcoin market. As Strategy Inc. removes thousands of Bitcoins from the circulating supply each week, the "mathematical moat" around the preferred stock's principal protection grows stronger.[^5] [^10] [^15]
 
 STRC is not just a financing tool but a new category of "Open Credit" that will redefine the high-yield market for the next three decades.[^5] [^32] As the wealth transfer accelerates, the "Orange Ledger" will move from the periphery of finance to its absolute center, with Strategy Inc. serving as the primary institutional architect of this transition.[^4] [^34]
