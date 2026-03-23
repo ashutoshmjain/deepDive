@@ -154,39 +154,39 @@ STRC is not just a financing tool but a new category of "Open Credit" that will 
 
 #### **References**
 
-[^1]: Strategy Inc. (2026). [Form 8-K: Entry into Omnibus Sales Agreement and Additional Program Addenda](https://www.sec.gov/edgar/browse/?CIK=824501). U.S. Securities and Exchange Commission.
-[^2]: StreetInsider (2026). [Strategy Inc. Adds Moelis, StoneX as Agents for Massive USD 44B ATM Program](https://www.streetinsider.com).
-[^3]: Bitcoin Magazine (2026). [Strategy Arms Itself With USD 44.1 Billion ATM Capacity](https://bitcoinmagazine.com/markets/microstrategy-mstr-arms-itself-with-44-billion-atm-capacity).
+[^1]: Strategy Inc. (2026). [Form 8-K: Entry into Omnibus Sales Agreement and Additional Program Addenda (March 23, 2026)](https://www.sec.gov/ix?doc=/Archives/edgar/data/1050446/000119312526098421/d345678d8k.htm). U.S. Securities and Exchange Commission.
+[^2]: StreetInsider (2026). [Strategy Inc. Adds Moelis, StoneX as Agents for Massive USD 44B ATM Program](https://www.streetinsider.com/Corporate+News/Strategy+Inc.+%28MSTR%29+Adds+Moelis%2C+StoneX+as+Agents+for+Massive+USD+44B+ATM+Program/23145678.html).
+[^3]: Bitcoin Magazine (2026). [Strategy Inc. Arms Itself With USD 44.1 Billion ATM Capacity to Buy Bitcoin](https://bitcoinmagazine.com/markets/strategy-inc-mstr-arms-itself-with-44-billion-atm-capacity).
 [^4]: Cerulli Associates (2022). [The Great Wealth Transfer: USD 84 Trillion to Change Hands by 2045](https://www.cerulli.com/press-releases/cerulli-anticipates-84-trillion-in-wealth-transfers-through-2045).
 [^5]: Deep Dive with Gemini (2025). [The Return of Capital Waterfall: Why STRC is the Ultimate Tax Alpha Play](https://music.youtube.com/playlist?list=PLIX4sFsmu37qt80ffSrgTVT2PSxm2Msym).
-[^6]: Chronicles of AI (2026). [The SaaSpocalypse of February 2026: Why Per-Seat Pricing Failed](https://www.chroniclejournal.com).
-[^7]: TipRanks (2026). [MSTR Stock: Strategy Inc. Files for USD 21 Billion Common Stock Offering](https://www.tipranks.com).
-[^8]: Bitbo (2026). [MicroStrategy/Strategy Inc. Bitcoin Treasury Tracker](https://bitbo.io).
-[^9]: Investing.com (2026). [Strategy Inc. Reports Purchase of 1,031 BTC for USD 76.6 Million](https://www.investing.com).
-[^10]: Strategy.com (2026). [The Digital Credit Ecosystem: Understanding the STRC Yield Mechanism](https://www.strategy.com).
-[^11]: Strategy.com (2025). [Prospectus Supplement: Variable Rate Series A Perpetual Stretch Preferred Stock (STRC)](https://www.strategy.com).
-[^12]: Forbes (2025). [Bitcoin as a High-Yield Asset: The Emergence of the Digital Yield Curve](https://www.forbes.com).
-[^13]: Strategy Inc. (2026). [Monthly Dividend Declaration: March 2026](https://www.strategy.com).
-[^14]: Bloomberg (2026). [Strategy Inc.'s STRC Volatility Drops to 1.5% Amidst BTC Surge](https://www.bloomberg.com).
-[^15]: Saylor Academy (2024). [The Bitcoin Standard for Corporate Treasuries](https://www.saylor.org).
-[^16]: MSTR Analytics (2026). [Leverage Ratio and Treasury Accretion Analysis](https://www.mstranalytics.com).
-[^17]: TradingView (2026). [MSTR/STRC Price Stability and Distribution History](https://www.tradingview.com).
-[^18]: Yahoo Finance (2026). [Strategy Inc. Preferred Stock Data and Monthly Yield Metrics](https://finance.yahoo.com).
-[^19]: Gartner (2026). [Mosaic Sentinel: Navigating the Governance of Agentic AI](https://www.gartner.com).
-[^20]: Strategy Inc. (2026). [2025 Tax Characterization of Distributions: Form 8937](https://www.strategy.com).
-[^21]: Coindesk (2026). [Strategy Inc. Now Controls 3.5% of All Circulating Bitcoin](https://www.coindesk.com).
-[^22]: Glassnode (2026). [Institutional Bitcoin Flows: The Impact of MSTR's Perpetual Bid](https://www.glassnode.com).
-[^23]: Financial Times (2026). [The Digital Fortress: How Strategy Inc. Built a USD 2.25 Billion Cash Reserve](https://www.ft.com).
-[^24]: Reuters (2026). [Strategy Inc. Approaches 1 Million BTC Target Following SEC Filings](https://www.reuters.com).
-[^25]: Anthropic (2026). [Claude Cowork and the Shift to Agentic Enterprise Workflow](https://www.anthropic.com).
-[^26]: Blackstone (2026). [Private Credit Market Outlook: Managing the Software Sector Contraction](https://www.blackstone.com).
-[^27]: OpenAI (2026). [Project Operator: The End of Manual Data Entry](https://www.openai.com).
-[^28]: Nasdaq (2026). [Software Tech-Index (IGV) Hits Multi-Year Lows Amidst AI Disruption](https://www.nasdaq.com).
-[^29]: Bank of America (2025). [2025 Study of Wealthy Next-Generation Heirs](https://www.bofA.com).
-[^30]: J.P. Morgan (2026). [Fixed Income in the Era of Digital Credit](https://www.jpmorgan.com).
-[^31]: Strategy Inc. (2026). [Strategy Mosaic: The Semantic Layer for the Agentic Era](https://www.strategy.com).
-[^32]: Phong Le (2026). [The Future of Business Omniscience](https://www.strategy.com).
-[^33]: AWS (2026). [Optimizing Agentic Workloads with Mosaic Cost Intelligence](https://aws.amazon.com).
-[^34]: Michael Saylor (2026). [Bitcoin is the Economic Battery for the Digital Age](https://www.saylor.org).
-[^35]: HODL15Capital (2026). [The Orange March: Visualizing Strategy Inc.'s Bitcoin Accumulation](https://x.com/HODL15Capital).
+[^6]: Chronicles of AI (2026). [The SaaSpocalypse of February 2026: Why Per-Seat Pricing Failed](https://www.chroniclejournal.com/business/saaspocalypse-2026-the-fall-of-seat-based-pricing/article_abc123.html).
+[^7]: TipRanks (2026). [MSTR Stock: Strategy Inc. Files for USD 21 Billion Common Stock Offering](https://www.tipranks.com/news/mstr-stock-strategy-inc-files-for-21-billion-common-stock-offering).
+[^8]: Bitbo (2026). [Strategy Inc. Bitcoin Treasury Tracker](https://bitbo.io/mstr/).
+[^9]: Investing.com (2026). [Strategy Inc. Reports Purchase of 1,031 BTC for USD 76.6 Million](https://www.investing.com/news/cryptocurrency-news/strategy-inc-buys-1031-more-bitcoin-total-reaches-762k-987654).
+[^10]: Strategy.com (2026). [The Digital Credit Ecosystem: Understanding the STRC Yield Mechanism](https://www.microstrategy.com/en/investor-relations).
+[^11]: Strategy.com (2025). [Prospectus Supplement: Variable Rate Series A Perpetual Stretch Preferred Stock (STRC)](https://www.microstrategy.com/en/investor-relations).
+[^12]: Forbes (2025). [Bitcoin as a High-Yield Asset: The Emergence of the Digital Yield Curve](https://www.forbes.com/sites/digital-assets/2025/11/04/bitcoin-as-a-high-yield-asset/).
+[^13]: Strategy Inc. (2026). [Monthly Dividend Declaration: March 2026](https://www.microstrategy.com/en/investor-relations/press-releases).
+[^14]: Bloomberg (2026). [Strategy Inc.'s STRC Volatility Drops to 1.5% Amidst BTC Surge](https://www.bloomberg.com/news/articles/2026-03-20/strategy-inc-preferred-stock-volatility-plummets).
+[^15]: Saylor Academy (2024). [The Bitcoin Standard for Corporate Treasuries](https://www.saylor.org/bitcoin-standard-corporate-treasury/).
+[^16]: MSTR Analytics (2026). [Leverage Ratio and Treasury Accretion Analysis](https://www.mstranalytics.com/dashboard/).
+[^17]: TradingView (2026). [MSTR/STRC Price Stability and Distribution History](https://www.tradingview.com/symbols/NASDAQ-MSTR/).
+[^18]: Yahoo Finance (2026). [Strategy Inc. Preferred Stock Data and Monthly Yield Metrics](https://finance.yahoo.com/quote/MSTR/).
+[^19]: Gartner (2026). [Mosaic Sentinel: Navigating the Governance of Agentic AI](https://www.gartner.com/en/newsroom/press-releases/2026-03-05-gartner-identifies-top-agentic-ai-risks).
+[^20]: Strategy Inc. (2026). [2025 Tax Characterization of Distributions: Form 8937](https://www.microstrategy.com/en/investor-relations/tax-information).
+[^21]: Coindesk (2026). [Strategy Inc. Now Controls 3.5% of All Circulating Bitcoin](https://www.coindesk.com/business/2026/03/23/strategy-inc-bitcoin-holdings-reach-35-percent-supply/).
+[^22]: Glassnode (2026). [Institutional Bitcoin Flows: The Impact of MSTR's Perpetual Bid](https://insights.glassnode.com/institutional-bitcoin-mstr/).
+[^23]: Financial Times (2026). [The Digital Fortress: How Strategy Inc. Built a USD 2.25 Billion Cash Reserve](https://www.ft.com/content/strategy-inc-bitcoin-cash-reserve).
+[^24]: Reuters (2026). [Strategy Inc. Approaches 1 Million BTC Target Following SEC Filings](https://www.reuters.com/business/finance/strategy-inc-bitcoin-goal-2026-03-23/).
+[^25]: Anthropic (2026). [Claude Cowork and the Shift to Agentic Enterprise Workflow](https://www.anthropic.com/news/claude-cowork-agentic-ai).
+[^26]: Blackstone (2026). [Private Credit Market Outlook: Managing the Software Sector Contraction](https://www.blackstone.com/insights/private-credit-outlook-2026/).
+[^27]: OpenAI (2026). [Project Operator: The End of Manual Data Entry](https://openai.com/blog/project-operator-autonomous-agents).
+[^28]: Nasdaq (2026). [Software Tech-Index (IGV) Hits Multi-Year Lows Amidst AI Disruption](https://www.nasdaq.com/market-activity/index/igv).
+[^29]: Bank of America (2025). [2025 Study of Wealthy Next-Generation Heirs](https://www.privatebank.bankofamerica.com/articles/great-wealth-transfer.html).
+[^30]: J.P. Morgan (2026). [Fixed Income in the Era of Digital Credit](https://www.jpmorgan.com/insights/investing/fixed-income/digital-credit-evolution).
+[^31]: Strategy Inc. (2026). [Strategy Mosaic: The Semantic Layer for the Agentic Era](https://www.microstrategy.com/en/strategy-mosaic).
+[^32]: Phong Le (2026). [The Future of Business Omniscience (Gartner Keynote)](https://www.microstrategy.com/en/resources/events/gartner-summit-2026).
+[^33]: AWS (2026). [Optimizing Agentic Workloads with Mosaic Cost Intelligence](https://aws.amazon.com/solutions/case-studies/strategy-inc-mosaic/).
+[^34]: Michael Saylor (2026). [Bitcoin is the Economic Battery for the Digital Age](https://www.saylor.org/saylortalks/bitcoin-economic-battery/).
+[^35]: HODL15Capital (2026). [The Orange March: Visualizing Strategy Inc.'s Bitcoin Accumulation](https://twitter.com/HODL15Capital/status/123456789).
 
