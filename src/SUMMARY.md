@@ -4,10 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [AI Jevons Paradox: Induced Demand](././jevonsParadoxAI.md)
 - [STRC: The Digital Capital Blackhole](././strcBlackhole.md)
 - [Open Source: Foundational Strategic Dominance](././longliveOpenSource.md)
-- [STRC: The 5.37 Sharpe Benchmark](././strcSharpRatio.md)
-
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
@@ -51,6 +50,7 @@
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
 - [Bitcoin Refinery: Strategy's Capital Evolution](./magicalMSTR.md)
+- [STRC: The 5.37 Sharpe Benchmark](./strcSharpRatio.md)
 
 # Economics, Capital & The Global Shift
 - [Block X: 2026 Financial Merger Analysis](./blockX.md)
