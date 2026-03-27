@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
+- [Divine Cryptography: Soul's Private Key](././divineCryptograph.md)
 - [AI Jevons Paradox: Induced Demand](././jevonsParadoxAI.md)
 - [STRC: The Digital Capital Blackhole](././strcBlackhole.md)
-- [Open Source: Foundational Strategic Dominance](././longliveOpenSource.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
@@ -86,6 +86,7 @@
 - [Gods, Philosophers, and Quarks Walk into a Bar...](./gods-philosophers-quarks.md)
 
 # Social, Culture & Digital Sovereignty
+- [Open Source: Foundational Strategic Dominance](./longliveOpenSource.md)
 - [2025: Tangible Value, Digital Horizons](./GlobalStrategicRetrospective2025.md)
 - [Walled Gardens to Sovereign Protocols](./the-great-inversion.md)
 - [Social Synapse: Meaning Emerges From Gossip](./meaningOfMeaning-2.md)
