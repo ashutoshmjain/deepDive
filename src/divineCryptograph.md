@@ -76,49 +76,49 @@ Ultimately, the state of **Moksha** (liberation) can be viewed as the achievemen
 
 #### **References**
 
-[^1]: Chapter 13: Kṣhetra Kṣhetrajña Vibhāg Yog - Bhagavad Gita, The Song of God, accessed March 22, 2026, https://www.holy-bhagavad-gita.org/chapter/13/
+[^1]: Chapter 13: Kṣhetra Kṣhetrajña Vibhāg Yog - Bhagavad Gita, The Song of God, accessed March 22, 2026, [https://www.holy-bhagavad-gita.org/chapter/13/](https://www.holy-bhagavad-gita.org/chapter/13/)
 
-[^2]: Bhagavad Gita – Chapter 13 – Kṣhetra Kṣhetrajña Vibhāga Yoga - VivekaVani, accessed March 22, 2026, https://vivekavani.com/b13/
+[^2]: Bhagavad Gita – Chapter 13 – Kṣhetra Kṣhetrajña Vibhāga Yoga - VivekaVani, accessed March 22, 2026, [https://vivekavani.com/b13/](https://vivekavani.com/b13/)
 
-[^3]: Public-key cryptography - Wikipedia, accessed March 22, 2026, https://en.wikipedia.org/wiki/Public-key_cryptography
+[^3]: Public-key cryptography - Wikipedia, accessed March 22, 2026, [https://en.wikipedia.org/wiki/Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
 
-[^4]: Attention economy - Wikipedia, accessed March 22, 2026, https://en.wikipedia.org/wiki/Attention_economy
+[^4]: Attention economy - Wikipedia, accessed March 22, 2026, [https://en.wikipedia.org/wiki/Attention_economy](https://en.wikipedia.org/wiki/Attention_economy)
 
-[^5]: Why does the soul fall prey to maya, when it resides in the body?, accessed March 22, 2026, https://hinduism.stackexchange.com/questions/6625/why-does-the-soul-fall-prey-to-maya-when-it-resides-in-the-body
+[^5]: Why does the soul fall prey to maya, when it resides in the body?, accessed March 22, 2026, [https://hinduism.stackexchange.com/questions/6625/why-does-the-soul-fall-prey-to-maya-when-it-resides-in-the-body](https://hinduism.stackexchange.com/questions/6625/why-does-the-soul-fall-prey-to-maya-when-it-resides-in-the-body)
 
-[^6]: So my professor started to go into what are called "private keys" and "public keys" in class, but I'm still confused on the concept : r/crypto - Reddit, accessed March 22, 2026, https://www.reddit.com/r/crypto/comments/7uahsy/so_my_professor_started_to_go_into_what_are/
+[^6]: So my professor started to go into what are called "private keys" and "public keys" in class, but I'm still confused on the concept : r/crypto - Reddit, accessed March 22, 2026, [https://www.reddit.com/r/crypto/comments/7uahsy/so_my_professor_started_to_go_into_what_are/](https://www.reddit.com/r/crypto/comments/7uahsy/so_my_professor_started_to_go_into_what_are/)
 
-[^7]: Theory of subjective information. Fortifying Ideas in the Digital Age., accessed March 22, 2026, https://toolkitforthesoul.com/theory-of-subjective-information/
+[^7]: Theory of subjective information. Fortifying Ideas in the Digital Age., accessed March 22, 2026, [https://toolkitforthesoul.com/theory-of-subjective-information/](https://toolkitforthesoul.com/theory-of-subjective-information/)
 
-[^8]: private key - Glossary | CSRC - NIST Computer Security Resource Center, accessed March 22, 2026, https://csrc.nist.gov/glossary/term/private_key
+[^8]: private key - Glossary | CSRC - NIST Computer Security Resource Center, accessed March 22, 2026, [https://csrc.nist.gov/glossary/term/private_key](https://csrc.nist.gov/glossary/term/private_key)
 
-[^9]: Karma as active resistance - The Immanent Frame, accessed March 22, 2026, https://tif.ssrc.org/2025/08/20/karma-as-active-resistance/
+[^9]: Karma as active resistance - The Immanent Frame, accessed March 22, 2026, [https://tif.ssrc.org/2025/08/20/karma-as-active-resistance/](https://tif.ssrc.org/2025/08/20/karma-as-active-resistance/)
 
-[^10]: Bhagavad Gita - Wikipedia, accessed March 22, 2026, https://en.wikipedia.org/wiki/Bhagavad_Gita
+[^10]: Bhagavad Gita - Wikipedia, accessed March 22, 2026, [https://en.wikipedia.org/wiki/Bhagavad_Gita](https://en.wikipedia.org/wiki/Bhagavad_Gita)
 
-[^11]: 11-Master-Gita-Chapter-10.pdf - Vedanta Students, accessed March 22, 2026, https://vedantastudents.com/wp-content/uploads/2019/12/11-Master-Gita-Chapter-10.pdf
+[^11]: 11-Master-Gita-Chapter-10.pdf - Vedanta Students, accessed March 22, 2026, [https://vedantastudents.com/wp-content/uploads/2019/12/11-Master-Gita-Chapter-10.pdf](https://vedantastudents.com/wp-content/uploads/2019/12/11-Master-Gita-Chapter-10.pdf)
 
-[^12]: From exploration to exploitation: A shifting mental mode in late life development - PMC, accessed March 22, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC8844884/
+[^12]: From exploration to exploitation: A shifting mental mode in late life development - PMC, accessed March 22, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC8844884/](https://pmc.ncbi.nlm.nih.gov/articles/PMC8844884/)
 
-[^13]: Self-organization - Wikipedia, accessed March 22, 2026, https://en.wikipedia.org/wiki/Self-organization
+[^13]: Self-organization - Wikipedia, accessed March 22, 2026, [https://en.wikipedia.org/wiki/Self-organization](https://en.wikipedia.org/wiki/Self-organization)
 
-[^14]: Karma as a Natural Law: A Systematic Interaction between Deterministic Elements and Degrees of Freedom - RSIS International, accessed March 22, 2026, https://rsisinternational.org/journals/ijriss/articles/karma-as-a-natural-law-a-systematic-interaction-between-deterministic-elements-and-degrees-of-freedom/
+[^14]: Karma as a Natural Law: A Systematic Interaction between Deterministic Elements and Degrees of Freedom - RSIS International, accessed March 22, 2026, [https://rsisinternational.org/journals/ijriss/articles/karma-as-a-natural-law-a-systematic-interaction-between-deterministic-elements-and-degrees-of-freedom/](https://rsisinternational.org/journals/ijriss/articles/karma-as-a-natural-law-a-systematic-interaction-between-deterministic-elements-and-degrees-of-freedom/)
 
-[^15]: Why Create a World Where the Soul Forgets Its True Nature ..., accessed March 22, 2026, https://www.indica.today/long-reads/why-create-a-world-where-the-soul-forgets-its-true-nature/
+[^15]: Why Create a World Where the Soul Forgets Its True Nature ..., accessed March 22, 2026, [https://www.indica.today/long-reads/why-create-a-world-where-the-soul-forgets-its-true-nature/](https://www.indica.today/long-reads/why-create-a-world-where-the-soul-forgets-its-true-nature/)
 
-[^16]: The importance of forgetting in artificial and animal intelligence ..., accessed March 22, 2026, https://www.amazon.science/blog/the-importance-of-forgetting-in-artificial-and-animal-intelligence
+[^16]: The importance of forgetting in artificial and animal intelligence ..., accessed March 22, 2026, [https://www.amazon.science/blog/the-importance-of-forgetting-in-artificial-and-animal-intelligence](https://www.amazon.science/blog/the-importance-of-forgetting-in-artificial-and-animal-intelligence)
 
-[^17]: Why forgetting may make your mind more efficient - Knowable Magazine, accessed March 22, 2026, https://knowablemagazine.org/content/article/mind/2019/why-we-forget
+[^17]: Why forgetting may make your mind more efficient - Knowable Magazine, accessed March 22, 2026, [https://knowablemagazine.org/content/article/mind/2019/why-we-forget](https://knowablemagazine.org/content/article/mind/2019/why-we-forget)
 
-[^18]: A Primer on Foraging and the Explore/Exploit Trade-Off for Psychiatry Research - PMC - NIH, accessed March 22, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC5561336/
+[^18]: A Primer on Foraging and the Explore/Exploit Trade-Off for Psychiatry Research - PMC - NIH, accessed March 22, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC5561336/](https://pmc.ncbi.nlm.nih.gov/articles/PMC5561336/)
 
-[^19]: The Explore/Exploit Trade-off: An Ecologically Valid and Translational Framework that can Advance Mechanistic Understanding of Eating Disorders - PMC, accessed March 22, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC11093701/
+[^19]: The Explore/Exploit Trade-off: An Ecologically Valid and Translational Framework that can Advance Mechanistic Understanding of Eating Disorders - PMC, accessed March 22, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC11093701/](https://pmc.ncbi.nlm.nih.gov/articles/PMC11093701/)
 
-[^20]: Active inference and learning - PMC - NIH, accessed March 22, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC5167251/
+[^20]: Active inference and learning - PMC - NIH, accessed March 22, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC5167251/](https://pmc.ncbi.nlm.nih.gov/articles/PMC5167251/)
 
-[^21]: Complexity and self-organization in the evolution of cell polarization - Company of Biologists Journals, accessed March 22, 2026, https://journals.biologists.com/jcs/article/136/2/jcs259639/286742/Complexity-and-self-organization-in-the-evolution
+[^21]: Complexity and self-organization in the evolution of cell polarization - Company of Biologists Journals, accessed March 22, 2026, [https://journals.biologists.com/jcs/article/136/2/jcs259639/286742/Complexity-and-self-organization-in-the-evolution](https://journals.biologists.com/jcs/article/136/2/jcs259639/286742/Complexity-and-self-organization-in-the-evolution)
 
-[^22]: Noether's theorem - Wikipedia, accessed March 22, 2026, https://en.wikipedia.org/wiki/Noether%27s_theorem
+[^22]: Noether's theorem - Wikipedia, accessed March 22, 2026, [https://en.wikipedia.org/wiki/Noether%27s_theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem)
 
 [^23]: Subhash Kak, "The Architecture of Knowledge: Quantum Mechanics, Neuroscience, and the Vedas," ResearchGate, 2023.
 
