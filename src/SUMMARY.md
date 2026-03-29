@@ -36,6 +36,7 @@
 - [Sexual Reproduction: Genetic Lottery](./cloningVsSexualReproduction.md)
 
 # Digital Credit & The STRC Bridge
+- [STRC: The Digital Capital Blackhole](./strcBlackhole.md)
 - [STRC: Digital Bridge for Legacy](./strcRetirement.md)
 - [STRC: Superior Digital Credit Yield](./strcPE.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
