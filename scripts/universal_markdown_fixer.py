@@ -2,7 +2,7 @@ import re
 import os
 import subprocess
 
-# Thematic categories mapping
+# Thematic categories mapping - Expanded for better matching
 CATEGORIES = {
     "bitcoin": "# The Bitcoin Standard & Sovereign Assets",
     "btc": "# The Bitcoin Standard & Sovereign Assets",
@@ -24,7 +24,8 @@ CATEGORIES = {
     "meaning": "# Philosophy, Science & The Nature of Reality",
     "nostr": "# Social, Culture & Digital Sovereignty",
     "vim": "# Social, Culture & Digital Sovereignty",
-    "lata": "# Social, Culture & Digital Sovereignty"
+    "lata": "# Social, Culture & Digital Sovereignty",
+    "cryptograph": "# Philosophy, Science & The Nature of Reality"
 }
 
 def get_recent_files(n=3):
@@ -52,7 +53,6 @@ def get_recent_files(n=3):
                 break
         return unique_files
     except Exception as e:
-        print(f"Error getting recent files: {e}")
         return []
 
 def extract_title(file_path):
@@ -70,7 +70,7 @@ def categorize_file(filename):
     for kw, cat in CATEGORIES.items():
         if kw in filename_lower:
             return cat
-    return "# Social, Culture & Digital Sovereignty" # Default
+    return "# Social, Culture & Digital Sovereignty"
 
 def update_summary(target_file_path):
     summary_path = 'src/SUMMARY.md'
@@ -80,62 +80,63 @@ def update_summary(target_file_path):
         content = f.read()
 
     # 1. Map all existing files to their current categories
-    file_to_info = {} # filename -> (title, category)
+    file_to_info = {} # filename -> [title, category]
+    sections_order = []
     current_category = None
+    
     for line in content.split('\n'):
         if line.startswith('# '):
-            if "Recent .." not in line:
-                current_category = line.strip()
+            current_category = line.strip()
+            if current_category not in sections_order:
+                sections_order.append(current_category)
         elif line.strip().startswith('- ['):
             m = re.search(r'\[(.*?)\]\(\.\/(\.\/)?(.*?)\)', line)
             if m:
                 title, _, fname = m.groups()
-                # If it was in 'Recent ..', don't assign category yet
-                if current_category and "Recent .." not in current_category:
-                    file_to_info[fname] = (title, current_category)
+                if "Recent .." not in current_category:
+                    file_to_info[fname] = [title, current_category]
                 elif fname not in file_to_info:
-                    file_to_info[fname] = (title, None)
+                    file_to_info[fname] = [title, None]
 
     # 2. Identify Top 3 Recent
     recent_files = get_recent_files(3)
     recent_filenames = [os.path.basename(f) for f in recent_files]
 
-    # 3. Handle the 'bumped' file and categorization
+    # 3. Categorize anything that doesn't have a category (bumped from Recent)
     report = []
     for fname in file_to_info:
-        title, cat = file_to_info[fname]
-        if fname in recent_filenames:
-            continue # Will be handled in Recent section
-        if cat is None:
+        if fname in recent_filenames: continue
+        if file_to_info[fname][1] is None:
             new_cat = categorize_file(fname)
-            file_to_info[fname] = (title, new_cat)
+            file_to_info[fname][1] = new_cat
             report.append(f"Moved {fname} to {new_cat}")
 
-    # 4. Re-generate SUMMARY.md
-    # We'll rebuild it section by section to preserve order
-    sections = []
-    # Identify all sections in order
-    for line in content.split('\n'):
-        if line.startswith('# ') and line.strip() not in sections:
-            sections.append(line.strip())
-
-    new_content = []
-    for sec in sections:
+    # 4. Rebuild SUMMARY.md
+    new_content = ["# Summary", ""]
+    for sec in sections_order:
+        if sec == "# Summary": continue
         new_content.append(sec)
+        
         if sec == "# Recent ..":
             for rf in recent_files:
                 rf_base = os.path.basename(rf)
                 title = extract_title(rf)
                 new_content.append(f"- [{title}](././{rf_base})")
         else:
-            # Add all files belonging to this section that are NOT in Recent
-            for fname, (title, cat) in file_to_info.items():
-                if cat == sec and fname not in recent_filenames:
-                    new_content.append(f"- [{title}](./{fname})")
-        new_content.append("") # Spacing
+            # Add files for this category, ensuring no duplicates from Recent
+            # and placing recently restored files at the top
+            cat_files = []
+            for fname, info in file_to_info.items():
+                if info[1] == sec and fname not in recent_filenames:
+                    cat_files.append(f"- [{info[0]}](./{fname})")
+            
+            # Sort cat_files if needed, or just append
+            new_content.extend(cat_files)
+        
+        new_content.append("")
 
     with open(summary_path, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(new_content))
+        f.write('\n'.join(new_content).strip() + '\n')
     
     return report
 
