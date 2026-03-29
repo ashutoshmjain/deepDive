@@ -4,9 +4,9 @@
 [Around and About](./how.md)
 
 # Recent ..
-- [digitalCredit.md](././digitalCredit.md)
-- [Divine Cryptography: Soul's Private Key](././divineCryptograph.md)
-- [AI Jevons Paradox: Induced Demand](././jevonsParadoxAI.md)
+- [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](././digitalCredit.md)
+- [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](././divineCryptograph.md)
+- [The Jevons Paradox in the Age of Cognitive Abundance: A Macroeconomic Analysis of Labor Displacement and Induced Demand](././jevonsParadoxAI.md)
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
