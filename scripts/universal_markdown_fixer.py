@@ -72,6 +72,30 @@ def categorize_file(filename):
             return cat
     return "# Social, Culture & Digital Sovereignty"
 
+def verify_completeness():
+    """Final step: tally files in src/ and crosscheck SUMMARY.md"""
+    src_files = [f for f in os.listdir('src') if f.endswith('.md')]
+    ignore_files = ['SUMMARY.md', 'cover.md', 'how.md']
+    target_files = set([f for f in src_files if f not in ignore_files])
+    
+    summary_path = 'src/SUMMARY.md'
+    if not os.path.exists(summary_path):
+        return "SUMMARY.md not found for crosscheck."
+        
+    with open(summary_path, 'r', encoding='utf-8') as f:
+        summary_content = f.read()
+    
+    # Extract all .md links from SUMMARY.md
+    mapped_files = set(re.findall(r'\[.*?\]\(\.\/(\.\/)?(.*?)\)', summary_content))
+    mapped_filenames = set([m[1] for m in mapped_files])
+    
+    missing = target_files - mapped_filenames
+    
+    if not missing:
+        return "SUCCESS: All src/ files are correctly mapped in SUMMARY.md."
+    else:
+        return f"WARNING: Missing files in SUMMARY.md: {', '.join(sorted(missing))}"
+
 def update_summary(target_file_path):
     summary_path = 'src/SUMMARY.md'
     if not os.path.exists(summary_path): return
@@ -124,13 +148,10 @@ def update_summary(target_file_path):
                 new_content.append(f"- [{title}](././{rf_base})")
         else:
             # Add files for this category, ensuring no duplicates from Recent
-            # and placing recently restored files at the top
             cat_files = []
             for fname, info in file_to_info.items():
                 if info[1] == sec and fname not in recent_filenames:
                     cat_files.append(f"- [{info[0]}](./{fname})")
-            
-            # Sort cat_files if needed, or just append
             new_content.extend(cat_files)
         
         new_content.append("")
@@ -193,3 +214,7 @@ if __name__ == "__main__":
         if report:
             print("\nRestoration Report:")
             for r in report: print(f"- {r}")
+        
+        # Automated Crosscheck
+        print("\nAutomated Crosscheck:")
+        print(verify_completeness())
