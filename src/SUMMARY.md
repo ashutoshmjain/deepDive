@@ -7,7 +7,6 @@
 - [Divine Cryptography: Soul's Private Key](././divineCryptograph.md)
 - [AI Jevons Paradox: Induced Demand](././jevonsParadoxAI.md)
 - [STRC: The Digital Capital Blackhole](././strcBlackhole.md)
-
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Apex Capital Asset](./bitcoinAsApexCapital.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
