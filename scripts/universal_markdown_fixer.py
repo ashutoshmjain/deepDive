@@ -28,11 +28,12 @@ CATEGORIES = {
     "cryptograph": "# Philosophy, Science & The Nature of Reality"
 }
 
-def get_recent_files(n=3):
+def get_file_dates():
+    """Returns a dict of filename -> timestamp using git log."""
     try:
         cmd = "git log --name-only --diff-filter=A --format='%at' src/*.md"
         output = subprocess.check_output(cmd, shell=True, text=True)
-        files_with_time = []
+        file_dates = {}
         current_time = None
         for line in output.split('\n'):
             line = line.strip()
@@ -40,18 +41,19 @@ def get_recent_files(n=3):
             if line.isdigit():
                 current_time = int(line)
             elif line.startswith('src/') and line.endswith('.md'):
-                if current_time:
-                    files_with_time.append((line, current_time))
-        files_with_time.sort(key=lambda x: x[1], reverse=True)
-        unique_files = []
-        seen = set()
-        for f, t in files_with_time:
-            if f not in seen:
-                unique_files.append(f)
-                seen.add(f)
-            if len(unique_files) >= n:
-                break
-        return unique_files
+                fname = os.path.basename(line)
+                if fname not in file_dates:
+                    file_dates[fname] = current_time
+        return file_dates
+    except Exception as e:
+        return {}
+
+def get_recent_files(n=3):
+    try:
+        dates = get_file_dates()
+        # Convert to list of (filename, date) and sort
+        sorted_files = sorted(dates.items(), key=lambda x: x[1], reverse=True)
+        return [os.path.join('src', f[0]) for f in sorted_files[:n]]
     except Exception as e:
         return []
 
@@ -73,28 +75,18 @@ def categorize_file(filename):
     return "# Social, Culture & Digital Sovereignty"
 
 def verify_completeness():
-    """Final step: tally files in src/ and crosscheck SUMMARY.md"""
     src_files = [f for f in os.listdir('src') if f.endswith('.md')]
     ignore_files = ['SUMMARY.md', 'cover.md', 'how.md']
     target_files = set([f for f in src_files if f not in ignore_files])
-    
     summary_path = 'src/SUMMARY.md'
-    if not os.path.exists(summary_path):
-        return "SUMMARY.md not found for crosscheck."
-        
+    if not os.path.exists(summary_path): return "SUMMARY.md not found."
     with open(summary_path, 'r', encoding='utf-8') as f:
         summary_content = f.read()
-    
-    # Extract all .md links from SUMMARY.md
     mapped_files = set(re.findall(r'\[.*?\]\(\.\/(\.\/)?(.*?)\)', summary_content))
     mapped_filenames = set([m[1] for m in mapped_files])
-    
     missing = target_files - mapped_filenames
-    
-    if not missing:
-        return "SUCCESS: All src/ files are correctly mapped in SUMMARY.md."
-    else:
-        return f"WARNING: Missing files in SUMMARY.md: {', '.join(sorted(missing))}"
+    if not missing: return "SUCCESS: All src/ files are correctly mapped in SUMMARY.md."
+    else: return f"WARNING: Missing files in SUMMARY.md: {', '.join(sorted(missing))}"
 
 def update_summary(target_file_path):
     summary_path = 'src/SUMMARY.md'
@@ -103,8 +95,8 @@ def update_summary(target_file_path):
     with open(summary_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 1. Map all existing files to their current categories
-    file_to_info = {} # filename -> [title, category]
+    file_dates = get_file_dates()
+    file_to_info = {} # filename -> [title, category, date]
     sections_order = []
     current_category = None
     
@@ -118,15 +110,13 @@ def update_summary(target_file_path):
             if m:
                 title, _, fname = m.groups()
                 if "Recent .." not in current_category:
-                    file_to_info[fname] = [title, current_category]
+                    file_to_info[fname] = [title, current_category, file_dates.get(fname, 0)]
                 elif fname not in file_to_info:
-                    file_to_info[fname] = [title, None]
+                    file_to_info[fname] = [title, None, file_dates.get(fname, 0)]
 
-    # 2. Identify Top 3 Recent
     recent_files = get_recent_files(3)
     recent_filenames = [os.path.basename(f) for f in recent_files]
 
-    # 3. Categorize anything that doesn't have a category (bumped from Recent)
     report = []
     for fname in file_to_info:
         if fname in recent_filenames: continue
@@ -135,7 +125,6 @@ def update_summary(target_file_path):
             file_to_info[fname][1] = new_cat
             report.append(f"Moved {fname} to {new_cat}")
 
-    # 4. Rebuild SUMMARY.md
     new_content = ["# Summary", ""]
     for sec in sections_order:
         if sec == "# Summary": continue
@@ -150,8 +139,12 @@ def update_summary(target_file_path):
             cat_files = []
             for fname, info in file_to_info.items():
                 if info[1] == sec and fname not in recent_filenames:
-                    cat_files.append(f"- [{info[0]}](./{fname})")
-            new_content.extend(cat_files)
+                    cat_files.append({'title': info[0], 'fname': fname, 'date': info[2]})
+            
+            # SORT CHRONOLOGICALLY (NEWEST FIRST)
+            cat_files.sort(key=lambda x: x['date'], reverse=True)
+            for f in cat_files:
+                new_content.append(f"- [{f['title']}](./{f['fname']})")
         
         new_content.append("")
 
@@ -163,26 +156,16 @@ def update_summary(target_file_path):
 def fix_markdown(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
-    
-    # Headings Cleanup
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
-    
-    # Cover Image & Podcast Links
     image_name = os.path.basename(file_path).replace('.md', '.png')
     image_path = f"./img/{image_name}"
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
-    
-    # Improved check: if ANY image tag containing this image name exists, don't insert a new one
     if image_name not in content and "![cover image]" not in content:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{podcast_links}\n\n', content, count=1)
-
-    # KaTeX & Currency
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
     content = content.replace('$', '\\$')
-    
-    # Citations to Footnotes
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -208,7 +191,6 @@ def fix_markdown(file_path):
                 cite = re.sub(r'\\([_.-])', r'\1', cite)
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
-        
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
     with open(file_path, 'w', encoding='utf-8') as f:
