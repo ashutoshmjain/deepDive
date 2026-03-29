@@ -147,7 +147,6 @@ def update_summary(target_file_path):
                 title = extract_title(rf)
                 new_content.append(f"- [{title}](././{rf_base})")
         else:
-            # Add files for this category, ensuring no duplicates from Recent
             cat_files = []
             for fname, info in file_to_info.items():
                 if info[1] == sec and fname not in recent_filenames:
@@ -164,16 +163,26 @@ def update_summary(target_file_path):
 def fix_markdown(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
+    
+    # Headings Cleanup
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
+    
+    # Cover Image & Podcast Links
     image_name = os.path.basename(file_path).replace('.md', '.png')
     image_path = f"./img/{image_name}"
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
-    if "![cover image]" not in content:
+    
+    # Improved check: if ANY image tag containing this image name exists, don't insert a new one
+    if image_name not in content and "![cover image]" not in content:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{podcast_links}\n\n', content, count=1)
+
+    # KaTeX & Currency
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
     content = content.replace('$', '\\$')
+    
+    # Citations to Footnotes
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -199,6 +208,7 @@ def fix_markdown(file_path):
                 cite = re.sub(r'\\([_.-])', r'\1', cite)
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
+        
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
     with open(file_path, 'w', encoding='utf-8') as f:
@@ -214,7 +224,5 @@ if __name__ == "__main__":
         if report:
             print("\nRestoration Report:")
             for r in report: print(f"- {r}")
-        
-        # Automated Crosscheck
         print("\nAutomated Crosscheck:")
         print(verify_completeness())
