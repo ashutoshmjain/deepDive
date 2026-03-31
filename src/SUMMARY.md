@@ -9,7 +9,6 @@
 - [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](././divineCryptograph.md)
 
 # The Bitcoin Standard & Sovereign Assets
-- [Triple-Entry: The Mathematical Ontology of Value](./tripleEntry.md)
 - [Bitcoin: Mesh Vault, Star Engine](./bitcoinAsTechStock.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
 - [Bitcoin: Survival in the Crucible](./bitcoinSurvival.md)
@@ -40,7 +39,6 @@
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 
 # Digital Credit & The STRC Bridge
-- [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](./digitalCredit.md)
 - [STRC: The Digital Capital Blackhole](./strcBlackhole.md)
 - [STRC: The 5.37 Sharpe Benchmark](./strcSharpRatio.md)
 - [STRC: Digital Bridge for Legacy](./strcRetirement.md)
@@ -74,7 +72,6 @@
 - [Battle of the Portfolios: Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 
 # Philosophy, Science & The Nature of Reality
-- [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](./divineCryptograph.md)
 - [The Jevons Paradox in the Age of Cognitive Abundance: A Macroeconomic Analysis of Labor Displacement and Induced Demand](./jevonsParadoxAI.md)
 - [Bit to It: Informational Cosmos](./bitToIt.md)
 - [Chromodynamic Blueprint: Recipe for Mass](./accountingMass.md)
