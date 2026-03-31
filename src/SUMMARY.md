@@ -1,11 +1,15 @@
 # Summary
 
+- [Deep Dive with Gemini](./cover.md)
+- [How to read this book](./how.md)
+
 # Recent ..
+- [Triple-Entry: The Mathematical Ontology of Value](./tripleEntry.md)
 - [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](././digitalCredit.md)
 - [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](././divineCryptograph.md)
-- [The Jevons Paradox in the Age of Cognitive Abundance: A Macroeconomic Analysis of Labor Displacement and Induced Demand](././jevonsParadoxAI.md)
 
 # The Bitcoin Standard & Sovereign Assets
+- [Triple-Entry: The Mathematical Ontology of Value](./tripleEntry.md)
 - [Bitcoin: Mesh Vault, Star Engine](./bitcoinAsTechStock.md)
 - [Strategic Bitcoin: US Future Imperative](./SBRnecessity.md)
 - [Bitcoin: Survival in the Crucible](./bitcoinSurvival.md)
@@ -36,11 +40,12 @@
 - [Can AI Get Rich Superfast?](./Can-AI-get-rich-superfast.md)
 
 # Digital Credit & The STRC Bridge
+- [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](./digitalCredit.md)
 - [STRC: The Digital Capital Blackhole](./strcBlackhole.md)
 - [STRC: The 5.37 Sharpe Benchmark](./strcSharpRatio.md)
 - [STRC: Digital Bridge for Legacy](./strcRetirement.md)
 - [STRC: Superior Digital Credit Yield](./strcPE.md)
-- [STRC: $8k Bitcoin Solvency Update](./STRC8k.md)
+- [STRC: 8 USDk Bitcoin Solvency Update](./STRC8k.md)
 - [Bitcoin Refinery: Strategy's Capital Evolution](./magicalMSTR.md)
 - [STRC: Corporate Stablecoin Triumph](./STRC_update.md)
 - [Digital Credit: Asset-Backed Renaissance](./digital-credit.md)
@@ -48,7 +53,7 @@
 - [Digital Credit: Strategy Inc's New Fortress](./STRCUpdateDec2025.md)
 - [The Physics of Value: The STRC Bridge](./the-physics-of-value-the-strc-bridge.md)
 - [MSCI vs. Strategy: Digital Asset Clash](./battle-for-balance-sheet.md)
-- [Strategy Inc's $1.44B Digital Credit Fortress](./STRC.md)
+- [Strategy Inc's 1.44 USDB Digital Credit Fortress](./STRC.md)
 
 # Economics, Capital & The Global Shift
 - [Block X: 2026 Financial Merger Analysis](./blockX.md)
@@ -69,6 +74,8 @@
 - [Battle of the Portfolios: Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 
 # Philosophy, Science & The Nature of Reality
+- [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](./divineCryptograph.md)
+- [The Jevons Paradox in the Age of Cognitive Abundance: A Macroeconomic Analysis of Labor Displacement and Induced Demand](./jevonsParadoxAI.md)
 - [Bit to It: Informational Cosmos](./bitToIt.md)
 - [Chromodynamic Blueprint: Recipe for Mass](./accountingMass.md)
 - [The Physics of Flavor Transmutation](./universalAccounting.md)
