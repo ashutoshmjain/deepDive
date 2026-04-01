@@ -29,8 +29,9 @@ CATEGORIES = {
 }
 
 def get_file_dates():
-    """Returns a dict of filename -> timestamp using git log."""
+    """Returns a dict of filename -> initial addition timestamp using git log."""
     try:
+        # Use diff-filter=A to get the first time a file was added
         cmd = "git log --name-only --diff-filter=A --format='%at' src/*.md"
         output = subprocess.check_output(cmd, shell=True, text=True)
         file_dates = {}
@@ -108,7 +109,11 @@ def update_summary(target_file_path):
         elif line.strip().startswith('- ['):
             m = re.search(r'\[(.*?)\]\(\.\/(\.\/)?(.*?)\)', line)
             if m:
-                title, _, fname = m.groups()
+                _, _, fname = m.groups()
+                if fname in ['SUMMARY.md', 'cover.md', 'how.md']:
+                    continue
+                # Extract actual H1 from the file
+                title = extract_title(os.path.join('src', fname))
                 if "Recent .." not in current_category:
                     file_to_info[fname] = [title, current_category, file_dates.get(fname, 0)]
                 elif fname not in file_to_info:
@@ -130,7 +135,7 @@ def update_summary(target_file_path):
         ""
     ]
     for sec in sections_order:
-        if sec == "# Summary": continue
+        if sec in ["# Summary", "# About the Project"]: continue
         new_content.append(sec)
         
         if sec == "# Recent ..":
@@ -153,8 +158,11 @@ def update_summary(target_file_path):
 
     # Move cover and how-to to the bottom to ensure recent articles are the landing page
     new_content.append("# About the Project")
-    new_content.append("- [Deep Dive with Gemini](./cover.md)")
-    new_content.append("- [How to read this book](./how.md)")
+    # Only add if they are not already in new_content to avoid duplicates
+    if not any("./cover.md" in line for line in new_content):
+        new_content.append("- [Deep Dive with Gemini](./cover.md)")
+    if not any("./how.md" in line for line in new_content):
+        new_content.append("- [How to read this book](./how.md)")
 
     with open(summary_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content).strip() + '\n')

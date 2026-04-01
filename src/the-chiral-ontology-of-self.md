@@ -1,4 +1,4 @@
-Chiral Ontology of Self: A Geometric Proof of Authentic Alignment**
+# Chiral Ontology of Self: A Geometric Proof of Authentic Alignment
 
 ![](../img/the-chiral-ontology-of-self.png)
 

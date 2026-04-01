@@ -1,4 +1,4 @@
-## The Taxonomy of Intent: Applying Prompt Engineering 2.0 Frameworks to Highly Stylized Narrative Generation
+# The Taxonomy of Intent: Applying Prompt Engineering 2.0 Frameworks to Highly Stylized Narrative Generation
 
 ![](img/shutoshaBuffalo.png)
 
@@ -76,7 +76,7 @@ Prompt Engineering 2.0 frameworks—RTF, CREATE, CO-STAR, and CoT—are essentia
 
 The following is the structured English translation of the story (the original was generated in Urdu using the structured prompt), demonstrating the fidelity to tone, humor, and format specified by the PE 2.0 frameworks.
 
-## 🐃🌪️ **Shutosha and the Amazing Buffalo—A Mega-Epic (Maha-Shootri)**
+# 🐃🌪️ **Shutosha and the Amazing Buffalo—A Mega-Epic (Maha-Shootri)**
 
 So this is what happened: one morning **Shutosha** decided,
 
@@ -106,7 +106,7 @@ So sharp that the nearby tree shook and declared,
 
 ---
 
-## 🌩️ **The Great Showdown Begins**
+# 🌩️ **The Great Showdown Begins**
 
 Suddenly, the buffalo turned around and gave a long look,
 
@@ -132,7 +132,7 @@ His slipper picked up such speed that the wind screamed from behind:
 
 ---
 
-## 🔥 **A Moment in History**
+# 🔥 **A Moment in History**
 
 The buffalo suddenly hit the brakes and stopped—
 
@@ -160,7 +160,7 @@ that the Earth chuckled and said,
 
 ---
 
-## 🌙 **And then came the moment that plunged history into darkness**
+# 🌙 **And then came the moment that plunged history into darkness**
 
 Shutosha said, “Just move aside a bit.”
 
@@ -180,7 +180,7 @@ The Pandit (priest) climbed onto the roof and announced:
 
 ---
 
-## 🌟 **In the End…**
+# 🌟 **In the End…**
 
 The friendship between Shutosha and the buffalo became a legend.
 

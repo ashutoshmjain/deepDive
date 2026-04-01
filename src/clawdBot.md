@@ -1,3 +1,5 @@
+# The Architecture of Autonomy: Technical Sovereignty and the Decentralized Human-AI Interface
+
 The contemporary trajectory of artificial intelligence has historically favored a centralized paradigm, where massive compute resources and user interactions are consolidated within the cloud-based ecosystems of a few dominant technology entities. However, the emergence of **clawd.bot** and its "local-first" philosophy suggests a fundamental shift toward technical sovereignty and decentralized human-AI interfaces. Clawd.bot, an open-source personal AI assistant agent, represents a modular alternative to the vertically integrated "walled gardens" of the modern internet. By prioritizing local execution, cross-platform messaging integration, and decentralized protocol support, the system challenges the traditional boundaries between operating systems, social networks, and artificial intelligence service providers.
 
 ## The Technical Genesis and Philosophy of the "Lobster Way"

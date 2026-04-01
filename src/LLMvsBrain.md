@@ -1,3 +1,5 @@
+# The Convergence of Stochastic Modeling and Cognitive Reality
+
 ## The Convergence of Stochastic Modeling and Cognitive Reality
 
 <center>
