@@ -125,7 +125,10 @@ def update_summary(target_file_path):
             file_to_info[fname][1] = new_cat
             report.append(f"Moved {fname} to {new_cat}")
 
-    new_content = ["# Summary", ""]
+    new_content = [
+        "# Summary",
+        ""
+    ]
     for sec in sections_order:
         if sec == "# Summary": continue
         new_content.append(sec)
@@ -134,7 +137,7 @@ def update_summary(target_file_path):
             for rf in recent_files:
                 rf_base = os.path.basename(rf)
                 title = extract_title(rf)
-                new_content.append(f"- [{title}](././{rf_base})")
+                new_content.append(f"- [{title}](./{rf_base})")
         else:
             cat_files = []
             for fname, info in file_to_info.items():
@@ -147,6 +150,11 @@ def update_summary(target_file_path):
                 new_content.append(f"- [{f['title']}](./{f['fname']})")
         
         new_content.append("")
+
+    # Move cover and how-to to the bottom to ensure recent articles are the landing page
+    new_content.append("# About the Project")
+    new_content.append("- [Deep Dive with Gemini](./cover.md)")
+    new_content.append("- [How to read this book](./how.md)")
 
     with open(summary_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content).strip() + '\n')
@@ -178,12 +186,19 @@ def fix_markdown(file_path):
         next_id = 1
         def cite_repl(m):
             nonlocal next_id
-            old_id = int(m.group(1))
-            if old_id not in used_cites:
-                used_cites[old_id] = next_id
-                next_id += 1
-            return f"[^{used_cites[old_id]}]"
-        content = re.sub(r'(?<=[a-zA-Z0-9.])\s*(\d+)(?=\s|$|\n|\.)', cite_repl, content)
+            try:
+                old_id = int(m.group(1))
+                # Only convert if the number is small (likely a citation) and not part of a larger number or date
+                if old_id > 20: return m.group(0) 
+                if old_id not in used_cites:
+                    used_cites[old_id] = next_id
+                    next_id += 1
+                return f"[^{used_cites[old_id]}]"
+            except:
+                return m.group(0)
+
+        # Refined regex: look for numbers that are likely citations (small, at end of sentence or clause)
+        content = re.sub(r'(?<=[a-zA-Z0-9.])\s*(\d{1,2})(?=\s|$|\n|\.|\,)', cite_repl, content)
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
             if old <= len(citations):

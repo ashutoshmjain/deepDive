@@ -1,12 +1,9 @@
 # Summary
 
-- [Deep Dive with Gemini](./cover.md)
-- [How to read this book](./how.md)
-
 # Recent ..
-- [Triple-Entry: The Mathematical Ontology of Value](./tripleEntry.md)
-- [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](././digitalCredit.md)
-- [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](././divineCryptograph.md)
+- [The Mathematical Ontology of Value: Formalizing Money, Capital, and Assets in the Age of Triple-Entry Computation](./tripleEntry.md)
+- [The Architecture of Public Truth: How Bitcoin Inverts the Paradigm of Cryptography](./digitalCredit.md)
+- [Computational Metaphysics of the Field: A Cryptographic Analysis of Soul, Action, and the Necessity of Ontological Reset](./divineCryptograph.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: Mesh Vault, Star Engine](./bitcoinAsTechStock.md)
@@ -98,3 +95,7 @@
 - [Destop wars of 2025](./desktopWars2025.md)
 - [How to Beat the Copyright Bots: A Rebel's Guide to Nostr](./beating-the-copyright-bots.md)
 - [The Nightingale's Secret Sauce: How One Voice Conquered Bollywood](./lata-nightingales-secret-sauce.md)
+
+# About the Project
+- [Deep Dive with Gemini](./cover.md)
+- [How to read this book](./how.md)

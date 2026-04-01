@@ -22,13 +22,14 @@ The `universal_markdown_fixer.py` is a comprehensive automation script designed 
 - **Cleanup:** Removes "Truncated" placeholders and normalizes whitespace throughout the document.
 
 #### 3. Navigation Management (`SUMMARY.md`)
-- **Recent Section Update:** Automatically adds the processed file to the `# Recent ..` section at the top of `SUMMARY.md`.
-- **Path-Aliasing Hack:** Employs the `././filename.md` trick for the top three most recent files to allow them to be listed in the "Recent" section without triggering `mdbook`'s duplicate file warnings.
-- **Automatic Restoration:** When a file is bumped out of the "Recent" section (top 3), the script automatically restores it to its appropriate thematic category based on a pre-defined keyword mapping.
+- **Mandatory Entry Points:** Ensures `cover.md` (Deep Dive with Gemini) and `how.md` (How to read this book) are always preserved at the very top of `SUMMARY.md`.
+- **Dynamic "Recent .." Section:** Automatically identifies the three most recently added files (using git addition dates) and places them in the `# Recent ..` section.
+- **Automatic Restoration & Categorization:** When a file is bumped out of the "Recent" section (top 3), the script automatically moves it to its appropriate thematic category based on a pre-defined keyword mapping.
 - **Title Extraction:** Uses the actual H1 header from the markdown file as the link text in the summary, ensuring the navigation matches the article title exactly.
+- **No Duplicates:** Standardizes all paths to use the `./` prefix, ensuring each file appears exactly once in the navigation to maintain a clean book structure.
 
 #### 4. Automated Verification
-- **Completeness Crosscheck:** As a final step, the script tallies every `.md` file in the `src/` folder and compares it against the entries in `SUMMARY.md`. It provides a `SUCCESS` or `WARNING` report to ensure no content is orphaned from the navigation.
+- **Completeness Crosscheck:** As a final step, the script tallies every `.md` file in the `src/` folder (excluding metadata files) and compares it against the entries in `SUMMARY.md`. It provides a `SUCCESS` or `WARNING` report to ensure no content is orphaned from the navigation.
 
 ### Usage
 
