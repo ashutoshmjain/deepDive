@@ -1,4 +1,8 @@
-# The Physics of Value: The STRC Bridge and the Future of Global Digital Money
+# The Physics of Value
+
+![cover image](./img/the-physics-of-value-the-strc-bridge.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -7,7 +11,7 @@
 ## Introduction: The Fundamental Duality of Finance
 In the realm of physics, the universe is governed by the interplay of matter (mass) and energy (radiation). Michael Saylor’s financial framework posits that the economy obeys these same thermodynamic laws. A functional global economy requires both a **Store of Value** (Mass) to preserve wealth across time and a **Medium of Exchange** (Radiation) to transmit value across space.
 
-*   **Bitcoin is Mass ($E=mc^2$):** It is "Digital Matter"—concentrated, localized economic energy. Like physical mass, it is defined by absolute scarcity and immutability. It is the ultimate battery for storing value over 100 years, but it is too "heavy" (volatile) to serve as a friction-free medium for daily commerce.
+*   **Bitcoin is Mass (\$E=mc^2\$):** It is "Digital Matter"—concentrated, localized economic energy. Like physical mass, it is defined by absolute scarcity and immutability. It is the ultimate battery for storing value over 100 years, but it is too "heavy" (volatile) to serve as a friction-free medium for daily commerce.
 *   **Fiat is Radiation:** Currencies like the Dollar, Euro, or Rupee act like electromagnetic radiation. They have no "mass" (no scarcity), but they travel at the speed of light and are easily absorbed by the economy for transactions. However, like radiation, they suffer from "redshift" (inflation), losing energy over time.
 
 ## I. The Missing Link: The STRC Bridge
@@ -50,6 +54,26 @@ We are witnessing the evolution of money from a political construct to a physica
 *   **Sovereign-Backed Corporations** provide the **Distribution** (Radiation).
 
 By utilizing STRC as the bridge, any nation can upgrade its currency. A "Digital Dinar" or "Digital Euro" issued on this standard is no longer weak paper money; it is a high-frequency transmission of pure Bitcoin energy, stabilized for daily use. This structure allows nations to offer their citizens the best of both worlds: the localized familiarity of their national currency, backed by the universal, immortal integrity of Bitcoin.
+
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
+
 
 ## References
 

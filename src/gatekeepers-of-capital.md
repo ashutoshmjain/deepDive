@@ -1,4 +1,8 @@
-# The Gatekeepers of Capital: Strategy Inc (MSTR), MSCI, and the Crisis of Passive Investing
+# The Gatekeepers of Capital
+
+![cover image](./img/gatekeepers-of-capital.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -184,7 +188,7 @@ The most direct antidote to the "momentum machine" and the "enforcement by news 
 The vulnerability of MSTR to the MSCI "freeze" was due to the nature of **Capitalization-Weighted** indices. A spike in price immediately grants a higher weight, fueling the flywheel. A shift to **Time-Weighted** methodologies would smooth this distortion.
 
 *   **The Methodology:** Instead of using the spot price to determine market cap weight, indices could use a Time-Weighted Average Price (TWAP) over a significant lookback period (e.g., 12 months).
-    *   *Formula:* The weight would be derived from $\text{TWAP} = \frac{\sum P_i \times T_i}{\sum T_i}$ rather than $P_{\text{current}}$.29
+    *   *Formula:* The weight would be derived from \$\text{TWAP} = \frac{\sum P_i \times T_i}{\sum T_i}\$ rather than \$P_{\text{current}}.29 USD
 *   **The Effect:** A sudden, speculative spike in MSTRs price would not immediately result in forced passive buying. The index would "wait" to see if the valuation is sustained over time. This would break the "instant feedback loop" that Saylor exploited, preventing the flywheel from overheating while protecting passive investors from buying the top.30
 *   **Fallen Angel Precedent:** FTSE already uses time-weighted methodologies for "Fallen Angel" bond indices to capture price rebounds without over-allocating to distress.30
 
@@ -221,7 +225,7 @@ To preserve the integrity of the public markets, we must move beyond the naive a
 
 | Feature          | Market-Cap Weighted (Current)        | Time-Weighted (Proposed)                                        | Impact on "Flywheel" Strategies                                  |
 | :--------------- | :----------------------------------- | :-------------------------------------------------------------- | :--------------------------------------------------------------- |
-| **Input Data**   | Spot Price ($P_t$) and Shares Outstanding | TWAP (e.g., 12-mo avg) and Shares | **High Impact:** TWAP lags spot price, delaying index inclusion/weight increase. |
+| **Input Data**   | Spot Price (\$P_t\$) and Shares Outstanding | TWAP (e.g., 12-mo avg) and Shares | **High Impact:** TWAP lags spot price, delaying index inclusion/weight increase. |
 | **Rebalancing**  | Quarterly (typically)                | Rolling or Quarterly                                            | **Dampening:** Prevents rapid accumulation of weight during bubbles. |
 | **Momentum Bias**| High (Buys winners immediately)      | Low (Buys sustained value)                                      | **Negative:** Breaks the "price rises -> buy more" feedback loop. |
 | **Volatility**   | High (Transmits volatility to fund)  | Low (Smoothes volatility)                                       | **Stabilizing:** Protects passive investors from volatility spikes. |
@@ -250,7 +254,7 @@ To preserve the integrity of the public markets, we must move beyond the naive a
 
 9.  General MSTR Summary | PDF | Bitcoin | Exchange Traded Fund - Scribd, accessed January 13, 2026, [https://www.scribd.com/document/923479399/General-MSTR-Summary](https://www.scribd.com/document/923479399/General-MSTR-Summary)
 
-10. MSTR's Net Bitcoin Holdings Now Exceed Its Market Cap by $3.4B - CCN.com, accessed January 13, 2026, [https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/](https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/)
+10. MSTR's Net Bitcoin Holdings Now Exceed Its Market Cap by 3.4 USDB - CCN.com, accessed January 13, 2026, [https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/](https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/)
 
 11. Strategy gets to remain in MSCI indexes, stock gains over 6% | Seeking Alpha, accessed January 13, 2026, [https://seekingalpha.com/news/4537196-strategy-gets-to-remain-in-msci-indexes](https://seekingalpha.com/news/4537196-strategy-gets-to-remain-in-msci-indexes)
 
@@ -301,3 +305,21 @@ To preserve the integrity of the public markets, we must move beyond the naive a
 34. Should Shareholders Be Rewarded for Loyalty? European Experiments on the Wedge Between Tenured Voting and Takeover Law, accessed January 13, 2026, [https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1085&context=mbelr](https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1085&context=mbelr)
 
 35. CONSULTATION ON THE TREATMENT OF UNEQUAL VOTING STRUCTURES IN THE MSCI EQUITY INDEXES, accessed January 13, 2026, [https://www.msci.com/documents/1296102/8328554/Consultation_Voting+Rights.pdf/15d99336-9346-4e42-9cd3-a4a03ecff339](https://www.msci.com/documents/1296102/8328554/Consultation_Voting+Rights.pdf/15d99336-9346-4e42-9cd3-a4a03ecff339)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

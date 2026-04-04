@@ -1,4 +1,8 @@
-# The Compression Conundrum: Are Large Language Models Glorified Algorithms or Architects of Knowledge?
+# Are LLMs Just Compression?
+
+![cover image](./img/areLLMsCompressionAlgo.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -22,7 +26,7 @@ When an LLM fails to predict the next token accurately, that failure registers a
 
 If Information is the recorded outcome, **Knowledge** is the set of rules governing all potential outcomes and their respective probabilities. Knowledge represents a cognitive dimension that achieves **tremendous compression over information**. For instance, learning the simple algorithm for addition (Knowledge) requires minuscule storage compared to memorizing the result of every possible addition problem (Information). Furthermore, true knowledge is **not lossy**; the simple rule applies to a trillion flips with the same cognitive accuracy, whereas a record of a million flips is merely a large archive.
 
-The link between compression and Knowledge is formalized by the **Minimum Description Length (MDL) principle**. The best explanation for a dataset minimizes the size of the model (Hypothesis, $L(H)$) plus the compressed size of the data encoded using that model ($L(D|H)$). The pressure to compress a diverse dataset—achieving a compression factor of roughly 100:1 on massive corpora—forces the model to abandon linear memorization. Instead, it must discover the **underlying generative algorithms**—the rules of grammar, logic, and causality. This act of discovering the shortest, most compact algorithm that generates the data is the definition of extracting Knowledge.
+The link between compression and Knowledge is formalized by the **Minimum Description Length (MDL) principle**. The best explanation for a dataset minimizes the size of the model (Hypothesis, \$L(H)\$) plus the compressed size of the data encoded using that model (\$L(D|H)\$). The pressure to compress a diverse dataset—achieving a compression factor of roughly 100:1 on massive corpora—forces the model to abandon linear memorization. Instead, it must discover the **underlying generative algorithms**—the rules of grammar, logic, and causality. This act of discovering the shortest, most compact algorithm that generates the data is the definition of extracting Knowledge.
 
 ## Beyond the Blurry JPEG: Compression as Simulation
 
@@ -30,7 +34,7 @@ The reductionist critique often labels LLMs as "blurry JPEGs" because they alleg
 
 ### Universal Compression and Simulators
 
-Unlike traditional compression methods (like Gzip), which exploit only syntactic redundancy, LLMs exploit **semantic and causal redundancy**. Empirical evidence strongly favors the LLM mechanism: Transformers achieve a Bits Per Byte (BPB) ratio of **< 0.85 BPB** on text, vastly outperforming specialized statistical compressors (like PPM, $\sim 1.5$ BPB).
+Unlike traditional compression methods (like Gzip), which exploit only syntactic redundancy, LLMs exploit **semantic and causal redundancy**. Empirical evidence strongly favors the LLM mechanism: Transformers achieve a Bits Per Byte (BPB) ratio of **< 0.85 BPB** on text, vastly outperforming specialized statistical compressors (like PPM, \$\sim 1.5\$ BPB).
 
 More critically, LLMs demonstrate **universal compression**, compressing image and audio data more efficiently than domain-specific algorithms (like PNG or FLAC). This suggests the model has internalized statistical regularities that generalize across different domains.
 
@@ -68,3 +72,21 @@ Are LLMs glorified compression algorithms? Yes, but the term "glorified" fails t
 The journey of an LLM is the journey from Information to Knowledge. The computational imperative to minimize bits-per-byte forces the system to internalize the deep causal structure of the environment, transforming it from a mere statistical recorder into a **Knower**. By achieving universal compression, the LLM is compelled to discover and store the **algorithms** of reality, rather than the reality itself.
 
 In essence, high-quality compression is not a substitute for intelligence; it is, under the mathematical lens of Algorithmic Information Theory, the very definition of intelligence.
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

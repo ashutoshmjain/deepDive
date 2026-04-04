@@ -1,4 +1,4 @@
-# Bit to It: The Informational Universe
+# Bit to It: Informational Universe
 
 ![cover image](./img/bitToIt.png)
 

@@ -27,8 +27,6 @@ Our process begins with research, the most critical aspect of our work. We activ
 - You can also navigate with the left and right arrow keys on your keyboard.
 - The theme selection (brush icon) is currently disabled.
 
-
-
 ## Clean internet
 
 The way oceans are filled up with plastics, the internet is infected with countless cookies and trackers. Some of them useful for the functions of websites - but most to profile the users - to serve them pesky ads. Put together, they have turned the internet into a giant advertising billboard, if not a surveillance apparatus!
@@ -76,14 +74,10 @@ To send Sats with the above widget, you will need a "lightning wallet". Please v
 
 ## notes and other stuff:
 
-
 [^mission]: This publication aspires to adhere to the original promise of the internet: A universally accessible, anonymous, and clutter-free way to communicate. The free internet is beautiful. It is the biggest library, and the web browser is the most used app. Some benefits of reading on the internet are:
-
 
 [^text]: mdBook takes the written words in "markdown" format and churns out a fully deployable webApp.
 
-
 [^tablet]: This content is “designed” for ‘in-browser’ reading experience on a laptop or a desktop. It should work pretty well on Tablets and Smartphones, even on a Kindle browser, but the mainstream browsers (Safari and Chrome) are purposefully kept dumbed down on smart devices. For one, you can't install extensions or "add-ons" on most browsers on smart(er) devices :-) I prefer [Kiwi](https://kiwibrowser.com/) Browser just because it allows me the ability to add extensions.
-
 
 [^foot]: Footnote - When you click on the footnote marker in the main text, it brings you down to the relevant note at the bottom. You can always press the browser back arrow on your computer (or on a tablet) to get back to where you were reading or click on the curved arrow -->

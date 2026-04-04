@@ -1,6 +1,6 @@
 ![Retirement Hacking](./img/retirementHackingWithROC.png)
 
-# The Perpetual Income Stream: Modeling Tax-Advantaged Retirement Using ROC Dividends (STRC Case Study)
+# Tax-Advantaged Retirement Streams
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -40,9 +40,9 @@ We model a **10-year investment period** (120 months) for a couple **approaching
 
 The **10-year investment plan** is deliberately capped because, assuming a fixed 10% annual ROC, the cost basis of the very first investment lot would be reduced to **USD 0.00** around the **11th year** of holding (10 years of distributions).
 
-$$ 
+\$\$ 
 	ext{Total ROC Reduction} = 10 	ext{ years} \times 10\% / \text{year} \times \text{USD } 100 = \text{USD } 100.00
-$$ 
+\$\$ 
 
 Capping the accumulation phase at 10 years simplifies planning and manages this critical tax event.
 
@@ -54,14 +54,14 @@ The model assumes a constant **USD 100.00** share price and a constant **10%** a
 
 | Parameter | Symbol | Value |
 | :--- | :--- | :--- |
-| **Standard Deduction (SD)** | $\text{SD}$ | USD 30,700 |
-| **0% LTCG Threshold** | $T_{0\%}$ | USD 94,050 |
-| **Taxable Gain Goal (Max Shield)** | $G_{\text{goal}}$ | **USD 63,350** |
+| **Standard Deduction (SD)** | \$\text{SD}\$ | USD 30,700 |
+| **0% LTCG Threshold** | \$T_{0\%}\$ | USD 94,050 |
+| **Taxable Gain Goal (Max Shield)** | \$G_{\text{goal}}\$ | **USD 63,350** |
 
 The maximum taxable gain the investor can realize while paying **USD 0** federal tax is:
 
-$$G_{\text{goal}} = T_{0\%} - \text{SD}
-$$ 
+\$\$G_{\text{goal}} = T_{0\%} - \text{SD}
+\$\$ 
 
 ---
 
@@ -118,13 +118,13 @@ The primary goal is met by establishing a **fixed, tax-free base income stream**
 
 The base income stream utilizes only a small portion of the total available tax shield, providing a large buffer for managing other retirement assets:
 
-$$ 
+\$\$ 
 	ext{Tax Cushion Remaining} = G_{\text{goal}} - \text{Taxable Gain Realized}
-$$ 
+\$\$ 
 
-$$ 
+\$\$ 
 	ext{Tax Cushion Remaining} = \text{USD } 63,350 - \text{USD } 18,137.53 = \boldsymbol{\text{USD } 45,212.47}
-$$ 
+\$\$ 
 
 The investor can realize an additional **USD 45,212** in taxable income annually (e.g., from selling other assets or receiving pension income) and still maintain a **USD 0** federal tax liability.
 
@@ -153,3 +153,21 @@ The model demonstrates that a prudent, short-term (10-year) investment in a perp
 1.  Internal Revenue Service (IRS). **IRS Publication 550, Investment Income and Expenses**. Available at: [https://www.irs.gov/publications/p550](https://www.irs.gov/publications/p550)
 2.  Internal Revenue Service (IRS). **Tax Year 2024 Tax Brackets and Standard Deductions**. Available at: [https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2024](https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2024)
 3.  Internal Revenue Service (IRS). **IRS Publication 551, Basis of Assets**. Available at: [https://www.irs.gov/publications/p551](https://www.irs.gov/publications/p551)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

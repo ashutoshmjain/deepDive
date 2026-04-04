@@ -1,4 +1,8 @@
-# What Exactly Is Digital Credit: The Renaissance of Asset-Backed Finance
+# What is Digital Credit?
+
+![cover image](./img/digital-credit.png)
+
+
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -109,7 +113,7 @@ Against this backdrop of unhinged fiat debt, Strategy Inc. (formerly MicroStrate
 
 ### 4.1 Michael Saylor's Thesis: Re-Pegging to Hard Assets
 
-Michael Saylor, Executive Chairman of Strategy Inc., argues that the solution to the "bad credit" problem is to return to the principles of the Hundi—asset-backed issuance—but to replace the antiquated asset (Gold) with a superior digital asset (Bitcoin).[^11][^12]
+Michael Saylor, Executive Chairman of Strategy Inc., argues that the solution to the "bad credit" problem is to return to the principles of the Hundi—asset-backed issuance—but to replace the antiquated asset (Gold) with a superior digital asset (Bitcoin).[^11] [^12]
 
 #### 4.1.1 Why Digital Credit is Better Than Gold
 
@@ -246,7 +250,7 @@ With a real yield of ~20% and a fortress balance sheet, Digital Credit is not ju
 
 [^6]: Golden Rules for Making Money (1880) | Hacker News, https://news.ycombinator.com/item?id=19483313
 
-[^7]: Global Debt Reached $150 Trillion in 2025 Q1 - Visual Capitalist, https://www.visualcapitalist.com/sp/ter01-the-150t-global-debt-market/
+[^7]: Global Debt Reached 150 USD Trillion in 2025 Q1 - Visual Capitalist, https://www.visualcapitalist.com/sp/ter01-the-150t-global-debt-market/
 
 [^8]: Global Debt Report 2025 - OECD, https://www.oecd.org/en/publications/global-debt-report-2025_8ee42b13-en.html
 
@@ -258,7 +262,7 @@ With a real yield of ~20% and a fortress balance sheet, Digital Credit is not ju
 
 [^12]: Crypto Billionaire Michael Saylor Names Nvidia, Bitcoin Among 'Best Performing Assets' Of The Decade: Here's How They've Performed - Finviz, https://finviz.com/news/273052/crypto-billionaire-michael-saylor-names-nvidia-bitcoin-among-best-performing-assets-of-the-decade-heres-how-theyve-performed
 
-[^13]: Strategy Announces Establishment of $1.44 Billion USD Reserve and Updates FY 2025 Guidance, https://www.strategy.com/press/strategy-announces-establishment-of-1-44-billion-usd-reserve-and-updates-fy-2025-guidance_12-1-2025
+[^13]: Strategy Announces Establishment of 1.44 USD Billion USD Reserve and Updates FY 2025 Guidance, https://www.strategy.com/press/strategy-announces-establishment-of-1-44-billion-usd-reserve-and-updates-fy-2025-guidance_12-1-2025
 
 [^15]: 424B5 - SEC.gov, https://www.sec.gov/Archives/edgar/data/1050446/000119312525263900/d90859d424b5.htm
 
@@ -269,3 +273,21 @@ With a real yield of ~20% and a fortress balance sheet, Digital Credit is not ju
 [^21]: Return of Capital Information - Strategy, https://www.strategy.com/investor-relations/dividend-return-of-capital
 
 [^22]: Strategy CEO Says Big Banks Are Scrambling To Build Bitcoin Services - Webull, https://www.webull.com/news/14077013583414272
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

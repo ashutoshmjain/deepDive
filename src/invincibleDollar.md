@@ -1,4 +1,4 @@
-# The Mechanics of Hegemony: Distinguishing Trade Policy from Reserve Currency Structuralism
+# Mechanics of the Invincible Dollar
 
 ![Invincible Dollar: Triffin's Dilemma Explained](./img/invincibleDollar.png)
 
@@ -59,3 +59,21 @@ The USD remains the global reserve currency because the United States is the onl
 4. Prasad, E. S. (2016). "Gaining Ground: The Rise of the Renminbi." Brookings Institution Press. [https://www.brookings.edu/book/gaining-ground/](https://www.brookings.edu/book/gaining-ground/)
 
 5. Triffin, R. (1960). "Gold and the Dollar Crisis: The Future of Convertibility." Yale University Press. [https://research.stlouisfed.org/publications/review/1961/01/01/gold-and-the-dollar-crisis-the-future-of-convertibility/](https://research.stlouisfed.org/publications/review/1961/01/01/gold-and-the-dollar-crisis-the-future-of-convertibility/)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

@@ -1,4 +1,8 @@
-# Return of the Lisp Machine: How the Antitrust Remedy of 2025 Forced Google into Hardware Determinism
+# Google’s New AI Hardware
+
+![cover image](./img/googleAsLispMachine.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 ![Google Lisp Machine](./img/googleLispMachine.png)
 
@@ -16,13 +20,13 @@ The December 5, 2025 remedial order by Judge Amit Mehta in United States v. Goog
 
 # I. The Legal Catalyst: The "One-Year" Shock
 
-On Friday, December 5, 2025, the U.S. District Court for the District of Columbia issued a remedial order that dismantled the "security of tenure" Google enjoyed for two decades [1][^1]. The ruling mandates that all default search agreements (e.g., with Apple and Samsung) must now be limited to one year in duration. [^2] Furthermore, it explicitly bans the "tying" of generative AI products (Gemini) to these lucrative search revenue-share deals [2][^3].
+On Friday, December 5, 2025, the U.S. District Court for the District of Columbia issued a remedial order that dismantled the "security of tenure" Google enjoyed for two decades [1] [^1]. The ruling mandates that all default search agreements (e.g., with Apple and Samsung) must now be limited to one year in duration. [^2] Furthermore, it explicitly bans the "tying" of generative AI products (Gemini) to these lucrative search revenue-share deals [2] [^3].
 
-This legal shock creates a "volatility trap" for Google. The company can no longer use its search monopoly to guarantee the distribution of its AI models. In the words of Judge Mehta, the goal is to force an annual "competitive reset" [1][^4]. For Google, the logical counter-move is to retreat to a "Safe Harbor"—a hardware environment where they write the rules. The ruling rejected a ban on "self-preferencing" for first-party devices, legally sanctioning Google’s ability to hard-code Gemini into the silicon of its own products [3].
+This legal shock creates a "volatility trap" for Google. The company can no longer use its search monopoly to guarantee the distribution of its AI models. In the words of Judge Mehta, the goal is to force an annual "competitive reset" [1] [^4]. For Google, the logical counter-move is to retreat to a "Safe Harbor"—a hardware environment where they write the rules. The ruling rejected a ban on "self-preferencing" for first-party devices, legally sanctioning Google’s ability to hard-code Gemini into the silicon of its own products [3].
 
 # II. Historical Parallel: The Lisp Machine (1979–1988)
 
-To understand Google's 2025 hardware strategy, one must look to the MIT AI Lab in the late 1970s. At the time, the "Lisp" programming language was the standard for AI research, but it was too resource-intensive for commodity hardware (like the DEC PDP-10). [^5] The solution was the Lisp Machine (commercialized by Symbolics and Lisp Machines Inc.): a computer where the hardware architecture was designed specifically to execute Lisp instructions [4][^6].
+To understand Google's 2025 hardware strategy, one must look to the MIT AI Lab in the late 1970s. At the time, the "Lisp" programming language was the standard for AI research, but it was too resource-intensive for commodity hardware (like the DEC PDP-10). [^5] The solution was the Lisp Machine (commercialized by Symbolics and Lisp Machines Inc.): a computer where the hardware architecture was designed specifically to execute Lisp instructions [4] [^6].
 
 ## Key Characteristics of the Lisp Machine:
 
@@ -38,7 +42,7 @@ Just as Symbolics built hardware for Lisp, Google is now building hardware for G
 
 ## A. The Tensor G5: The New "Tag Bit"
 
-The Google Tensor G5 chip, fabricated on a 3nm process, is not designed to win Geekbench scores against Apple’s A-series chips. It is designed for matrix multiplication density. [^8] The chip features a TPU (Tensor Processing Unit) that is 60% more powerful than its predecessor, specifically tuned to run "Gemini Nano" locally [7][^9].
+The Google Tensor G5 chip, fabricated on a 3nm process, is not designed to win Geekbench scores against Apple’s A-series chips. It is designed for matrix multiplication density. [^8] The chip features a TPU (Tensor Processing Unit) that is 60% more powerful than its predecessor, specifically tuned to run "Gemini Nano" locally [7] [^9].
 
 Parallel: Just as the Lisp Machine had hardware support for "car" and "cdr" operations, the Tensor G5 has hardware pathways optimized for the specific sparsity and quantization of the Gemini model.
 
@@ -48,7 +52,7 @@ The most profound architectural shift is in ChromeOS and Android XR. On a standa
 
 ## The Feature:
 
-The new Chromebook Plus integrates Gemini into the OS kernel. [^10] The "Context Window" (up to 1 million tokens) effectively acts as the machine's RAM [8][^11]. The AI "sees" what you are doing across all tabs and apps simultaneously. [^12]
+The new Chromebook Plus integrates Gemini into the OS kernel. [^10] The "Context Window" (up to 1 million tokens) effectively acts as the machine's RAM [8] [^11]. The AI "sees" what you are doing across all tabs and apps simultaneously. [^12]
 
 ## The Lock-in:
 
@@ -94,6 +98,26 @@ History suggests that specialized hardware (Lisp Machines) eventually loses to g
 [^10]: This refers to footnote 10, related to Chromebook Plus integrating Gemini into the OS kernel.
 [^11]: This refers to footnote 11, related to the Context Window acting as RAM.
 [^12]: This refers to footnote 12, related to AI seeing across all tabs and apps.
+
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
+
 
 ## References
 

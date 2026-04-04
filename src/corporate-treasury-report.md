@@ -1,4 +1,8 @@
-# Corporate Treasury & Strategic Capital Markets Report: Strategy Inc. (MSTR) – January 2026
+# Corporate Treasury Report 2026
+
+![cover image](./img/corporate-treasury-report.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -238,72 +242,58 @@ Source: 13
 
 10. Equity-Funded Bitcoin Buying And Higher Preferred Dividends Could Be A Game Changer For Strategy (MSTR) - Simply Wall St, accessed January 7, 2026, [https://simplywall.st/stocks/us/software/nasdaq-mstr/strategy/news/equity-funded-bitcoin-buying-and-higher-preferred-dividends](https://simplywall.st/stocks/us/software/nasdaq-mstr/strategy/news/equity-funded-bitcoin-buying-and-higher-preferred-dividends)  
 
-
-
-11. Calculation based on MicroStrategy's reported dividend and debt obligations in late 2025. As of December 2025, annual dividend obligations for preferred stocks were approximately $824 million, with an additional $25-30 million in annual interest payments on debt. See for example: "MicroStrategy's $8 Billion Bitcoin Bet And The Future Of Corporate Treasury", Forbes, Dec 29, 2025.
-
-
+11. Calculation based on MicroStrategy's reported dividend and debt obligations in late 2025. As of December 2025, annual dividend obligations for preferred stocks were approximately 824 million USD, with an additional 25 USD-30 million in annual interest payments on debt. See for example: "MicroStrategy's 8 USD Billion Bitcoin Bet And The Future Of Corporate Treasury", Forbes, Dec 29, 2025.
 
 12. Strategy's Cash Reserve Move Softens Risk but Changes the Bitcoin Upside Math, accessed January 7, 2026, [https://www.investing.com/analysis/strategys-cash-reserve-move-softens-risk-but-changes-the-bitcoin-upside-math-200672296](https://www.investing.com/analysis/strategys-cash-reserve-move-softens-risk-but-changes-the-bitcoin-upside-math-200672296)  
 
-
-
 13. STRC Information - Strategy, accessed January 7, 2026, [https://www.strategy.com/stretch](https://www.strategy.com/stretch)  
-
-
 
 14. Index Exclusion Threatens Billions in Outflows for Strategy - IndexBox, accessed January 7, 2026, [https://www.indexbox.io/blog/index-exclusion-threatens-billions-in-outflows-for-strategy/](https://www.indexbox.io/blog/index-exclusion-threatens-billions-in-outflows-for-strategy/)  
 
-
-
-15. TD Cowen Sees Strategy ($MSTR) Under Pressure as MSCI Index Review Looms, accessed January 7, 2026, [https://bitcoinmagazine.com/news/td-cowen-sees-strategy-mstr-under-pressure](https://bitcoinmagazine.com/news/td-cowen-sees-strategy-mstr-under-pressure)  
-
-
+15. TD Cowen Sees Strategy (\$MSTR) Under Pressure as MSCI Index Review Looms, accessed January 7, 2026, [https://bitcoinmagazine.com/news/td-cowen-sees-strategy-mstr-under-pressure](https://bitcoinmagazine.com/news/td-cowen-sees-strategy-mstr-under-pressure)  
 
 16. Strategy stock surges 6% after MSCI decides against excluding crypto firms, accessed January 7, 2026, [https://au.investing.com/news/stock-market-news/strategy-stock-surges-6-after-msci-decides-against-excluding-crypto-firms-4194075](https://au.investing.com/news/stock-market-news/strategy-stock-surges-6-after-msci-decides-against-excluding-crypto-firms-4194075)  
 
-
-
 17. MSCI Retains MicroStrategy in Indexes, Sparks Debate Over Bitcoin-Focused Firms, accessed January 7, 2026, [https://www.kucoin.com/news/flash/msci-retains-microstrategy-in-indexes-sparks-debate-over-bitcoin-focused-firms](https://www.kucoin.com/news/flash/msci-retains-microstrategy-in-indexes-sparks-debate-over-bitcoin-focused-firms)  
-
-
 
 18. Understanding MicroStrategy's Capital Structure - Stewards Investment Capital, accessed January 7, 2026, [https://stewardsinvestment.com/2025/08/21/understanding-microstrategy-capital-structure/](https://stewardsinvestment.com/2025/08/21/understanding-microstrategy-capital-structure/)  
 
-
-
 19. JPMorgan says Strategy could face billions in outflows if MSCI and other major indices remove it | The Block, accessed January 7, 2026, [https://www.theblock.co/post/379778/jpmorgan-strategy-billions-outflows-msci-other-indices-remove](https://www.theblock.co/post/379778/jpmorgan-strategy-billions-outflows-msci-other-indices-remove)  
-
-
 
 20. JANUARY 15: THE USD 9 BILLION PURGE MicroStrategy owns 649,870 | Bluechip on Binance Square, accessed January 7, 2026, [https://www.binance.com/en/square/post/32665701817058](https://www.binance.com/en/square/post/32665701817058)  
 
-
-
 21. What's The Upside Potential For Strategy Stock? - Trefis, accessed January 7, 2026, [https://www.trefis.com/stock/mstr/articles/586864/whats-the-upside-potential-for-strategy-stock/2026-01-07](https://www.trefis.com/stock/mstr/articles/586864/whats-the-upside-potential-for-strategy-stock/2026-01-07)  
-
-
 
 22. Trade STRC Stock Pre-Market on Public.com, accessed January 7, 2026, [https://public.com/stocks/strc/pre-market](https://public.com/stocks/strc/pre-market)  
 
-
-
 23. Strategy Inc Preferred Series A Stock Price Today | NASDAQ: STRC Live - Investing.com, accessed January 7, 2026, [https://www.investing.com/equities/microstrategy-prf-h](httpshttps://www.investing.com/equities/microstrategy-prf-h)  
-
-
 
 24. Strategy's Saylor Dismisses USD 8.8B MSTR Index Concerns - Bitcoin Magazine, accessed January 7, 2026, [https://bitcoinmagazine.com/news/strategys-mstr-responds-to-concerns](https://bitcoinmagazine.com/news/strategys-mstr-responds-to-concerns)  
 
-
-
 25. Strategy's Saylor criticizes MSCI plan to exclude crypto-heavy firms - Investing.com UK, accessed January 7, 2026, [https://uk.investing.com/news/stock-market-news/strategys-saylor-criticizes-msci-plan-to-exclude-cryptoheavy-firms-93CH-4411557](https://uk.investing.com/news/stock-market-news/strategys-saylor-criticizes-msci-plan-to-exclude-cryptoheavy-firms-93CH-4411557)  
-
-
 
 26. MicroStrategy's 8% Preferred Stock: What Investors Should Know - Nasdaq,. accessed January 7, 2026, [https://www.nasdaq.com/articles/microstrategys-8-preferred-stock-what-investors-should-know](https://www.nasdaq.com/articles/microstrategys-8-preferred-stock-what-investors-should-know)  
 
-27. $MSTR Down 66%: Is Michael Saylor's Bitcoin Strategy at Solvency Risk If BTC Breaks USD 75K? - CCN.com, accessed January 7, 2026, [https://www.ccn.com/education/crypto/strategy-mstr-down-66-percent-bitcoin-below-75k-saylor-bankruptcy/](https://www.ccn.com/education/crypto/strategy-mstr-down-66-percent-bitcoin-below-75k-saylor-bankruptcy/)  
+27. \$MSTR Down 66%: Is Michael Saylor's Bitcoin Strategy at Solvency Risk If BTC Breaks USD 75K? - CCN.com, accessed January 7, 2026, [https://www.ccn.com/education/crypto/strategy-mstr-down-66-percent-bitcoin-below-75k-saylor-bankruptcy/](https://www.ccn.com/education/crypto/strategy-mstr-down-66-percent-bitcoin-below-75k-saylor-bankruptcy/)  
 
 28. Strategy Inc consolidates at-the-market offerings under new sales agreement, accessed January 7, 2026, [https://www.investing.com/news/sec-filings/strategy-inc-consolidates-atthemarket-offerings-under-new-sales-agreement-93CH-4331296](https://www.investing.com/news/sec-filings/strategy-inc-consolidates-atthemarket-offerings-under-new-sales-agreement-93CH-4331296)  
 
 29. 28,011,111 Shares Variable Rate Series A Perpetual Stretch Preferred Stock - Stifel, accessed January 7, 2026, [https://www.stifel.com/prospectusfiles/PD\_7153.pdf](https://www.stifel.com/prospectusfiles/PD_7153.pdf)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

@@ -1,4 +1,4 @@
-# The Industrialization of Reality: Mosaic AI, the C2PA Failure, and the Nostr Solution
+# The Industrialization of Reality
 ![The Industrialization of Reality](./img/the-industrialization-of-reality.png)
 
 <center>
@@ -96,3 +96,21 @@ We cannot stop this technology, nor should we demonize the founders for building
 1. Mosaic AI: edit.mosaic.so
 2. NIP-94 Specification: File Metadata & Integrity
 3. C2PA: Coalition for Content Provenance and Authenticity
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

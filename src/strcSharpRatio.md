@@ -1,4 +1,4 @@
-# MicroStrategy’s STRC: The 5.37 Sharpe Ratio Benchmark
+# STRC: The Sharpe Ratio Benchmark
 
 ![STRC Sharp Ratio](img/strcSharpRatio.png)
 

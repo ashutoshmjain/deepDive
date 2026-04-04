@@ -1,4 +1,4 @@
-# The Structural Integration of Digital Capital: A Strategic Analysis of the March 23, 2026 8-K and the Emergence of the Bitcoin-Backed Yield Curve
+# STRC and Digital Capital
 
 ![cover image](./img/strcBlackhole.png)
 
@@ -190,3 +190,20 @@ STRC is not just a financing tool but a new category of "Open Credit" that will 
 [^34]: Michael Saylor (2026). [Bitcoin is the Economic Battery for the Digital Age](https://www.saylor.org/saylortalks/bitcoin-economic-battery/).
 [^35]: HODL15Capital (2026). [The Orange March: Visualizing Strategy Inc.'s Bitcoin Accumulation](https://twitter.com/HODL15Capital/status/123456789).
 
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

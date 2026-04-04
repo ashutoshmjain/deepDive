@@ -1,4 +1,4 @@
-# The Jevons Paradox in the Age of Cognitive Abundance: A Macroeconomic Analysis of Labor Displacement and Induced Demand
+# AI and the Jevons Paradox
 
 ![jevonsParadoxAI.png](./img/jevonsParadoxAI.png)
 
@@ -10,7 +10,7 @@ The contemporary labor market is currently navigating a period of structural vol
 
 The Jevons Paradox, also known as the Jevons effect, originated in the nineteenth-century observations of economist William Stanley Jevons. In his 1865 work, *The Coal Question[^9]*, Jevons challenged the prevailing assumption that technological improvements leading to more efficient resource use would inevitably result in a decrease in total resource consumption[^6] Jevons focused on the coal-fired steam engine, observing that as James Watt’s innovations made the engine significantly more fuel-efficient than Thomas Newcomen’s earlier design, the total consumption of coal in Britain soared rather than declined[^6] The efficiency gain reduced the marginal cost of power, making the steam engine economically viable for a vast array of new industrial applications that were previously impossible to power[^6]
 
-In the context of the twenty-first century[^10], "cognition" and "code" have become the primary resources of production, mirroring the role of coal during the Industrial Revolution[^3] The Jevons Paradox occurs when the demand for a resource is highly price-elastic; when the cost of a unit of cognition falls due to AI-driven efficiency, the "rebound effect" induces a surge in demand that more than offsets the initial savings[^5][^12]
+In the context of the twenty-first century[^10], "cognition" and "code" have become the primary resources of production, mirroring the role of coal during the Industrial Revolution[^3] The Jevons Paradox occurs when the demand for a resource is highly price-elastic; when the cost of a unit of cognition falls due to AI-driven efficiency, the "rebound effect" induces a surge in demand that more than offsets the initial savings[^5] [^12]
 
 ### The Microeconomics of Rebound and Induced Demand
 
@@ -42,11 +42,11 @@ However, the Jevons Paradox suggests that this efficiency will lead to an even m
 
 ### Quantitative Efficiency Gains in the Enterprise
 
-Early data from the 2025-2026 period indicates that firms are already seeing the impact of these efficiency gains. At Meta, for instance, engineer output rose 30% throughout 2025, while "power users" of AI-native coding tools experienced an 80% increase in productivity[^1] At Block, leadership has targeted a "gross profit per person" exceeding \$2 million, representing a 4x increase in organizational economic density achieved through flattening teams and leveraging AI force-multipliers[^1]
+Early data from the 2025-2026 period indicates that firms are already seeing the impact of these efficiency gains. At Meta, for instance, engineer output rose 30% throughout 2025, while "power users" of AI-native coding tools experienced an 80% increase in productivity[^1] At Block, leadership has targeted a "gross profit per person" exceeding \2 million USD, representing a 4x increase in organizational economic density achieved through flattening teams and leveraging AI force-multipliers[^1]
 
 ## Dissecting the 55,000: Displacement and Restructuring
 
-By mid-March 2026, approximately 55,911 tech workers were impacted by 171 global layoff events[^1][^17] While headlines often present these as "AI layoffs," the reality is a nuanced mixture of proactive restructuring, macroeconomic cooling, and strategic shifts toward AI-native infrastructure.
+By mid-March 2026, approximately 55,911 tech workers were impacted by 171 global layoff events[^1] [^17] While headlines often present these as "AI layoffs," the reality is a nuanced mixture of proactive restructuring, macroeconomic cooling, and strategic shifts toward AI-native infrastructure.
 
 ### The Myth of the Jobpocalypse
 
@@ -61,7 +61,7 @@ Executive strategies in 2026, particularly those championed by Mark Zuckerberg a
 | Company | Workforce Action (2025-26) | Strategic Driver | Reported Efficiency Result |
 | :---- | :---- | :---- | :---- |
 | Meta | Targeted Team Flattening | Elevating "Power Users" | 80% increase in output for top tier |
-| Block | Proactive Reductions | Gross Profit per Person focus | Targeted \$2M+ per employee |
+| Block | Proactive Reductions | Gross Profit per Person focus | Targeted \2 USDM+ per employee |
 | Cisco | Workforce Restructuring | Pivot to AI Networking | Re-allocation of CapEx |
 | Federal Gov (DOGE) | 308,167 cuts (announced) | Efficiency/Reduction Mandate | 703% increase in cuts vs 2024 |
 
@@ -114,7 +114,7 @@ The FDE role is a hybrid of a software engineer, solutions architect[^23], and t
 
 Table 3: The technical and human skill hierarchy for AI automation and Forward Deployed Engineers[^14]
 
-FDEs are effectively the "civil engineers" of the digital age. Just as a civil engineer does not spend their time hauling concrete but instead solves complex structural problems, the FDE uses AI as a tool to solve "governance, privacy, and integration" challenges[^22] The demand for these professionals is growing at roughly 20% annually, while the supply remains severely constrained, leading to mean salaries exceeding \$135,000[^14]
+FDEs are effectively the "civil engineers" of the digital age. Just as a civil engineer does not spend their time hauling concrete but instead solves complex structural problems, the FDE uses AI as a tool to solve "governance, privacy, and integration" challenges[^22] The demand for these professionals is growing at roughly 20% annually, while the supply remains severely constrained, leading to mean salaries exceeding \135,000 USD[^14]
 
 ## Theoretical Constraints: Amdahl, Brooks, and the Limits of Speedup
 
@@ -166,7 +166,7 @@ A significant risk in the 2026-2029 period is the "Investment Trap"[^29] Tech gi
 | :---- | :---- | :---- | :---- |
 | Data Center Electricity Use | \~1-2% Global | \~4-6% Global | Up to 10% Global |
 | U.S. Grid Demand from AI | Negligible | Rising | 20% of total |
-| Data Center Construction CapEx | Millions | \$750 Billion (Annual) | \$3 Trillion (Cumulative) |
+| Data Center Construction CapEx | Millions | \750 USD Billion (Annual) | \3 USD Trillion (Cumulative) |
 | Fossil Fuel Dependency (Gas) | Baseline | 40% of DC power | Volatile/Transitioning |
 
 Table 4: Macro-trends in energy consumption and infrastructure investment driven by the Jevons Paradox[^8]
@@ -185,12 +185,12 @@ While the LinkedIn data shows that "job seekers outpace job openings at the high
 
 ## Mathematical Modeling of the Cognitive Rebound
 
-To quantify the Jevons Paradox in this context, we can define the "Rebound Effect" ($R$) as the ratio of the "taken back" efficiency gains to the initial gain.
+To quantify the Jevons Paradox in this context, we can define the "Rebound Effect" (\$R\$) as the ratio of the "taken back" efficiency gains to the initial gain.
 
-If $\Delta \eta$ is the initial efficiency improvement (e.g., AI makes coding 50% faster) and $\Delta U$ is the subsequent increase in usage (e.g., the company builds 100% more software features), then:
+If \$\Delta \eta\$ is the initial efficiency improvement (e.g., AI makes coding 50% faster) and \$\Delta U\$ is the subsequent increase in usage (e.g., the company builds 100% more software features), then:
 
-$$R = \frac{\Delta U}{\Delta \eta}$$  
-When $R > 100\%$, we observe the Jevons Paradox[^5] In the 2026 software market, with output per power user up 80% and the 1.3M/55K job ratio, the estimated rebound effect for cognitive labor is well over 200%, suggesting that for every unit of work "automated," more than two units of new work are "induced" by the lower cost and higher complexity of the ecosystem[^1]
+\$\$R = \frac{\Delta U}{\Delta \eta}\$\$  
+When \$R > 100\%, USD we observe the Jevons Paradox[^5] In the 2026 software market, with output per power user up 80% and the 1.3M/55K job ratio, the estimated rebound effect for cognitive labor is well over 200%, suggesting that for every unit of work "automated," more than two units of new work are "induced" by the lower cost and higher complexity of the ecosystem[^1]
 
 ## The Geopolitical Architecture of the Intelligence Age
 
@@ -217,7 +217,27 @@ The primary findings of this investigation are:
 
 Ultimately, the Intelligence Age is not defined by the replacement of the human mind, but by its reallocation to higher-order tasks of strategy, empathy, and complex orchestration[^3] As basic cognition becomes a commodity, the "Human Premium"—the value of judgment, ethics, and "listening hard" to uncover root causes—will become the most sought-after resource in the global economy[^3] The Jevons Paradox ensures that as thinking becomes cheaper, we will only find more things worth thinking about[^3]
 
-### References
+#
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
+
+
+## References
 
 [^1]: AI Productivity Scam? 2026 Labor Data is Wild | by Amelia Lee \- Medium, accessed March 25, 2026, [https://medium.com/@weare1010/the-ai-layoff-paradox-55-000-jobs-cut-1-3-million-created-and-the-workers-left-behind-e4a41fea5d2b](https://medium.com/@weare1010/the-ai-layoff-paradox-55-000-jobs-cut-1-3-million-created-and-the-workers-left-behind-e4a41fea5d2b)
 [^2]: A New World of Work: Global Labor Market Rotates, Not Retreats \- LinkedIn Pressroom, accessed March 25, 2026, [https://news.linkedin.com/2026/2026-Davos-Press-Release](https://news.linkedin.com/2026/2026-Davos-Press-Release)

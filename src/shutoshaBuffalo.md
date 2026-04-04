@@ -1,4 +1,4 @@
-# The Taxonomy of Intent: Applying Prompt Engineering 2.0 Frameworks to Highly Stylized Narrative Generation
+# Prompt Engineering 2.0
 
 ![](img/shutoshaBuffalo.png)
 
@@ -62,7 +62,7 @@ The **CO-STAR** framework (Context, Objective, Style, Tone, Audience, Response) 
 
 #### 2.4. Chain-of-Thought (CoT): Ensuring Coherence
 
-While often associated with analytical tasks, **Chain-of-Thought** prompting, which breaks down complex tasks into step-by-step processes, is crucial for maintaining narrative fidelity. By requiring the AI to adhere to the exact sequence of events in the source, CoT principles prevent *Structural Incoherence*—narratives that dissolve into randomness—by acting as a functional checklist. The instruction to deliver the output by sequentially rewriting each section ensures the logical flow (stroll $\rightarrow$ meet buffalo $\rightarrow$ chase $\rightarrow$ philosophical question $\rightarrow$ blackout) is preserved.
+While often associated with analytical tasks, **Chain-of-Thought** prompting, which breaks down complex tasks into step-by-step processes, is crucial for maintaining narrative fidelity. By requiring the AI to adhere to the exact sequence of events in the source, CoT principles prevent *Structural Incoherence*—narratives that dissolve into randomness—by acting as a functional checklist. The instruction to deliver the output by sequentially rewriting each section ensures the logical flow (stroll \$\rightarrow\$ meet buffalo \$\rightarrow\$ chase \$\rightarrow\$ philosophical question \$\rightarrow\$ blackout) is preserved.
 
 ---
 
@@ -192,4 +192,20 @@ People still say today—
 
 **the entire district suffers a blackout!”**
 
+---
 
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

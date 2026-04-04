@@ -169,9 +169,21 @@ def update_summary(target_file_path):
     
     return report
 
-def fix_markdown(file_path):
+def fix_markdown(file_path, new_title=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
+    
+    # If a new title is provided, update the H1
+    if new_title:
+        if len(new_title.split()) > 5:
+            print(f"WARNING: Provided title '{new_title}' exceeds 5 words!")
+        content = re.sub(r'^#\s+.*$', f'# {new_title}', content, count=1, flags=re.MULTILINE)
+    else:
+        # Validate existing title length
+        current_title = extract_title(file_path)
+        if len(current_title.split()) > 5:
+            print(f"WARNING: Title '{current_title}' in {file_path} exceeds 5 words!")
+
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
     image_name = os.path.basename(file_path).replace('.md', '.png')
@@ -179,9 +191,12 @@ def fix_markdown(file_path):
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
     if image_name not in content and "![cover image]" not in content:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{podcast_links}\n\n', content, count=1)
+    
+    # ... (rest of the formatting logic) ...
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
     content = content.replace('$', '\\$')
+    
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -196,7 +211,6 @@ def fix_markdown(file_path):
             nonlocal next_id
             try:
                 old_id = int(m.group(1))
-                # Only convert if the number is small (likely a citation) and not part of a larger number or date
                 if old_id > 20: return m.group(0) 
                 if old_id not in used_cites:
                     used_cites[old_id] = next_id
@@ -205,7 +219,6 @@ def fix_markdown(file_path):
             except:
                 return m.group(0)
 
-        # Refined regex: look for numbers that are likely citations (small, at end of sentence or clause)
         content = re.sub(r'(?<=[a-zA-Z0-9.])\s*(\d{1,2})(?=\s|$|\n|\.|\,)', cite_repl, content)
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
@@ -214,20 +227,67 @@ def fix_markdown(file_path):
                 cite = re.sub(r'\\([_.-])', r'\1', cite)
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
+    
+    # Remove "Truncated" and cleanup whitespace
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
+
+    # Lightning Widget Snippet
+    lightning_widget = """
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
+"""
+    # Check if widget is already present (by looking for the unique lightning address)
+    if "shutosha@primal.net" not in content and "SUMMARY.md" not in file_path:
+        # Insert before References if they exist, otherwise at the end
+        if "## References" in content:
+            content = content.replace("## References", lightning_widget + "\n\n## References")
+        elif "## notes and other stuff" in content:
+            content = content.replace("## notes and other stuff", lightning_widget + "\n\n## notes and other stuff")
+        else:
+            content = content.strip() + "\n" + lightning_widget
+
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        target = sys.argv[1]
-        fix_markdown(target)
-        report = update_summary(target)
-        print(f"Successfully processed {target}")
-        if report:
-            print("\nRestoration Report:")
-            for r in report: print(f"- {r}")
-        print("\nAutomated Crosscheck:")
-        print(verify_completeness())
+    import argparse
+    parser = argparse.ArgumentParser(description='Universal Markdown Fixer')
+    parser.add_argument('file', help='The markdown file to process')
+    parser.add_argument('--title', help='Optional: A new 5-word title for the article', default=None)
+    args = parser.parse_args()
+
+    target = args.file
+    fix_markdown(target, args.title)
+    report = update_summary(target)
+    
+    print(f"Successfully processed {target}")
+    if report:
+        print("\nRestoration Report:")
+        for r in report: print(f"- {r}")
+    
+    # Final check for title length
+    final_title = extract_title(target)
+    if len(final_title.split()) > 5:
+        print(f"\nCRITICAL WARNING: The title '{final_title}' still exceeds 5 words!")
+    else:
+        print(f"\nConfirmed Title: '{final_title}' ({len(final_title.split())} words)")
+    
+    print("\nAutomated Crosscheck:")
+    print(verify_completeness())
+

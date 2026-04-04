@@ -1,4 +1,4 @@
-# **The Agentic Frontier: A Strategic Analysis of Autonomous Intelligence, Economic Realignment, and the Cantillon Effect of AI Adoption**
+# AI and the Cantillon Effect
 
 ![The Agentic Frontier](./img/cantillonAI.png)
 
@@ -6,7 +6,7 @@
 
 The transition from generative artificial intelligence as a conversational interface to an autonomous agentic framework represents a fundamental shift in the architecture of digital work. In early 2026, the technology landscape is no longer dominated by chatbots that merely provide information; the focus has shifted toward "action engines" capable of interacting directly with computer environments, managing files, and executing multi-step workflows. This paradigm shift, often referred to as the "Agent War," is being led by a cohort of frontier labs—Anthropic, Perplexity, OpenAI, and Google—each vying to become the primary interface for digital labor. The emergence of tools like Anthropic’s Claude Cowork and Perplexity’s Computer reflects a burgeoning realization that the ultimate value of large language models (LLMs) lies in their ability to act as digital employees rather than simple advisors.[^1]
 
-## **The Emergence of the Digital Coworker: Claude Cowork and the Desktop-Native Agent**
+## The Emergence of the Digital Coworker: Claude Cowork and the Desktop-Native Agent
 
 Anthropic has cultivated significant hype around Claude Cowork, a research preview that expands the Claude assistant from a conversational partner into a task-executing digital coworker. Integrated into the Claude Desktop experience, Cowork allows the model to interact directly with the user’s local files, folders, and applications. This desktop-native approach is a strategic move to embed intelligence within the existing workflows of professionals, rather than requiring them to port data into a web-based chat box.[^1]
 
@@ -28,7 +28,7 @@ The excitement surrounding Claude Cowork is partly driven by the expansion of An
 
 Despite its potential, Cowork remains in a research preview phase, restricted to Claude Max subscribers on specific platforms. It faces practical limitations, such as requiring the computer to remain awake and the application to be open to execute scheduled tasks. If the computer is asleep, the agent skips the task and resumes only upon wake-up.6 Furthermore, while it handles complex file operations, it consumes a significant amount of the user’s message quota—sometimes equivalent to dozens of regular chat messages for a single session.[^4] These frictions highlight that while the vision for a digital coworker is clear, the infrastructure for seamless, always-on autonomy is still being refined.
 
-## **Perplexity Computer: The Multi-Model Orchestration Paradigm**
+## Perplexity Computer: The Multi-Model Orchestration Paradigm
 
 While Anthropic focuses on deep integration within a single-model ecosystem, Perplexity has introduced "Perplexity Computer," a cloud-based "digital worker" that represents a fundamentally different approach to agentic AI. Perplexity Computer is positioned as a chief of staff or virtual analyst that can execute entire projects—from research and design to coding and deployment—autonomously.[^5]
 
@@ -51,7 +51,7 @@ Perplexity’s tool is available exclusively to "Max" subscribers at a premium p
 
 One of the most critical aspects of Perplexity Computer is its use of isolated compute environments. Every task runs in a secure sandbox with access to a real filesystem and browser, but is entirely walled off from the user’s personal computer and network.[^6] This cloud-based approach allows for "always-on" persistence; a project can run for hours or even months without the user being present. Perplexity has even introduced a "Personal Computer" that runs on a dedicated Mac mini, staying connected to the user’s files 24/7 to act as a persistent digital proxy.[^10] This contrast between Anthropic’s local file interaction and Perplexity’s cloud-native sandbox represents a divergence in how "computer use" is envisioned: one as an extension of the local machine, and the other as a remote digital employee.[^1]
 
-## **The Game-Changer Debate: Agents versus Traditional API Connectors**
+## The Game-Changer Debate: Agents versus Traditional API Connectors
 
 The question of whether agentic AI is a "game changer" often centers on its relationship with traditional automation tools like Zapier and Make. These legacy platforms pioneered no-code automation by connecting thousands of apps through deterministic, API-to-API logic. If a specific event occurs in one app, the system triggers a predefined action in another.[^11] This model is highly efficient for high-volume, predictable tasks where data mapping is straightforward. However, it is inherently rigid; the automation breaks if a software UI changes, if an API is unavailable, or if the task requires human-like judgment.[^12]
 
@@ -72,7 +72,7 @@ Agentic AI systems represent a move from rule-based to reasoning-based automatio
 
 The emergence of "vision-action loops," where agents observe the screen and interpret raw pixels, is the true catalyst for change. This enables the automation of tasks inside "messy," no-API environments, such as legacy internal tools or dashboards that lack modern integrations.[^15] However, experts suggest that rather than replacing connectors, agents will sit atop them. A "hybrid stack" approach is gaining favor, where Zapier-style API flows handle the reliable data transfer, and AI agents manage the decision-making and project coordination.[^16] Zapier itself is adapting to this reality by introducing "Zapier Central," which allows users to build "mini-agents" with their own logic to perform tasks that standard Zaps cannot.[^17]
 
-## **Specialized Autonomy: Mosaic AI vs. Generalist Computer Agents**
+## Specialized Autonomy: Mosaic AI vs. Generalist Computer Agents
 
 A critical evolution in the agentic race is the move from "general computer use" to "specialized outcome engines." While Claude Cowork and Perplexity Computer attempt to master the general interface of a PC, startups like **Mosaic.so** are building omnipresent API infrastructures for specific vertical labor. Mosaic’s recent launch of its AI video editing API demonstrates a fundamental shift: the elimination of traditional UI steps like timelines or exports in favor of autonomous agents.
 
@@ -84,7 +84,7 @@ Mosaic’s flagship demo features "Larry," a Slack-based bot that autonomously c
 
 This suggests that while "computer use" is the current media hype, the long-term winners may be tools that make the computer (and its UI) redundant for specific high-value workflows.
 
-## **The Titan’s War: Google, OpenAI, and the Race for the Action Engine**
+## The Titan’s War: Google, OpenAI, and the Race for the Action Engine
 
 Google and OpenAI are currently engaged in a high-stakes "Agent War," racing to move beyond the conversational chatbot and toward the "Action Engine".[^18] This race is not just about intelligence, but about control over the primary discovery interfaces of the digital world. Google’s strategy is heavily defensive, viewing agents as a way to maintain its search and browser dominance in an AI-first environment. OpenAI, conversely, needs agents to justify its massive valuation and transition from a research lab into a comprehensive digital service provider.[^19]
 
@@ -107,7 +107,7 @@ Google is positioning its agents as "governance-first," generating a log of "Art
 
 The question of whether these titans are "behind" is nuanced. Anthropic and Perplexity were earlier to release functional "computer use" features to the public, but Google and OpenAI possess the massive infrastructure and distribution networks (Chrome, Android, ChatGPT) to potentially dominate the market once their agents are fully refined.[^18] Anthropic’s Claude remains the "technical leader" in benchmarks like SWE-bench, but Google’s Gemini 2.5/3.0 Pro and OpenAI’s GPT-5 are rapidly closing the gap in expert-level knowledge and agentic benchmarks.[^21]
 
-## **Macroeconomic Trajectories: Productivity, Business Growth, and GDP**
+## Macroeconomic Trajectories: Productivity, Business Growth, and GDP
 
 The integration of agentic AI is expected to catalyze a fundamental shift in the potential growth rate of the global economy, with the United States positioned as the primary beneficiary of this transition. For professionals, the impact on productivity is profound; AI doesn't just suggest a schedule—it negotiates meeting times across time zones and prepares briefing notes.[^14] Middle-management administrative tasks, which involve high levels of coordination and information synthesis, are particularly exposed to automation, with McKinsey projecting that up to 45% of these tasks could be automated by 2030.[^14]
 
@@ -128,7 +128,7 @@ While the "investment boom" is real, its immediate impact on U.S. GDP is complic
 
 The most exposed occupations to AI automation are office and administrative support (75%), business and financial operations (68%), and computer-related roles (63%).[^23] However, "exposure" does not necessarily equate to displacement. In many high-wage occupations, AI acts as a complement, increasing the value per worker and potentially raising wages for those who can adapt to the new technology.[^23] For the U.S., being the earliest adopter provides a strategic "cushion" of innovation that adds resilience to the economy, even as labor force growth slows.[^22]
 
-## **The Cantillon Effect of Agentic AI: A New Theory of Intelligence and Wealth**
+## The Cantillon Effect of Agentic AI: A New Theory of Intelligence and Wealth
 
 The most significant long-term consequence of agentic AI adoption may not be the aggregate increase in productivity, but the structural redistribution of wealth, a phenomenon best understood through the "Cantillon Effect." Coined by 18th-century economist Richard Cantillon, the effect describes how the creation of new money benefits those who receive it first—governments, banks, and asset holders—before it circulates to the wider population as inflation.[^25] Those "closest to the source" gain purchasing power and acquire assets at prevailing prices, while latecomers find themselves dealing with inflated costs and diminished prospects.[^25]
 
@@ -151,13 +151,32 @@ The "Cantillon Effect of Agentic AI" suggests that by the time the "average pers
 
 This creates a self-reinforcing cycle of wealth concentration. Early beneficiaries leverage their financial and intelligence advantages to secure even more resources, further widening the gap between "Cantillionaires"—those amassing wealth by capitalizing on the intelligence creation process—and the latecomers.[^25] For nations like the United States, early adoption creates a "first-mover" advantage that could increase global income inequality by disproportionately benefiting advanced economies over those with less-developed digital infrastructure.[^29]
 
-## **Conclusion: Navigation of the Agentic Era**
+## Conclusion: Navigation of the Agentic Era
 
 The transition toward agentic AI is not a minor update to the digital ecosystem; it is a fundamental shift in how human intelligence interacts with technology. Anthropic’s Claude Cowork and Perplexity’s Computer are the first examples of "always-on" digital employees that move beyond providing information to delivering completed work. While traditional automation tools like Zapier will continue to serve as the plumbing of the internet, the reasoning-first agents of 2026 are the new architects of workflow.
 
 The competitive race between Google, OpenAI, and Anthropic will determine which "discovery interface" owns the future of digital labor. However, the economic reality of this race is defined by the Cantillon Effect. The disproportionate increase in wealth will likely accrue to those who adopt and control the intelligence engine early, leaving latecomers to absorb the social and economic costs of displacement. For businesses and nations, the strategic imperative is no longer just "using AI," but securing a position as a "first receiver" in the issuance of intelligence. Those who navigate this frontier successfully will not only see productivity gains but will capture the structural wealth generated by the most significant technological paradigm shift of the century.
 
 Strategic navigation of this era requires a dual focus: optimizing for the immediate productivity gains of autonomous agents while simultaneously addressing the profound distributional challenges they create. Policies such as reskilling initiatives, progressive taxation on capital gains, and inclusive innovation frameworks will be essential to ensure that the "intelligence injection" serves as a tool for broader social prosperity rather than a mechanism for dystopian mass immiseration.[^29] The Agentic Frontier is now open, and the redistribution of wealth and power has already begun.
+
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
 
 
 ## References

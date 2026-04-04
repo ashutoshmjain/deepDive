@@ -1,4 +1,4 @@
-# The Great Decoupling: Frontiers v/s Wrappers — The NVIDIA Verdict
+# The Great NVIDIA Decoupling
 
 ![Mag 7 Split: Frontier Sovereignty](./img/mag7split.png)
 
@@ -15,7 +15,7 @@ As of late February 2026, the market is no longer pricing in "AI potential"; it 
 NVIDIA’s earnings report today served as the "final confirmation" of the Frontier group's dominance. The company reported record quarterly revenue of USD 68.1 billion, a 73% increase year-over-year, crushing the USD 65.7 billion consensus [2]
 
 * **Financial Performance:** Adjusted earnings per share (EPS) hit USD 1.62 against expectations of USD 1.54, while Data Center revenue reached a record USD 62.3 billion [2]  
-* **Guidance Breakthrough:** NVIDIA guided for Q1 FY2027 revenue of USD 73.0 Billion $\pm 2\%$), significantly exceeding Wall Street's USD 71-72 billion forecast [2]  
+* **Guidance Breakthrough:** NVIDIA guided for Q1 FY2027 revenue of USD 73.0 Billion \$\pm 2\%\$), significantly exceeding Wall Street's USD 71-72 billion forecast [2]  
 * **Strategic Shift:** CEO Jensen Huang declared that the "agentic AI inflection point has arrived," stating that enterprise adoption of autonomous AI agents is "skyrocketing".2
 
 Following the report, NVIDIA's stock price broke the USD 200 threshold in after-market trading, cement its status as the hardware "foundry" for the entire Sovereign Frontier [4]
@@ -47,8 +47,8 @@ The "Wrapper" group—Microsoft, Amazon, and Apple—is currently facing a "show
 
 Despite beating EPS estimates, Microsoft’s stock suffered an 11.9% plunge on January 29, 2026, erasing USD 400 billion in market value . The catalyst was the disclosure that **45% of its USD 625 billion cloud backlog** is tied to a single partner, OpenAI . Investors are spooked by the "circular economics" of investing in a partner to buy its own services, a relationship modeled by:
 
-$$V = \frac{R}{1 + \alpha}$$  
-Where $\alpha$ (the coefficient of reinvested capital) is perceived to be dangerously high, leading to a valuation discount [13]
+\$\$V = \frac{R}{1 + \alpha}\$\$  
+Where \$\alpha\$ (the coefficient of reinvested capital) is perceived to be dangerously high, leading to a valuation discount [13]
 
 ### Amazon: The USD 200 Billion "Warehouse" Shocker
 
@@ -75,7 +75,7 @@ At the application layer, Palantir Technologies is emerging as the primary benef
 
 Conversely, Salesforce hit fresh 52-week lows in February 2026, trading 42% below its previous highs as the market perceives a sharp slowdown in its AI cloud backlog .
 
-## **Conclusion: The New Hierarchy of Intelligence**
+## Conclusion: The New Hierarchy of Intelligence
 
 The Q4 2025 earnings season has established a new hierarchy for 2026:
 
@@ -122,3 +122,21 @@ The "AI Wrappers" (Microsoft, Amazon, Apple) remain cash-flow giants with domina
 17. Palantir (PLTR) 2026 Deep-Dive: The Rise of the Agentic AI Powerhouse, accessed February 6, 2026, [https://markets.financialcontent.com/stocks/article/finterra-2026-1-14-palantir-pltr-2026-deep-dive-the-rise-of-the-agentic-ai-powerhouse](https://markets.financialcontent.com/stocks/article/finterra-2026-1-14-palantir-pltr-2026-deep-dive-the-rise-of-the-agentic-ai-powerhouse)
 
 18. AGIX KraneShares Artificial Intelligence & Technology ETF, accessed February 6, 2026, [https://kraneshares.com/etf/agix/](https://kraneshares.com/etf/agix/)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

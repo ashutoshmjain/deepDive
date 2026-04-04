@@ -1,4 +1,8 @@
-# The Strategic Anchor: Apple’s Creator Studio and the Restructuring of the Creative Economy in the Age of the Great AI Shakeout
+# Apple: The Creator Studio
+
+![cover image](./img/apple-creator-studio.png)
+
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 <center>
 <a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
@@ -167,10 +171,10 @@ References
 [^4]: Apple picks Google Gemini to power AI Siri and next-gen Apple Intelligence features, accessed January 14, 2026, https://www.indiatoday.in/technology/news/story/apple-picks-google-gemini-to-power-ai-siri-and-next-gen-apple-intelligence-features-2851012-2026-01-13
 [^5]: Product - AI Video Editing Platform | Mosaic, accessed January 14, 2026, https://mosaic.so/product
 [^6]: ElevenLabs Pricing for Creators & Businesses of All Sizes, accessed January 14, 2026, https://elevenlabs.io/pricing
-[^7]: AI Image and Video Pricing from $12/month | Runway AI, accessed January 14, 2026, https://runwayml.com/pricing
+[^7]: AI Image and Video Pricing from 12 USD/month | Runway AI, accessed January 14, 2026, https://runwayml.com/pricing
 [^8]: AI Could Spell Trouble for Software. These Experts Say to Avoid One Stock In Particular, accessed January 14, 2026, https://www.investopedia.com/ai-could-spell-trouble-for-software-these-experts-say-to-avoid-one-stock-in-particular-adbe-11884903
 [^9]: Adobe (ADBE) Is Down 7.8% After AI-Driven Downgrades Challenge Its Creative Cloud Moat - Simply Wall St, accessed January 14, 2026, https://simplywall.st/stocks/us/software/nasdaq-adbe/adobe/news/adobe-adbe-is-down-78-after-ai-driven-downgrades-challenge-i
-[^10]: Apple's $13/month Creator Studio: Pro Editing Tools That Crush $680 in Upfront Costs - Launching Jan 28! - Gadget Review, accessed January 14, 2026, https://www.gadgetreview.com/apples-13-month-creator-studio-pro-editing-tools-that-crush-680-in-upfront-costs-launching-jan-28
+[^10]: Apple's 13 USD/month Creator Studio: Pro Editing Tools That Crush 680 USD in Upfront Costs - Launching Jan 28! - Gadget Review, accessed January 14, 2026, https://www.gadgetreview.com/apples-13-month-creator-studio-pro-editing-tools-that-crush-680-in-upfront-costs-launching-jan-28
 [^11]: Final Cut Pro - Apple, accessed January 14, 2026, https://www.apple.com/final-cut-pro/
 [^12]: Use iCloud with your Mac Studio - Apple Support, accessed January 14, 2026, https://support.apple.com/guide/mac-studio/use-icloud-with-your-mac-apdc44eb8957/mac
 [^13]: Buy Pro Apps Bundle for Education - Apple, accessed January 14, 2026, https://www.apple.com/ca-edu/shop/product/bmge2z/a/pro-apps-bundle-for-education
@@ -181,3 +185,21 @@ References
 [^22]: Apple's Foray into AI with Project “Ajax” and Apple GPT | doing the math for you - gekko, accessed January 14, 2026, https://gpt.gekko.de/project-ajax-and-apple-gpt/
 [^24]: Adobe Firefly's New AI Editing Tools Are a Step Toward More Precise AI Video - CNET, accessed January 14, 2026, https://www.cnet.com/tech/services-and-software/adobe-fireflys-news-ai-editing-tools-video-editor-prompting/
 [^25]: Collaborate on projects with Messages on iPhone - Apple Support, accessed January 14, 2026, https://support.apple.com/guide/iphone/collaborate-on-projects-iphf08c82a16/ios
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

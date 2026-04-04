@@ -1,4 +1,4 @@
-# Financial Fortress: Strategy Inc.'s 1.44 Billion USD Reserve and the Evolution of Digital Credit
+# MSTR’s 1.44 Billion Reserve
 
 ![Strategy Inc. Financial Fortress](./img/STRC.png)
 
@@ -57,7 +57,7 @@ The official validation of the 21-month claim requires an examination of Strateg
 The annualized obligation of 731 million USD translates to a monthly obligation of roughly 61 million USD (731 million USD divided by 12).
 
 Using the disclosed reserve size and the calculated monthly burn rate:
-$$ \text{Coverage Ratio} = \frac{\text{1.44 Billion}}{\text{0.061 Billion/month}} \approx 23.6 \text{ months} $$
+\$\$ \text{Coverage Ratio} = \frac{\text{1.44 Billion}}{\text{0.061 Billion/month}} \approx 23.6 \text{ months} \$\$
 
 While the raw calculation yields approximately 23.6 months of coverage, the company’s official claim is 21 months. This conservative claim likely accounts for several prudential factors:
 1.  **Projected Issuance:** Management likely anticipates future preferred stock issuances, which would increase the monthly dividend burden and reduce the duration coverage of the fixed reserve amount.
@@ -173,3 +173,21 @@ By effectively pre-paying nearly two years of obligations, Strategy Inc. has ach
 The reserve fundamentally transforms Strategy Inc. into a **hybrid entity**. It combines the aggressive, future-focused nature of a massive digital asset treasury with the conservative, risk-buffered discipline of traditional finance. This hybrid posture may feel more acceptable to institutional investors, regulators, and debt holders than a purely crypto-centric model.
 
 The **21 months** is more than just a duration; it is an invaluable strategic commodity. It provides Strategy Inc. with optionality and time: the time needed for the company’s long-term thesis—that Bitcoin will appreciate and potentially demonetize traditional assets—to play out without the threat of near-term solvency issues. The success of this model now depends entirely on execution: maintaining the reserve, optimizing the capital structure, and successfully navigating the long-term risk posed by the 731 million USD annual fixed obligation. The 1.44 billion USD cash reserve is the ultimate proof that Strategy Inc. has engineered a sophisticated financial mechanism to bridge the chasm between the fiat economy and the digital asset economy, buying time for the revolution it seeks to lead.
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---

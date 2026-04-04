@@ -1,4 +1,4 @@
-# The Genetic Lottery and the Path to Perpetuity: An Evolutionary Analysis of Sexual Reproduction versus Parthenogenesis
+# Sexual Reproduction vs. Cloning
 
 ![Cover](./img/cloningVsSexualReproduction.png)
 
@@ -37,9 +37,9 @@ The molecular machinery involved in crossing over is closely linked to the cell'
 
 ### The Combinatorial Explosion of Independent Assortment
 
-The second mechanism of the genetic lottery occurs during Metaphase I, where the law of independent assortment dictates the random orientation of homologous pairs along the cell's equator. [1] The orientation of one pair is entirely independent of the others; for example, a maternal chromosome 1 may segregate to the same pole as a paternal chromosome 2. [15] For a diploid organism with $n$ pairs of chromosomes, the number of possible gametic combinations is $2^n$. [16]
+The second mechanism of the genetic lottery occurs during Metaphase I, where the law of independent assortment dictates the random orientation of homologous pairs along the cell's equator. [1] The orientation of one pair is entirely independent of the others; for example, a maternal chromosome 1 may segregate to the same pole as a paternal chromosome 2. [15] For a diploid organism with \$n\$ pairs of chromosomes, the number of possible gametic combinations is 2 USD^n. USD [16]
 
-In humans, where $n = 23$ [12], the potential for diversity is mathematically immense. A single individual can produce $2^{23}$ or approximately 8,388,608 unique combinations of maternal and paternal chromosomes. [1] When combined with the effects of crossing over, the number of unique gametes produced by a single human is effectively infinite. [14] Random fertilization further amplifies this diversity; the fusion of any genetically unique sperm with any unique egg results in a zygote that represents one out of trillions of possible genetic outcomes. [10]
+In humans, where \$n = 23\$ [12], the potential for diversity is mathematically immense. A single individual can produce 2 USD^{23}\$ or approximately 8,388,608 unique combinations of maternal and paternal chromosomes. [1] When combined with the effects of crossing over, the number of unique gametes produced by a single human is effectively infinite. [14] Random fertilization further amplifies this diversity; the fusion of any genetically unique sperm with any unique egg results in a zygote that represents one out of trillions of possible genetic outcomes. [10]
 
 ### The Lottery Principle and Adaptive Landscapes
 
@@ -86,7 +86,7 @@ The "genetic lottery" of sex also resolves a major obstacle to adaptation known 
 
 ### Clonal Interference and Sequential Fixation
 
-In an asexual population, if two advantageous alleles ($A$ and $B$) occur in separate lineages, the only way for a single individual to possess both is for the second mutation to independently occur in a lineage that already carries the first. [25] This is statistically rare, meaning beneficial mutations must usually be fixed sequentially. [26] This "clonal interference" significantly slows the rate of evolution. [27]
+In an asexual population, if two advantageous alleles (\$A\$ and \$B\$) occur in separate lineages, the only way for a single individual to possess both is for the second mutation to independently occur in a lineage that already carries the first. [25] This is statistically rare, meaning beneficial mutations must usually be fixed sequentially. [26] This "clonal interference" significantly slows the rate of evolution. [27]
 
 Sexual reproduction eliminates this interference through recombination. [26] By crossing over, beneficial alleles from different ancestors can be combined into a single lineage, allowing for the simultaneous spread of multiple advantageous traits. [19] This "Vicar of Bray" effect allows sexual populations to adapt to novel environments much more rapidly than asexual ones. [25]
 
@@ -250,3 +250,21 @@ In the vast timeline of Earth's history, the diversity produced by sex is the on
 39. In gene-centric view, what is the benefit of sexual reproduction? : r/evolution - Reddit, accessed March 9, 2026, [https://www.reddit.com/r/evolution/comments/l6q3ig/in_genecentric_view_what_is_the_benefit_of_sexual/](https://www.reddit.com/r/evolution/comments/l6q3ig/in_genecentric_view_what_is_the_benefit_of_sexual/)
 
 40. The Evolution of Sex Is Favoured During Adaptation to New Environments - PMC3341334, accessed March 9, 2026, [https://pmc.ncbi.nlm.nih.gov/articles/PMC3341334/](https://pmc.ncbi.nlm.nih.gov/articles/PMC3341334/)
+
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
