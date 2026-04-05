@@ -1,9 +1,9 @@
 # Summary
 
 # Recent ..
+- [AI Made Me a Believer](./AI2Believer.md)
 - [Triple-Entry: The Future of Value](./tripleEntry.md)
 - [Bitcoin: The Public Truth](./digitalCredit.md)
-- [The Great Digital Reset](./divineCryptograph.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -34,7 +34,6 @@
 - [Prompt Engineering 2.0](./shutoshaBuffalo.md)
 - [Are LLMs Just Compression?](./areLLMsCompressionAlgo.md)
 - [Can AI Get Rich Fast?](./Can-AI-get-rich-superfast.md)
-- [AI Made Me a Believer](./AI2Believer.md)
 
 # Digital Credit & The STRC Bridge
 - [STRC and Digital Capital](./strcBlackhole.md)
