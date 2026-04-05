@@ -1,9 +1,9 @@
 # Summary
 
 # Recent ..
+- [The AI to Believer Shift](./AI2Beleiver.md)
 - [Triple-Entry: The Future of Value](./tripleEntry.md)
 - [Bitcoin: The Public Truth](./digitalCredit.md)
-- [The Great Digital Reset](./divineCryptograph.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -69,6 +69,7 @@
 - [Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 
 # Philosophy, Science & The Nature of Reality
+- [The Great Digital Reset](./divineCryptograph.md)
 - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
 - [Bit to It: Informational Universe](./bitToIt.md)
 - [The Stabilization of Mass](./accountingMass.md)
