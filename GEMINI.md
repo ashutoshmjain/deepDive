@@ -10,6 +10,7 @@ The following actions are **pre-authorized** by the user for this workspace. Whe
 - **Pushing:** `git push origin master` (or current branch) is permitted after successful commits.
 
 ## 2. Script Execution & Cleanup
+- **Tools:** `python3` and `perl` are pre-authorized for all automation and text-processing tasks.
 - **Python Scripts:** Creating and executing scripts in the `scripts/` directory to automate markdown fixes, KaTeX conversions, or `SUMMARY.md` updates.
 - **Cleanup:** Deleting temporary files (e.g., `*.txt`, `tmp_*`) created during investigation or comparison.
 
