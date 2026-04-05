@@ -12,23 +12,27 @@ The workflow is divided into **Deterministic Automation** (handled by the script
 This Python script handles the rules-based formatting that must be consistent across every file. It is the "frozen" standard for processing all markdown content in this repository.
 
 #### Key Features:
-1.  **Title Validation:** Ensures the H1 title is exactly 5 words (warns if not).
+1.  **Title Management:** 
+    - **Validation:** Ensures the H1 title is exactly 5 words (warns if not).
+    - **Auto-Generation:** If a file lacks an H1 title, the script automatically generates one from the filename or a provided `--title` argument.
 2.  **Cover & Social Snippets:** 
     - Automatically identifies and inserts a cover image after the main heading.
     - Injects a centered HTML snippet with links to the "Deep Dive with Gemini" podcast on Spotify, Apple Podcasts, YouTube Music, YouTube, and Fountain.fm.
 3.  **Lightning Wallet Widget:** Inserts the `shutosha@primal.net` lightning widget before the "References" or "notes and other stuff" section to support the value-for-value model.
 4.  **Technical Fixes (KaTeX & Currency):**
-    - Replaces `$` used for currency with `USD` (e.g., `$10B` becomes `10B USD`) to prevent rendering errors.
-    - Escapes literal `$` symbols as `\\$` so `mdbook-katex` treats them as text.
-    - Standardizes H1 and H2 headers by removing unnecessary bolding.
+    - **KaTeX Mapping:** Automatically replaces image placeholders (e.g., `![][image1]`) with project-standard Absolute KaTeX symbols (e.g., `$F$`, `$\mathcal{R}$`, `$\Phi$`).
+    - **Currency:** Replaces `$` used for currency with `USD` (e.g., `$10B` becomes `10B USD`) to prevent rendering errors.
+    - **Escaping:** Escapes literal `$` symbols as `\\$` so `mdbook-katex` treats them as text.
+    - **Headers:** Standardizes H1 and H2 headers by removing unnecessary bolding.
 5.  **Citation & Footnote Engine:** 
-    - Re-numbers all footnotes sequentially (1, 2, 3...) and ensures the "References" section is a perfectly formatted, numbered list.
-    - Removes "Truncated" placeholders and normalizes whitespace throughout the document.
+    - **Smarter Regex:** Uses an advanced regex boundary check to re-number footnotes without corrupting decimal numbers (like chapter/verse references `13.30`).
+    - **Mapping:** Re-numbers all footnotes sequentially (1, 2, 3...) and ensures the "References" section is a perfectly formatted, numbered list.
+    - **Cleanup:** Removes "Truncated" placeholders and normalizes whitespace throughout the document.
 6.  **Navigation Management (`SUMMARY.md`):**
-    - Automatically updates the **"Recent .."** section to list the three most recently added files (based on git addition date).
-    - Moves older files to their appropriate thematic categories (Bitcoin, AI, Economics, Philosophy, Social) using keyword mapping.
-    - Ensures `cover.md` and `how.md` are preserved at the top of the summary.
-    - Performs a **Completeness Crosscheck** to ensure no `src/` files are orphaned.
+    - **Missing File Detection:** Scans the `src/` folder for any `.md` files not currently listed in `SUMMARY.md` and automatically adds them to the project structure.
+    - **Dynamic Sorting:** Automatically updates the **"Recent .."** section to list the three most recently added files (based on git addition date).
+    - **Thematic Categories:** Moves older files to their appropriate thematic categories (Bitcoin, AI, Economics, Philosophy, Social) using keyword mapping.
+    - **Completeness Crosscheck:** Performs a final verification to ensure no `src/` files are orphaned.
 
 ---
 
@@ -51,7 +55,7 @@ While the script handles the structure, the AI agent (Gemini CLI) provides the "
 To process a new or updated file, run the following command from the project root:
 
 ```bash
-python3 scripts/universal_markdown_fixer.py src/your-file-name.md
+python3 scripts/universal_markdown_fixer.py src/your-file-name.md --title "Your Five Word Catchy Title"
 ```
 
 The AI agent will automatically handle the pre-processing and post-verification steps when you say "fix markdown."

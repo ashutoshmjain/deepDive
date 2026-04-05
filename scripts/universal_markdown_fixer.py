@@ -28,6 +28,12 @@ CATEGORIES = {
     "cryptograph": "# Philosophy, Science & The Nature of Reality"
 }
 
+KATEX_MAP = {
+    "![][image1]": "$F$",
+    "![][image2]": "$\\mathcal{R}$",
+    "![][image3]": "$\\Phi$"
+}
+
 def get_file_dates():
     """Returns a dict of filename -> initial addition timestamp using git log."""
     try:
@@ -101,6 +107,12 @@ def update_summary(target_file_path):
     sections_order = []
     current_category = None
     
+    # Pre-populate with ALL src files to catch missing ones
+    all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md', 'how.md']]
+    for fname in all_src_files:
+        title = extract_title(os.path.join('src', fname))
+        file_to_info[fname] = [title, None, file_dates.get(fname, 0)]
+
     for line in content.split('\n'):
         if line.startswith('# '):
             current_category = line.strip()
@@ -110,14 +122,15 @@ def update_summary(target_file_path):
             m = re.search(r'\[(.*?)\]\(\.\/(\.\/)?(.*?)\)', line)
             if m:
                 _, _, fname = m.groups()
-                if fname in ['SUMMARY.md', 'cover.md', 'how.md']:
-                    continue
-                # Extract actual H1 from the file
-                title = extract_title(os.path.join('src', fname))
-                if "Recent .." not in current_category:
-                    file_to_info[fname] = [title, current_category, file_dates.get(fname, 0)]
-                elif fname not in file_to_info:
-                    file_to_info[fname] = [title, None, file_dates.get(fname, 0)]
+                if fname in file_to_info:
+                    if "Recent .." not in current_category:
+                        file_to_info[fname][1] = current_category
+
+    # Ensure essential categories exist in order
+    essential_sections = ["# Recent ..", "# The Bitcoin Standard & Sovereign Assets", "# The AI Revolution & Machine Intelligence", "# Digital Credit & The STRC Bridge", "# Economics, Capital & The Global Shift", "# Philosophy, Science & The Nature of Reality", "# Social, Culture & Digital Sovereignty"]
+    for es in essential_sections:
+        if es not in sections_order:
+            sections_order.append(es)
 
     recent_files = get_recent_files(3)
     recent_filenames = [os.path.basename(f) for f in recent_files]
@@ -128,7 +141,7 @@ def update_summary(target_file_path):
         if file_to_info[fname][1] is None:
             new_cat = categorize_file(fname)
             file_to_info[fname][1] = new_cat
-            report.append(f"Moved {fname} to {new_cat}")
+            report.append(f"Mapped {fname} to {new_cat}")
 
     new_content = [
         "# Summary",
@@ -156,13 +169,9 @@ def update_summary(target_file_path):
         
         new_content.append("")
 
-    # Move cover and how-to to the bottom to ensure recent articles are the landing page
     new_content.append("# About the Project")
-    # Only add if they are not already in new_content to avoid duplicates
-    if not any("./cover.md" in line for line in new_content):
-        new_content.append("- [Deep Dive with Gemini](./cover.md)")
-    if not any("./how.md" in line for line in new_content):
-        new_content.append("- [How to read this book](./how.md)")
+    new_content.append("- [Deep Dive with Gemini](./cover.md)")
+    new_content.append("- [How to read this book](./how.md)")
 
     with open(summary_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content).strip() + '\n')
@@ -173,30 +182,38 @@ def fix_markdown(file_path, new_title=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # If a new title is provided, update the H1
+    # Ensure H1 exists
+    if not re.search(r'^#\s+', content, re.MULTILINE):
+        title_to_use = new_title or os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
+        content = f"# {title_to_use}\n\n" + content
+    
+    # Update H1 if title provided
     if new_title:
         if len(new_title.split()) > 5:
             print(f"WARNING: Provided title '{new_title}' exceeds 5 words!")
         content = re.sub(r'^#\s+.*$', f'# {new_title}', content, count=1, flags=re.MULTILINE)
-    else:
-        # Validate existing title length
-        current_title = extract_title(file_path)
-        if len(current_title.split()) > 5:
-            print(f"WARNING: Title '{current_title}' in {file_path} exceeds 5 words!")
 
+    # Clean up bolding in headers
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
+    
+    # KaTeX replacements
+    for placeholder, symbol in KATEX_MAP.items():
+        content = content.replace(placeholder, symbol)
+
+    # Insert cover image and podcast links
     image_name = os.path.basename(file_path).replace('.md', '.png')
     image_path = f"./img/{image_name}"
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
     if image_name not in content and "![cover image]" not in content:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{podcast_links}\n\n', content, count=1)
     
-    # ... (rest of the formatting logic) ...
+    # Currency conversion
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
     content = content.replace('$', '\\$')
     
+    # Footnote re-numbering and formatting
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -205,13 +222,14 @@ def fix_markdown(file_path, new_title=None):
         for line in wc_text.split('\n'):
             m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
             if m: citations.append(m.group(2).strip())
+        
         used_cites = {}
         next_id = 1
         def cite_repl(m):
             nonlocal next_id
             try:
                 old_id = int(m.group(1))
-                if old_id > 20: return m.group(0) 
+                if old_id > 50: return m.group(0) # Likely not a citation if > 50
                 if old_id not in used_cites:
                     used_cites[old_id] = next_id
                     next_id += 1
@@ -219,7 +237,9 @@ def fix_markdown(file_path, new_title=None):
             except:
                 return m.group(0)
 
-        content = re.sub(r'(?<=[a-zA-Z0-9.])\s*(\d{1,2})(?=\s|$|\n|\.|\,)', cite_repl, content)
+        # Fix: Better regex for citations - avoid decimals and check boundary/parenthesis
+        content = re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, content)
+        
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
             if old <= len(citations):
@@ -228,11 +248,11 @@ def fix_markdown(file_path, new_title=None):
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
     
-    # Remove "Truncated" and cleanup whitespace
+    # Cleanup
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
-    # Lightning Widget Snippet
+    # Lightning Widget
     lightning_widget = """
 ---
 
@@ -252,13 +272,9 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 
 ---
 """
-    # Check if widget is already present (by looking for the unique lightning address)
     if "shutosha@primal.net" not in content and "SUMMARY.md" not in file_path:
-        # Insert before References if they exist, otherwise at the end
         if "## References" in content:
             content = content.replace("## References", lightning_widget + "\n\n## References")
-        elif "## notes and other stuff" in content:
-            content = content.replace("## notes and other stuff", lightning_widget + "\n\n## notes and other stuff")
         else:
             content = content.strip() + "\n" + lightning_widget
 
@@ -281,7 +297,6 @@ if __name__ == "__main__":
         print("\nRestoration Report:")
         for r in report: print(f"- {r}")
     
-    # Final check for title length
     final_title = extract_title(target)
     if len(final_title.split()) > 5:
         print(f"\nCRITICAL WARNING: The title '{final_title}' still exceeds 5 words!")
@@ -290,4 +305,3 @@ if __name__ == "__main__":
     
     print("\nAutomated Crosscheck:")
     print(verify_completeness())
-
