@@ -1,4 +1,4 @@
-# The AI to Believer Shift
+# AI Made Me a Believer
 
 ![cover image](./img/AI2Beleiver.png)
 
@@ -8,7 +8,7 @@ The accelerating trajectory of artificial intelligence toward the threshold of A
 
 ## The Brain as a Predictive Engine: The Quantitative Boundary
 
-The most rigorous proof for the separation of the material mind and the conscious impulse comes from **Karl Friston’s Free Energy Principle (FEP)**. In this framework, the brain is modeled as a "generative world model" that constantly builds a hierarchical simulation to minimize "surprise" or variational free energy ($F$).[^3]
+The most rigorous proof for the separation of the material mind and the conscious impulse comes from **Karl Friston’s Free Energy Principle (FEP)**. In this framework, the brain is modeled as a "generative world model" that constantly builds a hierarchical simulation to minimize "surprise" or variational free energy (\\$F\\$).[^3]
 
 ### **The FEP Proof of Material Nature**
 
@@ -26,9 +26,9 @@ This quantitative completeness on the behavioral side serves as the "negative pr
 
 If the brain's "syntax" calculates prediction errors, what *perceives* the surprise? In early 2026, researchers began to formalize your intuition of a "separate conscious impulse" as the **"Qualia force" (R-force)**.
 
-### **The R-Force ($\mathcal{R}$) Framework**
+### **The R-Force (\\$\mathcal{R}\\$) Framework**
 
-Proposed by Marat Rvachev in January 2026, the **R-force** ($\mathcal{R}$) is defined as an effective force acting via the gradient of a **"consciousness potential"** ($\Phi$).
+Proposed by Marat Rvachev in January 2026, the **R-force** (\\$\mathcal{R}\\$) is defined as an effective force acting via the gradient of a **"consciousness potential"** (\\$\Phi\\$).
 
 * **Biasing Stochastic Processes:** This force acts on the physical substrate (the brain) to bias neural dynamics toward an attractor state—a conscious observer.
 * **The Weight of Qualia:** While the material engine updates weights, the R-force provides the qualitative "felt" weight necessary to prioritize actions, such as the actual *fear* that motivates avoiding a snake.
