@@ -20,7 +20,8 @@ The following actions are **pre-authorized** by the user for this workspace. Whe
 - **KaTeX:** Always replacing mathematical images with Absolute KaTeX code.
 
 ## 4. System Verification
-- Running `mdbook build` and `mdbook serve` to validate changes and check for warnings.
+- Running `npm run build:pwa` to validate changes and update the Service Worker.
+- Running `npm run serve:pwa` (or `mdbook serve`) to check rendering.
 
 ---
 *Note: While these are pre-authorized, the CLI security architecture may still present a confirmation prompt. The user intends for these to be treated as "Trivial/Routine" approvals.*

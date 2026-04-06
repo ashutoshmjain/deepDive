@@ -44,7 +44,7 @@ While the script handles the structure, the AI agent (Gemini CLI) provides the "
 2.  **Research & Citations:** Uses web-search and fetch tools to find missing titles, dates, and URLs for raw citations, ensuring the "References" section is complete and accurate.
 3.  **Readability & Tone:** Analyzes the text to break up large "walls of text" into shorter, more digestible paragraphs, optimizing the reading experience for mobile and web.
 4.  **Final Validation:** 
-    - Runs `mdbook build` and `mdbook serve` to inspect the output.
+    - Runs `npm run build:pwa` (instead of standard `mdbook build`) to update the Service Worker and inspect the output.
     - Specifically checks for `ParseError: KaTeX` or `Warning: persistent link` errors in the build log.
 5.  **Source Control:** Finalizes the task by staging changes (`git add .`), crafting a descriptive commit message, and pushing to the repository.
 
