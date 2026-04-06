@@ -1,4 +1,4 @@
-# AI Made Me a Believer
+# 220: AI Made Me a Believer
 
 ![cover image](./img/AI2Believer.png)
 

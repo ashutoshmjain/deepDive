@@ -1,7 +1,7 @@
 # Summary
 
 # Recent ..
-- [AI Made Me a Believer](./AI2Believer.md)
+- [220: AI Made Me a Believer](./AI2Believer.md)
 - [Triple-Entry: The Future of Value](./tripleEntry.md)
 - [Bitcoin: The Public Truth](./digitalCredit.md)
 

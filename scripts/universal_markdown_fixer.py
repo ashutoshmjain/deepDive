@@ -2,7 +2,7 @@ import re
 import os
 import subprocess
 
-# Thematic categories mapping - Expanded for better matching
+# Thematic categories mapping
 CATEGORIES = {
     "bitcoin": "# The Bitcoin Standard & Sovereign Assets",
     "btc": "# The Bitcoin Standard & Sovereign Assets",
@@ -37,7 +37,6 @@ KATEX_MAP = {
 def get_file_dates():
     """Returns a dict of filename -> initial addition timestamp using git log."""
     try:
-        # Use diff-filter=A to get the first time a file was added
         cmd = "git log --name-only --diff-filter=A --format='%at' src/*.md"
         output = subprocess.check_output(cmd, shell=True, text=True)
         file_dates = {}
@@ -58,7 +57,6 @@ def get_file_dates():
 def get_recent_files(n=3):
     try:
         dates = get_file_dates()
-        # Convert to list of (filename, date) and sort
         sorted_files = sorted(dates.items(), key=lambda x: x[1], reverse=True)
         return [os.path.join('src', f[0]) for f in sorted_files[:n]]
     except Exception as e:
@@ -107,7 +105,6 @@ def update_summary(target_file_path):
     sections_order = []
     current_category = None
     
-    # Pre-populate with ALL src files to catch missing ones
     all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md', 'how.md']]
     for fname in all_src_files:
         title = extract_title(os.path.join('src', fname))
@@ -126,7 +123,6 @@ def update_summary(target_file_path):
                     if "Recent .." not in current_category:
                         file_to_info[fname][1] = current_category
 
-    # Ensure essential categories exist in order
     essential_sections = ["# Recent ..", "# The Bitcoin Standard & Sovereign Assets", "# The AI Revolution & Machine Intelligence", "# Digital Credit & The STRC Bridge", "# Economics, Capital & The Global Shift", "# Philosophy, Science & The Nature of Reality", "# Social, Culture & Digital Sovereignty"]
     for es in essential_sections:
         if es not in sections_order:
@@ -143,10 +139,7 @@ def update_summary(target_file_path):
             file_to_info[fname][1] = new_cat
             report.append(f"Mapped {fname} to {new_cat}")
 
-    new_content = [
-        "# Summary",
-        ""
-    ]
+    new_content = ["# Summary", ""]
     for sec in sections_order:
         if sec in ["# Summary", "# About the Project"]: continue
         new_content.append(sec)
@@ -161,12 +154,9 @@ def update_summary(target_file_path):
             for fname, info in file_to_info.items():
                 if info[1] == sec and fname not in recent_filenames:
                     cat_files.append({'title': info[0], 'fname': fname, 'date': info[2]})
-            
-            # SORT CHRONOLOGICALLY (NEWEST FIRST)
             cat_files.sort(key=lambda x: x['date'], reverse=True)
             for f in cat_files:
                 new_content.append(f"- [{f['title']}](./{f['fname']})")
-        
         new_content.append("")
 
     new_content.append("# About the Project")
@@ -178,63 +168,64 @@ def update_summary(target_file_path):
     
     return report
 
-def fix_markdown(file_path, new_title=None):
+def fix_markdown(file_path, new_title=None, episode=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Deep Sanitization: Remove invisible Unicode characters (like \u0332)
+    # Deep Sanitization
     content = content.replace('\u0332', '')
     
-    # Ensure H1 exists
-    if not re.search(r'^#\s+', content, re.MULTILINE):
-        title_to_use = new_title or os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
-        content = f"# {title_to_use}\n\n" + content
+    # Extract or create current title
+    current_h1_match = re.search(r'^#\s+(.*)$', content, re.MULTILINE)
+    if current_h1_match:
+        current_title = current_h1_match.group(1).strip()
+    else:
+        current_title = os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
+        content = f"# {current_title}\n\n" + content
+
+    # Construct the final title with episode number
+    final_title = new_title or current_title
     
-    # Update H1 if title provided
-    if new_title:
-        if len(new_title.split()) > 5:
-            print(f"WARNING: Provided title '{new_title}' exceeds 5 words!")
-        content = re.sub(r'^#\s+.*$', f'# {new_title}', content, count=1, flags=re.MULTILINE)
+    # Remove existing episode prefix if any to avoid duplication
+    final_title = re.sub(r'^\d+:\s*', '', final_title)
+    
+    if episode:
+        final_title = f"{episode}: {final_title}"
+    elif re.match(r'^\d+:', current_title):
+        # Preserve existing episode number if no new one provided
+        ep_prefix = re.match(r'^(\d+:)\s*', current_title).group(1)
+        final_title = f"{ep_prefix} {re.sub(r'^\d+:\s*', '', final_title)}"
+
+    # Update H1
+    content = re.sub(r'^#\s+.*$', f'# {final_title}', content, count=1, flags=re.MULTILINE)
 
     # Clean up bolding in headers
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
     
-    # KaTeX replacements
     for placeholder, symbol in KATEX_MAP.items():
         content = content.replace(placeholder, symbol)
 
-    # Insert or Update cover image and podcast links
     image_name = os.path.basename(file_path).replace('.md', '.png')
     image_path = f"./img/{image_name}"
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
     
-    # Independent checks for image and links
     if "![cover image]" in content:
         content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
     elif image_name not in content:
-        # Insert cover image right after H1
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n', content, count=1)
 
-    # Cleanup existing podcast link blocks to prevent duplication (handle optional whitespace)
     content = re.sub(r'<center>\s*<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE".*?</center>', '', content, flags=re.DOTALL)
     
-    # Insert podcast links (freshly)
     if "![cover image]" in content:
         content = re.sub(r'(!\[cover image\].*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
     else:
         content = re.sub(r'(^# .*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
     
-    # Currency conversion (Replace $ with USD or dollars)
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
-    
-    # Final pass for any remaining loose dollar signs (not in math blocks)
-    # We only replace if it's NOT followed by a space and a command (very basic heuristic)
-    # Better: just replace ALL remaining $ with USD if they look like currency
     content = re.sub(r'\$(\d+)', r'\1 USD', content)
     
-    # Footnote re-numbering and formatting
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -242,8 +233,7 @@ def fix_markdown(file_path, new_title=None):
         citations = []
         for line in wc_text.split('\n'):
             m = re.match(r'^\[\^(\d+)\]:\s+(.*)', line.strip())
-            if not m:
-                m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
+            if not m: m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
             if m: citations.append(m.group(2).strip())
         
         used_cites = {}
@@ -252,23 +242,18 @@ def fix_markdown(file_path, new_title=None):
             nonlocal next_id
             try:
                 old_id = int(m.group(1))
-                if old_id > 50: return m.group(0) # Likely not a citation if > 50
+                if old_id > 50: return m.group(0)
                 if old_id not in used_cites:
                     used_cites[old_id] = next_id
                     next_id += 1
                 return f"[^{used_cites[old_id]}]"
-            except:
-                return m.group(0)
+            except: return m.group(0)
 
-        # Protect headers from citation replacement
         lines = content.split('\n')
         new_lines = []
         for line in lines:
-            if line.startswith('#'):
-                new_lines.append(line)
-            else:
-                # Fix: Better regex for citations - avoid decimals and check boundary/parenthesis
-                new_lines.append(re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, line))
+            if line.startswith('#'): new_lines.append(line)
+            else: new_lines.append(re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, line))
         content = '\n'.join(new_lines)
         
         ref_sec = "\n\n## References\n\n"
@@ -279,11 +264,9 @@ def fix_markdown(file_path, new_title=None):
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
     
-    # Cleanup
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
-    # Lightning Widget
     lightning_widget = """
 ---
 
@@ -316,11 +299,12 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Universal Markdown Fixer')
     parser.add_argument('file', help='The markdown file to process')
-    parser.add_argument('--title', help='Optional: A new 5-word title for the article', default=None)
+    parser.add_argument('--title', help='Optional: A new title for the article', default=None)
+    parser.add_argument('--episode', help='Optional: The episode number (e.g., 220)', default=None)
     args = parser.parse_args()
 
     target = args.file
-    fix_markdown(target, args.title)
+    fix_markdown(target, args.title, args.episode)
     report = update_summary(target)
     
     print(f"Successfully processed {target}")
@@ -329,10 +313,12 @@ if __name__ == "__main__":
         for r in report: print(f"- {r}")
     
     final_title = extract_title(target)
-    if len(final_title.split()) > 5:
-        print(f"\nCRITICAL WARNING: The title '{final_title}' still exceeds 5 words!")
+    # Validate word count (ignore the episode prefix)
+    words_only = re.sub(r'^\d+:\s*', '', final_title).split()
+    if len(words_only) > 5:
+        print(f"\nCRITICAL WARNING: The title '{final_title}' still exceeds 5 words (excluding episode number)!")
     else:
-        print(f"\nConfirmed Title: '{final_title}' ({len(final_title.split())} words)")
+        print(f"\nConfirmed Title: '{final_title}' ({len(words_only)} words)")
     
     print("\nAutomated Crosscheck:")
     print(verify_completeness())

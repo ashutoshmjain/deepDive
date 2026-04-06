@@ -13,8 +13,9 @@ This Python script handles the rules-based formatting that must be consistent ac
 
 #### Key Features:
 1.  **Title Management:** 
-    - **Validation:** Ensures the H1 title is exactly 5 words (warns if not).
+    - **Validation:** Ensures the H1 title is exactly 5 words (warns if not). **Note:** Episode numbers (e.g., `220:`) are excluded from this word count.
     - **Auto-Generation:** If a file lacks an H1 title, the script automatically generates one from the filename or a provided `--title` argument.
+    - **Episode Numbering:** Supports an optional `--episode` argument to prefix the H1 and `SUMMARY.md` entry with the specific podcast episode number (e.g., `220: Title`).
 2.  **Cover & Social Snippets:** 
     - Automatically identifies and inserts a cover image after the main heading.
     - Injects a centered HTML snippet with links to the "Deep Dive with Gemini" podcast on Spotify, Apple Podcasts, YouTube Music, YouTube, and Fountain.fm.
