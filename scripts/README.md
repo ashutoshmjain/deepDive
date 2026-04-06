@@ -50,6 +50,33 @@ While the script handles the structure, the AI agent (Gemini CLI) provides the "
 
 ---
 
+## Progressive Web App (PWA) & Offline Support
+
+The project includes a fully automated PWA pipeline that allows the book to be installed on mobile/desktop and read entirely offline.
+
+### 1. Infrastructure (`/pwa`)
+- **`manifest.json`**: Defines the app's identity (DeepDive), icons, and standalone display mode.
+- **`sw-src.js`**: The service worker source file. It uses Workbox to precache the entire book and provides a navigation fallback to `index.html` for offline robustness.
+- **`sw-register.js`**: A lightweight client-side script that registers the generated service worker.
+
+### 2. Workbox Integration
+The build uses `workbox-cli` in `injectManifest` mode.
+- **`workbox-config.js`**: Configured to scan the `book/` directory and precache all HTML, JS, and CSS files.
+- **Automatic Updates**: Every time a new article is added, the service worker's revision manifest is updated, triggering an automatic background update for users.
+
+### 3. Theme Customization (`/theme`)
+To ensure the PWA is persistent across `mdbook build` runs, the theme is customized:
+- **`index.hbs`**: Modified to link the manifest and registration script in the `<head>`.
+- **Reading Persistence**: A specialized JavaScript snippet in `index.hbs` tracks the user's progress. It saves the URL of the current article to `localStorage` and automatically redirects the user back to their last-read page if they reopen the app at the homepage.
+
+### 4. Build Pipeline
+The standard `mdbook build` is wrapped in a PWA-aware pipeline (`npm run build:pwa`):
+1.  **Build**: Runs the standard `mdbook build`.
+2.  **Copy**: Moves `manifest.json`, `sw-register.js`, and icons into the `/book` folder.
+3.  **Inject**: Runs `workbox injectManifest` to generate the final `sw.js` in the output directory.
+
+---
+
 ### Usage
 
 To process a new or updated file, run the following command from the project root:
