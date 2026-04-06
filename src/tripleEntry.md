@@ -18,7 +18,7 @@ Used in Mesopotamia as early as 3500 BC, this method involved simple lists of as
 
 Codified by Luca Pacioli in 1494, double-entry bookkeeping introduced the "dual aspect concept," governed by the equation:
 
-\$\$ \text{Assets} = \text{Liabilities} + \text{Equity} \$\$
+\\\$\\\$ \text{Assets} = \text{Liabilities} + \text{Equity} \\\$\\\$
 
 Every transaction is recorded twice—as a debit and a credit—ensuring internal equilibrium.[^5] While revolutionary for its time, double-entry is **inherently siloed**. Each firm maintains its own private ledger, creating a "disparate reality" where two parties to a transaction have two different sets of books.
 
@@ -65,7 +65,6 @@ We can envision a future financial architecture where corporations operate as hi
 
 The evolution from single to double-entry bookkeeping was a leap in error reduction, but it left a "trust gap" that necessitated human intermediaries. Triple-entry accounting closes this gap by moving truth from private ledgers to a shared mathematical protocol. By using Bitcoin as the base layer for digital capital and Lightning as the operational rail for private working capital, corporations can achieve a "Houdini-like" balance: proving absolute solvency to the world while maintaining complete privacy of their internal operations. This represents the final completion of the project begun by Pacioli, moving finance from the realm of "True and Fair" opinions to "Mathematically Valid" facts.
 
-
 ---
 
 ### Tips and Donations
@@ -83,7 +82,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

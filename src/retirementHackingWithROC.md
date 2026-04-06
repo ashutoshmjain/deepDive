@@ -2,10 +2,6 @@
 
 # Tax-Advantaged Retirement Streams
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
 ## Abstract
 
 This paper models the strategic use of **Return of Capital (ROC)** distributions from the specific, perpetual preferred stock **STRC (Strategy, Inc.)** to create a long-lasting, tax-free base income stream in retirement. A cautious **10-year investment plan** is modeled for a couple aged **57 to 67**, motivated by the mathematically critical moment when the first lot's cost basis hits zero. The model projects that an annual **USD 10,400** investment (2 shares weekly) yields a **USD 20,000** annual cash flow for nearly **38.64 years**. This strategy preserves a significant portion of the investor's tax-free capital gains limit, providing a large margin for realizing taxable gains from other assets without incurring federal tax liability.
@@ -40,9 +36,9 @@ We model a **10-year investment period** (120 months) for a couple **approaching
 
 The **10-year investment plan** is deliberately capped because, assuming a fixed 10% annual ROC, the cost basis of the very first investment lot would be reduced to **USD 0.00** around the **11th year** of holding (10 years of distributions).
 
-\$\$ 
+\\\$\\\$ 
 	ext{Total ROC Reduction} = 10 	ext{ years} \times 10\% / \text{year} \times \text{USD } 100 = \text{USD } 100.00
-\$\$ 
+\\\$\\\$ 
 
 Capping the accumulation phase at 10 years simplifies planning and manages this critical tax event.
 
@@ -54,14 +50,14 @@ The model assumes a constant **USD 100.00** share price and a constant **10%** a
 
 | Parameter | Symbol | Value |
 | :--- | :--- | :--- |
-| **Standard Deduction (SD)** | \$\text{SD}\$ | USD 30,700 |
-| **0% LTCG Threshold** | \$T_{0\%}\$ | USD 94,050 |
-| **Taxable Gain Goal (Max Shield)** | \$G_{\text{goal}}\$ | **USD 63,350** |
+| **Standard Deduction (SD)** | \\\$\text{SD}\\\$ | USD 30,700 |
+| **0% LTCG Threshold** | \\\$T_{0\%}\\\$ | USD 94,050 |
+| **Taxable Gain Goal (Max Shield)** | \\\$G_{\text{goal}}\\\$ | **USD 63,350** |
 
 The maximum taxable gain the investor can realize while paying **USD 0** federal tax is:
 
-\$\$G_{\text{goal}} = T_{0\%} - \text{SD}
-\$\$ 
+\\\$\\\$G_{\text{goal}} = T_{0\%} - \text{SD}
+\\\$\\\$ 
 
 ---
 
@@ -118,13 +114,13 @@ The primary goal is met by establishing a **fixed, tax-free base income stream**
 
 The base income stream utilizes only a small portion of the total available tax shield, providing a large buffer for managing other retirement assets:
 
-\$\$ 
+\\\$\\\$ 
 	ext{Tax Cushion Remaining} = G_{\text{goal}} - \text{Taxable Gain Realized}
-\$\$ 
+\\\$\\\$ 
 
-\$\$ 
+\\\$\\\$ 
 	ext{Tax Cushion Remaining} = \text{USD } 63,350 - \text{USD } 18,137.53 = \boldsymbol{\text{USD } 45,212.47}
-\$\$ 
+\\\$\\\$ 
 
 The investor can realize an additional **USD 45,212** in taxable income annually (e.g., from selling other assets or receiving pension income) and still maintain a **USD 0** federal tax liability.
 

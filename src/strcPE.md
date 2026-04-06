@@ -1,10 +1,8 @@
 # The Great Credit Pivot
 
-![The Great Credit Pivot: Private Debt Fragility and the Ascent of Digital-Linked Preferred Securities](./img/strcPE.png)
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
+![The Great Credit Pivot: Private Debt Fragility and the Ascent of Digital-Linked Preferred Securities](./img/strcPE.png)
 
 The global credit landscape in early 2026 is undergoing a profound structural transformation, defined by a systemic divergence between traditional private lending markets and the burgeoning sector of digital-asset-linked corporate credit. As the[^1].[^2] trillion dollars private credit industry grapples with a surge in corporate bankruptcies, deteriorating borrower fundamentals, and increasingly restrictive redemption "gates" within flagship institutional funds, sophisticated capital is migrating toward more transparent, liquid, and high-yielding alternatives. Central to this transition is the Series A Perpetual Stretch Preferred Stock (STRC) issued by Strategy Inc., which has emerged as the premier fixed-income vehicle in the current macroeconomic environment. This report provides an exhaustive evaluation of the systemic stresses within the private credit market, analyzes the liquidity traps prevalent in legacy private equity-led funds, and argues that STRC represents a superior instrument based on its[^3].5% dividend, robust principal protection mechanisms tied to Bitcoin price floors, and a tax-efficient Return of Capital (ROC) structure that delivers a taxable-equivalent yield nearing 20%.
 
@@ -103,7 +101,6 @@ As argued throughout this report, **STRC is the most successful preferred stock 
 
 The migration of capital from private equity and gated BDCs into STRC is not a temporary trend; it is a fundamental shift toward "Open Credit." Investors are choosing Strategy Inc. because it offers a transparent, liquid, and mathematically superior way to capture high yields without the existential risks of opaque borrowers and restrictive fund managers. In the final analysis, STRC is not merely a "crypto" product; it is the final arbiter of value in a market that has rediscovered the importance of liquidity and asset coverage.
 
-
 ---
 
 ### Tips and Donations
@@ -121,7 +118,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

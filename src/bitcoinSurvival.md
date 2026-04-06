@@ -4,10 +4,6 @@
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
 The current state of the global digital asset market as of February[^1], 2026, presents a stark dichotomy between price-action-driven sentiment and the underlying structural evolution of the Bitcoin network. With the price of Bitcoin having recently breached the critical support level of 65,0[^2] USD, falling from its October 2025 all-time high of approximately 126,0[^2] USD, a familiar chorus of obituaries has emerged from traditional financial analysts and market commentators.[^3] These obituaries frequently cite the asset's failure to maintain its "digital gold" status amid heightened geopolitical tensions—specifically the "Liberation Day" tariff pronouncements and the subsequent shift in investor preference toward physical precious metals and cold cash.[^3] However, such analyses often overlook the fundamental premise that Bitcoin’s primary objective is not a rapid, total victory over legacy financial systems, but rather sustained survival. This survival functions as a protracted educational mechanism, allowing the protocol more time to communicate its complex technological and economic properties to a global audience that has, until now, largely been reached through the simplified, divisive marketing of "negative utility"—the counting of fiat’s failures rather than the understanding of Bitcoin’s unique architecture.[^1]
 
 ## The Macroeconomic Context of the 2026 Contraction
@@ -162,7 +158,6 @@ Its "win" is the continuous operation of the network, the unclaimed cryptographi
 
 As long as the "unmoveable and unchangeable fulcrum" of the Bitcoin network exists, the ability for individuals and nations to build their future on a transparent and strictly scarce ledger remains intact.24 The 2026 crash is not an end, but an expansion—a horizontal move that brings more "plebs" into the system, further decentralizing the world’s most significant financial innovation while the rest of the world remains distracted by the counting of its obituaries.
 
-
 ---
 
 ### Tips and Donations
@@ -180,7 +175,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

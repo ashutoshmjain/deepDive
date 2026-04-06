@@ -1,10 +1,8 @@
 # The Great NVIDIA Decoupling
 
-![Mag 7 Split: Frontier Sovereignty](./img/mag7split.png)
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
+![Mag 7 Split: Frontier Sovereignty](./img/mag7split.png)
 
 The release of NVIDIA’s fiscal Q4 2026 results on February 25, 2026, has provided the definitive mathematical confirmation of a structural realignment within the technology sector. The "Magnificent Seven" has officially ceased to function as a monolithic block. In its place, a vertical split has emerged, separating the "Sovereign Frontier"—companies that own the underlying compute foundries and foundational models—from the "AI Wrappers," firms increasingly viewed by the market as high-priced distributors of borrowed intelligence [1]
 
@@ -15,7 +13,7 @@ As of late February 2026, the market is no longer pricing in "AI potential"; it 
 NVIDIA’s earnings report today served as the "final confirmation" of the Frontier group's dominance. The company reported record quarterly revenue of USD 68.1 billion, a 73% increase year-over-year, crushing the USD 65.7 billion consensus [2]
 
 * **Financial Performance:** Adjusted earnings per share (EPS) hit USD 1.62 against expectations of USD 1.54, while Data Center revenue reached a record USD 62.3 billion [2]  
-* **Guidance Breakthrough:** NVIDIA guided for Q1 FY2027 revenue of USD 73.0 Billion \$\pm 2\%\$), significantly exceeding Wall Street's USD 71-72 billion forecast [2]  
+* **Guidance Breakthrough:** NVIDIA guided for Q1 FY2027 revenue of USD 73.0 Billion \\\$\pm 2\%\\\$), significantly exceeding Wall Street's USD 71-72 billion forecast [2]  
 * **Strategic Shift:** CEO Jensen Huang declared that the "agentic AI inflection point has arrived," stating that enterprise adoption of autonomous AI agents is "skyrocketing".2
 
 Following the report, NVIDIA's stock price broke the USD 200 threshold in after-market trading, cement its status as the hardware "foundry" for the entire Sovereign Frontier [4]
@@ -47,8 +45,8 @@ The "Wrapper" group—Microsoft, Amazon, and Apple—is currently facing a "show
 
 Despite beating EPS estimates, Microsoft’s stock suffered an 11.9% plunge on January 29, 2026, erasing USD 400 billion in market value . The catalyst was the disclosure that **45% of its USD 625 billion cloud backlog** is tied to a single partner, OpenAI . Investors are spooked by the "circular economics" of investing in a partner to buy its own services, a relationship modeled by:
 
-\$\$V = \frac{R}{1 + \alpha}\$\$  
-Where \$\alpha\$ (the coefficient of reinvested capital) is perceived to be dangerously high, leading to a valuation discount [13]
+\\\$\\\$V = \frac{R}{1 + \alpha}\\\$\\\$  
+Where \\\$\alpha\\\$ (the coefficient of reinvested capital) is perceived to be dangerously high, leading to a valuation discount [13]
 
 ### Amazon: The USD 200 Billion "Warehouse" Shocker
 

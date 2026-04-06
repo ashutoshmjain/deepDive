@@ -182,6 +182,9 @@ def fix_markdown(file_path, new_title=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
+    # Deep Sanitization: Remove invisible Unicode characters (like \u0332)
+    content = content.replace('\u0332', '')
+    
     # Ensure H1 exists
     if not re.search(r'^#\s+', content, re.MULTILINE):
         title_to_use = new_title or os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
@@ -206,17 +209,30 @@ def fix_markdown(file_path, new_title=None):
     image_path = f"./img/{image_name}"
     podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
     
+    # Independent checks for image and links
     if "![cover image]" in content:
-        # Update existing cover image link to match filename
         content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
     elif image_name not in content:
-        # Insert new cover image link
-        content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{podcast_links}\n\n', content, count=1)
+        # Insert cover image right after H1
+        content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n', content, count=1)
+
+    # Cleanup existing podcast link blocks to prevent duplication (handle optional whitespace)
+    content = re.sub(r'<center>\s*<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE".*?</center>', '', content, flags=re.DOTALL)
     
-    # Currency conversion
+    # Insert podcast links (freshly)
+    if "![cover image]" in content:
+        content = re.sub(r'(!\[cover image\].*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
+    else:
+        content = re.sub(r'(^# .*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
+    
+    # Currency conversion (Replace $ with USD or dollars)
     def curr_repl(m): return f"{m.group(1)} USD"
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
-    content = content.replace('$', '\\$')
+    
+    # Final pass for any remaining loose dollar signs (not in math blocks)
+    # We only replace if it's NOT followed by a space and a command (very basic heuristic)
+    # Better: just replace ALL remaining $ with USD if they look like currency
+    content = re.sub(r'\$(\d+)', r'\1 USD', content)
     
     # Footnote re-numbering and formatting
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
@@ -225,7 +241,9 @@ def fix_markdown(file_path, new_title=None):
         content = content[:works_cited_match.start()].strip()
         citations = []
         for line in wc_text.split('\n'):
-            m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
+            m = re.match(r'^\[\^(\d+)\]:\s+(.*)', line.strip())
+            if not m:
+                m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
             if m: citations.append(m.group(2).strip())
         
         used_cites = {}
@@ -242,12 +260,20 @@ def fix_markdown(file_path, new_title=None):
             except:
                 return m.group(0)
 
-        # Fix: Better regex for citations - avoid decimals and check boundary/parenthesis
-        content = re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, content)
+        # Protect headers from citation replacement
+        lines = content.split('\n')
+        new_lines = []
+        for line in lines:
+            if line.startswith('#'):
+                new_lines.append(line)
+            else:
+                # Fix: Better regex for citations - avoid decimals and check boundary/parenthesis
+                new_lines.append(re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, line))
+        content = '\n'.join(new_lines)
         
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
-            if old <= len(citations):
+            if 0 < old <= len(citations):
                 cite = citations[old-1]
                 cite = re.sub(r'\\([_.-])', r'\1', cite)
                 ref_sec += f"[^{new}]: {cite}\n\n"

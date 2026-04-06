@@ -1,8 +1,8 @@
 # AI and the Jevons Paradox
 
-![jevonsParadoxAI.png](./img/jevonsParadoxAI.png)
-
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+
+![jevonsParadoxAI.png](./img/jevonsParadoxAI.png)
 
 The contemporary labor market is currently navigating a period of structural volatility that defies traditional economic intuition. By the first quarter of 2026, the technology sector and the broader knowledge economy have witnessed a phenomenon that can be termed the "Great Cognitive Rotation." This transition is characterized by a stark numerical divergence: the displacement of approximately 55,000 workers in established technology roles contrasted against the emergence of 1.3 million new positions fundamentally enabled or defined by artificial intelligence[^1] This ratio, representing nearly 24 new roles for every one lost, finds its theoretical underpinning in the Jevons Paradox. As the "cost of cognition"—the marginal expense associated with human-like reasoning, data synthesis, and software code creation—approaches a state of collapse, the systemic demand for these outputs has not diminished but has instead exploded[^3]
 
@@ -185,12 +185,12 @@ While the LinkedIn data shows that "job seekers outpace job openings at the high
 
 ## Mathematical Modeling of the Cognitive Rebound
 
-To quantify the Jevons Paradox in this context, we can define the "Rebound Effect" (\$R\$) as the ratio of the "taken back" efficiency gains to the initial gain.
+To quantify the Jevons Paradox in this context, we can define the "Rebound Effect" (\\\$R\\\$) as the ratio of the "taken back" efficiency gains to the initial gain.
 
-If \$\Delta \eta\$ is the initial efficiency improvement (e.g., AI makes coding 50% faster) and \$\Delta U\$ is the subsequent increase in usage (e.g., the company builds 100% more software features), then:
+If \\\$\Delta \eta\\\$ is the initial efficiency improvement (e.g., AI makes coding 50% faster) and \\\$\Delta U\\\$ is the subsequent increase in usage (e.g., the company builds 100% more software features), then:
 
-\$\$R = \frac{\Delta U}{\Delta \eta}\$\$  
-When \$R > 100\%, USD we observe the Jevons Paradox[^5] In the 2026 software market, with output per power user up 80% and the 1.3M/55K job ratio, the estimated rebound effect for cognitive labor is well over 200%, suggesting that for every unit of work "automated," more than two units of new work are "induced" by the lower cost and higher complexity of the ecosystem[^1]
+\\\$\\\$R = \frac{\Delta U}{\Delta \eta}\\\$\\\$  
+When \\\$R > 100\%, USD we observe the Jevons Paradox[^5] In the 2026 software market, with output per power user up 80% and the 1.3M/55K job ratio, the estimated rebound effect for cognitive labor is well over 200%, suggesting that for every unit of work "automated," more than two units of new work are "induced" by the lower cost and higher complexity of the ecosystem[^1]
 
 ## The Geopolitical Architecture of the Intelligence Age
 
@@ -235,7 +235,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

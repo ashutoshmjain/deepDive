@@ -1,8 +1,8 @@
 # The Great Digital Reset
 
-![Divine Cryptography](../img/divineCryptograph.png)
-
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+
+![Divine Cryptography](../img/divineCryptograph.png)
 
 The intersection of ancient Vedic ontology and modern information theory reveals a structural isomorphism between the Bhagavad Gita’s concept of the "Field" (*kṣetra*) and the architectural principles of asymmetric cryptography and active inference.[^10] [^24]
 
@@ -32,7 +32,7 @@ Conversely, the "Private Key" (the Knower) is the hidden, ineffable source of su
 
 ## The Fructification of Karma: From Attention to Knowledge
 
-The mechanism of intelligence growth relies on a specific sequence: **Attention \$\rightarrow\$ Karma \$\rightarrow\$ Knowledge**. When the private key (soul) directs attention toward the physical field, it generates actions (Karma). Through repetition, this Karma "fructifies" or consolidates into physical knowledge within the brain.[^1] 
+The mechanism of intelligence growth relies on a specific sequence: **Attention \\\$\rightarrow\\\$ Karma \\\$\rightarrow\\\$ Knowledge**. When the private key (soul) directs attention toward the physical field, it generates actions (Karma). Through repetition, this Karma "fructifies" or consolidates into physical knowledge within the brain.[^1] 
 
 Karma can thus be viewed as a **natural law**—a systematic interaction between deterministic elements of the field and the degrees of freedom provided by the soul's attention.[^14]
 
@@ -51,7 +51,7 @@ A profound aspect of this cryptosystem is the maintenance of a stable identity, 
 
 ### **The 120-Degree Rotation Metaphor**
 
-Identity is not a static point but a set of "Symmetric locations." Consider the 120-degree rotation of an equilateral triangle: after the rotation (\$\rightarrow\$), the triangle appears indistinguishable from its original state.
+Identity is not a static point but a set of "Symmetric locations." Consider the 120-degree rotation of an equilateral triangle: after the rotation (\\\$\rightarrow\\\$), the triangle appears indistinguishable from its original state.
 
 *   **Internal Symmetry and External Invariance:** Just as the triangle is conserved through its rotation, your Karma consists of the set of operations that maintain your internal symmetry and external invariance.
 *   **Conserving the "Self":** The "Farmer" performs specific, rhythmic actions that keep the "Potato Land" invariant as a potato land despite the changing seasons.[^13] These actions are the rotations that preserve the identity element—the stable "Self"—in the eyes of the community.

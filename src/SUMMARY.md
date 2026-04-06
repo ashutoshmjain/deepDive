@@ -40,7 +40,7 @@
 - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
 - [STRC for Peaceful Retirement](./strcRetirement.md)
 - [The Great Credit Pivot](./strcPE.md)
-- [The[^1],0[^2] Bitcoin Model](./STRC8k.md)
+- [The 8,000 Bitcoin Model](./STRC8k.md)
 - [MSTR: The Strategic Evolution](./magicalMSTR.md)
 - [STRC Update: Jan 2025](./STRC_update.md)
 - [What is Digital Credit?](./digital-credit.md)
@@ -69,6 +69,7 @@
 - [Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
 
 # Philosophy, Science & The Nature of Reality
+- [The Great Digital Reset](./divineCryptograph.md)
 - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
 - [Bit to It: Informational Universe](./bitToIt.md)
 - [The Stabilization of Mass](./accountingMass.md)

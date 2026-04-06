@@ -1,10 +1,8 @@
 # The Standard Model of Decay
 
-![Flavor Transmutation Cover Image](./img/universalAccounting.png)
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
+![Flavor Transmutation Cover Image](./img/universalAccounting.png)
 
 The Standard Model of particle physics represents the most robust theoretical architecture for describing the fundamental constituents of matter and the forces that govern their interactions, excluding only the gravitational force.[1](#1) Central to this framework is the organization of matter into three distinct generations of fermions, which include both quarks and leptons.[1](#1) The query regarding the decay patterns of the muon (![image1]) and tau (![image2]) into electrons (![image3]), alongside the transitions of the charm (![image4]) and strange (![image5]) quarks into the up (![image6]) and down (![image7]) quarks, touches upon the foundational mechanism of flavor transmutation.[3](#3) This report provides an exhaustive investigation into these processes, confirming they are indeed mediated by the weak force while elucidating the nuanced differences in their underlying quantum mechanical structures, particularly the role of the ![image8] bosons and the governing mixing matrices.[4](#4)
 
@@ -163,7 +161,6 @@ However, the "way" is distinguished by the specific quantum rules of each sector
 
 Ultimately, these decays are the universe's mechanism for recycling heavy, high-energy matter into the stable, low-energy particles that form our world.[1](#1) The weak force acts as the universal "transmutation engine," ensuring that regardless of whether a particle is a quark or a lepton, it will eventually find its way back to the first generation, provided there is a lighter state available to occupy.[2](#2) This shared reliance on the ![image27] boson for flavor change is one of the most elegant symmetries of the Standard Model.[1](#1)
 
-
 ---
 
 ### Tips and Donations
@@ -181,7 +178,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

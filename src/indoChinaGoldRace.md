@@ -4,10 +4,6 @@
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
 The international financial system is currently traversing a period of profound structural transformation, characterized by a decisive shift away from the unipolar, dollar-centered architecture that has dominated global commerce since the Bretton Woods agreement. At the center of this realignment is the strategic re-emergence of gold as a primary instrument of sovereign reserve management and trade settlement. This transition is most visible in the coordinated actions of the People's Bank of China (PBoC) and the Reserve Bank of India (RBI), whose sustained accumulation of bullion is not merely a response to cyclical market volatility but a foundational component of a broader geopolitical strategy.[^1] As global gold prices have surged from historical averages toward the USD[^2],0[^3] per ounce threshold in early 2026, the motivations behind this "Gold Rush" have expanded beyond simple diversification to encompass the financialization of household wealth, the formalization of parallel economies, and the construction of alternative settlement architectures designed to bypass Western financial oversight.[^4]
 
 ## The Mechanics of Official Reserve Rebalancing: China and India’s Strategic Buying
@@ -107,7 +103,6 @@ The "Wealth Effect" from this appreciation is being effectively captured through
 
 For the international order, the "Unit" settlement prototype and the systematic divestment from US Treasuries signify the arrival of a "fragmented" financial era. The US dollar will likely remain a significant reserve asset in the short term due to its unmatched liquidity, but its role as the "unassailable center" is over.[^5] The global financial system is pivoting toward a "Barter[^7].0" model, where digital ledgers and physical gold reserves provide the trust that was once provided by the American institutional framework. This transition is fraught with volatility and the risk of trade wars, but for the nations of the Indo-Pacific, the "Golden Pivot" is a necessary evolution toward a more autonomous and resilient economic future.
 
-
 ---
 
 ### Tips and Donations
@@ -125,7 +120,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

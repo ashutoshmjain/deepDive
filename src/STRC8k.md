@@ -1,12 +1,8 @@
-# The[^1],0[^2] Bitcoin Model
+# The 8,000 Bitcoin Model
 
 ![cover image](./img/STRC8k.png)
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
 
 The financial architecture of Strategy Inc. (formerly MicroStrategy Incorporated) represents the first global implementation of a "Bitcoin Development Company" treasury model. Moving into 2026, the company has successfully transitioned its balance sheet into a "digital fortress" supported by a tiered hierarchy of long-dated convertible debt, perpetual preferred equity, and a significant USD liquidity reserve. Central to this architecture is the "structural floor"—the price point at which the company’s Bitcoin treasury fully covers its senior-most obligations.
 This technical paper analyzes the solvency of Strategy Inc. through a catastrophic stress test, evaluating whether the flagship Series A Perpetual Stretch Preferred Stock (STRC) remains protected even if the underlying Bitcoin asset collapses to USD[^1],0[^2].
@@ -79,7 +75,6 @@ This mechanism ensures STRC behaves as a short-duration credit instrument rather
 
 Strategy Inc. has architected a capital structure that remains solvent even under an 88% drawdown in Bitcoin prices. The combination of a massive, unencumbered 7[^13],644 BTC treasury and a proactive 3-to-6-year equitization plan has created a mezzanine layer where the STRC principal is mathematically protected down to roughly USD[^12],0[^2] per Bitcoin. For sophisticated investors, the current market landscape—characterized by MSTR trading at a negligible premium and a broad rotation of profits from the Gold market back into digital assets—suggests that equitization is not just a defensive maneuver for the company, but an opportunistic one for creditors seeking to participate in the next leg of the Bitcoin four-year cycle.
 
-
 ---
 
 ### Tips and Donations
@@ -97,7 +92,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

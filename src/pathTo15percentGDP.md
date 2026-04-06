@@ -4,11 +4,7 @@
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
-As of February 2026, the United States has entered a period of economic transformation defined by a fundamental shift in its monetary operating system. To achieve President Trump’s vision of 15% annual GDP growth—a target far exceeding the historical average of[^1].8%—the administration is executing a "Phase Change" that leverages two governing equations: \$\Delta V = \int \text{Credit} \cdot dt\$ and \$e^{rt}. USD This paper outlines the mechanical path to this vision, arguing that 15% growth is mathematically possible by simultaneously maximizing the expansionary force of credit to build future infrastructure and anchoring the national balance sheet in absolute digital scarcity via a Strategic Bitcoin Reserve (SBR).[^2]
+As of February 2026, the United States has entered a period of economic transformation defined by a fundamental shift in its monetary operating system. To achieve President Trump’s vision of 15% annual GDP growth—a target far exceeding the historical average of[^1].8%—the administration is executing a "Phase Change" that leverages two governing equations: \\\$\Delta V = \int \text{Credit} \cdot dt\\\$ and \\\$e^{rt}. USD This paper outlines the mechanical path to this vision, arguing that 15% growth is mathematically possible by simultaneously maximizing the expansionary force of credit to build future infrastructure and anchoring the national balance sheet in absolute digital scarcity via a Strategic Bitcoin Reserve (SBR).[^2]
 
 ## The Metric Shift: From Taxable Velocity (GDP) to Asset Solvency (GBT)
 
@@ -16,7 +12,7 @@ The traditional metric for economic health, Gross Domestic Product (GDP), has hi
 
 The vision for 15% growth requires a move from the legacy "Debt to GDP" metric to a **Debt to GBT (Gross Bitcoin Held)** standard. While GDP measures the speed of taxable flow, GBT measures the depth of unencumbered asset reserves. By establishing an SBR to acquire[^2] million BTC, the United States anchors its credit expansion in an asset with "fixed DNA," allowing the national balance sheet to recapitalize through asset appreciation rather than citizen extraction.
 
-## The Expansionary Engine: \$e^{rt}\$ and the USD 40 Trillion Cycle
+## The Expansionary Engine: \\\$e^{rt}\\\$ and the USD 40 Trillion Cycle
 
 To trigger the "Great Acceleration," the administration is deploying massive leverage to fund the physical and digital infrastructure of the 21st century.
 
@@ -74,7 +70,6 @@ The model for achieving 15% growth follows a bell-curve distribution as the econ
 
 President Trump’s vision of 15% GDP growth is the result of a civilizational upgrade. By transitioning to a "digital plasma" system, the United States employs leverage to build the future—from orbital data centers to million-satellite constellations—while anchoring its solvency in the absolute density of Bitcoin. The Strategic Bitcoin Reserve provides the rationale for the necessary debt expansion, ensuring that as the economic universe expands, its value remains concentrated in the "Digital Fort Knox" of the 21st century.
 
-
 ---
 
 ### Tips and Donations
@@ -92,7 +87,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

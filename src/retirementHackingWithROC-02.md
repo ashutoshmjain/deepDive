@@ -4,10 +4,6 @@
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
 ## 1\. Introduction: The Concept of the "California Free Lunch"
 
 The state of California presents a paradox of wealth and affordability. It stands as the world’s fifth-largest economy, a crucible of technological innovation and real estate appreciation, yet it imposes some of the highest costs of living and tax burdens in the United States. For the high-net-worth individual or the middle-class family sitting on significant unrealized real estate equity, the "California Dream" often devolves into a cash-flow struggle—asset rich, but liquidity constrained by property taxes, insurance premiums, and the general cost of shelter.
@@ -190,9 +186,9 @@ The 2026 reinstatement of the asset test for seniors creates a "trap door." A pr
 
 **6.[^7] The STRC strategy is a depleting asset bridge, not a perpetual wealth machine.**
 
-The Zero Basis Clock (The \$\sim[^13] USD-Year Horizon): An 11% yield on a USD[^2],0[^3],0[^3] investment (USD 1[^14],000/year) reduces the cost basis to zero in \$\sim[^13].[^2] USD years. Around Year[^14], distributions become taxable Capital Gains instead of tax-deferred Return of Capital. Federally, the income may remain 0% tax for a couple (due to the capital gains preference). However, California has no capital gains preference, resulting in a sudden 4-6% state income tax (\$\sim\$USD[^8],000–USD[^9],000/year) on the USD 1[^14],0[^3].
+The Zero Basis Clock (The \\\$\sim[^13] USD-Year Horizon): An 11% yield on a USD[^2],0[^3],0[^3] investment (USD 1[^14],000/year) reduces the cost basis to zero in \\\$\sim[^13].[^2] USD years. Around Year[^14], distributions become taxable Capital Gains instead of tax-deferred Return of Capital. Federally, the income may remain 0% tax for a couple (due to the capital gains preference). However, California has no capital gains preference, resulting in a sudden 4-6% state income tax (\\\$\sim\\\$USD[^8],000–USD[^9],000/year) on the USD 1[^14],0[^3].
 
-The Reskilling Imperative: This strategy requires a "reskilling window" to hedge against risks. Inflation (at 3%) will erode the USD 1[^14],0[^3] to \$\sim\$USD 80,0[^3] in purchasing power by 2036. Additionally, at age 65, the loss of full Medi-Cal and the new fixed cost of Medicare Part B and D premiums (over USD[^8],000/year for a couple) will further deplete the STRC income.
+The Reskilling Imperative: This strategy requires a "reskilling window" to hedge against risks. Inflation (at 3%) will erode the USD 1[^14],0[^3] to \\\$\sim\\\$USD 80,0[^3] in purchasing power by 2036. Additionally, at age 65, the loss of full Medi-Cal and the new fixed cost of Medicare Part B and D premiums (over USD[^8],000/year for a couple) will further deplete the STRC income.
 
 ## 7. Conclusion
 
@@ -243,7 +239,6 @@ Source: 2[^3]
 
 Source: 2[^13]
 
-
 ---
 
 ### Tips and Donations
@@ -261,7 +256,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

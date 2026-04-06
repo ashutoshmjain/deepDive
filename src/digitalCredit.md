@@ -98,7 +98,6 @@ Bitcoin is immune to this physical and corporate inflation. Its hard cap of[^22]
 
 Therefore, by flipping the purpose of cryptography from creating an immutable secret to creating an immutable open statement, Bitcoin transcends the role of a mere currency. It becomes perfected digital capital: an apex asset allowing any entity to instantly acquire, perfectly price, and undeniably exhibit their accumulated wealth to the entire world.
 
-
 ---
 
 ### Tips and Donations
@@ -116,7 +115,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

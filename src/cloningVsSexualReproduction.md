@@ -1,8 +1,8 @@
 # Sexual Reproduction vs. Cloning
 
-![Cover](./img/cloningVsSexualReproduction.png)
-
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+
+![Cover](./img/cloningVsSexualReproduction.png)
 
 The persistence of sexual reproduction among eukaryotes remains a central enigma in evolutionary biology, primarily due to the significant demographic and energetic costs associated with the maintenance of males. In most multicellular organisms, the biological objective of propagating genetic material is achieved through a complex, biparental process that involves the reduction of the genome via meiosis and its subsequent restoration through syngamy.
 
@@ -37,9 +37,9 @@ The molecular machinery involved in crossing over is closely linked to the cell'
 
 ### The Combinatorial Explosion of Independent Assortment
 
-The second mechanism of the genetic lottery occurs during Metaphase I, where the law of independent assortment dictates the random orientation of homologous pairs along the cell's equator. [1] The orientation of one pair is entirely independent of the others; for example, a maternal chromosome 1 may segregate to the same pole as a paternal chromosome 2. [15] For a diploid organism with \$n\$ pairs of chromosomes, the number of possible gametic combinations is 2 USD^n. USD [16]
+The second mechanism of the genetic lottery occurs during Metaphase I, where the law of independent assortment dictates the random orientation of homologous pairs along the cell's equator. [1] The orientation of one pair is entirely independent of the others; for example, a maternal chromosome 1 may segregate to the same pole as a paternal chromosome 2. [15] For a diploid organism with \\\$n\\\$ pairs of chromosomes, the number of possible gametic combinations is 2 USD^n. USD [16]
 
-In humans, where \$n = 23\$ [12], the potential for diversity is mathematically immense. A single individual can produce 2 USD^{23}\$ or approximately 8,388,608 unique combinations of maternal and paternal chromosomes. [1] When combined with the effects of crossing over, the number of unique gametes produced by a single human is effectively infinite. [14] Random fertilization further amplifies this diversity; the fusion of any genetically unique sperm with any unique egg results in a zygote that represents one out of trillions of possible genetic outcomes. [10]
+In humans, where \\\$n = 23\\\$ [12], the potential for diversity is mathematically immense. A single individual can produce 2 USD^{23}\\\$ or approximately 8,388,608 unique combinations of maternal and paternal chromosomes. [1] When combined with the effects of crossing over, the number of unique gametes produced by a single human is effectively infinite. [14] Random fertilization further amplifies this diversity; the fusion of any genetically unique sperm with any unique egg results in a zygote that represents one out of trillions of possible genetic outcomes. [10]
 
 ### The Lottery Principle and Adaptive Landscapes
 
@@ -86,7 +86,7 @@ The "genetic lottery" of sex also resolves a major obstacle to adaptation known 
 
 ### Clonal Interference and Sequential Fixation
 
-In an asexual population, if two advantageous alleles (\$A\$ and \$B\$) occur in separate lineages, the only way for a single individual to possess both is for the second mutation to independently occur in a lineage that already carries the first. [25] This is statistically rare, meaning beneficial mutations must usually be fixed sequentially. [26] This "clonal interference" significantly slows the rate of evolution. [27]
+In an asexual population, if two advantageous alleles (\\\$A\\\$ and \\\$B\\\$) occur in separate lineages, the only way for a single individual to possess both is for the second mutation to independently occur in a lineage that already carries the first. [25] This is statistically rare, meaning beneficial mutations must usually be fixed sequentially. [26] This "clonal interference" significantly slows the rate of evolution. [27]
 
 Sexual reproduction eliminates this interference through recombination. [26] By crossing over, beneficial alleles from different ancestors can be combined into a single lineage, allowing for the simultaneous spread of multiple advantageous traits. [19] This "Vicar of Bray" effect allows sexual populations to adapt to novel environments much more rapidly than asexual ones. [25]
 

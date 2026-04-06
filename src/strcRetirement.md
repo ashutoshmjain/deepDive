@@ -6,10 +6,6 @@
 
 ![STRC 82 Trillion](./img/strc82Trillion.png)
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
-
 The United States is entering the "Institutional Era" of digital assets, coinciding with the largest demographic shift in financial history: the Great Wealth Transfer. Approximately 83 trillion to 84 trillion USD is projected to transition from the Silent Generation and Baby Boomers to their heirs over the next two decades [^1]. For the asset holder, the challenge is twofold: securing a peaceful, volatility-free retirement while ensuring that the eventual transfer of wealth is not a "nightmare" of taxation and liquidation for their children. Strategy Inc.’s Variable Rate Series A Perpetual Stretch Preferred Stock (STRC) has emerged as a singular "Digital Credit" bridge designed to solve both problems simultaneously.
 
 ## The 84 Trillion USD Perspective: The Imminent Transfer
@@ -68,7 +64,6 @@ The transfer of wealth has historically been a nightmare for heirs, defined by p
 
 By converting legacy assets into this Bitcoin-backed Digital Credit instrument, investors over 65 can enjoy a high-yield retirement with "peace of mind" and pass on a simplified, stepped-up, and tax-free income stream to the next generation. As the 84 trillion USD transfer accelerates, STRC is not just an investment; it is the infrastructure for a happy wealth transfer in the digital age.
 
-
 ---
 
 ### Tips and Donations
@@ -86,7 +81,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 

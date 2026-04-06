@@ -1,10 +1,8 @@
 # Google: The Physical AI Roadmap
 
-![Intrinsic Google Cover Image](./img/intrinsicGoogle.png)
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
-<center>
-<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a>
-</center>
+![Intrinsic Google Cover Image](./img/intrinsicGoogle.png)
 
 The announcement of Intrinsic’s formal integration into Google marks a pivotal transition in the trajectory of industrial automation. This move signals the maturation of robotics from a specialized hardware discipline into a software-defined, AI-centric domain. This shift, described as the pursuit of "Physical AI," represents an effort to bridge the gap between the digital intelligence of large-scale neural networks and the complex, noisy reality of physical manipulation.
 
@@ -14,7 +12,7 @@ For decades, the industrial robotics sector has been characterized by high barri
 
 To understand what Intrinsic does, one must first define the concept of Physical AI as it is applied in this context. Physical AI refers to the synthesis of advanced machine learning—including computer vision, reinforcement learning, and motion planning—with the mechanical execution of tasks in unstructured or semi-structured environments.
 
-Historically, industrial robots have operated on a "blind and rigid" paradigm. They are programmed to move to precise coordinates \$(x, y, z)\$ with high repeatability, but they possess no inherent understanding of the objects they manipulate or the environment in which they operate. If a component is displaced by a few millimeters, the entire process fails.
+Historically, industrial robots have operated on a "blind and rigid" paradigm. They are programmed to move to precise coordinates \\\$(x, y, z)\\\$ with high repeatability, but they possess no inherent understanding of the objects they manipulate or the environment in which they operate. If a component is displaced by a few millimeters, the entire process fails.
 
 Intrinsic’s platform introduces a layer of perception and adaptability that allows robots to "see," "feel," and "reason" about their tasks. This is achieved through a multi-modal software stack that processes sensor data in real-time to adjust robotic trajectories. The integration with Google accelerates this by bringing "Vision-Language-Action" (VLA) models into the industrial workspace.
 
@@ -37,7 +35,7 @@ At its essence, Intrinsic provides a developer platform and an operating environ
 
 ### **Automated Motion Planning and Kinematics**
 
-The most fundamental challenge in robotics is the mathematical translation of a desired end-effector position into the specific angles of each joint, known as inverse kinematics. For a standard six-axis industrial robot, the relationship between the joint angles \$\theta\$ and the Cartesian position \$x\$ is defined by the non-linear forward kinematics function \$x = f(\theta). USD Solving the inverse, \$\theta = f^{-1}(x), USD is computationally intensive and often has multiple solutions or singularities.
+The most fundamental challenge in robotics is the mathematical translation of a desired end-effector position into the specific angles of each joint, known as inverse kinematics. For a standard six-axis industrial robot, the relationship between the joint angles \\\$\theta\\\$ and the Cartesian position \\\$x\\\$ is defined by the non-linear forward kinematics function \\\$x = f(\theta). USD Solving the inverse, \\\$\theta = f^{-1}(x), USD is computationally intensive and often has multiple solutions or singularities.
 
 Intrinsic’s software automates these calculations, providing real-time collision avoidance and path optimization. Instead of a programmer manually defining every waypoint, they define the goal and the constraints (e.g., "move to this bin without hitting the safety railing"). The Intrinsic engine calculates the optimal trajectory in milliseconds, accounting for the robot's physical limits and the presence of obstacles detected by cameras.
 
@@ -123,13 +121,13 @@ The long-term vision is the creation of "self-optimizing" physical environments.
 
 To understand the "how" of Intrinsic’s roadmap, we must look at the mathematical frameworks they are employing. A key component is the use of Bayesian optimization and reinforcement learning (RL) in the Sim2Real pipeline.
 
-In the RL framework, an agent (the robot) learns to maximize a reward function \$R(s, a). USD The state of the system is \$s, USD and the agent takes an action \$a\$ according to a policy \$\pi. USD The goal is to find the optimal policy \$\pi^*\$ that maximizes the expected return:
+In the RL framework, an agent (the robot) learns to maximize a reward function \\\$R(s, a). USD The state of the system is \\\$s, USD and the agent takes an action \\\$a\\\$ according to a policy \\\$\pi. USD The goal is to find the optimal policy \\\$\pi^*\\\$ that maximizes the expected return:
 
-\$\$J(\pi) = \mathbb{E}_{\tau \sim \pi} \left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]\$\$
+\\\$\\\$J(\pi) = \mathbb{E}_{\tau \sim \pi} \left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]\\\$\\\$
 
-where \$\gamma\$ is the discount factor and \$\tau\$ is a trajectory.
+where \\\$\gamma\\\$ is the discount factor and \\\$\tau\\\$ is a trajectory.
 
-Intrinsic’s innovation lies in "Domain Randomization." During simulation, they vary the physical parameters \$\xi\$ (friction, mass, sensor noise) across a wide distribution \$\mathcal{D}. USD The agent is trained to maximize performance across this entire distribution, making it robust to real-world variations.
+Intrinsic’s innovation lies in "Domain Randomization." During simulation, they vary the physical parameters \\\$\xi\\\$ (friction, mass, sensor noise) across a wide distribution \\\$\mathcal{D}. USD The agent is trained to maximize performance across this entire distribution, making it robust to real-world variations.
 
 ## Strategic Positioning: The Alphabet-Tesla Rivalry in Physical AI
 
@@ -169,7 +167,6 @@ The integration of Intrinsic into Google is a recognition that the future of rob
 
 Intrinsic’s success will be defined by its ability to create a "universal language" for the physical world, much as Android created a universal language for the mobile world. The transition to software-defined robotics is now a core strategic pillar of the digital-physical continuum.
 
-
 ---
 
 ### Tips and Donations
@@ -187,7 +184,6 @@ If you enjoyed this deep dive, consider supporting the project with a tip in **S
 To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
 
 ---
-
 
 ## References
 
