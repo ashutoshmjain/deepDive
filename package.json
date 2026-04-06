@@ -1,0 +1,25 @@
+{
+  "name": "deepdive",
+  "version": "1.0.0",
+  "description": "This repository contains the research and show notes for the \"DeepDive with Gemini\" podcast. The podcast explores a wide range of topics, from ancient philosophy and modern finance to cutting-edge technology and creative storytelling.",
+  "main": "workbox-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:pwa": "mdbook build && cp pwa/manifest.json pwa/sw-register.js book/ && cp -r pwa/icons book/ && workbox injectManifest workbox-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashutoshmjain/deepDive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashutoshmjain/deepDive/issues"
+  },
+  "homepage": "https://github.com/ashutoshmjain/deepDive#readme",
+  "devDependencies": {
+    "workbox-cli": "^7.4.0"
+  }
+}
