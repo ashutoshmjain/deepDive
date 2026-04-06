@@ -1,6 +1,6 @@
-![Retirement Hacking](./img/retirementHackingWithROC.png)
-
 # Tax-Advantaged Retirement Streams
+
+![Retirement Hacking](./img/retirementHackingWithROC.png)
 
 ## Abstract
 

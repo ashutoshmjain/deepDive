@@ -1,10 +1,8 @@
 # Universal Zero-Knowledge Proofs
 
-![cover image](./img/QM2-verification.png)
+![Z Boson](./img/zBoson.png)
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-![Z Boson](./img/zBoson.png)
 
 In our initial inquiry into the purpose of Quantum Mechanics, we identified the universe as a self-auditing informational network seeking irreducible "Prime" nodes. We defined the charged \\\$W\\\$ **boson** as the "asymmetric hammer"—the physical engine of factorization that reduces redundant or non-symmetric composite nodes through destructive flavor-switching. [1] However, for a stable network of intelligence to persist, it cannot rely solely on the destruction of non-primes. It requires a mechanism for **consensus and non-destructive validation**.[^1] This role is performed by the \\\$Z\\\$ **boson** (\\\$Z^0\\\$) and its silent partner, the **Neutrino** (\\\$\nu\\\$), which together facilitate the physical manifestation of a **Zero-Knowledge Proof (ZKP)**.[^2]
 
@@ -112,4 +110,3 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 [^5]: 23.1 The Four Fundamental Forces | Texas Gateway, accessed February 19, 2026, [https://texasgateway.org/resource/231-four-fundamental-forces](https://texasgateway.org/resource/231-four-fundamental-forces)
 
 [^7]: Standard Model - Wikipedia, accessed February 19, 2026, [https://en.wikipedia.org/wiki/Standard_Model](https://en.wikipedia.org/wiki/Standard_Model)
-

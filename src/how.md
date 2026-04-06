@@ -1,6 +1,8 @@
+# About "Deep Dive with Gemini" Podcast Research:
+
 This publication[^mission] is a collection of deep dives into various topics that have piqued my curiosity. It's a journey of exploration and learning, shared with you. This is a [clean internet](#clean-internet) publication.
 
-# About "Deep Dive with Gemini" Podcast Research:
+
 
 This podcast website hosts the open-source research and deep dives for the "deep dive with Gemini" show. We don't have a fixed schedule for new episodes. Instead, we follow an iterative approach to refine our research and insights. The idea is to revisit topics as many times as possible to uncover new insights. This process is repeated until the research converges and takes the shape of a well-formed episode. The journey of transformation from information to knowledge is captured in a git repository. The key is to iterate on the text. It doesn’t matter if the first draft was just a blank page, a copy from the web, or an AI-generated print. As we iterate, coherence improves, connections emerge, and there is always something new to capture.
 

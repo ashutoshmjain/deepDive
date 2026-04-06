@@ -1,6 +1,6 @@
-![](./img/mainframesToAI.png)
-
 # From Mainframes to the Cloud
+
+![](./img/mainframesToAI.png)
 
 A Comparative Structural Analysis of Enterprise Computing Cycles (1960–1990) and the Artificial Intelligence Infrastructure Boom
 

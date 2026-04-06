@@ -1,10 +1,8 @@
 # Uniqueness and Prime Identities
 
-![cover image](./img/QM1-Uniqueness.png)
+![enricoFermi.png](./img/enricoFermi.png)
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-![enricoFermi.png](img/enricoFermi.png)
 
 In the language of arithmetic, prime numbers are the definitive examples of uniqueness; they are irreducible and exist as sovereign identities. Modern science, through Quantum Mechanics (QM), is increasingly pointing toward a fundamental reality where the universe is a **dynamic network in search of irreducible and uniquely identifiable nodes**. The "Purpose" of Quantum Mechanics is a systematic discovery mission to find and verify the "primal entities"—quarks, electrons, and bosons—that constitute the irreducible alphabet of the universal field.¹
 
@@ -91,4 +89,3 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 [^1]: The Kouns–Killion Recursive Intelligence Paradigm: The Operating System of Reality, accessed February 19, 2026, [https://www.aims.healthcare/journal/the-kounskillion-recursive-intelligence-paradigm-the-operating-system-of-reality](https://www.aims.healthcare/journal/the-kounskillion-recursive-intelligence-paradigm-the-operating-system-of-reality)
 
 [^2]: The Standard Model - The Physics Hypertextbook, accessed February 19, 2026, [https://physics.info/standard/](https://physics.info/standard/)
-

@@ -1,10 +1,8 @@
 # The AI Adaptive Vanguard
 
-![cover image](./img/doomVsBoom.png)
+![cover image](./img/doomOrBoom.png)
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-![The Adaptive Vanguard](./img/doomOrBoom.png)
 
 The contemporary discourse surrounding artificial intelligence is frequently dominated by a deterministic binary: either AI will usher in a post-labor utopia or it will precipitate a catastrophic collapse of the middle class. Figures such as Dario Amodei, CEO of Anthropic, and billionaire investor Ray Dalio have lent their voices to the latter, forecasting mass unemployment and a "white-collar bloodbath" as AI transitions from a tool of augmentation to one of full automation. However, a rigorous analysis of historical technological diffusion, the inherent accessibility of the natural language interface, and the emergent data on labor market resilience suggests that these alarmist perspectives fundamentally underestimate the human capacity for adaptation.
 
@@ -203,4 +201,3 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 [^11]: USF faculty reframes what literacy means in the age of generative artificial intelligence, accessed February 20, 2026, [https://www.usf.edu/arts-sciences/chronicles/2025/literacy-for-age-of-artificial-intelligence.aspx](https://www.usf.edu/arts-sciences/chronicles/2025/literacy-for-age-of-artificial-intelligence.aspx)
 
 [^12]: Time to reach 100 million users for different technologies in months after initial deployment. - ResearchGate, accessed February 20, 2026, [https://www.researchgate.net/figure/Time-to-reach-100-million-users-for-different-technologies-in-months-after-initial_fig1_372212988](https://www.researchgate.net/figure/Time-to-reach-100-million-users-for-different-technologies-in-months-after-initial_fig1_372212988)
-

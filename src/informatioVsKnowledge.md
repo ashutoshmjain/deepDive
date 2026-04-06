@@ -1,12 +1,10 @@
 # Architecture of Uncertainty
 
-![cover image](./img/informatioVsKnowledge.png)
+![cover image](./img/informationVsKnowledge.png)
 
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 **A Comprehensive Analysis of Probability Theory, Its Axiomatic Foundations, and Its Role as the Logic of Science.**
-
-![](img/informationVsKnowledge.png)
 
 # 1. Introduction: The Taming of Chance
 Probability theory represents one of the most significant intellectual leaps in the history of human thought. It is the discipline that transformed the chaotic, unpredictable nature of chance into a rigorous mathematical structure, allowing humanity to quantify uncertainty, predict the behavior of complex systems, and ultimately build the technologies that define the modern era. From the motion of atoms to the generation of language by artificial intelligence, probability serves as the invisible syntax of reality.

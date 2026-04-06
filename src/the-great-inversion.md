@@ -1,7 +1,5 @@
 # The Great Digital Inversion
 
-![cover image](./img/the-great-inversion.png)
-
 <center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
 
 ## Summary
@@ -253,4 +251,3 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 [^19]: “AI + Lightning Network + Stablecoin” Triple Play: Opening a New Era of Comprehensive BTC Ecosystem Payment Implementation - Waterdrip Capital, accessed January 10, 2026, [https://waterdripcapital.medium.com/ai-lightning-network-stablecoin-triple-play-opening-a-new-era-of-comprehensive-btc-e99c212444e0](https://waterdripcapital.medium.com/ai-lightning-network-stablecoin-triple-play-opening-a-new-era-of-comprehensive-btc-e99c212444e0)
 
 [^20]: Unlocking Bitcoin's AI Future: A Deep Dive into the RGB Lightning Node MCP Server - Skywork.ai, accessed January 10, 2026, [https://skywork.ai/skypage/en/bitcoin-ai-future-rgb-node/1981912813052989440](https://skywork.ai/skypage/en/bitcoin-ai-future-rgb-node/1981912813052989440)
-
