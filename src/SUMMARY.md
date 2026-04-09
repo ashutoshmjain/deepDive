@@ -1,9 +1,9 @@
 # Summary
 
 # Recent ..
+- [221 : The perfect playbook](./perfectPlayBook.md)
 - [220: AI Made Me a Believer](./AI2Believer.md)
 - [Triple-Entry: The Future of Value](./tripleEntry.md)
-- [Bitcoin: The Public Truth](./digitalCredit.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -36,6 +36,7 @@
 - [Can AI Get Rich Fast?](./Can-AI-get-rich-superfast.md)
 
 # Digital Credit & The STRC Bridge
+- [Bitcoin: The Public Truth](./digitalCredit.md)
 - [STRC and Digital Capital](./strcBlackhole.md)
 - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
 - [STRC for Peaceful Retirement](./strcRetirement.md)
@@ -96,7 +97,6 @@
 - [The Great Hardware Divorce](./desktopWars2025.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [Beat the Copyright Bots](./beating-the-copyright-bots.md)
-- [221 : The perfect playbook](./perfectPlayBook.md)
 
 # About the Project
 - [Deep Dive with Gemini](./cover.md)
