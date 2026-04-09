@@ -1,6 +1,7 @@
 import re
 import os
 import subprocess
+import sys
 
 # Thematic categories mapping
 CATEGORIES = {
@@ -34,8 +35,34 @@ KATEX_MAP = {
     "![][image3]": "$\\Phi$"
 }
 
+PODCAST_LINKS = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
+
+LIGHTNING_WIDGET = """
+---
+
+### Tips and Donations
+
+If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
+
+<lightning-widget
+  name="Thanks for supporting the publication"
+  accent="#f9ce00"
+  to="shutosha@primal.net"
+  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
+/>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+
+To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
+
+---
+"""
+
+def check_root():
+    if not os.path.exists('src') or not os.path.exists('scripts'):
+        print("ERROR: Script must be run from the project root (the directory containing 'src/' and 'scripts/').")
+        sys.exit(1)
+
 def get_file_dates():
-    """Returns a dict of filename -> initial addition timestamp using git log."""
     try:
         cmd = "git log --name-only --diff-filter=A --format='%at' src/*.md"
         output = subprocess.check_output(cmd, shell=True, text=True)
@@ -51,16 +78,13 @@ def get_file_dates():
                 if fname not in file_dates:
                     file_dates[fname] = current_time
         return file_dates
-    except Exception as e:
+    except Exception:
         return {}
 
 def get_recent_files(n=3):
-    try:
-        dates = get_file_dates()
-        sorted_files = sorted(dates.items(), key=lambda x: x[1], reverse=True)
-        return [os.path.join('src', f[0]) for f in sorted_files[:n]]
-    except Exception as e:
-        return []
+    dates = get_file_dates()
+    sorted_files = sorted(dates.items(), key=lambda x: x[1], reverse=True)
+    return [os.path.join('src', f[0]) for f in sorted_files[:n]]
 
 def extract_title(file_path):
     if not os.path.exists(file_path):
@@ -172,60 +196,76 @@ def fix_markdown(file_path, new_title=None, episode=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Deep Sanitization
+    # 1. Deep Sanitization: Remove invisible characters and fix broken links
     content = content.replace('\u0332', '')
+    # Remove footnote markers from within URLs (e.g., [^1] inside a link)
+    content = re.sub(r'(href=".*?)\[\^\d+\]', r'\1', content)
     
-    # Extract or create current title
+    # 2. H1 Handling (Title & Episode)
     current_h1_match = re.search(r'^#\s+(.*)$', content, re.MULTILINE)
     if current_h1_match:
-        current_title = current_h1_match.group(1).strip()
+        current_full_title = current_h1_match.group(1).strip()
     else:
-        current_title = os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
-        content = f"# {current_title}\n\n" + content
+        current_full_title = os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
+        content = f"# {current_full_title}\n\n" + content
 
-    # Construct the final title with episode number
-    final_title = new_title or current_title
-    
-    # Remove existing episode prefix if any to avoid duplication
-    final_title = re.sub(r'^\d+:\s*', '', final_title)
-    
-    if episode:
-        final_title = f"{episode}: {final_title}"
-    elif re.match(r'^\d+:', current_title):
-        # Preserve existing episode number if no new one provided
-        ep_prefix = re.match(r'^(\d+:)\s*', current_title).group(1)
-        final_title = f"{ep_prefix} {re.sub(r'^\d+:\s*', '', final_title)}"
+    # Split current title into episode and title parts if possible
+    # Patterns: "221 : Title", "221: Title", "221 - Title"
+    ep_match = re.match(r'^(\d+)\s*[:\-]\s*(.*)$', current_full_title)
+    if ep_match:
+        curr_ep, curr_title = ep_match.groups()
+    else:
+        curr_ep, curr_title = None, current_full_title
 
-    # Update H1
-    content = re.sub(r'^#\s+.*$', f'# {final_title}', content, count=1, flags=re.MULTILINE)
+    final_ep = episode or curr_ep
+    final_title_text = new_title or curr_title
 
-    # Clean up bolding in headers
+    # Word count check and interactive prompt
+    words_only = final_title_text.split()
+    if len(words_only) > 5 and not new_title:
+        print(f"\nWARNING: Title exceeds 5 words: '{final_title_text}'")
+        try:
+            user_title = input("Please enter a catchy 5-word title (or press Enter to keep): ").strip()
+            if user_title:
+                final_title_text = user_title
+        except EOFError:
+            pass # Non-interactive environment
+
+    if final_ep:
+        final_h1 = f"# {final_ep} : {final_title_text}"
+    else:
+        final_h1 = f"# {final_title_text}"
+
+    content = re.sub(r'^#\s+.*$', final_h1, content, count=1, flags=re.MULTILINE)
+
+    # 3. Component Cleaning (Bolding, KaTeX, Podcasts)
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
     
     for placeholder, symbol in KATEX_MAP.items():
         content = content.replace(placeholder, symbol)
 
-    image_name = os.path.basename(file_path).replace('.md', '.png')
-    image_path = f"./img/{image_name}"
-    podcast_links = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
-    
-    if "![cover image]" in content:
-        content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
-    elif image_name not in content:
-        content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n', content, count=1)
-
+    # Robust Podcast Link Cleaning (remove all variants)
     content = re.sub(r'<center>\s*<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE".*?</center>', '', content, flags=re.DOTALL)
     
+    image_name = os.path.basename(file_path).replace('.md', '.png')
+    image_path = f"./img/{image_name}"
+    
+    # Cover Image and Podcast Link Insertion
     if "![cover image]" in content:
-        content = re.sub(r'(!\[cover image\].*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
+        content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
+        content = re.sub(r'(!\[cover image\].*?\n)', rf'\1\n{PODCAST_LINKS}\n\n', content, count=1)
     else:
-        content = re.sub(r'(^# .*?\n)', rf'\1\n{podcast_links}\n\n', content, count=1)
-    
+        # If no cover image found, insert both after H1
+        content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{PODCAST_LINKS}\n\n', content, count=1)
+
+    # 4. Currency Conversion (USD)
     def curr_repl(m): return f"{m.group(1)} USD"
+    # Matches $1,000, $1.5 billion, but NOT [^$] or inside links
     content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
-    content = re.sub(r'\$(\d+)', r'\1 USD', content)
+    content = re.sub(r'(?<!\[)(?<!/)\$(\d+)', r'\1 USD', content)
     
+    # 5. Footnote Re-numbering & References
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -242,60 +282,44 @@ def fix_markdown(file_path, new_title=None, episode=None):
             nonlocal next_id
             try:
                 old_id = int(m.group(1))
-                if old_id > 50: return m.group(0)
                 if old_id not in used_cites:
                     used_cites[old_id] = next_id
                     next_id += 1
                 return f"[^{used_cites[old_id]}]"
             except: return m.group(0)
 
+        # Apply re-numbering to body (avoiding headers)
         lines = content.split('\n')
         new_lines = []
         for line in lines:
             if line.startswith('#'): new_lines.append(line)
-            else: new_lines.append(re.sub(r'(?<=[a-zA-Z\.\)])\s*(\d{1,2})(?![0-9])', cite_repl, line))
+            else: new_lines.append(re.sub(r'\[\^(\d+)\]', cite_repl, line))
         content = '\n'.join(new_lines)
         
+        # Build Reference section
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
             if 0 < old <= len(citations):
                 cite = citations[old-1]
-                cite = re.sub(r'\\([_.-])', r'\1', cite)
+                cite = re.sub(r'\\([_.-])', r'\1', cite) # Clean backslashes from URLs
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
     
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
-    lightning_widget = """
----
-
-### Tips and Donations
-
-If you enjoyed this deep dive, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
-
-<lightning-widget
-  name="Thanks for supporting the publication"
-  accent="#f9ce00"
-  to="shutosha@primal.net"
-  image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp"
-/>
-<script src="https://embed.twentyuno.net/js/app.js"></script>
-
-To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/). 
-
----
-"""
+    # 6. Lightning Widget
     if "shutosha@primal.net" not in content and "SUMMARY.md" not in file_path:
         if "## References" in content:
-            content = content.replace("## References", lightning_widget + "\n\n## References")
+            content = content.replace("## References", LIGHTNING_WIDGET + "\n\n## References")
         else:
-            content = content.strip() + "\n" + lightning_widget
+            content = content.strip() + "\n" + LIGHTNING_WIDGET
 
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
 if __name__ == "__main__":
+    check_root()
     import argparse
     parser = argparse.ArgumentParser(description='Universal Markdown Fixer')
     parser.add_argument('file', help='The markdown file to process')
@@ -304,21 +328,20 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     target = args.file
+    if not os.path.exists(target):
+        print(f"ERROR: File not found: {target}")
+        sys.exit(1)
+
     fix_markdown(target, args.title, args.episode)
     report = update_summary(target)
     
-    print(f"Successfully processed {target}")
+    print(f"\nSuccessfully processed {target}")
     if report:
         print("\nRestoration Report:")
         for r in report: print(f"- {r}")
     
-    final_title = extract_title(target)
-    # Validate word count (ignore the episode prefix)
-    words_only = re.sub(r'^\d+:\s*', '', final_title).split()
-    if len(words_only) > 5:
-        print(f"\nCRITICAL WARNING: The title '{final_title}' still exceeds 5 words (excluding episode number)!")
-    else:
-        print(f"\nConfirmed Title: '{final_title}' ({len(words_only)} words)")
+    final_full_title = extract_title(target)
+    print(f"\nFinal Title in File: '{final_full_title}'")
     
     print("\nAutomated Crosscheck:")
     print(verify_completeness())

@@ -96,6 +96,7 @@
 - [The Great Hardware Divorce](./desktopWars2025.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [Beat the Copyright Bots](./beating-the-copyright-bots.md)
+- [221 : The perfect playbook](./perfectPlayBook.md)
 
 # About the Project
 - [Deep Dive with Gemini](./cover.md)
