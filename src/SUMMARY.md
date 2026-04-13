@@ -97,6 +97,7 @@
 - [The Great Hardware Divorce](./desktopWars2025.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [Beat the Copyright Bots](./beating-the-copyright-bots.md)
+- [222 : Homeownership - American Dream!](./americanDream.md)
 
 # About the Project
 - [Deep Dive with Gemini](./cover.md)
