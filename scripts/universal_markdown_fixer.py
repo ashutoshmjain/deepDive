@@ -260,10 +260,28 @@ def fix_markdown(file_path, new_title=None, episode=None):
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{PODCAST_LINKS}\n\n', content, count=1)
 
     # 4. Currency Conversion (USD)
-    def curr_repl(m): return f"{m.group(1)} USD"
-    # Matches $1,000, $1.5 billion, but NOT [^$] or inside links
-    content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+(?: billion| million| trillion)?)', curr_repl, content)
-    content = re.sub(r'(?<!\[)(?<!/)\$(\d+)', r'\1 USD', content)
+    def curr_repl(m):
+        val_str = m.group(1).replace(',', '')
+        suffix = m.group(2).lower() if m.group(2) else ""
+        
+        multiplier = 1
+        if suffix == 'k': multiplier = 1_000
+        elif suffix == 'm' or 'million' in suffix: multiplier = 1_000_000
+        elif suffix == 'b' or 'billion' in suffix: multiplier = 1_000_000_000
+        elif suffix == 't' or 'trillion' in suffix: multiplier = 1_000_000_000_000
+        
+        try:
+            num = float(val_str) * multiplier
+            if num == int(num):
+                formatted = f"{int(num):,}"
+            else:
+                formatted = f"{num:,}"
+            return f"{formatted} USD"
+        except:
+            return f"{m.group(1)}{suffix} USD"
+
+    # Matches $1,000, $1.5k, $2 billion, but NOT [^$] or inside links
+    content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?', curr_repl, content, flags=re.IGNORECASE)
     
     # 5. Footnote Re-numbering & References
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
@@ -276,6 +294,12 @@ def fix_markdown(file_path, new_title=None, episode=None):
             if not m: m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
             if m: citations.append(m.group(2).strip())
         
+        # Pre-process body to convert plain numbers to [^n] markers
+        for i in range(1, len(citations) + 1):
+            # Matches word.1, word!1, word?1, word 1, but not 1.5 (decimal)
+            pattern = rf'(\w)([\.\?\!,\s]){i}(?!\d|(?:\.\d))'
+            content = re.sub(pattern, rf'\1\2[^{i}]', content)
+
         used_cites = {}
         next_id = 1
         def cite_repl(m):
