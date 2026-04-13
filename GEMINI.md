@@ -16,6 +16,9 @@ While focusing on the core foundations above, the ultimate, long-term vision for
 3.  **Video Promotion:** The system utilizes tools like motion.so to automatically generate one-minute promotional videos for the published content.
 4.  **The Goal:** An end-to-end, zero-touch solution for researching, writing, and distributing multi-modal content (text, audio, video).
 
+**Architectural Principle:**
+This vision will be realized through **multi-agent orchestration**. The core philosophy is to achieve integration through the *minimal* use of LLM "intelligence" and *maximum* automation using deterministic command-line tools and scripts. AI should be reserved for cognitive tasks (generation, research, routing), while scripts handle formatting, publishing, and API interactions.
+
 **Agent's Operational Role:**
 - **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
 - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
