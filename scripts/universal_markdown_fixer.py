@@ -19,6 +19,8 @@ CATEGORIES = {
     "dollar": "# Economics, Capital & The Global Shift",
     "gdp": "# Economics, Capital & The Global Shift",
     "sovereign": "# Economics, Capital & The Global Shift",
+    "home": "# Economics, Capital & The Global Shift",
+    "dream": "# Economics, Capital & The Global Shift",
     "quantum": "# Philosophy, Science & The Nature of Reality",
     "physics": "# Philosophy, Science & The Nature of Reality",
     "thought": "# Philosophy, Science & The Nature of Reality",

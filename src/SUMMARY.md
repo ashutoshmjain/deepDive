@@ -1,9 +1,9 @@
 # Summary
 
 # Recent ..
+- [222 : Homeownership - American Dream!](./americanDream.md)
 - [221 : The perfect playbook](./perfectPlayBook.md)
 - [220: AI Made Me a Believer](./AI2Believer.md)
-- [Triple-Entry: The Future of Value](./tripleEntry.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -87,6 +87,7 @@
 - [Philosophy and the Quark](./gods-philosophers-quarks.md)
 
 # Social, Culture & Digital Sovereignty
+- [Triple-Entry: The Future of Value](./tripleEntry.md)
 - [The Inevitability of Open Source](./longliveOpenSource.md)
 - [The Social Synapse](./meaningOfMeaning-2.md)
 - [Vim: The Modal Instrument](./musicOfVim.md)
@@ -97,7 +98,6 @@
 - [The Great Hardware Divorce](./desktopWars2025.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [Beat the Copyright Bots](./beating-the-copyright-bots.md)
-- [222 : Homeownership - American Dream!](./americanDream.md)
 
 # About the Project
 - [Deep Dive with Gemini](./cover.md)
