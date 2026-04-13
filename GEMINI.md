@@ -9,6 +9,13 @@ The primary mission of this workspace is the iterative development of `scripts/u
 3.  **Synchronize SUMMARY.md:** Automatically generating catchy titles and placing files in thematic categories based on pre-assigned logic.
 4.  **Wallet Integration:** Automating the insertion of Lightning widgets (`shutosha@primal.net`) and donation links for Satoshi-based support.
 
+### **Long-Term Vision: End-to-End Publishing Automation**
+While focusing on the core foundations above, the ultimate, long-term vision for this workspace is to deeply integrate `mdbook` with Gemini to create a fully autonomous publishing pipeline:
+1.  **Prompt to Publish:** A user provides a prompt; the system builds the narrative, generates an image, and publishes the article to the web via `mdbook`.
+2.  **Audio Generation:** The system automatically creates an audio prompt, uses NotebookLM to generate an audio file, and publishes it to Spotify as a podcast.
+3.  **Video Promotion:** The system utilizes tools like motion.so to automatically generate one-minute promotional videos for the published content.
+4.  **The Goal:** An end-to-end, zero-touch solution for researching, writing, and distributing multi-modal content (text, audio, video).
+
 **Agent's Operational Role:**
 - **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
 - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
