@@ -2,7 +2,17 @@
 
 > **MANDATE:** At the start of every session in the `deepDive` project, the agent MUST read this file and ask the user for "blanket verbal approval" for the pre-authorized routine actions listed below (Git, Scripts, Cleanup, Markdown) to minimize interruptions.
 
-The following actions are **pre-authorized** by the user for this workspace. When starting a session, the agent should confirm if the current task involves these operations and proceed assertively once approval is granted:
+## **Overarching Goal: The Universal Markdown Fixer**
+The primary mission of this workspace is the iterative development of `scripts/universal_markdown_fixer.py`. The goal is to create a robust, standalone tool that anyone can use to:
+1.  **Fix KaTeX/LaTeX Issues:** Ensuring mathematical formulas render perfectly in `mdbook`.
+2.  **Automate Asset Integration:** Inserting cover images and podcast links based on filename patterns.
+3.  **Synchronize SUMMARY.md:** Automatically generating catchy titles and placing files in thematic categories based on pre-assigned logic.
+
+**Agent's Operational Role:**
+- **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
+- **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
+- **Evolutionary Development:** Continuously improve the script based on manual interventions (e.g., updating regex, adding category keywords, fixing logic failures).
+- **Future Milestone:** Once the core objectives are perfected, investigate automating footnote fixing and URL searching within the script.
 
 ## 1. Git Operations
 - **Staging:** `git add .` or `git add <file>` is permitted for all task-related changes.
