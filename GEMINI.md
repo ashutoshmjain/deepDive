@@ -19,6 +19,9 @@ While focusing on the core foundations above, the ultimate, long-term vision for
 **Architectural Principle:**
 This vision will be realized through **multi-agent orchestration**. The core philosophy is to achieve integration through the *minimal* use of LLM "intelligence" and *maximum* automation using deterministic command-line tools and scripts. AI should be reserved for cognitive tasks (generation, research, routing), while scripts handle formatting, publishing, and API interactions.
 
+**Core Principle of Collaborative Intelligence:**
+We intelligently automate what we regularly do. We do not aspire to build "popular apps" in the abstract; instead, we focus on solving our own immediate pain points—specifically the creation of the *Deep Dive with Gemini* podcast. Our software automation reflects real, lived objectives because we are the **first and power users** of the tools we build. This development is slow, steady, and deliberate.
+
 **Agent's Operational Role:**
 - **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
 - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
