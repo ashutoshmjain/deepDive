@@ -76,7 +76,9 @@ Each home sale triggers a "sales volume multiplier effect," with a fiscal multip
 
 The American Dream is alive today more than at any other time in history. By securing a first-lien mortgage on a property, a young couple is not just buying a house; they are acquiring a stake in the American economy, a hedge against inflation, and a permanent sanctuary for their children.
 
-The path forward requires a renewed commitment from the Government and the Federal Reserve to restimulate the housing sector—by lowering regulatory barriers and supporting the 30-year fixed-rate mortgage—ensuring that the laboratory of the middle class remains open to all. Homeownership is the ultimate guarantor of individual liberty and national stability, and its continued vitality remains the primary engine of the American experiment.
+The path forward requires a renewed commitment from the Government and the Federal Reserve to restimulate the housing sector—by lowering regulatory barriers and supporting the 30-year fixed-rate mortgage—ensuring that the laboratory of the middle class remains open to all. 
+
+Homeownership is the ultimate guarantor of individual liberty and national stability, and its continued vitality remains the primary engine of the American experiment.
 
 ---
 

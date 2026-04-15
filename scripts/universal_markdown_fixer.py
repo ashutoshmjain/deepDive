@@ -32,9 +32,43 @@ CATEGORIES = {
 }
 
 KATEX_MAP = {
-    "![][image1]": "$F$",
-    "![][image2]": "$\\mathcal{R}$",
-    "![][image3]": "$\\Phi$"
+    "![][image1]": r"$\mathcal{P} = (\mathcal{S}, \mathcal{A}, \rho, \mathcal{R})$",
+    "![][image2]": r"$\mathcal{S}$",
+    "![][image3]": r"$\mathcal{A}$",
+    "![][image4]": r"$\rho$",
+    "![][image5]": r"$\mathcal{R}$",
+    "![][image6]": r"$G_N$",
+    "![][image7]": r"$SU(3) \times SU(2) \times U(1)$",
+    "![][image8]": r"$S^2$",
+    "![][image9]": r"$SL(2, \mathbb{C})$",
+    "![][image10]": r"$SO(3,1)$",
+    "![][image11]": r"$10^{120}$",
+    "![][image12]": r"$T_{\mu\nu} l^\mu l^\nu = 0$",
+    "![][image13]": r"$l^\mu$",
+    "![][image14]": r"$(SU(3) \times SU(2) \times U(1)) / \mathbb{Z}_6$",
+    "![][image15]": r"$\mathbb{Z}_6$",
+    "![][image16]": r"$N_g = 3$",
+    "![][image17]": r"$N_g = 3$",
+    "![][image18]": r"$L_P^2$",
+    "![][image19]": r"$\alpha_s$",
+    "![][image20]": r"$Q$",
+    "![][image21]": r"$\alpha^{n}$",
+    "![][image22]": r"$n=0$",
+    "![][image23]": r"$y \sim 1$",
+    "![][image24]": r"$n=1$",
+    "![][image25]": r"$y \sim \alpha$",
+    "![][image26]": r"$n=1$",
+    "![][image27]": r"$y \sim \alpha$",
+    "![][image28]": r"$n=2$",
+    "![][image29]": r"$y \sim \alpha^2$",
+    "![][image30]": r"$n=3$",
+    "![][image31]": r"$y \sim \alpha^3$",
+    "![][image32]": r"$2/3$",
+    "![][image33]": r"$S_3$",
+    "![][image34]": r"$1/r$",
+    "![][image35]": r"$a_0$",
+    "![][image36]": r"$10^{34}$",
+    "![][image37]": r"$10-50$"
 }
 
 PODCAST_LINKS = """<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>"""
@@ -203,10 +237,10 @@ def fix_markdown(file_path, new_title=None, episode=None):
     
     # 1. Deep Sanitization: Remove invisible characters and fix broken links
     content = content.replace('\u0332', '')
-    # Remove footnote markers from within URLs (e.g., [^1] inside a link)
+    # Remove footnote markers from within URLs
     content = re.sub(r'(href=".*?)\[\^\d+\]', r'\1', content)
     
-    # 2. H1 Handling (Title & Episode)
+    # 2. H1 Handling
     current_h1_match = re.search(r'^#\s+(.*)$', content, re.MULTILINE)
     if current_h1_match:
         current_full_title = current_h1_match.group(1).strip()
@@ -214,8 +248,6 @@ def fix_markdown(file_path, new_title=None, episode=None):
         current_full_title = os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
         content = f"# {current_full_title}\n\n" + content
 
-    # Split current title into episode and title parts if possible
-    # Patterns: "221 : Title", "221: Title", "221 - Title"
     ep_match = re.match(r'^(\d+)\s*[:\-]\s*(.*)$', current_full_title)
     if ep_match:
         curr_ep, curr_title = ep_match.groups()
@@ -225,17 +257,6 @@ def fix_markdown(file_path, new_title=None, episode=None):
     final_ep = episode or curr_ep
     final_title_text = new_title or curr_title
 
-    # Word count check and interactive prompt
-    words_only = final_title_text.split()
-    if len(words_only) > 5 and not new_title:
-        print(f"\nWARNING: Title exceeds 5 words: '{final_title_text}'")
-        try:
-            user_title = input("Please enter a catchy 5-word title (or press Enter to keep): ").strip()
-            if user_title:
-                final_title_text = user_title
-        except EOFError:
-            pass # Non-interactive environment
-
     if final_ep:
         final_h1 = f"# {final_ep} : {final_title_text}"
     else:
@@ -243,52 +264,53 @@ def fix_markdown(file_path, new_title=None, episode=None):
 
     content = re.sub(r'^#\s+.*$', final_h1, content, count=1, flags=re.MULTILINE)
 
-    # 3. Component Cleaning (Bolding, KaTeX, Podcasts)
+    # 3. Component Cleaning
     content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
     content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
     
     for placeholder, symbol in KATEX_MAP.items():
         content = content.replace(placeholder, symbol)
 
-    # Robust Podcast Link Cleaning (remove all variants)
     content = re.sub(r'<center>\s*<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE".*?</center>', '', content, flags=re.DOTALL)
     
     image_name = os.path.basename(file_path).replace('.md', '.png')
     image_path = f"./img/{image_name}"
     
-    # Cover Image and Podcast Link Insertion
     if "![cover image]" in content:
         content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
         content = re.sub(r'(!\[cover image\].*?\n)', rf'\1\n{PODCAST_LINKS}\n\n', content, count=1)
     else:
-        # If no cover image found, insert both after H1
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{PODCAST_LINKS}\n\n', content, count=1)
 
-    # 4. Currency Conversion (USD)
+    # 4. Currency Conversion - MASKING KaTeX
+    katex_blocks = []
+    def mask_katex(m):
+        katex_blocks.append(m.group(0))
+        return f"__KATEX_BLOCK_{len(katex_blocks)-1}__"
+
+    content = re.sub(r'\$\$.*?\$\$', mask_katex, content, flags=re.DOTALL)
+    content = re.sub(r'\$.*?\$', mask_katex, content)
+
     def curr_repl(m):
         val_str = m.group(1).replace(',', '')
         suffix = m.group(2).lower() if m.group(2) else ""
-        
         multiplier = 1
         if suffix == 'k': multiplier = 1_000
         elif suffix == 'm' or 'million' in suffix: multiplier = 1_000_000
         elif suffix == 'b' or 'billion' in suffix: multiplier = 1_000_000_000
         elif suffix == 't' or 'trillion' in suffix: multiplier = 1_000_000_000_000
-        
         try:
             num = float(val_str) * multiplier
-            if num == int(num):
-                formatted = f"{int(num):,}"
-            else:
-                formatted = f"{num:,}"
+            formatted = f"{int(num):,}" if num == int(num) else f"{num:,}"
             return f"{formatted} USD"
-        except:
-            return f"{m.group(1)}{suffix} USD"
+        except: return f"{m.group(1)}{suffix} USD"
 
-    # Matches $1,000, $1.5k, $2 billion, but NOT [^$] or inside links
-    content = re.sub(r'(?<!\[)(?<!/)\$([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?', curr_repl, content, flags=re.IGNORECASE)
+    content = re.sub(r'(?<!\w)\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', curr_repl, content, flags=re.IGNORECASE)
     
-    # 5. Footnote Re-numbering & References
+    for i, block in enumerate(katex_blocks):
+        content = content.replace(f"__KATEX_BLOCK_{i}__", block)
+
+    # 5. Footnote Re-numbering - SAFE VERSION
     works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
     if works_cited_match:
         wc_text = works_cited_match.group(1).strip()
@@ -299,11 +321,8 @@ def fix_markdown(file_path, new_title=None, episode=None):
             if not m: m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
             if m: citations.append(m.group(2).strip())
         
-        # Pre-process body to convert plain numbers to [^n] markers
-        for i in range(1, len(citations) + 1):
-            # Matches word.1, word!1, word?1, word 1, but not 1.5 (decimal)
-            pattern = rf'(\w)([\.\?\!,\s]){i}(?!\d|(?:\.\d))'
-            content = re.sub(pattern, rf'\1\2[^{i}]', content)
+        # We DO NOT auto-convert plain numbers to footnotes anymore.
+        # We only re-number existing [^n] markers.
 
         used_cites = {}
         next_id = 1
@@ -317,7 +336,6 @@ def fix_markdown(file_path, new_title=None, episode=None):
                 return f"[^{used_cites[old_id]}]"
             except: return m.group(0)
 
-        # Apply re-numbering to body (avoiding headers)
         lines = content.split('\n')
         new_lines = []
         for line in lines:
@@ -325,19 +343,17 @@ def fix_markdown(file_path, new_title=None, episode=None):
             else: new_lines.append(re.sub(r'\[\^(\d+)\]', cite_repl, line))
         content = '\n'.join(new_lines)
         
-        # Build Reference section
         ref_sec = "\n\n## References\n\n"
         for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
             if 0 < old <= len(citations):
                 cite = citations[old-1]
-                cite = re.sub(r'\\([_.-])', r'\1', cite) # Clean backslashes from URLs
+                cite = re.sub(r'\\([_.-])', r'\1', cite)
                 ref_sec += f"[^{new}]: {cite}\n\n"
         content += ref_sec
     
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
-    # 6. Lightning Widget
     if "shutosha@primal.net" not in content and "SUMMARY.md" not in file_path:
         if "## References" in content:
             content = content.replace("## References", LIGHTNING_WIDGET + "\n\n## References")
@@ -358,19 +374,11 @@ if __name__ == "__main__":
 
     target = args.file
     if not os.path.exists(target):
-        print(f"ERROR: File not found: {target}")
         sys.exit(1)
 
     fix_markdown(target, args.title, args.episode)
-    report = update_summary(target)
-    
+    update_summary(target)
     print(f"\nSuccessfully processed {target}")
-    if report:
-        print("\nRestoration Report:")
-        for r in report: print(f"- {r}")
-    
     final_full_title = extract_title(target)
-    print(f"\nFinal Title in File: '{final_full_title}'")
-    
-    print("\nAutomated Crosscheck:")
+    print(f"\nFinal Title: '{final_full_title}'")
     print(verify_completeness())

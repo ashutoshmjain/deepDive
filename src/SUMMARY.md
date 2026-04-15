@@ -4,6 +4,7 @@
 - [222 : Homeownership - American Dream!](./americanDream.md)
 - [221 : The perfect playbook](./perfectPlayBook.md)
 - [220: AI Made Me a Believer](./AI2Believer.md)
+- [223 : Reality: The Universal Consensus Protocol](./223.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
