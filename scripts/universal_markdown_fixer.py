@@ -192,8 +192,16 @@ def update_summary(target_file_path):
     if target_filename not in recent_filenames and target_filename in file_to_info and file_to_info[target_filename][1] is None:
         recent_filenames.append(target_filename)
     
-    # Sort recent files by date descending
-    recent_filenames.sort(key=lambda x: file_to_info[x][2] if x in file_to_info else 0, reverse=True)
+    def get_sort_key(fname):
+        title = file_to_info[fname][0]
+        # Try to extract leading episode number
+        m = re.match(r'^(\d+)', title)
+        if m:
+            return (int(m.group(1)), file_to_info[fname][2])
+        return (0, file_to_info[fname][2])
+
+    # Sort recent files by episode number (desc), then date (desc)
+    recent_filenames.sort(key=get_sort_key, reverse=True)
 
     report = []
     for fname in file_to_info:
