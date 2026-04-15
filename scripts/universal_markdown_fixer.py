@@ -83,11 +83,6 @@ def get_file_dates():
     except Exception:
         return {}
 
-def get_recent_files(n=3):
-    dates = get_file_dates()
-    sorted_files = sorted(dates.items(), key=lambda x: x[1], reverse=True)
-    return [os.path.join('src', f[0]) for f in sorted_files[:n]]
-
 def extract_title(file_path):
     if not os.path.exists(file_path):
         return os.path.basename(file_path)
@@ -130,6 +125,7 @@ def update_summary(target_file_path):
     file_to_info = {} # filename -> [title, category, date]
     sections_order = []
     current_category = None
+    existing_recent = set()
     
     all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md', 'how.md']]
     for fname in all_src_files:
@@ -146,7 +142,9 @@ def update_summary(target_file_path):
             if m:
                 _, _, fname = m.groups()
                 if fname in file_to_info:
-                    if "Recent .." not in current_category:
+                    if "Recent .." in current_category:
+                        existing_recent.add(fname)
+                    else:
                         file_to_info[fname][1] = current_category
 
     essential_sections = ["# Recent ..", "# The Bitcoin Standard & Sovereign Assets", "# The AI Revolution & Machine Intelligence", "# Digital Credit & The STRC Bridge", "# Economics, Capital & The Global Shift", "# Philosophy, Science & The Nature of Reality", "# Social, Culture & Digital Sovereignty"]
@@ -154,8 +152,14 @@ def update_summary(target_file_path):
         if es not in sections_order:
             sections_order.append(es)
 
-    recent_files = get_recent_files(3)
-    recent_filenames = [os.path.basename(f) for f in recent_files]
+    # Any file not already in a thematic category stays or goes into "Recent .."
+    target_filename = os.path.basename(target_file_path)
+    recent_filenames = list(existing_recent)
+    if target_filename not in recent_filenames and target_filename in file_to_info and file_to_info[target_filename][1] is None:
+        recent_filenames.append(target_filename)
+    
+    # Sort recent files by date descending
+    recent_filenames.sort(key=lambda x: file_to_info[x][2] if x in file_to_info else 0, reverse=True)
 
     report = []
     for fname in file_to_info:
@@ -171,9 +175,8 @@ def update_summary(target_file_path):
         new_content.append(sec)
         
         if sec == "# Recent ..":
-            for rf in recent_files:
-                rf_base = os.path.basename(rf)
-                title = extract_title(rf)
+            for rf_base in recent_filenames:
+                title = file_to_info[rf_base][0]
                 new_content.append(f"- [{title}](./{rf_base})")
         else:
             cat_files = []
