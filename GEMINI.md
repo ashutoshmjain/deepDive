@@ -6,7 +6,7 @@
 The primary mission of this workspace is the iterative development of `scripts/universal_markdown_fixer.py` and associated automation. The goal is to create a robust, standalone **toolchain** that anyone can use to automate the manual labor of publishing an `mdbook`:
 1.  **Fix KaTeX/LaTeX Issues:** Ensuring mathematical formulas render perfectly in `mdbook`.
 2.  **Automate Asset Integration:** Inserting cover images and podcast links based on filename patterns.
-3.  **Synchronize SUMMARY.md:** Automatically generating catchy titles and placing files in thematic categories based on pre-assigned logic.
+3.  **Synchronize SUMMARY.md:** Maintaining a permanent, growing `# Recent ..` section for all numbered episodes to match podcast indexing, ensuring the website and show are perfectly aligned. Thematic categories are preserved for legacy/unnumbered content.
 4.  **Wallet Integration:** Automating the insertion of Lightning widgets (`shutosha@primal.net`) and donation links for Satoshi-based support.
 
 ### **Long-Term Vision: End-to-End Publishing Automation**
