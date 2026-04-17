@@ -10,34 +10,34 @@ The primary mission of this workspace is the iterative development of `scripts/u
 4.  **Wallet Integration:** Automating the insertion of Lightning widgets (`shutosha@primal.net`) and donation links for Satoshi-based support.
 
 ### **Long-Term Vision: End-to-End Publishing Automation**
-While focusing on the core foundations above, the ultimate, long-term vision for this workspace is to deeply integrate `mdbook` with Gemini to create a fully autonomous publishing pipeline:
-1.  **Prompt to Publish:** A user provides a prompt; the system builds the narrative, generates an image, and publishes the article to the web via `mdbook`.
-2.  **Audio Generation:** The system automatically creates an audio prompt, uses NotebookLM to generate an audio file, and publishes it to Spotify as a podcast.
-3.  **Video Promotion:** The system utilizes tools like motion.so to automatically generate one-minute promotional videos for the published content.
-4.  **The Goal:** An end-to-end, zero-touch solution for researching, writing, and distributing multi-modal content (text, audio, video).
-
-**Architectural Principle:**
-This vision will be realized through **multi-agent orchestration**. The core philosophy is to achieve integration through the *minimal* use of LLM "intelligence" and *maximum* automation using deterministic command-line tools and scripts. AI should be reserved for cognitive tasks (generation, research, routing), while scripts handle formatting, publishing, and API interactions.
+While focusing on the core foundations above, the ultimate, long-term vision for this workspace is to deeply integrate `mdbook` with Gemini to create a fully autonomous publishing pipeline.
 
 **Core Principle of Collaborative Intelligence:**
-We intelligently automate what we regularly do. We do not aspire to build "popular apps" in the abstract; instead, we focus on solving our own immediate pain points—specifically the creation of the *Deep Dive with Gemini* podcast. Our software automation reflects real, lived objectives because we are the **first and power users** of the tools we build. This development is slow, steady, and deliberate.
+We intelligently automate what we regularly do. Our software automation reflects real, lived objectives because we are the **first and power users** of the tools we build.
+
+**The "Master Key" Strategy:**
+To simplify synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets.
 
 **Agent's Operational Role:**
 - **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
+- **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic (parsing index from filename, auto-linking assets).
 - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
-- **Evolutionary Development:** Continuously improve the script based on manual interventions (e.g., updating regex, adding category keywords, fixing logic failures).
-- **Future Milestone:** Once the core objectives are perfected, investigate automating footnote fixing and URL searching within the script.
 
 ## **Operational Standards**
 
-### **1. Title Formatting**
-- Every new page must start with its index number and a colon in the H1 header (e.g., `# 224 : Title`).
+### **1. Filename Convention (The Master Key)**
+- **Markdown Files:** Must be named strictly by their episode number (e.g., `src/225.md`).
+- **Image Files:** Must be named strictly by their episode number (e.g., `src/img/225.png`).
+- This shared index links the file, the cover image, and the podcast episode together.
 
-### **2. SUMMARY.md Organization**
-- **Numbered Posts:** (e.g., `224 : ...`) must remain **strictly** in the `# Recent ..` section. They should NOT be moved to thematic categories.
-- **Recent Section:** This section is **UNLIMITED** and will grow as new numbered episodes are added to maintain the podcast index.
+### **2. Title Formatting**
+- Every new page must start with its index number and a colon in the H1 header (e.g., `# 225 : Title`). The title text should be descriptive but concise (max 5 words).
+
+### **3. SUMMARY.md Organization**
+- **Numbered Posts:** (e.g., `225 : ...`) must remain **strictly** in the `# Recent ..` section. They should NOT be moved to thematic categories.
+- **Recent Section:** This section is **UNLIMITED** and will grow as new numbered episodes are added to maintain a chronological podcast index.
 - **Path Aliasing:** Use the path-aliasing hack `././filename.md` for all items in the `# Recent ..` section to avoid `mdbook` duplicate errors.
 
-### **3. Technical Rendering (KaTeX)**
+### **4. Technical Rendering (KaTeX)**
 - Mathematical formulas and scientific symbols must be rendered using **Absolute KaTeX** code instead of embedded images.
 - All math blocks and inline symbols must be correctly formatted for `mdbook-katex`.
