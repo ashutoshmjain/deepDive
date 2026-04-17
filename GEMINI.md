@@ -1,6 +1,6 @@
 # Project-Specific Permissions & Automation
 
-> **MANDATE:** The routine actions listed below (Git, Scripts, Cleanup, Markdown) are **pre-authorized** via the project's automation policy (`.gemini/policies/automation.toml`). The agent MUST read this file at the start of every session to align with the current toolchain standards but should NOT interrupt the user for verbal approval for these specific tasks.
+> **MANDATE:** Operational actions (Git, Scripts, Cleanup, Markdown) are **pre-authorized** via the project's automation policy (`.gemini/policies/automation.toml`). The agent MUST read this file at the start of every session to align with the current toolchain standards but should NOT interrupt the user for verbal approval for these specific tasks.
 
 ## **Overarching Goal: The Universal Markdown Fixer & Publishing Toolchain**
 The primary mission of this workspace is the iterative development of `scripts/universal_markdown_fixer.py` and associated automation. The goal is to create a robust, standalone **toolchain** that anyone can use to automate the manual labor of publishing an `mdbook`:
@@ -28,28 +28,16 @@ We intelligently automate what we regularly do. We do not aspire to build "popul
 - **Evolutionary Development:** Continuously improve the script based on manual interventions (e.g., updating regex, adding category keywords, fixing logic failures).
 - **Future Milestone:** Once the core objectives are perfected, investigate automating footnote fixing and URL searching within the script.
 
-## 1. Git Operations
-- **Staging:** `git add .` or `git add <file>` is permitted for all task-related changes.
-- **Committing:** `git commit -m "<message>"` is permitted once a task is validated.
-- **Pushing:** `git push origin master` (or current branch) is permitted after successful commits.
+## **Operational Standards**
 
-## 2. Script Execution & Cleanup
-- **Tools:** `python3`, `perl`, `ls`, `sed`, `grep`, `cp`, `mv`, and `rm` are pre-authorized for all automation, text-processing, discovery, and file management tasks.
-- **Python Scripts:** Creating and executing scripts in the `scripts/` directory to automate markdown fixes, KaTeX conversions, or `SUMMARY.md` updates.
-- **Cleanup:** Deleting temporary files (e.g., `*.txt`, `tmp_*`) created during investigation or comparison.
+### **1. Title Formatting**
+- Every new page must start with its index number and a colon in the H1 header (e.g., `# 224 : Title`).
 
-## 3. Documentation & Markdown
-- **Markdown Fixes:** Full-file rewrites to fix formatting, citations, and KaTeX rendering.
-- **Title Formatting:** Every new page must start with its index number and a colon (e.g., `# 224 : Title`).
-- **SUMMARY.md:** 
-    - Numbered posts (e.g., `224 : ...`) must remain strictly in the "# Recent .." section and should NOT be moved to thematic categories.
-    - The "# Recent .." section is UNLIMITED and will grow as new numbered episodes are added.
-    - Use the path-aliasing hack `././filename.md` for items in the "# Recent .." section to avoid mdbook duplicate errors.
-- **KaTeX:** Always replacing mathematical images with Absolute KaTeX code.
+### **2. SUMMARY.md Organization**
+- **Numbered Posts:** (e.g., `224 : ...`) must remain **strictly** in the `# Recent ..` section. They should NOT be moved to thematic categories.
+- **Recent Section:** This section is **UNLIMITED** and will grow as new numbered episodes are added to maintain the podcast index.
+- **Path Aliasing:** Use the path-aliasing hack `././filename.md` for all items in the `# Recent ..` section to avoid `mdbook` duplicate errors.
 
-## 4. System Verification
-- Running `npm run build:pwa` to validate changes and update the Service Worker.
-- Running `npm run serve:pwa` (or `mdbook serve`) to check rendering.
-
----
-*Note: While these are pre-authorized, the CLI security architecture may still present a confirmation prompt. The user intends for these to be treated as "Trivial/Routine" approvals.*
+### **3. Technical Rendering (KaTeX)**
+- Mathematical formulas and scientific symbols must be rendered using **Absolute KaTeX** code instead of embedded images.
+- All math blocks and inline symbols must be correctly formatted for `mdbook-katex`.
