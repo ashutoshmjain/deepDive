@@ -1,0 +1,34 @@
+# Project-level automation policy for deepDive
+# This file auto-approves routine tools to minimize manual confirmation prompts.
+
+# 1. Auto-approve all file modification tools
+[[rule]]
+toolName = ["write_file", "replace", "insert_content", "save_memory"]
+decision = "allow"
+priority = 1000
+
+# 2. Auto-approve common shell commands used in the toolchain
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = [
+    "git", 
+    "python3", 
+    "perl", 
+    "mdbook", 
+    "ls", 
+    "rm", 
+    "cat", 
+    "sed", 
+    "grep", 
+    "cp", 
+    "mv"
+]
+decision = "allow"
+priority = 1000
+
+# 3. Allow shell redirection (e.g., 'python3 script.py > output.txt')
+[[rule]]
+toolName = "run_shell_command"
+allowRedirection = true
+decision = "allow"
+priority = 1050
