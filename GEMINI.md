@@ -20,7 +20,9 @@ To simplify synchronization between the website, repository, and podcast shows, 
 
 **Agent's Operational Role:**
 - **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
-- **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic (parsing index from filename, auto-linking assets).
+- **Documentation:** Every key development decision or architectural shift must be immediately documented in the `README.md`.
+- **System Synchronization:** At the end of every session, the agent MUST verify that the `README.md`, `scripts/universal_markdown_fixer.py`, and `GEMINI.md` are in perfect logical sync.
+- **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic.
 - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
 
 ## **Operational Standards**
