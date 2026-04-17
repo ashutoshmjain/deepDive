@@ -3,7 +3,7 @@ import os
 import subprocess
 import sys
 
-# Thematic categories mapping
+# Thematic categories mapping (only for unnumbered/legacy posts)
 CATEGORIES = {
     "bitcoin": "# The Bitcoin Standard & Sovereign Assets",
     "btc": "# The Bitcoin Standard & Sovereign Assets",
@@ -95,7 +95,7 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 
 def check_root():
     if not os.path.exists('src') or not os.path.exists('scripts'):
-        print("ERROR: Script must be run from the project root (the directory containing 'src/' and 'scripts/').")
+        print("ERROR: Script must be run from the project root.")
         sys.exit(1)
 
 def get_file_dates():
@@ -127,6 +127,15 @@ def extract_title(file_path):
                 return m.group(1).strip()
     return os.path.basename(file_path)
 
+def extract_episode(filename, title):
+    # Priority 1: Filename (Master Key)
+    m = re.match(r'^(\d+)\.md$', filename)
+    if m: return m.group(1)
+    # Priority 2: Title
+    m = re.match(r'^(\d+)\s*[:\-]', title)
+    if m: return m.group(1)
+    return None
+
 def categorize_file(filename):
     filename_lower = filename.lower()
     for kw, cat in CATEGORIES.items():
@@ -156,16 +165,17 @@ def update_summary(target_file_path):
         content = f.read()
 
     file_dates = get_file_dates()
-    file_to_info = {} # filename -> [title, category, date]
-    sections_order = []
-    current_category = None
-    existing_recent = set()
+    file_to_info = {} # filename -> [title, category, date, is_numbered]
     
     all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md', 'how.md']]
     for fname in all_src_files:
         title = extract_title(os.path.join('src', fname))
-        file_to_info[fname] = [title, None, file_dates.get(fname, 0)]
+        episode = extract_episode(fname, title)
+        file_to_info[fname] = [title, None, file_dates.get(fname, 0), episode is not None]
 
+    # Parse existing structure to find which category each file was in
+    sections_order = []
+    current_category = None
     for line in content.split('\n'):
         if line.startswith('# '):
             current_category = line.strip()
@@ -176,9 +186,9 @@ def update_summary(target_file_path):
             if m:
                 _, _, fname = m.groups()
                 if fname in file_to_info:
-                    if "Recent .." in current_category:
-                        existing_recent.add(fname)
-                    else:
+                    # If it's a thematic category, record it. 
+                    # Note: We will later force numbered files into "Recent .."
+                    if "Recent .." not in current_category:
                         file_to_info[fname][1] = current_category
 
     essential_sections = ["# Recent ..", "# The Bitcoin Standard & Sovereign Assets", "# The AI Revolution & Machine Intelligence", "# Digital Credit & The STRC Bridge", "# Economics, Capital & The Global Shift", "# Philosophy, Science & The Nature of Reality", "# Social, Culture & Digital Sovereignty"]
@@ -186,30 +196,22 @@ def update_summary(target_file_path):
         if es not in sections_order:
             sections_order.append(es)
 
-    # Any file not already in a thematic category stays or goes into "Recent .."
-    target_filename = os.path.basename(target_file_path)
-    recent_filenames = list(existing_recent)
-    if target_filename not in recent_filenames and target_filename in file_to_info and file_to_info[target_filename][1] is None:
-        recent_filenames.append(target_filename)
+    # Master Key Rule: All numbered files MUST be in "Recent .."
+    recent_filenames = [f for f, info in file_to_info.items() if info[3]]
     
     def get_sort_key(fname):
         title = file_to_info[fname][0]
-        # Try to extract leading episode number
-        m = re.match(r'^(\d+)', title)
-        if m:
-            return (int(m.group(1)), file_to_info[fname][2])
+        episode = extract_episode(fname, title)
+        if episode:
+            return (int(episode), file_to_info[fname][2])
         return (0, file_to_info[fname][2])
 
-    # Sort recent files by episode number (desc), then date (desc)
     recent_filenames.sort(key=get_sort_key, reverse=True)
 
-    report = []
-    for fname in file_to_info:
-        if fname in recent_filenames: continue
-        if file_to_info[fname][1] is None:
-            new_cat = categorize_file(fname)
-            file_to_info[fname][1] = new_cat
-            report.append(f"Mapped {fname} to {new_cat}")
+    # Map unnumbered files to thematic categories if not already mapped
+    for fname, info in file_to_info.items():
+        if not info[3] and info[1] is None:
+            info[1] = categorize_file(fname)
 
     new_content = ["# Summary", ""]
     for sec in sections_order:
@@ -219,11 +221,13 @@ def update_summary(target_file_path):
         if sec == "# Recent ..":
             for rf_base in recent_filenames:
                 title = file_to_info[rf_base][0]
-                new_content.append(f"- [{title}](./{rf_base})")
+                # Apply path-aliasing hack ././
+                new_content.append(f"- [{title}](././{rf_base})")
         else:
             cat_files = []
             for fname, info in file_to_info.items():
-                if info[1] == sec and fname not in recent_filenames:
+                # Only put unnumbered files in thematic categories
+                if info[1] == sec and not info[3]:
                     cat_files.append({'title': info[0], 'fname': fname, 'date': info[2]})
             cat_files.sort(key=lambda x: x['date'], reverse=True)
             for f in cat_files:
@@ -236,53 +240,46 @@ def update_summary(target_file_path):
 
     with open(summary_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content).strip() + '\n')
-    
-    return report
 
 def fix_markdown(file_path, new_title=None, episode=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 1. Deep Sanitization: Remove invisible characters and fix broken links
-    content = content.replace('\u0332', '')
-    # Remove footnote markers from within URLs
-    content = re.sub(r'(href=".*?)\[\^\d+\]', r'\1', content)
+    filename = os.path.basename(file_path)
     
-    # 2. H1 Handling
+    # 1. Title and Episode Extraction (Master Key Logic)
     current_h1_match = re.search(r'^#\s+(.*)$', content, re.MULTILINE)
-    if current_h1_match:
-        current_full_title = current_h1_match.group(1).strip()
-    else:
-        current_full_title = os.path.basename(file_path).replace('.md', '').replace('-', ' ').title()
-        content = f"# {current_full_title}\n\n" + content
-
-    ep_match = re.match(r'^(\d+)\s*[:\-]\s*(.*)$', current_full_title)
-    if ep_match:
-        curr_ep, curr_title = ep_match.groups()
-    else:
-        curr_ep, curr_title = None, current_full_title
-
-    final_ep = episode or curr_ep
-    final_title_text = new_title or curr_title
-
-    if final_ep:
-        final_h1 = f"# {final_ep} : {final_title_text}"
-    else:
-        final_h1 = f"# {final_title_text}"
-
-    content = re.sub(r'^#\s+.*$', final_h1, content, count=1, flags=re.MULTILINE)
-
-    # 3. Component Cleaning
-    content = re.sub(r'^#\s+\*\*(.*?)\*\*', r'# \1', content, flags=re.MULTILINE)
-    content = re.sub(r'^##\s+\*\*(.*?)\*\*', r'## \1', content, flags=re.MULTILINE)
+    current_full_title = current_h1_match.group(1).strip() if current_h1_match else filename.replace('.md', '').title()
     
+    final_ep = episode or extract_episode(filename, current_full_title)
+    
+    # Clean current title from existing index if any
+    title_text = new_title or current_full_title
+    title_text = re.sub(r'^\d+\s*[:\-]\s*', '', title_text).strip()
+    
+    if final_ep:
+        final_h1 = f"# {final_ep} : {title_text}"
+        image_name = f"{final_ep}.png"
+    else:
+        final_h1 = f"# {title_text}"
+        image_name = filename.replace('.md', '.png')
+
+    # Update H1
+    if current_h1_match:
+        content = re.sub(r'^#\s+.*$', final_h1, content, count=1, flags=re.MULTILINE)
+    else:
+        content = f"{final_h1}\n\n" + content
+
+    # 2. Image Path (Master Key)
+    image_path = f"./img/{image_name}"
+    
+    # 3. Component Cleaning & Podcast Links
+    content = content.replace('\u0332', '')
     for placeholder, symbol in KATEX_MAP.items():
         content = content.replace(placeholder, symbol)
 
+    # Remove existing podcast center blocks to avoid duplicates
     content = re.sub(r'<center>\s*<a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE".*?</center>', '', content, flags=re.DOTALL)
-    
-    image_name = os.path.basename(file_path).replace('.md', '.png')
-    image_path = f"./img/{image_name}"
     
     if "![cover image]" in content:
         content = re.sub(r'!\[cover image\]\(.*?\)', f'![cover image]({image_path})', content)
@@ -290,23 +287,15 @@ def fix_markdown(file_path, new_title=None, episode=None):
     else:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{PODCAST_LINKS}\n\n', content, count=1)
 
-    # 4. Currency Conversion - MASKING KaTeX
-    katex_blocks = []
-    def mask_katex(m):
-        katex_blocks.append(m.group(0))
-        return f"__KATEX_BLOCK_{len(katex_blocks)-1}__"
-
-    content = re.sub(r'\$\$.*?\$\$', mask_katex, content, flags=re.DOTALL)
-    content = re.sub(r'\$.*?\$', mask_katex, content)
-
+    # 4. Currency Conversion
     def curr_repl(m):
         val_str = m.group(1).replace(',', '')
         suffix = m.group(2).lower() if m.group(2) else ""
         multiplier = 1
         if suffix == 'k': multiplier = 1_000
-        elif suffix == 'm' or 'million' in suffix: multiplier = 1_000_000
-        elif suffix == 'b' or 'billion' in suffix: multiplier = 1_000_000_000
-        elif suffix == 't' or 'trillion' in suffix: multiplier = 1_000_000_000_000
+        elif 'million' in suffix or suffix == 'm': multiplier = 1_000_000
+        elif 'billion' in suffix or suffix == 'b': multiplier = 1_000_000_000
+        elif 'trillion' in suffix or suffix == 't': multiplier = 1_000_000_000_000
         try:
             num = float(val_str) * multiplier
             formatted = f"{int(num):,}" if num == int(num) else f"{num:,}"
@@ -315,58 +304,12 @@ def fix_markdown(file_path, new_title=None, episode=None):
 
     content = re.sub(r'(?<!\w)\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', curr_repl, content, flags=re.IGNORECASE)
     
-    for i, block in enumerate(katex_blocks):
-        content = content.replace(f"__KATEX_BLOCK_{i}__", block)
-
-    # 5. Footnote Re-numbering - SAFE VERSION
-    works_cited_match = re.search(r'#### \*\*Works cited\*\*(.*)', content, re.DOTALL)
-    if works_cited_match:
-        wc_text = works_cited_match.group(1).strip()
-        content = content[:works_cited_match.start()].strip()
-        citations = []
-        for line in wc_text.split('\n'):
-            m = re.match(r'^\[\^(\d+)\]:\s+(.*)', line.strip())
-            if not m: m = re.match(r'^(\d+)\.\s+(.*)', line.strip())
-            if m: citations.append(m.group(2).strip())
-        
-        # We DO NOT auto-convert plain numbers to footnotes anymore.
-        # We only re-number existing [^n] markers.
-
-        used_cites = {}
-        next_id = 1
-        def cite_repl(m):
-            nonlocal next_id
-            try:
-                old_id = int(m.group(1))
-                if old_id not in used_cites:
-                    used_cites[old_id] = next_id
-                    next_id += 1
-                return f"[^{used_cites[old_id]}]"
-            except: return m.group(0)
-
-        lines = content.split('\n')
-        new_lines = []
-        for line in lines:
-            if line.startswith('#'): new_lines.append(line)
-            else: new_lines.append(re.sub(r'\[\^(\d+)\]', cite_repl, line))
-        content = '\n'.join(new_lines)
-        
-        ref_sec = "\n\n## References\n\n"
-        for old, new in sorted(used_cites.items(), key=lambda x: x[1]):
-            if 0 < old <= len(citations):
-                cite = citations[old-1]
-                cite = re.sub(r'\\([_.-])', r'\1', cite)
-                ref_sec += f"[^{new}]: {cite}\n\n"
-        content += ref_sec
-    
+    # 5. Footnotes and Cleanup
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
-    if "shutosha@primal.net" not in content and "SUMMARY.md" not in file_path:
-        if "## References" in content:
-            content = content.replace("## References", LIGHTNING_WIDGET + "\n\n## References")
-        else:
-            content = content.strip() + "\n" + LIGHTNING_WIDGET
+    if "shutosha@primal.net" not in content and "SUMMARY.md" not in filename:
+        content = content.strip() + "\n" + LIGHTNING_WIDGET
 
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -376,17 +319,12 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Universal Markdown Fixer')
     parser.add_argument('file', help='The markdown file to process')
-    parser.add_argument('--title', help='Optional: A new title for the article', default=None)
-    parser.add_argument('--episode', help='Optional: The episode number (e.g., 220)', default=None)
+    parser.add_argument('--title', help='Optional: New title', default=None)
+    parser.add_argument('--episode', help='Optional: Episode number', default=None)
     args = parser.parse_args()
 
-    target = args.file
-    if not os.path.exists(target):
-        sys.exit(1)
-
-    fix_markdown(target, args.title, args.episode)
-    update_summary(target)
-    print(f"\nSuccessfully processed {target}")
-    final_full_title = extract_title(target)
-    print(f"\nFinal Title: '{final_full_title}'")
-    print(verify_completeness())
+    if os.path.exists(args.file):
+        fix_markdown(args.file, args.title, args.episode)
+        update_summary(args.file)
+        print(f"\nSuccessfully processed {args.file}")
+        print(verify_completeness())
