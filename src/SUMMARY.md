@@ -1,11 +1,9 @@
 # Summary
 
 # Recent ..
-- [223 : Observer Patch Holography](./223.md)
-- [222 : Homeownership - American Dream!](./americanDream.md)
-- [221 : The perfect playbook](./perfectPlayBook.md)
-- [220: AI Made Me a Believer](./AI2Believer.md)
-
+- [TPUs vs GPUs: AI Commodification](././224.md)
+- [223 : Observer Patch Holography](././223.md)
+- [222 : Homeownership - American Dream!](././americanDream.md)
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
 - [The Case for Bitcoin Reserve](./SBRnecessity.md)
@@ -18,6 +16,8 @@
 - [Bitcoin: The Sovereign Asset](./apexAsset.md)
 
 # The AI Revolution & Machine Intelligence
+- [220: AI Made Me a Believer](./AI2Believer.md)
+- [221 : The perfect playbook](./perfectPlayBook.md)
 - [Sexual Reproduction vs. Cloning](./cloningVsSexualReproduction.md)
 - [AI and the Cantillon Effect](./cantillonAI.md)
 - [Google: The Physical AI Roadmap](./intrinsicGoogle.md)
