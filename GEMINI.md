@@ -40,7 +40,11 @@ We intelligently automate what we regularly do. We do not aspire to build "popul
 
 ## 3. Documentation & Markdown
 - **Markdown Fixes:** Full-file rewrites to fix formatting, citations, and KaTeX rendering.
-- **SUMMARY.md:** Automatically updating the "Recent .." section and moving files between thematic categories.
+- **Title Formatting:** Every new page must start with its index number and a colon (e.g., `# 224 : Title`).
+- **SUMMARY.md:** 
+    - Numbered posts (e.g., `224 : ...`) must remain strictly in the "# Recent .." section and should NOT be moved to thematic categories.
+    - The "# Recent .." section is UNLIMITED and will grow as new numbered episodes are added.
+    - Use the path-aliasing hack `././filename.md` for items in the "# Recent .." section to avoid mdbook duplicate errors.
 - **KaTeX:** Always replacing mathematical images with Absolute KaTeX code.
 
 ## 4. System Verification
