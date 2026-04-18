@@ -43,23 +43,26 @@ While the script handles the structure, the AI agent (Gemini CLI) provides the "
 
 ## Progressive Web App (PWA) & Offline Support
 
-The project includes a robust PWA pipeline that transforms the `mdbook` into a standalone, installable application.
+The project transforms the `mdbook` into a standalone, installable application, optimized for a fast, "app-like" experience.
 
-### 1. Smart Installation Experience
-- **Android/Chrome:** Captures the `beforeinstallprompt` event to show a custom "✨ Install deepDive App" button.
-- **iOS/Safari:** Detects iPhone/iPad users and provides a custom hint on how to "Add to Home Screen" using the share menu.
-- **Dismissal Logic:** Remembers user choice for 24 hours to avoid being intrusive.
+### 1. Simplified Installation
+To keep the reading experience clean and "tracker-free," we have removed intrusive installation popups. Instead, installation instructions are integrated directly into the landing page for all platforms (iOS, Android, and Desktop).
+
+**Benefits of Installation:**
+- **Offline Access:** Read the entire book without an internet connection.
+- **Performance:** Faster loading times via localized caching.
+- **Home Screen Integration:** A clean icon for instant access.
 
 ### 2. Live Content Updates
-- **New Content Notifications:** The Service Worker listens for updates. When a new article is published, users receive a "✨ New Content Available! Update Now" notification.
-- **Skip Waiting:** Clicking the notification forces the new Service Worker to take control and reloads the page instantly.
+- **Update Notifications:** The Service Worker detects new publications and displays a "✨ New Content Available!" notification.
+- **Instant Refresh:** Users can update the app instantly without a manual page reload.
 
 ### 3. Reading Persistence
-- **Auto-Resume:** A custom script in `index.hbs` tracks the user's progress in `localStorage`. If the app is reopened at the homepage, it automatically redirects the user to their last-read article.
+- **Auto-Resume:** The app tracks progress in `localStorage`, automatically redirecting users to their last-read article for a seamless across-session experience.
 
-### 4. Offline Robustness
-- **Workbox Integration:** Uses `injectManifest` to precache the entire book.
-- **Navigation Fallback:** Provides a seamless experience even without an internet connection by falling back to `index.html`.
+### 4. Technical Stack
+- **Workbox:** Manages precaching and service worker lifecycle.
+- **Navigation Fallback:** Ensures the PWA remains functional even when offline by routing to `index.html`.
 
 ---
 
