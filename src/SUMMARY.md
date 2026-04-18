@@ -1,5 +1,7 @@
 # Summary
 
+- [Deep Dive with Gemini](./cover.md)
+
 # Recent ..
 - [224 : TPUs vs GPUs: AI Commodification](././224.md)
 - [223 : Observer Patch Holography](././223.md)
@@ -100,7 +102,3 @@
 - [The Great Hardware Divorce](./desktopWars2025.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [Beat the Copyright Bots](./beating-the-copyright-bots.md)
-
-# About the Project
-- [Deep Dive with Gemini](./cover.md)
-- [How to read this book](./how.md)
