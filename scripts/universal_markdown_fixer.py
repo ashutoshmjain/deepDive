@@ -145,7 +145,7 @@ def categorize_file(filename):
 
 def verify_completeness():
     src_files = [f for f in os.listdir('src') if f.endswith('.md')]
-    ignore_files = ['SUMMARY.md', 'cover.md', 'how.md']
+    ignore_files = ['SUMMARY.md', 'cover.md']
     target_files = set([f for f in src_files if f not in ignore_files])
     summary_path = 'src/SUMMARY.md'
     if not os.path.exists(summary_path): return "SUMMARY.md not found."
@@ -167,7 +167,7 @@ def update_summary(target_file_path):
     file_dates = get_file_dates()
     file_to_info = {} # filename -> [title, category, date, is_numbered]
     
-    all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md', 'how.md']]
+    all_src_files = [f for f in os.listdir('src') if f.endswith('.md') and f not in ['SUMMARY.md', 'cover.md']]
     for fname in all_src_files:
         title = extract_title(os.path.join('src', fname))
         episode = extract_episode(fname, title)
@@ -187,7 +187,6 @@ def update_summary(target_file_path):
                 _, _, fname = m.groups()
                 if fname in file_to_info:
                     # If it's a thematic category, record it. 
-                    # Note: We will later force numbered files into "Recent .."
                     if "Recent .." not in current_category:
                         file_to_info[fname][1] = current_category
 
@@ -213,7 +212,7 @@ def update_summary(target_file_path):
         if not info[3] and info[1] is None:
             info[1] = categorize_file(fname)
 
-    new_content = ["# Summary", ""]
+    new_content = ["# Summary", "", "- [Deep Dive with Gemini](./cover.md)", ""]
     for sec in sections_order:
         if sec in ["# Summary", "# About the Project"]: continue
         new_content.append(sec)
@@ -234,12 +233,60 @@ def update_summary(target_file_path):
                 new_content.append(f"- [{f['title']}](./{f['fname']})")
         new_content.append("")
 
-    new_content.append("# About the Project")
-    new_content.append("- [Deep Dive with Gemini](./cover.md)")
-    new_content.append("- [How to read this book](./how.md)")
-
     with open(summary_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(new_content).strip() + '\n')
+
+def fix_footnotes(content):
+    # Find the "Works cited" section
+    works_cited_match = re.search(r'#### \*\*Works cited\*\*', content, re.IGNORECASE)
+    if not works_cited_match:
+        return content
+    
+    body = content[:works_cited_match.start()]
+    references_block = content[works_cited_match.start():]
+    
+    # 1. Extract reference definitions into a dictionary: {original_num: reference_text}
+    ref_defs = {}
+    lines = references_block.split('\n')
+    for line in lines:
+        match = re.match(r'^(?:\[\^(\d+)\]:|\s*(\d+)\.)\s+(.*)', line.strip())
+        if match:
+            num = match.group(1) or match.group(2)
+            text = match.group(3)
+            ref_defs[num] = text
+
+    # 2. Identify all footnote markers in the body (both literal numbers and [^n])
+    for num in ref_defs.keys():
+        body = re.sub(r'(?<=[a-zA-Z.,])' + num + r'(?=\s|$|[.,])', r'[^' + num + ']', body)
+
+    # 3. Find all [^n] markers in order of appearance
+    found_markers = re.findall(r'\[\^(\d+)\]', body)
+    
+    # 4. Create a mapping for sequential re-numbering
+    unique_markers_ordered = []
+    for m in found_markers:
+        if m not in unique_markers_ordered:
+            unique_markers_ordered.append(m)
+    
+    # mapping: {original_num: new_sequential_num}
+    mapping = {old: str(i+1) for i, old in enumerate(unique_markers_ordered)}
+    
+    # 5. Replace markers in body with new sequential numbers
+    def marker_repl(match):
+        old_num = match.group(1)
+        return f"[[TEMP_{mapping[old_num]}]]"
+    
+    body = re.sub(r'\[\^(\d+)\]', marker_repl, body)
+    body = body.replace("[[TEMP_", "[^").replace("]]", "]")
+
+    # 6. Rebuild the Works cited section using ONLY used references, re-numbered
+    new_references = "#### **Works cited**\n\n"
+    for old_num in unique_markers_ordered:
+        if old_num in ref_defs:
+            new_num = mapping[old_num]
+            new_references += f"[^{new_num}]: {ref_defs[old_num]}\n\n"
+    
+    return body.strip() + "\n\n" + new_references.strip()
 
 def fix_markdown(file_path, new_title=None, episode=None):
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -256,6 +303,12 @@ def fix_markdown(file_path, new_title=None, episode=None):
     # Clean current title from existing index if any
     title_text = new_title or current_full_title
     title_text = re.sub(r'^\d+\s*[:\-]\s*', '', title_text).strip()
+    title_text = title_text.replace('**', '') # Remove bolding for title length check
+    
+    # Enforce 5-word limit for title
+    words = title_text.split()
+    if len(words) > 5:
+        title_text = ' '.join(words[:5])
     
     if final_ep:
         final_h1 = f"# {final_ep} : {title_text}"
@@ -305,6 +358,7 @@ def fix_markdown(file_path, new_title=None, episode=None):
     content = re.sub(r'(?<!\w)\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', curr_repl, content, flags=re.IGNORECASE)
     
     # 5. Footnotes and Cleanup
+    content = fix_footnotes(content)
     content = content.replace("Truncated", "")
     content = re.sub(r'\n\s*\n+', r'\n\n', content)
 

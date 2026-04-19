@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [225 : BTC: Global Pristine Collateral Network](././225.md)
 - [224 : TPUs vs GPUs: AI Commodification](././224.md)
 - [223 : Observer Patch Holography](././223.md)
 - [222 : Homeownership - American Dream!](././americanDream.md)
