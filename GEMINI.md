@@ -18,12 +18,15 @@ We intelligently automate what we regularly do. Our software automation reflects
 **The "Master Key" Strategy:**
 To simplify synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets.
 
-**Agent's Operational Role:**
-- **Execution & Validation:** Run `mdbook serve` / `mdbook build` to identify rendering errors.
-- **Documentation:** Every key development decision or architectural shift must be immediately documented in the `README.md`.
-- **System Synchronization:** At the end of every session, the agent MUST verify that the `README.md`, `scripts/universal_markdown_fixer.py`, and `GEMINI.md` are in perfect logical sync.
-- **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic.
-- **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
+**Roles & Responsibilities:**
+- **User's Role:** Provide production-grade data (i.e., `<number>.md` and `<number>.png` files) to the repository.
+- **Agent's Operational Role:** 
+  - **Execution & Testing:** Run the `universal_markdown_fixer.py` script on the provided data. If the script fails, report the errors to the user and wait for explicit instructions on whether to fix it manually or adjust the script.
+  - **Validation:** Run `mdbook build` to identify any rendering errors after formatting.
+  - **Documentation:** Every key development decision or architectural shift must be immediately documented in the `README.md`.
+  - **System Synchronization:** At the end of every session, the agent MUST verify that the `README.md`, `scripts/universal_markdown_fixer.py`, and `GEMINI.md` are in perfect logical sync.
+  - **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic.
+  - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
 
 ## **Operational Standards**
 
@@ -38,7 +41,6 @@ To simplify synchronization between the website, repository, and podcast shows, 
 ### **3. SUMMARY.md Organization**
 - **Numbered Posts:** (e.g., `225 : ...`) must remain **strictly** in the `# Recent ..` section. They should NOT be moved to thematic categories.
 - **Recent Section:** This section is **UNLIMITED** and will grow as new numbered episodes are added to maintain a chronological podcast index.
-- **Path Aliasing:** Use the path-aliasing hack `././filename.md` for all items in the `# Recent ..` section to avoid `mdbook` duplicate errors.
 
 ### **4. Technical Rendering (KaTeX)**
 - Mathematical formulas and scientific symbols must be rendered using **Absolute KaTeX** code instead of embedded images.

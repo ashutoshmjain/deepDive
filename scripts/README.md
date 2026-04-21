@@ -20,7 +20,6 @@ This Python script handles the rules-based formatting that must be consistent ac
     - **Podcast Snippet:** Injects a centered HTML snippet with links to the "Deep Dive with Gemini" podcast on all major platforms.
 3.  **Navigation Management (`SUMMARY.md`):**
     - **Unlimited Recents:** Pins all numbered posts strictly to the `# Recent ..` section to maintain a chronological podcast index.
-    - **Path-Aliasing Hack:** Automatically applies the `././filename.md` prefix to Recent items to prevent `mdbook` duplicate errors.
     - **Thematic Categories:** Maps unnumbered/legacy files to thematic categories while ensuring numbered posts are never moved.
 4.  **Technical Fixes (KaTeX & Currency):**
     - **Absolute KaTeX:** Replaces image placeholders with project-standard Absolute KaTeX symbols.

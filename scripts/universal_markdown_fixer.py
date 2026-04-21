@@ -144,6 +144,7 @@ def categorize_file(filename):
     return "# Social, Culture & Digital Sovereignty"
 
 def verify_completeness():
+    """Verifies that all src/ markdown files (except internal ones) are linked in SUMMARY.md."""
     src_files = [f for f in os.listdir('src') if f.endswith('.md')]
     ignore_files = ['SUMMARY.md', 'cover.md']
     target_files = set([f for f in src_files if f not in ignore_files])
@@ -151,13 +152,14 @@ def verify_completeness():
     if not os.path.exists(summary_path): return "SUMMARY.md not found."
     with open(summary_path, 'r', encoding='utf-8') as f:
         summary_content = f.read()
-    mapped_files = set(re.findall(r'\[.*?\]\(\.\/(\.\/)?(.*?)\)', summary_content))
-    mapped_filenames = set([m[1] for m in mapped_files])
-    missing = target_files - mapped_filenames
+    # Matches both standard ./filename.md and legacy ././filename.md
+    mapped_files = set(re.findall(r'\[.*?\]\(\.\/(?:\.\/)?(.*?)\)', summary_content))
+    missing = target_files - mapped_files
     if not missing: return "SUCCESS: All src/ files are correctly mapped in SUMMARY.md."
     else: return f"WARNING: Missing files in SUMMARY.md: {', '.join(sorted(missing))}"
 
 def update_summary(target_file_path):
+    """Synchronizes SUMMARY.md with the current src/ directory, managing 'Recent ..' and thematic sections."""
     summary_path = 'src/SUMMARY.md'
     if not os.path.exists(summary_path): return
 
@@ -182,9 +184,10 @@ def update_summary(target_file_path):
             if current_category not in sections_order:
                 sections_order.append(current_category)
         elif line.strip().startswith('- ['):
-            m = re.search(r'\[(.*?)\]\(\.\/(\.\/)?(.*?)\)', line)
+            # Matches standard and aliased paths for transition
+            m = re.search(r'\[(.*?)\]\(\.\/(?:\.\/)?(.*?)\)', line)
             if m:
-                _, _, fname = m.groups()
+                _, fname = m.groups()
                 if fname in file_to_info:
                     # If it's a thematic category, record it. 
                     if "Recent .." not in current_category:
@@ -220,8 +223,8 @@ def update_summary(target_file_path):
         if sec == "# Recent ..":
             for rf_base in recent_filenames:
                 title = file_to_info[rf_base][0]
-                # Apply path-aliasing hack ././
-                new_content.append(f"- [{title}](././{rf_base})")
+                # Use standard paths (removing path-aliasing hack)
+                new_content.append(f"- [{title}](./{rf_base})")
         else:
             cat_files = []
             for fname, info in file_to_info.items():
@@ -342,6 +345,7 @@ def fix_markdown(file_path, new_title=None, episode=None):
 
     # 4. Currency Conversion
     def curr_repl(m):
+        """Converts $ amount to USD text to prevent KaTeX rendering issues."""
         val_str = m.group(1).replace(',', '')
         suffix = m.group(2).lower() if m.group(2) else ""
         multiplier = 1
@@ -357,13 +361,27 @@ def fix_markdown(file_path, new_title=None, episode=None):
 
     content = re.sub(r'(?<!\w)\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', curr_repl, content, flags=re.IGNORECASE)
     
-    # 5. Footnotes and Cleanup
+    # 5. Footnotes, Cleanup and Wallet Placement
     content = fix_footnotes(content)
     content = content.replace("Truncated", "")
-    content = re.sub(r'\n\s*\n+', r'\n\n', content)
+    
+    # Ensure wallet is appropriately placed (above citations if they exist)
+    # 1. Remove any existing wallet widget blocks
+    content = re.sub(r'\n---\n\n### Tips and Donations.*?\n---\n', '', content, flags=re.DOTALL)
+    content = content.replace(LIGHTNING_WIDGET, "") # Fallback for exact match
+    
+    # 2. Insert or Append Widget (except for SUMMARY.md)
+    if "SUMMARY.md" not in filename:
+        bib_match = re.search(r'#### \*\*Works cited\*\*', content, re.IGNORECASE)
+        if bib_match:
+            # Insert before bibliography header
+            pos = bib_match.start()
+            content = content[:pos].strip() + "\n" + LIGHTNING_WIDGET + "\n" + content[pos:]
+        else:
+            # Append to bottom for files without citations
+            content = content.strip() + "\n" + LIGHTNING_WIDGET
 
-    if "shutosha@primal.net" not in content and "SUMMARY.md" not in filename:
-        content = content.strip() + "\n" + LIGHTNING_WIDGET
+    content = re.sub(r'\n\s*\n+', r'\n\n', content)
 
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)

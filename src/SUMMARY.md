@@ -3,12 +3,13 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
-- [225 : BTC: Global Pristine Collateral Network](././225.md)
-- [224 : TPUs vs GPUs: AI Commodification](././224.md)
-- [223 : Observer Patch Holography](././223.md)
-- [222 : Homeownership - American Dream!](././americanDream.md)
-- [221 : The perfect playbook](././perfectPlayBook.md)
-- [220: AI Made Me a Believer](././AI2Believer.md)
+- [226 : Root access to self \-](./226.md)
+- [225 : BTC: Global Pristine Collateral Network](./225.md)
+- [224 : TPUs vs GPUs: AI Commodification](./224.md)
+- [223 : Observer Patch Holography](./223.md)
+- [222 : Homeownership - American Dream!](./americanDream.md)
+- [221 : The perfect playbook](./perfectPlayBook.md)
+- [220: AI Made Me a Believer](./AI2Believer.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
