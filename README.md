@@ -38,6 +38,8 @@ The project is powered by a two-tier "Fix Markdown" routine:
 ---
 
 ## 📜 Recent Development Decisions (Changelog)
+- **Apr 22, 2026:** Implemented **Numerical Context Awareness** in `universal_markdown_fixer.py` to prevent corruption of version numbers (e.g., `v1.0`) and decimal metrics (e.g., `4.6`) during sequential footnote re-numbering.
+- **Apr 22, 2026:** Fixed `mdbook-katex` rendering conflicts by auto-sanitizing escaped special characters (`\-`, `\&`) within the reference blocks.
 - **Apr 17, 2026:** Established "Episode Number as Master Key" strategy.
 - **Apr 17, 2026:** Transitioned `SUMMARY.md` to an unlimited, chronological Recent section for numbered episodes.
 - **Apr 17, 2026:** Implemented project-level automation policies to bypass manual CLI prompts.

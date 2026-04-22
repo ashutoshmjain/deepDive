@@ -248,6 +248,10 @@ def fix_footnotes(content):
     body = content[:works_cited_match.start()]
     references_block = content[works_cited_match.start():]
     
+    # Sanitize references_block for KaTeX-unfriendly escapes (e.g. \- or \&)
+    references_block = references_block.replace(r'\\-', '-').replace(r'\-', '-')
+    references_block = references_block.replace(r'\&', '&').replace(r'\_', '_')
+
     # 1. Extract reference definitions into a dictionary: {original_num: reference_text}
     ref_defs = {}
     lines = references_block.split('\n')
@@ -259,8 +263,15 @@ def fix_footnotes(content):
             ref_defs[num] = text
 
     # 2. Identify all footnote markers in the body (both literal numbers and [^n])
+    # Numerical Context Awareness: ONLY convert literal numbers if they are NOT part of a version string (e.g. v1.0)
+    # and NOT part of a decimal metric (e.g. 4.6). 
+    # We look for a number preceded by a letter/punctuation and a SPACE, or [^n].
     for num in ref_defs.keys():
-        body = re.sub(r'(?<=[a-zA-Z.,])' + num + r'(?=\s|$|[.,])', r'[^' + num + ']', body)
+        # Case A: Literal number like "Text 5" or "Text, 5" or "Text. 5"
+        # We need to ensure it's not preceded by a digit/period (v1.0 or 4.6)
+        # Use negative lookbehind to avoid decimals/versions
+        # Regex: (?<=[a-zA-Z,\.])\s+NUM(?=\s|$|[,\.])
+        body = re.sub(r'(?<=[a-zA-Z,\.])\s+' + num + r'(?=\s|$|[,\.])', r' [^' + num + ']', body)
 
     # 3. Find all [^n] markers in order of appearance
     found_markers = re.findall(r'\[\^(\d+)\]', body)
