@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [227 : 60 billion call option](./227.md)
 - [226 : Root access to self \-](./226.md)
 - [225 : BTC: Global Pristine Collateral Network](./225.md)
 - [224 : TPUs vs GPUs: AI Commodification](./224.md)
