@@ -262,17 +262,11 @@ def fix_footnotes(content):
             text = match.group(3)
             ref_defs[num] = text
 
-    # 2. Identify all footnote markers in the body (both literal numbers and [^n])
-    # Numerical Context Awareness: ONLY convert literal numbers if they are NOT part of a version string (e.g. v1.0)
-    # and NOT part of a decimal metric (e.g. 4.6). 
-    # We look for a number preceded by a letter/punctuation and a SPACE, or [^n].
-    for num in ref_defs.keys():
-        # Case A: Literal number like "Text 5" or "Text, 5" or "Text. 5"
-        # We need to ensure it's not preceded by a digit/period (v1.0 or 4.6)
-        # Use negative lookbehind to avoid decimals/versions
-        # Regex: (?<=[a-zA-Z,\.])\s+NUM(?=\s|$|[,\.])
-        body = re.sub(r'(?<=[a-zA-Z,\.])\s+' + num + r'(?=\s|$|[,\.])', r' [^' + num + ']', body)
-
+    # 2. Identify all footnote markers in the body
+    # We NO LONGER convert literal numbers (like "Text 5") to footnotes automatically
+    # because it causes too many false positives with dates, versions, and metrics.
+    # The script will only re-number existing [^n] markers.
+    
     # 3. Find all [^n] markers in order of appearance
     found_markers = re.findall(r'\[\^(\d+)\]', body)
     
