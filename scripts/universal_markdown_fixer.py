@@ -240,19 +240,25 @@ def update_summary(target_file_path):
         f.write('\n'.join(new_content).strip() + '\n')
 
 def fix_footnotes(content):
-    # Find the "Works cited" section
-    works_cited_match = re.search(r'#### \*\*Works cited\*\*', content, re.IGNORECASE)
+    # Find the "Works cited" or "Research" section
+    works_cited_match = re.search(r'#### \*\*(Works cited|Research)\*\*', content, re.IGNORECASE)
     if not works_cited_match:
         return content
     
     body = content[:works_cited_match.start()]
     references_block = content[works_cited_match.start():]
     
-    # Sanitize references_block for KaTeX-unfriendly escapes (e.g. \- or \&)
+    # Sanitize references_block for KaTeX-unfriendly escapes
     references_block = references_block.replace(r'\\-', '-').replace(r'\-', '-')
     references_block = references_block.replace(r'\&', '&').replace(r'\_', '_')
 
-    # 1. Extract reference definitions into a dictionary: {original_num: reference_text}
+    # 1. Convert all [n] style markers in body to [^n] BEFORE usage check
+    body = re.sub(r'(?<!\w)\[(\d+)\](?!\^)', r'[^\1]', body)
+    
+    # 2. Add spaces between consecutive markers to fix mdbook rendering
+    body = re.sub(r'(\[\^\d+\])(\[\^\d+\])', r'\1 \2', body)
+
+    # 3. Extract reference definitions: {num: text}
     ref_defs = {}
     lines = references_block.split('\n')
     for line in lines:
@@ -262,24 +268,23 @@ def fix_footnotes(content):
             text = match.group(3)
             ref_defs[num] = text
 
-    # 2. Identify all footnote markers in the body
-    # We NO LONGER convert literal numbers (like "Text 5") to footnotes automatically
-    # because it causes too many false positives with dates, versions, and metrics.
-    # The script will only re-number existing [^n] markers.
-    
-    # 3. Find all [^n] markers in order of appearance
+    # 4. Find all used [^n] markers in body (order of appearance)
     found_markers = re.findall(r'\[\^(\d+)\]', body)
-    
-    # 4. Create a mapping for sequential re-numbering
     unique_markers_ordered = []
     for m in found_markers:
         if m not in unique_markers_ordered:
             unique_markers_ordered.append(m)
     
-    # mapping: {original_num: new_sequential_num}
-    mapping = {old: str(i+1) for i, old in enumerate(unique_markers_ordered)}
+    # 5. Create mapping for sequential re-numbering
+    # We include EVERY reference from ref_defs to prevent data loss
+    all_refs_to_keep = list(unique_markers_ordered)
+    for num in sorted(ref_defs.keys(), key=int):
+        if num not in all_refs_to_keep:
+            all_refs_to_keep.append(num)
+            
+    mapping = {old: str(i+1) for i, old in enumerate(all_refs_to_keep)}
     
-    # 5. Replace markers in body with new sequential numbers
+    # 6. Replace markers in body with new sequential numbers
     def marker_repl(match):
         old_num = match.group(1)
         return f"[[TEMP_{mapping[old_num]}]]"
@@ -287,9 +292,10 @@ def fix_footnotes(content):
     body = re.sub(r'\[\^(\d+)\]', marker_repl, body)
     body = body.replace("[[TEMP_", "[^").replace("]]", "]")
 
-    # 6. Rebuild the Works cited section using ONLY used references, re-numbered
-    new_references = "#### **Works cited**\n\n"
-    for old_num in unique_markers_ordered:
+    # 7. Rebuild the Research section (sequential, preserving all unique entries)
+    header_text = works_cited_match.group(1)
+    new_references = f"#### **{header_text}**\n\n"
+    for old_num in all_refs_to_keep:
         if old_num in ref_defs:
             new_num = mapping[old_num]
             new_references += f"[^{new_num}]: {ref_defs[old_num]}\n\n"
@@ -348,21 +354,12 @@ def fix_markdown(file_path, new_title=None, episode=None):
     else:
         content = re.sub(r'(^# .*?\n)', rf'\1\n![cover image]({image_path})\n\n{PODCAST_LINKS}\n\n', content, count=1)
 
-    # 4. Currency Conversion
+    # 4. Currency Sanitization (prevents KaTeX parsing errors)
     def curr_repl(m):
-        """Converts $ amount to USD text to prevent KaTeX rendering issues."""
-        val_str = m.group(1).replace(',', '')
-        suffix = m.group(2).lower() if m.group(2) else ""
-        multiplier = 1
-        if suffix == 'k': multiplier = 1_000
-        elif 'million' in suffix or suffix == 'm': multiplier = 1_000_000
-        elif 'billion' in suffix or suffix == 'b': multiplier = 1_000_000_000
-        elif 'trillion' in suffix or suffix == 't': multiplier = 1_000_000_000_000
-        try:
-            num = float(val_str) * multiplier
-            formatted = f"{int(num):,}" if num == int(num) else f"{num:,}"
-            return f"{formatted} USD"
-        except: return f"{m.group(1)}{suffix} USD"
+        """Replaces $ with USD suffix while preserving original number text."""
+        val_text = m.group(1)
+        suffix = m.group(2) if m.group(2) else ""
+        return f"{val_text}{suffix} USD"
 
     content = re.sub(r'(?<!\w)\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', curr_repl, content, flags=re.IGNORECASE)
     
