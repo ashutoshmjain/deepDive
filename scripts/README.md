@@ -40,6 +40,20 @@ While the script handles the structure, the AI agent (Gemini CLI) provides the "
 
 ---
 
+## The Evolutionary Development Cycle
+
+To reach the goal of autonomous publishing with minimal intelligence, the toolchain follows an iterative testing loop for every new episode:
+
+1.  **Data Intake:** User provides numbered `.md` and `.png` files to the `src/` directory.
+2.  **Execution:** Run the script: `python3 scripts/universal_markdown_fixer.py src/<number>.md`.
+3.  **Manual Supplement:** If the script misses citations, mangles currency, or breaks KaTeX, the agent fixes the article manually to ensure a perfect publication.
+4.  **Publication:** The verified article is committed and pushed to the remote repository for use in the podcast.
+5.  **Root Cause Analysis (RCA):** The agent identifies exactly why the script failed or underperformed.
+6.  **Refactoring:** The script is updated to handle the edge case automatically in the next run.
+7.  **Loop:** The cycle repeats with the next dataset, continuously shrinking the "manual supplement" phase.
+
+---
+
 ## Progressive Web App (PWA) & Offline Support
 
 The project transforms the `mdbook` into a standalone, installable application, optimized for a fast, "app-like" experience.

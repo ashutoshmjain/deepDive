@@ -25,7 +25,14 @@ To simplify synchronization between the website, repository, and podcast shows, 
   - **Validation:** Run `mdbook build` to identify any rendering errors after formatting.
   - **Documentation:** Every key development decision or architectural shift must be immediately documented in the `README.md`.
   - **System Synchronization:** At the end of every session, the agent MUST verify that the `README.md`, `scripts/universal_markdown_fixer.py`, and `GEMINI.md` are in perfect logical sync.
-  - **Evolutionary Development:** Continuously improve `universal_markdown_fixer.py` to automate the "Master Key" logic.
+  - **Evolutionary Development Cycle:** This project follows a strict iterative loop to bring the automation to a production-grade level:
+    1. **Data Intake:** User provides production-grade data (numbered `.md` and `.png` files).
+    2. **Execution:** Agent runs the `universal_markdown_fixer.py` script.
+    3. **Manual Supplement:** If the script fails or corrupts data (e.g., footnotes, links, currency), the agent MUST go the "extra mile" to fix the episode manually.
+    4. **Publication:** Push the verified, fixed episode to the remote repository.
+    5. **Root Cause Analysis (RCA):** Agent performs an RCA on why the script failed.
+    6. **Refactoring:** Agent refactors the script to incorporate the fix, ensuring the failure does not recur in the next iteration.
+    7. **Wait:** Agent waits for the next data set to test the improved script.
   - **Manual Supplement:** Perform web searches to fix or find missing URLs and footnotes.
 
 ## **Operational Standards**
