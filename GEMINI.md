@@ -52,3 +52,14 @@ To simplify synchronization between the website, repository, and podcast shows, 
 ### **4. Technical Rendering (KaTeX)**
 - Mathematical formulas and scientific symbols must be rendered using **Absolute KaTeX** code instead of embedded images.
 - All math blocks and inline symbols must be correctly formatted for `mdbook-katex`.
+
+## **The Hardened Testing Workflow (Tester Role)**
+To minimize manual "intelligence" and maximize script robustess, the agent MUST follow this protocol for every new data intake:
+1.  **Snapshot:** Create backups of the new `.md` and `.png` files (e.g., `230.md.bak`).
+2.  **Trial 1:** Run `universal_markdown_fixer.py`.
+3.  **Validation:** Run `mdbook serve` and check for errors/warnings (KaTeX, footnotes, etc.).
+4.  **RCA & Refine:** If errors exist, perform Root Cause Analysis, fix the **script**, and revert the data to the backup.
+5.  **Trial 2:** Run the updated script on the clean backup.
+6.  **Manual Supplement:** Only if Trial 2 still has minor issues, the agent may use "intelligence" for surgical manual fixes (e.g., web-fetching missing URLs).
+7.  **Review Offer:** Offer the user a `localhost:3000` link/check to confirm the build.
+8.  **Finality:** Upon approval, commit and push the **hardened script**, the new data, and the updated `SUMMARY.md`.
