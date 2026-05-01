@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [230 : STRC - derivatives and inflows](././230.md)
 - [229 : The Energy-Intelligence Equivalence Principle](././229.md)
 - [228 : What is Google Worth?](././228.md)
 - [227 : 60 billion call option](././227.md)
@@ -26,7 +27,8 @@
 - [The Sovereign Portfolio Allocation](./the-sovereign-allocation.md)
 
 # The AI Revolution & Machine Intelligence
-- [AI Made Me a Believer](./AI2Believer.md)
+- [The Social Synapse: Defining Meaning](./meaningOfMeaning-2.md)
+- [Why AI Made Me a Believer](./AI2Believer.md)
 - [AI and the Cantillon Effect](./cantillonAI.md)
 - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
 - [AI vs. Human Brain](./LLMvsBrain.md)
@@ -41,15 +43,16 @@
 - [The Inevitability of Open Source](./longliveOpenSource.md)
 
 # Digital Credit & The STRC Bridge
+- [Hacking Your Retirement with ROC](./retirementHackingWithROC-02.md)
+- [STRC: The 8,000 Bitcoin Model](./STRC8k.md)
+- [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
 - [Bitcoin: From Cash to Credit](./the-pivot-from-ecash-to-digital-credit.md)
 - [MSTR’s 1.44 Billion Reserve](./STRC.md)
 - [STRC Update: Jan 2025](./STRC_update.md)
 - [STRC and Digital Capital](./strcBlackhole.md)
 - [STRC and Private Credit](./STRCImpactOnCredit.md)
 - [STRC for Peaceful Retirement](./strcRetirement.md)
-- [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
 - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
-- [The 8,000 Bitcoin Model](./STRC8k.md)
 - [The Great Credit Pivot](./strcPE.md)
 - [The Physics of Value](./the-physics-of-value-the-strc-bridge.md)
 - [The Stabilization of Mass](./accountingMass.md)
@@ -58,22 +61,23 @@
 - [What is Digital Credit?](./digital-credit.md)
 
 # Economics, Capital & The Global Shift
+- [2025: A Global Strategic Retrospective](./GlobalStrategicRetrospective2025.md)
+- [NVIDIA: The Great Asset Decoupling](./mag7split.md)
+- [The Path to 15% GDP Growth](./pathTo15percentGDP.md)
 - [Corporate Treasury Report 2026](./corporate-treasury-report.md)
-- [Hacking Your Retirement](./retirementHackingWithROC-02.md)
-- [Path to 15% GDP](./pathTo15percentGDP.md)
 - [Tax-Advantaged Retirement Streams](./retirementHackingWithROC.md)
 - [The Great AI Divergence](./the-great-divergence.md)
 - [The Great Digital Fragmentation](./the-great-fragmentation.md)
 
 # Philosophy, Science & The Nature of Reality
+- [Hardware Divorce: The Great Decoupling](./desktopWars2025.md)
+- [Uniqueness and the Prime Identity](./QM1-Uniqueness.md)
+- [Universal Zero-Knowledge Proof Verification](./QM2-verification.md)
 - [Chiral Ontology of the Self](./the-chiral-ontology-of-self.md)
 - [The Architecture of Meaning](./meaning.md)
 - [The Industrialization of Reality](./the-industrialization-of-reality.md)
 - [The Law of Samkhya](./samkhyaBellCurve.md)
-- [The Social Synapse](./meaningOfMeaning-2.md)
 - [The Topology of Thought](./gaugeTheoryOfThought.md)
-- [Uniqueness and Prime Identities](./QM1-Uniqueness.md)
-- [Universal Zero-Knowledge Proofs](./QM2-verification.md)
 
 # Social, Culture & Digital Sovereignty
 - [Apple: The Creator Studio](./apple-creator-studio.md)
@@ -93,14 +97,11 @@
 - [Sexual Reproduction vs. Cloning](./cloningVsSexualReproduction.md)
 - [Sovereignty in the AI Age](./clawdBot.md)
 - [Store of Value vs. Exchange](./store-of-value-medium-of-exchange.md)
-- [Strategic Retrospective 2025](./GlobalStrategicRetrospective2025.md)
 - [The AI Adaptive Vanguard](./doomVsBoom.md)
 - [The Case for Bitcoin Reserve](./SBRnecessity.md)
 - [The Embedded Value Layer](./the-embedded-value-layer.md)
 - [The Great Digital Inversion](./the-great-inversion.md)
 - [The Great Digital Reset](./divineCryptograph.md)
-- [The Great Hardware Divorce](./desktopWars2025.md)
-- [The Great NVIDIA Decoupling](./mag7split.md)
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [The Strategic Value Function](./valueFunction.md)
 - [The Value-Leverage Paradigm](./valueLeverage.md)

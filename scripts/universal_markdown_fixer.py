@@ -82,6 +82,10 @@ EPISODE_229_MAP = {
     "![][image33]": r"$$I \propto \frac{\Delta S}{E}$$"
 }
 
+EPISODE_230_MAP = {
+    "![][image1]": r"$mNAV < 1$"
+}
+
 def check_root():
     if not os.path.exists('book.toml'):
         sys.exit(1)
@@ -90,15 +94,15 @@ def extract_title(file_path):
     if not os.path.exists(file_path): return os.path.basename(file_path)
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
-            m = re.match(r'^#\s+(?:\d+\s*[:\-]\s*)?(?:\*\*)?(.*?)(?:\*\*)?$', line.strip())
+            m = re.match(r'^#\s+(?:\d+\s*[:\-]\s*)?(.*?)$', line.strip())
             if m: return m.group(1).strip()
     return os.path.basename(file_path)
 
 def extract_episode(filename, title):
     m = re.match(r'^(\d+)\.md$', filename)
-    if m: return m.group(1)
-    m = re.match(r'^(\d+)\s*[:\-]', title)
-    if m: return m.group(1)
+    if m:
+        val = int(m.group(1))
+        if val < 1000: return str(val)
     return None
 
 def update_summary(target_file_path):
@@ -114,61 +118,173 @@ def update_summary(target_file_path):
         ep = extract_episode(fname, title)
         file_to_info[fname] = {"title": title, "ep": ep}
 
-    # Rebuild SUMMARY.md
-    new_lines = ["# Summary\\n", "\n", "- [Deep Dive with Gemini](./cover.md)\\n", "\n", "# Recent ..\\n"]
-    
-    # 1. Numbered Episodes (Growing Recent Section)
+    new_lines = ["# Summary\n", "\n", "- [Deep Dive with Gemini](./cover.md)\n", "\n", "# Recent ..\n"]
     numbered = sorted([f for f in file_to_info if file_to_info[f]["ep"]], key=lambda x: int(file_to_info[x]["ep"]), reverse=True)
     for f in numbered:
-        new_lines.append(f"- [{file_to_info[f]['ep']} : {file_to_info[f]['title']}](././{f})\\n")
+        new_lines.append(f"- [{file_to_info[f]['ep']} : {file_to_info[f]['title']}](././{f})\n")
     
-    # 2. Add thematic categories (excluding numbered episodes)
-    # We parse the existing SUMMARY.md to keep unnumbered ones in their places
-    categories = {} # category_name -> [lines]
+    categories = {}
     current_cat = None
     for line in lines:
         if line.startswith("# ") and "Summary" not in line and "Recent .." not in line:
             current_cat = line.strip()
-            categories[current_cat] = []
+            if current_cat not in categories: categories[current_cat] = []
         elif line.strip().startswith("- [") and current_cat:
             m = re.search(r'\[(.*?)\]\(\.\/(.*?)\)', line)
             if m:
                 fname = m.group(2).replace("./", "")
                 if fname in file_to_info and not file_to_info[fname]["ep"]:
-                    categories[current_cat].append(line.strip())
+                    if line.strip() not in categories[current_cat]:
+                        categories[current_cat].append(line.strip())
 
+    for cat in ["# The Bitcoin Standard & Sovereign Assets", "# The AI Revolution & Machine Intelligence", 
+                "# Digital Credit & The STRC Bridge", "# Economics, Capital & The Global Shift", 
+                "# Philosophy, Science & The Nature of Reality", "# Social, Culture & Digital Sovereignty"]:
+        if cat in categories and categories[cat]:
+            new_lines.append(f"\n{cat}\n")
+            for item in categories[cat]:
+                new_lines.append(f"{item}\n")
+            del categories[cat]
+            
     for cat, items in categories.items():
         if items:
-            new_lines.append(f"\\n{cat}\\n")
+            new_lines.append(f"\n{cat}\n")
             for item in items:
-                new_lines.append(f"{item}\\n")
+                new_lines.append(f"{item}\n")
 
     with open(summary_path, 'w', encoding='utf-8') as f:
-        f.write("".join(new_lines).replace("\\n", "\n"))
+        f.write("".join(new_lines))
 
-def fix_markdown(file_path):
+def fix_footnotes(content):
+    parts = re.split(r'(#### \*\*Works cited\*\*|#### \*\*References\*\*)', content, flags=re.IGNORECASE)
+    if len(parts) < 3: return content
+    
+    header = parts[1]
+    refs_raw = parts[2]
+    body = parts[0]
+    
+    # IMPROVED PARSING: Handle 1., 1 , and [^1]:
+    ref_map = {}
+    # [^1]: ...
+    ref_lines = re.findall(r'^\[\^(\d+)\]:\s*(.*)$', refs_raw, re.MULTILINE)
+    # 1. ...
+    ref_lines += re.findall(r'^(\d+)\.\s*(.*)$', refs_raw, re.MULTILINE)
+    # 1 ...
+    ref_lines += re.findall(r'^(\d+)\s+([^\d].*)$', refs_raw, re.MULTILINE)
+
+    for num, text in ref_lines:
+        if num not in ref_map: ref_map[num] = text.strip()
+    
+    if not ref_map: return content
+
+    # 1. Convert plain citations to [^N]
+    def replacer(match):
+        pre = match.group(1)
+        punct = match.group(2)
+        nums_str = match.group(3)
+        if punct == '.' and pre and pre.isdigit(): return match.group(0)
+        if punct == ':' and pre and pre.isdigit(): return match.group(0)
+        parts = re.split(r'[\s,]+', nums_str)
+        valid_footnotes = []
+        for p in parts:
+            if not p: continue
+            if p in ref_map: valid_footnotes.append(f"[^{p}]")
+            else: return match.group(0)
+        return f"{pre}{punct}{''.join(valid_footnotes)}"
+
+    body = re.sub(r'(.?)([.,;")\]])(\d+(?:[\s,]+\d+)*)(?![.\d])', replacer, body)
+    
+    def table_repl(match):
+        pre, num, post = match.groups()
+        if num in ref_map: return f"{pre}[^{num}]{post}"
+        return match.group(0)
+    body = re.sub(r'(\|[^|]*?\s+)(\d+)(\s*\|)', table_repl, body)
+
+    # 2. IDENTIFY USED FOOTNOTES
+    used_numbers = re.findall(r'\[\^(\d+)\]', body)
+    unique_used = sorted(list(set(used_numbers)), key=int)
+    
+    # 3. RE-NUMBER SEQUENTIALLY
+    num_map = {old: str(i+1) for i, old in enumerate(unique_used)}
+    
+    def final_repl(match):
+        old_num = match.group(1)
+        return f"[^{num_map[old_num]}]"
+    
+    body = re.sub(r'\[\^(\d+)\]', final_repl, body)
+
+    new_refs = [f"\n\n{header}\n"]
+    for old_num in unique_used:
+        new_refs.append(f"[^{num_map[old_num]}]: {ref_map[old_num]}\n")
+    
+    return body + "".join(new_refs)
+
+def fix_markdown(file_path, title_override=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 0. Strip invisible
+    content = content.replace('\u0332', '')
     content = "".join(c for c in content if ord(c) >= 32 or c in '\n\r\t')
     content = "".join(c for c in content if ord(c) < 128)
     
     filename = os.path.basename(file_path)
-    cur_map = EPISODE_229_MAP if "229" in filename else KATEX_MAP
+    ep_num = extract_episode(filename, "")
+    
+    lines = content.split('\n')
+    title = ""
+    for i, line in enumerate(lines):
+        if line.startswith('# '):
+            if title_override:
+                raw_title = re.sub(r'^\d+\s*[:\-]\s*', '', title_override)
+            else:
+                raw_title = line.replace('# ', '').strip().replace('**', '')
+                raw_title = re.sub(r'^\d+\s*[:\-]\s*', '', raw_title)
+            
+            words = raw_title.split()
+            title = " ".join(words[:5])
+            lines[i] = f"# {ep_num} : {title}"
+            
+            image_path = f"img/{ep_num}.png"
+            new_lines = [lines[i], ""]
+            new_lines.append(f"![{title}]({image_path})")
+            new_lines.append("")
+            new_lines.append(PODCAST_LINKS)
+            new_lines.append("")
+            
+            j = i + 1
+            while j < len(lines) and (lines[j].strip() == "" or lines[j].startswith('![') or '<center>' in lines[j]):
+                j += 1
+            lines = new_lines + lines[j:]
+            break
+
+    content = '\n'.join(lines)
+    
+    cur_map = KATEX_MAP
+    if ep_num == "229": cur_map = EPISODE_229_MAP
+    elif ep_num == "230": cur_map = EPISODE_230_MAP
     for placeholder, symbol in cur_map.items():
         content = content.replace(placeholder, symbol)
 
-    # Currency (Only outside $)
-    def curr_repl(text):
-        parts = re.split(r'(\$.*?\$)', text, flags=re.DOTALL)
-        for i in range(len(parts)):
-            if not parts[i].startswith('$'):
-                parts[i] = re.sub(r'(?<![\w/])\$(?!\^)([\d\.,]+)\s*(k|m|b|t|million|billion|trillion)?\b', 
-                                 r'\1\2 USD', parts[i], flags=re.IGNORECASE)
-        return ''.join(parts)
-    content = curr_repl(content)
+    math_blocks = []
+    def save_math(match):
+        math_blocks.append(match.group(0))
+        return f"__MATH_BLOCK_{len(math_blocks)-1}__"
+    content = re.sub(r'\$[a-zA-Z\\].*?\$', save_math, content)
     
+    # PRUNE FOOTNOTES
+    content = fix_footnotes(content)
+    
+    # CURRENCY
+    content = re.sub(r'\$([\d\.,]+)\s*(million|billion|trillion|k|m|b|t)?(?=[^0-9\^]|$)', r'\1 \2 USD ', content, flags=re.IGNORECASE)
+    content = content.replace('  ', ' ')
+    content = content.replace('$', r'\$')
+    
+    for idx, block in enumerate(math_blocks):
+        content = content.replace(f"__MATH_BLOCK_{idx}__", block)
+
+    if "lightning-widget" not in content:
+        content = content.strip() + "\n" + LIGHTNING_WIDGET
+
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
@@ -177,7 +293,8 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('file')
+    parser.add_argument('--title', help="Override title")
     args = parser.parse_args()
     if os.path.exists(args.file):
-        fix_markdown(args.file)
+        fix_markdown(args.file, title_override=args.title)
         update_summary(args.file)
