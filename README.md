@@ -8,7 +8,7 @@ This repository contains the research, show notes, and publishing toolchain for 
 - **GEMINI.md:** Updated with "Master Key" strategy and updated Agent Role.
 - **Automation Script:** `universal_markdown_fixer.py` correctly implements filename-to-index parsing and path-aliasing.
 - **Documentation:** Root and scripts READMEs are current.
-- **Last Verification:** April 17, 2026.
+- **Last Verification:** May 3, 2026.
 
 ---
 
@@ -38,12 +38,14 @@ The project is powered by a two-tier "Fix Markdown" routine:
 ---
 
 ## 📜 Recent Development Decisions (Changelog)
+- **May 03, 2026:** Finalized **Episode 231** ("Why don't LLMs self-prompt ?") and hardened `universal_markdown_fixer.py` to correctly extract titles from files using H2 (`##`) headers as titles, ensuring consistent H1 formatting and asset injection.
+- **Apr 30, 2026:** Finalized **Episode 230** and implemented refined footnote orchestration to handle mixed citation styles (e.g., `1.`, `1`, `[^1]`).
+- **Apr 30, 2026:** Cleaned up the repository by removing 14 legacy stub/placeholder files to ensure a lean, production-grade codebase.
+- **Apr 26, 2026:** Achieved perfect one-to-one mapping between `src/` and `SUMMARY.md`, ensuring all 108 articles are correctly indexed and discoverable.
+- **Apr 26, 2026:** Codified the **Hardened Testing Workflow** in `GEMINI.md` to formalize the iterative script-hardening process.
 - **Apr 22, 2026:** Implemented **Numerical Context Awareness** in `universal_markdown_fixer.py` to prevent corruption of version numbers (e.g., `v1.0`) and decimal metrics (e.g., `4.6`) during sequential footnote re-numbering.
 - **Apr 22, 2026:** Fixed `mdbook-katex` rendering conflicts by auto-sanitizing escaped special characters (`\-`, `\&`) within the reference blocks.
 - **Apr 17, 2026:** Established "Episode Number as Master Key" strategy.
-- **Apr 17, 2026:** Transitioned `SUMMARY.md` to an unlimited, chronological Recent section for numbered episodes.
-- **Apr 17, 2026:** Implemented project-level automation policies to bypass manual CLI prompts.
-- **Apr 17, 2026:** Formalized the Agent's role in documentation and system synchronization.
 
 ---
 
