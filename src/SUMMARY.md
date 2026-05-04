@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [231 : The Ontological Passivity of Large](././231.md)
 - [230 : STRC - derivatives and inflows](././230.md)
 - [229 : The Energy-Intelligence Equivalence Principle](././229.md)
 - [228 : What is Google Worth?](././228.md)

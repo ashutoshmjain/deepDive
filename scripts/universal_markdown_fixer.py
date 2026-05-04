@@ -94,8 +94,9 @@ def extract_title(file_path):
     if not os.path.exists(file_path): return os.path.basename(file_path)
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
-            m = re.match(r'^#\s+(?:\d+\s*[:\-]\s*)?(.*?)$', line.strip())
-            if m: return m.group(1).strip()
+            # Match H1 or H2 as the title
+            m = re.match(r'^#{1,2}\s+(?:\d+\s*[:\-]\s*)?(.*?)$', line.strip())
+            if m: return m.group(1).strip().replace('**', '')
     return os.path.basename(file_path)
 
 def extract_episode(filename, title):
@@ -233,12 +234,13 @@ def fix_markdown(file_path, title_override=None):
     lines = content.split('\n')
     title = ""
     for i, line in enumerate(lines):
-        if line.startswith('# '):
+        # Match H1 or H2 as the title
+        m = re.match(r'^(#{1,2})\s+(?:\d+\s*[:\-]\s*)?(.*?)$', line.strip())
+        if m:
             if title_override:
                 raw_title = re.sub(r'^\d+\s*[:\-]\s*', '', title_override)
             else:
-                raw_title = line.replace('# ', '').strip().replace('**', '')
-                raw_title = re.sub(r'^\d+\s*[:\-]\s*', '', raw_title)
+                raw_title = m.group(2).strip().replace('**', '')
             
             words = raw_title.split()
             title = " ".join(words[:5])
@@ -252,6 +254,7 @@ def fix_markdown(file_path, title_override=None):
             new_lines.append("")
             
             j = i + 1
+            # Skip existing images or centered links immediately following the old header
             while j < len(lines) and (lines[j].strip() == "" or lines[j].startswith('![') or '<center>' in lines[j]):
                 j += 1
             lines = new_lines + lines[j:]
