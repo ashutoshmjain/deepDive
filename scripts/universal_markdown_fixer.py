@@ -179,12 +179,15 @@ def fix_footnotes(content):
     if not ref_map: return content
 
     # 1. Convert plain citations to [^N]
+    # Handle both punctuation-prefixed and space-prefixed numbers
     def replacer(match):
         pre = match.group(1)
         punct = match.group(2)
         nums_str = match.group(3)
+        # Avoid matching version numbers or currency decimals
         if punct == '.' and pre and pre.isdigit(): return match.group(0)
         if punct == ':' and pre and pre.isdigit(): return match.group(0)
+        
         parts = re.split(r'[\s,]+', nums_str)
         valid_footnotes = []
         for p in parts:
@@ -193,7 +196,10 @@ def fix_footnotes(content):
             else: return match.group(0)
         return f"{pre}{punct}{''.join(valid_footnotes)}"
 
+    # Match numbers after punctuation
     body = re.sub(r'(.?)([.,;")\]])(\d+(?:[\s,]+\d+)*)(?![.\d])', replacer, body)
+    # Match numbers after space ONLY if followed by punctuation or end of sentence
+    body = re.sub(r'(.?)( )(\d+(?:[\s,]+\d+)*)(?=[.,;":!?]|$)', replacer, body)
     
     def table_repl(match):
         pre, num, post = match.groups()
@@ -231,6 +237,21 @@ def fix_markdown(file_path, title_override=None):
     filename = os.path.basename(file_path)
     ep_num = extract_episode(filename, "")
     
+    cur_map = KATEX_MAP
+    if ep_num == "229": cur_map = EPISODE_229_MAP
+    elif ep_num == "230": cur_map = EPISODE_230_MAP
+    for placeholder, symbol in cur_map.items():
+        content = content.replace(placeholder, symbol)
+
+    math_blocks = []
+    def save_math(match):
+        math_blocks.append(match.group(0))
+        return f"__MATH_BLOCK_{len(math_blocks)-1}__"
+    content = re.sub(r'\$[a-zA-Z\\].*?\$', save_math, content)
+    
+    # PRUNE FOOTNOTES (Do this before injecting HTML/CSS to avoid corrupting it)
+    content = fix_footnotes(content)
+    
     lines = content.split('\n')
     title = ""
     for i, line in enumerate(lines):
@@ -243,7 +264,12 @@ def fix_markdown(file_path, title_override=None):
                 raw_title = m.group(2).strip().replace('**', '')
             
             words = raw_title.split()
-            title = " ".join(words[:5])
+            # Intelligent truncation: avoid ending with prepositions/articles
+            limit = 5
+            while limit > 1 and words[limit-1].lower() in ['the', 'of', 'a', 'an', 'in', 'on', 'at', 'by', 'for', 'with', 'about', 'to']:
+                limit -= 1
+            
+            title = " ".join(words[:limit])
             lines[i] = f"# {ep_num} : {title}"
             
             image_path = f"img/{ep_num}.png"
@@ -261,21 +287,6 @@ def fix_markdown(file_path, title_override=None):
             break
 
     content = '\n'.join(lines)
-    
-    cur_map = KATEX_MAP
-    if ep_num == "229": cur_map = EPISODE_229_MAP
-    elif ep_num == "230": cur_map = EPISODE_230_MAP
-    for placeholder, symbol in cur_map.items():
-        content = content.replace(placeholder, symbol)
-
-    math_blocks = []
-    def save_math(match):
-        math_blocks.append(match.group(0))
-        return f"__MATH_BLOCK_{len(math_blocks)-1}__"
-    content = re.sub(r'\$[a-zA-Z\\].*?\$', save_math, content)
-    
-    # PRUNE FOOTNOTES
-    content = fix_footnotes(content)
     
     # CURRENCY
     content = re.sub(r'\$([\d\.,]+)\s*(million|billion|trillion|k|m|b|t)?(?=[^0-9\^]|$)', r'\1 \2 USD ', content, flags=re.IGNORECASE)

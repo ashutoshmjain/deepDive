@@ -3,9 +3,9 @@
 
 # 1. Auto-approve all file modification tools
 [[rule]]
-toolName = ["write_file", "replace", "insert_content", "save_memory"]
+toolName = ["write_file", "replace"]
 decision = "allow"
-priority = 1000
+priority = 900
 
 # 2. Auto-approve common shell commands used in the toolchain
 [[rule]]
@@ -24,11 +24,11 @@ commandPrefix = [
     "mv"
 ]
 decision = "allow"
-priority = 1000
+priority = 900
 
 # 3. Allow shell redirection (e.g., 'python3 script.py > output.txt')
 [[rule]]
 toolName = "run_shell_command"
 allowRedirection = true
 decision = "allow"
-priority = 1050
+priority = 950

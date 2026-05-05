@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [232 : The Orthogonal Manifold](././232.md)
 - [231 : Why don't LLMs self-prompt ?](././231.md)
 - [230 : STRC - derivatives and inflows](././230.md)
 - [229 : The Energy-Intelligence Equivalence Principle](././229.md)
