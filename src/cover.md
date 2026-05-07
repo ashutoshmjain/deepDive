@@ -8,6 +8,19 @@
 
 This is a **Clean Internet** publication: universally accessible, anonymous, and clutter-free. No trackers, no cookies, no ads. We conduct deep research into technology, finance, and philosophy, refined in our [open-source repository](https://github.com/ashutoshmjain/deepDive).
 
+<center>
+<div style="position: relative; max-width: 800px; margin: 20px 0;">
+  <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 10px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <source src="vid/cleanInternet.mp4" type="video/mp4">
+  </video>
+  <button onclick="var v = this.previousElementSibling; v.muted = !v.muted; this.querySelector('i').className = v.muted ? 'fa fa-volume-off' : 'fa fa-volume-up';" 
+          style="position: absolute; bottom: 15px; right: 15px; background: rgba(46, 46, 46, 0.7); border: none; color: white; border-radius: 5px; padding: 5px 10px; cursor: pointer; z-index: 10;"
+          title="Toggle Mute">
+    <i class="fa fa-volume-off"></i>
+  </button>
+</div>
+</center>
+
 ### Quick Start
 - **Navigation:** Toggle the <i class="fa fa-bars"></i> sidebar for chapters, or use <i class="fa fa-search"></i> to search.
 - **Install as App:** Enjoy **offline access**, faster loading, and a clean home-screen icon.
@@ -19,6 +32,19 @@ This is a **Clean Internet** publication: universally accessible, anonymous, and
 - **Research:** Synthesizing listener inputs with high-fidelity AI-driven deep searches.
 - **Publish:** Iteratively refined papers are published here for open-source review.
 - **Listen:** Research is transformed into concise, high-quality audio episodes. Infographic shorts are created using [Mosaic Motion](https://motion.so).
+
+<center>
+<div style="position: relative; max-width: 800px; margin: 20px 0;">
+  <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 10px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <source src="vid/collaborativeIntel.mp4" type="video/mp4">
+  </video>
+  <button onclick="var v = this.previousElementSibling; v.muted = !v.muted; this.querySelector('i').className = v.muted ? 'fa fa-volume-off' : 'fa fa-volume-up';" 
+          style="position: absolute; bottom: 15px; right: 15px; background: rgba(46, 46, 46, 0.7); border: none; color: white; border-radius: 5px; padding: 5px 10px; cursor: pointer; z-index: 10;"
+          title="Toggle Mute">
+    <i class="fa fa-volume-off"></i>
+  </button>
+</div>
+</center>
 
 ---
 
