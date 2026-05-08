@@ -230,57 +230,66 @@ def fix_markdown(file_path, title_override=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
+    # 0. STRIP INVISIBLE CHARS AND NON-ASCII
     content = content.replace('\u0332', '')
     content = "".join(c for c in content if ord(c) >= 32 or c in '\n\r\t')
     content = "".join(c for c in content if ord(c) < 128)
     
+    # 1. CLEANUP URLS (Remove backslashes before special chars)
+    content = re.sub(r'(\\)([_.-])', r'\2', content)
+
     filename = os.path.basename(file_path)
     ep_num = extract_episode(filename, "")
     
+    # 2. KATEX PROTECTION
+    math_blocks = []
+    def save_math(match):
+        math_blocks.append(match.group(0))
+        return f"__MATH_BLOCK_{len(math_blocks)-1}__"
+    
+    # Catch both $$ ... $$ and $ ... $
+    content = re.sub(r'\$\$.*?\$\$', save_math, content, flags=re.DOTALL)
+    content = re.sub(r'\$.*?\$', save_math, content)
+    
+    # 3. EPISODE SPECIFIC MAPS (Placeholder replacements)
     cur_map = KATEX_MAP
     if ep_num == "229": cur_map = EPISODE_229_MAP
     elif ep_num == "230": cur_map = EPISODE_230_MAP
     for placeholder, symbol in cur_map.items():
         content = content.replace(placeholder, symbol)
 
-    math_blocks = []
-    def save_math(match):
-        math_blocks.append(match.group(0))
-        return f"__MATH_BLOCK_{len(math_blocks)-1}__"
-    content = re.sub(r'\$[a-zA-Z\\].*?\$', save_math, content)
-    
-    # PRUNE FOOTNOTES (Do this before injecting HTML/CSS to avoid corrupting it)
+    # 4. PRUNE FOOTNOTES
     content = fix_footnotes(content)
     
+    # 5. TITLE AND ASSET INTEGRATION
     lines = content.split('\n')
     title = ""
     for i, line in enumerate(lines):
-        # Match H1 or H2 as the title
         m = re.match(r'^(#{1,2})\s+(?:\d+\s*[:\-]\s*)?(.*?)$', line.strip())
         if m:
             if title_override:
-                raw_title = re.sub(r'^\d+\s*[:\-]\s*', '', title_override)
+                # Use override exactly if provided, just ensure it starts with "EP : "
+                if not re.match(r'^\d+\s*[:\-]', title_override):
+                    full_title = f"{ep_num} : {title_override}"
+                else:
+                    full_title = title_override
+                # For the image alt text, strip the number
+                title = re.sub(r'^\d+\s*[:\-]\s*', '', full_title).strip()
             else:
                 raw_title = m.group(2).strip().replace('**', '')
+                words = raw_title.split()
+                limit = 5
+                while limit > 1 and words[limit-1].lower() in ['the', 'of', 'a', 'an', 'in', 'on', 'at', 'by', 'for', 'with', 'about', 'to']:
+                    limit -= 1
+                title = " ".join(words[:limit])
+                full_title = f"{ep_num} : {title}"
             
-            words = raw_title.split()
-            # Intelligent truncation: avoid ending with prepositions/articles
-            limit = 5
-            while limit > 1 and words[limit-1].lower() in ['the', 'of', 'a', 'an', 'in', 'on', 'at', 'by', 'for', 'with', 'about', 'to']:
-                limit -= 1
-            
-            title = " ".join(words[:limit])
-            lines[i] = f"# {ep_num} : {title}"
+            lines[i] = f"# {full_title}"
             
             image_path = f"img/{ep_num}.png"
-            new_lines = [lines[i], ""]
-            new_lines.append(f"![{title}]({image_path})")
-            new_lines.append("")
-            new_lines.append(PODCAST_LINKS)
-            new_lines.append("")
+            new_lines = [lines[i], "", f"![{title}]({image_path})", "", PODCAST_LINKS, ""]
             
             j = i + 1
-            # Skip existing images or centered links immediately following the old header
             while j < len(lines) and (lines[j].strip() == "" or lines[j].startswith('![') or '<center>' in lines[j]):
                 j += 1
             lines = new_lines + lines[j:]
@@ -288,11 +297,14 @@ def fix_markdown(file_path, title_override=None):
 
     content = '\n'.join(lines)
     
-    # CURRENCY
+    # 6. CURRENCY AND DOLLAR SIGNS (Applied to non-math blocks)
+    # Convert $100 to 100 USD
     content = re.sub(r'\$([\d\.,]+)\s*(million|billion|trillion|k|m|b|t)?(?=[^0-9\^]|$)', r'\1 \2 USD ', content, flags=re.IGNORECASE)
     content = content.replace('  ', ' ')
+    # Escape remaining literal dollar signs
     content = content.replace('$', r'\$')
     
+    # 7. RESTORE MATH
     for idx, block in enumerate(math_blocks):
         content = content.replace(f"__MATH_BLOCK_{idx}__", block)
 
