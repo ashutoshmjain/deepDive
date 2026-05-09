@@ -40,7 +40,14 @@ To simplify synchronization between the website, repository, and podcast shows, 
 ### **1. Filename Convention (The Master Key)**
 - **Markdown Files:** Must be named strictly by their episode number (e.g., `src/225.md`).
 - **Image Files:** Must be named strictly by their episode number (e.g., `src/img/225.png`).
-- This shared index links the file, the cover image, and the podcast episode together.
+- **Video Files:** Must be named by their episode number followed by a sequence (e.g., `src/vid/233-1.mp4`, `src/vid/233-2.mp4`). This allows for multiple infographic videos per episode.
+- This shared index links the file, the cover image, the podcast episode, and all supplemental video clips together.
+
+### **2. 'Update Video' Workflow**
+- When the user says "update video", the agent must:
+  1. Identify the video files in `src/vid/` matching the episode number.
+  2. Locate the corresponding markdown file in `src/`.
+  3. Integrate the video(s) into the markdown file using the appropriate HTML5 or Markdown video tags (ensuring proper placement, typically near relevant conceptual headers).
 
 ### **2. Title Formatting**
 - Every new page must start with its index number and a colon in the H1 header (e.g., `# 225 : Title`). The title text should be descriptive but concise (max 5 words).
