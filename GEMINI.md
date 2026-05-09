@@ -47,7 +47,10 @@ To simplify synchronization between the website, repository, and podcast shows, 
 - When the user says "update video", the agent must:
   1. Identify the video files in `src/vid/` matching the episode number.
   2. Locate the corresponding markdown file in `src/`.
-  3. Integrate the video(s) into the markdown file using the appropriate HTML5 or Markdown video tags (ensuring proper placement, typically near relevant conceptual headers).
+  3. Integrate the video(s) using the **Cinematic Infographic Style**:
+     - **Attributes:** `autoplay`, `loop`, `muted`, `playsinline`.
+     - **UI:** No default controls; use the absolute-positioned custom Mute/Unmute button.
+     - **Styling:** Max-width 800px, rounded corners (10px), and soft box-shadow.
 
 ### **2. Title Formatting**
 - Every new page must start with its index number and a colon in the H1 header (e.g., `# 225 : Title`). The title text should be descriptive but concise (max 5 words).
