@@ -14,9 +14,11 @@ This repository contains the research, show notes, and publishing toolchain for 
 
 ## 🔑 The "Master Key" Strategy
 To ensure perfect synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets.
-1.  **Filenames:** `src/225.md` and `src/img/225.png`.
-2.  **Titles:** Automatically formatted as `# 225 : Title`.
-3.  **Navigation:** Numbered episodes are pinned to the `# Recent ..` section of `SUMMARY.md` indefinitely.
+1.  **Articles:** Strictly named `src/225.md`.
+2.  **Images:** Strictly named `src/img/225.png`.
+3.  **Videos:** Named by episode number plus a descriptive suffix, e.g., `src/vid/234-intro.mp4`. This avoids memory bottlenecks and aids visualization.
+4.  **Titles:** Automatically formatted as `# 225 : Title`.
+5.  **Navigation:** Numbered episodes are pinned to the `# Recent ..` section of `SUMMARY.md` indefinitely.
 
 ---
 
@@ -38,6 +40,7 @@ The project is powered by a two-tier "Fix Markdown" routine:
 ---
 
 ## 📜 Recent Development Decisions (Changelog)
+- **May 09, 2026:** Formalized the **Descriptive Video Naming Convention**. Transitioned from sequential numbering (e.g., `-1`) to descriptive suffixes (e.g., `234-intro.mp4`) to improve asset visualization and prevent numbering confusion. Updated `GEMINI.md` and integrated the first such asset into Episode 234.
 - **May 03, 2026:** Finalized **Episode 231** ("Why don't LLMs self-prompt ?") and hardened `universal_markdown_fixer.py` to correctly extract titles from files using H2 (`##`) headers as titles, ensuring consistent H1 formatting and asset injection.
 - **Apr 30, 2026:** Finalized **Episode 230** and implemented refined footnote orchestration to handle mixed citation styles (e.g., `1.`, `1`, `[^1]`).
 - **Apr 30, 2026:** Cleaned up the repository by removing 14 legacy stub/placeholder files to ensure a lean, production-grade codebase.

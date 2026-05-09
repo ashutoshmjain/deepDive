@@ -14,6 +14,10 @@ This Python script handles the rules-based formatting that must be consistent ac
 #### Key Features:
 1.  **The "Master Key" Strategy:**
     - **Episode Identification:** Automatically extracts the episode number from the filename (e.g., `225.md`) or the title. This index serves as the master key linking the text, the cover image, and the podcast show.
+    - **Consistent File Naming:** 
+        - **Articles:** `src/<number>.md`
+        - **Images:** `src/img/<number>.png`
+        - **Videos:** `src/vid/<number>-<descriptive-name>.mp4` (e.g., `234-intro.mp4`).
     - **Title Formatting:** Strictly enforces the `# Index : Title` format (e.g., `# 225 : Title`).
 2.  **Asset Integration:** 
     - **Cover Images:** Automatically links the correct image from `src/img/` based on the episode index (e.g., `225.png`).
