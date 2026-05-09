@@ -40,7 +40,7 @@ To simplify synchronization between the website, repository, and podcast shows, 
 ### **1. Filename Convention (The Master Key)**
 - **Markdown Files:** Must be named strictly by their episode number (e.g., `src/225.md`).
 - **Image Files:** Must be named strictly by their episode number (e.g., `src/img/225.png`).
-- **Video Files:** Must be named by their episode number followed by a sequence (e.g., `src/vid/233-1.mp4`, `src/vid/233-2.mp4`). This allows for multiple infographic videos per episode.
+- **Video Files:** Must be named by their episode number followed by a descriptive suffix (e.g., `src/vid/234-intro.mp4`, `src/vid/233-context.mp4`). This helps with visualization and avoids memory bottlenecks during file creation.
 - This shared index links the file, the cover image, the podcast episode, and all supplemental video clips together.
 
 ### **2. 'Update Video' Workflow**
