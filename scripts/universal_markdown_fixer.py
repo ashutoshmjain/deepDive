@@ -86,6 +86,10 @@ EPISODE_230_MAP = {
     "![][image1]": r"$mNAV < 1$"
 }
 
+EPISODE_234_MAP = {
+    "![][image1]": r"$P = F \left(1 - \frac{d \cdot t}{360}\right)$"
+}
+
 def check_root():
     if not os.path.exists('book.toml'):
         sys.exit(1)
@@ -230,10 +234,10 @@ def fix_markdown(file_path, title_override=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 0. STRIP INVISIBLE CHARS AND NON-ASCII
+    # 0. STRIP INVISIBLE CHARS AND HIDDEN CONTROL CODES
+    # Targeted approach to remove control characters while keeping valid UTF-8 (em-dashes, etc.)
     content = content.replace('\u0332', '')
-    content = "".join(c for c in content if ord(c) >= 32 or c in '\n\r\t')
-    content = "".join(c for c in content if ord(c) < 128)
+    content = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]', '', content)
     
     # 1. CLEANUP URLS (Remove backslashes before special chars)
     content = re.sub(r'(\\)([_.-])', r'\2', content)
@@ -251,13 +255,6 @@ def fix_markdown(file_path, title_override=None):
     content = re.sub(r'\$\$.*?\$\$', save_math, content, flags=re.DOTALL)
     content = re.sub(r'\$.*?\$', save_math, content)
     
-    # 3. EPISODE SPECIFIC MAPS (Placeholder replacements)
-    cur_map = KATEX_MAP
-    if ep_num == "229": cur_map = EPISODE_229_MAP
-    elif ep_num == "230": cur_map = EPISODE_230_MAP
-    for placeholder, symbol in cur_map.items():
-        content = content.replace(placeholder, symbol)
-
     # 4. PRUNE FOOTNOTES
     content = fix_footnotes(content)
     
@@ -296,7 +293,7 @@ def fix_markdown(file_path, title_override=None):
             break
 
     content = '\n'.join(lines)
-    
+
     # 6. CURRENCY AND DOLLAR SIGNS (Applied to non-math blocks)
     # Convert $100 to 100 USD
     content = re.sub(r'\$([\d\.,]+)\s*(million|billion|trillion|k|m|b|t)?(?=[^0-9\^]|$)', r'\1 \2 USD ', content, flags=re.IGNORECASE)
@@ -304,6 +301,15 @@ def fix_markdown(file_path, title_override=None):
     # Escape remaining literal dollar signs
     content = content.replace('$', r'\$')
     
+    # 3. EPISODE SPECIFIC MAPS (Placeholder replacements)
+    # Applied after dollar escaping to ensure math symbols stay unescaped
+    cur_map = KATEX_MAP
+    if ep_num == "229": cur_map = EPISODE_229_MAP
+    elif ep_num == "230": cur_map = EPISODE_230_MAP
+    elif ep_num == "234": cur_map = EPISODE_234_MAP
+    for placeholder, symbol in cur_map.items():
+        content = content.replace(placeholder, symbol)
+
     # 7. RESTORE MATH
     for idx, block in enumerate(math_blocks):
         content = content.replace(f"__MATH_BLOCK_{idx}__", block)

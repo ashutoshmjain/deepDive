@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [234 : Satoshi Dividends via Lightning Network](././234.md)
 - [233 : what exactly is NOT consciousness !](././233.md)
 - [232 : The Orthogonal Manifold](././232.md)
 - [231 : Why don't LLMs self-prompt ?](././231.md)
