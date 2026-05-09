@@ -1,6 +1,6 @@
 module.exports = {
   globDirectory: "book",
-  globPatterns: ["**/*.{html,js,css,mp4,png}"],
+  globPatterns: ["**/*.{html,js,css,png}"],
   swSrc: "pwa/sw-src.js",
   swDest: "book/sw.js",
   globIgnores: ["sw.js"],
