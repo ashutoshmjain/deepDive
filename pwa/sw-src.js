@@ -21,7 +21,7 @@ if (workbox) {
         new CacheableResponsePlugin({ statuses: [200] }),
         new RangeRequestsPlugin(),
         new ExpirationPlugin({
-          maxEntries: 10,
+          maxEntries: 50,
           maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
         }),
       ],
