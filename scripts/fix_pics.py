@@ -116,8 +116,17 @@ def process_pics(file_path, title_override=None):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 fix_pics.py <file_path> [--title 'Title']")
+        print("Usage: python3 fix_pics.py <episode_number_or_file_path> [--title 'Title']")
         sys.exit(1)
+    
+    input_arg = sys.argv[1]
+    
+    if input_arg.isdigit():
+        file_path = f"src/{input_arg}.md"
+        if not os.path.exists(file_path) and os.path.exists(f"deepDive/src/{input_arg}.md"):
+            file_path = f"deepDive/src/{input_arg}.md"
+    else:
+        file_path = input_arg
     
     override = None
     if "--title" in sys.argv:
@@ -125,4 +134,4 @@ if __name__ == "__main__":
         if idx + 1 < len(sys.argv):
             override = sys.argv[idx+1]
             
-    process_pics(sys.argv[1], title_override=override)
+    process_pics(file_path, title_override=override)

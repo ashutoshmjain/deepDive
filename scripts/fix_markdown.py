@@ -190,6 +190,16 @@ def process_markdown(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 fix_markdown.py <file_path>")
+        print("Usage: python3 fix_markdown.py <episode_number_or_file_path>")
         sys.exit(1)
-    process_markdown(sys.argv[1])
+    
+    input_arg = sys.argv[1]
+    
+    if input_arg.isdigit():
+        file_path = f"src/{input_arg}.md"
+        if not os.path.exists(file_path) and os.path.exists(f"deepDive/src/{input_arg}.md"):
+            file_path = f"deepDive/src/{input_arg}.md"
+    else:
+        file_path = input_arg
+        
+    process_markdown(file_path)

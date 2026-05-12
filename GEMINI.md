@@ -13,7 +13,9 @@ The primary mission of this workspace is the iterative development of the automa
 We intelligently automate what we regularly do. Our software automation reflects real, lived objectives because we are the **first and power users** of the tools we build.
 
 **The "Master Key" Strategy:**
-To simplify synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets.
+To simplify synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets. 
+- **Targeted Processing:** All asset operations (Markdown, Pics, Vids) MUST be surgical. The agent is prohibited from performing global "discovery" searches. If an asset is named `XXX`, it belongs ONLY to `src/XXX.md`.
+- **Zero-Sweep Rule:** Do not "sweep" or "fix" files outside the target Episode Number unless explicitly directed to perform repository-wide maintenance. This minimizes the user's testing burden.
 
 ## **The Publication Protocol**
 

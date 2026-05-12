@@ -44,6 +44,18 @@ def process_vids(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 fix_vids.py <file_path>")
+        print("Usage: python3 fix_vids.py <episode_number_or_file_path>")
         sys.exit(1)
-    process_vids(sys.argv[1])
+    
+    input_arg = sys.argv[1]
+    
+    # If it's a number, resolve to src/[number].md
+    if input_arg.isdigit():
+        file_path = f"src/{input_arg}.md"
+        # If running from the root of the project, check if deepDive/src exists
+        if not os.path.exists(file_path) and os.path.exists(f"deepDive/src/{input_arg}.md"):
+            file_path = f"deepDive/src/{input_arg}.md"
+    else:
+        file_path = input_arg
+        
+    process_vids(file_path)
