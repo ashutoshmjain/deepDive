@@ -107,11 +107,8 @@ def fix_footnotes(content):
     if not ref_map: return content
 
     def replacer(match):
-        pre = match.group(1)
-        punct = match.group(2)
-        nums_str = match.group(3)
-        if punct == '.' and pre and pre.isdigit(): return match.group(0)
-        if punct == ':' and pre and pre.isdigit(): return match.group(0)
+        punct = match.group(1)
+        nums_str = match.group(2)
         
         parts = re.split(r'[\s,]+', nums_str)
         valid_footnotes = []
@@ -119,15 +116,16 @@ def fix_footnotes(content):
             if not p: continue
             if p in ref_map: valid_footnotes.append(f"[^{p}]")
             else: return match.group(0)
-        return f"{pre}{punct}{''.join(valid_footnotes)}"
+        return f"{punct}{''.join(valid_footnotes)}"
 
-    body = re.sub(r'(.?)([.,;")\]])(\d+(?:[\s,]+\d+)*)(?![.\d])', replacer, body)
-    body = re.sub(r'(.?)( )(\d+(?:[\s,]+\d+)*)(?=[.,;":!?]|$)', replacer, body)
+    # Only match numbers immediately following specific punctuation
+    body = re.sub(r'([.,;")\]])(\d+(?:[\s,]+\d+)*)(?![.\d])', replacer, body)
     
     def table_repl(match):
         pre, num, post = match.groups()
         if num in ref_map: return f"{pre}[^{num}]{post}"
         return match.group(0)
+    # Be more careful with tables - only single numbers that match refs
     body = re.sub(r'(\|[^|]*?\s+)(\d+)(\s*\|)', table_repl, body)
 
     used_numbers = re.findall(r'\[\^(\d+)\]', body)

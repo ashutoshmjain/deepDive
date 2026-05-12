@@ -3,6 +3,7 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+- [236 : AGI Vs GAI](././236.md)
 - [235 : Future of Sovereign Credit](././235.md)
 - [234 : Satoshi Dividends via Lightning Network](././234.md)
 - [233 : what exactly is NOT consciousness !](././233.md)

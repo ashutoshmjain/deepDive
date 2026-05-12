@@ -102,10 +102,15 @@ def process_pics(file_path, title_override=None):
             image_path = f"img/{ep_num}.png"
             new_header = [lines[i], "\n", f"![{title}]({image_path})\n", "\n", PODCAST_LINKS, "\n"]
             
+            # Text before the header
+            pre_header_text = lines[:i]
+            
             j = i + 1
             while j < len(lines) and (lines[j].strip() == "" or lines[j].startswith('![') or '<center>' in lines[j]):
                 j += 1
-            lines = new_header + lines[j:]
+            
+            # Combine everything: New header at top, then pre-header text, then the rest
+            lines = new_header + pre_header_text + lines[j:]
             break
 
     with open(file_path, 'w', encoding='utf-8') as f:
