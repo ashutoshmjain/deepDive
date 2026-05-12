@@ -16,6 +16,9 @@
 - [225 : BTC: Global Pristine Collateral Network](././225.md)
 - [224 : TPUs vs GPUs: AI Commodification](././224.md)
 - [223 : Observer Patch Holography](././223.md)
+- [222 : Homeownership - American Dream!](././222.md)
+- [221 : The perfect playbook](././221.md)
+- [220 : AI Made Me a Believer](././220.md)
 
 # The Bitcoin Standard & Sovereign Assets
 - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)
@@ -33,7 +36,6 @@
 
 # The AI Revolution & Machine Intelligence
 - [The Social Synapse: Defining Meaning](./meaningOfMeaning-2.md)
-- [Why AI Made Me a Believer](./AI2Believer.md)
 - [AI and the Cantillon Effect](./cantillonAI.md)
 - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
 - [AI vs. Human Brain](./LLMvsBrain.md)
@@ -93,7 +95,6 @@
 - [Bitcoin: The UBA Solution](./UBIvsUBA.md)
 - [Block Inc. and X Money](./blockX.md)
 - [Digital Credit: Banking Nirvana](./bankingNirvana.md)
-- [Homeownership - American Dream!](./americanDream.md)
 - [Identity Crisis and Nostr](./trillionDollarIdTax_scientific.md)
 - [Mechanics of the Invincible Dollar](./invincibleDollar.md)
 - [Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
@@ -110,6 +111,5 @@
 - [The Secret of the Nightingale](./lata-nightingales-secret-sauce.md)
 - [The Strategic Value Function](./valueFunction.md)
 - [The Value-Leverage Paradigm](./valueLeverage.md)
-- [The perfect playbook](./perfectPlayBook.md)
 - [Vim: The Modal Instrument](./musicOfVim.md)
 - [What Exactly Is Karm Yoga?](./What-exactly-is-Karmyoga.md)
