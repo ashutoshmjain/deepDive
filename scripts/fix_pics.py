@@ -100,7 +100,7 @@ def process_pics(file_path, title_override=None):
             
             lines[i] = f"# {full_title}\n"
             image_path = f"img/{ep_num}.png"
-            new_header = [lines[i], "\n", f"![{title}]({image_path})\n", "\n", PODCAST_LINKS, "\n"]
+            new_header = [lines[i], "\n", f"![{title}]({image_path})\n", "\n", PODCAST_LINKS, "\n\n"]
             
             # Text before the header
             pre_header_text = lines[:i]

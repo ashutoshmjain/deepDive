@@ -129,7 +129,10 @@ def fix_footnotes(content):
     body = re.sub(r'(\|[^|]*?\s+)(\d+)(\s*\|)', table_repl, body)
 
     used_numbers = re.findall(r'\[\^(\d+)\]', body)
-    unique_used = sorted(list(set(used_numbers)), key=int)
+    unique_used = []
+    for n in used_numbers:
+        if n not in unique_used:
+            unique_used.append(n)
     
     num_map = {old: str(i+1) for i, old in enumerate(unique_used)}
     
