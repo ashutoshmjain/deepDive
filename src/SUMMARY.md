@@ -3,6 +3,8 @@
 - [Deep Dive with Gemini](./cover.md)
 
 # Recent ..
+<!-- RECENT_START -->
+- [239 : mathematics of Life after Death](239.md)
 - [238 : Calculus of Liberation.](././238.md)
 - [237 : SATA - The daily dividend company](././237.md)
 - [236 : AGI Vs GAI](././236.md)
@@ -22,6 +24,7 @@
 - [222 : Homeownership - American Dream!](././222.md)
 - [221 : The perfect playbook](././221.md)
 - [220 : AI Made Me a Believer](././220.md)
+<!-- RECENT_END -->
 
 # The Bitcoin Standard & Sovereign Assets
 - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)
