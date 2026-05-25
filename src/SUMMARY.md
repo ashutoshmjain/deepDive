@@ -4,6 +4,7 @@
 
 # Recent ..
 <!-- RECENT_START -->
+- [240 : Rise of the Observer](240.md)
 - [239 : mathematics of Life after Death](239.md)
 - [238 : Calculus of Liberation.](././238.md)
 - [237 : SATA - The daily dividend company](././237.md)
