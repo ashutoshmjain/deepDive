@@ -36,6 +36,9 @@ When the user gives these specific commands, the agent must execute the correspo
 
 ## **Operational Standards**
 
+### **0. Repository Isolation**
+- **User Initiation Only:** Autonomous cross-repository activities (e.g., syncing with `mdIngest`) are strictly prohibited. The agent must never perform actions that cross repository boundaries without a direct user instruction for that specific instance.
+
 ### **1. Filename Convention (The Master Key)**
 - **Markdown Files:** Must be named strictly by their episode number (e.g., `src/225.md`).
 - **Image Files:** Must be named strictly by their episode number (e.g., `src/img/225.png`).
