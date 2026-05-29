@@ -4,8 +4,8 @@
 
 # Recent ..
 <!-- RECENT_START -->
-- [240 : Rise of the Observer](240.md)
-- [239 : mathematics of Life after Death](239.md)
+- [240 : On the Mathematical Genesis](240.md)
+- [239 : On the Mathematical Genesis](239.md)
 - [238 : Calculus of Liberation.](././238.md)
 - [237 : SATA - The daily dividend company](././237.md)
 - [236 : AGI Vs GAI](././236.md)
