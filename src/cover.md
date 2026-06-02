@@ -8,18 +8,52 @@
 
 This is a **Clean Internet** publication: universally accessible, anonymous, and clutter-free. No trackers, no cookies, no ads. We conduct deep research into technology, finance, and philosophy, refined in our [open-source repository](https://github.com/ashutoshmjain/deepDive).
 
-<center>
-<div style="position: relative; max-width: 800px; margin: 20px 0;">
-  <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 10px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    <source src="vid/cleanInternet.mp4" type="video/mp4">
-  </video>
-  <button onclick="var v = this.previousElementSibling; v.muted = !v.muted; this.querySelector('i').className = v.muted ? 'fa fa-volume-off' : 'fa fa-volume-up';" 
-          style="position: absolute; bottom: 15px; right: 15px; background: rgba(46, 46, 46, 0.7); border: none; color: white; border-radius: 5px; padding: 5px 10px; cursor: pointer; z-index: 10;"
-          title="Toggle Mute">
-    <i class="fa fa-volume-off"></i>
-  </button>
+
+<!-- VIDEO_STRIP_START -->
+
+<center><h3>Info Graphics feed from <a href="https://mosaic.so" target="_blank" style="text-decoration: none; color: inherit; border-bottom: 1px solid #555;">Mosaic.SO</a></h3></center>
+
+<center><a href="https://www.tiktok.com/@shutoshabot" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">TikTok</a><a href="https://www.instagram.com/shutoshabot/" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Instagram</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37q8rU8HKTLhdLPZQadcvx-K" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://open.spotify.com/show/07r9EZMLpFC7qwZwxsJ5P9" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Spotify</a></center>
+
+<div class="video-carousel-container" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding: 20px 0; scroll-behavior: smooth;">
+  <div style="flex: 0 0 60%; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 1/1; display: flex; flex-direction: column;">
+    <video src="vid/cover-cleanInternet.mp4" style="width: 100%; height: 85%; object-fit: contain;" playsinline loop preload="auto" muted autoplay></video>
+    <div style="height: 15%; background: #1a1a1a; color: #ccc; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; border-top: 1px solid #333;">cover-cleanInternet</div>
+    <button class="vid-toggle" onclick="window.oph_play_toggle(this)" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; border: 2px solid white; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; font-size: 22px; z-index: 100;">🔇</button>
+  </div>
+  <div style="flex: 0 0 60%; scroll-snap-align: center; position: relative; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 1/1; display: flex; flex-direction: column;">
+    <video src="vid/cover-collaborativeIntel.mp4" style="width: 100%; height: 85%; object-fit: contain;" playsinline loop preload="auto" muted autoplay></video>
+    <div style="height: 15%; background: #1a1a1a; color: #ccc; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; border-top: 1px solid #333;">cover-collaborativeIntel</div>
+    <button class="vid-toggle" onclick="window.oph_play_toggle(this)" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; border: 2px solid white; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; font-size: 22px; z-index: 100;">🔇</button>
+  </div>
 </div>
-</center>
+<script>
+  window.oph_play_toggle = window.oph_play_toggle || function(btn) {
+    const parent = btn.parentElement;
+    const vid = parent.querySelector('video');
+    const container = btn.closest('.video-carousel-container');
+    if (vid.paused || vid.muted) {
+      container.querySelectorAll('video').forEach(v => { v.pause(); v.muted = true; v.parentElement.querySelector('.vid-toggle').innerText = '🔇'; });
+      vid.muted = false; vid.volume = 1.0;
+      vid.play().then(() => { btn.innerText = '🔊'; }).catch(e => console.error(e));
+    } else {
+      vid.pause(); vid.muted = true; btn.innerText = '🔇';
+    }
+  };
+  (function() {
+    const init = () => {
+      const vids = document.querySelectorAll('.video-carousel-container video');
+      vids.forEach(v => { 
+        v.muted = true; 
+        v.play().catch(() => {}); 
+      });
+    };
+    setTimeout(init, 500);
+  })();
+</script>
+<!-- VIDEO_STRIP_END -->
+
+
 
 ### Quick Start
 - **Navigation:** Toggle the <i class="fa fa-bars"></i> sidebar for chapters, or use <i class="fa fa-search"></i> to search.
@@ -32,19 +66,6 @@ This is a **Clean Internet** publication: universally accessible, anonymous, and
 - **Research:** Synthesizing listener inputs with high-fidelity AI-driven deep searches.
 - **Publish:** Iteratively refined papers are published here for open-source review.
 - **Listen:** Research is transformed into concise, high-quality audio episodes. Infographic shorts are created using [Mosaic Motion](https://motion.so).
-
-<center>
-<div style="position: relative; max-width: 800px; margin: 20px 0;">
-  <video width="100%" height="auto" autoplay loop muted playsinline style="border-radius: 10px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    <source src="vid/collaborativeIntel.mp4" type="video/mp4">
-  </video>
-  <button onclick="var v = this.previousElementSibling; v.muted = !v.muted; this.querySelector('i').className = v.muted ? 'fa fa-volume-off' : 'fa fa-volume-up';" 
-          style="position: absolute; bottom: 15px; right: 15px; background: rgba(46, 46, 46, 0.7); border: none; color: white; border-radius: 5px; padding: 5px 10px; cursor: pointer; z-index: 10;"
-          title="Toggle Mute">
-    <i class="fa fa-volume-off"></i>
-  </button>
-</div>
-</center>
 
 ---
 
