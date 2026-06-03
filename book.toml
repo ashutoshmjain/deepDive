@@ -11,8 +11,8 @@ create-missing = false
 [preprocessor.katex]
 
 [preprocessor.ingest]
-command = "mdbook-ingest"
-downloads_path = "/mnt/c/Users/ashut/Downloads"
+command = "md-publish"
+downloads_path = "/mnt/c/Users/ashut/OneDrive/Documents/Shorts"
 lightning_address = "shutosha@primal.net"
 title_word_limit = 5
 podcast_html = """
