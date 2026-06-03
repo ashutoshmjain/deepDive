@@ -12,7 +12,8 @@ create-missing = false
 
 [preprocessor.ingest]
 command = "md-publish"
-downloads_path = "/mnt/c/Users/ashut/OneDrive/Documents/Shorts"
+downloads_path = "/mnt/c/Users/ashut/Downloads"
+video_source = "/mnt/c/Users/ashut/OneDrive/Documents/Shorts"
 lightning_address = "shutosha@primal.net"
 title_word_limit = 5
 podcast_html = """
