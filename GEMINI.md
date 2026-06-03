@@ -19,13 +19,13 @@ To simplify synchronization between the website, repository, and podcast shows, 
 
 ## **The Publication Protocol**
 
-The publication process is now unified under the **mdbook-ingest preprocessor**, a hardened Rust-based utility that replaces legacy Python scripts. It automates text sanitization, KaTeX hardening, and media enrichment in a single, surgical workflow.
+The publication process is now unified under the **md-publish** engine, a hardened Rust-based utility that replaces legacy Python scripts. It automates text sanitization, KaTeX hardening, media enrichment, and **SUMMARY.md synchronization** in a single, surgical workflow. Running this command effectively "publishes" the episode to your local `mdbook` environment.
 
 ### **Command Triggers & Protocols**
 When the user gives these specific commands, the agent must execute the corresponding preprocessor actions, run `mdbook build` to validate, and report status:
 
-- **"Ingest Text [Number]":** Runs `mdbook-ingest --text --number XXX`. Focuses on content integrity, KaTeX, and footnotes.
-- **"Ingest Image [Number]":** Runs `mdbook-ingest --image --number XXX`. Handles cover art, social snippets, and site index.
+- **"Ingest Text [Number]":** Runs `md-publish --text XXX`. Focuses on content integrity, KaTeX, and footnotes.
+- **"Ingest Image [Number]":** Runs `md-publish --image XXX`. Handles cover art, social snippets, and site index.
 - **"Process Episode [Number]":** The **Master Orchestrator**. Runs both text and image ingestion in sequence, followed by `mdbook build`.
 
 ### **Agent Responsibilities during Orchestration**
