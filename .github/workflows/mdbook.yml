@@ -25,7 +25,7 @@ jobs:
           mdbook-version: '0.5.3'
 
       - name: Install mdbook-katex
-        run: cargo install mdbook-katex --version 0.9.1
+        run: cargo install mdbook-katex --version 0.10.0-alpha
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -39,7 +39,7 @@ jobs:
       - name: Build with PWA support
         run: npm run build:pwa
         env:
-          MDBOOK_PREPROCESSOR__INGEST__COMMAND: cat
+          MDBOOK_PREPROCESSOR__INGEST__COMMAND: "bash -c 'if [ \"$1\" = \"supports\" ]; then exit 0; else cat; fi' --"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
