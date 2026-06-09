@@ -4,6 +4,7 @@
 
 # Recent ..
 <!-- RECENT_START -->
+- [242 : Triggering Cancer Self-Destruct Signal](242.md)
 - [241 : What exactly is Immutability?](241.md)
 - [240 : Rise of the Observer](240.md)
 - [239 : Unification of #Resurrection and #Reincarnation](239.md)
