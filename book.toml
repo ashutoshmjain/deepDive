@@ -12,7 +12,7 @@ create-missing = false
 [preprocessor.katex]
 
 [preprocessor.ingest]
-command = "./md-publish"
+command = "md-publish"
 downloads_path = "/mnt/c/Users/ashut/Downloads"
 video_source = "/mnt/c/Users/ashut/OneDrive/Documents/Shorts"
 lightning_address = "shutosha@primal.net"
