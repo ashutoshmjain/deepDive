@@ -22,10 +22,10 @@ jobs:
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v2
         with:
-          mdbook-version: '0.4.48'
+          mdbook-version: '0.5.3'
 
       - name: Install mdbook-katex
-        run: cargo install mdbook-katex
+        run: cargo install mdbook-katex --version 0.9.1
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
