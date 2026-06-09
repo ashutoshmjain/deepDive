@@ -38,6 +38,8 @@ jobs:
 
       - name: Build with PWA support
         run: npm run build:pwa
+        env:
+          MDBOOK_PREPROCESSOR__INGEST__COMMAND: cat
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
