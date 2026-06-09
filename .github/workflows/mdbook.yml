@@ -37,9 +37,9 @@ jobs:
         run: npm ci
 
       - name: Build with PWA support
-        run: npm run build:pwa
-        env:
-          MDBOOK_PREPROCESSOR__INGEST__COMMAND: "bash -c 'if [ \"$1\" = \"supports\" ]; then exit 0; else cat; fi' --"
+        run: |
+          sed -i '/\[preprocessor.ingest\]/,/title_word_limit = 5/d' book.toml
+          npm run build:pwa
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
