@@ -24,7 +24,15 @@ jobs:
         with:
           mdbook-version: '0.5.3'
 
+      - name: Cache mdbook-katex
+        id: cache-katex
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/mdbook-katex
+          key: ${{ runner.os }}-mdbook-katex-0.10.0-alpha
+
       - name: Install mdbook-katex
+        if: steps.cache-katex.outputs.cache-hit != 'true'
         run: cargo install mdbook-katex --version 0.10.0-alpha
 
       - name: Setup Node.js
@@ -38,6 +46,7 @@ jobs:
 
       - name: Build with PWA support
         run: |
+          # Disable preprocessor for CI build stability
           sed -i '/\[preprocessor.ingest\]/,/title_word_limit = 5/d' book.toml
           npm run build:pwa
 
