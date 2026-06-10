@@ -11,10 +11,10 @@ _An integrated exploration of intelligence - that sticks :-)_
 This is a **Clean Internet** publication: universally accessible, anonymous, and clutter-free. No trackers, no cookies, no ads. We conduct deep research into technology, finance, and philosophy, refined in our [open-source repository](https://github.com/ashutoshmjain/deepDive).
 
 ### Quick Start
-- **Navigation:** Toggle the <i class="fa fa-bars"></i> sidebar for chapters, or use <i class="fa fa-search"></i> to search.
+- **Navigation:** Toggle the <i class="fa-solid fa-bars"></i> sidebar for chapters, or use <i class="fa-solid fa-magnifying-glass"></i> to search.
 - **Install as App:** Enjoy **offline access**, faster loading, and a clean home-screen icon.
-  - **iOS:** Share <i class="fa fa-share-square-o"></i> → **Add to Home Screen**.
-  - **Android:** Menu <i class="fa fa-ellipsis-v"></i> → **Install App**.
+  - **iOS:** Share <i class="fa-solid fa-share-from-square"></i> → **Add to Home Screen**.
+  - **Android:** Menu <i class="fa-solid fa-ellipsis-vertical"></i> → **Install App**.
 
 ### The Process
 - **Research:** Synthesizing listener inputs with high-fidelity AI-driven deep searches.
