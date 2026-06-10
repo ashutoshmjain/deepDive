@@ -18,11 +18,17 @@ DeepDive research is published using the **[mdIngest](https://github.com/ashutos
 
 ---
 
+## 🎨 Philosophy: Video-as-Cover
+
+We are moving away from the "static image and text" standard of the last century. In this project, **static cover photos are obsolete**. Instead, we prioritize high-fidelity video overview infographics (created with tools like **[Mosaic.so](https://mosaic.so)**) to introduce each research episode. This "Video-as-Cover" approach allows researchers to provide an engaging, cinematic introduction that bridges the gap between rigorous academic depth and modern short-form media.
+
+---
+
 ## 🔑 The "Master Key" Strategy
 To ensure perfect synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets.
 1.  **Articles:** Strictly named `src/225.md`.
-2.  **Images:** Strictly named `src/img/225.png`.
-3.  **Videos:** Named by episode number plus a descriptive suffix (e.g., `src/vid/234-intro.mp4`).
+2.  **Videos:** The primary visual asset. Named by episode number plus a descriptive suffix (e.g., `src/vid/234-intro.mp4`).
+3.  **Images:** Archived only. Named `src/img/225.png`. They are NOT injected into the publication and serve only as a repository-level record.
 4.  **Titles:** Automatically formatted as `# 225 : Title` (max 5 words).
 5.  **Navigation:** Numbered episodes are pinned to the `# Recent ..` section of `SUMMARY.md`.
 
