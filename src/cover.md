@@ -18,6 +18,7 @@ This is a **Clean Internet** publication: universally accessible, anonymous, and
 
 ### The Process
 - **Research:** Synthesizing listener inputs with high-fidelity AI-driven deep searches.
+- **Collaborate:** Check the WIP (Work In Progress) research in the repository and email us at [amj@shutri.com](mailto:amj@shutri.com).
 - **Publish:** Iteratively refined papers are published here for open-source review.
 - **Listen:** Research is transformed into concise, high-quality audio episodes. 
 
