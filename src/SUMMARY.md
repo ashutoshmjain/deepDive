@@ -2,33 +2,41 @@
 
 - [Deep Dive with Gemini](./cover.md)
 
+
+
 # Recent ..
 <!-- RECENT_START -->
 - [242 : Triggering Cancer Self-Destruct Signal](242.md)
 - [241 : What exactly is Immutability?](241.md)
 - [240 : Rise of the Observer](240.md)
 - [239 : Unification of #Resurrection and #Reincarnation](239.md)
-- [238 : Calculus of Liberation.](././238.md)
-- [237 : SATA - The daily dividend company](././237.md)
-- [236 : AGI Vs GAI](././236.md)
-- [235 : Future of Sovereign Credit](././235.md)
-- [234 : Satoshi Dividends via Lightning Network](././234.md)
-- [233 : what exactly is NOT consciousness !](././233.md)
-- [232 : The Orthogonal Manifold](././232.md)
-- [231 : Why don't LLMs self-prompt ?](././231.md)
-- [230 : STRC - derivatives and inflows](././230.md)
-- [229 : The Energy-Intelligence Equivalence Principle](././229.md)
-- [228 : What is Google Worth?](././228.md)
-- [227 : 60 billion call option](././227.md)
-- [226 : Root access to self \-](././226.md)
-- [225 : BTC: Global Pristine Collateral Network](././225.md)
-- [224 : TPUs vs GPUs: AI Commodification](././224.md)
-- [223 : Observer Patch Holography](././223.md)
-- [222 : Homeownership - American Dream!](././222.md)
-- [221 : The perfect playbook](././221.md)
-- [220 : AI Made Me a Believer](././220.md)
+- [238 : Calculus of Liberation.](238.md)
+- [237 : SATA - The daily dividend company](237.md)
+- [236 : AGI Vs GAI](236.md)
+- [235 : Future of Sovereign Credit](235.md)
+- [234 : Satoshi Dividends via Lightning Network](234.md)
+- [233 : what exactly is NOT consciousness !](233.md)
+- [232 : The Orthogonal Manifold](232.md)
+- [231 : Why don't LLMs self-prompt ?](231.md)
+- [230 : STRC - derivatives and inflows](230.md)
+- [229 : The Energy-Intelligence Equivalence Principle](229.md)
+- [228 : What is Google Worth?](228.md)
+- [227 : 60 billion call option](227.md)
+- [226 : Root access to self \-](226.md)
+- [225 : BTC: Global Pristine Collateral Network](225.md)
+- [224 : TPUs vs GPUs: AI Commodification](224.md)
+- [223 : Observer Patch Holography](223.md)
+- [222 : Homeownership - American Dream!](222.md)
 <!-- RECENT_END -->
 
+# WIP / Parked
+- [None at this moment. Join us on GitHub!](https://github.com/ashutoshmjain/deepDive)
+
+# Archive
+## Older Episodes
+- [221 : The perfect playbook](221.md)
+- [220 : AI Made Me a Believer](220.md)
+## Older Episodes
 # The Bitcoin Standard & Sovereign Assets
 - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)
 - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -44,7 +52,6 @@
 - [The Sovereign Portfolio Allocation](./the-sovereign-allocation.md)
 
 # The AI Revolution & Machine Intelligence
-- [The Social Synapse: Defining Meaning](./meaningOfMeaning-2.md)
 - [AI and the Cantillon Effect](./cantillonAI.md)
 - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
 - [AI vs. Human Brain](./LLMvsBrain.md)
@@ -59,9 +66,7 @@
 - [The Inevitability of Open Source](./longliveOpenSource.md)
 
 # Digital Credit & The STRC Bridge
-- [Hacking Your Retirement with ROC](./retirementHackingWithROC-02.md)
 - [STRC: The 8,000 Bitcoin Model](./STRC8k.md)
-- [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
 - [Bitcoin: From Cash to Credit](./the-pivot-from-ecash-to-digital-credit.md)
 - [MSTR’s 1.44 Billion Reserve](./STRC.md)
 - [STRC Update: Jan 2025](./STRC_update.md)
@@ -77,7 +82,6 @@
 - [What is Digital Credit?](./digital-credit.md)
 
 # Economics, Capital & The Global Shift
-- [2025: A Global Strategic Retrospective](./GlobalStrategicRetrospective2025.md)
 - [NVIDIA: The Great Asset Decoupling](./mag7split.md)
 - [The Path to 15% GDP Growth](./pathTo15percentGDP.md)
 - [Corporate Treasury Report 2026](./corporate-treasury-report.md)
@@ -86,7 +90,6 @@
 - [The Great Digital Fragmentation](./the-great-fragmentation.md)
 
 # Philosophy, Science & The Nature of Reality
-- [Hardware Divorce: The Great Decoupling](./desktopWars2025.md)
 - [Uniqueness and the Prime Identity](./QM1-Uniqueness.md)
 - [Universal Zero-Knowledge Proof Verification](./QM2-verification.md)
 - [Chiral Ontology of the Self](./the-chiral-ontology-of-self.md)
