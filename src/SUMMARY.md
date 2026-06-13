@@ -2,15 +2,42 @@
 
 - [Deep Dive with Gemini](./cover.md)
 
+
+
+
 # The Tip of the Chain
 <!-- RECENT_START -->
+- [241 : What exactly is Immutability?](241.md)
+- [240 : Rise of the Observer](240.md)
+- [239 : Unification of #Resurrection and #Reincarnation](239.md)
+- [238 : Calculus of Liberation.](238.md)
+- [237 : SATA - The daily dividend company](237.md)
+- [236 : AGI Vs GAI](236.md)
+- [235 : Future of Sovereign Credit](235.md)
+- [234 : Satoshi Dividends via Lightning Network](234.md)
+- [233 : what exactly is NOT consciousness !](233.md)
+- [232 : The Orthogonal Manifold](232.md)
+- [231 : Why don't LLMs self-prompt ?](231.md)
+- [230 : STRC - derivatives and inflows](230.md)
+- [229 : The Energy-Intelligence Equivalence Principle](229.md)
+- [228 : What is Google Worth?](228.md)
+- [227 : 60 billion call option](227.md)
+- [226 : Root access to self \-](226.md)
+- [225 : BTC: Global Pristine Collateral Network](225.md)
+- [224 : TPUs vs GPUs: AI Commodification](224.md)
+- [223 : Observer Patch Holography](223.md)
+- [222 : Homeownership - American Dream!](222.md)
+- [221 : The perfect playbook](221.md)
 <!-- RECENT_END -->
 
 # The Network
+
 - [The Mempool (Unconfirmed)](mempool.md)
+    - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
 
 - [Deep Storage (The Ledger)](archive.md)
-
+  - [Verified Blocks (Older Episodes)]()
+      - [220 : AI Made Me a Believer](220.md)
   - [Bitcoin]()
       - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)
       - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -33,7 +60,6 @@
       - [STRC Update: Jan 2025](./STRC_update.md)
       - [MSTR’s 1.44 Billion Reserve](./STRC.md)
       - [The 8,000 Bitcoin Model](./STRC8k.md)
-      - [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
       - [STRC and Digital Capital](./strcBlackhole.md)
       - [The Great Credit Pivot](./strcPE.md)
       - [STRC for Peaceful Retirement](./strcRetirement.md)
@@ -49,7 +75,6 @@
       - [The Gatekeepers of Capital](./gatekeepers-of-capital.md)
       - [Path to 15% GDP](./pathTo15percentGDP.md)
       - [Old Guard vs. New School](./portfolio-battle-old-vs-new.md)
-      - [Hacking Your Retirement](./retirementHackingWithROC-02.md)
       - [Tax-Advantaged Retirement Streams](./retirementHackingWithROC.md)
       - [The Great NVIDIA Decoupling](./mag7split.md)
       - [The Sovereign Portfolio Allocation](./the-sovereign-allocation.md)
@@ -85,17 +110,14 @@
       - [The Value-Leverage Paradigm](./valueLeverage.md)
       - [Vim: The Modal Instrument](./musicOfVim.md)
       - [What Exactly Is Karm Yoga?](./What-exactly-is-Karmyoga.md)
-      - [Strategic Retrospective 2025](./GlobalStrategicRetrospective2025.md)
       - [Google: The Physical AI Roadmap](./intrinsicGoogle.md)
       - [Google’s New AI Hardware](./googleAsLispMachine.md)
       - [AI and the Jevons Paradox](./jevonsParadoxAI.md)
       - [From Mainframes to the Cloud](./mainframesToAI.md)
       - [The Architecture of Meaning](./meaning.md)
-      - [The Social Synapse](./meaningOfMeaning-2.md)
       - [SAP and the AI Agent](./SAPinAIera.md)
       - [From App Store to Agent](./appStoreTOagentStore.md)
       - [The Bitcoin Lottery Solution](./bitcoinLottery.md)
-      - [The Great Hardware Divorce](./desktopWars2025.md)
       - [Age of Autonomous Robots](./the-age-of-autonomous-robots.md)
       - [Chiral Ontology of the Self](./the-chiral-ontology-of-self.md)
       - [The Great Digital Fragmentation](./the-great-fragmentation.md)
