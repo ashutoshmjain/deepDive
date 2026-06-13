@@ -30,7 +30,7 @@
 <!-- RECENT_END -->
 
 # WIP / Parked
-- [None at this moment. Join us on GitHub!](https://github.com/ashutoshmjain/deepDive)
+- [None at this moment. Join us on GitHub!](github.md)
 
 # Archive
 ## Older Episodes
