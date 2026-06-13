@@ -5,7 +5,11 @@
 
 
 
-# The Tip of the Chain
+
+
+
+
+# Recent Blocks
 <!-- RECENT_START -->
 - [241 : What exactly is Immutability?](241.md)
 - [240 : Rise of the Observer](240.md)
@@ -30,12 +34,12 @@
 - [221 : The perfect playbook](221.md)
 <!-- RECENT_END -->
 
-# The Network
+# The Mempool (Unconfirmed)
+- [WIP / Call for Participation](mempool.md)
+  - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
 
-- [The Mempool (Unconfirmed)](mempool.md)
-    - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
-
-- [Deep Storage (The Ledger)](archive.md)
+# Deep Storage (The Ledger)
+- [The Archive](archive.md)
   - [Verified Blocks (Older Episodes)]()
       - [220 : AI Made Me a Believer](220.md)
   - [Bitcoin]()
