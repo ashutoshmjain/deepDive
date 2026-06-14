@@ -4,39 +4,35 @@
 
 
 
-
-
-
-
-
-# Recent Blocks
-<!-- RECENT_START -->
-- [241 : What exactly is Immutability?](241.md)
-- [240 : Rise of the Observer](240.md)
-- [239 : Unification of #Resurrection and #Reincarnation](239.md)
-- [238 : Calculus of Liberation.](238.md)
-- [237 : SATA - The daily dividend company](237.md)
-- [236 : AGI Vs GAI](236.md)
-- [235 : Future of Sovereign Credit](235.md)
-- [234 : Satoshi Dividends via Lightning Network](234.md)
-- [233 : what exactly is NOT consciousness !](233.md)
-- [232 : The Orthogonal Manifold](232.md)
-- [231 : Why don't LLMs self-prompt ?](231.md)
-- [230 : STRC - derivatives and inflows](230.md)
-- [229 : The Energy-Intelligence Equivalence Principle](229.md)
-- [228 : What is Google Worth?](228.md)
-- [227 : 60 billion call option](227.md)
-- [226 : Root access to self \-](226.md)
-- [225 : BTC: Global Pristine Collateral Network](225.md)
-- [224 : TPUs vs GPUs: AI Commodification](224.md)
-- [223 : Observer Patch Holography](223.md)
-- [222 : Homeownership - American Dream!](222.md)
-- [221 : The perfect playbook](221.md)
-<!-- RECENT_END -->
-
 # The Mempool (Unconfirmed)
 - [WIP / Call for Participation](mempool.md)
   - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
+
+# Current Block (21 Episodes)
+- [Current Block](current.md)
+<!-- RECENT_START -->
+  - [241 : What exactly is Immutability?](241.md)
+  - [240 : Rise of the Observer](240.md)
+  - [239 : Unification of #Resurrection and #Reincarnation](239.md)
+  - [238 : Calculus of Liberation.](238.md)
+  - [237 : SATA - The daily dividend company](237.md)
+  - [236 : AGI Vs GAI](236.md)
+  - [235 : Future of Sovereign Credit](235.md)
+  - [234 : Satoshi Dividends via Lightning Network](234.md)
+  - [233 : what exactly is NOT consciousness !](233.md)
+  - [232 : The Orthogonal Manifold](232.md)
+  - [231 : Why don't LLMs self-prompt ?](231.md)
+  - [230 : STRC - derivatives and inflows](230.md)
+  - [229 : The Energy-Intelligence Equivalence Principle](229.md)
+  - [228 : What is Google Worth?](228.md)
+  - [227 : 60 billion call option](227.md)
+  - [226 : Root access to self \-](226.md)
+  - [225 : BTC: Global Pristine Collateral Network](225.md)
+  - [224 : TPUs vs GPUs: AI Commodification](224.md)
+  - [223 : Observer Patch Holography](223.md)
+  - [222 : Homeownership - American Dream!](222.md)
+  - [221 : The perfect playbook](221.md)
+<!-- RECENT_END -->
 
 # Deep Storage (The Ledger)
 - [The Archive](archive.md)

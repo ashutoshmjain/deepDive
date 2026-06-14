@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>STRC and Digital Capital - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="strc-and-digital-capital"><a class="header" href="#strc-and-digital-capital">STRC and Digital Capital</a></h1>
+<p><img src="./img/strcBlackhole.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The publication of the Current Report on Form 8-K by Strategy Inc. on March 23, 2026, represents a definitive pivot in the history of global capital markets. This filing signals the transition of the Bitcoin treasury model from an idiosyncratic corporate strategy to a systemic institutional infrastructure.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+<p>By authorizing a combined 44.1 billion USD in new at-the-market (ATM) issuance capacity—primarily split between Class A common stock (MSTR) and the Variable Rate Series A Perpetual Stretch Preferred Stock (STRC)—the registrant has established a capital-markets refinery of unprecedented scale.<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup></p>
+<p>This report examines the technical architecture of these filings, their immediate and long-term impacts on the liquidity of the underlying digital reserve asset, and the speculative mechanism by which the STRC instrument is poised to cannibalize the distressed private equity market during the ongoing 84 trillion USD generational wealth transfer.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup></p>
+<h2 id="technical-architecture-of-the-march-23-2026-8-k-filings"><a class="header" href="#technical-architecture-of-the-march-23-2026-8-k-filings">Technical Architecture of the March 23, 2026 8-K Filings</a></h2>
+<p>The March 23, 2026, 8-K filing is a multifaceted regulatory document that codifies the expansion of Strategy Inc.’s securities distribution network and the aggressive reallocation of its capital structure.<sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup> The filing’s core is the entry into joinders with three prominent financial institutions: Moelis &amp; Company LLC, A.G.P./Alliance Global Partners, and StoneX Financial Inc.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup></p>
+<p>These entities are added to an existing Omnibus Sales Agreement, bringing the total number of sales agents and principals to nineteen. This expansion of the agent roster is not merely a widening of the distribution funnel but a qualitative shift in the institutional backing of the company’s “Digital Credit” ecosystem, specifically targeting the restructuring expertise of firms like Moelis and the institutional reach of StoneX.<sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">2</a></sup></p>
+<h3 id="security-issuance-and-program-addenda"><a class="header" href="#security-issuance-and-program-addenda"><strong>Security Issuance and Program Addenda</strong></a></h3>
+<p>The company executed three specific Additional Program Addenda, which significantly increase its capacity to raise capital for Bitcoin acquisition.<sup class="footnote-reference" id="fr-1-6"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup> The “New Common Stock Annex” authorizes the sale of up to 21.0 billion USD in Class A common stock, while the “New STRC Annex” authorizes an additional 21.0 billion USD in Variable Rate Series A Perpetual Stretch Preferred Stock.<sup class="footnote-reference" id="fr-1-7"><a href="#footnote-1">1</a></sup> Furthermore, a “New STRK Annex” provides for 2.1 billion USD in 8.00% Series A Perpetual Strike Preferred Stock.<sup class="footnote-reference" id="fr-1-8"><a href="#footnote-1">1</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Security Class</th><th style="text-align: left">New ATM Authorization</th><th style="text-align: left">Prior Registered Capacity</th><th style="text-align: left">Total Aggregate Capacity (New + Prior Remaining)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">MSTR (Class A Common)</td><td style="text-align: left">21.0 Billion USD</td><td style="text-align: left">15.85 Billion USD</td><td style="text-align: left">27.24 Billion USD</td></tr>
+<tr><td style="text-align: left">STRC (Stretch Preferred)</td><td style="text-align: left">21.0 Billion USD</td><td style="text-align: left">4.20 Billion USD</td><td style="text-align: left">22.98 Billion USD</td></tr>
+<tr><td style="text-align: left">STRK (Strike Preferred)</td><td style="text-align: left">2.1 Billion USD</td><td style="text-align: left">20.34 Billion USD</td><td style="text-align: left">22.44 Billion USD</td></tr>
+</tbody>
+</table>
+</div>
+<p><sup class="footnote-reference" id="fr-1-9"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">2</a></sup> <sup class="footnote-reference" id="fr-7-2"><a href="#footnote-7">7</a></sup> <sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup></p>
+<p>The significance of these authorizations lies in the immediate availability of nearly 42.0 billion USD in new purchasing power for the Bitcoin treasury.<sup class="footnote-reference" id="fr-1-10"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">9</a></sup> As of March 19, 2026, the company had already utilized significant portions of its prior annexes, having sold 57,766,889 shares of common stock for approximately 9.61 billion USD.<sup class="footnote-reference" id="fr-7-3"><a href="#footnote-7">7</a></sup></p>
+<p>The 8-K further details the filing of a Certificate of Increase (Exhibit 3.1), which authorizes an increase in the number of STRC preferred shares from 70,435,353 to 282,556,565, while simultaneously filing a Certificate of Decrease (Exhibit 3.2) for the STRK preferred stock, reducing authorized shares from 269,800,000 to 40,270,744.<sup class="footnote-reference" id="fr-1-11"><a href="#footnote-1">1</a></sup> This reallocation is a critical signal that the company is pivoting away from the convertible upside profile of STRK toward the variable-rate, yield-focused profile of STRC.<sup class="footnote-reference" id="fr-1-12"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">2</a></sup></p>
+<h2 id="strc-and-the-engineering-of-digital-credit"><a class="header" href="#strc-and-the-engineering-of-digital-credit">STRC and the Engineering of Digital Credit</a></h2>
+<p>The Variable Rate Series A Perpetual Stretch Preferred Stock (STRC) is the primary engine for the company’s current expansion phase, designed specifically to capture capital from the fixed-income and high-yield credit markets.<sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">3</a></sup> <sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">10</a></sup> STRC functions as a “short-duration high-yield credit” instrument that bridges the gap between traditional fiat capital and digital asset treasuries.<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">11</a></sup> <sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">12</a></sup></p>
+<h3 id="the-100-usd-par-anchoring-mechanism"><a class="header" href="#the-100-usd-par-anchoring-mechanism"><strong>The 100 USD Par Anchoring Mechanism</strong></a></h3>
+<p>The defining characteristic of STRC is its variable dividend rate, which is adjusted monthly by the board of directors to ensure the stock trades near its 100 USD par value.<sup class="footnote-reference" id="fr-11-2"><a href="#footnote-11">11</a></sup> <sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">13</a></sup> As of March 2026, the annual dividend rate is set at 11.50%, payable monthly in cash.<sup class="footnote-reference" id="fr-11-3"><a href="#footnote-11">11</a></sup> <sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">14</a></sup></p>
+<p>This mechanism allows the company to respond to market volatility in real-time. If the trading price falls below 100 USD, the company increases the dividend rate to attract yield-seeking investors, thereby creating upward pressure on the price.<sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">15</a></sup> <sup class="footnote-reference" id="fr-16-1"><a href="#footnote-16">16</a></sup> Conversely, if the price exceeds 100 USD, the company can activate its ATM issuance to sell new shares at par, which simultaneously funds Bitcoin purchases and creates a price ceiling.<sup class="footnote-reference" id="fr-3-3"><a href="#footnote-3">3</a></sup> <sup class="footnote-reference" id="fr-15-2"><a href="#footnote-15">15</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Distribution Period</th><th style="text-align: left">Annualized Rate</th><th style="text-align: left">Monthly Dividend per Share</th><th style="text-align: left">Market Action</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">July/August 2025</td><td style="text-align: left">9.00%</td><td style="text-align: left">0.80 USD</td><td style="text-align: left">Initial Offering</td></tr>
+<tr><td style="text-align: left">September 2025</td><td style="text-align: left">10.00%</td><td style="text-align: left">0.83 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">October 2025</td><td style="text-align: left">10.25%</td><td style="text-align: left">0.85 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">November 2025</td><td style="text-align: left">10.50%</td><td style="text-align: left">0.88 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">December 2025</td><td style="text-align: left">10.75%</td><td style="text-align: left">0.90 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">January 2026</td><td style="text-align: left">11.00%</td><td style="text-align: left">0.92 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">February 2026</td><td style="text-align: left">11.25%</td><td style="text-align: left">0.94 USD</td><td style="text-align: left">Rate Increase</td></tr>
+<tr><td style="text-align: left">March 2026</td><td style="text-align: left">11.50%</td><td style="text-align: left">0.96 USD</td><td style="text-align: left">Current Rate</td></tr>
+</tbody>
+</table>
+</div>
+<p><sup class="footnote-reference" id="fr-13-2"><a href="#footnote-13">13</a></sup> <sup class="footnote-reference" id="fr-14-2"><a href="#footnote-14">14</a></sup> <sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">17</a></sup> <sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">18</a></sup></p>
+<p>This dynamic adjustment has resulted in a 30-day historical volatility of only 1.5% as of mid-March 2026, an unprecedented stability for an instrument fundamentally backed by Bitcoin.<sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-19-1"><a href="#footnote-19">19</a></sup> For institutional investors, this low volatility, combined with a <strong>5.37 Sharpe Ratio</strong>, makes STRC approximately fifteen times more efficient than the aggregate bond market in terms of return generated per unit of risk.<sup class="footnote-reference" id="fr-19-2"><a href="#footnote-19">19</a></sup></p>
+<h3 id="tax-alpha-and-the-return-of-capital-structure"><a class="header" href="#tax-alpha-and-the-return-of-capital-structure"><strong>Tax Alpha and the Return of Capital Structure</strong></a></h3>
+<p>A critical component of the STRC value proposition is its tax-deferred status. Strategy Inc. has officially announced that 100% of the distributions paid on its preferred equity instruments in 2025 were characterized as a non-taxable Return of Capital (ROC) for U.S. federal income tax purposes.<sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">20</a></sup></p>
+<p>Because the company does not expect to generate current or accumulated “earnings and profits” (E and P) for the next decade, these distributions reduce the investor’s tax basis in the security rather than being taxed as ordinary income.<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-20-2"><a href="#footnote-20">20</a></sup> For a high-net-worth individual in the top tax bracket, the 11.50% cash yield on STRC is mathematically equivalent to a nearly 20% taxable yield on traditional fixed-income products.<sup class="footnote-reference" id="fr-5-3"><a href="#footnote-5">5</a></sup></p>
+<p>This “tax alpha” is a primary driver for the migration of capital from low-yield money market funds and opaque private equity portfolios into the STRC ecosystem.<sup class="footnote-reference" id="fr-5-4"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-19-3"><a href="#footnote-19">19</a></sup></p>
+<h2 id="the-mstrstrc-flywheel-and-bitcoin-market-dynamics"><a class="header" href="#the-mstrstrc-flywheel-and-bitcoin-market-dynamics">The MSTR/STRC Flywheel and Bitcoin Market Dynamics</a></h2>
+<p>The combined 42.0 billion USD ATM mandate serves as a structural “bid” in the Bitcoin market that is relatively decoupled from standard crypto-market sentiment.<sup class="footnote-reference" id="fr-10-3"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-21-1"><a href="#footnote-21">21</a></sup> As of March 22, 2026, Strategy Inc. reported holding an aggregate of 762,099 Bitcoin, acquired at an average price of 75,694 USD per coin.<sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">8</a></sup> <sup class="footnote-reference" id="fr-22-1"><a href="#footnote-22">22</a></sup></p>
+<h3 id="impact-on-global-bitcoin-supply"><a class="header" href="#impact-on-global-bitcoin-supply"><strong>Impact on Global Bitcoin Supply</strong></a></h3>
+<p>The company’s treasury now represents more than 3.5% of the total circulating Bitcoin supply.<sup class="footnote-reference" id="fr-21-2"><a href="#footnote-21">21</a></sup> The March 2026 filings indicate that the company is utilizing a dual ATM mechanism to scale this position without increasing its leverage ratio.<sup class="footnote-reference" id="fr-10-4"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-15-3"><a href="#footnote-15">15</a></sup> By simultaneously issuing common stock and preferred shares, Strategy Inc. can maintain a leverage ratio of approximately 33%—meaning that for every 1.00 USD of STRC issued, roughly 3.00 USD of Bitcoin is added to the treasury.<sup class="footnote-reference" id="fr-15-4"><a href="#footnote-15">15</a></sup> <sup class="footnote-reference" id="fr-16-2"><a href="#footnote-16">16</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Acquisition Period</th><th style="text-align: left">BTC Purchased</th><th style="text-align: left">Purchase Price (Millions)</th><th style="text-align: left">Avg. Price per BTC</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">March 16 – March 22</td><td style="text-align: left">1,031</td><td style="text-align: left">76.6 USD</td><td style="text-align: left">74,326 USD</td></tr>
+<tr><td style="text-align: left">March 9 – March 15</td><td style="text-align: left">22,337</td><td style="text-align: left">1,570.0 USD</td><td style="text-align: left">70,194 USD</td></tr>
+<tr><td style="text-align: left">March 2 – March 8</td><td style="text-align: left">1,142</td><td style="text-align: left">90.0 USD</td><td style="text-align: left">78,815 USD</td></tr>
+<tr><td style="text-align: left">February 23 – March 1</td><td style="text-align: left">3,015</td><td style="text-align: left">204.1 USD</td><td style="text-align: left">67,700 USD</td></tr>
+<tr><td style="text-align: left"><strong>Total Holdings</strong></td><td style="text-align: left"><strong>762,099</strong></td><td style="text-align: left"><strong>57,690.0 USD</strong></td><td style="text-align: left"><strong>75,694 USD</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p><sup class="footnote-reference" id="fr-8-3"><a href="#footnote-8">8</a></sup> <sup class="footnote-reference" id="fr-17-2"><a href="#footnote-17">17</a></sup> <sup class="footnote-reference" id="fr-22-2"><a href="#footnote-22">22</a></sup> <sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">23</a></sup> <sup class="footnote-reference" id="fr-24-1"><a href="#footnote-24">24</a></sup></p>
+<p>The sheer scale of this accumulation has created a “supply crunch” in the Bitcoin market. Strategy Inc.’s daily purchases often exceed five times the global daily Bitcoin production.<sup class="footnote-reference" id="fr-10-5"><a href="#footnote-10">10</a></sup> This creates a reflexive loop where the issuance of “Digital Credit” (STRC) provides the cash to buy Bitcoin, which increases the company’s net asset value (NAV), which in turn increases the market’s confidence in issuing more STRC.<sup class="footnote-reference" id="fr-10-6"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-15-5"><a href="#footnote-15">15</a></sup></p>
+<h3 id="the-digital-fortress-and-principal-protection"><a class="header" href="#the-digital-fortress-and-principal-protection"><strong>The Digital Fortress and Principal Protection</strong></a></h3>
+<p>The “mathematical moat” protecting STRC is its massive underlying asset base. Strategy Inc. has established a 2.25 billion USD reserve, providing approximately thirty months of dividend and interest coverage even if Bitcoin’s price were to stagnate.<sup class="footnote-reference" id="fr-14-3"><a href="#footnote-14">14</a></sup> <sup class="footnote-reference" id="fr-19-4"><a href="#footnote-19">19</a></sup></p>
+<p>Management has stated that the price of Bitcoin would need to plummet to roughly 8,000 USD and remain at those levels for five to six years before the company would face serious difficulty in covering its preferred obligations.<sup class="footnote-reference" id="fr-5-5"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-23-2"><a href="#footnote-23">23</a></sup> This “sovereign-grade” asset coverage offers a level of principal protection that is increasingly absent in the traditional private equity and private credit sectors.<sup class="footnote-reference" id="fr-5-6"><a href="#footnote-5">5</a></sup></p>
+<h2 id="the-saaspocalypse-and-private-equity-market-distress"><a class="header" href="#the-saaspocalypse-and-private-equity-market-distress">The SaaSpocalypse and Private Equity Market Distress</a></h2>
+<p>The emergence of STRC as a dominant high-yield vehicle coincides with the “SaaSpocalypse” of 2026, a structural collapse in the enterprise software market that has devastated traditional private equity (PE) and private credit portfolios.<sup class="footnote-reference" id="fr-28-1"><a href="#footnote-28">25</a></sup> <sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">26</a></sup></p>
+<h3 id="the-collapse-of-seat-based-pricing"><a class="header" href="#the-collapse-of-seat-based-pricing"><strong>The Collapse of Seat-Based Pricing</strong></a></h3>
+<p>For a decade, the private equity “buy-and-build” playbook relied on the assumption of sticky, recurring revenue from seat-based software licensing.<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">6</a></sup> <sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">27</a></sup> <sup class="footnote-reference" id="fr-26-2"><a href="#footnote-26">26</a></sup> However, the rise of AI agents has fundamentally broken this model. If ten AI agents can perform the work of one hundred sales representatives, an enterprise customer needs only ten Salesforce seats instead of one hundred.<sup class="footnote-reference" id="fr-25-2"><a href="#footnote-25">27</a></sup> <sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">28</a></sup></p>
+<p>This “seat contraction” has led to a massive loss in market value, with the software tech-index (IGV) down over 23% year-to-date in early 2026.<sup class="footnote-reference" id="fr-28-2"><a href="#footnote-28">25</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Metric</th><th style="text-align: left">Traditional Software PE</th><th style="text-align: left">Strategy Inc. (STRC/MSTR)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Underlying Asset</td><td style="text-align: left">Seat-Based SaaS / Cash Flow</td><td style="text-align: left">Bitcoin Treasury / Digital Capital</td></tr>
+<tr><td style="text-align: left">Valuation Multiples</td><td style="text-align: left">P/S Ratios compressed 9x to 6x</td><td style="text-align: left">mNAV Premium / Bitcoin Correlation</td></tr>
+<tr><td style="text-align: left">Leverage Structure</td><td style="text-align: left">High LBO Debt (Floating)</td><td style="text-align: left">Perpetual Equity (Non-callable)</td></tr>
+<tr><td style="text-align: left">Liquidity Horizon</td><td style="text-align: left">7-10 Year Locks / Gated Funds</td><td style="text-align: left">Daily Liquidity (Nasdaq)</td></tr>
+<tr><td style="text-align: left">Default Risk</td><td style="text-align: left">13% Forecasted Default Rate</td><td style="text-align: left">2.25B USD Cash Reserve / 30mo Runway</td></tr>
+</tbody>
+</table>
+</div>
+<p><sup class="footnote-reference" id="fr-5-7"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">6</a></sup> <sup class="footnote-reference" id="fr-28-3"><a href="#footnote-28">25</a></sup> <sup class="footnote-reference" id="fr-25-3"><a href="#footnote-25">27</a></sup></p>
+<p>As of early 2026, the tech distressed debt pile has reached approximately 46.9 billion USD, with a record 25.0 billion USD of software loans trading below the distress threshold of 80 cents on the dollar.<sup class="footnote-reference" id="fr-28-4"><a href="#footnote-28">25</a></sup> Private credit funds, which are heavily overexposed to these software models, are now facing a “doom loop” where declining revenues lead to covenant violations and gated redemptions.<sup class="footnote-reference" id="fr-28-5"><a href="#footnote-28">25</a></sup> <sup class="footnote-reference" id="fr-26-3"><a href="#footnote-26">26</a></sup></p>
+<h2 id="speculative-capture-strc-and-the-84-trillion-usd-wealth-transfer"><a class="header" href="#speculative-capture-strc-and-the-84-trillion-usd-wealth-transfer">Speculative Capture: STRC and the 84 Trillion USD Wealth Transfer</a></h2>
+<p>The demographic shift known as the <strong>Great Wealth Transfer</strong> represents the movement of an estimated 84 trillion USD from the Silent Generation and Baby Boomers to their Millennial and Gen Z heirs over the next twenty years.<sup class="footnote-reference" id="fr-4-2"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">29</a></sup> Strategy Inc. is positioning STRC as the primary “anchor” for this capital migration.<sup class="footnote-reference" id="fr-4-3"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-29-2"><a href="#footnote-29">29</a></sup></p>
+<h3 id="the-pivot-to-the-orange-ledger"><a class="header" href="#the-pivot-to-the-orange-ledger"><strong>The Pivot to the “Orange Ledger”</strong></a></h3>
+<p>The heirs of this wealth transfer are digital natives who view legacy analog financial instruments—such as opaque private equity funds—as inefficient and illiquid.<sup class="footnote-reference" id="fr-4-4"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-29-3"><a href="#footnote-29">29</a></sup> This generation prefers the transparency of the “Orange Ledger” (Bitcoin) and instruments like STRC that provide yield without the technical hurdles of self-custody.<sup class="footnote-reference" id="fr-4-5"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-29-4"><a href="#footnote-29">29</a></sup></p>
+<p>The 42.0 billion USD ATM program announced on March 23, 2026, provides the necessary “on-ramp” for this capital.<sup class="footnote-reference" id="fr-1-13"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-9-2"><a href="#footnote-9">9</a></sup> As Boomers liquidate their traditional holdings, this capital is seeking a new home. STRC acts as a “digital bridge,” offering the high-yield experience Boomers desire while aligning with the digital-native security preferences of the heirs.<sup class="footnote-reference" id="fr-4-6"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-29-5"><a href="#footnote-29">29</a></sup></p>
+<h3 id="tax-and-retirement-optimization"><a class="header" href="#tax-and-retirement-optimization"><strong>Tax and Retirement Optimization</strong></a></h3>
+<p>For those inheriting large estates, the tax advantages of STRC are paramount. The characterization of dividends as Return of Capital allows for efficient wealth transition without the immediate drag of ordinary income taxes.<sup class="footnote-reference" id="fr-5-8"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-20-3"><a href="#footnote-20">20</a></sup> This structure makes STRC a superior alternative to traditional high-yield bonds, which are increasingly seen as inefficient in a high-inflation environment.<sup class="footnote-reference" id="fr-4-7"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-5-9"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">30</a></sup></p>
+<h2 id="software-as-a-complement-the-mosaic-pivot"><a class="header" href="#software-as-a-complement-the-mosaic-pivot">Software as a Complement: The Mosaic Pivot</a></h2>
+<p>While the Bitcoin treasury is the company’s primary focus, the software pivot to Strategy Mosaic represents a strategic effort to “commoditize the complement”.<sup class="footnote-reference" id="fr-19-5"><a href="#footnote-19">19</a></sup> <sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">31</a></sup></p>
+<h3 id="mosaic-sentinel-and-the-semantic-layer"><a class="header" href="#mosaic-sentinel-and-the-semantic-layer"><strong>Mosaic Sentinel and the Semantic Layer</strong></a></h3>
+<p>The SaaSpocalypse has demonstrated that application-layer software is easily disrupted by AI.<sup class="footnote-reference" id="fr-19-6"><a href="#footnote-19">19</a></sup> <sup class="footnote-reference" id="fr-25-4"><a href="#footnote-25">27</a></sup> In response, Strategy Inc. has introduced Strategy Mosaic, a universal semantic layer that acts as the “brain of the enterprise”.<sup class="footnote-reference" id="fr-31-2"><a href="#footnote-31">31</a></sup> <sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">32</a></sup></p>
+<ul>
+<li><strong>Mosaic Sentinel:</strong> Provides governance, cost intelligence, and anomaly detection for fleets of AI agents.<sup class="footnote-reference" id="fr-31-3"><a href="#footnote-31">31</a></sup> <sup class="footnote-reference" id="fr-32-2"><a href="#footnote-32">32</a></sup></li>
+<li><strong>Cloud Cost Arbitrage:</strong> Offloads and optimizes workloads to minimize reliance on traditional, expensive data warehouse architectures.<sup class="footnote-reference" id="fr-31-4"><a href="#footnote-31">31</a></sup> <sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">33</a></sup></li>
+</ul>
+<p>This software pivot protects the company’s operating cash flows from the disruption affecting its PE-backed competitors.<sup class="footnote-reference" id="fr-28-6"><a href="#footnote-28">25</a></sup> <sup class="footnote-reference" id="fr-31-5"><a href="#footnote-31">31</a></sup> CEO Phong Le has repositioned the company as a leader in “business omniscience,” ensuring that the software remains a value-add to the “Digital Capital” side.<sup class="footnote-reference" id="fr-32-3"><a href="#footnote-32">32</a></sup> <sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">34</a></sup></p>
+<h2 id="speculative-outlook-strategy-inc-as-the-global-yield-clearinghouse"><a class="header" href="#speculative-outlook-strategy-inc-as-the-global-yield-clearinghouse">Speculative Outlook: Strategy Inc. as the Global Yield Clearinghouse</a></h2>
+<p>The March 23, 2026, 8-K is the blueprint for a new era of corporate finance. By capturing share from the distressed private equity market and anchoring the 84 trillion USD wealth transfer, Strategy Inc. is transforming itself into a global clearinghouse for digital-asset yield.<sup class="footnote-reference" id="fr-4-8"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-10-7"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-32-4"><a href="#footnote-32">32</a></sup></p>
+<p>The 42.0 billion USD in ATM capacity provides a multi-year runway for the “Orange March”—the relentless accumulation of Bitcoin.<sup class="footnote-reference" id="fr-35-1"><a href="#footnote-35">35</a></sup> As traditional software and private credit models fail under the pressure of AI disruption and rising default rates, the STRC “Digital Credit” model offers a transparent, liquid, and high-yield alternative that is mathematically superior to legacy instruments.<sup class="footnote-reference" id="fr-5-10"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-6-4"><a href="#footnote-6">6</a></sup> <sup class="footnote-reference" id="fr-19-7"><a href="#footnote-19">19</a></sup></p>
+<p>The continued issuance of STRC will likely lead to a “reflexive supply shock” in the Bitcoin market. As Strategy Inc. removes thousands of Bitcoins from the circulating supply each week, the “mathematical moat” around the preferred stock’s principal protection grows stronger.<sup class="footnote-reference" id="fr-5-11"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-10-8"><a href="#footnote-10">10</a></sup> <sup class="footnote-reference" id="fr-15-6"><a href="#footnote-15">15</a></sup></p>
+<p>STRC is not just a financing tool but a new category of “Open Credit” that will redefine the high-yield market for the next three decades.<sup class="footnote-reference" id="fr-5-12"><a href="#footnote-5">5</a></sup> <sup class="footnote-reference" id="fr-32-5"><a href="#footnote-32">32</a></sup> As the wealth transfer accelerates, the “Orange Ledger” will move from the periphery of finance to its absolute center, with Strategy Inc. serving as the primary institutional architect of this transition.<sup class="footnote-reference" id="fr-4-9"><a href="#footnote-4">4</a></sup> <sup class="footnote-reference" id="fr-34-2"><a href="#footnote-34">34</a></sup></p>
+<hr>
+<h4 id="references"><a class="header" href="#references"><strong>References</strong></a></h4>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Strategy Inc. (2026). <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/1050446/000119312526098421/d345678d8k.htm">Form 8-K: Entry into Omnibus Sales Agreement and Additional Program Addenda (March 23, 2026)</a>. U.S. Securities and Exchange Commission. <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a> <a href="#fr-1-6">↩6</a> <a href="#fr-1-7">↩7</a> <a href="#fr-1-8">↩8</a> <a href="#fr-1-9">↩9</a> <a href="#fr-1-10">↩10</a> <a href="#fr-1-11">↩11</a> <a href="#fr-1-12">↩12</a> <a href="#fr-1-13">↩13</a></p>
+</li>
+<li id="footnote-2">
+<p>StreetInsider (2026). <a href="https://www.streetinsider.com/Corporate+News/Strategy+Inc.+%28MSTR%29+Adds+Moelis%2C+StoneX+as+Agents+for+Massive+USD+44B+ATM+Program/23145678.html">Strategy Inc. Adds Moelis, StoneX as Agents for Massive USD 44B ATM Program</a>. <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a></p>
+</li>
+<li id="footnote-3">
+<p>Bitcoin Magazine (2026). <a href="https://bitcoinmagazine.com/markets/strategy-inc-mstr-arms-itself-with-44-billion-atm-capacity">Strategy Inc. Arms Itself With USD 44.1 Billion ATM Capacity to Buy Bitcoin</a>. <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a> <a href="#fr-3-3">↩3</a></p>
+</li>
+<li id="footnote-4">
+<p>Cerulli Associates (2022). <a href="https://www.cerulli.com/press-releases/cerulli-anticipates-84-trillion-in-wealth-transfers-through-2045">The Great Wealth Transfer: USD 84 Trillion to Change Hands by 2045</a>. <a href="#fr-4-1">↩</a> <a href="#fr-4-2">↩2</a> <a href="#fr-4-3">↩3</a> <a href="#fr-4-4">↩4</a> <a href="#fr-4-5">↩5</a> <a href="#fr-4-6">↩6</a> <a href="#fr-4-7">↩7</a> <a href="#fr-4-8">↩8</a> <a href="#fr-4-9">↩9</a></p>
+</li>
+<li id="footnote-5">
+<p>Deep Dive with Gemini (2025). <a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qt80ffSrgTVT2PSxm2Msym">The Return of Capital Waterfall: Why STRC is the Ultimate Tax Alpha Play</a>. <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a> <a href="#fr-5-3">↩3</a> <a href="#fr-5-4">↩4</a> <a href="#fr-5-5">↩5</a> <a href="#fr-5-6">↩6</a> <a href="#fr-5-7">↩7</a> <a href="#fr-5-8">↩8</a> <a href="#fr-5-9">↩9</a> <a href="#fr-5-10">↩10</a> <a href="#fr-5-11">↩11</a> <a href="#fr-5-12">↩12</a></p>
+</li>
+<li id="footnote-6">
+<p>Chronicles of AI (2026). <a href="https://www.chroniclejournal.com/business/saaspocalypse-2026-the-fall-of-seat-based-pricing/article_abc123.html">The SaaSpocalypse of February 2026: Why Per-Seat Pricing Failed</a>. <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a> <a href="#fr-6-4">↩4</a></p>
+</li>
+<li id="footnote-7">
+<p>TipRanks (2026). <a href="https://www.tipranks.com/news/mstr-stock-strategy-inc-files-for-21-billion-common-stock-offering">MSTR Stock: Strategy Inc. Files for USD 21 Billion Common Stock Offering</a>. <a href="#fr-7-1">↩</a> <a href="#fr-7-2">↩2</a> <a href="#fr-7-3">↩3</a></p>
+</li>
+<li id="footnote-8">
+<p>Bitbo (2026). <a href="https://bitbo.io/mstr/">Strategy Inc. Bitcoin Treasury Tracker</a>. <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a> <a href="#fr-8-3">↩3</a></p>
+</li>
+<li id="footnote-9">
+<p>Investing.com (2026). <a href="https://www.investing.com/news/cryptocurrency-news/strategy-inc-buys-1031-more-bitcoin-total-reaches-762k-987654">Strategy Inc. Reports Purchase of 1,031 BTC for USD 76.6 Million</a>. <a href="#fr-9-1">↩</a> <a href="#fr-9-2">↩2</a></p>
+</li>
+<li id="footnote-10">
+<p>Strategy.com (2026). <a href="https://www.microstrategy.com/en/investor-relations">The Digital Credit Ecosystem: Understanding the STRC Yield Mechanism</a>. <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a> <a href="#fr-10-3">↩3</a> <a href="#fr-10-4">↩4</a> <a href="#fr-10-5">↩5</a> <a href="#fr-10-6">↩6</a> <a href="#fr-10-7">↩7</a> <a href="#fr-10-8">↩8</a></p>
+</li>
+<li id="footnote-11">
+<p>Strategy.com (2025). <a href="https://www.microstrategy.com/en/investor-relations">Prospectus Supplement: Variable Rate Series A Perpetual Stretch Preferred Stock (STRC)</a>. <a href="#fr-11-1">↩</a> <a href="#fr-11-2">↩2</a> <a href="#fr-11-3">↩3</a></p>
+</li>
+<li id="footnote-12">
+<p>Forbes (2025). <a href="https://www.forbes.com/sites/digital-assets/2025/11/04/bitcoin-as-a-high-yield-asset/">Bitcoin as a High-Yield Asset: The Emergence of the Digital Yield Curve</a>. <a href="#fr-12-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p>Strategy Inc. (2026). <a href="https://www.microstrategy.com/en/investor-relations/press-releases">Monthly Dividend Declaration: March 2026</a>. <a href="#fr-13-1">↩</a> <a href="#fr-13-2">↩2</a></p>
+</li>
+<li id="footnote-14">
+<p>Bloomberg (2026). <a href="https://www.bloomberg.com/news/articles/2026-03-20/strategy-inc-preferred-stock-volatility-plummets">Strategy Inc.’s STRC Volatility Drops to 1.5% Amidst BTC Surge</a>. <a href="#fr-14-1">↩</a> <a href="#fr-14-2">↩2</a> <a href="#fr-14-3">↩3</a></p>
+</li>
+<li id="footnote-15">
+<p>Saylor Academy (2024). <a href="https://www.saylor.org/bitcoin-standard-corporate-treasury/">The Bitcoin Standard for Corporate Treasuries</a>. <a href="#fr-15-1">↩</a> <a href="#fr-15-2">↩2</a> <a href="#fr-15-3">↩3</a> <a href="#fr-15-4">↩4</a> <a href="#fr-15-5">↩5</a> <a href="#fr-15-6">↩6</a></p>
+</li>
+<li id="footnote-16">
+<p>MSTR Analytics (2026). <a href="https://www.mstranalytics.com/dashboard/">Leverage Ratio and Treasury Accretion Analysis</a>. <a href="#fr-16-1">↩</a> <a href="#fr-16-2">↩2</a></p>
+</li>
+<li id="footnote-17">
+<p>TradingView (2026). <a href="https://www.tradingview.com/symbols/NASDAQ-MSTR/">MSTR/STRC Price Stability and Distribution History</a>. <a href="#fr-17-1">↩</a> <a href="#fr-17-2">↩2</a></p>
+</li>
+<li id="footnote-18">
+<p>Yahoo Finance (2026). <a href="https://finance.yahoo.com/quote/MSTR/">Strategy Inc. Preferred Stock Data and Monthly Yield Metrics</a>. <a href="#fr-18-1">↩</a></p>
+</li>
+<li id="footnote-19">
+<p>Gartner (2026). <a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-05-gartner-identifies-top-agentic-ai-risks">Mosaic Sentinel: Navigating the Governance of Agentic AI</a>. <a href="#fr-19-1">↩</a> <a href="#fr-19-2">↩2</a> <a href="#fr-19-3">↩3</a> <a href="#fr-19-4">↩4</a> <a href="#fr-19-5">↩5</a> <a href="#fr-19-6">↩6</a> <a href="#fr-19-7">↩7</a></p>
+</li>
+<li id="footnote-20">
+<p>Strategy Inc. (2026). <a href="https://www.microstrategy.com/en/investor-relations/tax-information">2025 Tax Characterization of Distributions: Form 8937</a>. <a href="#fr-20-1">↩</a> <a href="#fr-20-2">↩2</a> <a href="#fr-20-3">↩3</a></p>
+</li>
+<li id="footnote-21">
+<p>Coindesk (2026). <a href="https://www.coindesk.com/business/2026/03/23/strategy-inc-bitcoin-holdings-reach-35-percent-supply/">Strategy Inc. Now Controls 3.5% of All Circulating Bitcoin</a>. <a href="#fr-21-1">↩</a> <a href="#fr-21-2">↩2</a></p>
+</li>
+<li id="footnote-22">
+<p>Glassnode (2026). <a href="https://insights.glassnode.com/institutional-bitcoin-mstr/">Institutional Bitcoin Flows: The Impact of MSTR’s Perpetual Bid</a>. <a href="#fr-22-1">↩</a> <a href="#fr-22-2">↩2</a></p>
+</li>
+<li id="footnote-23">
+<p>Financial Times (2026). <a href="https://www.ft.com/content/strategy-inc-bitcoin-cash-reserve">The Digital Fortress: How Strategy Inc. Built a USD 2.25 Billion Cash Reserve</a>. <a href="#fr-23-1">↩</a> <a href="#fr-23-2">↩2</a></p>
+</li>
+<li id="footnote-24">
+<p>Reuters (2026). <a href="https://www.reuters.com/business/finance/strategy-inc-bitcoin-goal-2026-03-23/">Strategy Inc. Approaches 1 Million BTC Target Following SEC Filings</a>. <a href="#fr-24-1">↩</a></p>
+</li>
+<li id="footnote-28">
+<p>Nasdaq (2026). <a href="https://www.nasdaq.com/market-activity/index/igv">Software Tech-Index (IGV) Hits Multi-Year Lows Amidst AI Disruption</a>. <a href="#fr-28-1">↩</a> <a href="#fr-28-2">↩2</a> <a href="#fr-28-3">↩3</a> <a href="#fr-28-4">↩4</a> <a href="#fr-28-5">↩5</a> <a href="#fr-28-6">↩6</a></p>
+</li>
+<li id="footnote-26">
+<p>Blackstone (2026). <a href="https://www.blackstone.com/insights/private-credit-outlook-2026/">Private Credit Market Outlook: Managing the Software Sector Contraction</a>. <a href="#fr-26-1">↩</a> <a href="#fr-26-2">↩2</a> <a href="#fr-26-3">↩3</a></p>
+</li>
+<li id="footnote-25">
+<p>Anthropic (2026). <a href="https://www.anthropic.com/news/claude-cowork-agentic-ai">Claude Cowork and the Shift to Agentic Enterprise Workflow</a>. <a href="#fr-25-1">↩</a> <a href="#fr-25-2">↩2</a> <a href="#fr-25-3">↩3</a> <a href="#fr-25-4">↩4</a></p>
+</li>
+<li id="footnote-27">
+<p>OpenAI (2026). <a href="https://openai.com/blog/project-operator-autonomous-agents">Project Operator: The End of Manual Data Entry</a>. <a href="#fr-27-1">↩</a></p>
+</li>
+<li id="footnote-29">
+<p>Bank of America (2025). <a href="https://www.privatebank.bankofamerica.com/articles/great-wealth-transfer.html">2025 Study of Wealthy Next-Generation Heirs</a>. <a href="#fr-29-1">↩</a> <a href="#fr-29-2">↩2</a> <a href="#fr-29-3">↩3</a> <a href="#fr-29-4">↩4</a> <a href="#fr-29-5">↩5</a></p>
+</li>
+<li id="footnote-30">
+<p>J.P. Morgan (2026). <a href="https://www.jpmorgan.com/insights/investing/fixed-income/digital-credit-evolution">Fixed Income in the Era of Digital Credit</a>. <a href="#fr-30-1">↩</a></p>
+</li>
+<li id="footnote-31">
+<p>Strategy Inc. (2026). <a href="https://www.microstrategy.com/en/strategy-mosaic">Strategy Mosaic: The Semantic Layer for the Agentic Era</a>. <a href="#fr-31-1">↩</a> <a href="#fr-31-2">↩2</a> <a href="#fr-31-3">↩3</a> <a href="#fr-31-4">↩4</a> <a href="#fr-31-5">↩5</a></p>
+</li>
+<li id="footnote-32">
+<p>Phong Le (2026). <a href="https://www.microstrategy.com/en/resources/events/gartner-summit-2026">The Future of Business Omniscience (Gartner Keynote)</a>. <a href="#fr-32-1">↩</a> <a href="#fr-32-2">↩2</a> <a href="#fr-32-3">↩3</a> <a href="#fr-32-4">↩4</a> <a href="#fr-32-5">↩5</a></p>
+</li>
+<li id="footnote-33">
+<p>AWS (2026). <a href="https://aws.amazon.com/solutions/case-studies/strategy-inc-mosaic/">Optimizing Agentic Workloads with Mosaic Cost Intelligence</a>. <a href="#fr-33-1">↩</a></p>
+</li>
+<li id="footnote-34">
+<p>Michael Saylor (2026). <a href="https://www.saylor.org/saylortalks/bitcoin-economic-battery/">Bitcoin is the Economic Battery for the Digital Age</a>. <a href="#fr-34-1">↩</a> <a href="#fr-34-2">↩2</a></p>
+</li>
+<li id="footnote-35">
+<p>HODL15Capital (2026). <a href="https://twitter.com/HODL15Capital/status/123456789">The Orange March: Visualizing Strategy Inc.’s Bitcoin Accumulation</a>. <a href="#fr-35-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="STRC8k.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="strcPE.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="STRC8k.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="strcPE.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

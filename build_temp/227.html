@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>227 : 60 billion call option - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="227--60-billion-call-option"><a class="header" href="#227--60-billion-call-option">227 : 60 billion call option</a></h1>
+<p><img src="./img/227.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The landscape of artificial intelligence in early 2026 has transitioned from a period of speculative research and model-centric competition to an era of industrial-scale vertical integration and conglomerate-led deployment.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> This shift is most prominently evidenced by a sequence of massive private sector transactions involving xAI, SpaceX, Cursor, and Groq, which collectively represent the largest concentration of capital, compute, and talent in the history of the technology industry.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> The strategic logic underpinning these deals indicates a fundamental rejection of the unbundled software-as-a-service (SaaS) model in favor of a vertically integrated “super-stack” that controls every layer of the intelligence lifecycle, from specialized inference silicon and massive training superclusters to the integrated development environments (IDEs) through which the world’s code is written.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup></p>
+<h2 id="the-emergence-of-the-musk-conglomerate-and-the-spacex-xai-consolidation"><a class="header" href="#the-emergence-of-the-musk-conglomerate-and-the-spacex-xai-consolidation"><strong>The Emergence of the Musk Conglomerate and the SpaceX-xAI Consolidation</strong></a></h2>
+<p>In February 2026, the formal merger of SpaceX and xAI created a <sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup>,250,000,000,000 USD entity that serves as the primary engine for this industrial realignment.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup> This transaction is not merely a financial consolidation but a direct strategic response to the physical constraints currently limiting the scaling of artificial intelligence: power availability and terrestrial infrastructure bottlenecks.<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup> By bringing xAI under the corporate governance of SpaceX, the entity leverages the substantial cash flows of the Starlink satellite internet constellation to fund the multi-billion-dollar research and development cycles of the Grok model family.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup></p>
+<p>The financial structure of the merger utilizes a “Valuation Matryoshka” strategy, wherein standalone business units with high volatility or capital requirements are folded into a larger, narrative-driven conglomerate.<sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">3</a></sup> This maneuver allows xAI—which reported losses of <sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">6</a></sup>,400,000,000 USD in 2025—to be shielded from the immediate scrutiny of independent valuation by the <sup class="footnote-reference" id="fr-4-2"><a href="#footnote-4">4</a></sup>,420,000,000 USD in operating profit generated by Starlink in the same period.<sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">6</a></sup> The acquisition of xAI by SpaceX at a 250,000,000,000 USD valuation provides the aerospace giant with a critical layer of intelligence capability as it prepares for a historic IPO targeting a <sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup>,750,000,000,000 USD valuation and a 75,000,000,000 USD raise in June 2026.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup></p>
+<h3 id="orbital-compute-and-the-terrestrial-power-bottleneck"><a class="header" href="#orbital-compute-and-the-terrestrial-power-bottleneck"><strong>Orbital Compute and the Terrestrial Power Bottleneck</strong></a></h3>
+<p>A primary rationale for the SpaceX-xAI union is the development of Orbital Data Centers (ODCs).<sup class="footnote-reference" id="fr-4-3"><a href="#footnote-4">4</a></sup> Between 2025 and 2026, AI development encountered its first hard constraint in the form of power grid capacity, with U.S. transmission infrastructure build-outs estimated to take <sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup> to <sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">9</a></sup> years.<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">5</a></sup> SpaceX has filed requests with the Federal Communications Commission (FCC) contemplating a constellation of up to one million satellites designed to provide “energy-efficient AI compute” from orbit, utilizing solar power and natural vacuum cooling to bypass terrestrial land and power constraints.<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">10</a></sup> The entity aims to deploy 100 gigawatts of AI computing capacity per year from orbit, which analysts suggest could deliver compute at a cost 25% lower than ground-based alternatives.<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">11</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">SpaceX Business Unit</th><th style="text-align: left">2025 Reported Metrics</th><th style="text-align: left">2026 Forward Projections</th><th style="text-align: left">Strategic Role in AI Stack</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Starlink</strong></td><td style="text-align: left">20,000,000,000 USD+ Revenue <sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">12</a></sup></td><td style="text-align: left">10M+ Subscribers <sup class="footnote-reference" id="fr-12-2"><a href="#footnote-12">12</a></sup></td><td style="text-align: left">Primary cash flow engine for AI CAPEX.<sup class="footnote-reference" id="fr-6-4"><a href="#footnote-6">6</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>xAI</strong></td><td style="text-align: left">6,400,000,000 USD Loss <sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup></td><td style="text-align: left">Grok <sup class="footnote-reference" id="fr-5-3"><a href="#footnote-5">5</a></sup> Training <sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">13</a></sup></td><td style="text-align: left">Intelligence layer/Model developer.<sup class="footnote-reference" id="fr-3-3"><a href="#footnote-3">3</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Launch/Starship</strong></td><td style="text-align: left">165 Missions <sup class="footnote-reference" id="fr-12-3"><a href="#footnote-12">12</a></sup></td><td style="text-align: left">Sub-100 USD/kg to orbit <sup class="footnote-reference" id="fr-12-4"><a href="#footnote-12">12</a></sup></td><td style="text-align: left">Logistics for Orbital Data Centers.<sup class="footnote-reference" id="fr-4-4"><a href="#footnote-4">4</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Colossus Cluster</strong></td><td style="text-align: left">200,000 H100s <sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">14</a></sup></td><td style="text-align: left">1M GPU equivalents <sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">15</a></sup></td><td style="text-align: left">Dedicated training infrastructure.<sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">8</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>The Colossus supercomputer cluster in Memphis, Tennessee, serves as the terrestrial anchor for this infrastructure.<sup class="footnote-reference" id="fr-16-1"><a href="#footnote-16">16</a></sup> Built in a record 122 days using liquid-cooled Supermicro racks, Colossus currently operates with over 200,000 Nvidia H100 GPUs and consumes approximately 250 megawatts of power, with plans to scale to one million units by late 2026.<sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">17</a></sup> To maintain grid independence, the site utilizes <sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">18</a></sup> gas turbines capable of producing 420 megawatts alongside 208 Tesla Megapack battery systems.<sup class="footnote-reference" id="fr-17-2"><a href="#footnote-17">17</a></sup></p>
+<h2 id="the-60000000000-usd-strategic-premium-for-cursor"><a class="header" href="#the-60000000000-usd-strategic-premium-for-cursor"><strong>The 60,000,000,000 USD Strategic Premium for Cursor</strong></a></h2>
+<p>The announcement in April 2026 that SpaceX has secured a call option to acquire Cursor (parent company Anysphere) for 60,000,000,000 USD represents a monumental escalation in the competition for the AI-assisted software development market.<sup class="footnote-reference" id="fr-12-5"><a href="#footnote-12">12</a></sup> Cursor, which reached <sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">2</a></sup>,000,000,000 USD in annualized recurring revenue (ARR) in February 2026, has emerged as the leading AI-native IDE, with adoption across more than half of the Fortune 500.<sup class="footnote-reference" id="fr-6-5"><a href="#footnote-6">6</a></sup></p>
+<p>The deal structure is highly non-traditional, offering SpaceX two paths: a 60,000,000,000 USD buyout later in 2026 or a <sup class="footnote-reference" id="fr-8-3"><a href="#footnote-8">8</a></sup>,000,000,000 USD payment for joint development.<sup class="footnote-reference" id="fr-7-2"><a href="#footnote-7">7</a></sup> This <sup class="footnote-reference" id="fr-8-4"><a href="#footnote-8">8</a></sup>,000,000,000 USD “cooperation fee” effectively functions as an options premium, securing exclusive rights to the asset while SpaceX completes its IPO.<sup class="footnote-reference" id="fr-3-4"><a href="#footnote-3">3</a></sup> For Cursor, the deal provides transformational capital; the <sup class="footnote-reference" id="fr-8-5"><a href="#footnote-8">8</a></sup>,000,000,000 USD partnership payment alone dwarfs the <sup class="footnote-reference" id="fr-3-5"><a href="#footnote-3">3</a></sup>,300,000,000 USD the startup raised throughout 2025.<sup class="footnote-reference" id="fr-19-1"><a href="#footnote-19">19</a></sup></p>
+<h3 id="position-pricing-and-the-decoupling-from-retail-model-costs"><a class="header" href="#position-pricing-and-the-decoupling-from-retail-model-costs"><strong>Position Pricing and the Decoupling from Retail Model Costs</strong></a></h3>
+<p>The financial significance of the 60,000,000,000 USD valuation lies in “position pricing” rather than traditional revenue multiples.<sup class="footnote-reference" id="fr-3-6"><a href="#footnote-3">3</a></sup> While the entire AI coding tools market is projected to reach less than <sup class="footnote-reference" id="fr-8-6"><a href="#footnote-8">8</a></sup>,000,000,000 USD by 2026, SpaceX is paying a massive premium to control the “gateway” through which expert engineers interact with AI models.<sup class="footnote-reference" id="fr-3-7"><a href="#footnote-3">3</a></sup> This transaction aims to solve the primary economic weakness of the AI coding tool layer: model dependency.<sup class="footnote-reference" id="fr-9-2"><a href="#footnote-9">9</a></sup></p>
+<p>Previously, Cursor operated at a structural disadvantage by paying retail prices to Anthropic and OpenAI for access to the Claude and GPT families.<sup class="footnote-reference" id="fr-6-6"><a href="#footnote-6">6</a></sup> Every dollar of revenue earned by Cursor partially funded its direct competitors, who were simultaneously rolling out integrated tools like Claude Code and Codex.<sup class="footnote-reference" id="fr-6-7"><a href="#footnote-6">6</a></sup> By leveraging xAI’s Colossus infrastructure—which SpaceX now controls—Cursor can train its proprietary Composer model at a scale that eliminates its dependence on third-party labs, fundamentally restructuring the unit economics of the business.<sup class="footnote-reference" id="fr-13-2"><a href="#footnote-13">13</a></sup></p>
+<h3 id="talent-consolidation-and-the-rebuilding-of-xai"><a class="header" href="#talent-consolidation-and-the-rebuilding-of-xai"><strong>Talent Consolidation and the Rebuilding of xAI</strong></a></h3>
+<p>The strategic importance of the Cursor deal is further emphasized by the migration of key personnel.<sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">20</a></sup> In March 2026, Cursor’s product engineering leads, Andrew Milich and Jason Ginsberg, left the startup to join xAI, reporting directly to Elon Musk.<sup class="footnote-reference" id="fr-7-3"><a href="#footnote-7">7</a></sup> This move coincided with a broader management reorganization at xAI following the departure of nearly all <sup class="footnote-reference" id="fr-16-2"><a href="#footnote-16">16</a></sup> original co-founders.<sup class="footnote-reference" id="fr-14-2"><a href="#footnote-14">14</a></sup> The infusion of Cursor’s talent, regarded as elite in the field of “AI + compiler” integration, is intended to close the seven-month developmental gap that currently separates Grok from tier-one models like Anthropic’s Claude and OpenAI’s GPT.<sup class="footnote-reference" id="fr-15-2"><a href="#footnote-15">15</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature/Metric</th><th style="text-align: left">Cursor <sup class="footnote-reference" id="fr-3-8"><a href="#footnote-3">3</a></sup> (Glass)</th><th style="text-align: left">Anysphere Historical Context</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Founder Profile</strong></td><td style="text-align: left">4 MIT alumni <sup class="footnote-reference" id="fr-21-1"><a href="#footnote-21">21</a></sup></td><td style="text-align: left">Founded 2022 26</td></tr>
+<tr><td style="text-align: left"><strong>Revenue Growth</strong></td><td style="text-align: left">100,000,000 USD (Jan 2025) to <sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">2</a></sup>,000,000,000 USD (Feb 2026) 26</td><td style="text-align: left">Fastest-growing SaaS startup <sup class="footnote-reference" id="fr-22-1"><a href="#footnote-22">22</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Model Strategy</strong></td><td style="text-align: left">Proprietary Composer model + BYOK support <sup class="footnote-reference" id="fr-21-2"><a href="#footnote-21">21</a></sup></td><td style="text-align: left">Moving toward full in-house training <sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">23</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Primary Workflow</strong></td><td style="text-align: left">“Vibe Coding” / Agentic management <sup class="footnote-reference" id="fr-24-1"><a href="#footnote-24">24</a></sup></td><td style="text-align: left">Transitioning from IDE to console <sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">25</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="the-nvidia-groq-deal-and-the-birth-of-the-inference-economy"><a class="header" href="#the-nvidia-groq-deal-and-the-birth-of-the-inference-economy"><strong>The Nvidia-Groq Deal and the Birth of the Inference Economy</strong></a></h2>
+<p>In parallel to the software and infrastructure consolidation within the Musk ecosystem, Nvidia’s 20,000,000,000 USD transaction with Groq in late 2025 has redefined the hardware landscape for 2026.<sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">2</a></sup> Structured as a non-exclusive licensing agreement for Groq’s Language Processing Unit (LPU) technology and an “acqui-hire” of its engineering leadership, the deal marks Nvidia’s transition from a GPU-only strategy to a heterogeneous data center architecture.<sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">26</a></sup></p>
+<h3 id="architectural-divergence-sram-vs-hbm"><a class="header" href="#architectural-divergence-sram-vs-hbm"><strong>Architectural Divergence: SRAM vs. HBM</strong></a></h3>
+<p>The financial and technical significance of the Groq deal centers on the memory wall—the primary bottleneck in modern AI inference.<sup class="footnote-reference" id="fr-26-2"><a href="#footnote-26">26</a></sup> Traditional GPUs utilize High Bandwidth Memory (HBM) stored off-chip, necessitating high-latency “reach-out” operations for every token generation cycle.<sup class="footnote-reference" id="fr-26-3"><a href="#footnote-26">26</a></sup> In contrast, Groq’s LPU architecture uses on-chip Static Random Access Memory (SRAM) as its primary storage medium.<sup class="footnote-reference" id="fr-26-4"><a href="#footnote-26">26</a></sup> This architectural choice eliminates the memory bandwidth bottleneck, delivering 150 TB/s of bandwidth per chip—nearly seven times faster than Nvidia’s Vera Rubin GPU.<sup class="footnote-reference" id="fr-26-5"><a href="#footnote-26">26</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Performance Metric</th><th style="text-align: left">Groq LPU (SRAM)</th><th style="text-align: left">Traditional GPU (HBM)</th><th style="text-align: left">Relative Advantage</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Memory Bandwidth</strong></td><td style="text-align: left">150 TB/s per chip</td><td style="text-align: left">~22 TB/s per chip</td><td style="text-align: left">~7x Faster <sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">27</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Token Generation</strong></td><td style="text-align: left">500–750 tokens/sec</td><td style="text-align: left">~100 tokens/sec</td><td style="text-align: left">5–7x Faster <sup class="footnote-reference" id="fr-27-2"><a href="#footnote-27">27</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Energy Efficiency</strong></td><td style="text-align: left">1–3 joules/token</td><td style="text-align: left">10–30 joules/token</td><td style="text-align: left">~10x Efficient <sup class="footnote-reference" id="fr-27-3"><a href="#footnote-27">27</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Execution Model</strong></td><td style="text-align: left">Deterministic/Compiler-led</td><td style="text-align: left">Dynamic/Hardware-led</td><td style="text-align: left">Zero Jitter <sup class="footnote-reference" id="fr-28-1"><a href="#footnote-28">28</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>At the GTC 2026 conference, Nvidia unveiled the Groq <sup class="footnote-reference" id="fr-3-9"><a href="#footnote-3">3</a></sup> LPX inference accelerator, the first product of this integration.<sup class="footnote-reference" id="fr-26-6"><a href="#footnote-26">26</a></sup> Manufactured by Samsung on a 4nm process to diversify supply chain risk away from TSMC, the LPX rack system features 256 interconnected LPUs.<sup class="footnote-reference" id="fr-26-7"><a href="#footnote-26">26</a></sup> Nvidia claims that a system combining Vera Rubin GPUs for “prefill” and LPUs for “decode” delivers <sup class="footnote-reference" id="fr-18-2"><a href="#footnote-18">18</a></sup> times higher inference throughput per megawatt than the previous-generation Blackwell platform for trillion-parameter models.<sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">29</a></sup></p>
+<h3 id="implications-for-coding-agents-and-the-150ms-threshold"><a class="header" href="#implications-for-coding-agents-and-the-150ms-threshold"><strong>Implications for Coding Agents and the 150ms Threshold</strong></a></h3>
+<p>The speed of inference is uniquely critical for the coding landscape, where developer productivity is governed by cognitive flow states.<sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">30</a></sup> Research in early 2026 identifies a “150ms Latency Threshold” for AI coding assistants: suggestions arriving in under 100ms are perceived as “instantaneous,” resulting in a 75% acceptance rate.<sup class="footnote-reference" id="fr-30-2"><a href="#footnote-30">30</a></sup> When latency exceeds 350ms, acceptance rates drop to below 18%, as the delay breaks the developer’s focus and triggers context switching.<sup class="footnote-reference" id="fr-30-3"><a href="#footnote-30">30</a></sup> By integrating Groq’s LPU technology, the new generation of coding tools aims for sub-100ms time-to-first-token (TTFT) performance, enabling “magical” autocomplete that feels predictive rather than reactive.<sup class="footnote-reference" id="fr-30-4"><a href="#footnote-30">30</a></sup></p>
+<h2 id="comparative-analysis-of-major-ai-investments-2025-2026"><a class="header" href="#comparative-analysis-of-major-ai-investments-2025-2026"><strong>Comparative Analysis of Major AI Investments (2025-2026)</strong></a></h2>
+<p>The scale of the xAI-Cursor-Groq nexus must be benchmarked against the broader landscape of AI capital expenditures, which are projected to reach 700,000,000,000 USD in 2026.<sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">31</a></sup> Private funding for AI startups topped 150,000,000,000 USD over the trailing twelve months, and the combined valuation of the ten largest private AI companies now exceeds <sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">2</a></sup>,000,000,000,000 USD.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Deal / Investment</th><th style="text-align: left">Announced Size</th><th style="text-align: left">Primary Participant(s)</th><th style="text-align: left">Strategic Intent</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>SpaceX-xAI Merger</strong></td><td style="text-align: left">250,000,000,000 USD (xAI Value)</td><td style="text-align: left">SpaceX, xAI <sup class="footnote-reference" id="fr-7-4"><a href="#footnote-7">7</a></sup></td><td style="text-align: left">Vertical stack consolidation.<sup class="footnote-reference" id="fr-4-5"><a href="#footnote-4">4</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>OpenAI Series F/G</strong></td><td style="text-align: left">110,000,000,000 USD</td><td style="text-align: left">OpenAI, Thrive, Microsoft <sup class="footnote-reference" id="fr-4-6"><a href="#footnote-4">4</a></sup></td><td style="text-align: left">Model pretraining scale.<sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">32</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Cursor Buyout Option</strong></td><td style="text-align: left">60,000,000,000 USD</td><td style="text-align: left">SpaceX, Anysphere <sup class="footnote-reference" id="fr-21-3"><a href="#footnote-21">21</a></sup></td><td style="text-align: left">Application layer dominance.<sup class="footnote-reference" id="fr-3-10"><a href="#footnote-3">3</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Electronic Arts Take-Private</strong></td><td style="text-align: left">56,600,000,000 USD</td><td style="text-align: left">Silver Lake, PIF <sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">33</a></sup></td><td style="text-align: left">Content platform capture.<sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">34</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Stargate Data Center</strong></td><td style="text-align: left">500,000,000,000 USD</td><td style="text-align: left">OpenAI, Microsoft, Oracle <sup class="footnote-reference" id="fr-35-1"><a href="#footnote-35">35</a></sup></td><td style="text-align: left">Sovereign-scale infra.<sup class="footnote-reference" id="fr-21-4"><a href="#footnote-21">21</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Anthropic Series Round</strong></td><td style="text-align: left">30,000,000,000 USD</td><td style="text-align: left">Amazon, Google, Anthropic <sup class="footnote-reference" id="fr-36-1"><a href="#footnote-36">36</a></sup></td><td style="text-align: left">Strategic compute backing.<sup class="footnote-reference" id="fr-31-2"><a href="#footnote-31">31</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>xAI Series E</strong></td><td style="text-align: left">20,000,000,000 USD</td><td style="text-align: left">Valor, Nvidia, Fidelity <sup class="footnote-reference" id="fr-13-3"><a href="#footnote-13">13</a></sup></td><td style="text-align: left">Infrastructure expansion.<sup class="footnote-reference" id="fr-37-1"><a href="#footnote-37">37</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Nvidia-Groq Deal</strong></td><td style="text-align: left">20,000,000,000 USD</td><td style="text-align: left">Nvidia, Groq <sup class="footnote-reference" id="fr-27-4"><a href="#footnote-27">27</a></sup></td><td style="text-align: left">Inference silicon capture.<sup class="footnote-reference" id="fr-26-8"><a href="#footnote-26">26</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>The 60,000,000,000 USD valuation of the Cursor option is particularly striking when compared to historical corporate acquisitions. It exceeds the price paid by Disney for 21st Century Fox (52,400,000,000 USD), despite Cursor having a fraction of the physical assets and workforce.<sup class="footnote-reference" id="fr-3-11"><a href="#footnote-3">3</a></sup> This “AI Valuation Euphoria” reflects a shift in investor discipline, where premiums are increasingly tied to the ability of a company to operationalize AI within complex workflows rather than raw benchmark scores alone.<sup class="footnote-reference" id="fr-38-1"><a href="#footnote-38">38</a></sup></p>
+<h2 id="transformation-of-the-coding-landscape-claude-vs-codex-vs-cursor"><a class="header" href="#transformation-of-the-coding-landscape-claude-vs-codex-vs-cursor"><strong>Transformation of the Coding Landscape: Claude vs. Codex vs. Cursor</strong></a></h2>
+<p>The convergence of xAI’s massive compute with Cursor’s distribution has fundamentally altered the competitive map for Anthropic’s Claude and OpenAI’s Codex.<sup class="footnote-reference" id="fr-6-8"><a href="#footnote-6">6</a></sup> In early 2026, the coding tool market has fractured into three distinct operational lanes: terminal-native agents, AI-native IDEs, and multi-editor extensions.<sup class="footnote-reference" id="fr-39-1"><a href="#footnote-39">39</a></sup></p>
+<h3 id="the-one-stack-convergence"><a class="header" href="#the-one-stack-convergence"><strong>The “One Stack” Convergence</strong></a></h3>
+<p>An unanticipated trend in April 2026 is the convergence of these tools into a single development environment.<sup class="footnote-reference" id="fr-40-1"><a href="#footnote-40">40</a></sup> Rather than competing as standalone “black boxes,” Cursor, Claude Code, and Codex are being used by early adopters as a layered stack: Cursor serves as the interface and orchestration layer, Claude Code acts as the reasoning engine for complex refactors, and Codex provides high-volume, code-specific generation.<sup class="footnote-reference" id="fr-22-2"><a href="#footnote-22">22</a></sup> This composable architecture is enabled by the Model Context Protocol (MCP) and Agent-to-Agent (A2A) standards, which reached production-ready v1.0 status in early 2026 under neutral governance.<sup class="footnote-reference" id="fr-39-2"><a href="#footnote-39">39</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Layer</th><th style="text-align: left">Primary Tool(s)</th><th style="text-align: left">Function</th><th style="text-align: left">2026 Trend</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Orchestration</strong></td><td style="text-align: left">Cursor <sup class="footnote-reference" id="fr-3-12"><a href="#footnote-3">3</a></sup> (Glass) <sup class="footnote-reference" id="fr-40-2"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Managing parallel agents.<sup class="footnote-reference" id="fr-40-3"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Move away from VS Code.<sup class="footnote-reference" id="fr-40-4"><a href="#footnote-40">40</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Execution</strong></td><td style="text-align: left">Claude Code, Codex <sup class="footnote-reference" id="fr-40-5"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Raw code generation.<sup class="footnote-reference" id="fr-40-6"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Model-as-infrastructure.<sup class="footnote-reference" id="fr-40-7"><a href="#footnote-40">40</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Review</strong></td><td style="text-align: left">Codex Plugin (in Claude) <sup class="footnote-reference" id="fr-40-8"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Adversarial pressure-testing.<sup class="footnote-reference" id="fr-40-9"><a href="#footnote-40">40</a></sup></td><td style="text-align: left">Automated PR validation.<sup class="footnote-reference" id="fr-40-10"><a href="#footnote-40">40</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="competitive-performance-and-the-harness-advantage"><a class="header" href="#competitive-performance-and-the-harness-advantage"><strong>Competitive Performance and the “Harness” Advantage</strong></a></h3>
+<p>The performance gap between frontier models has largely collapsed in the Reasoning and Logic categories, with Claude Opus 4.6, GPT-5.4, and Grok 4.1 often scoring within single digits of each other on HumanEval and GPQA Diamond benchmarks.<sup class="footnote-reference" id="fr-41-1"><a href="#footnote-41">41</a></sup> Consequently, competition has shifted to the “Harness”—the software ecosystem that provides repository-wide context and manages agentic loops.<sup class="footnote-reference" id="fr-21-5"><a href="#footnote-21">21</a></sup></p>
+<p>Anthropic’s Claude Code has emerged as a favorite among professional engineers, maintaining a 46% “most loved” rating <sup class="footnote-reference" id="fr-40-11"><a href="#footnote-40">40</a></sup> Its advantage stems from a sophisticated software harness that includes live repo context, prompt cache reuse, and structured session memory.<sup class="footnote-reference" id="fr-21-6"><a href="#footnote-21">21</a></sup> OpenAI’s Codex, however, remains <sup class="footnote-reference" id="fr-2-7"><a href="#footnote-2">2</a></sup> to <sup class="footnote-reference" id="fr-4-7"><a href="#footnote-4">4</a></sup> times more token-efficient for autonomous background tasks, making it the preferred choice for batch workloads and massive codebase refactors.<sup class="footnote-reference" id="fr-42-1"><a href="#footnote-42">42</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Benchmark</th><th style="text-align: left">Claude Opus 4.6</th><th style="text-align: left">GPT-5.3 Codex</th><th style="text-align: left">Grok 4.1 Fast</th><th style="text-align: left">Kimi K2.5 (Open)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>SWE-bench Verified</strong></td><td style="text-align: left">80.9% <sup class="footnote-reference" id="fr-43-1"><a href="#footnote-43">43</a></sup></td><td style="text-align: left">~80.0% <sup class="footnote-reference" id="fr-43-2"><a href="#footnote-43">43</a></sup></td><td style="text-align: left">70.8% [^44]</td><td style="text-align: left">71.3% <sup class="footnote-reference" id="fr-37-2"><a href="#footnote-37">37</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>HumanEval</strong></td><td style="text-align: left">~92.0% <sup class="footnote-reference" id="fr-45-1"><a href="#footnote-45">44</a></sup></td><td style="text-align: left">~96.0% <sup class="footnote-reference" id="fr-45-2"><a href="#footnote-45">44</a></sup></td><td style="text-align: left">~90.0% [^46]</td><td style="text-align: left">99.0% <sup class="footnote-reference" id="fr-45-3"><a href="#footnote-45">44</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>GPQA Diamond</strong></td><td style="text-align: left">~85.0% <sup class="footnote-reference" id="fr-45-4"><a href="#footnote-45">44</a></sup></td><td style="text-align: left">~87.0% <sup class="footnote-reference" id="fr-45-5"><a href="#footnote-45">44</a></sup></td><td style="text-align: left">~84.0% [^46]</td><td style="text-align: left">88.4% <sup class="footnote-reference" id="fr-45-6"><a href="#footnote-45">44</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Context Window</strong></td><td style="text-align: left">200K - 1M <sup class="footnote-reference" id="fr-43-3"><a href="#footnote-43">43</a></sup></td><td style="text-align: left">256K - 400K <sup class="footnote-reference" id="fr-43-4"><a href="#footnote-43">43</a></sup></td><td style="text-align: left">2M [^47]</td><td style="text-align: left">200K - 1M <sup class="footnote-reference" id="fr-16-3"><a href="#footnote-16">16</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="regulatory-oversight-and-antitrust-scrutiny-for-private-sector-transactions"><a class="header" href="#regulatory-oversight-and-antitrust-scrutiny-for-private-sector-transactions"><strong>Regulatory Oversight and Antitrust Scrutiny for Private Sector Transactions</strong></a></h2>
+<p>The sheer magnitude of these deals, combined with the concentration of power in a small number of founder-controlled entities, has triggered an unprecedented response from global regulators.<sup class="footnote-reference" id="fr-26-9"><a href="#footnote-26">26</a></sup> The Nvidia-Groq and SpaceX-Cursor transactions are being scrutinized as “Reverse Acqui-hires”—deals structured to bypass the Hart-Scott-Rodino (HSR) premerger notification requirements by utilizing licensing agreements while hollowing out a competitor’s talent base.<sup class="footnote-reference" id="fr-26-10"><a href="#footnote-26">26</a></sup></p>
+<h3 id="the-senate-investigation-and-hsr-evasion"><a class="header" href="#the-senate-investigation-and-hsr-evasion"><strong>The Senate Investigation and HSR Evasion</strong></a></h3>
+<p>On March 26, 2026, Senators Elizabeth Warren and Richard Blumenthal sent a formal inquiry to Nvidia CEO Jensen Huang, questioning whether the 20,000,000,000 USD Groq licensing deal was deliberately structured to evade antitrust review.<sup class="footnote-reference" id="fr-26-11"><a href="#footnote-26">26</a></sup> Under current HSR rules, licensing deals are often exempt from filing requirements that apply to traditional acquisitions.<sup class="footnote-reference" id="fr-26-12"><a href="#footnote-26">26</a></sup> The Senate investigation focuses on whether the hiring of Groq’s founder and the majority of its engineering staff constitutes a “merger in disguise,” effectively granting Nvidia a monopoly over the emerging low-latency inference market while maintaining the facade of Groq’s independence.<sup class="footnote-reference" id="fr-26-13"><a href="#footnote-26">26</a></sup></p>
+<p>Similarly, the SpaceX-xAI merger raises complex legal questions regarding “Cross-Sector Consolidation”.<sup class="footnote-reference" id="fr-24-2"><a href="#footnote-24">24</a></sup> Because Elon Musk held majority control of both companies before the merger, the transaction was structured as an all-stock deal that did not qualify as a change-in-control event, thus allowing xAI to avoid refinancing 20,000,000,000 USD in debt.<sup class="footnote-reference" id="fr-4-8"><a href="#footnote-4">4</a></sup> Regulators at the FTC and DOJ are investigating whether this combination allows SpaceX to leverage its dominance in orbital launch and satellite communications to disadvantage competitors in the AI compute market.<sup class="footnote-reference" id="fr-24-3"><a href="#footnote-24">24</a></sup></p>
+<h3 id="operation-ai-comply-and-layered-enforcement"><a class="header" href="#operation-ai-comply-and-layered-enforcement"><strong>Operation AI Comply and Layered Enforcement</strong></a></h3>
+<p>In the absence of a comprehensive federal AI statute, regulatory oversight in 2026 is defined by “Layered Enforcement” utilizing existing consumer protection and antitrust laws.<sup class="footnote-reference" id="fr-18-3"><a href="#footnote-18">18</a></sup></p>
+<ul>
+<li><strong>Federal Trade Commission (FTC):</strong> Chair Andrew Ferguson has launched “Operation AI Comply,” a law enforcement sweep targeting deceptive AI claims, “AI washing,” and unfair algorithmic pricing.<sup class="footnote-reference" id="fr-48-1"><a href="#footnote-48">45</a></sup> The FTC has also issued 6(b) inquiries into generative AI investments and partnerships involving Alphabet, Amazon, Anthropic, Microsoft, and OpenAI to scrutinize the impact of these relationships on the competitive landscape.<sup class="footnote-reference" id="fr-49-1"><a href="#footnote-49">46</a></sup></li>
+<li><strong>Department of Justice (DOJ):</strong> The DOJ National Security Division has implementation a Corporate Enforcement Policy focusing on “hardware-level chip location verification” and restricting “bulk US sensitive personal data” transfers to countries of concern.<sup class="footnote-reference" id="fr-23-2"><a href="#footnote-23">23</a></sup> A newly formed “AI Litigation Task Force” is empowered to challenge state AI laws that are deemed unconstitutional or burdensome to federal policy.<sup class="footnote-reference" id="fr-35-2"><a href="#footnote-35">35</a></sup></li>
+<li><strong>State-Level Regulation:</strong> States like California and Colorado have enacted comprehensive AI acts (SB 53, AB 2013, CAIA) that require “frontier developers” to publish risk frameworks, report critical safety incidents, and conduct bias audits.<sup class="footnote-reference" id="fr-25-2"><a href="#footnote-25">25</a></sup> Penalties in California can reach 1,000,000 USD per violation for large developers.<sup class="footnote-reference" id="fr-27-5"><a href="#footnote-27">27</a></sup></li>
+</ul>
+<p>The Trump administration’s December 2025 Executive Order, “Ensuring a National Policy Framework for Artificial Intelligence,” seeks to centralize oversight at the federal level and preempt what it characterizes as “onerous” state regulations that stifle innovation.<sup class="footnote-reference" id="fr-35-3"><a href="#footnote-35">35</a></sup> This has created a fractured legal environment where companies must navigate a patchwork of state mandates while the federal government aggressively pushes for deregulation to maintain “global dominance”.<sup class="footnote-reference" id="fr-38-2"><a href="#footnote-38">38</a></sup></p>
+<h2 id="economic-significance-the-saasmageddon-and-the-private-market-vacuum"><a class="header" href="#economic-significance-the-saasmageddon-and-the-private-market-vacuum"><strong>Economic Significance: The “SaaSmageddon” and the Private Market Vacuum</strong></a></h2>
+<p>The financial impact of these AI deals has created a “Great Divergence” in the technology sector.<sup class="footnote-reference" id="fr-32-2"><a href="#footnote-32">32</a></sup> While private market outcomes for AI-native companies like xAI and Cursor are larger than ever, public market software multiples have collapsed to decade lows.<sup class="footnote-reference" id="fr-32-3"><a href="#footnote-32">32</a></sup></p>
+<h3 id="the-software-apocalypse"><a class="header" href="#the-software-apocalypse"><strong>The Software Apocalypse</strong></a></h3>
+<p>Publicly traded SaaS companies are experiencing a “Software Apocalypse,” with revenue multiples dropping to 2x-5x, levels historically reserved for consumer packaged goods.<sup class="footnote-reference" id="fr-28-2"><a href="#footnote-28">28</a></sup> This beat-down is driven by three primary economic fears:</p>
+<ol>
+<li><strong>Job Elimination vs. Seat Pricing:</strong> AI productivity gains are expected to reduce the total number of knowledge workers, thus shrinking the addressable market for “per-seat” software subscriptions.<sup class="footnote-reference" id="fr-28-3"><a href="#footnote-28">28</a></sup></li>
+<li><strong>Bespoke Development:</strong> The ease of building software with tools like Claude Code allows enterprises to create their own custom solutions, bypassing the need for niche SaaS vendors.<sup class="footnote-reference" id="fr-28-4"><a href="#footnote-28">28</a></sup></li>
+<li><strong>CAC Explosion:</strong> The barrier to entry for building new software has dropped so significantly that the market is being flooded with thousands of competing products, driving customer acquisition costs (CAC) to unsustainable levels.<sup class="footnote-reference" id="fr-28-5"><a href="#footnote-28">28</a></sup></li>
+</ol>
+<h3 id="the-venture-capital-concentration-risk"><a class="header" href="#the-venture-capital-concentration-risk"><strong>The Venture Capital Concentration Risk</strong></a></h3>
+<p>The economic landscape in early 2026 is characterized by record levels of concentration.<sup class="footnote-reference" id="fr-32-4"><a href="#footnote-32">32</a></sup> The top <sup class="footnote-reference" id="fr-26-14"><a href="#footnote-26">26</a></sup> venture capital funds are capturing over 80% of all LP dollars, and this capital is being funneled almost exclusively into a small pool of AI, defense, and energy startups.<sup class="footnote-reference" id="fr-28-6"><a href="#footnote-28">28</a></sup> This has left a vacuum in the rest of the market; historically, a seed-stage company had a 50% chance of raising a Series A within four years, but since 2021, that graduation rate has been cut in half, with no quarterly cohort reaching even a 30% graduation rate.<sup class="footnote-reference" id="fr-28-7"><a href="#footnote-28">28</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Public Company</th><th style="text-align: left">May 2025 Context</th><th style="text-align: left">April 2026 Metric</th><th style="text-align: left">Economic Signal</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Duolingo</strong></td><td style="text-align: left">529 USD IPO Price <sup class="footnote-reference" id="fr-28-8"><a href="#footnote-28">28</a></sup></td><td style="text-align: left">112 USD per share <sup class="footnote-reference" id="fr-28-9"><a href="#footnote-28">28</a></sup></td><td style="text-align: left">14x P/E despite revenue growth.<sup class="footnote-reference" id="fr-28-10"><a href="#footnote-28">28</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>PayPal</strong></td><td style="text-align: left">Payments leader <sup class="footnote-reference" id="fr-28-11"><a href="#footnote-28">28</a></sup></td><td style="text-align: left">7.45 P/E</td><td style="text-align: left">Valuation at 1.1x sales.<sup class="footnote-reference" id="fr-28-12"><a href="#footnote-28">28</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Microsoft</strong></td><td style="text-align: left">3,000,000,000,000 USD Valuation <sup class="footnote-reference" id="fr-28-13"><a href="#footnote-28">28</a></sup></td><td style="text-align: left">25x P/E</td><td style="text-align: left">AI-safe haven status under pressure.<sup class="footnote-reference" id="fr-28-14"><a href="#footnote-28">28</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Amazon</strong></td><td style="text-align: left">Hyperscale lead <sup class="footnote-reference" id="fr-28-15"><a href="#footnote-28">28</a></sup></td><td style="text-align: left">27x P/E</td><td style="text-align: left">Trading lower than Walmart (47x).<sup class="footnote-reference" id="fr-28-16"><a href="#footnote-28">28</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="second-and-third-order-implications-for-the-global-economy"><a class="header" href="#second-and-third-order-implications-for-the-global-economy"><strong>Second and Third-Order Implications for the Global Economy</strong></a></h2>
+<p>The convergence of xAI, Cursor, and Groq suggests several profound shifts that will define the industrial trajectory for the remainder of the decade.</p>
+<h3 id="from-autocomplete-to-agent-management"><a class="header" href="#from-autocomplete-to-agent-management"><strong>From Autocomplete to Agent Management</strong></a></h3>
+<p>The nature of software engineering is undergoing a fundamental mutation.<sup class="footnote-reference" id="fr-50-1"><a href="#footnote-50">47</a></sup> The IDE is receding as a primary interface, replaced by “Agent Management Consoles” where developers orchestrate swarms of autonomous agents.<sup class="footnote-reference" id="fr-40-12"><a href="#footnote-40">40</a></sup> In this environment, the primary skill is no longer syntax or implementation, but the ability to articulate architectural goals and manage “Adversarial Review” loops.<sup class="footnote-reference" id="fr-40-13"><a href="#footnote-40">40</a></sup> This transition has the potential to raise global GDP by 1.3% to 4% over the next decade as AI-driven productivity gains diffuse across sectors.<sup class="footnote-reference" id="fr-43-5"><a href="#footnote-43">43</a></sup></p>
+<h3 id="geopolitical-compute-sovereignty"><a class="header" href="#geopolitical-compute-sovereignty"><strong>Geopolitical Compute Sovereignty</strong></a></h3>
+<p>The diversification of Nvidia’s manufacturing to Samsung and the development of SpaceX’s Orbital Data Centers represent a move toward “Geopolitical Compute Sovereignty”.<sup class="footnote-reference" id="fr-45-7"><a href="#footnote-45">44</a></sup> As AI compute becomes recognized as critical national infrastructure—equivalent to energy and logistics—nations are increasingly redrawing access to chips and data infrastructure along geopolitical lines.<sup class="footnote-reference" id="fr-45-8"><a href="#footnote-45">44</a></sup> Multinationals are being forced to operate separate AI stacks across regions, driven by stricter data sovereignty rules and the need for operational resilience in the face of Taiwan Strait tensions.<sup class="footnote-reference" id="fr-51-1"><a href="#footnote-51">48</a></sup></p>
+<h3 id="the-erosion-of-professional-services"><a class="header" href="#the-erosion-of-professional-services"><strong>The Erosion of Professional Services</strong></a></h3>
+<p>The “multiplier” logic of AI-native tools like Cursor is beginning to impact regulated industries such as medicine and law.<sup class="footnote-reference" id="fr-36-2"><a href="#footnote-36">36</a></sup> The expansion of the AML (Anti-Money Laundering) perimeter to include “obliged entities” such as real estate agents and accountants reflects a world where AI clears alerts and offboards clients, requiring “glass-box” audit trails for every automated decision.<sup class="footnote-reference" id="fr-36-3"><a href="#footnote-36">36</a></sup> This “Responsible AI” mandate in hubs like Singapore is a precursor to a global shift from ethical intent to demonstrable, auditable risk control.<sup class="footnote-reference" id="fr-36-4"><a href="#footnote-36">36</a></sup></p>
+<h2 id="conclusions-and-strategic-outlook"><a class="header" href="#conclusions-and-strategic-outlook"><strong>Conclusions and Strategic Outlook</strong></a></h2>
+<p>The transactions between xAI, SpaceX, Cursor, and Groq in early 2026 signal the end of the “model-only” era of artificial intelligence.<sup class="footnote-reference" id="fr-33-2"><a href="#footnote-33">33</a></sup> The industry has entered a phase of industrial consolidation where the most successful entities will be those that control the entire vertical stack: silicon architecture (LPU), training infrastructure (Colossus/Starship), and the professional distribution channel (Cursor).<sup class="footnote-reference" id="fr-3-13"><a href="#footnote-3">3</a></sup></p>
+<p>The 60,000,000,000 USD option for Cursor and the 20,000,000,000 USD licensing of Groq represent the “market price” for position-taking in an economy where intelligence is rapidly becoming a commodity.<sup class="footnote-reference" id="fr-3-14"><a href="#footnote-3">3</a></sup> The financial significance of these deals lies in their ability to decouple software innovation from the escalating rental costs of third-party compute, creating a sustainable path to profitability in a public market that has become hostile to the traditional SaaS model.<sup class="footnote-reference" id="fr-19-2"><a href="#footnote-19">19</a></sup></p>
+<p>For regulators, the challenge of 2026 and beyond will be oversight of these conglomerate-led ecosystem deals that exist in the “regulatory blind spot” of current antitrust and corporate law.<sup class="footnote-reference" id="fr-24-4"><a href="#footnote-24">24</a></sup> As AI risk migrates across the governance perimeters of aerospace and social media giants, the need for auditable, transparent AI risk management becomes the new global benchmark.<sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">10</a></sup> The success of the Musk-led AI ecosystem will ultimately depend on whether its “Valuation Matryoshka” can survive the transition to public markets during the SpaceX IPO, establishing a definitive new playbook for the age of industrial intelligence..<sup class="footnote-reference" id="fr-3-15"><a href="#footnote-3">3</a></sup></p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h4 id="works-cited"><a class="header" href="#works-cited"><strong>Works cited</strong></a></h4>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>AI Company Rankings 2026: Revenue, Funding &amp; Valuation Data for 2000+ Companies | TLDL, accessed April 22, 2026, <a href="https://www.tldl.io/resources/ai-companies-landscape-2026">https://www.tldl.io/resources/ai-companies-landscape-2026</a> <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a></p>
+</li>
+<li id="footnote-2">
+<p>Three Biggest AI Stories in Jan. 2026: ‘real-time AI inference’, accessed April 22, 2026, <a href="https://etcjournal.com/2026/01/18/three-biggest-ai-stories-in-jan-2026-real-time-ai-inference/">https://etcjournal.com/2026/01/18/three-biggest-ai-stories-in-jan-2026-real-time-ai-inference/</a> <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a> <a href="#fr-2-7">↩7</a></p>
+</li>
+<li id="footnote-3">
+<p>6,000,000,000 USD acquisition of Cursor—SpaceX spent money it hasn’t raised yet - 深潮TechFlow, accessed April 22, 2026, <a href="https://www.techflowpost.com/en-US/article/31252">https://www.techflowpost.com/en-US/article/31252</a> <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a> <a href="#fr-3-3">↩3</a> <a href="#fr-3-4">↩4</a> <a href="#fr-3-5">↩5</a> <a href="#fr-3-6">↩6</a> <a href="#fr-3-7">↩7</a> <a href="#fr-3-8">↩8</a> <a href="#fr-3-9">↩9</a> <a href="#fr-3-10">↩10</a> <a href="#fr-3-11">↩11</a> <a href="#fr-3-12">↩12</a> <a href="#fr-3-13">↩13</a> <a href="#fr-3-14">↩14</a> <a href="#fr-3-15">↩15</a></p>
+</li>
+<li id="footnote-4">
+<p>SpaceX-xAI Merger: Should ESOP Holders Sell or Wait for IPO? - Eqvista, accessed April 22, 2026, <a href="https://eqvista.com/spacex-xai-merger-esop-holders-analysis/">https://eqvista.com/spacex-xai-merger-esop-holders-analysis/</a> <a href="#fr-4-1">↩</a> <a href="#fr-4-2">↩2</a> <a href="#fr-4-3">↩3</a> <a href="#fr-4-4">↩4</a> <a href="#fr-4-5">↩5</a> <a href="#fr-4-6">↩6</a> <a href="#fr-4-7">↩7</a> <a href="#fr-4-8">↩8</a></p>
+</li>
+<li id="footnote-5">
+<p>The Largest IPO in History: In-Depth Analysis — Valuation Logic for SpaceX/xAI, Passive Buying Structure, and Tokenized Entry Path, accessed April 22, 2026, <a href="https://www.techflowpost.com/en-US/article/31240">https://www.techflowpost.com/en-US/article/31240</a> <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a> <a href="#fr-5-3">↩3</a></p>
+</li>
+<li id="footnote-6">
+<p>SpaceX obtains right to buy AI start-up Cursor for 60 USDbn, accessed April 22, 2026, <a href="https://www.ft.com/content/d23bd03a-92ac-4e81-8460-3b867a833860?syn-25a6b1a6=1">https://www.ft.com/content/d23bd03a-92ac-4e81-8460-3b867a833860?syn-25a6b1a6=1</a> <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a> <a href="#fr-6-4">↩4</a> <a href="#fr-6-5">↩5</a> <a href="#fr-6-6">↩6</a> <a href="#fr-6-7">↩7</a> <a href="#fr-6-8">↩8</a></p>
+</li>
+<li id="footnote-7">
+<p>Musk Wants Cursor: 60,000,000,000 USD Acquisition, 10,000,000,000 USD Partnership, and Tech’s New Playbook of Buying People Not Companies, accessed April 22, 2026, <a href="https://yage.ai/share/xai-cursor-acquihire-en-20260421.html">https://yage.ai/share/xai-cursor-acquihire-en-20260421.html</a> <a href="#fr-7-1">↩</a> <a href="#fr-7-2">↩2</a> <a href="#fr-7-3">↩3</a> <a href="#fr-7-4">↩4</a></p>
+</li>
+<li id="footnote-8">
+<p>xAI and Cursor announce partnership to build coding AI | daily.dev, accessed April 22, 2026, <a href="https://app.daily.dev/posts/xai-and-cursor-announce-partnership-to-build-coding-ai-kxp9xx21e">https://app.daily.dev/posts/xai-and-cursor-announce-partnership-to-build-coding-ai-kxp9xx21e</a> <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a> <a href="#fr-8-3">↩3</a> <a href="#fr-8-4">↩4</a> <a href="#fr-8-5">↩5</a> <a href="#fr-8-6">↩6</a></p>
+</li>
+<li id="footnote-9">
+<p>Anysphere - Summit Ventures Partners, accessed April 22, 2026, <a href="https://www.summit-ventures.net/company/anysphere/">https://www.summit-ventures.net/company/anysphere/</a> <a href="#fr-9-1">↩</a> <a href="#fr-9-2">↩2</a></p>
+</li>
+<li id="footnote-10">
+<p>The SpaceX–xAI Merger - The D&amp;O Diary, accessed April 22, 2026, <a href="https://www.dandodiary.com/2026/03/articles/director-and-officer-liability/the-spacex-xai-merger/">https://www.dandodiary.com/2026/03/articles/director-and-officer-liability/the-spacex-xai-merger/</a> <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a></p>
+</li>
+<li id="footnote-11">
+<p>ARK’s SpaceX IPO Guide makes a compelling case on why 1,750,000,000,000 USD may not be the ceiling, accessed April 22, 2026, <a href="https://www.teslarati.com/ark-invest-spacex-ipo-valuation-guide/">https://www.teslarati.com/ark-invest-spacex-ipo-valuation-guide/</a> <a href="#fr-11-1">↩</a></p>
+</li>
+<li id="footnote-12">
+<p>SpaceX agrees rights to buy AI coding darling Cursor for 60 USDbn - Silicon Republic, accessed April 22, 2026, <a href="https://www.siliconrepublic.com/business/spacex-agrees-right-to-buy-ai-coding-darling-cursor-for-60bn">https://www.siliconrepublic.com/business/spacex-agrees-right-to-buy-ai-coding-darling-cursor-for-60bn</a> <a href="#fr-12-1">↩</a> <a href="#fr-12-2">↩2</a> <a href="#fr-12-3">↩3</a> <a href="#fr-12-4">↩4</a> <a href="#fr-12-5">↩5</a></p>
+</li>
+<li id="footnote-13">
+<p>SpaceX secures option to buy AI coding startup Cursor for 60,000,000,000 USD - TNW, accessed April 22, 2026, <a href="https://thenextweb.com/news/spacex-cursor-60-billion-acquisition">https://thenextweb.com/news/spacex-cursor-60-billion-acquisition</a> <a href="#fr-13-1">↩</a> <a href="#fr-13-2">↩2</a> <a href="#fr-13-3">↩3</a></p>
+</li>
+<li id="footnote-14">
+<p>SpaceX Has Filed for What Could Be the Largest IPO in History. The AI Layer It Is Pitching Is Being Rebuilt From Scratch. - FinTech Weekly, accessed April 22, 2026, <a href="https://www.fintechweekly.com/news/spacex-ipo-xai-valuation-ai-layer-rebuild-2026">https://www.fintechweekly.com/news/spacex-ipo-xai-valuation-ai-layer-rebuild-2026</a> <a href="#fr-14-1">↩</a> <a href="#fr-14-2">↩2</a></p>
+</li>
+<li id="footnote-15">
+<p>SpaceX IPO: Musk Weighs 60,000,000,000 USD Cursor Deal, and Can It Save xAI?, accessed April 22, 2026, <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261808564-spacex-ipo-elon-musk-cursor-60-billion-tradingkey">https://www.tradingkey.com/analysis/stocks/us-stocks/261808564-spacex-ipo-elon-musk-cursor-60-billion-tradingkey</a> <a href="#fr-15-1">↩</a> <a href="#fr-15-2">↩2</a></p>
+</li>
+<li id="footnote-16">
+<p>Colossus (xAI) - Glenn K. Lockwood, accessed April 22, 2026, <a href="https://www.glennklockwood.com/garden/systems/Colossus">https://www.glennklockwood.com/garden/systems/Colossus</a> <a href="#fr-16-1">↩</a> <a href="#fr-16-2">↩2</a> <a href="#fr-16-3">↩3</a></p>
+</li>
+<li id="footnote-17">
+<p>xAI’s Memphis Colossus | Introl Blog, accessed April 22, 2026, <a href="https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure">https://introl.com/blog/xai-memphis-colossus-100000-gpu-supercomputer-infrastructure</a> <a href="#fr-17-1">↩</a> <a href="#fr-17-2">↩2</a></p>
+</li>
+<li id="footnote-18">
+<p>AI Enforcement Accelerates as Federal Policy Stalls and States Step In - Morgan Lewis, accessed April 22, 2026, <a href="https://www.morganlewis.com/pubs/2026/04/ai-enforcement-accelerates-as-federal-policy-stalls-and-states-step-in">https://www.morganlewis.com/pubs/2026/04/ai-enforcement-accelerates-as-federal-policy-stalls-and-states-step-in</a> <a href="#fr-18-1">↩</a> <a href="#fr-18-2">↩2</a> <a href="#fr-18-3">↩3</a></p>
+</li>
+<li id="footnote-19">
+<p>Why SpaceX just made a 60,000,000,000 USD bet on AI coding ahead of historic IPO - Teslarati, accessed April 22, 2026, <a href="https://www.teslarati.com/spacex-cursor-ai-coding/">https://www.teslarati.com/spacex-cursor-ai-coding/</a> <a href="#fr-19-1">↩</a> <a href="#fr-19-2">↩2</a></p>
+</li>
+<li id="footnote-20">
+<p>Use with Code Editors - xAI Docs, accessed April 22, 2026, <a href="https://docs.x.ai/developers/advanced-api-usage/use-with-code-editors">https://docs.x.ai/developers/advanced-api-usage/use-with-code-editors</a> <a href="#fr-20-1">↩</a></p>
+</li>
+<li id="footnote-21">
+<p>AI News - April 2026: Key Events &amp; Releases - dentro.de/ai, accessed April 22, 2026, <a href="https://dentro.de/ai/news/">https://dentro.de/ai/news/</a> <a href="#fr-21-1">↩</a> <a href="#fr-21-2">↩2</a> <a href="#fr-21-3">↩3</a> <a href="#fr-21-4">↩4</a> <a href="#fr-21-5">↩5</a> <a href="#fr-21-6">↩6</a></p>
+</li>
+<li id="footnote-22">
+<p>AI Weekly: Agents, Models, and Chips — April 9–15, 2026 - DEV Community, accessed April 22, 2026, <a href="https://dev.to/alexmercedcoder/ai-weekly-agents-models-and-chips-april-9-15-2026-486f">https://dev.to/alexmercedcoder/ai-weekly-agents-models-and-chips-april-9-15-2026-486f</a> <a href="#fr-22-1">↩</a> <a href="#fr-22-2">↩2</a></p>
+</li>
+<li id="footnote-23">
+<p>AI Technology Export Enforcement: 5 Signals Companies Cannot Afford to Miss, accessed April 22, 2026, <a href="https://www.alvarezandmarsal.com/thought-leadership/ai-technology-export-enforcement-5-signals-companies-cannot-afford-to-miss">https://www.alvarezandmarsal.com/thought-leadership/ai-technology-export-enforcement-5-signals-companies-cannot-afford-to-miss</a> <a href="#fr-23-1">↩</a> <a href="#fr-23-2">↩2</a></p>
+</li>
+<li id="footnote-24">
+<p>Corporate Law in Orbit: The SpaceX–xAI Merger and Regulatory Strain, accessed April 22, 2026, <a href="https://sites.suffolk.edu/jhtl/2026/04/15/corporate-law-in-orbit-the-spacex-xai-merger-and-regulatory-strain/">https://sites.suffolk.edu/jhtl/2026/04/15/corporate-law-in-orbit-the-spacex-xai-merger-and-regulatory-strain/</a> <a href="#fr-24-1">↩</a> <a href="#fr-24-2">↩2</a> <a href="#fr-24-3">↩3</a> <a href="#fr-24-4">↩4</a></p>
+</li>
+<li id="footnote-25">
+<p>U.S. Artificial Intelligence Law Update: Navigating the Evolving State and Federal Regulatory Landscape | Thought Leadership | January 2026 | Baker Botts, accessed April 22, 2026, <a href="https://www.bakerbotts.com/thought-leadership/publications/2026/january/us-ai-law-update">https://www.bakerbotts.com/thought-leadership/publications/2026/january/us-ai-law-update</a> <a href="#fr-25-1">↩</a> <a href="#fr-25-2">↩2</a></p>
+</li>
+<li id="footnote-26">
+<p>Nvidia’s 20,000,000,000 USD Groq Deal: What the Acqui-Hire Means for AI Investors - TECHi, accessed April 22, 2026, <a href="https://www.techi.com/nvidia-groq-deal-acqui-hire-ai-inference/">https://www.techi.com/nvidia-groq-deal-acqui-hire-ai-inference/</a> <a href="#fr-26-1">↩</a> <a href="#fr-26-2">↩2</a> <a href="#fr-26-3">↩3</a> <a href="#fr-26-4">↩4</a> <a href="#fr-26-5">↩5</a> <a href="#fr-26-6">↩6</a> <a href="#fr-26-7">↩7</a> <a href="#fr-26-8">↩8</a> <a href="#fr-26-9">↩9</a> <a href="#fr-26-10">↩10</a> <a href="#fr-26-11">↩11</a> <a href="#fr-26-12">↩12</a> <a href="#fr-26-13">↩13</a> <a href="#fr-26-14">↩14</a></p>
+</li>
+<li id="footnote-27">
+<p>US AI regulations 2026: federal orders, state laws, and what to comply with now - VerifyWise, accessed April 22, 2026, <a href="https://verifywise.ai/blog/state-of-ai-governance-regulations-united-states-2026">https://verifywise.ai/blog/state-of-ai-governance-regulations-united-states-2026</a> <a href="#fr-27-1">↩</a> <a href="#fr-27-2">↩2</a> <a href="#fr-27-3">↩3</a> <a href="#fr-27-4">↩4</a> <a href="#fr-27-5">↩5</a></p>
+</li>
+<li id="footnote-28">
+<p>Navigating AI’s impact on public and private markets, accessed April 22, 2026, <a href="https://agfundernews.com/navigating-ais-impact-on-public-and-private-markets">https://agfundernews.com/navigating-ais-impact-on-public-and-private-markets</a> <a href="#fr-28-1">↩</a> <a href="#fr-28-2">↩2</a> <a href="#fr-28-3">↩3</a> <a href="#fr-28-4">↩4</a> <a href="#fr-28-5">↩5</a> <a href="#fr-28-6">↩6</a> <a href="#fr-28-7">↩7</a> <a href="#fr-28-8">↩8</a> <a href="#fr-28-9">↩9</a> <a href="#fr-28-10">↩10</a> <a href="#fr-28-11">↩11</a> <a href="#fr-28-12">↩12</a> <a href="#fr-28-13">↩13</a> <a href="#fr-28-14">↩14</a> <a href="#fr-28-15">↩15</a> <a href="#fr-28-16">↩16</a></p>
+</li>
+<li id="footnote-29">
+<p>Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform | NVIDIA Technical Blog, accessed April 22, 2026, <a href="https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/">https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/</a> <a href="#fr-29-1">↩</a></p>
+</li>
+<li id="footnote-30">
+<p>Groq AI Coding Assistant Speed Test: Real Developer Benchmarks, accessed April 22, 2026, <a href="https://neuraplus-ai.github.io/blog/groq-ai-coding-assistant-speed-test.html">https://neuraplus-ai.github.io/blog/groq-ai-coding-assistant-speed-test.html</a> <a href="#fr-30-1">↩</a> <a href="#fr-30-2">↩2</a> <a href="#fr-30-3">↩3</a> <a href="#fr-30-4">↩4</a></p>
+</li>
+<li id="footnote-31">
+<p>The State Of AI Infrastructure: Demand, Costs, And Custom Silicon - Ark Invest, accessed April 22, 2026, <a href="https://www.ark-invest.com/articles/analyst-research/the-state-of-ai-infrastructure-demand-costs-custom-silicon">https://www.ark-invest.com/articles/analyst-research/the-state-of-ai-infrastructure-demand-costs-custom-silicon</a> <a href="#fr-31-1">↩</a> <a href="#fr-31-2">↩2</a></p>
+</li>
+<li id="footnote-32">
+<p>2026 Software x AI: Software’s AI Inflection Point | Sapphire Ventures, accessed April 22, 2026, <a href="https://sapphireventures.com/blog/2026-softwares-ai-inflection-point/">https://sapphireventures.com/blog/2026-softwares-ai-inflection-point/</a> <a href="#fr-32-1">↩</a> <a href="#fr-32-2">↩2</a> <a href="#fr-32-3">↩3</a> <a href="#fr-32-4">↩4</a></p>
+</li>
+<li id="footnote-33">
+<p>SpaceX says partnering with Cursor, option to buy AI startup for 60,000,000,000 USD in high-stakes pre-IPO move, accessed April 22, 2026, <a href="https://www.livemint.com/companies/news/spacex-says-partnering-with-cursor-option-to-buy-ai-startup-for-60-billion-in-high-stakes-pre-ipo-move-11776813719593.html">https://www.livemint.com/companies/news/spacex-says-partnering-with-cursor-option-to-buy-ai-startup-for-60-billion-in-high-stakes-pre-ipo-move-11776813719593.html</a> <a href="#fr-33-1">↩</a> <a href="#fr-33-2">↩2</a></p>
+</li>
+<li id="footnote-34">
+<p>The Great Delisting: Why North America’s Corporate Giants are Fleeing to Private Equity, accessed April 22, 2026, <a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-3-18-the-great-delisting-why-north-americas-corporate-giants-are-fleeing-to-private-equity">https://markets.financialcontent.com/stocks/article/marketminute-2026-3-18-the-great-delisting-why-north-americas-corporate-giants-are-fleeing-to-private-equity</a> <a href="#fr-34-1">↩</a></p>
+</li>
+<li id="footnote-35">
+<p>2026 AI Laws Update: Key Regulations and Practical Guidance - Gunderson Dettmer, accessed April 22, 2026, <a href="https://www.gunder.com/en/news-insights/insights/2026-ai-laws-update-key-regulations-and-practical-guidance">https://www.gunder.com/en/news-insights/insights/2026-ai-laws-update-key-regulations-and-practical-guidance</a> <a href="#fr-35-1">↩</a> <a href="#fr-35-2">↩2</a> <a href="#fr-35-3">↩3</a></p>
+</li>
+<li id="footnote-36">
+<p>Responsible AI, stablecoins, and gatekeepers: Charting APAC’s top regulatory trends for 2026 - ComplyAdvantage, accessed April 22, 2026, <a href="https://complyadvantage.com/insights/apac-top-regulatory-trends-2026/">https://complyadvantage.com/insights/apac-top-regulatory-trends-2026/</a> <a href="#fr-36-1">↩</a> <a href="#fr-36-2">↩2</a> <a href="#fr-36-3">↩3</a> <a href="#fr-36-4">↩4</a></p>
+</li>
+<li id="footnote-37">
+<p>xAI raises 20,000,000,000 USD Series E at ~230,000,000,000 USD valuation | AINews, accessed April 22, 2026, <a href="https://news.smol.ai/issues/26-01-06-xai-series-e/">https://news.smol.ai/issues/26-01-06-xai-series-e/</a> <a href="#fr-37-1">↩</a> <a href="#fr-37-2">↩2</a></p>
+</li>
+<li id="footnote-38">
+<p>AI Trends for 2026 - Morrison Foerster, accessed April 22, 2026, <a href="https://www.mofo.com/ai-trends-for-2026">https://www.mofo.com/ai-trends-for-2026</a> <a href="#fr-38-1">↩</a> <a href="#fr-38-2">↩2</a></p>
+</li>
+<li id="footnote-39">
+<p>AI Tools Race Heats Up: Week of March 16 – April 2, 2026 - DEV Community, accessed April 22, 2026, <a href="https://dev.to/alexmercedcoder/ai-tools-race-heats-up-week-of-march-16-april-2-2026-46hp">https://dev.to/alexmercedcoder/ai-tools-race-heats-up-week-of-march-16-april-2-2026-46hp</a> <a href="#fr-39-1">↩</a> <a href="#fr-39-2">↩2</a></p>
+</li>
+<li id="footnote-40">
+<p>Cursor, Claude Code, and Codex are merging into one AI coding stack nobody planned, accessed April 22, 2026, <a href="https://thenewstack.io/ai-coding-tool-stack/">https://thenewstack.io/ai-coding-tool-stack/</a> <a href="#fr-40-1">↩</a> <a href="#fr-40-2">↩2</a> <a href="#fr-40-3">↩3</a> <a href="#fr-40-4">↩4</a> <a href="#fr-40-5">↩5</a> <a href="#fr-40-6">↩6</a> <a href="#fr-40-7">↩7</a> <a href="#fr-40-8">↩8</a> <a href="#fr-40-9">↩9</a> <a href="#fr-40-10">↩10</a> <a href="#fr-40-11">↩11</a> <a href="#fr-40-12">↩12</a> <a href="#fr-40-13">↩13</a></p>
+</li>
+<li id="footnote-41">
+<p>Open Source vs Closed LLMs: Choosing the Right Model in 2026 - Let’s Data Science, accessed April 22, 2026, <a href="https://letsdatascience.com/blog/open-source-vs-closed-llms-choosing-the-right-model-in-2026">https://letsdatascience.com/blog/open-source-vs-closed-llms-choosing-the-right-model-in-2026</a> <a href="#fr-41-1">↩</a></p>
+</li>
+<li id="footnote-42">
+<p>OpenAI Codex vs Cursor vs Claude Code: Which AI Coding Tool Should You Use in 2026?, accessed April 22, 2026, <a href="https://www.nxcode.io/resources/news/openai-codex-vs-cursor-vs-claude-code-ai-coding-tools-2026">https://www.nxcode.io/resources/news/openai-codex-vs-cursor-vs-claude-code-ai-coding-tools-2026</a> <a href="#fr-42-1">↩</a></p>
+</li>
+<li id="footnote-43">
+<p>When data centres become targets: It’s time to treat AI infrastructure as critical infrastructure - The World Economic Forum, accessed April 22, 2026, <a href="https://www.weforum.org/stories/2026/04/ai-infrastructure-critical-infrastructure/">https://www.weforum.org/stories/2026/04/ai-infrastructure-critical-infrastructure/</a> <a href="#fr-43-1">↩</a> <a href="#fr-43-2">↩2</a> <a href="#fr-43-3">↩3</a> <a href="#fr-43-4">↩4</a> <a href="#fr-43-5">↩5</a></p>
+</li>
+<li id="footnote-45">
+<p>Advancing the American AI Stack | Groq is fast, low cost inference., accessed April 22, 2026, <a href="https://groq.com/blog/advancingamericanai">https://groq.com/blog/advancingamericanai</a> <a href="#fr-45-1">↩</a> <a href="#fr-45-2">↩2</a> <a href="#fr-45-3">↩3</a> <a href="#fr-45-4">↩4</a> <a href="#fr-45-5">↩5</a> <a href="#fr-45-6">↩6</a> <a href="#fr-45-7">↩7</a> <a href="#fr-45-8">↩8</a></p>
+</li>
+<li id="footnote-48">
+<p>Warren, Wyden, Blumenthal Call on Federal Regulators to Investigate Meta, Google, NVIDIA “Reverse Acqui-hire” Deals, accessed April 22, 2026, <a href="https://www.warren.senate.gov/newsroom/press-releases/warren-wyden-blumenthal-call-on-federal-regulators-to-investigate-meta-google-nvidia-reverse-acqui-hire-deals">https://www.warren.senate.gov/newsroom/press-releases/warren-wyden-blumenthal-call-on-federal-regulators-to-investigate-meta-google-nvidia-reverse-acqui-hire-deals</a> <a href="#fr-48-1">↩</a></p>
+</li>
+<li id="footnote-49">
+<p>FTC Launches Inquiry into Generative AI Investments and Partnerships, accessed April 22, 2026, <a href="https://www.ftc.gov/news-events/news/press-releases/2024/01/ftc-launches-inquiry-generative-ai-investments-partnerships">https://www.ftc.gov/news-events/news/press-releases/2024/01/ftc-launches-inquiry-generative-ai-investments-partnerships</a> <a href="#fr-49-1">↩</a></p>
+</li>
+<li id="footnote-50">
+<p>New AI Model Releases News | April, 2026 (STARTUP EDITION) - Mean CEO, accessed April 22, 2026, <a href="https://blog.mean.ceo/new-ai-model-releases-news-april-2026/">https://blog.mean.ceo/new-ai-model-releases-news-april-2026/</a> <a href="#fr-50-1">↩</a></p>
+</li>
+<li id="footnote-51">
+<p>Outlooks 2026: Artificial intelligence, digital finance, cyber risk, and data centers - Moody’s, accessed April 22, 2026, <a href="https://www.moodys.com/web/en/us/insights/credit-risk/outlooks/artificial-intelligence-2026.html">https://www.moodys.com/web/en/us/insights/credit-risk/outlooks/artificial-intelligence-2026.html</a> <a href="#fr-51-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="228.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="226.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="228.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="226.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

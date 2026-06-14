@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>228 : What is Google Worth? - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="228--what-is-google-worth"><a class="header" href="#228--what-is-google-worth">228 : What is Google Worth?</a></h1>
+<p><img src="./img/228.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>This market cap prediction model uses a <strong>Sum-of-the-Parts (SOTP)</strong> valuation approach. It benchmarks Google’s individual business units against the market leaders and applies a <strong>50% “Challenger Discount”</strong> to account for the market leader’s secondary moats (e.g., Amazon’s retail logistics or Tesla’s manufacturing scale). <sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">1</a></sup> <sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">2</a></sup></p>
+<p>Based on 2026 data, here is the breakdown of Google’s implied valuation:</p>
+<hr>
+<h2 id="google-sotp-valuation-model-2026-projection"><a class="header" href="#google-sotp-valuation-model-2026-projection"><strong>Google SOTP Valuation Model (2026 Projection)</strong></a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Segment</th><th style="text-align: left">Market Leader</th><th style="text-align: left">Leader Market Cap</th><th style="text-align: left">Google “Implied” Value (50% Discount)</th><th style="text-align: left">Notes on Leader’s Moat</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>AI Hardware</strong></td><td style="text-align: left"><strong>NVIDIA</strong></td><td style="text-align: left">4.92 Trillion USD</td><td style="text-align: left"><strong>2.46 Trillion USD</strong></td><td style="text-align: left">CUDA ecosystem &amp; GPU dominance.</td></tr>
+<tr><td style="text-align: left"><strong>Hardware (Mobile/PC)</strong></td><td style="text-align: left"><strong>Apple</strong></td><td style="text-align: left">4.02 Trillion USD</td><td style="text-align: left"><strong>2.01 Trillion USD</strong></td><td style="text-align: left">Premium hardware &amp; ecosystem lock-in.</td></tr>
+<tr><td style="text-align: left"><strong>Suite, Browser, Cloud</strong></td><td style="text-align: left"><strong>Microsoft</strong></td><td style="text-align: left">3.21 Trillion USD</td><td style="text-align: left"><strong>1.61 Trillion USD</strong></td><td style="text-align: left">Enterprise sales &amp; Windows integration.</td></tr>
+<tr><td style="text-align: left"><strong>Streaming (YouTube)</strong></td><td style="text-align: left"><strong>Netflix</strong></td><td style="text-align: left">350 Billion USD*</td><td style="text-align: left"><strong>175 Billion USD</strong></td><td style="text-align: left">Content library &amp; brand loyalty.</td></tr>
+<tr><td style="text-align: left"><strong>Cloud Infrastructure</strong></td><td style="text-align: left"><strong>Amazon</strong></td><td style="text-align: left">2.58 Trillion USD</td><td style="text-align: left"><strong>1.29 Trillion USD</strong></td><td style="text-align: left">Logistics &amp; e-commerce integration.</td></tr>
+<tr><td style="text-align: left"><strong>Autonomous (Waymo)</strong></td><td style="text-align: left"><strong>Tesla</strong></td><td style="text-align: left">1.25 Trillion USD</td><td style="text-align: left"><strong>625 Billion USD</strong></td><td style="text-align: left">Mass production &amp; Supercharger network.</td></tr>
+<tr><td style="text-align: left"><strong>TOTAL IMPLIED CAP</strong></td><td style="text-align: left"></td><td style="text-align: left"></td><td style="text-align: left"><strong>8.17 Trillion USD</strong></td><td style="text-align: left"></td></tr>
+</tbody>
+</table>
+</div>
+<p><em>*Netflix market cap is an estimate based on 2026 growth trends; others are current market figures.</em></p>
+<hr>
+<h3 id="analysis-of-the-model"><a class="header" href="#analysis-of-the-model"><strong>Analysis of the Model</strong></a></h3>
+<ol>
+<li>
+<p><strong>The “Discount” Paradox:</strong> While we applied a 50% discount for Google being #2, the model yields an implied market cap of <strong>8.17 Trillion USD</strong>. This is significantly higher than Google’s actual 2026 market cap (approx. <strong>4.1 Trillion USD</strong>). <sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">3</a></sup></p>
+</li>
+<li>
+<p><strong>Market Realities:</strong> In several categories, the market currently discounts Google even further than 50%. For example, while <strong>Waymo</strong> is technologically ahead of Tesla in L4 autonomy, the market values Tesla’s “Autonomy” potential much higher due to its fleet of millions of cars on the road. <sup class="footnote-reference" id="fr-24-1"><a href="#footnote-24">4</a></sup></p>
+</li>
+<li>
+<p><strong>The “Search” Elephant:</strong> This model focuses on specific comparisons, but it excludes Google’s primary engine: <strong>Search</strong>. Google is the undisputed #1 in Search, which generates the massive cash flow (60 Billion USD+ per quarter) that funds “challenger” bets like Waymo and TPU development. <sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup></p>
+</li>
+</ol>
+<p>By looking at Google this way, you can see that if Google were broken up, the individual pieces might actually be worth more than the whole company is today—a concept known as a “conglomerate discount.” Since the biggest component of this valuation model is AI hardware, a deeper look into how Google’s hardware (TPU 8) is specifically trying to close the gap with NVIDIA is essential. <sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">6</a></sup> <sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">7</a></sup></p>
+<hr>
+<h1 id="google-tpu-8-family-versus-nvidia-vera-rubin-platform"><a class="header" href="#google-tpu-8-family-versus-nvidia-vera-rubin-platform"><strong>Google TPU 8 Family versus NVIDIA Vera Rubin Platform</strong></a></h1>
+<p>The computational infrastructure landscape of 2026 is defined by a fundamental pivot away from general-purpose acceleration toward hyper-specialized, workload-aware silicon architectures. As the industry enters the “agentic era”—characterized by autonomous AI agents capable of multi-step reasoning, planning, and tool execution—the demands placed on hardware have bifurcated. <sup class="footnote-reference" id="fr-11-2"><a href="#footnote-11">1</a></sup> <sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">8</a></sup> <sup class="footnote-reference" id="fr-34-2"><a href="#footnote-34">2</a></sup></p>
+<p>Model training now requires unprecedented scale-out throughput and resilient synchronization across hundreds of thousands of nodes, while model inference demands ultra-low latency, massive memory bandwidth, and the ability to host multi-trillion parameter weights with minimal energy overhead.</p>
+<p>The recent unveiling of Google’s eighth-generation Tensor Processing Units (TPU 8t and TPU 8i) at Google Cloud Next 2026, alongside the maturation of NVIDIA’s Vera Rubin platform, presents a critical choice for AI developers. <sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">6</a></sup> <sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">9</a></sup> <sup class="footnote-reference" id="fr-11-3"><a href="#footnote-11">1</a></sup></p>
+<h2 id="the-architectural-divergence"><a class="header" href="#the-architectural-divergence"><strong>The Architectural Divergence</strong></a></h2>
+<p>The central theme of the 2026 hardware cycle is the end of the “one-size-fits-all” accelerator. For the first time, Google has explicitly split its TPU roadmap into two distinct products: the TPU 8t (Sunfish), optimized for massive-scale pre-training, and the TPU 8i (Zebrafish), engineered for high-concurrency reasoning and sampling. <sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">10</a></sup> <sup class="footnote-reference" id="fr-21-1"><a href="#footnote-21">11</a></sup> <sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">12</a></sup></p>
+<p>This specialization is a response to the “inference inflection point,” where the hardware requirements for serving millions of active agents have diverged sharply from the requirements for building the underlying frontier models. <sup class="footnote-reference" id="fr-7-2"><a href="#footnote-7">3</a></sup> <sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">13</a></sup></p>
+<p>NVIDIA, conversely, continues to leverage its unified architectural approach with the Vera Rubin platform. While NVIDIA has introduced specialized features for inference—such as the Transformer Engine and hardware-accelerated compression for FP4—the Rubin R100 GPU remains a converged powerhouse capable of handling both halves of the AI lifecycle within a single, highly flexible substrate. <sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">14</a></sup> <sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">15</a></sup> <sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">16</a></sup></p>
+<h3 id="google-tpu-8t-the-training-powerhouse"><a class="header" href="#google-tpu-8t-the-training-powerhouse"><strong>Google TPU 8t: The Training Powerhouse</strong></a></h3>
+<p>The TPU 8t represents Google’s eighth iteration of its custom AI silicon, developed in collaboration with Broadcom. <sup class="footnote-reference" id="fr-4-2"><a href="#footnote-4">10</a></sup> <sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">17</a></sup> It is designed to minimize the development cycle of frontier models from months to weeks by maximizing “goodput”—the ratio of productive compute time to total uptime. <sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">18</a></sup> <sup class="footnote-reference" id="fr-22-1"><a href="#footnote-22">19</a></sup></p>
+<ul>
+<li><strong>SparseCore Advantage:</strong> Unlike general-purpose GPUs that can struggle with irregular memory access patterns, the TPU 8t features the SparseCore. This handles embedding lookups and data-dependent “all-gather” operations, offloading these from the primary Matrix Multiply Units (MXU). <sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">6</a></sup> <sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">18</a></sup></li>
+<li><strong>VPU/MXU Overlap:</strong> The 8t architecture implements balanced scaling for its Vector Processing Units (VPU). This allows for the simultaneous execution of quantization, softmax, and layernorm operations alongside matrix multiplications. <sup class="footnote-reference" id="fr-10-3"><a href="#footnote-10">18</a></sup></li>
+<li><strong>Native FP4 Support:</strong> By introducing native 4-bit floating point (FP4) support, the TPU 8t effectively doubles MXU throughput while maintaining the accuracy of larger models. <sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">6</a></sup></li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">TPU 8t (Sunfish)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Primary Workload</td><td style="text-align: left">Large-scale pre-training</td></tr>
+<tr><td style="text-align: left">Peak Compute (FP4)</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12.6</span></span></span></span> Petaflops (Per Chip)</td></tr>
+<tr><td style="text-align: left">HBM Capacity</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">216</span></span></span></span> GB</td></tr>
+<tr><td style="text-align: left">Interconnect</td><td style="text-align: left">Virgo (3D Torus) <sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">6</a></sup></td></tr>
+<tr><td style="text-align: left">Scaling</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">600</span></span></span></span> chips/superpod <sup class="footnote-reference" id="fr-10-4"><a href="#footnote-10">18</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="google-tpu-8i-the-inference-specialist"><a class="header" href="#google-tpu-8i-the-inference-specialist"><strong>Google TPU 8i: The Inference Specialist</strong></a></h3>
+<p>The TPU 8i, co-designed with MediaTek, represents Google’s move to solve the “memory wall” that limits real-time AI agents. <sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">20</a></sup> <sup class="footnote-reference" id="fr-14-2"><a href="#footnote-14">7</a></sup> The chip’s defining feature is its <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">384</span></span></span></span> MB of on-chip SRAM—a three-fold increase over the previous generation—which allows the system to host a significantly larger Key-Value (KV) cache entirely on-silicon. <sup class="footnote-reference" id="fr-10-5"><a href="#footnote-10">18</a></sup> <sup class="footnote-reference" id="fr-34-3"><a href="#footnote-34">2</a></sup></p>
+<p>This is critical for long-context reasoning models, as it eliminates the latency associated with fetching KV blocks from HBM during auto-regressive decoding. <sup class="footnote-reference" id="fr-10-6"><a href="#footnote-10">18</a></sup> Furthermore, the dedicated Collectives Acceleration Engine (CAE) reduces on-chip latency for synchronization steps, facilitating the rapid “chain-of-thought” processing required for agentic workflows. <sup class="footnote-reference" id="fr-1-6"><a href="#footnote-1">6</a></sup> <sup class="footnote-reference" id="fr-10-7"><a href="#footnote-10">18</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">TPU 8i (Zebrafish)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Primary Workload</td><td style="text-align: left">Sampling and Reasoning</td></tr>
+<tr><td style="text-align: left">HBM Capacity</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">288</span></span></span></span> GB</td></tr>
+<tr><td style="text-align: left">On-Chip SRAM</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">384</span></span></span></span> MB <sup class="footnote-reference" id="fr-10-8"><a href="#footnote-10">18</a></sup></td></tr>
+<tr><td style="text-align: left">Price-Performance</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.8</span><span class="mord mathnormal">x</span></span></span></span> better than Ironwood <sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">21</a></sup></td></tr>
+<tr><td style="text-align: left">Specialized Engine</td><td style="text-align: left">Collectives Acceleration Engine (CAE)</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="nvidia-vera-rubin-the-converged-superchip"><a class="header" href="#nvidia-vera-rubin-the-converged-superchip"><strong>NVIDIA Vera Rubin: The Converged Superchip</strong></a></h2>
+<p>The NVIDIA Vera Rubin platform, announced as the successor to Blackwell, represents the zenith of high-density, high-flexibility AI compute. The Rubin R100 GPU is built on TSMC’s 2nm process. <sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">14</a></sup> <sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">22</a></sup> Unlike the TPU 8 family, which is exclusively available via Google Cloud, Rubin is designed for broad deployment across all hyperscalers and on-premise AI factories. <sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">9</a></sup> <sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">23</a></sup> <sup class="footnote-reference" id="fr-19-1"><a href="#footnote-19">24</a></sup></p>
+<h3 id="r100-gpu-and-hbm4-memory"><a class="header" href="#r100-gpu-and-hbm4-memory"><strong>R100 GPU and HBM4 Memory</strong></a></h3>
+<p>The Rubin R100 leverages the first implementation of HBM4 memory, delivering an aggregate bandwidth of up to <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">22</span></span></span></span> TB/s per GPU. <sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">14</a></sup> <sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">25</a></sup> This represents a massive leap over the Blackwell generation. For an AI developer, this bandwidth is essential for sustaining the compute pipeline during long-context inference where the model must alternate between compute-heavy attention mechanisms and memory-bound KV cache lookups. <sup class="footnote-reference" id="fr-9-2"><a href="#footnote-9">15</a></sup> <sup class="footnote-reference" id="fr-18-2"><a href="#footnote-18">16</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Specification</th><th style="text-align: left">NVIDIA Rubin R100</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Memory Type</td><td style="text-align: left">HBM4</td></tr>
+<tr><td style="text-align: left">VRAM Capacity</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">288</span></span></span></span> GB <sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">14</a></sup></td></tr>
+<tr><td style="text-align: left">Memory Bandwidth</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">22</span></span></span></span> TB/s <sup class="footnote-reference" id="fr-9-3"><a href="#footnote-9">15</a></sup></td></tr>
+<tr><td style="text-align: left">FP4 Inference</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50</span></span></span></span> PFLOPS <sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">14</a></sup></td></tr>
+<tr><td style="text-align: left">FP4 Training</td><td style="text-align: left"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">35</span></span></span></span> PFLOPS <sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">14</a></sup></td></tr>
+<tr><td style="text-align: left">CPU</td><td style="text-align: left">Vera (Arm-based Olympus) <sup class="footnote-reference" id="fr-18-3"><a href="#footnote-18">16</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="memory-hierarchy-and-the-memory-wall"><a class="header" href="#memory-hierarchy-and-the-memory-wall"><strong>Memory Hierarchy and the “Memory Wall”</strong></a></h2>
+<p>The competition in 2026 is largely a struggle to overcome the “memory wall”—the gap between processor speed and the rate at which data can be fetched from memory. <sup class="footnote-reference" id="fr-33-2"><a href="#footnote-33">12</a></sup></p>
+<h3 id="hbm4-vs-hbm3e-bandwidth"><a class="header" href="#hbm4-vs-hbm3e-bandwidth"><strong>HBM4 vs. HBM3e Bandwidth</strong></a></h3>
+<p>The NVIDIA Rubin R100’s use of HBM4 provides a clear bandwidth advantage at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">22</span></span></span></span> TB/s per GPU. This is more than triple the bandwidth available on the TPU 8 family. <sup class="footnote-reference" id="fr-9-4"><a href="#footnote-9">15</a></sup> <sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">26</a></sup> In inference scenarios where the model size exceeds the on-chip cache, the HBM4 bandwidth directly translates to higher tokens per second. <sup class="footnote-reference" id="fr-11-4"><a href="#footnote-11">1</a></sup> <sup class="footnote-reference" id="fr-18-4"><a href="#footnote-18">16</a></sup></p>
+<h3 id="on-chip-sram-and-kv-cache-strategy"><a class="header" href="#on-chip-sram-and-kv-cache-strategy"><strong>On-Chip SRAM and KV Cache Strategy</strong></a></h3>
+<p>Google’s TPU 8i takes a different approach by focusing on the “active working set.” The <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">384</span></span></span></span> MB of SRAM is sized specifically to host the KV cache for the largest reasoning models at production scale. <sup class="footnote-reference" id="fr-10-9"><a href="#footnote-10">18</a></sup> By keeping the most frequently accessed data on-silicon, the TPU 8i minimizes the idle time of the compute cores during the decoding phase. <sup class="footnote-reference" id="fr-10-10"><a href="#footnote-10">18</a></sup> For an AI developer, this means the TPU 8i may provide superior latency for “agentic” tasks that involve long-context reasoning. <sup class="footnote-reference" id="fr-1-7"><a href="#footnote-1">6</a></sup> <sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">27</a></sup></p>
+<h2 id="economic-analysis-performance-per-dollar"><a class="header" href="#economic-analysis-performance-per-dollar"><strong>Economic Analysis: Performance-per-Dollar</strong></a></h2>
+<p>For the AI developer, the “best” chip is often the one that provides the most productive compute time per dollar spent. Google’s eighth-generation launch is framed around cost-effectiveness. <sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">28</a></sup></p>
+<ul>
+<li><strong>TPU 8t:</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2.7</span><span class="mord mathnormal">x</span></span></span></span> performance increase per dollar compared to Ironwood. <sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">17</a></sup> <sup class="footnote-reference" id="fr-22-2"><a href="#footnote-22">19</a></sup></li>
+<li><strong>TPU 8i:</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">80%</span></span></span></span> better performance-per-dollar for inference tasks. <sup class="footnote-reference" id="fr-10-11"><a href="#footnote-10">18</a></sup> <sup class="footnote-reference" id="fr-12-2"><a href="#footnote-12">20</a></sup></li>
+</ul>
+<p>NVIDIA argues that the Rubin platform delivers a significantly lower cost-per-token for inference compared to Blackwell. While the hourly rental rate for a Rubin GPU is higher, NVIDIA’s massive per-chip throughput means the developer needs fewer hours of compute to achieve the same result. <sup class="footnote-reference" id="fr-2-7"><a href="#footnote-2">14</a></sup> <sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">29</a></sup></p>
+<h2 id="the-software-ecosystem-portability-vs-integration"><a class="header" href="#the-software-ecosystem-portability-vs-integration"><strong>The Software Ecosystem: Portability vs. Integration</strong></a></h2>
+<p>The choice of hardware often dictates the choice of software framework, which in turn affects developer productivity and the ability to move workloads.</p>
+<h3 id="cuda-the-industry-standard"><a class="header" href="#cuda-the-industry-standard"><strong>CUDA: The Industry Standard</strong></a></h3>
+<p>NVIDIA’s “moat” remains the CUDA software ecosystem. Every major frontier AI lab has its toolsets built specifically around NVIDIA’s ecosystem. <sup class="footnote-reference" id="fr-16-1"><a href="#footnote-16">30</a></sup> <sup class="footnote-reference" id="fr-18-5"><a href="#footnote-18">16</a></sup></p>
+<h3 id="jax-and-xla-the-specialized-alternative"><a class="header" href="#jax-and-xla-the-specialized-alternative"><strong>JAX and XLA: The Specialized Alternative</strong></a></h3>
+<p>Google’s TPUs rely on the XLA (Accelerated Linear Algebra) compiler and frameworks like JAX. <sup class="footnote-reference" id="fr-28-1"><a href="#footnote-28">31</a></sup> <sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">32</a></sup> While JAX is praised for its functional design, porting a CUDA-optimized model to TPU is often described as a “software engineering tax”. However, Google is closing this gap with <strong>Pallas</strong>, an experimental JAX extension that allows developers to write hardware-aware kernels. <sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">33</a></sup> <sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">34</a></sup></p>
+<h2 id="conclusion"><a class="header" href="#conclusion"><strong>Conclusion</strong></a></h2>
+<p>For the AI developer in the agentic era, the choice between Google’s TPU 8 family and NVIDIA’s Vera Rubin platform has shifted to a strict calculation of training and operational economics.</p>
+<p>The <strong>Google TPU 8t</strong> offers a clear advantage in cluster-level capital efficiency for massive training runs. Its vertically integrated stack minimizes hidden synchronization costs and maximizes the return on every megawatt consumed. <sup class="footnote-reference" id="fr-8-3"><a href="#footnote-8">17</a></sup></p>
+<p>The <strong>NVIDIA Vera Rubin</strong> platform remains the preferred choice for developers who prioritize the absolute fastest training throughput per chip and the flexibility to deploy high-density compute across multi-cloud or on-premise environments. <sup class="footnote-reference" id="fr-3-3"><a href="#footnote-3">9</a></sup></p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h4 id="research"><a class="header" href="#research"><strong>Research</strong></a></h4>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-11">
+<p><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/">Our eighth generation TPUs: two chips for the agentic era - Google Blog</a>, April 2026. <a href="#fr-11-1">↩</a> <a href="#fr-11-2">↩2</a> <a href="#fr-11-3">↩3</a> <a href="#fr-11-4">↩4</a></p>
+</li>
+<li id="footnote-34">
+<p><a href="https://wccftech.com/google-unveils-the-heart-of-agentic-ai-the-ai-hypercomputer-8th-gen-tpus-nvidia-rubin-axion-cpus/amp/">Google Bets On The Agentic AI Era With Its AI Hypercomputer - Wccftech</a>, April 2026. <a href="#fr-34-1">↩</a> <a href="#fr-34-2">↩2</a> <a href="#fr-34-3">↩3</a></p>
+</li>
+<li id="footnote-7">
+<p><a href="https://247wallst.com/investing/2026/04/23/wall-street-pro-thinks-googles-ai-chip-edge-is-getting-harder-to-ignore/">Wall Street Pro Thinks Google’s AI Chip Edge Is Getting Harder to Ignore - 247wallst</a>, April 2026. <a href="#fr-7-1">↩</a> <a href="#fr-7-2">↩2</a></p>
+</li>
+<li id="footnote-24">
+<p><a href="https://timesofindia.indiatimes.com/technology/tech-news/google-makes-it-official-tells-nvidia-yes-we-are-coming-after-you-with-our-new-/articleshow/130442836.cms">Google may have made it official, tells Nvidia: Yes, we are coming after you with our new… - Times of India</a>, April 2026. <a href="#fr-24-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p><a href="https://venturebeat.com/orchestration/google-doesnt-pay-the-nvidia-tax-its-new-tpus-explain-why">Google doesn’t pay the Nvidia tax. Its new TPUs explain why. - VentureBeat</a>, April 2026. <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-1">
+<p><a href="https://www.hpcwire.com/2026/04/22/google-bolsters-ai-hypercomputer-with-new-tpu-chips-virgo-interconnect-speedier-lustre/">Google Bolsters AI Hypercomputer with New TPU Chips, Virgo Interconnect, Speedier Lustre - HPCwire</a>, April 2026. <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a> <a href="#fr-1-6">↩6</a> <a href="#fr-1-7">↩7</a></p>
+</li>
+<li id="footnote-14">
+<p><a href="https://finance.biggo.com/news/Z5cstZ0B5edQG9E4uHzc">Google Unveils Dedicated AI Chips ‘TPU 8t &amp; 8i’ for Training and Inference - BigGo Finance</a>, April 2026. <a href="#fr-14-1">↩</a> <a href="#fr-14-2">↩2</a></p>
+</li>
+<li id="footnote-15">
+<p><a href="https://cloud.google.com/blog/products/compute/ai-infrastructure-at-next26">AI infrastructure at Next ’26 | Google Cloud Blog</a>, April 2026. <a href="#fr-15-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p><a href="https://www.neowin.net/news/google-debuts-eighth-gen-tpu-chips-for-training-and-inference-with-big-performance-claims/">Google debuts eighth-gen TPU chips for training and inference with big performance claims - Neowin</a>, April 2026. <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a> <a href="#fr-3-3">↩3</a></p>
+</li>
+<li id="footnote-4">
+<p><a href="https://www.techi.com/google-tpu-8-nvidia-competition/">Google TPU 8t and TPU 8i: Nvidia AI Chip Rival 2026 - TECHi</a>, April 2026. <a href="#fr-4-1">↩</a> <a href="#fr-4-2">↩2</a></p>
+</li>
+<li id="footnote-21">
+<p><a href="https://www.theregister.com/2026/04/22/google_tpu8_dual_track_training_inference/">Google dual tracks TPU 8 to conquer training and inference - The Register</a>, April 2026. <a href="#fr-21-1">↩</a></p>
+</li>
+<li id="footnote-33">
+<p><a href="https://byteiota.com/google-tpu-8-splits-training-and-inference-for-agentic-era/">Google TPU-8 Splits Training and Inference for Agentic Era - byteiota</a>, April 2026. <a href="#fr-33-1">↩</a> <a href="#fr-33-2">↩2</a></p>
+</li>
+<li id="footnote-32">
+<p><a href="https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu">The Custom Silicon Inflection Point: Hyperscaler ASICs Challenge NVIDIA’s GPU Dominance in 2026 - Introl</a>, April 2026. <a href="#fr-32-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p><a href="https://slyd.com/hardware/nvidia-rubin">NVIDIA Rubin R100 GPU | 288GB HBM4, 50 Petaflops | Next-Gen AI Accelerator - SLYD</a>, April 2026. <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a> <a href="#fr-2-7">↩7</a></p>
+</li>
+<li id="footnote-9">
+<p><a href="https://www.nvidia.com/en-us/data-center/technologies/rubin/">Infrastructure for Scalable AI Reasoning | NVIDIA Vera Rubin Platform</a>, April 2026. <a href="#fr-9-1">↩</a> <a href="#fr-9-2">↩2</a> <a href="#fr-9-3">↩3</a> <a href="#fr-9-4">↩4</a></p>
+</li>
+<li id="footnote-18">
+<p><a href="https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/">Inside the NVIDIA Vera Rubin Platform: Six New Chips, One AI Supercomputer - NVIDIA Developer Blog</a>, April 2026. <a href="#fr-18-1">↩</a> <a href="#fr-18-2">↩2</a> <a href="#fr-18-3">↩3</a> <a href="#fr-18-4">↩4</a> <a href="#fr-18-5">↩5</a></p>
+</li>
+<li id="footnote-8">
+<p><a href="https://finance.biggo.com/news/6uYhuZ0B5edQG9E4YqVf">Google Unveils Eighth-Generation TPU Dual-Chip Strategy, Marking a “Watershed” for Training and Inference - BigGo Finance</a>, April 2026. <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a> <a href="#fr-8-3">↩3</a></p>
+</li>
+<li id="footnote-10">
+<p><a href="https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive">TPU 8t and TPU 8i technical deep dive | Google Cloud Blog</a>, April 2026. <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a> <a href="#fr-10-3">↩3</a> <a href="#fr-10-4">↩4</a> <a href="#fr-10-5">↩5</a> <a href="#fr-10-6">↩6</a> <a href="#fr-10-7">↩7</a> <a href="#fr-10-8">↩8</a> <a href="#fr-10-9">↩9</a> <a href="#fr-10-10">↩10</a> <a href="#fr-10-11">↩11</a></p>
+</li>
+<li id="footnote-22">
+<p><a href="https://www.techzine.eu/blogs/infrastructure/140680/google-presents-tpu-8t-and-tpu-8i-chips-splits-training-and-inference/">Google presents TPU 8t and TPU 8i chips; splits training and … - Techzine</a>, April 2026. <a href="#fr-22-1">↩</a> <a href="#fr-22-2">↩2</a></p>
+</li>
+<li id="footnote-12">
+<p><a href="https://gigazine.net/gsc_news/en/20260423-google-tpu-8t-8i/">Google has announced its 8th generation of AI processing chips: TPU 8t and TPU 8i - GIGAZINE</a>, April 2026. <a href="#fr-12-1">↩</a> <a href="#fr-12-2">↩2</a></p>
+</li>
+<li id="footnote-6">
+<p><a href="https://thenextweb.com/news/google-ironwood-tpu-inference-cloud-next">Google launches Ironwood TPU and previews eighth-gen split into … - TheNextWeb</a>, April 2026. <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-20">
+<p><a href="https://www.reddit.com/r/accelerate/comments/1q5vqke/vera_rubin_gpu_nvidia_ces_2026/">Vera Rubin GPU, Nvidia CES 2026 : r/accelerate - Reddit</a>, April 2026. <a href="#fr-20-1">↩</a></p>
+</li>
+<li id="footnote-17">
+<p><a href="https://cloud.google.com/blog/products/compute/google-cloud-ai-infrastructure-at-nvidia-gtc-2026">Google Cloud AI infrastructure at NVIDIA GTC 2026 - Google Cloud Blog</a>, April 2026. <a href="#fr-17-1">↩</a></p>
+</li>
+<li id="footnote-19">
+<p><a href="https://www.spheron.network/blog/nvidia-rubin-r100-guide/">NVIDIA Rubin R100: Specs, Architecture, and GPU Cloud Availability | Spheron Blog</a>, April 2026. <a href="#fr-19-1">↩</a></p>
+</li>
+<li id="footnote-26">
+<p><a href="https://www.spheron.network/blog/nvidia-rubin-vs-blackwell-vs-hopper/">Rubin vs Blackwell vs Hopper: NVIDIA GPU Architecture Comparison | Spheron Blog</a>, April 2026. <a href="#fr-26-1">↩</a></p>
+</li>
+<li id="footnote-23">
+<p><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-reportedly-boosts-vera-rubin-performance-to-ward-hyperscalers-off-amd-instinct-ai-accelerators-increased-boost-clocks-and-memory-bandwidth-pushes-power-demand-by-500-watts-to-2300-watts">Nvidia reportedly boosts Vera Rubin performance to ward hyperscalers off AMD Instinct AI accelerators - Tom’s Hardware</a>, April 2026. <a href="#fr-23-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p><a href="https://q.futunn.com/feed/116453429542916?lang=en-us">Google launches two new TPUs at once! With training and inference - Futu</a>, April 2026. <a href="#fr-13-1">↩</a></p>
+</li>
+<li id="footnote-25">
+<p><a href="https://www.networkworld.com/article/4162004/google-bets-on-workload-specific-tpus-with-8t-and-8i-launch.html">Google bets on workload-specific TPUs with 8t and 8i launch - Network World</a>, April 2026. <a href="#fr-25-1">↩</a></p>
+</li>
+<li id="footnote-27">
+<p><a href="https://intuitionlabs.ai/articles/nvidia-ai-gpu-pricing-guide">NVIDIA AI GPU Prices: H100 (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">27</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord">−</span></span></span></span>40K) &amp; H200 ($315K/8-GPU) Cost Guide - IntuitionLabs</a>, April 2026. <a href="#fr-27-1">↩</a></p>
+</li>
+<li id="footnote-16">
+<p><a href="https://aws.amazon.com/blogs/machine-learning/aws-and-nvidia-deepen-strategic-collaboration-to-accelerate-ai-from-pilot-to-production/">AWS and NVIDIA deepen strategic collaboration to accelerate AI from pilot to production - AWS Blog</a>, April 2026. <a href="#fr-16-1">↩</a></p>
+</li>
+<li id="footnote-28">
+<p><a href="https://www.rightnowai.co/guides/frameworks/jax">JAX CUDA Optimization Guide: XLA and GPU Acceleration - RightNow AI</a>, April 2026. <a href="#fr-28-1">↩</a></p>
+</li>
+<li id="footnote-31">
+<p><a href="https://developer.nvidia.com/blog/accelerating-long-context-model-training-in-jax-and-xla/">Accelerating Long-Context Model Training in JAX and XLA | NVIDIA Technical Blog</a>, April 2026. <a href="#fr-31-1">↩</a></p>
+</li>
+<li id="footnote-29">
+<p><a href="https://open-neuromorphic.org/neuromorphic-computing/software/hacking-hours/kade-heckel-jax-pallas-optimization/">Kade Heckel: Optimizing GPU/TPU code with JAX and Pallas - Open Neuromorphic</a>, April 2026. <a href="#fr-29-1">↩</a></p>
+</li>
+<li id="footnote-30">
+<p><a href="https://docs.jax.dev/en/latest/pallas/design/design.html">Pallas Design - JAX documentation</a>, April 2026. <a href="#fr-30-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="229.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="227.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="229.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="227.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

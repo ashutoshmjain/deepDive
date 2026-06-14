@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Store of Value vs. Exchange - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="store-of-value-vs-exchange"><a class="header" href="#store-of-value-vs-exchange">Store of Value vs. Exchange</a></h1>
+<p><img src="./img/store-of-value-medium-of-exchange.png" alt=""></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p><strong>A Complementary Synthesis for Sovereign Liquidity</strong></p>
+<h2 id="introduction-the-functionality-of-the-existing-system"><a class="header" href="#introduction-the-functionality-of-the-existing-system">Introduction: The Functionality of the Existing System</a></h2>
+<p>Contrary to the fragmented view of classical economics, the store of value (SoV) and the medium of exchange (MoE) are not opposing forces; they are complementary elements of a unified financial architecture. In the traditional financial world, this symbiotic relationship supports a credit system with nearly USD 200 trillion in assets. It is a system that works. It is anchored by the sovereign nation-state—specifically its assets, tax base, and military might—and operationalized through credit.
+The goal of financial innovation in the 21st century is not to dismantle this existing credit system, which successfully manages the bulk of global wealth. Rather, the objective is marginal improvement. By integrating a new class of digital credit instruments backed by global, non-sovereign assets (Bitcoin), sovereign states have a profound opportunity to improve their financial posture. This paper argues that by moving a “tiny fraction” of non-yielding reserves into high-yield digital instruments like Strategy Inc.’s STRC, sovereigns can achieve significant liquidity enhancements and yield generation without abandoning the stability of the traditional T-bill standard.</p>
+<h2 id="the-traditional-anchor-sovereign-might-and-credit-creation"><a class="header" href="#the-traditional-anchor-sovereign-might-and-credit-creation">The Traditional Anchor: Sovereign Might and Credit Creation</a></h2>
+<h3 id="the-sovereign-store-of-value"><a class="header" href="#the-sovereign-store-of-value">The Sovereign Store of Value</a></h3>
+<p>In the current geopolitical order, the ultimate store of value is the sovereign state itself. The “assets” backing a fiat currency are not merely gold bars in a vault; they are the nation’s institutional durability, economic output, and, crucially, its military power. These intangible but potent assets are converted into currency through a credit system.</p>
+<h3 id="the-mechanism-of-conversion-the-t-bill"><a class="header" href="#the-mechanism-of-conversion-the-t-bill">The Mechanism of Conversion: The T-Bill</a></h3>
+<p>The bridge between the sovereign’s abstract value and usable currency is the short-duration Treasury bill (T-bill).
+Credit as Money: In the US, the credit system (specifically short-term debt) functions as the bedrock for the dollar.
+The GENIUS Act Validation: This structure was formalized and modernized by the Guiding and Establishing National Innovation for US Stablecoins (GENIUS) Act of 2025. This legislation permits corporations to hold T-bills (with maturity of 93 days or less) and issue “Stable dollars” on a one-to-one basis.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>
+Global Replica: Most other nations utilize a similar system, albeit with local nuances. Banks and corporations hold sovereign debt and issue credit that circulates as a medium of exchange.
+This system is effective for domestic stability and major international trade settlements. However, its efficiency degrades rapidly at the edges—specifically, when crossing sovereign lines.</p>
+<h2 id="the-efficiency-gap-borders-and-velocity"><a class="header" href="#the-efficiency-gap-borders-and-velocity">The Efficiency Gap: Borders and Velocity</a></h2>
+<h3 id="the-geographic-limitation"><a class="header" href="#the-geographic-limitation">The Geographic Limitation</a></h3>
+<p>While sovereign currency functions seamlessly within its jurisdiction, it becomes ineffective the moment it crosses a state line. a US T-bill-backed dollar is not native to the Eurozone or Emerging Markets.
+Friction: Moving value across these lines requires a complex web of intermediaries, correspondent banks, and exchange mechanisms.
+Velocity Reduction: These “arcane rules and fees” act as a tax on economic throughput, leading to a severe reduction in money velocity.
+Cost &amp; Time: As of 2024, the average cost of global cross-border payments remained over 6%, with settlement times ranging from 1 to 5 business days due to the fragmented correspondent banking network.</p>
+<h3 id="the-opportunity-for-improvement"><a class="header" href="#the-opportunity-for-improvement">The Opportunity for Improvement</a></h3>
+<p>The current system functions well for static wealth preservation but struggles with global velocity. This creates an opening for a marginal improvement: the introduction of a global, non-sovereign asset that ignores borders.</p>
+<h2 id="the-evolution-of-strategy-inc-building-the-digital-treasury"><a class="header" href="#the-evolution-of-strategy-inc-building-the-digital-treasury">The Evolution of Strategy Inc: Building the Digital Treasury</a></h2>
+<p>To understand the significance of the STRC instrument, one must understand the evolutionary path Strategy Inc. took to create it. The company did not immediately invent a digital T-bill; it built the capital structure in phases, progressively enhancing the utility of Bitcoin as a financial asset.</p>
+<h3 id="phase-1-cash-conversion-the-balance-sheet-pivot"><a class="header" href="#phase-1-cash-conversion-the-balance-sheet-pivot">Phase 1: Cash Conversion (The Balance Sheet Pivot)</a></h3>
+<p>The evolution began in 2020 when Strategy Inc. (formerly MicroStrategy) converted its corporate treasury from fiat currency to Bitcoin.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>
+Action: The company used its existing excess cash reserves to purchase Bitcoin directly.
+Logic: This was a defensive move against monetary inflation, treating Bitcoin purely as a superior Store of Value (SoV).</p>
+<h3 id="phase-2-the-atm-offering-accretion-farming"><a class="header" href="#phase-2-the-atm-offering-accretion-farming">Phase 2: The ATM Offering (Accretion Farming)</a></h3>
+<p>Once the initial reserves were allocated, the company utilized its status as a public company to issue common stock via “At-The-Market” (ATM) offerings.
+Mechanism: The company sold shares (MSTR) to buy more Bitcoin.
+Metric: This introduced the concept of “BTC Yield” (or Bitcoin per share). By issuing shares at a premium to Net Asset Value (NAV) and buying Bitcoin, the company accreted more Bitcoin per share for existing holders.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup></p>
+<h3 id="phase-3-convertible-debt-leveraging-low-rates"><a class="header" href="#phase-3-convertible-debt-leveraging-low-rates">Phase 3: Convertible Debt (Leveraging Low Rates)</a></h3>
+<p>The company then tapped into the fixed-income markets by issuing convertible notes.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup>
+Strategy: They borrowed fiat at low interest rates to acquire more Bitcoin.
+Result: This leveraged the spread between the cost of fiat capital and the appreciation rate of Bitcoin, further accelerating the BTC Yield.</p>
+<h3 id="phase-4-preferred-equity-the-yield-bridge"><a class="header" href="#phase-4-preferred-equity-the-yield-bridge">Phase 4: Preferred Equity (The Yield Bridge)</a></h3>
+<p>Recognizing that many investors (and sovereigns) needed yield rather than just capital appreciation, the company began issuing fixed-rate preferred stocks (e.g., STRK, STRF).<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup>
+Innovation: This created a hybrid instrument—a stock that behaved like a bond, offering regular dividends backed by the corporate Bitcoin treasury.</p>
+<h3 id="phase-5-strc-the-digital-t-bill"><a class="header" href="#phase-5-strc-the-digital-t-bill">Phase 5: STRC (The Digital T-Bill)</a></h3>
+<p>The culmination of this evolution is STRC (Variable Rate Series A Perpetual Stretch Preferred Stock).<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup>
+The Structure: Unlike the earlier fixed-rate preferreds, STRC has a variable dividend rate designed to keep the par value fixed at USD 100.00.
+The Mirror Image: This perfectly mirrors the function of a monthly Treasury bill.
+US T-Bill: A short-term instrument, trading near par, yielding interest, backed by the US Military/Tax Base.
+STRC: A liquid instrument, trading near par (USD 100), yielding interest (monthly), backed by Bitcoin.
+By following this evolutionary path, Strategy Inc. effectively “financialized” Bitcoin. They transformed a volatile, non-yielding commodity into a stable, yield-bearing credit instrument suitable for institutional and sovereign balance sheets.</p>
+<h2 id="the-digital-complement-strc-as-the-sovereign-optimizer"><a class="header" href="#the-digital-complement-strc-as-the-sovereign-optimizer">The Digital Complement: STRC as the Sovereign Optimizer</a></h2>
+<h3 id="the-gold-problem-why-sovereigns-hesitate-on-bitcoin"><a class="header" href="#the-gold-problem-why-sovereigns-hesitate-on-bitcoin">The Gold Problem: Why Sovereigns Hesitate on Bitcoin</a></h3>
+<p>Sovereign nations, with exceptions like El Salvador, have historically continued hoarding gold instead of Bitcoin. The logic is sound: gold offers a far less volatile asset profile. There is “no risk” in the accumulation of gold regarding sudden 80% drawdowns, which makes it the preferred Store of Value for conservative treasuries.
+However, gold has two critical failures as a modern financial asset:
+Zero Yield: Gold sits in a vault and generates no revenue.
+Liquidity Friction: Selling billions in physical gold is a slow, logistical nightmare.</p>
+<h3 id="the-solution-strc-as-the-marginal-improvement"><a class="header" href="#the-solution-strc-as-the-marginal-improvement">The Solution: STRC as the Marginal Improvement</a></h3>
+<p>Strategy Inc. has engineered STRC to fill this specific gap. It provides the marginal improvement required to upgrade a sovereign’s asset base from “inert gold” to “productive digital credit.”
+The Instrument: STRC is a preferred stock designed to function as digital credit.
+Yield Generation: Unlike raw Bitcoin or Gold, STRC offers a substantial yield. As of November 2025, the dividend rate was raised to 10.50% annualized, paid monthly.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup>
+Value Proposition: This allows a sovereign to take a non-yielding asset allocation and convert it into a “10% yield farming” operation.</p>
+<h3 id="risk-management-the-financial-fortress"><a class="header" href="#risk-management-the-financial-fortress">Risk Management: The “Financial Fortress”</a></h3>
+<p>To make this instrument palatable for sovereign treasurers who fear Bitcoin’s volatility, Strategy Inc. has engineered robust protections:
+Stripping Away Volatility (80% Protection): The capital structure is designed such that the common equity (MSTR) absorbs the volatility. The preferred stock (STRC) remains unimpaired unless the Bitcoin price drops by approximately 80%. This structural subordination effectively neutralizes the volatility objection.
+Dividend Cover (The Reserve): To address liquidity concerns, Strategy Inc. established a USD 1.44 Billion Reserve in December 2025.
+Function: This cash reserve is dedicated to paying dividends and interest.
+Coverage: It covers 21 months of dividend obligations, ensuring that yield payments continue even during a prolonged “crypto winter” or bear market.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup></p>
+<h2 id="the-key-success-factor-assimilation-over-resistance"><a class="header" href="#the-key-success-factor-assimilation-over-resistance">The Key Success Factor: Assimilation Over Resistance</a></h2>
+<h3 id="the-failed-hypothesis"><a class="header" href="#the-failed-hypothesis">The Failed Hypothesis</a></h3>
+<p>The early Bitcoin thesis—that nation-states would rapidly demonetize gold and replace their reserves with raw Bitcoin—has largely proven wrong. With the notable exception of El Salvador, central banks have continued to hoard gold. The reason is structural: Central bankers are risk-averse by mandate. They cannot tolerate an asset that drops 70% in a year, regardless of its long-term potential. The “volatility” of the underlying asset (Bitcoin) was an insurmountable barrier to direct adoption.</p>
+<h3 id="the-engineered-bridge-consultation-and-co-design"><a class="header" href="#the-engineered-bridge-consultation-and-co-design">The Engineered Bridge: Consultation and Co-Design</a></h3>
+<p>STRC is likely to succeed where raw Bitcoin failed because it is an engineered bridge developed in direct engagement with the target market. Michael Saylor and Strategy Inc. did not build STRC in a vacuum; reports indicate active talks with sovereign wealth funds and hedge funds to tailor the instrument to their needs.<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup>
+Solving the Sovereign Ask: Sovereigns wanted the hardness of Bitcoin but the stability of a T-bill. STRC provides exactly that interface. It connects the “Gold Hoarding Central Bank” to the “Orange Coin” without forcing the bank to manage keys, volatility, or accounting headaches.
+Product Fit: By offering a variable dividend to maintain a fixed par value, Strategy Inc. created a product that speaks the language of the traditional banking system (yield, stability, par value) while utilizing the mechanics of the digital asset ecosystem.</p>
+<h3 id="the-ideological-inversion-path-of-assimilation"><a class="header" href="#the-ideological-inversion-path-of-assimilation">The Ideological Inversion: Path of Assimilation</a></h3>
+<p>This product represents a fundamental inversion of the early “Crypto Anarchist” ideology. Bitcoin is no longer positioned as a “Path of Resistance” attempting to burn down the central banking system. Instead, STRC positions Bitcoin as a “Path of Assimilation.”
+From Gold to Digital Gold: The narrative shifts from “End the Fed” to “Upgrade the Asset Base.” STRC allows the traditional financial world to gradually migrate its collateral base from physical gold (inert, heavy, centralized) to digital gold (active, light, decentralized) without a systemic shock.
+Marginal Improvement: This aligns with the “marginal improvement” thesis. Sovereigns do not need to adopt a radical new ideology; they simply need to adopt a better T-bill.</p>
+<h3 id="game-theory-the-first-mover-advantage"><a class="header" href="#game-theory-the-first-mover-advantage">Game Theory: The First Mover Advantage</a></h3>
+<p>This assimilation strategy re-opens the game theory dynamics for nation-states.
+The Race: The first sovereign to allocate a fraction of reserves to STRC secures a 10% yield and indirect exposure to the hardest asset on earth.
+The Win: The nation that moves first effectively “wins” the race for an ultimate currency offering. They stabilize their own fiat currency not just with local tax authority, but with the accretive power of the Strategy Inc. Bitcoin treasury.</p>
+<h2 id="the-physics-of-value-fermions-bosons-and-the-coupling-constant"><a class="header" href="#the-physics-of-value-fermions-bosons-and-the-coupling-constant">The Physics of Value: Fermions, Bosons, and the Coupling Constant</a></h2>
+<p>To fully grasp the complementary nature of Store of Value and Medium of Exchange, one can look to the fundamental laws of physics that govern our universe. The cosmos is constructed from two primary components: Fermions (Matter) and Bosons (Force Carriers). This duality perfectly maps onto the economic reality of the 21st century.</p>
+<h3 id="digital-mass-bitcoin-as-the-fermion"><a class="header" href="#digital-mass-bitcoin-as-the-fermion">Digital Mass: Bitcoin as the Fermion</a></h3>
+<p>In physics, matter is concentrated energy. Fermions (such as quarks and electrons) have mass; they take up space and resist acceleration. They are the “Store of Value” of the universe.
+Bitcoin is Digital Mass: Like the heavy elements forged in the core of a star, Bitcoin cannot be created without immense thermodynamic expenditure. It requires Proof of Work—real energy—to bring it into existence.
+Conservation of Energy: Just as mass is conserved and cannot be counterfeited by the universe, Bitcoin is mathematically conserved (capped at 21 million). It is the “heavy” anchor of the digital economy—a “thermodynamic truth” that sits at the center of the gravity well.</p>
+<h3 id="digital-light-sovereign-currency-as-the-boson"><a class="header" href="#digital-light-sovereign-currency-as-the-boson">Digital Light: Sovereign Currency as the Boson</a></h3>
+<p>Conversely, Bosons (like photons) are the “Medium of Exchange” of the universe. They have no mass, but they carry energy from one massive body to another. Electromagnetic (EM) waves allow the sun to transfer energy to the earth.
+Fiat is Digital Light: Sovereign currency (fiat) is designed to move. It has high velocity and no intrinsic “mass” (scarcity). It is the carrier wave that facilitates trade.
+Red Shift and Range Limits: However, just as EM waves lose energy over vast distances (Red Shift), sovereign currency loses value over time (Inflation). More importantly, its range is limited. The “coupling” of fiat currency is based on the manual force of military might. As soon as the currency travels beyond the effective range of that military projection (i.e., across a border), the signal degrades, and the medium becomes ineffective.</p>
+<h3 id="the-coupling-problem"><a class="header" href="#the-coupling-problem">The Coupling Problem</a></h3>
+<p>The fundamental inefficiency in the current global economy is the weak coupling between the Store of Value (Sovereign States) and the Medium of Exchange (Global Trade).
+Weak Coupling: Because the coupling relies on “manual” enforcement (laws, armies, borders), the transfer of value is friction-heavy. Moving value from a US T-Bill to a Brazilian vendor is like trying to transmit a radio signal through lead; the energy loss is massive.</p>
+<h3 id="strc-the-perfect-coupling-mechanism"><a class="header" href="#strc-the-perfect-coupling-mechanism">STRC: The Perfect Coupling Mechanism</a></h3>
+<p>Strategy Inc.’s STRC instrument functions as the engineered Coupling Mechanism that bridges this divide.
+The Bridge: STRC connects the “Digital Mass” (Bitcoin) to the “Digital Light” (High-Velocity Credit). It allows the heavy, immovable, energy-dense store of Value (Bitcoin) to radiate its energy outward in a usable form (Yield).
+Improving the Constant: By wrapping Bitcoin in a yield-bearing, stable-value instrument, STRC improves the “coupling constant” of the global economy. It allows a sovereign nation to anchor itself to the heaviest mass in the digital universe (Bitcoin) while transmitting value via a medium that travels at the speed of light, unencumbered by the friction of traditional borders.
+In this framework, the universe of value is complete: Bitcoin provides the mass (SoV), Sovereign Currency/Credit provides the light (MoE), and STRC provides the coherent coupling that ensures the energy of the former powers the velocity of the latter.</p>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>The integration of store of value and medium of exchange is the hallmark of a mature monetary system. While the traditional sovereign model achieves this through military-backed T-bills, it suffers from geographic friction and lower real yields.
+Strategy Inc. has demonstrated a pathway for marginal improvement through financial engineering. By progressively evolving from a cash treasury to ATM offerings, convertible debt, and finally the STRC instrument, they have created a digital equivalent to the Treasury bill. This instrument offers high yield (10.5%), low volatility (80% downside protection), and deep liquidity (21-month reserve cover).
+For sovereign nation-states, this represents a low-risk, high-reward opportunity. They do not need to revolutionize their entire financial system; they simply need to allocate a marginal fraction of their reserves to this new form of digital credit to significantly enhance their yield and global financial agility. The race to upgrade the asset base has begun, and the winners will be those who recognize that digital volatility can be engineered into stable sovereign strength.</p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>GENIUS Act Stablecoin Bill Signed into Law: A Breakdown, accessed December 15, 2025, https://uk.practicallaw.thomsonreuters.com/w-047-6505?transitionType=Default&amp;contextData=(sc.Default) <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>Stablecoins in Cross-Border Payments: 2025 Benefits &amp; Risks, accessed December 15, 2025, https://www.opendue.com/blog/stablecoins-in-cross-border-payments-benefits-risks-and-2025-trends <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a></p>
+</li>
+<li id="footnote-3">
+<p>Strategy Announces Third Quarter 2025 Financial Results, accessed December 15, 2025, https://www.strategy.com/press/strategy-announces-third-quarter-2025-financial-results_10-30-2025 <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>Strategy Announces Establishment of USD 1.44 Billion Reserve and Updates FY 2025 Guidance, accessed December 15, 2025, https://www.strategy.com/press/strategy-announces-establishment-of-1-44-billion-usd-reserve-and-updates-fy-2025-guidance_12-1-2025 <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>Money - Wikipedia, accessed December 15, 2025, https://en.wikipedia.org/wiki/Money <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>424B5 - SEC.gov, accessed December 15, 2025, https://www.sec.gov/Archives/edgar/data/1050446/000119312525263719/d922690d424b5.htm <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>Revenue Innovation Strategy Hits Record High, How to Avoid Bitcoin Liquidation Strategy? - Moomoo, accessed December 15, 2025, https://www.moomoo.com/news/post/56368507/revenue-innovation-strategy-hits-record-high-how-to-avoid-bitcoin <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-8">
+<p>Cross Border Payment Market Size, Share | Growth [2025-2032] - Fortune Business Insights, accessed December 15, 2025, https://www.fortunebusinessinsights.com/cross-border-payments-market-110223 <a href="#fr-8-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="cloningVsSexualReproduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="SBRnecessity.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="cloningVsSexualReproduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="SBRnecessity.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

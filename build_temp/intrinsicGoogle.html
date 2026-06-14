@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Google: The Physical AI Roadmap - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="google-the-physical-ai-roadmap"><a class="header" href="#google-the-physical-ai-roadmap">Google: The Physical AI Roadmap</a></h1>
+<p><img src="./img/intrinsicGoogle.png" alt="Intrinsic Google Cover Image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The announcement of Intrinsic’s formal integration into Google marks a pivotal transition in the trajectory of industrial automation. This move signals the maturation of robotics from a specialized hardware discipline into a software-defined, AI-centric domain. This shift, described as the pursuit of “Physical AI,” represents an effort to bridge the gap between the digital intelligence of large-scale neural networks and the complex, noisy reality of physical manipulation.</p>
+<p>For decades, the industrial robotics sector has been characterized by high barriers to entry, proprietary programming environments, and a lack of interoperability. Intrinsic was founded to dismantle these barriers by creating a universal platform that simplifies robotic programming while enhancing the cognitive capabilities of the machines themselves. By joining forces with Google, Intrinsic gains access to unparalleled computational resources, foundational AI research, and a global infrastructure that positions it to redefine the global manufacturing and logistics landscape.</p>
+<h2 id="the-conceptual-framework-of-physical-ai"><a class="header" href="#the-conceptual-framework-of-physical-ai">The Conceptual Framework of Physical AI</a></h2>
+<p>To understand what Intrinsic does, one must first define the concept of Physical AI as it is applied in this context. Physical AI refers to the synthesis of advanced machine learning—including computer vision, reinforcement learning, and motion planning—with the mechanical execution of tasks in unstructured or semi-structured environments.</p>
+<p>Historically, industrial robots have operated on a “blind and rigid” paradigm. They are programmed to move to precise coordinates \$(x, y, z)\$ with high repeatability, but they possess no inherent understanding of the objects they manipulate or the environment in which they operate. If a component is displaced by a few millimeters, the entire process fails.</p>
+<p>Intrinsic’s platform introduces a layer of perception and adaptability that allows robots to “see,” “feel,” and “reason” about their tasks. This is achieved through a multi-modal software stack that processes sensor data in real-time to adjust robotic trajectories. The integration with Google accelerates this by bringing “Vision-Language-Action” (VLA) models into the industrial workspace.</p>
+<p>These models, trained on vast datasets of both digital text and physical demonstrations, allow robots to understand high-level semantic instructions—such as “pick up the fragile object and place it gently”—and translate them into the precise motor commands required for execution.</p>
+<h3 id="table-1-transitioning-from-traditional-automation-to-physical-ai"><a class="header" href="#table-1-transitioning-from-traditional-automation-to-physical-ai"><strong>Table 1: Transitioning from Traditional Automation to Physical AI</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Traditional Industrial Automation</th><th style="text-align: left">Intrinsic’s Physical AI Paradigm</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Programming Method</td><td style="text-align: left">Scripted, vendor-specific code (RAPID, KRL)</td><td style="text-align: left">AI-driven, high-level intent and flow-based</td></tr>
+<tr><td style="text-align: left">Environmental Sensitivity</td><td style="text-align: left">Requires highly structured, static cells</td><td style="text-align: left">Adapts to dynamic, unstructured environments</td></tr>
+<tr><td style="text-align: left">Sensor Integration</td><td style="text-align: left">Limited; often requires custom integration</td><td style="text-align: left">Native multi-modal sensor fusion (vision, force, tactile)</td></tr>
+<tr><td style="text-align: left">Scalability</td><td style="text-align: left">Low; code is hardware-dependent</td><td style="text-align: left">High; code is hardware-agnostic and transferable</td></tr>
+<tr><td style="text-align: left">Learning Capability</td><td style="text-align: left">None; requires manual re-programming</td><td style="text-align: left">Continuous improvement via Sim2Real and fleet learning</td></tr>
+<tr><td style="text-align: left">Economic Barrier</td><td style="text-align: left">High CAPEX and high integration costs</td><td style="text-align: left">Reduced TCO through simplified development</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="the-core-functional-capabilities-of-the-intrinsic-platform"><a class="header" href="#the-core-functional-capabilities-of-the-intrinsic-platform">The Core Functional Capabilities of the Intrinsic Platform</a></h2>
+<p>At its essence, Intrinsic provides a developer platform and an operating environment designed to make industrial robots as easy to program as a modern web application. This involves several distinct but interconnected technological pillars that work in concert to enable Physical AI.</p>
+<h3 id="automated-motion-planning-and-kinematics"><a class="header" href="#automated-motion-planning-and-kinematics"><strong>Automated Motion Planning and Kinematics</strong></a></h3>
+<p>The most fundamental challenge in robotics is the mathematical translation of a desired end-effector position into the specific angles of each joint, known as inverse kinematics. For a standard six-axis industrial robot, the relationship between the joint angles \$\theta\$ and the Cartesian position \$x\$ is defined by the non-linear forward kinematics function \$x = f(\theta). USD Solving the inverse, \$\theta = f^{-1}(x), USD is computationally intensive and often has multiple solutions or singularities.</p>
+<p>Intrinsic’s software automates these calculations, providing real-time collision avoidance and path optimization. Instead of a programmer manually defining every waypoint, they define the goal and the constraints (e.g., “move to this bin without hitting the safety railing”). The Intrinsic engine calculates the optimal trajectory in milliseconds, accounting for the robot’s physical limits and the presence of obstacles detected by cameras.</p>
+<h3 id="perception-and-sensor-fusion"><a class="header" href="#perception-and-sensor-fusion"><strong>Perception and Sensor Fusion</strong></a></h3>
+<p>For a robot to be “intelligent,” it must have a high-fidelity representation of its surroundings. Intrinsic utilizes advanced computer vision algorithms to perform object detection, pose estimation, and semantic segmentation. This allows the system to identify not just where an object is, but what it is and how it should be handled.</p>
+<p>Furthermore, Intrinsic places a heavy emphasis on force and torque sensing. By integrating feedback from sensors at the robot’s wrist, the software can enable “active compliant” behaviors. This is critical for tasks like assembly, where a part must be “felt” into place, or polishing, where a constant force must be maintained across a curved surface. This combination of “seeing” and “feeling” mimics human dexterity.</p>
+<h3 id="simulation-to-reality-sim2real-pipelines"><a class="header" href="#simulation-to-reality-sim2real-pipelines"><strong>Simulation-to-Reality (Sim2Real) Pipelines</strong></a></h3>
+<p>One of the greatest bottlenecks in AI for robotics is the data requirement. Training a reinforcement learning model on a physical robot is slow, expensive, and risks damaging the hardware. Intrinsic solves this through high-fidelity simulation. By creating a “digital twin” of the robot and its environment, millions of trials can be run in parallel in the cloud.</p>
+<p>The challenge of Sim2Real is the “reality gap”—the small differences in physics, lighting, and sensor noise between the simulation and the real world. Intrinsic uses domain randomization and system identification techniques to ensure that models trained in the virtual world are robust enough to work on the factory floor. This allows for “zero-shot” deployment, where a robot can perform a new task correctly the first time it tries it.</p>
+<h2 id="strategic-implications-of-the-merger-with-google"><a class="header" href="#strategic-implications-of-the-merger-with-google">Strategic Implications of the Merger with Google</a></h2>
+<p>The decision for Intrinsic to join Google is a strategic realignment that recognizes the necessity of deep vertical integration between AI research and physical execution. While Intrinsic operated effectively as an independent Alphabet company, the move into Google provides three critical advantages.</p>
+<h3 id="integration-with-google-research-and-deepmind"><a class="header" href="#integration-with-google-research-and-deepmind"><strong>Integration with Google Research and DeepMind</strong></a></h3>
+<p>Google is home to some of the world’s most advanced AI research, particularly in the realm of foundation models. By integrating with Google Research, Intrinsic can directly leverage breakthroughs in Large Language Models (LLMs) and Vision-Language-Action (VLA) models like RT-2 and Gemini. These models enable a new level of “semantic intelligence” in robotics.</p>
+<p>Imagine a warehouse where an operator can say, “Tidy up the workspace and organize the electronics by type.” A traditional robot would have no way to process this. However, a VLA-powered Intrinsic system can use the LLM to decompose the high-level command into sub-tasks. This synergy transforms the robot from a scripted tool into an autonomous agent.</p>
+<h3 id="computational-power-and-tpu-acceleration"><a class="header" href="#computational-power-and-tpu-acceleration"><strong>Computational Power and TPU Acceleration</strong></a></h3>
+<p>The training of physical AI models requires specialized hardware. Google’s Tensor Processing Units (TPUs) are designed specifically for the high-throughput matrix multiplications required by neural networks. By joining Google, Intrinsic can leverage this infrastructure to train larger, more capable models faster than any competitor.</p>
+<h3 id="google-cloud-and-enterprise-distribution"><a class="header" href="#google-cloud-and-enterprise-distribution"><strong>Google Cloud and Enterprise Distribution</strong></a></h3>
+<p>Google Cloud provides the necessary backbone for managing large-scale robotic fleets across multiple geographic locations. For enterprise customers, the integration of Intrinsic into the Google Cloud ecosystem offers a familiar interface for monitoring performance and ensuring security. This moves robotics out of the “silo” of the factory floor and into the broader IT infrastructure.</p>
+<h3 id="table-2-synergies-generated-by-intrinsics-integration-into-google"><a class="header" href="#table-2-synergies-generated-by-intrinsics-integration-into-google"><strong>Table 2: Synergies Generated by Intrinsic’s Integration into Google</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Resource Area</th><th style="text-align: left">Google’s Contribution</th><th style="text-align: left">Impact on Intrinsic’s Roadmap</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>AI Foundations</strong></td><td style="text-align: left">Gemini, RT-2, and VLA model research</td><td style="text-align: left">Higher semantic understanding and reasoning</td></tr>
+<tr><td style="text-align: left"><strong>Compute</strong></td><td style="text-align: left">Global TPU pods and specialized AI accelerators</td><td style="text-align: left">Exponentially faster Sim2Real training cycles</td></tr>
+<tr><td style="text-align: left"><strong>Data Ecosystem</strong></td><td style="text-align: left">Google’s massive visual and linguistic datasets</td><td style="text-align: left">Improved generalization for unstructured tasks</td></tr>
+<tr><td style="text-align: left"><strong>Cloud Services</strong></td><td style="text-align: left">Google Cloud Platform (GCP) infrastructure</td><td style="text-align: left">Scalable fleet management and security</td></tr>
+<tr><td style="text-align: left"><strong>Talent Pool</strong></td><td style="text-align: left">World-class researchers in ML and robotics</td><td style="text-align: left">Acceleration of core algorithm development</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="the-acquisition-strategy-vicarious-and-open-robotics"><a class="header" href="#the-acquisition-strategy-vicarious-and-open-robotics">The Acquisition Strategy: Vicarious and Open Robotics</a></h2>
+<p>The roadmap of Intrinsic is also heavily influenced by its recent acquisitions, which have brought critical intellectual property into the fold. The integration of Vicarious and Open Robotics has effectively positioned Intrinsic at the center of the robotics ecosystem.</p>
+<h3 id="vicarious-generalizing-manipulation"><a class="header" href="#vicarious-generalizing-manipulation"><strong>Vicarious: Generalizing Manipulation</strong></a></h3>
+<p>Vicarious was a pioneer in using brain-inspired AI to solve complex manipulation problems. Their focus was on architectures that allowed robots to generalize from a few examples rather than requiring millions of data points. This acquisition provides Intrinsic with advanced reasoning capabilities for tasks such as handling deformable objects like fabrics and plastics.</p>
+<h3 id="open-robotics-and-the-ros-ecosystem"><a class="header" href="#open-robotics-and-the-ros-ecosystem"><strong>Open Robotics and the ROS Ecosystem</strong></a></h3>
+<p>The acquisition of Open Robotics (OSRC), the team behind the Robot Operating System (ROS) and the Gazebo simulator, was a seismic event. ROS is the de facto standard for robotics research and is increasingly being adopted for industrial applications.</p>
+<p>By bringing the stewards of ROS into Intrinsic, Alphabet has ensured that its platform will be the most “ROS-friendly” environment in the world. This gives Intrinsic immediate credibility with the global developer community and allows it to lead the “industrialization” of ROS<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>.</p>
+<h2 id="the-future-roadmap-phases-of-development"><a class="header" href="#the-future-roadmap-phases-of-development">The Future Roadmap: Phases of Development</a></h2>
+<p>The strategic roadmap for Intrinsic within Google can be viewed through three distinct phases: the Tooling Phase, the Cognitive Phase, and the Autonomous Ecosystem Phase.</p>
+<h3 id="phase-1-tooling-and-standardization-current-2-years"><a class="header" href="#phase-1-tooling-and-standardization-current-2-years"><strong>Phase 1: Tooling and Standardization (Current-2 Years)</strong></a></h3>
+<p>The immediate priority is the stabilization and broad release of the “Intrinsic Flow” developer environment. This involves hardware abstraction for the “Big Four” manufacturers (Fanuc, Yaskawa, ABB, KUKA) and moving toward skill-based programming.</p>
+<h3 id="phase-2-cognitive-augmentation-2-5-years"><a class="header" href="#phase-2-cognitive-augmentation-2-5-years"><strong>Phase 2: Cognitive Augmentation (2-5 Years)</strong></a></h3>
+<p>In this phase, the integration with Google’s VLA models becomes the primary differentiator. This includes natural language interfaces, visual reasoning for quality inspection, and cross-robot learning where skills are instantly adapted across different hardware forms.</p>
+<h3 id="phase-3-the-autonomous-ecosystem-5-12-years"><a class="header" href="#phase-3-the-autonomous-ecosystem-5-12-years"><strong>Phase 3: The Autonomous Ecosystem (5-1<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> Years)</strong></a></h3>
+<p>The long-term vision is the creation of “self-optimizing” physical environments. This involves orchestrating entire facilities, autonomous process design from CAD drawings, and resilient manufacturing systems that can autonomously “work around” equipment failures.</p>
+<h3 id="table-3-roadmap-milestones-and-expected-industrial-outcomes"><a class="header" href="#table-3-roadmap-milestones-and-expected-industrial-outcomes"><strong>Table 3: Roadmap Milestones and Expected Industrial Outcomes</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Phase</th><th style="text-align: left">Core Objective</th><th style="text-align: left">Key Deliverables</th><th style="text-align: left">Expected Industrial Impact</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Standardization</strong></td><td style="text-align: left">Reduce integration friction</td><td style="text-align: left">Universal Intrinsic API, ROS<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup> Industrial</td><td style="text-align: left">50% reduction in deployment time</td></tr>
+<tr><td style="text-align: left"><strong>Cognition</strong></td><td style="text-align: left">Enhance task adaptability</td><td style="text-align: left">VLA Model integration, Natural Language Control</td><td style="text-align: left">Robots handle “high-mix” production</td></tr>
+<tr><td style="text-align: left"><strong>Autonomy</strong></td><td style="text-align: left">Full system orchestration</td><td style="text-align: left">Self-synthesizing workflows, Fleet-wide optimization</td><td style="text-align: left">Scalable “Lights-out” factories</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="technical-depth-the-mathematics-of-adaptation"><a class="header" href="#technical-depth-the-mathematics-of-adaptation">Technical Depth: The Mathematics of Adaptation</a></h2>
+<p>To understand the “how” of Intrinsic’s roadmap, we must look at the mathematical frameworks they are employing. A key component is the use of Bayesian optimization and reinforcement learning (RL) in the Sim2Real pipeline.</p>
+<p>In the RL framework, an agent (the robot) learns to maximize a reward function \$R(s, a). USD The state of the system is \$s, USD and the agent takes an action \$a\$ according to a policy \$\pi. USD The goal is to find the optimal policy \$\pi^*\$ that maximizes the expected return:</p>
+<p>\$\$J(\pi) = \mathbb{E}<em>{\tau \sim \pi} \left[ \sum</em>{t=0}^{\infty} \gamma^t R(s_t, a_t) \right]\$\$</p>
+<p>where \$\gamma\$ is the discount factor and \$\tau\$ is a trajectory.</p>
+<p>Intrinsic’s innovation lies in “Domain Randomization.” During simulation, they vary the physical parameters \$\xi\$ (friction, mass, sensor noise) across a wide distribution \$\mathcal{D}. USD The agent is trained to maximize performance across this entire distribution, making it robust to real-world variations.</p>
+<h2 id="strategic-positioning-the-alphabet-tesla-rivalry-in-physical-ai"><a class="header" href="#strategic-positioning-the-alphabet-tesla-rivalry-in-physical-ai">Strategic Positioning: The Alphabet-Tesla Rivalry in Physical AI</a></h2>
+<p>The timing of Intrinsic’s reintegration into Google is widely viewed as a strategic consolidation intended to launch a coordinated offensive against Tesla’s Optimus humanoid platform and Amazon’s warehouse robotics. This positioning mirrors the rivalry between Waymo and Tesla’s Full Self-Driving (FSD) program.</p>
+<ul>
+<li><strong>Platform Agnosticism vs. Vertical Integration:</strong> Intrinsic aims to be the “Android of Robotics,” providing a hardware-agnostic platform. In contrast, Tesla’s Optimus project is vertically integrated, aiming for unit costs as low as 30,0<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup> dollars.</li>
+<li><strong>Precision vs. Generalized Intelligence:</strong> While Intrinsic emphasizes sub-millimeter precision and deterministic safety for complex manufacturing, Tesla focuses on “General-Purpose Autonomous Agents” derived from FSD neural networks.</li>
+<li><strong>Operational Scale:</strong> Intrinsic is focusing on the software layer to enable thousands of manufacturers, whereas Tesla aims to deploy a billion humanoid units by 2050.</li>
+</ul>
+<h2 id="geopolitical-and-economic-context-reshoring-and-smes"><a class="header" href="#geopolitical-and-economic-context-reshoring-and-smes">Geopolitical and Economic Context: Reshoring and SMEs</a></h2>
+<p>The “Physical AI” paradigm is a key enabler of “reshoring”—moving manufacturing back to high-wage countries. Traditionally, automation was only viable for high-volume products. By lowering the cost of programming and increasing flexibility, Intrinsic makes it economically feasible to automate “low-volume, high-mix” production.</p>
+<h3 id="small-and-medium-enterprises-smes"><a class="header" href="#small-and-medium-enterprises-smes"><strong>Small and Medium Enterprises (SMEs)</strong></a></h3>
+<p>SMEs represent the “untapped frontier” of robotics. The average small machine shop often lacks robots because they cannot afford a full-time robotics engineer. Intrinsic’s low-code/no-code interface and pre-trained “skills” are designed specifically to empower these smaller players.</p>
+<h2 id="challenges-and-constraints-in-the-physical-ai-roadmap"><a class="header" href="#challenges-and-constraints-in-the-physical-ai-roadmap">Challenges and Constraints in the Physical AI Roadmap</a></h2>
+<p>Despite the resources of Alphabet, several challenges could impede execution.</p>
+<h3 id="the-safety-performance-trade-off"><a class="header" href="#the-safety-performance-trade-off"><strong>The Safety-Performance Trade-off</strong></a></h3>
+<p>In the physical world, an AI error can result in catastrophic damage or injury. Bridging the gap between the probabilistic nature of deep learning and the deterministic requirements of industrial safety is a massive hurdle. Intrinsic is addressing this through “safety shields”—deterministic software layers that can override AI commands.</p>
+<h3 id="data-privacy-and-sovereignty"><a class="header" href="#data-privacy-and-sovereignty"><strong>Data Privacy and Sovereignty</strong></a></h3>
+<p>As robots become cloud-connected, concerns about data privacy on the factory floor will intensify. Manufacturing processes are often guarded trade secrets. Intrinsic will need to provide robust guarantees that proprietary data is protected.</p>
+<h3 id="hardware-limitations"><a class="header" href="#hardware-limitations"><strong>Hardware Limitations</strong></a></h3>
+<p>Software can only do so much if the underlying hardware is not up to the task. Traditional industrial robots were not designed for the high-speed, reactive control that Physical AI requires. The slow replacement cycle of industrial equipment means it will take years for the full potential of the software to be realized.</p>
+<h2 id="conclusion-the-new-era-of-software-defined-physical-systems"><a class="header" href="#conclusion-the-new-era-of-software-defined-physical-systems">Conclusion: The New Era of Software-Defined Physical Systems</a></h2>
+<p>The integration of Intrinsic into Google is a recognition that the future of robotics is a software problem. By combining the “brain” of Google’s AI research with the “nervous system” of Intrinsic’s robotic control platform, Alphabet is building the foundational infrastructure for the next industrial revolution.</p>
+<p>Intrinsic’s success will be defined by its ability to create a “universal language” for the physical world, much as Android created a universal language for the mobile world. The transition to software-defined robotics is now a core strategic pillar of the digital-physical continuum.</p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Google DeepMind: Scaling Robotics with VLA Models, accessed February 27, 2026, <a href="https://deepmind.google/discover/blog/scaling-robotics-with-vla-models/">https://deepmind.google/discover/blog/scaling-robotics-with-vla-models/</a> <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a></p>
+</li>
+<li id="footnote-2">
+<p>Open X-Embodiment: Robotic Learning at Scale, Google DeepMind, accessed February 27, 2026, <a href="https://robotics-transformer-x.github.io/">https://robotics-transformer-x.github.io/</a> <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="What-exactly-is-Karmyoga.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="googleAsLispMachine.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="What-exactly-is-Karmyoga.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="googleAsLispMachine.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

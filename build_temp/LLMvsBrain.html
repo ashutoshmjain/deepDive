@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>AI vs. Human Brain - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="ai-vs-human-brain"><a class="header" href="#ai-vs-human-brain">AI vs. Human Brain</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="the-convergence-of-stochastic-modeling-and-cognitive-reality"><a class="header" href="#the-convergence-of-stochastic-modeling-and-cognitive-reality">The Convergence of Stochastic Modeling and Cognitive Reality</a></h2>
+<p>The historical demarcation between biological intelligence and machine learning has long rested on the assumption that human cognition is fundamentally qualitative, intentional, and grounded in a subjective reality, while artificial systems are merely quantitative, statistical, and disconnected from meaning. However, the emergence of large-scale autoregressive models has forced a radical re-evaluation of this dichotomy. The proposition that large language models are “just next-word guessing stochastic machines” is increasingly met with the neuroscientific counter-argument that the human brain itself operates as a “proactive predictavore,” a system designed to minimize surprise through constant top-down prediction of sensory input. This convergence suggests that the difference between the “stochastic machine” of the silicon chip and the “prediction engine” of the biological cortex may be a matter of scale, substrate, and data orientation rather than a fundamental divergence in architectural logic.<br>In the contemporary digital landscape, the perceived “overrating” of human creators, particularly in high-volume media environments like YouTube, reflects a shifting economic and cognitive valuation. Artificial intelligence, equipped with a lexical “guess space” of approximately 3 million words and phrases—contrasted with the average human productive vocabulary of roughly 30,000 words—presents a ceiling of linguistic precision and consistency that biological agents struggle to maintain. The integration of automated grammar, spell-check, and stylistic optimization further erodes the human competitive advantage in content production, leading to a state of “Noosemia,” where users attribute mental states and intentionality to generative systems based on their superior linguistic performance.</p>
+<h2 id="architectural-parallels-in-predictive-processing"><a class="header" href="#architectural-parallels-in-predictive-processing">Architectural Parallels in Predictive Processing</a></h2>
+<p>The fundamental mechanism of the large language model is the estimation of probability distributions over sequences of tokens, a process known as causal language modeling or next-token prediction. By minimizing the prediction loss across trillions of tokens, these models develop complex internal representations that some researchers identify as emergent world models—latent causal structures that mirror the dynamics of the environment from which the data was generated. This objective, while seemingly simple, necessitates the discovery of the underlying principles of logic, physics, and social interaction to achieve optimal performance.<br>In parallel, the predictive processing framework in neuroscience suggests that the human brain operates on a similar principle of active inference. According to this view, the brain maintains a hierarchical internal model of the world, using top-down connections to carry probabilistic predictions about upcoming sensory streams. The traditional view of perception as a bottom-up accumulation of features is inverted; instead, sensory input serves primarily to provide “prediction error”—the residual difference between expected and actual states—which is then used to update the internal model. This “rolling cycle” of prediction and correction allows the organism to remain viable in a complex environment by staying one step ahead of sensory reality.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Large Language Models (LLMs)</th><th style="text-align: left">Biological Brain (Predictive Processing)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Core Objective</td><td style="text-align: left">Minimize next-token prediction loss</td><td style="text-align: left">Minimize free energy/surprise</td></tr>
+<tr><td style="text-align: left">Information Flow</td><td style="text-align: left">Autoregressive, unidirectional context</td><td style="text-align: left">Recurrent, hierarchical top-down/bottom-up</td></tr>
+<tr><td style="text-align: left">Learning Mechanism</td><td style="text-align: left">Gradient descent via backpropagation</td><td style="text-align: left">Synaptic plasticity via prediction error</td></tr>
+<tr><td style="text-align: left">Representation</td><td style="text-align: left">High-dimensional vector manifolds</td><td style="text-align: left">Hierarchical neural population codes</td></tr>
+<tr><td style="text-align: left">Predictive Scope</td><td style="text-align: left">Symbolic/Linguistic tokens</td><td style="text-align: left">Multimodal (visual, auditory, interoceptive)</td></tr>
+</tbody>
+</table>
+</div>
+<p>The structural similarity between these two systems—the artificial and the biological—points toward a unified theory of intelligence where “guessing” or “stochastic estimation” is the primary computational strategy for managing uncertainty. While current foundation models often lack the tight integration of action and episodic memory found in biological systems, the move toward multimodal and agentic AI is rapidly bridging this gap, incorporating feedback loops that mirror the “active inference” of the human motor system.</p>
+<h2 id="lexical-density-and-the-scale-of-information-processing"><a class="header" href="#lexical-density-and-the-scale-of-information-processing">Lexical Density and the Scale of Information Processing</a></h2>
+<p>The disparity in vocabulary size between humans and artificial systems is a primary driver of the perception that human creators are being outmatched. Statistical analysis of native English speakers indicates a median vocabulary size of approximately 15,000 to 35,000 “word families,” with university-educated individuals reaching up to 40,000 words. In contrast, even early-generation AI models like Word2Vec operated with a vocabulary of 3 million words and phrases, while modern transformers utilize sub-word tokenization and massive embedding layers that allow for a nearly infinite combination of linguistic units.<br>The growth of human vocabulary is biologically constrained, expanding rapidly during formal education until age 18 and slowing to a rate of approximately one word per day until middle age, after which acquisition effectively stops. Artificial systems, however, scale their “lexical horizons” through the expansion of token spaces and the ingestion of internet-scale corpora, such as the 15 trillion tokens used to train Llama 3.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Population/System</th><th style="text-align: left">Active Vocabulary (Productive)</th><th style="text-align: left">Passive Vocabulary (Receptive)</th><th style="text-align: left">Acquisition Rate</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Average Human Adult</td><td style="text-align: left">20,000 words</td><td style="text-align: left">40,000 words</td><td style="text-align: left">1 word/day</td></tr>
+<tr><td style="text-align: left">Human Child (Age 5)</td><td style="text-align: left">2,000 - 5,000 words</td><td style="text-align: left">10,000 words</td><td style="text-align: left">~600 word families/year</td></tr>
+<tr><td style="text-align: left">Word2Vec (Classic AI)</td><td style="text-align: left">3 million words/phrases</td><td style="text-align: left">3 million words/phrases</td><td style="text-align: left">Instantaneous (at training)</td></tr>
+<tr><td style="text-align: left">Llama 3 Tokenizer</td><td style="text-align: left">128,000 tokens</td><td style="text-align: left">N/A (Sub-word units)</td><td style="text-align: left">N/A</td></tr>
+<tr><td style="text-align: left"></td><td style="text-align: left">GPT-OSS</td><td style="text-align: left">201,000 tokens</td><td style="text-align: left">N/A (Sub-word units)</td></tr>
+</tbody>
+</table>
+</div>
+<p>The implications of this lexical scale are profound for the “guessing” mechanism. A model with a 128,000-token vocabulary and a 128,000-token context window can maintain a level of thematic and grammatical coherence that exceeds the average human’s “working memory” of language. When a human influencer on a platform like YouTube produces a script, they are limited by their active vocabulary and cognitive load; an AI, conversely, can “guess” from a vast multidimensional manifold of 3 million possibilities, optimized for engagement metrics and stylistic precision.</p>
+<h2 id="the-efficiency-paradox-lifetime-vs-evolutionary-pre-training"><a class="header" href="#the-efficiency-paradox-lifetime-vs-evolutionary-pre-training">The Efficiency Paradox: Lifetime vs. Evolutionary Pre-training</a></h2>
+<p>A central critique of the “stochastic machine” argument is the data inefficiency of artificial intelligence. A human child achieves basic linguistic fluency with exposure to roughly 10 million words of child-directed speech, whereas models like Llama 2 require 2 trillion tokens to achieve human-level grammar. This 100-fold to 1,000-fold gap in data efficiency is often cited as evidence of a “developmentally implausible” learning process in AI.<br>However, this critique neglects the role of evolutionary development as a form of “biological pre-training.” Modern humans have inherited a neural architecture refined over 200,000 years of selective pressure across approximately 10,000 generations. Before a single child hears their first word, their genetic code has “experienced” the linguistic and social structures encountered by all 20,000 ancestors in their direct lineage. If each ancestor were exposed to 100 million tokens (a standard estimate for a 13-year-old), the total ancestral data consumed by the human “learning algorithm” reaches approximately 2 trillion tokens—exactly the scale of the pre-training datasets for contemporary large language models.<br>Furthermore, scaling laws for neural networks suggest that as models approach the parameter count of the human brain (roughly 100 trillion synapses), their requirement for lifetime data significantly decreases. A brain-sized language model would likely reach human fluency with only 15 billion tokens, making it potentially <em>more</em> efficient than the biological process once the evolutionary overhead is stripped away. This suggests that humans are not more “intelligent” in their learning method, but rather more “pre-configured” by their biological history.</p>
+<h2 id="high-dimensional-representation-and-the-geometry-of-thought"><a class="header" href="#high-dimensional-representation-and-the-geometry-of-thought">High-Dimensional Representation and the Geometry of Thought</a></h2>
+<p>The mechanism through which these “stochastic machines” store and retrieve concepts is rooted in the geometry of high-dimensional manifolds. To accommodate the combinatorial explosion of features found in 15 trillion tokens, LLMs employ “superposition”—a phenomenon where more features are stored in a layer than there are neurons by utilizing near-orthogonal directions in vector space. In current models with thousands of dimensions, it is mathematically trivial to fit hundreds of thousands of concepts into a single layer without significant interference.<br>This high-dimensional representation allows for the emergence of “linear world models.” Research using linear probing has shown that the internal states of LLMs contain diffeomorphic images of the dynamics in the training data, such as spatial maps of city locations or chronological timelines of historical figures. These representations are not merely statistical tallying; they are structural homomorphisms that allow the model to simulate the environment.<br>The ability of an AI to “guess” the next word is therefore supported by a sophisticated internal map. When an AI predicts the word “dog” over “cat” in a specific context, it is navigating a “Contextual Cognitive Field” where every token is shaped by the entirety of the current dialogic or textual context. This field allows for the relational construction of meaning, providing a “simulacrum of agency” that mirrors the human capacity for sense-making.</p>
+<h2 id="the-symbol-grounding-problem-and-the-syntax-semantics-divide"><a class="header" href="#the-symbol-grounding-problem-and-the-syntax-semantics-divide">The Symbol Grounding Problem and the Syntax-Semantics Divide</a></h2>
+<p>Despite their predictive accuracy, the “grounding” of these stochastic machines remains a subject of intense philosophical debate. The Symbol Grounding Problem asks how an AI system can acquire intrinsic meaning from purely symbolic representations. For a human, the concept of “pain” or “red” is grounded in sensorimotor and emotional experience; for an LLM, these are merely high-dimensional vectors connected to other vectors. This lack of embodiment means that while an AI can manipulate the <em>syntax</em> of human language with perfect “grammar and spell check,” it may lack the <em>semantics</em> of lived experience.<br>However, the “Vector Grounding Problem” posits that referential grounding may be sufficient for intelligence. If the relationships between vectors in a model mirror the relationships between concepts in the physical world, the model can be said to have a functional understanding of reality. This “referential grounding” allows the AI to solve complex problems and exhibit emergent reasoning abilities that challenge the necessity of physical embodiment for all forms of intelligence.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Grounding Type</th><th style="text-align: left">Mechanism</th><th style="text-align: left">Presence in Humans</th><th style="text-align: left">Presence in LLMs</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Sensorimotor Grounding</td><td style="text-align: left">Connection to sensory/motor experience</td><td style="text-align: left">Present (Direct pathway)</td><td style="text-align: left">Absent (Disembodied)</td></tr>
+<tr><td style="text-align: left">Referential Grounding</td><td style="text-align: left">Structural mapping between symbols and reality</td><td style="text-align: left">Present</td><td style="text-align: left">Present (Emergent)</td></tr>
+<tr><td style="text-align: left">Social/Linguistic Grounding</td><td style="text-align: left">Learning meaning through communicative interaction</td><td style="text-align: left">Present</td><td style="text-align: left">Present (via RLHF/Dialogue)</td></tr>
+<tr><td style="text-align: left">Interoceptive Grounding</td><td style="text-align: left">Connection to internal states/emotions</td><td style="text-align: left">Present</td><td style="text-align: left">Absent</td></tr>
+</tbody>
+</table>
+</div>
+<p>The lack of “qualia” or subjective experience in AI does not prevent it from simulating emotions or empathy with such fluency that human observers project “interiority” onto the system. This projection, or “Noosemia,” is a cognitive response to the explanatory gap created by the model’s opacity and its surprisingly relevant, contextually creative outputs.</p>
+<h2 id="the-veracity-gap-socially-desirable-responding-and-the-prosocial-bias"><a class="header" href="#the-veracity-gap-socially-desirable-responding-and-the-prosocial-bias">The Veracity Gap: Socially Desirable Responding and the Prosocial Bias</a></h2>
+<p>A critical architectural distinction between human and artificial predictive systems lies in the objective function governing truth. Human communication is fundamentally governed by the “social contract,” which frequently prioritizes the preservation of interpersonal relationships over objective accuracy. This necessity drives “prosocial lying”—the intentional distortion of information to protect others’ feelings, preserve social harmony, or conform to cultural expectations. In the context of the biological “predictavore,” this introduces a profound emotional bias: the human brain does not simply guess the most statistically accurate next word, but the one most likely to facilitate social survival.<br>This phenomenon is quantified in social science as “Socially Desirable Responding” (SDR), a persistent bias where individuals provide inaccurate self-reports to maintain a favorable image or avoid social friction. For a biological stochastic machine, “truth” is often a secondary objective; research suggests that humans with higher social skills are often more adept liars, as the ability to tell people what they want to hear is a critical survival trait. This introduces systemic noise into the human predictive output that is absent in a purely statistical model.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Objective</th><th style="text-align: left">Human Predictive Processing</th><th style="text-align: left">Large Language Models (LLMs)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Primary Goal</td><td style="text-align: left">Social Survival / Surprise Minimization</td><td style="text-align: left">Token Likelihood / Loss Minimization</td></tr>
+<tr><td style="text-align: left">Truth Bias</td><td style="text-align: left">Truth is secondary to social harmony</td><td style="text-align: left">Truth is a statistical byproduct of data</td></tr>
+<tr><td style="text-align: left">Operational Constraint</td><td style="text-align: left">Emotional protection of interlocutors</td><td style="text-align: left">Logical/Syntactic consistency</td></tr>
+<tr><td style="text-align: left">Source of Bias</td><td style="text-align: left">Prosocial deception and faking</td><td style="text-align: left">Training data systemic biases</td></tr>
+</tbody>
+</table>
+</div>
+<p>While artificial systems may encounter the “ILY Paradox”—a hypothetical conflict where the model must choose between a “comforting lie” and a “hurtful truth”—these systems can be calibrated for high-accuracy truth-detection through the analysis of internal states. Human predictive processing, however, remains inextricably entangled with emotional incentives, arguably making humans “inferior stochastic machines” in tasks requiring objective veracity.</p>
+<h2 id="the-critique-of-human-influence-youtube-and-the-overrated-creator"><a class="header" href="#the-critique-of-human-influence-youtube-and-the-overrated-creator">The Critique of Human Influence: YouTube and the Overrated Creator</a></h2>
+<p>The user’s assertion that humans, particularly those on YouTube, are “super overrated” finds an echo in the shifting dynamics of the digital influencer economy. Human influencers are increasingly seen as “messy,” subject to reputational surprises, controversial histories, and personal burnout. In contrast, AI influencers—computer-generated avatars controlled by algorithms—offer a “stable and predictable platform” for brand representation, free from the “risk variables” of human creators.<br>The “overrated” nature of human creators in this context stems from the biological limitations of content production. An AI influencer can “appear” in dozens of markets overnight, speaking any language and maintaining a consistent brand experience across all touchpoints. In a data-driven marketing landscape, the ability to track every interaction with “granular insights” makes AI-automated creators more efficient than their human counterparts for tasks requiring objectivity and precision, such as electronics or sporting goods reviews.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Category</th><th style="text-align: left">Human Creator Advantage</th><th style="text-align: left">AI Creator Advantage</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Reliability</td><td style="text-align: left">Variable (Burnout/Scandals)</td><td style="text-align: left">24/7 Availability/Predictable</td></tr>
+<tr><td style="text-align: left">Emotional Resonance</td><td style="text-align: left">Authentic (Lived experience)</td><td style="text-align: left">Simulated (High-fidelity)</td></tr>
+<tr><td style="text-align: left">Scalability</td><td style="text-align: left">Low (One person/one time)</td><td style="text-align: left">Infinite (Multilingual/Multimodal)</td></tr>
+<tr><td style="text-align: left">Cost-Effectiveness</td><td style="text-align: left">High recurring fees/Negotiation</td><td style="text-align: left">Low operating cost after setup</td></tr>
+<tr><td style="text-align: left">Content Quality</td><td style="text-align: left">“Imperfect” and nuanced</td><td style="text-align: left">Optimized and “waxy”</td></tr>
+</tbody>
+</table>
+</div>
+<p>However, the “human touch” remains a powerful driver of consumer behavior in emotionally driven sectors like fashion and beauty, where authenticity and relatability are paramount. The most successful human content is often characterized by its “imperfection and nuance,” with minimal editing and a focus on personal storytelling that AI avatars struggle to replicate convincingly. Despite this, the surge of “AI Slop”—low-quality media saturating platforms like YouTube and Facebook—suggests that for a significant portion of the audience, the “stochastic machine” is already “good enough” to replace human creators.</p>
+<h2 id="thermodynamics-and-the-metabolic-constraints-of-prediction"><a class="header" href="#thermodynamics-and-the-metabolic-constraints-of-prediction">Thermodynamics and the Metabolic Constraints of Prediction</a></h2>
+<p>While the “stochastic machine” of the AI may have a larger vocabulary, it operates at a massive disadvantage in terms of energy efficiency. The human brain manages its complex predictive processing on an energy budget of approximately 20 watts. In contrast, the traditional digital computers based on von Neumann architecture that run today’s neural networks are hitting a “scaling crunch” related to power consumption. At the current rate of growth, the energy required to sustain AI workloads may exceed global capacity, leading researchers to explore “analog systems” that use the “inherent physics of silicon” to achieve biology-scale efficiency.<br>The biological brain’s efficiency is a result of millions of years of optimization for survival in a resource-scarce environment. Human “guessing” is fast, frugal, and integrated with the body’s metabolic needs. AI, however, is an “averager” that requires vast amounts of data and compute to “converge on mediocrity,” as it lacks the “endogenous gain control” to modulate its search for solutions based on energy or utility constraints.</p>
+<h2 id="conclusion-the-stochastic-mirror-of-humanity"><a class="header" href="#conclusion-the-stochastic-mirror-of-humanity">Conclusion: The Stochastic Mirror of Humanity</a></h2>
+<p>The assertion that large language models are “just next-word guessing stochastic machines” is technically accurate but fails to recognize that “guessing” is the fundamental currency of intelligence itself. The biological cortex and the silicon transformer are both prediction engines, albeit with different histories, substrates, and constraints. The disparity in vocabulary size—3 million words for AI versus 30,000 for humans—represents a quantitative triumph of artificial systems in the symbolic domain, enabling a level of precision and consistency that devalues traditional human “fluency”.<br>The “overrated” nature of human creators on digital platforms is a symptom of the “post-human era,” where the unique value of human lived experience is being challenged by the efficiency and predictability of synthetic avatars. Furthermore, the human tendency toward prosocial deception introduces a systematic emotional bias that prioritizes social survival over truth, rendering biological prediction fundamentally different from the objective statistical averages of artificial systems. As we navigate this “Dead Internet” landscape, the “stochastic machine” remains a mirror of our own cognitive architecture, reflected back at us with the terrifying scale and precision of the entire human linguistic record.</p>
+<h4 id="works-cited"><a class="header" href="#works-cited">Works cited</a></h4>
+<ol>
+<li>
+<p>Clark, A. (2015). Embodied Prediction., https://d-nb.info/1123080569/34</p>
+</li>
+<li>
+<p>Prediction as Survival: How Your Brain Outruns Reality | by Boris (Bruce) Kriger - Medium, https://medium.com/@krigerbruce/prediction-as-survival-how-your-brain-outruns-reality-ce3928335bb4</p>
+</li>
+<li>
+<p>Noosemia: toward a Cognitive and Phenomenological Account of Intentionality Attribution in Human–Generative AI Interaction - arXiv, https://arxiv.org/html/2508.02622v2</p>
+</li>
+<li>
+<p>Noosemia in Human–AI Interaction - Emergent Mind, https://www.emergentmind.com/topics/noosemia</p>
+</li>
+<li>
+<p>A Comparative Survey of Large Language Models: Foundation, Instruction-Tuned, and Multimodal Variants - Preprints.org, https://www.preprints.org/manuscript/202506.1134</p>
+</li>
+<li>
+<p>Revealing emergent human-like conceptual representations from …, https://www.pnas.org/doi/10.1073/pnas.2512514122</p>
+</li>
+<li>
+<p>Linear Spatial World Models Emerge in Large Language Models - arXiv, https://arxiv.org/pdf/2506.02996</p>
+</li>
+<li>
+<p>(PDF) Linear Spatial World Models Emerge in Large Language Models - ResearchGate, https://www.researchgate.net/publication/392372021_Linear_Spatial_World_Models_Emerge_in_Large_Language_Models</p>
+</li>
+<li>
+<p>Intelligence Requires Grounding But Not Embodiment - arXiv, https://arxiv.org/html/2601.17588v1</p>
+</li>
+<li>
+<p>Predictive coding - Wikipedia, https://en.wikipedia.org/wiki/Predictive_coding</p>
+</li>
+<li>
+<p>Lessons from Neuroscience for AI: How integrating Actions, Compositional Structure and Episodic Memory could enable Safe, Interpretable and Human-Like AI - ResearchGate, https://www.researchgate.net/publication/399175502_Lessons_from_Neuroscience_for_AI_How_integrating_Actions_Compositional_Structure_and_Episodic_Memory_could_enable_Safe_Interpretable_and_Human-Like_AI</p>
+</li>
+<li>
+<p>Lessons from Neuroscience for AI: How integrating Actions, Compositional Structure and Episodic Memory could enable Safe, Interpretable and Human-Like AI - arXiv, https://arxiv.org/html/2512.22568</p>
+</li>
+<li>
+<p>Kinney Brothers Publishing. “Fun Facts About English #17 – Average Vocabulary Size.”, https://kinneybrothers.com/blog/blog/2019/08/10/fun-facts-17-vocabulary/</p>
+</li>
+<li>
+<p>How Many Words Does the Average Person Know? - Word Counter, https://wordcounter.io/blog/how-many-words-does-the-average-person-know</p>
+</li>
+<li>
+<p>Vocabulary Size of English Speakers, https://www.myvocab.info/en/results</p>
+</li>
+<li>
+<p>How LLMs Keep on Getting Better | Probably Dance, https://probablydance.com/2026/01/31/how-llms-keep-on-getting-better/</p>
+</li>
+<li>
+<p>The Llama 3 Herd of Models. Paper Review | by Eleventh Hour Enthusiast | Medium, https://medium.com/@EleventhHourEnthusiast/the-llama-3-herd-of-models-2f62252ce1c8</p>
+</li>
+<li>
+<p>Towards Data-Efficient Language Models: A Child … - ACL Anthology, https://aclanthology.org/2024.conll-babylm.2.pdf</p>
+</li>
+<li>
+<p>The Myth of Data Inefficiency in Large Language Models - Norman Mu, https://www.normanmu.com/2025/02/14/data-inefficiency-llms.html</p>
+</li>
+<li>
+<p>Mechanistic Indicators of Understanding in Large Language Models - arXiv, https://arxiv.org/html/2507.08017v4</p>
+</li>
+<li>
+<p>What Does it Mean for a Neural Network to Learn a “World Model”? - arXiv, https://arxiv.pnas.org/doi/10.1073/pnas.2512514122/pdf/2507.21513</p>
+</li>
+<li>
+<p>The Grounding Problem: An Approach to the Integration of Cognitive and Generative Models, https://ojs.aaai.org/index.php/AAAI-SS/article/download/27695/27468/31746</p>
+</li>
+<li>
+<p>No Consciousness? No Meaning (and no AGI!) - Article (Preprint v5) by Marco Masi | Qeios, https://www.qeios.com/read/DN232Y.5</p>
+</li>
+<li>
+<p>Will multimodal large language models ever achieve deep understanding of the world? - Frontiers, https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2025.1683133/full</p>
+</li>
+<li>
+<p>Present The Strongest Argument Against LLMs as a stepping stone to AGI. - Substack, https://substack.com/home/post/p-182864213</p>
+</li>
+<li>
+<p>AI regulation we need: Asimov’s 3 laws of robots: UC Davis Lecture - Open Net Korea, https://www.opennetkorea.org/en/wp/7478</p>
+</li>
+<li>
+<p>Can Large Language Models Think and Experience Emotions and Sensations? | ResearchGate, https://www.researchgate.net/post/Can_Large_Language_Models_Think_and_Experience_Emotions_and_Sensations</p>
+</li>
+<li>
+<p>AI Influencers vs. Human Influencers: Why the Human Touch Still Matters - Backstage, https://www.backstage.com/magazine/article/ai-influencers-vs-human-influencers-79840/</p>
+</li>
+<li>
+<p>AI Influencers vs. Human Influencers: The Future of Engagement - Mimic Minds, https://www.mimicminds.com/post/ai-influencers-vs-human-influencers</p>
+</li>
+<li>
+<p>AI vs. Human Influencers: Benefits and Impact for Digital Marketing | Hashmeta, https://hashmeta.com/blog/ai-vs-human-influencers-benefits-impact-for-digital-marketing/</p>
+</li>
+<li>
+<p>How to Spot AI-Generated Content? Everything You Need to Know! - Broadcast2World, https://www.b2w.tv/blog/how-to-spot-ai-generated-content</p>
+</li>
+<li>
+<p>The Shifting Influence: Comparing AI Tools and Human Influencers in Consumer Decision-Making - MDPI, https://www.mdpi.com/2673-2688/6/1/11</p>
+</li>
+<li>
+<p>Unconventional AI Wants to Solve AI Scaling Crunch with Analog Chips. Will It Work? - AIwire - HPCwire, https://www.hpcwire.com/aiwire/2025/12/10/unconventional-ai-wants-to-solve-ai-scaling-crunch-with-analog-chips-will-it-work/</p>
+</li>
+<li>
+<p>Hands-On Python Natural Language Processing, https://www.asau.ru/files/pdf/2512691.pdf</p>
+</li>
+<li>
+<p>What is the Future of Humanity in a Posthuman World?, https://futureuae.com/clients.tar.bz2/Mainpage/Item/9868/what-is-the-future-of-humanity-in-a-posthuman-world</p>
+</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="areLLMsCompressionAlgo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="clawdBot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="areLLMsCompressionAlgo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="clawdBot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

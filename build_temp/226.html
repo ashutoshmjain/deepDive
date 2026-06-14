@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>226 : Root access to self - - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="226--root-access-to-self--"><a class="header" href="#226--root-access-to-self--">226 : Root access to self -</a></h1>
+<p><img src="./img/226.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The historical trajectory of human self-understanding has long been dominated by the dualistic metaphor of the “biological chariot”—a complex physical vessel steered by a singular, albeit invisible, driver. This conceptual framework, rooted in the logical deduction that every effect must possess a cause, has persisted despite the total absence of physical evidence for such a centralized pilot. In the contemporary era, the search for this “driver” has transitioned from the realm of philosophical speculation to the rigorous laboratory of neurobiology and theoretical physics. As medical science has dissected the body “inside out,” examining every tissue and neural pathway, it has failed to identify a singular locus of control. Instead, what has emerged is a picture of an exquisitely decentralized system—a “collective auto-pilot” of staggering complexity. However, the question of how we know our own bodies, and the nature of the entity that perceives the world, suggests that our initial premise may be flawed. The sensory apparatus, traditionally viewed as a unidirectional diagnostic tool for external experience, appears instead to be a bidirectional portal. In this paradigm, the senses do not merely provide a window for the organism to look out; they serve as a conduit through which the universe itself interacts with and “records” the state of the individual. This report explores the scientific grounding for the hypothesis that senses are not one-way functions, but rather the portal of a participatory reality where attention constitutes the fundamental measurement on a quantum register.</p>
+<h2 id="the-decentralized-chariot-autonomic-homeostasis-and-the-absence-of-a-central-driver"><a class="header" href="#the-decentralized-chariot-autonomic-homeostasis-and-the-absence-of-a-central-driver"><strong>The Decentralized Chariot: Autonomic Homeostasis and the Absence of a Central Driver</strong></a></h2>
+<p>The human body operates as a high-fidelity homeostatic system that functions almost entirely without conscious oversight. This “auto-pilot” mechanism is governed by the Autonomic Nervous System (ANS), which regulates vital functions such as heart rate, respiratory rate, digestion, and pupillary response.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> The ANS is divided into the sympathetic system, which mobilizes the body for “fight or flight,” and the parasympathetic system, which promotes “rest and digest” states.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> The coordination of these systems does not stem from a singular command center but emerges from integrated reflexes spanning the brainstem, spinal cord, and peripheral organs.<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup></p>
+<p>The hypothalamus acts as a critical integrator for these functions, receiving visceral and somatic input as well as emotional signals from the limbic system.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup> Yet, even the hypothalamus is not a “driver” in the traditional sense; it is a relay and regulation hub. The decentralized nature of bodily control is most evident in the enteric nervous system (ENS), which contains approximately 200 million neurons embedded in the gastrointestinal tract.<sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup> The ENS communicates with the central nervous system but is capable of regulating gut function independently, illustrating that the “biological chariot” is composed of multiple autonomous systems working in concert.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup></p>
+<h3 id="functional-divisions-of-the-autonomic-system-and-regulatory-mechanisms"><a class="header" href="#functional-divisions-of-the-autonomic-system-and-regulatory-mechanisms"><strong>Functional Divisions of the Autonomic System and Regulatory Mechanisms</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">System Component</th><th style="text-align: left">Primary Function</th><th style="text-align: left">Neurotransmitters Involved</th><th style="text-align: left">Regulatory Hub</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Sympathetic Nervous System</td><td style="text-align: left">Energy mobilization (Fight or Flight)</td><td style="text-align: left">Norepinephrine, Epinephrine</td><td style="text-align: left">Lateral gray column (T1-L2), Adrenal Medulla</td></tr>
+<tr><td style="text-align: left">Parasympathetic Nervous System</td><td style="text-align: left">Energy conservation (Rest and Digest)</td><td style="text-align: left">Acetylcholine (ACh)</td><td style="text-align: left">Brainstem (Cranial nerves), Sacral spinal cord</td></tr>
+<tr><td style="text-align: left">Enteric Nervous System</td><td style="text-align: left">Gastrointestinal regulation (Independent)</td><td style="text-align: left">Diverse (Serotonin, ACh, etc.)</td><td style="text-align: left">Myenteric and Submucosal plexuses</td></tr>
+<tr><td style="text-align: left">Hypothalamus</td><td style="text-align: left">Homeostatic integration</td><td style="text-align: left">Various releasing hormones</td><td style="text-align: left">Diencephalon</td></tr>
+</tbody>
+</table>
+</div>
+<p>1</p>
+<p>The development and maintenance of the body—from infancy to old age—are similarly automated. Growth factors and genetic programs orchestrate the migration of neural crest cells and the elongation of axons without the need for conscious direction.<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup> Sleep, hunger, and thirst are triggered by internal sensors that monitor plasma osmolarity, blood glucose, and body temperature, initiating corrective behaviors through the brainstem and hypothalamus.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup> This biological autonomy raises the “Hard Problem” of consciousness: if the body is a self-regulating machine, why does it possess a subjective “Knower” who feels like the occupant of the vessel?</p>
+<h2 id="the-sensory-portal-bidirectional-information-exchange"><a class="header" href="#the-sensory-portal-bidirectional-information-exchange"><strong>The Sensory Portal: Bidirectional Information Exchange</strong></a></h2>
+<p>The traditional view of the senses as “one-way” exteroceptive tools—designed only to see “outwards”—is challenged by the discovery of the interoceptive nervous system. Interoception is the process by which the nervous system senses and integrates signals regarding the internal state of the body.<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup> While exteroception (vision, hearing, touch) is optimized for rapid, digital-like signaling to process environmental changes, interoception utilizes analogue-like processing to map the internal milieu in real-time.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup></p>
+<p>This interoceptive system is physically distinct. It relies on unmyelinated and lightly myelinated afferent neurons, such as those found in the vagus nerve and the lamina I spinothalamocortical pathway.<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">6</a></sup> These pathways carry sympathetic and parasympathetic afferents that signal the physiological condition of all tissues in the body, providing the foundational substrate for what we experience as “subjectivity” and “homeostatic feelings”.<sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">6</a></sup></p>
+<h3 id="comparative-analysis-of-exteroceptive-and-interoceptive-systems"><a class="header" href="#comparative-analysis-of-exteroceptive-and-interoceptive-systems"><strong>Comparative Analysis of Exteroceptive and Interoceptive Systems</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Exteroception</th><th style="text-align: left">Interoception</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Primary Objective</td><td style="text-align: left">External environmental experience</td><td style="text-align: left">Internal milieu mapping/Homeostasis</td></tr>
+<tr><td style="text-align: left">Signal Nature</td><td style="text-align: left">Rapid, precise, digital-like</td><td style="text-align: left">Continuous, analogue-like</td></tr>
+<tr><td style="text-align: left">Neural Fiber Type</td><td style="text-align: left">Heavily myelinated (fast)</td><td style="text-align: left">Unmyelinated/Lightly myelinated (slow)</td></tr>
+<tr><td style="text-align: left">Cortical Destination</td><td style="text-align: left">Primary sensory cortices (e.g., V<sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">1</a></sup>, A1)</td><td style="text-align: left">Insular cortex, Anterior Cingulate (ACC)</td></tr>
+<tr><td style="text-align: left">Communication Direction</td><td style="text-align: left">Primarily Afferent (Inward)</td><td style="text-align: left">Bidirectional (Sensing and Regulating)</td></tr>
+</tbody>
+</table>
+</div>
+<p>5</p>
+<p>The sensory portal is not merely a receiving station but a bidirectional channel. In modern neurobiology, interoception is increasingly defined to include not only the “ascending” sensing of bodily states but also the “descending” regulation of those states by the brain.<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">5</a></sup> This leads to the concept of the “sensor-effector loop,” where the distinction between a sense and an action becomes blurred. For example, thermoception—the sense of temperature—is not just a measurement of the environment; it is an inference about the thermal state of the body that is directly coupled to thermoregulatory processes like sweating or shivering.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup> This coupling suggests that the senses are the interface where the internal and external worlds meet and modify one another.</p>
+<h2 id="the-quantum-register-observation-as-measurement-and-record"><a class="header" href="#the-quantum-register-observation-as-measurement-and-record"><strong>The Quantum Register: Observation as Measurement and Record</strong></a></h2>
+<p>The user’s argument suggests that the universe “tracks” our attention and that perception is a recorded measurement on a “quantum register of reality.” This aligns with the “Participatory Universe” hypothesis proposed by John Archibald Wheeler.<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup> Wheeler argued that the universe does not exist as a static, independent entity but comes into being through the act of observation.<sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">8</a></sup> This is grounded in the “delayed-choice” experiment, which demonstrates that a decision made in the present (the choice of how to measure a photon) can retroactively determine the path that the photon “must have taken” billions of years ago.<sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">9</a></sup></p>
+<p>In this framework, the “Knower” is not a passive witness but a “participator” in the actualization of reality. Every act of conscious attention extracts “bits” of information from the quantum foam of possibility, collapsing wavefunctions and crystallizing potentiality into actuality.<sup class="footnote-reference" id="fr-9-2"><a href="#footnote-9">9</a></sup> This is summarized in Wheeler’s “It from Bit” principle: all physical things are information-theoretic in origin.<sup class="footnote-reference" id="fr-8-3"><a href="#footnote-8">8</a></sup></p>
+<h3 id="information-theoretic-perspectives-on-reality"><a class="header" href="#information-theoretic-perspectives-on-reality"><strong>Information-Theoretic Perspectives on Reality</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Principle</th><th style="text-align: left">Core Concept</th><th style="text-align: left">Physical Basis</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">It from Bit</td><td style="text-align: left">Physical reality is derived from information.</td><td style="text-align: left">Quantum information theory 11</td></tr>
+<tr><td style="text-align: left">Participatory Universe</td><td style="text-align: left">Observers are required to bring reality into being.</td><td style="text-align: left">Delayed-choice experiments 13</td></tr>
+<tr><td style="text-align: left">Quantum Darwinism</td><td style="text-align: left">Environment “selects” and records robust states.</td><td style="text-align: left">Decoherence and pointer states 14</td></tr>
+<tr><td style="text-align: left">Holographic Principle</td><td style="text-align: left">Volume information is encoded on a boundary.</td><td style="text-align: left">Bekenstein bound and black hole entropy 16</td></tr>
+</tbody>
+</table>
+</div>
+<p>11</p>
+<p>The “Quantum Register” can be understood through the lens of Quantum Darwinism, proposed by Wojciech Zurek. This theory posits that the “objective” classical world emerges because the environment—the sea of photons and air molecules surrounding us—acts as an active monitor.<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">10</a></sup> When a quantum system interacts with its environment, it leaves redundant copies of its information in the surroundings.<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">11</a></sup> Multiple observers can then access these distinct replicas of information to reach a “consensus” on reality.<sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">12</a></sup> Thus, the act of perception is not just a private experience; it is a physical interaction that “imprints” information onto the environment, effectively creating a recorded measurement that defines the state of the world.<sup class="footnote-reference" id="fr-11-2"><a href="#footnote-11">11</a></sup></p>
+<h2 id="attention-as-the-spotlight-of-the-knower"><a class="header" href="#attention-as-the-spotlight-of-the-knower"><strong>Attention as the “Spotlight” of the Knower</strong></a></h2>
+<p>If the senses are the portal, attention is the mechanism by which the Knower chooses what information to integrate and record. Selective attention is the brain’s ability to prioritize specific information while filtering out the vast amount of irrelevant environmental noise.<sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">13</a></sup> This process is governed by a hierarchical organization where top-down signals from the frontal and parietal lobes modulate the activity of sensory neurons.<sup class="footnote-reference" id="fr-13-2"><a href="#footnote-13">13</a></sup></p>
+<p>According to Global Workspace Theory (GWT), consciousness arises when information is “selected” and then “broadcast” throughout the brain.<sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">14</a></sup> This creates a serial bottleneck in an otherwise parallel, unconscious system.<sup class="footnote-reference" id="fr-14-2"><a href="#footnote-14">14</a></sup> Information that enters the global workspace becomes “globally available” to multiple cognitive systems, allowing for flexible, voluntary control.<sup class="footnote-reference" id="fr-14-3"><a href="#footnote-14">14</a></sup> In the “theater” metaphor of GWT, attention acts as the “spotlight” on the stage; only the actors illuminated by this light are conscious and their “speeches” (information) are heard by the “audience” (the rest of the brain’s specialized modules).<sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">15</a></sup></p>
+<h3 id="the-selection-broadcast-cycle-of-consciousness"><a class="header" href="#the-selection-broadcast-cycle-of-consciousness"><strong>The Selection-Broadcast Cycle of Consciousness</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Phase</th><th style="text-align: left">Neural Mechanism</th><th style="text-align: left">Functional Outcome</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Competition</td><td style="text-align: left">Local modular activity (e.g., visual processing)</td><td style="text-align: left">Parallel, unconscious processing of stimuli</td></tr>
+<tr><td style="text-align: left">Selection</td><td style="text-align: left">Attentional spotlight (Frontal Eye Fields, Parietal)</td><td style="text-align: left">Choice of task-relevant information</td></tr>
+<tr><td style="text-align: left">Integration</td><td style="text-align: left">Recruitment of the Global Workspace (PFC, ACC)</td><td style="text-align: left">Unified conscious representation</td></tr>
+<tr><td style="text-align: left">Broadcast</td><td style="text-align: left">Recurrent signaling across long-range axons</td><td style="text-align: left">Global availability for action and memory</td></tr>
+</tbody>
+</table>
+</div>
+<p>22</p>
+<p>The movement of attention is, as the user suggests, the “true knowledge.” In quantum mechanical terms, Henry Stapp proposes that this conscious effort of attention triggers the Quantum Zeno Effect (QZE) in the brain.<sup class="footnote-reference" id="fr-16-1"><a href="#footnote-16">16</a></sup> The QZE is a phenomenon where rapid, repeated observations of a quantum system can “freeze” its evolution.<sup class="footnote-reference" id="fr-16-2"><a href="#footnote-16">16</a></sup> By focusing attention, the Knower stabilizes specific patterns of neural activity, effectively “holding” a thought or intention in place long enough to produce a macroscopic physical effect.<sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">17</a></sup> This provides a science-based causal mechanism for how “conscious intent” can influence the “biological chariot”.<sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">18</a></sup></p>
+<h2 id="the-ego-tunnel-why-the-knower-feels-separated"><a class="header" href="#the-ego-tunnel-why-the-knower-feels-separated"><strong>The Ego Tunnel: Why the Knower Feels Separated</strong></a></h2>
+<p>The question of “how do we know our body” is complicated by the fact that we do not experience our body directly; we experience a <em>model</em> of it. Thomas Metzinger’s “Ego Tunnel” theory suggests that no such thing as a “self” exists in the world; instead, the brain creates a Phenomenal Self-Model (PSM).<sup class="footnote-reference" id="fr-19-1"><a href="#footnote-19">19</a></sup> This PSM is a virtual image of the organism as a whole, including its body, emotions, and relationship to time.<sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">20</a></sup></p>
+<p>Crucially, this model is “transparent”—the brain cannot recognize it as a model, so we look “through” it as if it were a direct window onto reality.<sup class="footnote-reference" id="fr-20-2"><a href="#footnote-20">20</a></sup> This transparency is what creates the robust “first-person perspective” and the feeling of being a “driver” inside the head.<sup class="footnote-reference" id="fr-21-1"><a href="#footnote-21">21</a></sup> The “Ego Tunnel” is a selective way of representing information, a “low-dimensional projection” of an inconceivably richer physical reality.<sup class="footnote-reference" id="fr-22-1"><a href="#footnote-22">22</a></sup> Our senses evolved for survival, not for depicting objective reality, and so they “drill a tunnel” through the environment, painting its walls with colors and sounds that exist only within the internal model.<sup class="footnote-reference" id="fr-20-3"><a href="#footnote-20">20</a></sup></p>
+<h3 id="attributes-of-the-phenomenal-self-model-psm"><a class="header" href="#attributes-of-the-phenomenal-self-model-psm"><strong>Attributes of the Phenomenal Self-Model (PSM)</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Attribute</th><th style="text-align: left">Description</th><th style="text-align: left">Functional Role</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Transparency</td><td style="text-align: left">The inability to recognize the model <em>as</em> a model.</td><td style="text-align: left">Creates the feeling of “direct” experience.</td></tr>
+<tr><td style="text-align: left">Unity</td><td style="text-align: left">Integration of disparate senses into a single world.</td><td style="text-align: left">Solves the “binding problem”.<sup class="footnote-reference" id="fr-19-2"><a href="#footnote-19">19</a></sup></td></tr>
+<tr><td style="text-align: left">Presence</td><td style="text-align: left">The feeling of being “here and now.”</td><td style="text-align: left">Flags survival-relevant information.<sup class="footnote-reference" id="fr-20-4"><a href="#footnote-20">20</a></sup></td></tr>
+<tr><td style="text-align: left">Agency</td><td style="text-align: left">The sense of ownership over actions.</td><td style="text-align: left">Facilitates goal-directed behavior.</td></tr>
+<tr><td style="text-align: left">Perspective</td><td style="text-align: left">A centered, first-person point of view.</td><td style="text-align: left">Creates the “Ego” as a reference point.<sup class="footnote-reference" id="fr-21-2"><a href="#footnote-21">21</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>30</p>
+<p>This explains why we cannot see our neurons firing: the evolution of the PSM “hid the simulation” because seeing the underlying biological mechanics would be metabolically expensive and counterproductive for survival.<sup class="footnote-reference" id="fr-20-5"><a href="#footnote-20">20</a></sup> We “know” our body through the interoceptive signals that filter into this model, giving us a sense of ownership over the “biological chariot” without revealing its complex internal diagnostics.<sup class="footnote-reference" id="fr-20-6"><a href="#footnote-20">20</a></sup></p>
+<h2 id="the-body-as-the-field-and-the-search-for-root-access"><a class="header" href="#the-body-as-the-field-and-the-search-for-root-access"><strong>The Body as the Field and the Search for “Root Access”</strong></a></h2>
+<p>The argument posits that “The body is the field; the senses are the portal.” In systems biology, this “field” is understood as a network of multiscale feedback control loops.<sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">23</a></sup> Homeostasis is maintained through negative feedback loops that counteract changes to keep variables within an optimal range, such as blood glucose or body temperature.<sup class="footnote-reference" id="fr-24-1"><a href="#footnote-24">24</a></sup></p>
+<p>The desire for “root access”—to see our own “file system” and understand our own structure—is the drive toward metacognition and interoceptive awareness. Metacognition is “thinking about thinking,” the ability to monitor one’s own cognitive processes.<sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">25</a></sup> Interoceptive awareness specifically refers to the metacognitive monitoring of interoceptive processing.<sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">26</a></sup> While most people have poor “interoceptive accuracy” (e.g., they cannot accurately track their own heartbeat), individuals can develop greater awareness through practices like mindfulness, which brings deliberate attention to bodily sensations.<sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">27</a></sup></p>
+<h3 id="dimensions-of-interoceptive-and-metacognitive-knowledge"><a class="header" href="#dimensions-of-interoceptive-and-metacognitive-knowledge"><strong>Dimensions of Interoceptive and Metacognitive Knowledge</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Domain</th><th style="text-align: left">Measure</th><th style="text-align: left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Interoceptive Accuracy</td><td style="text-align: left">Objective Detection</td><td style="text-align: left">Performance on tasks like heartbeat perception.<sup class="footnote-reference" id="fr-27-2"><a href="#footnote-27">27</a></sup></td></tr>
+<tr><td style="text-align: left">Interoceptive Sensibility</td><td style="text-align: left">Subjective Report</td><td style="text-align: left">Self-perceived ability to sense internal states.<sup class="footnote-reference" id="fr-28-1"><a href="#footnote-28">28</a></sup></td></tr>
+<tr><td style="text-align: left">Interoceptive Awareness</td><td style="text-align: left">Metacognition</td><td style="text-align: left">Confidence/knowledge about one’s own sensing accuracy.<sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">29</a></sup></td></tr>
+<tr><td style="text-align: left">Metacognitive Control</td><td style="text-align: left">Regulation</td><td style="text-align: left">The ability to adapt thinking strategies.<sup class="footnote-reference" id="fr-25-2"><a href="#footnote-25">25</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>6</p>
+<p>The “Theory of Everything” that we crave is often sought in the external world, but if humans are the most complex of creations, the key may lie in the “internal field.” Integrated Information Theory (IIT) suggests that the quality of our experience is specified by the set of informational relationships generated within the brain’s complex of elements.<sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">30</a></sup> This complex is the “maximally irreducible conceptual information structure,” or “quale,” which is identical to an experience.<sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">31</a></sup> If we understand our own structure—the way our brain integrates information to create the self—we are essentially viewing the “source code” of the observer through which all other knowledge is filtered.</p>
+<h2 id="the-knower-and-the-act-of-measurement"><a class="header" href="#the-knower-and-the-act-of-measurement"><strong>The Knower and the Act of Measurement</strong></a></h2>
+<p>The user asks: “What if the senses are communicating the spot of our attention… the act of perception is a recorded measurement on the quantum register of reality.” This aligns with the “Black Box” model of the observer, where the observer is coupled to the environment and any exchange of information involves a physical interaction and exchange of energy.<sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">32</a></sup></p>
+<p>In this view, the universe is not just “watching” us as an active surveillance, but rather, the “Knower” and the “Known” are entangled. The “spot of our attention” is a choice of what question to ask nature.<sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">33</a></sup> In quantum theory, this is the “Heisenberg choice”—the selection of which observable to measure.<sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">34</a></sup> This choice is not determined by any known physical laws, yet it has direct effects on the subsequent course of physically described events.<sup class="footnote-reference" id="fr-35-1"><a href="#footnote-35">35</a></sup></p>
+<h3 id="the-process-of-quantum-conscious-interaction"><a class="header" href="#the-process-of-quantum-conscious-interaction"><strong>The Process of Quantum-Conscious Interaction</strong></a></h3>
+<ol>
+<li><strong>Process 2 (The Field):</strong> The brain evolves according to the Schroedinger equation, creating a superposition of many possible states and actions.<sup class="footnote-reference" id="fr-36-1"><a href="#footnote-36">36</a></sup></li>
+<li><strong>Process 1 (The Portal/Choice):</strong> The “Knower” makes a “free choice” of which question to put to nature—this is the focus of attention.<sup class="footnote-reference" id="fr-35-2"><a href="#footnote-35">35</a></sup></li>
+<li><strong>The Measurement (The Record):</strong> Nature provides an answer (“Dirac choice”), collapsing the superposition into a single actuality.<sup class="footnote-reference" id="fr-34-2"><a href="#footnote-34">34</a></sup></li>
+<li><strong>The Quantum Register:</strong> This outcome is recorded via decoherence in the environment and the brain’s own memory systems, defining a new “starting point” for reality.<sup class="footnote-reference" id="fr-11-3"><a href="#footnote-11">11</a></sup></li>
+</ol>
+<p>This cyclic process suggests that “God is always watching” is a metaphor for the fact that the universe is a “self-excited circuit” where every act of perception is a permanent update to the information state of the cosmos.<sup class="footnote-reference" id="fr-9-3"><a href="#footnote-9">9</a></sup></p>
+<h2 id="synthesis-knowing-the-self-as-the-ultimate-exploration"><a class="header" href="#synthesis-knowing-the-self-as-the-ultimate-exploration"><strong>Synthesis: Knowing the Self as the Ultimate Exploration</strong></a></h2>
+<p>The path of the “Knower” who aspires to know himself is the process of turning the “sensory portal” inward. This is not just a spiritual exercise but a scientific frontier. By understanding the “efference copy”—the brain’s internal prediction of its own actions—we can begin to distinguish the “self” from the “field”.<sup class="footnote-reference" id="fr-37-1"><a href="#footnote-37">37</a></sup> The efference copy allows us to predict the sensory consequences of our movements, enabling the brain to “cancel out” self-generated noise and maintain a stable perception of the world.<sup class="footnote-reference" id="fr-37-2"><a href="#footnote-37">37</a></sup></p>
+<p>When this mechanism is impaired, as in certain neurological disorders, the boundary between the self and the external world begins to dissolve.<sup class="footnote-reference" id="fr-38-1"><a href="#footnote-38">38</a></sup> For the “Knower,” the key is to achieve a state of “root access” where the internal models (the Ego Tunnel) become transparent <em>not</em> in the sense of being invisible, but in the sense of being recognized for what they are: simulations.<sup class="footnote-reference" id="fr-20-7"><a href="#footnote-20">20</a></sup></p>
+<p>If we understand our own self—the “most complex of creation”—there is little left to explore because the “rest” of the world is only known through the medium of the self.<sup class="footnote-reference" id="fr-39-1"><a href="#footnote-39">39</a></sup> As Wheeler’s “Leibniz logic loop” suggests, the analysis of the physical world, pursued to sufficient depth, leads back to the conscious mind, tied through the acts of observation and participation to the very foundations of the universe.<sup class="footnote-reference" id="fr-40-1"><a href="#footnote-40">40</a></sup> The sensory portal is the interface where this loop is closed, and the “Knower” finally recognizes that the “tiny box” of their physical vicinity is a reflection of the infinite information structure that constitutes their true identity.</p>
+<p>The body, then, is not a “chariot” being driven by a hidden soul, but a decentralized, self-organizing “field” of information.<sup class="footnote-reference" id="fr-41-1"><a href="#footnote-41">41</a></sup> The “Knower” is the emergent property of this field’s complexity, a “virtual organ” that allows the system to monitor itself and its environment.<sup class="footnote-reference" id="fr-20-8"><a href="#footnote-20">20</a></sup> The senses are the portals that facilitate this monitoring, serving as the “quantum register” where our attention is measured and our existence is affirmed. In the end, to know the body is to know the portal, and to know the portal is to understand that we are active participants in the ongoing dialogue that brings the universe into being.</p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h4 id="works-cited"><a class="header" href="#works-cited"><strong>Works cited</strong></a></h4>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Autonomic nervous system - Wikipedia, accessed April 14, 2026, <a href="https://en.wikipedia.org/wiki/Autonomic_nervous_system">https://en.wikipedia.org/wiki/Autonomic_nervous_system</a> <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a></p>
+</li>
+<li id="footnote-2">
+<p>Physiology, Autonomic Nervous System - StatPearls - NCBI Bookshelf, accessed April 14, 2026, <a href="https://www.ncbi.nlm.nih.gov/books/NBK538516/">https://www.ncbi.nlm.nih.gov/books/NBK538516/</a> <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a></p>
+</li>
+<li id="footnote-3">
+<p>14.4: Central Control of Autonomic Function - Medicine LibreTexts, accessed April 14, 2026, <a href="https://med.libretexts.org/Bookshelves/Anatomy_and_Physiology/Human_Anatomy_(Lange_et_al.)/14%3A_Autonomic_Nervous_System/14.04%3A_Central_Control_of_Autonomic_Function">https://med.libretexts.org/Bookshelves/Anatomy_and_Physiology/Human_Anatomy_(Lange_et_al.)/14%3A_Autonomic_Nervous_System/14.04%3A_Central_Control_of_Autonomic_Function</a> <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>Physiology of the Autonomic Nervous System - PMC - NIH, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1959222/">https://pmc.ncbi.nlm.nih.gov/articles/PMC1959222/</a> <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>The Emerging Science of Interoception: Sensing, Integrating, Interpreting, and Regulating Signals within the Self - PMC, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7780231/">https://pmc.ncbi.nlm.nih.gov/articles/PMC7780231/</a> <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a></p>
+</li>
+<li id="footnote-6">
+<p>The physiology of interoception and its adaptive role in … - PMC - NIH, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12612705/</a> <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a></p>
+</li>
+<li id="footnote-7">
+<p>A computationally informed distinction of interoception and exteroception - PubMed, accessed April 14, 2026, <a href="https://pubmed.ncbi.nlm.nih.gov/38432449/">https://pubmed.ncbi.nlm.nih.gov/38432449/</a> <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-8">
+<p>John Archibald Wheeler | The Spiritual Arts Foundation, accessed April 14, 2026, <a href="https://www.spiritualarts.org.uk/john-archibald-wheeler/">https://www.spiritualarts.org.uk/john-archibald-wheeler/</a> <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a> <a href="#fr-8-3">↩3</a></p>
+</li>
+<li id="footnote-9">
+<p>The Participatory Universe: How Consciousness Shapes Reality | by Dinis Guarda - Medium, accessed April 14, 2026, <a href="https://dinisguarda.medium.com/the-participatory-universe-how-consciousness-shapes-reality-0de6157b7372">https://dinisguarda.medium.com/the-participatory-universe-how-consciousness-shapes-reality-0de6157b7372</a> <a href="#fr-9-1">↩</a> <a href="#fr-9-2">↩2</a> <a href="#fr-9-3">↩3</a></p>
+</li>
+<li id="footnote-10">
+<p>Quantum Darwinism and the Emergence of Objective Reality | by Adithyan Jayakumar, accessed April 14, 2026, <a href="https://medium.com/@adithyanjayakumar/quantum-darwinism-and-the-emergence-of-objective-reality-7d53838ed4c4">https://medium.com/@adithyanjayakumar/quantum-darwinism-and-the-emergence-of-objective-reality-7d53838ed4c4</a> <a href="#fr-10-1">↩</a></p>
+</li>
+<li id="footnote-11">
+<p>Quantum Darwinism, accessed April 14, 2026, <a href="https://www.physicalism.com/quantum-darwinism.pdf">https://www.physicalism.com/quantum-darwinism.pdf</a> <a href="#fr-11-1">↩</a> <a href="#fr-11-2">↩2</a> <a href="#fr-11-3">↩3</a></p>
+</li>
+<li id="footnote-12">
+<p>Quantum Darwinism, an Idea to Explain Objective Reality, Passes First Tests | Quanta Magazine : r/Physics - Reddit, accessed April 14, 2026, <a href="https://www.reddit.com/r/Physics/comments/cgi0bt/quantum_darwinism_an_idea_to_explain_objective/">https://www.reddit.com/r/Physics/comments/cgi0bt/quantum_darwinism_an_idea_to_explain_objective/</a> <a href="#fr-12-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p>The Neural Basis of Selective Attention: Cortical Sources and Targets of Attentional Modulation - PMC, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2681259/">https://pmc.ncbi.nlm.nih.gov/articles/PMC2681259/</a> <a href="#fr-13-1">↩</a> <a href="#fr-13-2">↩2</a></p>
+</li>
+<li id="footnote-14">
+<p>Global Workspace Theory: A Mechanistic Approach to Consciousness, accessed April 14, 2026, <a href="https://theoriesofconsciousness.com/global-workspace-theory-consciousness/">https://theoriesofconsciousness.com/global-workspace-theory-consciousness/</a> <a href="#fr-14-1">↩</a> <a href="#fr-14-2">↩2</a> <a href="#fr-14-3">↩3</a></p>
+</li>
+<li id="footnote-15">
+<p>Global workspace theory - Wikipedia, accessed April 14, 2026, <a href="https://en.wikipedia.org/wiki/Global_workspace_theory">https://en.wikipedia.org/wiki/Global_workspace_theory</a> <a href="#fr-15-1">↩</a></p>
+</li>
+<li id="footnote-16">
+<p>[quant-ph/0003065] Decoherence, Quantum Zeno Effect, and the Efficacy of Mental Effort, accessed April 14, 2026, <a href="https://arxiv.org/abs/quant-ph/0003065">https://arxiv.org/abs/quant-ph/0003065</a> <a href="#fr-16-1">↩</a> <a href="#fr-16-2">↩2</a></p>
+</li>
+<li id="footnote-17">
+<p>[0803.1633] A model of the quantum-classical and mind-brain connections, and of the role of the quantum Zeno effect in the physical implementation of conscious intent - arXiv, accessed April 14, 2026, <a href="https://arxiv.org/abs/0803.1633">https://arxiv.org/abs/0803.1633</a> <a href="#fr-17-1">↩</a></p>
+</li>
+<li id="footnote-18">
+<p>Quantum Physics in Neuroscience and Psychology: A Neurophysical Model of Mind/Brain Interaction, by Jeffrey M. Schwartz, Henry P. Stapp, and Mario Beauregard - New Dualism Archive, accessed April 14, 2026, <a href="http://newdualism.org/papers/H.Stapp/Stapp-PTB6.htm">http://newdualism.org/papers/H.Stapp/Stapp-PTB6.htm</a> <a href="#fr-18-1">↩</a></p>
+</li>
+<li id="footnote-19">
+<p>The Ego Tunnel: The Science of the Mind and the Myth of the Self by Thomas Metzinger | Goodreads, accessed April 14, 2026, <a href="https://www.goodreads.com/book/show/5895503-the-ego-tunnel">https://www.goodreads.com/book/show/5895503-the-ego-tunnel</a> <a href="#fr-19-1">↩</a> <a href="#fr-19-2">↩2</a></p>
+</li>
+<li id="footnote-20">
+<p>The Ego Tunnel by Thomas Metzinger | Summary, Audio, Quotes, FAQ - SoBrief, accessed April 14, 2026, <a href="https://sobrief.com/books/the-ego-tunnel">https://sobrief.com/books/the-ego-tunnel</a> <a href="#fr-20-1">↩</a> <a href="#fr-20-2">↩2</a> <a href="#fr-20-3">↩3</a> <a href="#fr-20-4">↩4</a> <a href="#fr-20-5">↩5</a> <a href="#fr-20-6">↩6</a> <a href="#fr-20-7">↩7</a> <a href="#fr-20-8">↩8</a></p>
+</li>
+<li id="footnote-21">
+<p>The Ego Tunnel: The Science of the Mind and the Myth of the Self - ISPR, accessed April 14, 2026, <a href="https://ispr.info/2009/10/18/the-ego-tunnel-the-science-of-the-mind-and-the-myth-of-the-self/">https://ispr.info/2009/10/18/the-ego-tunnel-the-science-of-the-mind-and-the-myth-of-the-self/</a> <a href="#fr-21-1">↩</a> <a href="#fr-21-2">↩2</a></p>
+</li>
+<li id="footnote-22">
+<p>Review: Thomas Metzinger’s “The Ego Tunnel” - words and dirt, accessed April 14, 2026, <a href="https://www.words-and-dirt.com/words/review-thomas-metzingers-the-ego-tunnel/">https://www.words-and-dirt.com/words/review-thomas-metzingers-the-ego-tunnel/</a> <a href="#fr-22-1">↩</a></p>
+</li>
+<li id="footnote-23">
+<p>Biological feedback control—Respect the loops - ResearchGate, accessed April 14, 2026, <a href="https://www.researchgate.net/publication/352474371_Biological_feedback_control-Respect_the_loops">https://www.researchgate.net/publication/352474371_Biological_feedback_control-Respect_the_loops</a> <a href="#fr-23-1">↩</a></p>
+</li>
+<li id="footnote-24">
+<p>Homeostasis and feedback loops (article) - Khan Academy, accessed April 14, 2026, <a href="https://www.khanacademy.org/science/hs-bio/x230b3ff252126bb6:from-cells-to-organisms/x230b3ff252126bb6:homeostasis/a/homeostasis-and-feedback-loops">https://www.khanacademy.org/science/hs-bio/x230b3ff252126bb6:from-cells-to-organisms/x230b3ff252126bb6:homeostasis/a/homeostasis-and-feedback-loops</a> <a href="#fr-24-1">↩</a></p>
+</li>
+<li id="footnote-25">
+<p>The Neuroscience of Metacognition: Understanding Your Mind (12 Minutes) - YouTube, accessed April 14, 2026, <a href="https://www.youtube.com/watch?v=gIbTxkT4eck">https://www.youtube.com/watch?v=gIbTxkT4eck</a> <a href="#fr-25-1">↩</a> <a href="#fr-25-2">↩2</a></p>
+</li>
+<li id="footnote-26">
+<p>(PDF) The Relationship Between Interoception and Metacognition - ResearchGate, accessed April 14, 2026, <a href="https://www.researchgate.net/publication/291346678_The_Relationship_Between_Interoception_and_Metacognition">https://www.researchgate.net/publication/291346678_The_Relationship_Between_Interoception_and_Metacognition</a> <a href="#fr-26-1">↩</a></p>
+</li>
+<li id="footnote-27">
+<p>The roles of interoceptive sensitivity and metacognitive interoception in panic - PMC - NIH, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4422149/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4422149/</a> <a href="#fr-27-1">↩</a> <a href="#fr-27-2">↩2</a></p>
+</li>
+<li id="footnote-28">
+<p>Editorial: Exploring the interplay of interoception in emotion, cognition, and mental health, accessed April 14, 2026, <a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1676040/full">https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1676040/full</a> <a href="#fr-28-1">↩</a></p>
+</li>
+<li id="footnote-29">
+<p>A Primer on Interoception and its Importance in Psychiatry - PMC, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10157017/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10157017/</a> <a href="#fr-29-1">↩</a></p>
+</li>
+<li id="footnote-30">
+<p>Consciousness as Integrated Information: a Provisional Manifesto | The Biological Bulletin: Vol 215, No 3 - The University of Chicago Press: Journals, accessed April 14, 2026, <a href="https://www.journals.uchicago.edu/doi/full/10.2307/25470707">https://www.journals.uchicago.edu/doi/full/10.2307/25470707</a> <a href="#fr-30-1">↩</a></p>
+</li>
+<li id="footnote-31">
+<p>Integrated information theory of consciousness: an updated account - Esalq, accessed April 14, 2026, <a href="http://www.esalq.usp.br/lepse/imgs/conteudo_thumb/Integrated-information-theory-of-consciousness-an-updated-account.pdf">http://www.esalq.usp.br/lepse/imgs/conteudo_thumb/Integrated-information-theory-of-consciousness-an-updated-account.pdf</a> <a href="#fr-31-1">↩</a></p>
+</li>
+<li id="footnote-32">
+<p>Building the Observer into the System: Toward a Realistic Description of Human Interaction with the World - arXiv, accessed April 14, 2026, <a href="https://arxiv.org/pdf/1411.3405">https://arxiv.org/pdf/1411.3405</a> <a href="#fr-32-1">↩</a></p>
+</li>
+<li id="footnote-33">
+<p>The Observer in the Quantum Experiment - arXiv, accessed April 14, 2026, <a href="https://arxiv.org/pdf/quant-ph/0011086">https://arxiv.org/pdf/quant-ph/0011086</a> <a href="#fr-33-1">↩</a></p>
+</li>
+<li id="footnote-34">
+<p>Problems in Henry Stapp’s interpretation of quantum physics, accessed April 14, 2026, <a href="http://settheory.net/stapp">http://settheory.net/stapp</a> <a href="#fr-34-1">↩</a> <a href="#fr-34-2">↩2</a></p>
+</li>
+<li id="footnote-35">
+<p>Henry P. Stapp Theoretical Physics Group Lawrence Berkeley National Laboratory University of California Berkeley, California 947, accessed April 14, 2026, <a href="https://www-physics.lbl.gov/~stapp/QMA.pdf">https://www-physics.lbl.gov/~stapp/QMA.pdf</a> <a href="#fr-35-1">↩</a> <a href="#fr-35-2">↩2</a></p>
+</li>
+<li id="footnote-36">
+<p>Henry Stapp - Can We Explain Cosmos and Consciousness?, accessed April 14, 2026, <a href="https://www.reddit.com/r/consciousness/comments/1l5w5s0/henry_stapp_can_we_explain_cosmos_and/">https://www.reddit.com/r/consciousness/comments/1l5w5s0/henry_stapp_can_we_explain_cosmos_and/</a> <a href="#fr-36-1">↩</a></p>
+</li>
+<li id="footnote-37">
+<p>Efference copy - Wikipedia, accessed April 14, 2026, <a href="https://en.wikipedia.org/wiki/Efference_copy">https://en.wikipedia.org/wiki/Efference_copy</a> <a href="#fr-37-1">↩</a> <a href="#fr-37-2">↩2</a></p>
+</li>
+<li id="footnote-38">
+<p>Efference copy/corollary discharge function and targeted cognitive training in patients with schizophrenia - PMC, accessed April 14, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6616012/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6616012/</a> <a href="#fr-38-1">↩</a></p>
+</li>
+<li id="footnote-39">
+<p>A “Participatory Universe” of J. A. Wheeler as an Intentional Correlate of Embodied Subjects and an Example of Purposivene - arXiv, accessed April 14, 2026, <a href="https://arxiv.org/pdf/1304.2277">https://arxiv.org/pdf/1304.2277</a> <a href="#fr-39-1">↩</a></p>
+</li>
+<li id="footnote-40">
+<p>At Home in a Super-Copernican Cosmos: The Genesis of John Wheeler’s Participatory Universe - MPG.PuRe, accessed April 14, 2026, <a href="https://pure.mpg.de/rest/items/item_3614780_3/component/file_3614781/content">https://pure.mpg.de/rest/items/item_3614780_3/component/file_3614781/content</a> <a href="#fr-40-1">↩</a></p>
+</li>
+<li id="footnote-41">
+<p>Self-organization - Wikipedia, accessed April 14, 2026, <a href="https://en.wikipedia.org/wiki/Self-organization">https://en.wikipedia.org/wiki/Self-organization</a> <a href="#fr-41-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="227.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="225.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="227.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="225.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

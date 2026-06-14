@@ -1,0 +1,622 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SAP and the AI Agent - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="sap-and-the-ai-agent"><a class="header" href="#sap-and-the-ai-agent">SAP and the AI Agent</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>The history of enterprise resource planning (ERP) systems, particularly those architected by SAP, has been dominated by a narrative of necessary friction. For decades, organizations have grappled with the “Iron Cage” of SAP’s architecture: a landscape defined by unyielding data structures, unforgiving validation logic, and an authorization concept so granular that it frequently impedes human agility. The prevailing industry dogma has viewed these characteristics as liabilities—technical debt incurred in the pursuit of integration, resulting in high training costs, “swivel-chair” interfaces, and a user experience often characterized by frustration. Corporations have spent billions on change management and overlay interfaces to shield human operators from the raw, deterministic complexity of the core system.</p>
+<p>However, as the enterprise technology landscape pivots violently toward the era of Agentic Artificial Intelligence (AI), a profound inversion of value is occurring. The very characteristics that made SAP environments hostile to human cognitive limitations—strict constraints, hyper-granular Role-Based Access Control (RBAC), and blocking validation errors…are transforming into the ideal substrate for autonomous AI agents.<sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">1</a></sup></p>
+<p>This report advances a counter-intuitive thesis: the “hard to run” nature of SAP ERPs constitutes a necessary breeding ground for safe, reliable, and effective Agentic AI. Unlike generative AI operating in unstructured environments—often described as building “floating castles in thin air”—agents within an SAP ecosystem operate within a deterministic physics engine. This rigid structure provides the “grounding” necessary to prevent hallucination, the “signals” necessary for orchestration, and the “boundaries” necessary for security.</p>
+<p>The following analysis exhaustively explores this symbiosis. It details how the administrative burden of the Profile Generator (PFCG) becomes a zero-trust security framework for “Micro-Agents.” It demonstrates how process friction acts as a precise communication protocol between Master Agents and Sub-Agents. It argues that the ABAP Dictionary’s strict typing serves as an immutable guardrail against generative error. Finally, it maps the technical architecture of the SAP Business Technology Platform (BTP), SAP Joule, and the Knowledge Graph, illustrating how these components operationalize the rigorous, structured legacy of SAP into a dynamic, …autonomous future.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+<h2 id="1-the-inversion-of-usability-from-user-experience-to-agent-experience"><a class="header" href="#1-the-inversion-of-usability-from-user-experience-to-agent-experience">1. The Inversion of Usability: From User Experience to Agent Experience</a></h2>
+<p>The evolution of enterprise software has traditionally tracked the trajectory of consumer software: a relentless pursuit of “ease of use.” The metric of success was the reduction of friction for the human user. “Intuitive” design meant hiding complexity, broadening access, and smoothing over the rough edges of database integrity with helpful wizards and forgiving inputs. In the context of SAP, this drive led to the development of SAP Fiori and numerous simplified GUIs intended to mask the underlying complexity of transaction codes like VA01 (Create Sales Order) or ME21N (Create Purchase Order).</p>
+<p>In the emergent era of Agentic AI, the design paradigm must shift from User Experience (UX) to <strong>Agent Experience (AX)</strong>. Agents, unlike humans, do not benefit from ambiguity or “forgiveness.” They thrive on explicit constraints, structured error messages, and deterministic pathways. The “hard” nature of SAP—its refusal to accept a transaction unless every master data field is perfectly aligned—is precisely what makes it an effective environment for agents.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">3</a></sup></p>
+<h3 id="11-the-deterministic-substrate-for-probabilistic-intelligence"><a class="header" href="#11-the-deterministic-substrate-for-probabilistic-intelligence"><strong>1.1 The Deterministic Substrate for Probabilistic Intelligence</strong></a></h3>
+<p>Generative AI, driven by Large Language Models (LLMs), is inherently probabilistic. These models function by predicting the next token in a sequence based on statistical likelihood derived from vast training corpora. While this allows for unprecedented flexibility and “reasoning” capabilities, it introduces the critical risk of “hallucination” or “confabulation.”<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup> In a creative context, a hallucination is a curiosity; in an enterprise ledger, it is a compliance violation or financial fraud.</p>
+<p>When probabilistic agents are introduced into an enterprise environment, they require a deterministic substrate to function safely. SAP acts as this substrate. It functions as a <strong>physics engine for business reality</strong>. Just as a robot in a physical simulation relies on gravity and collision detection to learn to walk, an AI agent in SAP relies on validation logic and foreign key checks to learn to transact.</p>
+<p>If an AI agent attempts to invent a new “Incoterm” that sounds plausible (e.g., “FOB Moon Base”), a flexible system might accept it as a text string. SAP, however, will reject it immediately because it does not exist in table TINC. This rejection is not a failure of the system; it is a successful containment of probabilistic error. The “hardness” of the system provides the negative feedback loop required for the agent to self-correct and learn.</p>
+<h3 id="12-system-1-vs-system-2-in-the-enterprise"><a class="header" href="#12-system-1-vs-system-2-in-the-enterprise"><strong>1.2 System 1 vs. System 2 in the Enterprise</strong></a></h3>
+<p>Cognitive science distinguishes between System 1 thinking (fast, intuitive, heuristic) and System 2 thinking (slow, deliberate, logical.<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup> Humans are naturally System 1 thinkers who struggle with the System 2 demands of complex ERP transactions. We forget codes, we misread fields, and we bypass protocols to “get it done.”</p>
+<p>Traditional ERP implementations forced humans to act like System 2 machines, causing massive friction. Agentic AI, specifically architecture that utilizes “Chain of Thought” reasoning, mimics System 2 logic but operates at the speed of software. By coupling Agentic AI with SAP, the enterprise achieves a cognitive hybrid:</p>
+<ul>
+<li><strong>The Agent</strong> provides the adaptive planning, intent understanding, and unstructured data processing (System 1 flexibility).</li>
+<li><strong>The ERP Core</strong> provides the immutable logic, regulatory boundaries, and financial integrity (System 2 rigor).</li>
+</ul>
+<p>This report posits that the decades of investment companies have made in configuring their SAP systems—defining every tolerance limit, every plant parameter, every pricing procedure—is not a sunk cost of legacy debt. Rather, it is pre-investment in the “World Model” required for autonomous agents to function. Without this rigorous World Model, agents are merely chatbots with no understanding of consequence.</p>
+<h2 id="2-the-architecture-of-restriction-granular-roles-as-a-zero-trust-framework"><a class="header" href="#2-the-architecture-of-restriction-granular-roles-as-a-zero-trust-framework">2. The Architecture of Restriction: Granular Roles as a Zero-Trust Framework</a></h2>
+<p>The first pillar of the core thesis rests on the granularity of SAP’s authorization concept. Security in SAP is not merely a gate; it is a complex lattice of permissions managed via the Profile Generator (PFCG). Access is controlled not just by transaction code, but by the content of the data itself via Authorization Objects.</p>
+<h3 id="21-the-legacy-challenge-the-human-authorization-paradox"><a class="header" href="#21-the-legacy-challenge-the-human-authorization-paradox"><strong>2.1 The Legacy Challenge: The Human Authorization Paradox</strong></a></h3>
+<p>Implementing the Principle of Least Privilege in a human-centric SAP environment has historically been a Sisyphean task. The system allows administrators to restrict access down to specific organizational units (e.g., Sales Org US01), document types (e.g., Sales Order ZOR), and activities (e.g., 01 for Create, 03 for Display).</p>
+<p>However, managing this level of granularity for thousands of human employees is administratively crushing.</p>
+<ul>
+<li><strong>Availability:</strong> There are rarely enough humans to dedicate specific individuals to hyper-narrow roles (e.g., “Dallas Retail Sales Order Clerk”). Instead, a single “Sales Rep” covers multiple regions and channels.</li>
+<li><strong>Psychology:</strong> Humans react negatively to authorization errors. A “Not Authorized” message SU53 is viewed as an impediment to doing one’s job. It generates helpdesk tickets, frustration, and eventual “role creep,” where administrators grant wider access (e.g., Sales Org *) just to silence the complaints.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup></li>
+</ul>
+<p>Consequently, most SAP environments today operate with “Composite Roles” that are vastly over-provisioned relative to the strict needs of any single transaction. This creates a security surface area that is vulnerable to insider threat and error.</p>
+<h3 id="22-the-agentic-opportunity-the-rise-of-the-micro-agent"><a class="header" href="#22-the-agentic-opportunity-the-rise-of-the-micro-agent"><strong>2.2 The Agentic Opportunity: The Rise of the Micro-Agent</strong></a></h3>
+<p>Agentic AI inverts this dynamic. An AI agent does not get frustrated. It does not suffer from “alert fatigue.” It does not require a “broad” role to function comfortably. This allows for the implementation of a <strong>Zero Trust Architecture</strong> for agents using <strong>Micro-Agents</strong>.</p>
+<p>In this model, a general-purpose “Master Agent” (e.g., SAP Joule) acts as the interface. When a complex request arrives—“Book a sales order for a retail customer in Dallas”—the Master Agent does not execute the transaction itself. Instead, it instantiates or calls a specialized “Dallas Retail Sales Order Agent.”</p>
+<p>Anatomy of a Micro-Agent:<br>This sub-agent is a specialized identity (or a session context via Principal Propagation) that possesses an SAP Role (PFCG) restricted to the absolute minimum viable privileges:</p>
+<ul>
+<li><strong>Object V_VBAK_VKO:</strong>
+<ul>
+<li><strong>Sales Org:</strong> US01 (North America)</li>
+<li><strong>Distribution Channel:</strong> 01 (Retail)</li>
+<li><strong>Division:</strong> 00</li>
+</ul>
+</li>
+<li><strong>Object V_VBAK_AAT:</strong>
+<ul>
+<li><strong>Document Type:</strong> ZOR (Standard Order)</li>
+</ul>
+</li>
+<li><strong>Object M_MATE_WRK:</strong>
+<ul>
+<li><strong>Plant:</strong> DL01 (Dallas)</li>
+</ul>
+</li>
+</ul>
+<p>If this agent attempts to book an order for the <em>Wholesale</em> channel (02), the SAP kernel blocks the transaction immediately. The “hard” security model acts as a physical containment field. In a human scenario, this block is a process failure. In an agentic scenario, this is a <strong>valid negative test</strong>. It confirms that the agent is operating within its guardrails.<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">6</a></sup></p>
+<h3 id="23-dynamic-role-resolution-and-principal-propagation"><a class="header" href="#23-dynamic-role-resolution-and-principal-propagation"><strong>2.3 Dynamic Role Resolution and Principal Propagation</strong></a></h3>
+<p>The technical realization of this involves sophisticated identity management.<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">7</a></sup> The research highlights <strong>Principal Propagation</strong> as a critical mechanism on the SAP Business Technology Platform (BTP).<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">8</a></sup></p>
+<p>When a human user interacts with an AI agent, the agent must not operate with a “Super User” service account. It must inherit the context of the human user. Through the SAP Cloud Connector and BTP Connectivity service, the user’s identity is propagated to the backend SAP S/4HANA system. The agent effectively “becomes” the user for the duration of the transaction.</p>
+<ul>
+<li><strong>Benefit:</strong> The agent is instantly constrained by the user’s existing PFCG roles. If the user cannot approve a PO over USD10,000, neither can their AI assistant.</li>
+<li><strong>Risk Mitigation:</strong> This prevents “jailbreaking” attacks where a user might convince an LLM to bypass business rules. The LLM might agree, but the backend SAP kernel will refuse the commit.</li>
+</ul>
+<p>For autonomous, “headless” agents (e.g., nightly batch repair bots), the system uses specific Technical Users with highly restricted roles. The “hard to run” aspect of defining these roles—the need to map out every authorization object—ensures that these autonomous bots have no lateral movement capability. If a “Price Update Bot” is compromised, it cannot read HR data because it fundamentally lacks the authorization object P_ORGIN.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">9</a></sup></p>
+<h3 id="24-table-comparison-of-authorization-paradigms"><a class="header" href="#24-table-comparison-of-authorization-paradigms"><strong>2.4 Table: Comparison of Authorization Paradigms</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Human-Centric Model</th><th style="text-align: left">Agent-Centric Model</th><th style="text-align: left">Implications for Security</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Role Scope</strong></td><td style="text-align: left">Broad, Composite Roles (e.g., “AP Manager”).</td><td style="text-align: left">Narrow, Atomic Roles (e.g., “Invoice Poster - Region A”).</td><td style="text-align: left">Drastically reduced blast radius for compromised agents.</td></tr>
+<tr><td style="text-align: left"><strong>Reaction to Denial</strong></td><td style="text-align: left">Frustration, Helpdesk Tickets, Workarounds.</td><td style="text-align: left">Error Catching, Retry Logic, Escalation.</td><td style="text-align: left">Failures are handled programmatically without disruption.</td></tr>
+<tr><td style="text-align: left"><strong>Access Granularity</strong></td><td style="text-align: left">Often aggregated at Org Unit level.</td><td style="text-align: left">Granular down to Field Value (e.g., Document Type).</td><td style="text-align: left">Prevents “confused deputy” attacks where agents misuse broad access.</td></tr>
+<tr><td style="text-align: left"><strong>Identity Lifecycle</strong></td><td style="text-align: left">Static assignment (Quarterly reviews).</td><td style="text-align: left">Dynamic / JIT assignment or strictly bounded Service Users.</td><td style="text-align: left">Reduces the window of opportunity for privilege abuse.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-friction-as-signal-streamlining-business-processes-via-orchestration"><a class="header" href="#3-friction-as-signal-streamlining-business-processes-via-orchestration">3. Friction as Signal: Streamlining Business Processes via Orchestration</a></h2>
+<p>The second pillar of the thesis addresses the friction inherent in implementing business processes in SAP. In traditional operations, “friction” is synonymous with “exception” or “error.” An order is blocked because a credit check failed. An invoice is parked because of a price variance. A shipment is delayed because the material master view is missing for the destination plant.</p>
+<h3 id="31-the-cost-of-human-latency"><a class="header" href="#31-the-cost-of-human-latency"><strong>3.1 The Cost of Human Latency</strong></a></h3>
+<p>For human agents, these exceptions are productivity killers. Consider the scenario where a sales agent attempts to book an order, only to find the customer is not extended to the specific Sales Area.</p>
+<ol>
+<li><strong>Stop:</strong> The transaction fails.</li>
+<li><strong>Search:</strong> The agent must figure out <em>why</em> (deciphering error VP 204).</li>
+<li><strong>Identify:</strong> The agent must find <em>who</em> owns Customer Master Data.</li>
+<li><strong>Communicate:</strong> The agent sends an email or logs a ticket.</li>
+<li><strong>Wait:</strong> The process enters a holding pattern, often for days (“Most of the time they don’t even know who to call”).<sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">10</a></sup></li>
+</ol>
+<p>This latency destroys process efficiency. The rigidity of the system—the requirement that the customer <em>must</em> be extended before the order can be saved—is the bottleneck.</p>
+<h3 id="32-the-agentic-orchestration-layer"><a class="header" href="#32-the-agentic-orchestration-layer"><strong>3.2 The Agentic Orchestration Layer</strong></a></h3>
+<p>In an Agentic AI ecosystem, this friction is re-contextualized. The blocking error is not a “stop” signal; it is a <strong>functional specification</strong> for a remediation workflow. The “hard” constraint becomes a trigger for multi-agent orchestration.</p>
+<p><strong>Scenario: The “Missing Master Data” Handoff</strong></p>
+<ol>
+<li><strong>Sales Order Agent</strong> (Micro-Agent A) attempts to create an order via OData API API_SALES_ORDER_SRV.</li>
+<li><strong>SAP Kernel</strong> returns error: Customer 1000 is not defined in Sales Area US01/10/00.</li>
+<li><strong>Sales Order Agent</strong> parses this error. Unlike a human who sees “failure,” the agent sees a dependency.</li>
+<li><strong>Orchestration:</strong> The Sales Agent packages this error context and routes a request to the <strong>Master Data Agent</strong> (Micro-Agent B).
+<ul>
+<li><em>Prompt/Payload:</em> “I need to transact with Customer 1000 in Area US01/10/00. Please extend.”</li>
+</ul>
+</li>
+<li><strong>Master Data Agent</strong> receives the request.
+<ul>
+<li>It checks the <strong>Governance Policy</strong> (via RAG on policy documents).</li>
+<li>It validates the customer’s credit standing.</li>
+<li>It executes the extension via API API_BUSINESS_PARTNER.</li>
+<li>It returns a “Success” signal to the Sales Agent.</li>
+</ul>
+</li>
+<li><strong>Sales Order Agent</strong> retries the transaction. Success.</li>
+</ol>
+<p>This entire sequence occurs in seconds. The “ball keeps rolling” without human intervention. The rigidity of the SAP system—the fact that it threw a specific, blocking error—provided the precise signal needed for the agentic handoff. If the system were “easier” (i.e., allowed the order to proceed with incomplete data), it would create downstream chaos in fulfillment and billing. The “hardness” forces resolution upstream, where agents are most effective.<sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">11</a></sup></p>
+<h3 id="33-multi-agent-systems-mas-and-departmental-agents"><a class="header" href="#33-multi-agent-systems-mas-and-departmental-agents"><strong>3.3 Multi-Agent Systems (MAS) and Departmental Agents</strong></a></h3>
+<p>This logic extends to complex inter-departmental workflows. The research identifies specific agent roles such as the <strong>Dispute Resolution Agent</strong>, <strong>Cash Collection Agent</strong>, and <strong>Sourcing Agent</strong>.<sup class="footnote-reference" id="fr-13-2"><a href="#footnote-13">11</a></sup></p>
+<p>These agents form a <strong>Multi-Agent System (MAS)</strong> that mirrors the organizational chart but operates with high-speed digital interconnects.</p>
+<ul>
+<li><strong>The “Finance Agent”</strong> and <strong>“Sales Agent”</strong> negotiate credit blocks. When a Sales Agent requests a credit release, the Finance Agent analyzes the customer’s payment history (using vector analysis of past interactions) and autonomously decides whether to grant a temporary override via transaction VKM1.</li>
+<li><strong>The “Sourcing Agent”</strong> and <strong>“Planning Agent”</strong> collaborate on inventory shortages. If the Planning Agent detects a stock-out (MD04 signal), the Sourcing Agent autonomously initiates an RFP process for the specific material.<sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">12</a></sup></li>
+</ul>
+<p>The “friction” of the departmental silos—enforced by the distinct SAP modules (FI, SD, MM)—becomes the protocol for agent negotiation.</p>
+<h2 id="4-the-hallucination-firewall-validation-logic-as-reality-check"><a class="header" href="#4-the-hallucination-firewall-validation-logic-as-reality-check">4. The Hallucination Firewall: Validation Logic as Reality Check</a></h2>
+<p>The third pillar concerns the core philosophy of SAP: Data Integrity. SAP is built on the premise that it is better to stop a process than to corrupt the database. This “NEVER let a wrong entry hit the database” philosophy is the single most important safety feature for deploying Generative AI in the enterprise.</p>
+<h3 id="41-the-existential-risk-of-ai-in-erp"><a class="header" href="#41-the-existential-risk-of-ai-in-erp">4.1 The Existential Risk of AI in ERP</a></h3>
+<p>Generative AI is prone to “hallucinations”—generating plausible but incorrect information. In a chat application, a hallucination might be a made-up fact. In an ERP system, a hallucination could be:</p>
+<ul>
+<li>Posting an invoice to a non-existent General Ledger account.</li>
+<li>Inventing a unit of measure (e.g., “Box” instead of “Case”).</li>
+<li>Creating a delivery for a date in the past.</li>
+</ul>
+<p>If an AI agent were given direct SQL write access to the database, it could corrupt the financial integrity of the organization in milliseconds.</p>
+<h3 id="42-the-abap-dictionary-as-a-constraint-engine"><a class="header" href="#42-the-abap-dictionary-as-a-constraint-engine">4.2 The ABAP Dictionary as a Constraint Engine</a></h3>
+<p>In SAP, the ABAP Dictionary (DDIC) and the application logic act as an immutable constraint engine. An agent cannot book an invoice to a non-existent cost center because the foreign key check against table CSKS will fail. It cannot enter a date in the past if the posting period (OB52) is closed.</p>
+<p>These validations act as a <strong>Hallucination Firewall</strong>.</p>
+<ul>
+<li><strong>Three-Way Match:</strong> If an <strong>Accounts Payable Agent</strong> tries to post an invoice for USD1000 when the PO was for USD900, the SAP system blocks the posting (Price Variance &gt; Tolerance Limit).</li>
+<li><strong>Behavioral Correction:</strong> This block serves as a feedback signal. The agent learns that its “belief” (that the invoice should be paid) conflicts with “reality” (the system rules). This forces the agent into a <strong>Reflection Loop</strong>: “Why did I fail? Variance detected. Action: Park invoice and notify human.”</li>
+</ul>
+<p>This architecture ensures that the AI handles the “Happy Path” (perfect matches), while the strict validation logic filters out the hallucinations and edge cases for human review.</p>
+<h3 id="421-the-rust-compiler-analogy-unforgiving-logic-as-self-correction"><a class="header" href="#421-the-rust-compiler-analogy-unforgiving-logic-as-self-correction">4.2.1 The Rust Compiler Analogy: Unforgiving Logic as Self-Correction</a></h3>
+<p>Just as the <strong>Rust compiler</strong> (specifically the borrow checker) refuses to compile code that violates memory safety rules, the <strong>SAP Kernel</strong> (specifically the ABAP Dictionary and Business Object logic) refuses to commit transactions that violate business integrity rules. Here is why this analogy holds up technically, and how this “unforgiving” nature forces the AI to self-correct:</p>
+<ul>
+<li><strong>The “Compiler” as a Reality Check:</strong> In Rust, the compiler prevents <em>memory corruption</em>. In SAP, the validation logic prevents <em>ledger corruption</em>. For an AI agent, the system returns a binary signal: <strong>Success</strong> or <strong>Hard Stop</strong>. This forces the AI to remain “hallucination-free by design.”</li>
+<li><strong>Error Messages as “Compiler Errors” for Agents:</strong> The AI agent reads a system error code (e.g., VP 204 - Customer not defined) not as a failure, but as a prompt to trigger a correction, such as calling a “Create Customer” tool.</li>
+<li><strong>“Check Mode” = “Dry Run”:</strong> SAP BAPIs often feature a <strong>Test Run</strong> or <strong>Simulation Mode</strong>. Agents can “compile” their transaction in simulation mode to see if it <em>would</em> pass, fixing errors iteratively before writing to the real database.</li>
+<li><strong>Real-World Convergence: SAP is actually using Rust:</strong> For <strong>Joule for Developers</strong>, SAP uses <strong>Constrained Decoding</strong> backed by a <strong>Rust parser</strong> to ensure the AI generates valid ABAP code, confirming the industry’s use of “unforgiving compilers” as guardrails.</li>
+</ul>
+<h4 id="summary-1"><a class="header" href="#summary-1">Summary</a></h4>
+<p>The mechanism is correctly identified as <strong>Neuro-symbolic AI</strong>:</p>
+<ul>
+<li><strong>The Neural part (The AI):</strong> Provides the flexibility, intent understanding, and planning.</li>
+<li><strong>The Symbolic part (Rust/SAP):</strong> Provides the hard constraints, logic, and “unforgiving” validation.</li>
+</ul>
+<p>This combination ensures that the AI can be autonomous but never dangerous.</p>
+<h3 id="43-human-in-the-loop-hitl-by-design"><a class="header" href="#43-human-in-the-loop-hitl-by-design">4.3 Human-in-the-Loop (HITL) by Design</a></h3>
+<p>The thesis highlights that “failure to process is a flag to bring in human expert.” This operationalizes the Human-in-the-Loop concept not as a constant monitor, but as an <strong>Exception Handler</strong>.</p>
+<p>When the AI hits a “hard stop” in SAP that it cannot resolve via its tools (e.g., a strategic decision to pay a vendor despite a discrepancy to maintain the relationship), it escalates. The human expert receives a structured task: “Agent blocked by Price Variance (USD100). Do you wish to override?”</p>
+<p>This elevates the human role from data entry to strategic arbitration. The “hard” system ensures that the AI never acts autonomously in ambiguous or erroneous states.<sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">13</a></sup></p>
+<h2 id="5-grounding-the-ghost-structured-data-and-the-sap-knowledge-graph"><a class="header" href="#5-grounding-the-ghost-structured-data-and-the-sap-knowledge-graph">5. Grounding the Ghost: Structured Data and the SAP Knowledge Graph</a></h2>
+<p>The fourth pillar addresses the data itself. “Companies trying to implement Agentic AI without well-grounded ERP are trying to build floating castles in thin air.” AI models require context to reason. Unstructured data (emails, PDFs) provides semantic richness but lacks structural integrity. SAP provides the structural skeleton of the enterprise.</p>
+<h3 id="51-the-sap-knowledge-graph"><a class="header" href="#51-the-sap-knowledge-graph"><strong>5.1 The SAP Knowledge Graph</strong></a></h3>
+<p>To make this structural richness accessible to AI, SAP has introduced the <strong>SAP Knowledge Graph</strong>.<sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">14</a></sup></p>
+<ul>
+<li><strong>The Problem:</strong> LLMs speak natural language. SAP speaks “technical codes” (Tables MARA, KNA1, BKPF). An LLM does not inherently know that KUNNR is a Customer Number or that a Sales Order Item connects to a Delivery Item via the Document Flow table VBFA.</li>
+<li><strong>The Solution:</strong> The Knowledge Graph creates a semantic layer that maps technical entities to business concepts. It encodes the relationships: Customer –places–&gt; Order –contains–&gt; Material.</li>
+</ul>
+<p>This “grounds” the AI. When an agent is asked, “Check the status of the order for Dallas,” it doesn’t guess. It traverses the graph: Customer(Dallas) -&gt; SalesOrder -&gt; Delivery -&gt; GoodsIssue. This deterministic traversal prevents the agent from hallucinating relationships that don’t exist.</p>
+<h3 id="52-vector-rag-and-the-hana-vector-engine"><a class="header" href="#52-vector-rag-and-the-hana-vector-engine"><strong>5.2 Vector RAG and the HANA Vector Engine</strong></a></h3>
+<p>SAP HANA Cloud’s <strong>Vector Engine</strong> enables <strong>Retrieval-Augmented Generation (RAG)</strong> that combines structured and unstructured data.<sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">15</a></sup></p>
+<ul>
+<li><strong>Structured Grounding:</strong> “Show me quality defects for Material X” (SQL Query to QMEL table).</li>
+<li><strong>Unstructured Grounding:</strong> “Show me complaints where the customer mentioned ‘strange smell’” (Vector search on text descriptions).</li>
+</ul>
+<p>The combination allows agents to reason with high precision: “I found 5 complaints about ‘smell’ (Unstructured). All 5 are linked to Batch #992 (Structured). Conclusion: Batch #992 is defective.”<br>Without the rigid link between the Complaint Notification and the Batch Record provided by the SAP data model, this correlation would be impossible to establish with certainty. The “hard” structure enables the “smart” reasoning.</p>
+<h2 id="6-the-technical-stack-architecture-of-the-agentic-enterprise"><a class="header" href="#6-the-technical-stack-architecture-of-the-agentic-enterprise">6. The Technical Stack: Architecture of the Agentic Enterprise</a></h2>
+<p>To realize this thesis, organizations must deploy a specific technical architecture centered on the SAP Business Technology Platform (BTP). This stack bridges the gap between the rigid core and the fluid agent.</p>
+<h3 id="61-sap-joule-and-the-orchestration-layer"><a class="header" href="#61-sap-joule-and-the-orchestration-layer"><strong>6.1 SAP Joule and the Orchestration Layer</strong></a></h3>
+<p><strong>SAP Joule</strong> serves as the primary interface and orchestrator.<sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">16</a></sup> It is not merely a chatbot; it is a runtime environment that manages:</p>
+<ul>
+<li><strong>Intent Recognition:</strong> Mapping user prompts to specific skills.</li>
+<li><strong>Context Management:</strong> Keeping track of the session variables (e.g., “We are talking about Sales Order 123”).</li>
+<li><strong>Agent Dispatch:</strong> Routing tasks to the appropriate specialized agents (e.g., triggering the Cash Collection Agent).</li>
+</ul>
+<h3 id="62-joule-studio-and-the-agent-builder"><a class="header" href="#62-joule-studio-and-the-agent-builder"><strong>6.2 Joule Studio and the Agent Builder</strong></a></h3>
+<p><strong>Joule Studio</strong> allows for the creation of custom agents using the <strong>Agent Builder</strong>.<sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">17</a></sup> This low-code environment enables developers to define:</p>
+<ul>
+<li><strong>Capabilities:</strong> What tools the agent can use (e.g., OData Service: API_PURCHASE_ORDER).</li>
+<li><strong>Triggers:</strong> What events wake the agent up (e.g., Event Mesh: InvoiceCreated).</li>
+<li><strong>Guardrails:</strong> What the agent is <em>not</em> allowed to do.</li>
+</ul>
+<h3 id="63-connectivity-model-context-protocol-mcp-and-headless-agents"><a class="header" href="#63-connectivity-model-context-protocol-mcp-and-headless-agents"><strong>6.3 Connectivity: Model Context Protocol (MCP) and Headless Agents</strong></a></h3>
+<p>A critical innovation is the <strong>Model Context Protocol (MCP)</strong>.<sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">18</a></sup> This protocol allows SAP agents to interact with external systems and tools in a standardized way.</p>
+<ul>
+<li><strong>Use Case:</strong> An SAP agent needs to check a shipping rate from a logistics provider. Instead of a hard-coded interface, it uses an MCP server to query the provider dynamically.</li>
+<li><strong>Headless vs. GUI Agents:</strong> The research distinguishes between two modes of agent operation:
+<ul>
+<li><strong>API-Based (Headless) Agents:</strong> These communicate via OData/REST APIs. They are fast, robust, and preferred for “Clean Core” environments.<sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">19</a></sup></li>
+<li><strong>GUI-Based Agents:</strong> For legacy ECC systems where APIs are missing, <strong>SAP GUI Advanced MCP Servers</strong> allow agents to drive the SAP GUI directly (scripting). This enables agents to perform “swivel chair” tasks on legacy screens, bridging the gap until migration is complete.<sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">20</a></sup></li>
+</ul>
+</li>
+</ul>
+<h2 id="7-operationalizing-the-agentic-enterprise-use-cases"><a class="header" href="#7-operationalizing-the-agentic-enterprise-use-cases">7. Operationalizing the Agentic Enterprise: Use Cases</a></h2>
+<p>The synthesis of rigid structure and autonomous intelligence transforms key business functions.</p>
+<h3 id="71-order-to-cash-o2c-the-self-driving-supply-chain"><a class="header" href="#71-order-to-cash-o2c-the-self-driving-supply-chain"><strong>7.1 Order-to-Cash (O2C): The Self-Driving Supply Chain</strong></a></h3>
+<p>In O2C, agents reduce processing time by up to 70%.<sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">21</a></sup></p>
+<ul>
+<li><strong>Validation:</strong> Agents validate orders against contracts automatically.</li>
+<li><strong>Stock Allocation:</strong> Instead of failing on a stock-out, an <strong>Inventory Agent</strong> performs a global Available-to-Promise (ATP) check across all plants, identifying potential transfers or substitutions, and proposing the optimal fulfillment path based on margin analysis.<sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">22</a></sup></li>
+<li><strong>Logistics:</strong> A <strong>Logistics Agent</strong> interacts with 3PL portals via MCP to schedule pickups, updating the SAP Delivery document with the tracking number and carrier details.</li>
+</ul>
+<h3 id="72-finance-dispute-resolution-and-cash-collection"><a class="header" href="#72-finance-dispute-resolution-and-cash-collection"><strong>7.2 Finance: Dispute Resolution and Cash Collection</strong></a></h3>
+<p>The <strong>Cash Collection Agent</strong>.<sup class="footnote-reference" id="fr-13-3"><a href="#footnote-13">11</a></sup> proactively analyzes unpaid invoices.</p>
+<ul>
+<li>It detects a partial payment.</li>
+<li>It uses RAG to read the customer’s email explanation (“Damaged goods”).</li>
+<li>It correlates this with a Quality Notification in the system.</li>
+<li><strong>Outcome:</strong> It autonomously proposes a credit memo for the damaged amount and clears the remaining balance, routing the proposal to a Finance Manager for one-click approval.</li>
+</ul>
+<h3 id="73-esg-and-sustainability-the-compliance-auditor-agent"><a class="header" href="#73-esg-and-sustainability-the-compliance-auditor-agent"><strong>7.3 ESG and Sustainability: The Compliance Auditor Agent</strong></a></h3>
+<p>Sustainability reporting (e.g., CSRD) is data-intensive and rigid.<sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">23</a></sup> <strong>Sustainability Agents</strong> <sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">24</a></sup> act as auditors.</p>
+<ul>
+<li>They crawl the supply chain data in SAP.</li>
+<li>They chase suppliers for Scope 3 emissions certificates via email.</li>
+<li>They validate the certificates against the <strong>Sustainability Control Tower</strong>.<sup class="footnote-reference" id="fr-35-1"><a href="#footnote-35">25</a></sup></li>
+<li>The “hard” validation ensures that the reported carbon numbers are traceable and auditable, preventing “greenwashing” liability.</li>
+</ul>
+<h3 id="74-post-merger-integration-ma"><a class="header" href="#74-post-merger-integration-ma">7.4 Post-Merger Integration (M&amp;A)</a></h3>
+<p>M&amp;A integrations are notoriously difficult due to mismatched ERPs. <strong>PMI Agents</strong> <sup class="footnote-reference" id="fr-37-1"><a href="#footnote-37">26</a></sup> accelerate this.</p>
+<ul>
+<li>They “crawl” the legacy ERP and the target ERP.</li>
+<li>They identify semantic mappings (e.g., “Legacy Material Group 01 = SAP Material Group Z05”).</li>
+<li>They automate the data migration and reconciliation, flagging anomalies for human review.</li>
+</ul>
+<h2 id="8-the-clean-core-imperative-agents-as-architects"><a class="header" href="#8-the-clean-core-imperative-agents-as-architects">8. The Clean Core Imperative: Agents as Architects</a></h2>
+<p>The “Clean Core” strategy—keeping the ERP baseline free of custom modifications—is essential for Agentic AI.<sup class="footnote-reference" id="fr-39-1"><a href="#footnote-39">27</a></sup> Custom “Z-code” is often opaque to standard agents.</p>
+<p>However, agents are also the solution to this problem. <strong>ABAP AI Agents</strong> can assist in the migration.<sup class="footnote-reference" id="fr-41-1"><a href="#footnote-41">28</a></sup></p>
+<ul>
+<li><strong>Code Analysis:</strong> Agents scan millions of lines of legacy code.</li>
+<li><strong>Refactoring:</strong> They identify non-compliant code (e.g., direct database updates) and rewrite it to use standard APIs or RAP (RESTful ABAP Programming) models.</li>
+<li><strong>Documentation:</strong> They automatically generate documentation for undocumented legacy customizations.</li>
+</ul>
+<p>Thus, the Agentic workforce helps build the “Clean Core” environment it requires to thrive.</p>
+<h2 id="9-governance-and-the-future-workforce"><a class="header" href="#9-governance-and-the-future-workforce">9. Governance and the Future Workforce</a></h2>
+<p>The deployment of autonomous agents requires a new layer of governance.</p>
+<h3 id="91-agent-mining"><a class="header" href="#91-agent-mining"><strong>9.1 Agent Mining</strong></a></h3>
+<p>Just as Process Mining (e.g., SAP Signavio) is used to analyze human process adherence, <strong>Agent Mining</strong> <sup class="footnote-reference" id="fr-42-1"><a href="#footnote-42">29</a></sup> is used to monitor digital workers.</p>
+<ul>
+<li><strong>Performance:</strong> Are agents getting stuck in loops?</li>
+<li><strong>Compliance:</strong> Are agents attempting to access unauthorized data?</li>
+<li><strong>Optimization:</strong> Agent Mining visualizes the “digital exhaust” of the agent interactions, allowing architects to fine-tune the prompts and tools.</li>
+</ul>
+<h3 id="92-the-shift-to-supervision"><a class="header" href="#92-the-shift-to-supervision"><strong>9.2 The Shift to Supervision</strong></a></h3>
+<p>The role of the human worker shifts from “Operator” to “Supervisor.” The frustration of navigating “hard” SAP screens disappears, replaced by the natural language interface of Joule. The “hardness” remains, but it is pushed “under the hood,” acting as the safety constraints for the agents. The human focuses on defining the <em>goals</em> and managing the <em>exceptions</em> escalated by the agents.</p>
+<h2 id="conclusion-the-fortified-citadel"><a class="header" href="#conclusion-the-fortified-citadel">Conclusion: The Fortified Citadel</a></h2>
+<p>The reputation of SAP ERP systems as rigid, complex, and unforgiving is well-earned. For a human user, these traits are bugs. For an AI agent, they are features.</p>
+<ul>
+<li>The <strong>Granularity</strong> of RBAC provides the <strong>Security Containment</strong> needed for autonomous software.</li>
+<li>The <strong>Friction</strong> of exception handling provides the <strong>Orchestration Signals</strong> for agent collaboration.</li>
+<li>The <strong>Strict Validation</strong> provides the <strong>Hallucination Guardrails</strong> against generative error.</li>
+<li>The <strong>Structured Data</strong> provides the <strong>Grounding</strong> for deep reasoning.</li>
+</ul>
+<p>Organizations that embrace this paradox—viewing the “Iron Cage” of SAP not as a prison for humans, but as a cradle for AI—will achieve levels of automation and agility that are impossible in less rigorous environments. They are building not “floating castles,” but fortified, autonomous citadels of intelligence. The “hard to run” ERP is, in fact, the only ERP safe enough for the AI era.</p>
+<p><strong>End of Report.</strong></p>
+<p><em>Note: The insights presented are synthesized from the provided research materials, integrating technical specifications of SAP BTP, Joule, and industry analysis on Agentic AI trends.</em></p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-32">
+<p>Agentic AI in SAP Ecosystems - Smarter Enterprise Solutions, accessed January 19, 2026, <a href="https://adspyder.io/blog/agentic-ai-in-sap-ecosystems/">https://adspyder.io/blog/agentic-ai-in-sap-ecosystems/</a> <a href="#fr-32-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>The Rise of Agentic AI ERP - Rimini Street, accessed January 19, 2026, <a href="https://www.riministreet.com/resources/whitepaper/the-rise-of-agentic-ai-erp/">https://www.riministreet.com/resources/whitepaper/the-rise-of-agentic-ai-erp/</a> <a href="#fr-2-1">↩</a></p>
+</li>
+<li id="footnote-1">
+<p>How agentic AI is transforming IT: A CIO’s guide - SAP, accessed January 19, 2026, <a href="https://www.sap.com/resources/how-agentic-ai-transforms-it-cio-guide">https://www.sap.com/resources/how-agentic-ai-transforms-it-cio-guide</a> <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>Does AI Confabulate or Hallucinate? - testRigor AI-Based Automated Testing Tool, accessed January 19, 2026, <a href="https://testrigor.com/blog/does-ai-confabulate-or-hallucinate/">https://testrigor.com/blog/does-ai-confabulate-or-hallucinate/</a> <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>AI agents: Thinking fast, thinking slow - SAP, accessed January 19, 2026, <a href="https://www.sap.com/blogs/balancing-autonomy-determinism-when-applying-ai-agentic">https://www.sap.com/blogs/balancing-autonomy-determinism-when-applying-agentic-ai</a> <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>AI Agent RBAC: Essential Security Framework for Enterprise AI …, accessed January 19, 2026, <a href="https://medium.com/@christopher_79834/ai-agent-rbac-essential-security-framework-for-enterprise-ai-deployment-d9d1d4711183">https://medium.com/@christopher_79834/ai-agent-rbac-essential-security-framework-for-enterprise-ai-deployment-d9d1d4711183</a> <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a></p>
+</li>
+<li id="footnote-8">
+<p>Authorization in the Age of AI Agents: Beyond All-or-Nothing Access Control, accessed January 19, 2026, <a href="https://nwosunneoma.medium.com/authorization-in-the-age-of-ai-agents-beyond-all-or-nothing-access-control-747d58adb8c1">https://nwosunneoma.medium.com/authorization-in-the-age-of-ai-agents-beyond-all-or-nothing-access-control-747d58adb8c1</a> <a href="#fr-8-1">↩</a></p>
+</li>
+<li id="footnote-10">
+<p>Setup Principal Propagation for SAP BTP - Simplifier Community, accessed January 19, 2026, <a href="https://community.simplifier.io/doc/installation-instructions/setup-external-identity-provider/setup-principal-propagation-for-sap-btp/">https://community.simplifier.io/doc/installation-instructions/setup-external-identity-provider/setup-principal-propagation-for-sap-btp/</a> <a href="#fr-10-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>PFCG BASED AGENT RULE SET UP Step by Step 1694177786 | PDF - Scribd, accessed January 19, 2026, <a href="https://www.scribd.com/document/863648565/PFCG-BASED-AGENT-RULE-SET-UP-step-by-step-1694177786">https://www.scribd.com/document/863648565/PFCG-BASED-AGENT-RULE-SET-UP-step-by-step-1694177786</a> <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-12">
+<p>Best Practices and 5 Use Cases of SAP BTP Integration Suite - LeverX, accessed January 19, 2026, <a href="https://leverx.com/newsroom/sap-btp-integration-suite-use-cases">https://leverx.com/newsroom/sap-btp-integration-suite-use-cases</a> <a href="#fr-12-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p>How SAP Uniquely Delivers AI Agents with Joule, accessed January 19, 2026, [https://news.sap.com/2025/02/joule-sap-uniquely-delivers-ai-agents/](https://news.sap.com/2025/02/joule-sap-uniquely-delivers-ai-agents/](https://news.sap.com/2025/02/joule-sap-uniquely-delivers-ai-agents/) <a href="#fr-13-1">↩</a> <a href="#fr-13-2">↩2</a> <a href="#fr-13-3">↩3</a></p>
+</li>
+<li id="footnote-17">
+<p>AI Agents Use Cases in the Enterprise | SAP, accessed January 19, 2026, <a href="https://www.sap.com/hk/resources/ai-agents-use-cases">https://www.sap.com/hk/resources/ai-agents-use-cases</a> <a href="#fr-17-1">↩</a></p>
+</li>
+<li id="footnote-18">
+<p>How Agentic AI is Transforming Enterprise Platforms | BCG, accessed January 19, 2026, <a href="https://www.bcg.com/publications/2025/how-agentic-ai-is-transforming-enterprise-platforms">https://www.bcg.com/publications/2025/how-agentic-ai-is-transforming-enterprise-platforms</a> <a href="#fr-18-1">↩</a></p>
+</li>
+<li id="footnote-20">
+<p>What Is a Knowledge Graph? - SAP, accessed January 19, 2026, <a href="https://www.sap.com/resources/knowledge-graph">https://www.sap.com/resources/knowledge-graph</a> <a href="#fr-20-1">↩</a></p>
+</li>
+<li id="footnote-23">
+<p>Retrieval Augmented Generation (RAG) - SAP Architecture Center, accessed January 19, 2026, <a href="https://architecture.learning.sap.com/docs/ref-arch/e5eb3b9b1d/3">https://architecture.learning.sap.com/docs/ref-arch/e5eb3b9b1d/3</a> <a href="#fr-23-1">↩</a></p>
+</li>
+<li id="footnote-25">
+<p>Joule, the AI Copilot for SAP - SAP Community, accessed January 19, 2026, <a href="https://pages.community.sap.com/topics/joule">https://pages.community.sap.com/topics/joule</a> <a href="#fr-25-1">↩</a></p>
+</li>
+<li id="footnote-26">
+<p>Joule Studio Agent Builder Hits General Availability, Signaling Shift in Agentic AI, accessed January 19, 2026, <a href="https://sapinsider.org/blogs/joule-studio-agent-builder-hits-general-availability-singling-shift-in-agentic-ai/">https://sapinsider.org/blogs/joule-studio-agent-builder-hits-general-availability-signaling-shift-in-agentic-ai/</a> <a href="#fr-26-1">↩</a></p>
+</li>
+<li id="footnote-27">
+<p>Agent builder in Joule Studio is now generally ava… - SAP Community, accessed January 19, 2026, <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/agent-builder-in-joule-studio-is-now-generally-available-build-your-own/ba-p/14289282">https://community.sap.com/t5/artificial-intelligence-blogs-posts/agent-builder-in-joule-studio-is-now-generally-available-build-your-own/ba-p/14289282</a> <a href="#fr-27-1">↩</a></p>
+</li>
+<li id="footnote-29">
+<p>API Agents vs. GUI Agents: Divergence and Convergence - arXiv, accessed January 19, 2026, <a href="https://arxiv.org/html/2503.11069v1">https://arxiv.org/html/2503.11069v1</a> <a href="#fr-29-1">↩</a></p>
+</li>
+<li id="footnote-30">
+<p>SAP GUI AI Agent: Architecture and Technical Details, accessed January 19, 2026, <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/sap-gui-ai-agent-architecture-amp-technical-details/ba-p/14032043">https://community.sap.com/t5/artificial-intelligence-blogs-posts/sap-gui-ai-agent-architecture-amp-technical-details/ba-p/14032043</a> <a href="#fr-30-1">↩</a></p>
+</li>
+<li id="footnote-15">
+<p>Introducing Generative and Agentic AI into the O2C Process - SSON, accessed January 19, 2026, <a href="https://www.ssonetwork.com/finance-accounting/articles/generative-agentic-ai-order-to-cash">https://www.ssonetwork.com/finance-accounting/articles/generative-agentic-ai-order-to-cash</a> <a href="#fr-15-1">↩</a></p>
+</li>
+<li id="footnote-31">
+<p>Order to Cash Automation with AI Agents | Beam AI, accessed January 19, 2026, <a href="https://beam.ai/use-cases/order-to-cash">https://beam.ai/use-cases/order-to-cash</a> <a href="#fr-31-1">↩</a></p>
+</li>
+<li id="footnote-34">
+<p>AI-Driven ESG Reporting: How Agentic AI Can Cut Disclosure Prep from Weeks to Hours, accessed January 19, 2026, <a href="https://www.superteams.ai/blog/ai-driven-esg-reporting-how-agentic-ai-can-cut-disclosure-prep-from-weeks-to-hours">https://www.superteams.ai/blog/ai-driven-esg-reporting-how-agentic-ai-can-cut-disclosure-prep-from-weeks-to-hours</a> <a href="#fr-34-1">↩</a></p>
+</li>
+<li id="footnote-33">
+<p>AI Agents in Sustainability Reporting: Powerful Wins | Digiqt Blog, accessed January 19, 2026, <a href="https://digiqt.com/blog/ai-agents-in-sustainability-reporting/">https://digiqt.com/blog/ai-agents-in-sustainability-reporting/</a> <a href="#fr-33-1">↩</a></p>
+</li>
+<li id="footnote-35">
+<p>SAP Sustainability Control Tower, accessed January 19, 2026, <a href="https://www.sap.com/products/scm/sustainability-control-tower.html">https://www.sap.com/products/scm/sustainability-control-tower.html</a> <a href="#fr-35-1">↩</a></p>
+</li>
+<li id="footnote-37">
+<p>Pharma IT Integration Playbook: Consolidating Veeva and SAP | IntuitionLabs, accessed January 19, 2026, <a href="https://intuitionlabs.ai/articles/pharma-it-integration-veeva-sap">https://intuitionlabs.ai/articles/pharma-it-integration-veeva-sap</a> <a href="#fr-37-1">↩</a></p>
+</li>
+<li id="footnote-39">
+<p>SAP Clean Core Strategy For SAP Cloud ERP And Technical Debt …, accessed January 19, 2026, <a href="https://www.redwood.com/article/sap-clean-core-strategy-cloud-erp/">https://www.redwood.com/article/sap-clean-core-strategy-cloud-erp/</a> <a href="#fr-39-1">↩</a></p>
+</li>
+<li id="footnote-41">
+<p>SAP BTP‚ ABAP environment, Joule for developers‚ ABAP AI capabilities, accessed January 19, 2026, <a href="https://www.sap.com/products/technology-platform/btp-abap-environment-joule-for-developers-abap-ai-capabilities.html">https://www.sap.com/products/technology-platform/btp-abap-environment-joule-for-developers-abap-ai-capabilities.html</a> <a href="#fr-41-1">↩</a></p>
+</li>
+<li id="footnote-42">
+<p>Unleashing the full potential of AI agents with SAP Signavio- SAP …, accessed January 19, 2026, <a href="https://www.signavio.com/post/unleashing-the-full-potential-of-ai-agents-with-sap-signavio/">https://www.signavio.com/post/unleashing-the-full-potential-of-ai-agents-with-sap-signavio/</a> <a href="#fr-42-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="meaning.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="appStoreTOagentStore.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="meaning.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="appStoreTOagentStore.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

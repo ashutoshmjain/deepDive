@@ -1,0 +1,584 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>From Gold to Digital Code - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="from-gold-to-digital-code"><a class="header" href="#from-gold-to-digital-code">From Gold to Digital Code</a></h1>
+<p><img src="./img/goldToBitcoin.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="chapter-1-the-metaphysics-of-value-and-the-primordial-inventor"><a class="header" href="#chapter-1-the-metaphysics-of-value-and-the-primordial-inventor">Chapter 1: The Metaphysics of Value and the Primordial Inventor</a></h2>
+<p>To comprehend the history of gold is to journey back to the very inception of the cosmos, where metallurgy dissolves into mythology and economics merges with theology. The question of “who invented gold” is, in the ancient consciousness, synonymous with the question of “who invented the universe.” Unlike the modern materialist view, which categorizes gold as Element 79—a transition metal formed by stellar nucleosynthesis—the ancient seers perceived it as the solidified residue of divine creation, a substance imbued with the distinct characteristics of immortality and solar radiance.</p>
+<h3 id="11-the-concept-of-hiranyagarbha-the-golden-womb"><a class="header" href="#11-the-concept-of-hiranyagarbha-the-golden-womb"><strong>1.1 The Concept of Hiranyagarbha: The Golden Womb</strong></a></h3>
+<p>In the vast and intricate tapestry of Vedic philosophy, the origin of gold is not geological but cosmological. The term <em>Hiranyagarbha</em> serves as the foundational concept for this narrative. Composed of two Sanskrit roots—<em>hiraṇya</em> (gold) and <em>garbha</em> (womb, egg, or embryo)—it poetically translates to the “Golden Womb” or “Universal Germ”. This concept finds its most profound expression in the <em>Rigveda</em> (RV 10.121), specifically in the <em>Hiraṇyagarbha Sūkta</em>, which posits a single creator deity who emerged from this golden matrix to manifest the universe.<br>The <em>Rigveda</em> opens this cosmological account with the declaration: <em>Hiraṇyagarbhaḥ samavartatāgre bhūtasya jātaḥ patirekāsīta</em>—“In the beginning, there was the Golden Womb; the One Lord of all that exists was born”. This verse establishes gold not merely as a precious metal but as the primal substance of existence. Before the earth, the sky, or the gods themselves existed, there was the Golden Womb, floating in the primordial waters of non-existence.</p>
+<h4 id="111-the-mechanics-of-creation-in-puranic-texts"><a class="header" href="#111-the-mechanics-of-creation-in-puranic-texts"><strong>1.1.1 The Mechanics of Creation in Puranic Texts</strong></a></h4>
+<p>The <em>Matsya Purāṇa</em> (2.25–30) provides a more granular account of this creative process, offering what could be considered the “invention story” of gold. The narrative begins with <em>Mahāprālaya</em>, the great dissolution, where the universe was reduced to a state of darkness and sleep. From this void arose <em>Svayambhu</em>, the Self-Manifested Being, a form beyond sensory perception.<br>Svayambhu, desiring to create, first brought forth the primordial waters (<em>Apah</em>). Into these waters, he cast a seed. This was not a biological seed, but a metaphysical singularity containing the potentiality of all matter and energy. Upon contact with the waters, the seed transmuted into a golden egg (<em>Hiranyagarbha</em>), described as possessing the brilliance of a thousand suns.<br>It is here that the “invention” occurs. Gold was not discovered by humans; it was manufactured by the Creator as the vessel for life. Brahma, the progenitor of the worlds, was born within this golden egg. After dwelling therein for a year (a cosmic cycle), Brahma divided the egg into two halves by the power of his thought. The upper shell became <em>Svarga</em> (Heaven) and the lower shell became <em>Pṛthvi</em> (Earth), while the space between formed the sky. Thus, every vein of gold found within the earth is, in mythological terms, a fragment of that original cosmic shell—a shard of the divine womb that birthed reality.</p>
+<h4 id="112-philosophical-implications-of-the-golden-origin"><a class="header" href="#112-philosophical-implications-of-the-golden-origin"><strong>1.1.2 Philosophical Implications of the Golden Origin</strong></a></h4>
+<p>The identification of the Creator with gold has profound theological implications that ripple into economic history. The <em>Rigveda</em> asks the refrain, <em>kasmai devāyahaviṣā vidhema</em>—“To which God shall we offer our oblation?”. The answer, invariably, points back to the source: the One who emerged from the gold.<br>This association imbues gold with the property of <em>Tejas</em> (radiance) and <em>Amrita</em> (immortality). Unlike iron or copper, which corrode and decay, gold remains immutable, mirroring the nature of the <em>Brahman</em> (the Ultimate Reality) which is unchanging amidst the transient world. In Vedic rituals, gold is often treated as a representation of Agni (Fire) and Surya (Sun) buried within the earth. To possess gold was not merely to hold wealth; it was to hold a piece of the sun, a fragment of the immortal sphere in the mortal coil.<br>The <em>Manu Smṛti</em> (1.9) reinforces this by stating that the seed became a golden egg equal in brilliance to the sun. This solar connection is critical. In ancient thought, gold is “solidified sunlight.” This explains its universal appeal across civilizations not in contact with one another; the sun is the universal giver of life, and gold is its earthly avatar. Therefore, the “inventor” of gold is the cosmos itself, acting through the divine will of <em>Nārāyaṇa</em> or <em>Prajapati</em>.</p>
+<h3 id="13-comparative-mythologies-the-universal-standard"><a class="header" href="#13-comparative-mythologies-the-universal-standard"><strong>1.3 Comparative Mythologies: The Universal Standard</strong></a></h3>
+<p>While the Vedic tradition offers the most elaborate metaphysics of gold, other ancient civilizations shared this reverence, effectively “pegging” their cultural values to the metal long before they pegged their currencies.</p>
+<h4 id="131-the-egyptian-flesh-of-the-gods"><a class="header" href="#131-the-egyptian-flesh-of-the-gods"><strong>1.3.1 The Egyptian Flesh of the Gods</strong></a></h4>
+<p>The Ancient Egyptians, much like the Vedic seers, associated gold with the divine and the eternal. They believed that gold was the “flesh of the gods,” specifically the Sun God Ra. This theological belief drove their obsession with accumulation—not for economic trade, but for the afterlife. The funeral mask of King Tutankhamun is not a display of fiscal wealth but a theological instrument, transforming the deceased pharaoh into an imperishable, solar being. The Egyptians were among the first to smelt and alloy gold, yet they did not use it as a barter currency initially; its value was transcendent, reserved for the divine and the royal.</p>
+<h4 id="132-the-lydian-innovation"><a class="header" href="#132-the-lydian-innovation"><strong>1.3.2 The Lydian Innovation</strong></a></h4>
+<p>If the gods invented gold as a substance, the Lydians invented it as money. Around the 6th century BCE, in the Kingdom of Lydia (modern-day Turkey), King Croesus is credited with a pivotal innovation: the standardization of gold coinage. Prior to this, gold circulation was hindered by the need to weigh and test purity for every transaction. The Lydians began minting coins from electrum (a natural alloy of gold and silver) and later pure gold, stamping them with the royal seal.<br>This transition marks the shift from <em>Hiranyagarbha</em> (cosmic value) to <em>Arthashastra</em> (economic value). The stamp on the coin replaced the divine aura; trust was now placed in the state rather than the gods. This was the moment gold moved from the temple to the marketplace, setting the stage for the monetary systems that would dominate the next two and a half millennia.</p>
+<h2 id="chapter-2-the-political-economy-of-dwarka--lord-krishnas-democratization-of-gold"><a class="header" href="#chapter-2-the-political-economy-of-dwarka--lord-krishnas-democratization-of-gold">Chapter 2: The Political Economy of Dwarka — Lord Krishna’s Democratization of Gold</a></h2>
+<p>While the Vedic hymns elucidate the <em>origin</em> of gold, the Puranic texts—specifically the story of the Syamantaka Jewel—offer a sophisticated discourse on the <em>governance</em> of gold. This narrative, found in the <em>Bhagavata Purana</em> and <em>Vishnu Purana</em>, presents Lord Krishna not just as a deity, but as a visionary statesman grappling with the dangers of centralized wealth and the necessity of public stewardship.</p>
+<h3 id="21-the-legend-of-the-syamantaka-jewel"><a class="header" href="#21-the-legend-of-the-syamantaka-jewel"><strong>2.1 The Legend of the Syamantaka Jewel</strong></a></h3>
+<p>The story unfolds in the city-state of Dwarka, the maritime fortress governed by the Yadu dynasty. A nobleman named Satrajit, a fervent devotee of Surya (the Sun God), was blessed with a divine gift: the Syamantaka Mani (Jewel).<br>This jewel was the ultimate engine of wealth creation. The texts specify its output with economic precision: it produced eight <em>bharas</em> of gold every single day. To contextualize this in modern terms, ancient Indian measurements define a <em>bhara</em> based on the weight of <em>gunja</em> seeds and <em>palas</em>. One <em>bhara</em> is approximately 20 <em>tulas</em>. Calculations based on these metrics suggest that eight <em>bharas</em> equate to roughly 170 pounds (approximately 77 kilograms) of gold daily.<br>At current market rates (assuming roughly USD 80,000 per kg in a speculative modern equivalent), this jewel generated over USD 6 million of liquidity per day. For a city-state like Dwarka, this was a destabilizing influx of capital. It represented a “Cantillon Effect” of the highest order, where the injection of new money was concentrated entirely in the hands of one private individual, Satrajit, rather than the state treasury.<br>When Satrajit wore the jewel, he shone with such brilliance that the citizens mistook him for the Sun God himself. This detail is crucial: extreme wealth creates a mirage of divinity. It grants the holder a power that rivals the sovereign, threatening the social contract.</p>
+<h3 id="22-the-proposal-for-democratization"><a class="header" href="#22-the-proposal-for-democratization"><strong>2.2 The Proposal for Democratization</strong></a></h3>
+<p>Lord Krishna, observing this dynamic, recognized the threat posed by the Syamantaka Jewel. It was not merely a pretty stone; it was a sovereign-grade asset capable of altering the balance of power in the region. Krishna approached Satrajit with a radical proposal: <strong>Donate the Syamantaka jewel to King Ugrasena, the ruler of the Yadus</strong>.</p>
+<h4 id="221-the-argument-for-the-public-treasury"><a class="header" href="#221-the-argument-for-the-public-treasury"><strong>2.2.1 The Argument for the Public Treasury</strong></a></h4>
+<p>Krishna’s rationale was grounded in the principles of <em>Rajdharma</em> (royal duty) and collective welfare. He argued that an object of such immense power—capable of banishing famine, drought, and pestilence from the land where it was worshipped —belonged in the custody of the King, who represents the people.<br>By placing the jewel in the royal treasury, its benefits (the daily gold output and the magical protection) would be “democratized.” The gold could be used to fund public infrastructure, defense, and social welfare for all citizens of Dwarka, rather than accumulating in the private vaults of Satrajit. Krishna was essentially advocating for a <strong>Centralized Gold Standard</strong>, where the reserve asset is managed by the sovereign for the stability of the currency and the nation, rather than a decentralized, private emission of money.</p>
+<h4 id="222-the-rejection-and-the-curse-of-private-hoarding"><a class="header" href="#222-the-rejection-and-the-curse-of-private-hoarding"><strong>2.2.2 The Rejection and the Curse of Private Hoarding</strong></a></h4>
+<p>Satrajit, blinded by greed and attachment (<em>asakti</em>), refused Krishna’s request. He installed the jewel in a private temple within his home, hiring priests to worship it solely for his own benefit. This act represents the privatization of the commons—taking a divine gift meant for the world and enclosing it.<br>The consequences of this refusal illustrate the “Resource Curse.” The jewel did not bring peace to Satrajit; it brought paranoia and tragedy.</p>
+<ol>
+<li><strong>The Tragedy of Prasena:</strong> Satrajit’s brother, Prasena, treating the strategic asset as a mere ornament, wore the jewel on a hunting trip. He was killed by a lion, which snatched the gem.</li>
+<li><strong>The Theft by Jambavan:</strong> The lion was subsequently killed by Jambavan, the King of Bears (a character from the Ramayana era), who took the jewel to his cave to use as a toy for his son.</li>
+<li><strong>The Defamation of Krishna:</strong> When Prasena did not return, Satrajit jumped to the conclusion that Krishna, having coveted the jewel, had murdered his brother to steal it. He spread this rumor throughout Dwarka, tarnishing Krishna’s reputation.</li>
+</ol>
+<h3 id="23-the-struggle-for-recovery-and-truth"><a class="header" href="#23-the-struggle-for-recovery-and-truth"><strong>2.3 The Struggle for Recovery and Truth</strong></a></h3>
+<p>To clear his name and restore the integrity of the leadership, Krishna embarked on a search mission. He tracked the jewel to Jambavan’s cave. What followed was a 28-day duel between Krishna and Jambavan—a clash between the Avatar of the current age and a relic of the previous age.<br>Upon realizing Krishna’s divinity, Jambavan surrendered the jewel and his daughter, Jambavati, to Krishna. Krishna returned to Dwarka and presented the jewel to Satrajit in the royal assembly, exposing the nobleman’s false accusations and clearing his own name.</p>
+<h4 id="231-the-failure-of-private-custody-redux"><a class="header" href="#231-the-failure-of-private-custody-redux"><strong>2.3.1 The Failure of Private Custody Redux</strong></a></h4>
+<p>Shamed, Satrajit offered his daughter Satyabhama and the jewel to Krishna as atonement. Krishna accepted Satyabhama but <strong>refused the jewel</strong>. He returned it to Satrajit, stating that it was better left with him, provided he remained pious.<br>Why did Krishna refuse the jewel after fighting for it? This is the crux of the democratization lesson. Krishna demonstrated that <strong>moral authority is superior to material wealth</strong>. He did not need the gold to rule; he needed trust. By returning the jewel, he showed he was not a tyrant seizing assets.<br>However, the story does not end happily for Satrajit. His possession of the jewel continued to incite envy. He was eventually murdered in his sleep by Shatadhanwa, a rival suitor who coveted the stone. The jewel became a “hot potato” of death.</p>
+<h3 id="24-the-final-settlement-state-custody"><a class="header" href="#24-the-final-settlement-state-custody"><strong>2.4 The Final Settlement: State Custody</strong></a></h3>
+<p>After Satrajit’s death and the subsequent vengeance taken by Krishna on the murderers, the jewel was not left in private hands again. It was entrusted to Akrura, a respected elder and relative, who was asked to stay in the city.<br>The political conclusion is clear: <strong>Gold that is not democratized—that does not serve the collective—destroys its possessor.</strong> The Syamantaka narrative serves as an ancient warning against the concentration of wealth. It posits that the stability of a nation depends on the sovereign management of its reserve assets. Krishna’s attempt to “democratize” the gold was an attempt to save Satrajit from himself and to ensure the prosperity of Dwarka—a lesson that resonates with modern debates on wealth taxation and sovereign reserves.</p>
+<h2 id="chapter-3-the-ancient-gold-standards--coinage-regulation-and-the-hundi-system"><a class="header" href="#chapter-3-the-ancient-gold-standards--coinage-regulation-and-the-hundi-system">Chapter 3: The Ancient Gold Standards — Coinage, Regulation, and the Hundi System</a></h2>
+<p>The mythological frameworks of <em>Hiranyagarbha</em> and <em>Syamantaka</em> laid the philosophical groundwork for the economic systems that followed. As civilization advanced, the divine “Golden Egg” was smelted into the “Sovereign Coin,” and the management of gold transitioned from the temple to the state treasury.</p>
+<h3 id="31-the-arthashastra-the-mauryan-gold-standard"><a class="header" href="#31-the-arthashastra-the-mauryan-gold-standard"><strong>3.1 The Arthashastra: The Mauryan Gold Standard</strong></a></h3>
+<p>The most sophisticated ancient treatise on the management of a gold-based economy is the <em>Arthashastra</em>, authored by Chanakya (Kautilya) around the 4th century BCE. Chanakya, the Prime Minister to Emperor Chandragupta Maurya, viewed gold not merely as a store of value but as a critical instrument of state power and regulation.</p>
+<h4 id="311-standardization-and-the-mint"><a class="header" href="#311-standardization-and-the-mint"><strong>3.1.1 Standardization and the Mint</strong></a></h4>
+<p>Chanakya established a rigorous system of weights and measures, which is the prerequisite for any “pegged” currency system. The <em>Arthashastra</em> details a bimetallic standard involving four types of coins:</p>
+<ul>
+<li><strong>Suvarnarupa:</strong> Gold coins.</li>
+<li><strong>Rupyarupa:</strong> Silver coins.</li>
+<li><strong>Tamrarupa:</strong> Copper coins.</li>
+<li><strong>Sisarupa:</strong> Lead coins.</li>
+</ul>
+<p>The value of these coins was strictly pegged to their metallic weight. The base unit of measurement was the <em>Raktika</em> (or <em>Ratti</em>), derived from the weight of a bright red <em>gunja</em> seed (approx. 0.11 to 0.12 grams).</p>
+<ul>
+<li><strong>1 Suvarna (Gold Coin)</strong> was pegged to 80 <em>rattis</em> (approx. 9-11 grams).</li>
+<li><strong>1 Karshapana (Silver Coin)</strong> was pegged to 32 <em>rattis</em>.</li>
+</ul>
+<p>Chanakya advocated for a state monopoly on minting. The <em>Lakshanadhyaksha</em> (Superintendent of the Mint) was tasked with maintaining the purity and weight of the coinage. Any private attempt to debase the currency or mint counterfeit coins was met with severe punishment. This created a reliable “Gold Standard” where the face value of the currency was inextricably linked to its intrinsic value, ensuring price stability across the vast Mauryan empire.</p>
+<h3 id="32-the-hundi-system-proto-paper-currency-and-trust-networks"><a class="header" href="#32-the-hundi-system-proto-paper-currency-and-trust-networks"><strong>3.2 The Hundi System: Proto-Paper Currency and Trust Networks</strong></a></h3>
+<p>While coins facilitated local trade, moving heavy quantities of gold across the subcontinent was risky and inefficient. To solve this, Indian merchants developed the <em>Hundi</em> system—a financial innovation that functions remarkably like modern paper currency or even digital transfers, but backed by gold.</p>
+<h4 id="321-the-mechanics-of-the-peg"><a class="header" href="#321-the-mechanics-of-the-peg"><strong>3.2.1 The Mechanics of the Peg</strong></a></h4>
+<p>A <em>Hundi</em> was an unconditional order in writing, directing a person to pay a certain sum of money to a named person. It served three functions:</p>
+<ol>
+<li><strong>Remittance:</strong> A merchant in Delhi could deposit gold with a <em>Saraf</em> (banker) and receive a Hundi. He could travel to Surat and exchange that Hundi for gold, avoiding the risk of highway robbery.</li>
+<li><strong>Credit:</strong> Merchants could borrow money against a Hundi, promising repayment at a later date (Muddati Hundi).</li>
+<li><strong>Trade Settlement:</strong> It acted as a bill of exchange for goods.</li>
+</ol>
+<p>Crucially, the <em>Hundi</em> had value only because it was “pegged” to the gold reserves and the reputation of the issuer. It was a derivative instrument. If the <em>Saraf</em> failed to honor the Hundi in physical gold upon maturity, his reputation—and the value of all his circulating Hundis—would collapse. This system relied on a decentralized network of trust among bankers, mirroring the node verification in modern blockchain systems, but rooted in social capital and gold vaults rather than cryptographic proof.</p>
+<h3 id="33-global-parallels-the-roman-and-lydian-experience"><a class="header" href="#33-global-parallels-the-roman-and-lydian-experience"><strong>3.3 Global Parallels: The Roman and Lydian Experience</strong></a></h3>
+<p>The Indian experience was part of a global trend toward metallism.</p>
+<ul>
+<li><strong>Lydia:</strong> As noted, King Croesus’s minting of gold coins created the first “state-verified” value transfer protocol. The lion stamp on the Lydian stater was the ancient equivalent of a digital signature, certifying the coin’s integrity.</li>
+<li><strong>Rome:</strong> The Roman Empire’s stability was pegged to the <em>Aureus</em> and later the <em>Solidus</em> (from which we get the word “soldier” and “solid”). The <em>Solidus</em> was so stable it was known as the “dollar of the Middle Ages.” However, when emperors like Nero began to “clip” the coins (reducing gold content to fund wars), they effectively broke the peg. This debasement led to hyperinflation and is often cited as a contributing factor to the fall of Rome.</li>
+</ul>
+<p>This historical record establishes a clear precedent: civilizations thrive when their currency is honestly pegged to a scarce asset (Gold/Suvarnarupa) and collapse when that peg is broken by centralized manipulation.</p>
+<h2 id="chapter-4-the-digital-resurrection--sovereign-bitcoin-standards-in-2025"><a class="header" href="#chapter-4-the-digital-resurrection--sovereign-bitcoin-standards-in-2025">Chapter 4: The Digital Resurrection — Sovereign Bitcoin Standards in 2025</a></h2>
+<p>We now turn to the modern era. The user asks: <em>Is there any parallel between pegging physical sovereign currencies to gold in ancient times as the modern digital money is being tied to Bitcoin?</em><br>The answer is a resounding yes. In 2024 and 2025, we are witnessing a geopolitical phenomenon that can be described as the “Digital Resurrection of the Gold Standard.” Nation-states, recognizing the fragility of fiat currencies (which are unbacked, unlike the <em>Suvarnarupa</em>), are beginning to peg their economic sovereignty to Bitcoin. Bitcoin is being treated not just as an asset, but as the new <em>Hiranyagarbha</em>—the immutable, mathematical “Golden Womb” of the digital age.</p>
+<h3 id="41-bitcoin-as-digital-gold-the-structural-parallel"><a class="header" href="#41-bitcoin-as-digital-gold-the-structural-parallel"><strong>4.1 Bitcoin as Digital Gold: The Structural Parallel</strong></a></h3>
+<p>The comparison is structural, not just metaphorical.</p>
+<ul>
+<li><strong>Scarcity:</strong> Gold is scarce because of physics (nucleosynthesis). Bitcoin is scarce because of mathematics (the 21 million hard cap). Just as Chanakya could not mint more <em>Suvarnarupas</em> without finding more gold, a central bank cannot print more Bitcoin.</li>
+<li><strong>Mining (Proof of Work):</strong> Obtaining gold requires physical effort (digging). Obtaining Bitcoin requires computational effort (hashing). This “unforgeable costliness” is what secures the value of both against arbitrary inflation.</li>
+<li><strong>Sovereignty:</strong> Gold is the liability of no one. It exists independently of states. Bitcoin shares this property. It is “synthetic commodity money,” resistant to censorship and seizure if held correctly.</li>
+</ul>
+<h3 id="42-case-study-a-el-salvador--the-volcano-standard"><a class="header" href="#42-case-study-a-el-salvador--the-volcano-standard"><strong>4.2 Case Study A: El Salvador — The Volcano Standard</strong></a></h3>
+<p>El Salvador is the modern Lydia. Under President Nayib Bukele, it became the first nation to adopt Bitcoin as legal tender, effectively “pegging” its internal economy to the digital standard alongside the US dollar.</p>
+<h4 id="421-the-volcano-bonds"><a class="header" href="#421-the-volcano-bonds"><strong>4.2.1 The Volcano Bonds</strong></a></h4>
+<p>In 2024 and 2025, El Salvador advanced this integration with the issuance of “Volcano Bonds.”</p>
+<ul>
+<li><strong>Structure:</strong> These are sovereign debt instruments backed by the country’s Bitcoin mining operations and future Bitcoin accumulation. The bonds aim to raise 1 billion USD, with 50% used to purchase Bitcoin and 50% to build energy and mining infrastructure.</li>
+<li><strong>The Yield:</strong> The bonds offer a 6.5% coupon. However, they also offer a “Bitcoin Dividend”—after a 5-year lockup, if Bitcoin appreciates, the profits are shared with bondholders.</li>
+<li><strong>Energy as Backing:</strong> By utilizing the geothermal energy of the Conchagua volcano to mine Bitcoin, El Salvador is monetizing its geology. This is a direct parallel to the <em>Syamantaka Jewel</em> producing gold daily. The volcano is the jewel; the mining rig is the mechanism; Bitcoin is the output.</li>
+</ul>
+<h4 id="422-sovereign-reserves"><a class="header" href="#422-sovereign-reserves"><strong>4.2.2 Sovereign Reserves</strong></a></h4>
+<p>As of late 2025, El Salvador holds approximately 7,500 BTC. Unlike Satrajit who hoarded his wealth, El Salvador uses its Bitcoin profits to fund veterinary hospitals and schools, fulfilling Krishna’s vision of democratized wealth.</p>
+<h3 id="43-case-study-b-bhutan--the-hydro-electric-treasury"><a class="header" href="#43-case-study-b-bhutan--the-hydro-electric-treasury"><strong>4.3 Case Study B: Bhutan — The Hydro-Electric Treasury</strong></a></h3>
+<p>While El Salvador is vocal, the Kingdom of Bhutan is the quiet giant of the Bitcoin Standard, holding over 13,000 BTC (USD 780 million+) as of 2025.</p>
+<h4 id="431-druk-holdings-and-the-green-peg"><a class="header" href="#431-druk-holdings-and-the-green-peg"><strong>4.3.1 Druk Holdings and the Green Peg</strong></a></h4>
+<p>Bhutan’s sovereign investment arm, Druk Holding &amp; Investments, has been mining Bitcoin using the country’s massive surplus of hydroelectric power.</p>
+<ul>
+<li><strong>The Mechanism:</strong> Bhutan has rivers that generate more electricity than its population consumes. Instead of letting this energy go to waste or selling it cheaply to neighbors, they convert it into Bitcoin. This effectively pegs the Bhutanese economy to the global value of Bitcoin.</li>
+<li><strong>Gelephu Mindfulness City:</strong> In December 2025, Bhutan pledged 10,000 BTC to back the development of a new “Mindfulness City”. This city will function as a Special Administrative Region with its own legal framework, backed by the “hard money” of Bitcoin reserves. This mirrors the ancient city-states like Dwarka that were built around the prosperity of their treasury.</li>
+</ul>
+<h3 id="44-case-study-c-the-united-states-strategic-bitcoin-reserve"><a class="header" href="#44-case-study-c-the-united-states-strategic-bitcoin-reserve"><strong>4.4 Case Study C: The United States Strategic Bitcoin Reserve</strong></a></h3>
+<p>The most transformative development occurred in 2025 with the United States’ pivot toward a Strategic Bitcoin Reserve.</p>
+<h4 id="441-the-2025-executive-order"><a class="header" href="#441-the-2025-executive-order"><strong>4.4.1 The 2025 Executive Order</strong></a></h4>
+<p>In March 2025, the U.S. government formalized the “Strategic Bitcoin Reserve and United States Digital Asset Stockpile” via executive order.</p>
+<ul>
+<li><strong>The Shift:</strong> Historically, the U.S. Marshals auctioned off seized Bitcoin (e.g., from Silk Road). The new policy mandates the <em>retention</em> of these assets. The U.S. holds approximately 328,000 BTC, making it the largest sovereign holder in the world.</li>
+<li><strong>The “BITCOIN Act”:</strong> Legislative proposals like Senator Lummis’s “BITCOIN Act” envision the U.S. acquiring up to 1 million BTC (5% of total supply) to be held for 20 years as a hedge against national debt and dollar devaluation.</li>
+</ul>
+<p>This is the “Digital Fort Knox.” Just as the U.S. dollar’s dominance in the 20th century was partly due to the vast gold reserves held at Bretton Woods, the 21st-century dominance may depend on holding the largest share of the Bitcoin network.</p>
+<h3 id="45-counter-example-the-failure-of-zimbabwes-zig"><a class="header" href="#45-counter-example-the-failure-of-zimbabwes-zig"><strong>4.5 Counter-Example: The Failure of Zimbabwe’s ZiG</strong></a></h3>
+<p>To understand why the <em>Bitcoin</em> peg is working while other “backed” currencies fail, we must look at Zimbabwe’s “ZiG” (Zimbabwe Gold) currency, introduced in 2024.</p>
+<h4 id="451-the-trust-paradox"><a class="header" href="#451-the-trust-paradox"><strong>4.5.1 The Trust Paradox</strong></a></h4>
+<p>The ZiG was a digital token backed by physical gold reserves in the central bank. Theoretically, this is the <em>Suvarnarupa</em> reborn. However, by early 2025, the ZiG had lost 90% of its value.</p>
+<ul>
+<li><strong>Why?</strong> Because the market did not trust the custodian. A gold-backed currency requires trust that the gold is actually there and that the government won’t print more tokens than gold. Zimbabwe’s history of hyperinflation destroyed that trust.</li>
+<li><strong>The Lesson:</strong> A peg to a physical asset fails if the <em>verifier</em> (the state) is corrupt. Bitcoin succeeds because the <em>verifier</em> is code. El Salvador and Bhutan succeed because they hold the asset (Bitcoin) that verifies itself, rather than issuing a paper promise backed by a hidden vault.</li>
+</ul>
+<h2 id="chapter-5-synthesis--the-eternal-cycle-of-hard-money"><a class="header" href="#chapter-5-synthesis--the-eternal-cycle-of-hard-money">Chapter 5: Synthesis — The Eternal Cycle of Hard Money</a></h2>
+<h3 id="51-the-return-to-dharma"><a class="header" href="#51-the-return-to-dharma"><strong>5.1 The Return to Dharma</strong></a></h3>
+<p>The ancient concept of <em>Dharma</em> implies righteousness and cosmic order. In economics, <em>Dharma</em> manifests as “honest money”—money that cannot be debased by the whims of a ruler.</p>
+<ul>
+<li><strong>Hiranyagarbha</strong> established gold as the divine standard—immutable and eternal.</li>
+<li><strong>Krishna</strong> fought to ensure this standard served the people, not the hoarder.</li>
+<li><strong>Chanakya</strong> codified this into law with the <em>Suvarnarupa</em>.</li>
+<li><strong>Satoshi Nakamoto</strong> (the pseudonymous creator of Bitcoin) reintroduced this <em>Dharma</em> through code.</li>
+</ul>
+<p>The fiat experiment (approx. 1971–2025) was an aberration—a period of <em>Adharma</em> where money could be printed without cost. The return to the Bitcoin Standard is a return to the ancient wisdom of the <em>Rigveda</em>: that value must be rooted in something finite, costly, and universal.</p>
+<h3 id="52-table-the-evolution-of-the-sovereign-peg"><a class="header" href="#52-table-the-evolution-of-the-sovereign-peg"><strong>5.2 Table: The Evolution of the Sovereign Peg</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Vedic/Mauryan Era (Gold Standard)</th><th style="text-align: left">Modern Digital Era (Bitcoin Standard)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Origin of Value</strong></td><td style="text-align: left">Divine (<em>Hiranyagarbha</em> / Sun)</td><td style="text-align: left">Mathematical (<em>Cryptography</em> / Energy)</td></tr>
+<tr><td style="text-align: left"><strong>Source of Scarcity</strong></td><td style="text-align: left">Geological rarity</td><td style="text-align: left">Algorithmic Hard Cap (21 Million)</td></tr>
+<tr><td style="text-align: left"><strong>Mechanism of Creation</strong></td><td style="text-align: left">Mining (Physical Labor)</td><td style="text-align: left">Mining (Proof of Work / Hashing)</td></tr>
+<tr><td style="text-align: left"><strong>Storage of Value</strong></td><td style="text-align: left">Vaults / Temple Treasuries</td><td style="text-align: left">Cold Storage / Multi-Sig Wallets</td></tr>
+<tr><td style="text-align: left"><strong>Transfer Mechanism</strong></td><td style="text-align: left"><em>Hundi</em> (Paper backed by Trust)</td><td style="text-align: left">Lightning Network (Digital backed by Code)</td></tr>
+<tr><td style="text-align: left"><strong>Sovereign Strategy</strong></td><td style="text-align: left">Accumulation for Stability (<em>Arthashastra</em>)</td><td style="text-align: left">Strategic Reserve (<em>US/Bhutan/El Salvador</em>)</td></tr>
+<tr><td style="text-align: left"><strong>Greatest Threat</strong></td><td style="text-align: left">Debasement / Theft (<em>Syamantaka</em>)</td><td style="text-align: left">Private Key Loss / 51% Attack</td></tr>
+<tr><td style="text-align: left"><strong>Philosophical Goal</strong></td><td style="text-align: left"><em>Amrita</em> (Immortality of Wealth)</td><td style="text-align: left">Censorship Resistance / Sovereign Freedom</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="53-conclusion"><a class="header" href="#53-conclusion"><strong>5.3 Conclusion</strong></a></h3>
+<p>The story of gold is a circle. It began with the Golden Womb (<em>Hiranyagarbha</em>) floating in the void, birthing the universe. It evolved into the Syamantaka Jewel, where Lord Krishna taught us that the power of wealth must be democratized for the common good. It was standardized by kings like Croesus and Chandragupta, who pegged their empires to its luster.<br>Today, that story continues in the digital realm. The “miners” of Bhutan and Texas are the new alchemists, transmuting energy into the “digital gold” of Bitcoin. The “Strategic Reserves” of 2025 are the new Dwarka Treasuries. The medium has changed—from heavy metal to weightless code—but the fundamental human need remains the same: a search for a truth that cannot be inflated, a value that cannot be corrupted, and a standard that endures beyond the lifespan of kings and empires. The <em>Hiranyagarbha</em> has hatched again, this time on the blockchain.</p>
+<h3 id="data-tables-and-statistics"><a class="header" href="#data-tables-and-statistics"><strong>Data Tables and Statistics</strong></a></h3>
+<h4 id="table-2-sovereign-bitcoin-holdings-estimated-2025"><a class="header" href="#table-2-sovereign-bitcoin-holdings-estimated-2025"><strong>Table 2: Sovereign Bitcoin Holdings (Estimated 2025)</strong></a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Country</th><th style="text-align: left">Holdings (BTC)</th><th style="text-align: left">Valuation (Approx. USD 90k/BTC)</th><th style="text-align: left">Source of Acquisition</th><th style="text-align: left">Strategic Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>United States</strong></td><td style="text-align: left">~328,000</td><td style="text-align: left">~USD 29.5 Billion</td><td style="text-align: left">Seizures / Strategic Retention</td><td style="text-align: left">National Reserve / Debt Hedge</td></tr>
+<tr><td style="text-align: left"><strong>China</strong></td><td style="text-align: left">~190,000</td><td style="text-align: left">~USD 17.1 Billion</td><td style="text-align: left">Seizures (PlusToken)</td><td style="text-align: left">State Control (Unofficial Reserve)</td></tr>
+<tr><td style="text-align: left"><strong>United Kingdom</strong></td><td style="text-align: left">~61,000</td><td style="text-align: left">~USD 5.5 Billion</td><td style="text-align: left">Seizures</td><td style="text-align: left">Treasury Asset</td></tr>
+<tr><td style="text-align: left"><strong>Ukraine</strong></td><td style="text-align: left">~46,000</td><td style="text-align: left">~USD 4.1 Billion</td><td style="text-align: left">Donations / Seizures</td><td style="text-align: left">War Financing / Defense</td></tr>
+<tr><td style="text-align: left"><strong>Bhutan</strong></td><td style="text-align: left">~13,000</td><td style="text-align: left">~USD 1.2 Billion</td><td style="text-align: left"><strong>Mining (Hydro-power)</strong></td><td style="text-align: left">Sovereign Wealth / Development</td></tr>
+<tr><td style="text-align: left"><strong>El Salvador</strong></td><td style="text-align: left">~7,500</td><td style="text-align: left">~USD 675 Million</td><td style="text-align: left"><strong>Direct Purchase</strong></td><td style="text-align: left">Legal Tender / Independence</td></tr>
+</tbody>
+</table>
+</div>
+<p><em>Note: Data derived from snippet and. Valuations fluctuate with market price.</em></p>
+<h4 id="table-3-the-physics-of-value---gold-vs-bitcoin"><a class="header" href="#table-3-the-physics-of-value---gold-vs-bitcoin"><strong>Table 3: The Physics of Value - Gold vs. Bitcoin</strong></a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Property</th><th style="text-align: left">Gold (The Ancient Standard)</th><th style="text-align: left">Bitcoin (The Digital Standard)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Fungibility</strong></td><td style="text-align: left">High (Melting required)</td><td style="text-align: left">High (UTXO model)</td></tr>
+<tr><td style="text-align: left"><strong>Divisibility</strong></td><td style="text-align: left">Low (Difficult to divide dust)</td><td style="text-align: left">High (1 BTC = 100,000,000 Satoshis)</td></tr>
+<tr><td style="text-align: left"><strong>Portability</strong></td><td style="text-align: left">Low (Heavy, expensive to ship)</td><td style="text-align: left">High (Send billions instantly)</td></tr>
+<tr><td style="text-align: left"><strong>Verifiability</strong></td><td style="text-align: left">Difficult (Requires assay/smelting)</td><td style="text-align: left">Instant (Run a node)</td></tr>
+<tr><td style="text-align: left"><strong>Scarcity</strong></td><td style="text-align: left">Unknown (Space mining possible)</td><td style="text-align: left">Known (Fixed at 21,000,000)</td></tr>
+<tr><td style="text-align: left"><strong>Censorship Resistance</strong></td><td style="text-align: left">High (Physical possession)</td><td style="text-align: left">High (Cryptographic possession)</td></tr>
+<tr><td style="text-align: left"><strong>Mythological/Origins</strong></td><td style="text-align: left"><em>Hiranyagarbha</em> (Cosmic Egg)</td><td style="text-align: left"><em>Genesis Block</em> (Satoshi)</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="web-links"><a class="header" href="#web-links">Web links</a></h4>
+<ol>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Hiranyagarbha">Hiranyagarbha - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://yogaharta.com.au/2019/09/24/hiranyagarbha/">Hiranyagarbha - Yogaharta</a></p>
+</li>
+<li>
+<p><a href="http://www.mythfolklore.net/india/encyclopedia/hiranyagarbha.htm">Hiranyagarbha - MythFolklore.net</a></p>
+</li>
+<li>
+<p><a href="https://www.wisdomlib.org/concept/hiranyagarbha">Hiranyagarbha: Significance and symbolism</a></p>
+</li>
+<li>
+<p><a href="https://www.simtrade.fr/blog_simtrade/history-of-gold/">History of gold - SimTrade blog</a></p>
+</li>
+<li>
+<p><a href="https://boonit.co.uk/blog/the-history-of-gold-as-currency/">Unearthing the Rich History of Gold as Currency Through Ages - Boonit Online Pawnbroking</a></p>
+</li>
+<li>
+<p><a href="https://www.providentmetals.com/knowledge-center/collectible-coins/gold-history.html">A Short History of the Use of Gold - Provident Metals</a></p>
+</li>
+<li>
+<p><a href="https://www.phoenixrefining.com/blog/how-gold-became-the-standard-for-monetary-systems">How Gold became the standard for monetary systems - Phoenix Refining</a></p>
+</li>
+<li>
+<p><a href="https://metalsedge.com/the-history-of-gold-coins-in-currency/">The History of Gold Coins in Currency - Metals Edge</a></p>
+</li>
+<li>
+<p><a href="https://jewelryinnarratives.com/syamantaka-gem/">Tale of the Syamantaka gem - - Jewelry in Narratives</a></p>
+</li>
+<li>
+<p><a href="https://prabhupadabooks.com/kb/2/1">KB 2-1 / The Story of the Syamantaka Jewel KRSNA, The Supreme Personality of Godhead</a></p>
+</li>
+<li>
+<p><a href="https://vedabase.io/en/library/sb/10/56/">The Syamantaka Jewel - Vedabase</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Syamantaka">Syamantaka - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://iskcondesiretree.com/profiles/blogs/the-syamantaka-jewel-story-from-the-krishna-book">The Syamantaka Jewel story from the Krishna book. - Blog - ISKCON Desire Tree | IDT</a></p>
+</li>
+<li>
+<p><a href="https://krishnasmercy.com/2017/02/10/five-lessons-from-the-syamantaka-jewel-story/">Five Lessons From The Syamantaka Jewel Story - Krishna’s Mercy</a></p>
+</li>
+<li>
+<p><a href="https://hoovufresh.com/blogs/blog/syamanthaka-story-english">Syamantaka Story - English – Rosebazaar India - Hoovu Fresh</a></p>
+</li>
+<li>
+<p><a href="https://www.wisdomlib.org/concept/syamantaka-jewel">Syamantaka jewel: Significance and symbolism</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/History_of_the_rupee">History of the rupee - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://www.ijfmr.com/papers/2024/5/27364.pdf">Chanakya’s Economic Doctrine: Insights from the Arthashastra - IJFMR</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Indian_rupee">Indian rupee - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Coinage_of_India">Coinage of India - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://advancedscientificjournal.com/paper-download.php?doc_name=aca74e16162f5e10edd30cefe1dbcad9.pdf">coinage of india - INTERNATIONAL JOURNAL OF MULTIDISCIPLINARY ADVANCED SCIENTIFIC RESEARCH AND INNOVATION (IJMASRI)</a></p>
+</li>
+<li>
+<p><a href="https://bladams.tripod.com/empire/mauryan_e/measuresetc.html">Uniform weight, measures, and currency</a></p>
+</li>
+<li>
+<p><a href="https://prepp.in/news/e-492-maurya-period-coins-ancient-coins-ancient-history-notes">Maurya Period Coins - Ancient Coins - Ancient History Notes - Prepp</a></p>
+</li>
+<li>
+<p><a href="https://financialcrimeacademy.org/hundi-system/">Unearthing Financial Deception: Unraveling The Hundi System</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Hundi">Hundi - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://files.core.ac.uk/download/pdf/4187772.pdf">An Economic History of Hundi, 1858-1978 - The world’s largest collection of open access research papers</a></p>
+</li>
+<li>
+<p><a href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/historical-traces-hundi-sociocultural-understanding-and-criminal">Historical Traces of Hundi, Sociocultural Understanding, and Criminal Abuses of Hawala</a></p>
+</li>
+<li>
+<p><a href="https://www.cato.org/blog/how-bitcoin-system-unlike-gold-standard">How a Bitcoin System Is Like and Unlike a Gold Standard | Cato at Liberty Blog</a></p>
+</li>
+<li>
+<p><a href="https://www.blocktrainer.de/en/learning-knowledge/more-knowledge-about-bitcoin-co/from-gold-to-the-bitcoin-standard">From gold to the Bitcoin standard - Blocktrainer</a></p>
+</li>
+<li>
+<p><a href="http://www.subr.edu/assets/subr/COBJournal/summer25/Central-Banks-Gold-and-Bitcoin--Redefining-Money--EJournal--GRIFFIN.pdf">Central Banks, Gold, and Bitcoin: Redefining Money in the 21st Century</a></p>
+</li>
+<li>
+<p><a href="https://investinelsalvador.gob.sv/bono-volcan-de-el-salvador-sera-emitido-en-el-primer-trimestre-de-2024/">El Salvador Volcano Bond to be issued in the first quarter of 2024 - InvestinElSalvador</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/coinmonks/the-first-1-billion-usd-bitcoin-volcano-bond-is-here-56964d8f7bbe">The First 1 Billion USD Bitcoin Volcano Bond is Here | by Nomadic Money - Medium</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/coinmonks/el-salvador-launches-bitcoin-bonds-a-paradigm-shift-in-financial-evolution-76df294799d5">El Salvador Set To Launch Bitcoin Bonds | by Wheatstones | Coinmonks - Medium</a></p>
+</li>
+<li>
+<p>[El Salvador’s USD 1bn volcano-powered Bitcoin bonds greenlit for launch in early 2024](https://www.dlnews.com/articles/markets/el-salvador-bitcoin-volcano-bonds-set-to-launch-in-early-2024/ 36. Cryptocurrency Reserve by Country (2025): Who Has a Crypto National Reserve and Who Holds the Largest? - Bleap, https://www.bleap.finance/blog/cryptocurrency-reserve-by-country)</p>
+</li>
+<li>
+<p><a href="https://larc.cardozo.yu.edu/cgi/viewcontent.cgi?article=1107&amp;context=ciclr-online">El Salvador’s Bitcoin Bond is Finally Here! - LARC @ Cardozo Law</a></p>
+</li>
+<li>
+<p><a href="https://www.binance.com/en/square/post/19061854445809">Government Bitcoin Holdings in 2025: Who Owns the Most? | Coinpedia Fintech News on Binance Square</a></p>
+</li>
+<li>
+<p><a href="https://www.itiger.com/news/1154141435">Bhutan Emerges as Third-Largest Bitcoin Sovereign Holder, Pioneering Green Mining Revolution - Tiger Brokers</a></p>
+</li>
+<li>
+<p><a href="https://bitcoinmagazine.com/featured/bhutan-10000-bitcoin-to-build-mega-city">Bhutan Promises Up To 10,000 Bitcoin For New Mega-City</a></p>
+</li>
+<li>
+<p><a href="https://coingeek.com/bhutan-commits-900m-in-digital-assets-for-mindfulness-city/">Bhutan commits USD 900M in digital assets for Mindfulness City - CoinGeek</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/U.S._Strategic_Bitcoin_Reserve">U.S. Strategic Bitcoin Reserve - Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://www.whitehouse.gov/presidential-actions/2025/03/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile/">Establishment of the Strategic Bitcoin Reserve and United States Digital Asset Stockpile</a></p>
+</li>
+<li>
+<p><a href="https://business.cornell.edu/article/2025/03/what-is-zig/">What is ZIG, Zimbabwe’s Gold-Backed Digital Token?</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Zimbabwean_ZiG">Zimbabwean ZiG - Wikipedia</a></p>
+</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="bitcoinAsApexCapital.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="magicalMSTR.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="bitcoinAsApexCapital.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="magicalMSTR.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

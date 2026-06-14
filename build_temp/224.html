@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>224 : TPUs vs GPUs: AI Commodification - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="224--tpus-vs-gpus-ai-commodification"><a class="header" href="#224--tpus-vs-gpus-ai-commodification">224 : TPUs vs GPUs: AI Commodification</a></h1>
+<p><img src="./img/224.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The artificial intelligence industry has reached a fundamental inflection point, transitioning from an “experimental era” defined by model breakthroughs to an “industrial era” where intelligence is a manufactured utility. In 2026, the hardware landscape is bifurcating along the lines of a historical precedent: the specialization of Bitcoin mining. As the mathematical operations for modern AI become standardized, the market is shifting from flexible, general-purpose Graphic Processing Units (GPUs) toward Application-Specific Integrated Circuits (ASICs), specifically Google’s Tensor Processing Units (TPUs).</p>
+<h2 id="technical-foundation-what-is-accelerated-computing"><a class="header" href="#technical-foundation-what-is-accelerated-computing">Technical Foundation: What is Accelerated Computing?</a></h2>
+<p>To understand why the industry is moving toward specialized silicon, one must first define “accelerated computing.” Standard computing is sequential, governed by a Central Processing Unit (CPU) that handles instructions one after another. Accelerated computing is a paradigm that separates the data-intensive parts of an application and processes them on a separate device, leaving only the control functionality to the CPU.</p>
+<h3 id="massive-parallelization-vs-sequential-processing"><a class="header" href="#massive-parallelization-vs-sequential-processing"><strong>Massive Parallelization vs. Sequential Processing</strong></a></h3>
+<p>The defining characteristic of accelerators is massive parallelization. While a CPU is like a high-speed courier handling one package at a time, an accelerator is like a massive cargo ship carrying thousands of containers simultaneously.</p>
+<ul>
+<li><strong>Refactoring the Algorithm:</strong> To achieve speedups that exceed the mere addition of more computers, algorithms must be refactored and “sharded”—breaking the model and the data into pieces that can be distributed across a massive fabric.</li>
+<li><strong>Full-Stack Co-Design:</strong> Accelerated computing is not just about the chip; it is a “full-stack” problem. It requires a synchronized design of the silicon, the interconnects (like NVLink or Optical Circuit Switching), the libraries (like cuDNN or XLA), and the algorithms themselves to ensure that the hardware stays “busy” and efficient.</li>
+</ul>
+<h2 id="the-bitcoin-parallel-the-asic-ification-of-intelligence"><a class="header" href="#the-bitcoin-parallel-the-asic-ification-of-intelligence">The Bitcoin Parallel: The ASIC-ification of Intelligence</a></h2>
+<p>The AI hardware market is currently following the path of Bitcoin mining.1 In the early 2010s, Bitcoin was mined on CPUs and then moved to NVIDIA GPUs because their parallel architecture was better at repetitive cryptographic math. Eventually, as the hashing algorithm became the fixed industry standard, miners transitioned entirely to ASICs—chips built from the silicon up to do nothing but hash that specific algorithm.</p>
+<h3 id="standardization-of-the-math-of-ai"><a class="header" href="#standardization-of-the-math-of-ai"><strong>Standardization of the “Math of AI”</strong></a></h3>
+<p>AI is entering a similar phase of “ASIC-ification.” Once the industry understands exactly which mathematical operations are required for high-volume tasks—such as the dense matrix multiplications used in the Transformer architecture—the flexibility of a GPU becomes a costly liability.2</p>
+<ul>
+<li><strong>Performance per Watt:</strong> ASICs like TPUs “hard-wire” these specific operations directly into the silicon, eliminating extraneous control logic and registers required for general-purpose tasks. This allows them to achieve 2x to 3x better energy efficiency and significantly lower total cost of ownership (TCO) for predictable, industrial-scale workloads.2</li>
+<li><strong>Resale Value vs. Efficiency:</strong> While GPUs maintain secondary market value (for gaming or video editing), ASICs are “paperweights” if their specific algorithm becomes obsolete. However, at the gigawatt scale of modern AI factories, the efficiency gains of ASICs far outweigh the “capital protection” of GPUs.</li>
+</ul>
+<h2 id="the-anthropic-verdict-tpus-as-the-production-standard"><a class="header" href="#the-anthropic-verdict-tpus-as-the-production-standard">The Anthropic Verdict: TPUs as the Production Standard</a></h2>
+<p>For several years, the industry viewed the adoption of TPUs through the lens of corporate ideology. When Apple chose to use Google TPUs to train its “Apple Intelligence” models, many analysts dismissed the move as a “No NVIDIA” ideological stance—a desire to avoid vendor lock-in and high margins rather than a technical preference.</p>
+<h3 id="validation-through-anthropic"><a class="header" href="#validation-through-anthropic"><strong>Validation through Anthropic</strong></a></h3>
+<p>Anthropic’s recent multi-gigawatt commitment—specifically the <strong>3.5GW</strong> deal with Google and Broadcom—has fundamentally changed this narrative.4</p>
+<ul>
+<li><strong>Pure AI Perspective:</strong> Unlike Apple, which has its own silicon interests, Anthropic is a pure-play AI lab born out of the same research lineage as OpenAI. Their decision to move massive workloads onto the TPU stack serves as the “Anthropic Verdict”: purely from an AI perspective, TPUs have won the race for production-scale compute.6</li>
+<li><strong>Commercial Maturity:</strong> Securing Anthropic, a lab with a revenue run rate exceeding <strong>30,000,000,000 USD</strong>, provides the commercial validation needed to transition TPUs from a primarily internal Google asset to a market-grade infrastructure offering for elite labs.4</li>
+</ul>
+<h2 id="model-training-beyond-inference-specialization"><a class="header" href="#model-training-beyond-inference-specialization">Model Training: Beyond Inference Specialization</a></h2>
+<p>While TPUs are often associated with inference, they have proven to be the premier engine for massive training runs as well. Google’s <strong>Gemini 3</strong> and <strong>PaLM</strong> models were trained on TPU pods, demonstrating that once the training “math” is understood, ASICs can handle the “sprint” of creation as well as the “marathon” of deployment.3</p>
+<h3 id="pod-scale-training-performance"><a class="header" href="#pod-scale-training-performance"><strong>Pod-Scale Training Performance</strong></a></h3>
+<p>The latest <strong>TPU v7 (Ironwood)</strong> architecture represents a historic milestone where specialized silicon matches the raw training performance of the leading-edge GPU.10</p>
+<ul>
+<li><strong>Exascale Scaling:</strong> Google’s proprietary Optical Circuit Switching (OCS) allows Ironwood pods to scale to <strong>9,216 chips</strong>, creating a unified supercomputer capable of <strong>42.5 FP8 exaFLOPS</strong>.10</li>
+<li><strong>Cost Efficiency:</strong> While an NVIDIA Blackwell-class chip (B200) costs roughly <strong>6.30 USD/hour</strong>, Google’s internal cost for TPU v7 is approximately <strong>3.50 USD/hour</strong>, providing a massive structural advantage for training the world’s largest foundation models.13</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Metric</th><th style="text-align: left">Google TPU v7 (Ironwood)</th><th style="text-align: left">NVIDIA B200 (Blackwell)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>FP8 Performance</strong></td><td style="text-align: left">4.6 PFLOPS</td><td style="text-align: left">4.5 PFLOPS 15</td></tr>
+<tr><td style="text-align: left"><strong>HBM Memory</strong></td><td style="text-align: left">192 GB</td><td style="text-align: left">192 GB 10</td></tr>
+<tr><td style="text-align: left"><strong>Energy Efficiency</strong></td><td style="text-align: left">2.8x better perf/watt vs H100</td><td style="text-align: left">Prioritizes absolute performance 12</td></tr>
+<tr><td style="text-align: left"><strong>System Cost</strong></td><td style="text-align: left">40%–60% reduction vs. NVIDIA</td><td style="text-align: left">“NVIDIA Tax” (78% margins) 16</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="conclusion-the-era-of-the-industrial-intelligence-factory"><a class="header" href="#conclusion-the-era-of-the-industrial-intelligence-factory">Conclusion: The Era of the Industrial Intelligence Factory</a></h2>
+<p>The commodification of AI workloads in 2026 signifies that efficiency has overtaken flexibility as the primary driver of AI strategy. The hardware market has permanently split:</p>
+<ol>
+<li><strong>NVIDIA GPUs</strong> remain the “Swiss Army knife” of the laboratory, used to discover the next generation of accelerated computing applications in robotics, physical AI, and novel algorithms.17</li>
+<li><strong>Google TPUs</strong> (and other custom ASICs) have become the “turbines” of the factory, producing tokens and training massive models at scale and minimal cost.</li>
+</ol>
+<p>As the industry matures, Google’s vertical integration—owning the silicon, the networking, and the cloud—has given it a structural advantage. Anthropic’s move proves that for those operating at the frontier, the “ASIC-ification” of AI is no longer an ideological choice, but a technical and economic necessity.</p>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<ol>
+<li>Why ASICs Dominate Bitcoin Mining (and Why GPUs Lost) - PatSnap Eureka, accessed April 16, 2026, <a href="https://eureka.patsnap.com/article/why-asics-dominate-bitcoin-mining-and-why-gpus-lost">https://eureka.patsnap.com/article/why-asics-dominate-bitcoin-mining-and-why-gpus-lost</a></li>
+<li>Google TPU vs NVIDIA GPU: A Comprehensive Technical Comparison - LoveChip, accessed April 16, 2026, <a href="https://www.lovechip.com/blog/google-tpu-vs-nvidia-gpu-a-comprehensive-technical-comparison">https://www.lovechip.com/blog/google-tpu-vs-nvidia-gpu-a-comprehensive-technical-comparison</a></li>
+<li>ASIC vs GPU: What Are The Main Differences To Consider - Bitdeer, accessed April 16, 2026, <a href="https://www.bitdeer.com/learn/asic-vs-gpu-what-are-the-main-differences-to-consider">https://www.bitdeer.com/learn/asic-vs-gpu-what-are-the-main-differences-to-consider</a></li>
+<li>Anthropic’s Gigawatt-Scale TPU Deal with Broadcom Creates a Structural Advantage, accessed April 16, 2026, <a href="https://futurumgroup.com/insights/anthropics-gigawatt-scale-tpu-deal-with-broadcom-creates-a-structural-advantage/">https://futurumgroup.com/insights/anthropics-gigawatt-scale-tpu-deal-with-broadcom-creates-a-structural-advantage/</a></li>
+<li>Anthropic, Google, Broadcom announce 3.5GW TPU deal, accessed April 16, 2026, <a href="https://www.siliconrepublic.com/machines/anthropic-google-broadcom-announce-3-5gw-tpu-deal">https://www.siliconrepublic.com/machines/anthropic-google-broadcom-announce-3-5gw-tpu-deal</a></li>
+<li>Jensen Huang says the next AI boom belongs to inference - Quartz, accessed April 16, 2026, <a href="https://qz.com/nvidia-gtc-2026-jensen-huang-keynote-takeaways">https://qz.com/nvidia-gtc-2026-jensen-huang-keynote-takeaways</a></li>
+<li>Anthropic Secures Multi-Gigawatt TPU Deal With Google, Broadcom, accessed April 16, 2026, <a href="https://www.datacenterknowledge.com/data-center-chips/anthropic-secures-multi-gigawatt-tpu-deal-with-google-broadcom">https://www.datacenterknowledge.com/data-center-chips/anthropic-secures-multi-gigawatt-tpu-deal-with-google-broadcom</a></li>
+<li>Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute, accessed April 16, 2026, <a href="https://www.anthropic.com/news/google-broadcom-partnership-compute">https://www.anthropic.com/news/google-broadcom-partnership-compute</a></li>
+<li>Research \ Anthropic, accessed April 16, 2026, <a href="https://www.anthropic.com/research">https://www.anthropic.com/research</a></li>
+<li>Claude Mythos Preview System Card - Anthropic, accessed April 16, 2026, <a href="https://www.anthropic.com/claude-mythos-preview-system-card">https://www.anthropic.com/claude-mythos-preview-system-card</a></li>
+<li>From ASICs to GPUs: Why Mining-to-AI Transitions Are Hard - Hashrate Index, accessed April 16, 2026, <a href="https://hashrateindex.com/blog/bitcoin-mining-ai-transition-harder-asic-gpu/">https://hashrateindex.com/blog/bitcoin-mining-ai-transition-harder-asic-gpu/</a></li>
+<li>Google’s Massive Anthropic Cloud Deal: The Hidden Winner in the AI Gold Rush, accessed April 16, 2026, <a href="https://www.investing.com/analysis/googles-massive-anthropic-cloud-deal-the-hidden-winner-in-the-ai-gold-rush-200668877">https://www.investing.com/analysis/googles-massive-anthropic-cloud-deal-the-hidden-winner-in-the-ai-gold-rush-200668877</a></li>
+<li>Alphabet (GOOGL) Is Up 6.7% After Deepening Broadcom–Anthropic AI Infrastructure Ties - Has The Bull Case Changed? - Simply Wall St, accessed April 16, 2026, <a href="https://simplywall.st/stocks/us/media/nasdaq-googl/alphabet/news/alphabet-googl-is-up-67-after-deepening-broadcomanthropic-ai">https://simplywall.st/stocks/us/media/nasdaq-googl/alphabet/news/alphabet-googl-is-up-67-after-deepening-broadcomanthropic-ai</a></li>
+<li>GPU vs. TPU: Here are they key differences - Investing.com, accessed April 16, 2026, <a href="https://www.investing.com/news/stock-market-news/gpu-vs-tpu-here-are-they-key-differences-4388353">https://www.investing.com/news/stock-market-news/gpu-vs-tpu-here-are-they-key-differences-4388353</a></li>
+<li>Google’s Ironwood TPU vs. NVIDIA Blackwell: AI Chip War! #shorts - YouTube, accessed April 16, 2026, <a href="https://www.youtube.com/shorts/oWRgpzWrQcg">https://www.youtube.com/shorts/oWRgpzWrQcg</a></li>
+<li>Leashing Chinese AI Needs Smart Chip Controls - RAND, accessed April 16, 2026, <a href="https://www.rand.org/pubs/commentary/2025/08/leashing-chinese-ai-needs-smart-chip-controls.html">https://www.rand.org/pubs/commentary/2025/08/leashing-chinese-ai-needs-smart-chip-controls.html</a></li>
+<li>“Companies don’t print money”: Nvidia’s Jensen Huang recasts the economics of AI | Ctech, accessed April 16, 2026, <a href="https://www.calcalistech.com/ctechnews/article/3g6b31j2p">https://www.calcalistech.com/ctechnews/article/3g6b31j2p</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="225.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="223.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="225.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="223.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

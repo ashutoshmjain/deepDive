@@ -1,0 +1,636 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Embedded Value Layer - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="the-embedded-value-layer"><a class="header" href="#the-embedded-value-layer">The Embedded Value Layer</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>The architecture of the internet is undergoing a fundamental restructuring, shifting from a model of information exchange to one of value exchange. At the forefront of this transformation is the integration of the Bitcoin Lightning Network (LN) directly into consumer applications. This report provides an exhaustive analysis of the emerging class of “super applications” that embed custodial Lightning wallets not as their primary product, but as an enabling feature for social interaction, content consumption, gaming, and digital identity.</p>
+<p>Unlike standalone wallets—such as Phoenix or Muun, which serve solely as storage and transmission tools—these applications leverage the Lightning Network to facilitate novel economic behaviors: “zapping” a social media post, streaming micropayments to a podcaster by the minute, or earning fractions of a cent for digital gameplay. Central to this user experience is the provision of a free, human-readable Lightning Address (based on the LUD-16 standard), which transforms a complex cryptographic endpoint into a recognizable identifier akin to an email address (e.g., user @primal.net).</p>
+<p>This document explores the technical, economic, and social dynamics of this ecosystem. It details the operational mechanics of leading platforms including <strong>Primal</strong> (social), <strong>Fountain</strong> (media), <strong>ZBD</strong> (gaming), and <strong>Stacker News</strong> (community), while examining the critical transition of infrastructure providers like <strong>Alby</strong> away from custodial models. Through this analysis, we identify a burgeoning “FiNa” (Financial Native) application layer that is effectively commoditizing the digital wallet, rendering it an invisible utility within the broader digital experience.</p>
+<h2 id="1-the-paradigm-shift-from-fintech-apps-to-apps-with-finance"><a class="header" href="#1-the-paradigm-shift-from-fintech-apps-to-apps-with-finance">1. The Paradigm Shift: From Fintech Apps to Apps with Finance</a></h2>
+<h3 id="11-the-theoretical-framework-of-embedded-wallets"><a class="header" href="#11-the-theoretical-framework-of-embedded-wallets">1.1 The Theoretical Framework of Embedded Wallets</a></h3>
+<p>The history of digital finance has largely been characterized by a separation of concerns: users communicate on one set of protocols (SMTP, HTTP, XMPP) and transact on another (SWIFT, VISA, ACH). This separation introduced friction—the need to leave a social environment to perform a financial action—which effectively made micropayments impossible. The cognitive and temporal cost of opening a banking app to send USD 0.05 exceeded the value of the transaction itself.</p>
+<p>The integration of custodial Lightning wallets into non-financial applications resolves this friction. By embedding the ledger directly into the application interface, developers create an environment where money moves at the speed of information. In this context, the wallet is not a destination; it is a background process. The “Lightning Address” acts as the bridge between these distinct worlds, assigning a financial inbox to every digital identity.</p>
+<h3 id="12-the-technological-enabler-lud-16-and-lnurl"><a class="header" href="#12-the-technological-enabler-lud-16-and-lnurl">1.2 The Technological Enabler: LUD-16 and LNURL</a></h3>
+<p>The explosive adoption of these embedded wallets is powered by the <strong>Lightning Address</strong> protocol, technically defined as LUD-16. To understand the user experience of apps like Fountain or ZBD, one must first understand the abstraction layer that makes them possible.</p>
+<p>In the native Lightning Network protocol (BOLT 11), receiving a payment requires generating a unique, single-use invoice—a long alphanumeric string that encodes the payment hash, amount, and expiry. This is analogous to generating a new email address for every single email one wishes to receive; it is fundamentally incompatible with static social identities.</p>
+<p>LUD-16 solves this by using a standard HTTP request to resolve a human-readable identifier (like alice @primal.net) into a Lightning invoice.</p>
+<ol>
+<li><strong>Resolution:</strong> When a sender inputs the address, the wallet software queries the domain (primal.net) at a specific endpoint (/.well-known/lnurlp/alice).</li>
+<li><strong>Metadata Exchange:</strong> The server responds with metadata, including the minimum and maximum sendable amounts and a comment length allowance.</li>
+<li><strong>Invoice Generation:</strong> The sender’s wallet specifies the amount (e.g., 50 sats) and sends this to the server.</li>
+<li><strong>Payment:</strong> The server generates a standard BOLT 11 invoice for that specific amount and returns it to the sender’s wallet, which then pays it instantly.1</li>
+</ol>
+<p>For the applications discussed in this report, operating a LUD-16 server is a core infrastructure requirement. By managing this server and the associated Lightning node, these apps allow users to receive funds asynchronously—without needing to be online or managing their own liquidity channels.</p>
+<h3 id="13-the-custodial-compromise"><a class="header" href="#13-the-custodial-compromise">1.3 The Custodial Compromise</a></h3>
+<p>The distinction between custodial and non-custodial wallets is pivotal in this analysis. Non-custodial wallets offer sovereignty but require significant technical overhead: managing channel capacity, creating backups, and paying on-chain fees to open channels.</p>
+<p>The applications in this report—Primal, ZBD, Fountain—operate on a <strong>custodial model</strong>.</p>
+<ul>
+<li><strong>The Mechanism:</strong> The application developer runs a massive, well-connected Lightning node. When a user “receives” funds to their Lightning Address, the payment actually settles on the developer’s node. The developer’s internal database then credits the user’s account ledger.</li>
+<li><strong>The Benefit:</strong> This allows for instant onboarding. A new user can install Primal and receive a tip within seconds without touching the Bitcoin blockchain or paying a fee. It allows for “internal” transactions (user-to-user within the same app) to occur off-chain entirely, updateable via simple SQL database queries, which is the only way to support high-frequency, sub-cent transactions.3</li>
+<li><strong>The Trade-off:</strong> The user does not hold the private keys to these funds. They are trusting the application developer to remain solvent and secure.</li>
+</ul>
+<h2 id="2-social-media-and-the-zap-economy"><a class="header" href="#2-social-media-and-the-zap-economy">2. Social Media and the “Zap” Economy</a></h2>
+<p>The integration of Lightning into social media, particularly through the <strong>Nostr</strong> protocol, represents the most mature implementation of embedded finance. Here, the “like” button is replaced or augmented by the “Zap”—a real-value transaction that carries signal in a noisy digital environment.</p>
+<h3 id="21-primal-the-integrated-nostr-client"><a class="header" href="#21-primal-the-integrated-nostr-client">2.1 Primal: The Integrated Nostr Client</a></h3>
+<p><strong>Primal</strong> creates a seamless bridge between the decentralized social protocol Nostr and the Bitcoin Lightning Network. While Nostr is protocol-agnostic regarding payments, Primal has built a vertically integrated experience that includes a custodial wallet as a default feature for every new account.</p>
+<h4 id="211-the-one-click-wallet-experience"><a class="header" href="#211-the-one-click-wallet-experience">2.1.1 The “One-Click” Wallet Experience</a></h4>
+<p>Upon downloading the Primal application, a user creates a Nostr identity (public/private key pair). Simultaneously, Primal provisions a custodial Lightning wallet linked to this identity.</p>
+<ul>
+<li><strong>Address Provisioning:</strong> The user is automatically assigned a Lightning Address in the format username @primal.net. This address is written into the user’s Nostr profile metadata (Kind 0 event), making it visible to any other client in the Nostr ecosystem.5</li>
+<li><strong>Activation:</strong> Unlike competitors that require the user to configure a connection string or sign up for a third-party wallet (like Alby or Wallet of Satoshi), Primal’s wallet is native. A single tap activates the ability to send and receive.</li>
+<li><strong>User Interface:</strong> The wallet is embedded in the profile and feed. When a user views a post, the lightning bolt icon is pre-loaded with the author’s Lightning Address. A tap initiates a payment that resolves instantly.</li>
+</ul>
+<h4 id="212-economic-velocity-and-zaps"><a class="header" href="#212-economic-velocity-and-zaps">2.1.2 Economic Velocity and “Zaps”</a></h4>
+<p>Primal’s infrastructure is optimized for high-velocity, low-value transactions. In the Nostr ecosystem, it is common for users to “zap” 21 sats (roughly 0.01 USD) to dozens of posts per day.</p>
+<ul>
+<li><strong>Internal Routing:</strong> Because Primal hosts wallets for a significant portion of the user base, many zaps are internal ledger updates. If User A (Primal) zaps User B (Primal), the transaction incurs zero routing fees and is instant.</li>
+<li><strong>External Routing:</strong> If User A zaps User C (who uses Damus with a Strike address), Primal’s node routes the payment out to the wider network. The custodial nature shields the user from the complexities of finding a path through the network graph.7</li>
+</ul>
+<h4 id="213-the-nostr-wallet-connect-nwc-evolution"><a class="header" href="#213-the-nostr-wallet-connect-nwc-evolution">2.1.3 The Nostr Wallet Connect (NWC) Evolution</a></h4>
+<p>While Primal uses a custodial wallet by default for ease of use, it utilizes the <strong>Nostr Wallet Connect (NWC)</strong> protocol to standardize the communication between the social client and the wallet backend. This is a forward-looking architectural decision. It means that while the current backend is Primal’s custodial server, the <em>interface</em> is built on an open standard. In the future, a Primal user could theoretically “swap out” the custodial backend for their own self-hosted Umbrel node while keeping the same Primal social interface, though the default primal.net address is tied to their custody.8</p>
+<h3 id="22-club-orange-formerly-orange-pill-app"><a class="header" href="#22-club-orange-formerly-orange-pill-app">2.2 Club Orange (formerly Orange Pill App)</a></h3>
+<p>While Primal focuses on global digital discourse, <strong>Club Orange</strong> focuses on physical proximity and community building. It is a geo-social network designed to help Bitcoiners find each other in the real world.</p>
+<h4 id="221-geo-zapping-and-community-utility"><a class="header" href="#221-geo-zapping-and-community-utility">2.2.1 Geo-Zapping and Community Utility</a></h4>
+<p>The app includes a built-in custodial wallet that assigns a Lightning Address to users. This feature is tailored to the specific dynamics of in-person networking.</p>
+<ul>
+<li><strong>Proximity Zapping:</strong> The app allows users to “beam” sats to other users who are physically nearby. This replicates the ease of handing someone cash but uses the Lightning Network rails.11</li>
+<li><strong>Global Reach:</strong> Users can also “Geo Zap,” sending funds to users in specific cities or regions. This gamifies the experience of connecting with the global diaspora of the community.</li>
+<li><strong>The Business Model:</strong> Unlike Primal, which is free (with premium tier options for storage), Club Orange has traditionally used a subscription model for access to the social layer, with the wallet serving as a value-add utility to facilitate commerce and tipping at events.11</li>
+</ul>
+<h3 id="23-lifpay-the-consumer-social-wallet"><a class="header" href="#23-lifpay-the-consumer-social-wallet">2.3 LifPay: The Consumer Social Wallet</a></h3>
+<p><strong>LifPay</strong> positions itself as a “WeChat Pay” for the Lightning ecosystem, blurring the lines between a social network and a payment utility.</p>
+<h4 id="231-identity-and-commerce"><a class="header" href="#231-identity-and-commerce">2.3.1 Identity and Commerce</a></h4>
+<ul>
+<li><strong>Personalized Address:</strong> Every user receives a username @lifpay.me address. This is marketed not just for tipping, but for commerce.12</li>
+<li><strong>NIP-05 Identity:</strong> LifPay leverages the Lightning Address to provide NIP-05 verification on Nostr. This means a user’s Nostr profile displays a “verified” badge linked to their LifPay domain, establishing a trusted link between their social persona and their financial reputation.12</li>
+<li><strong>Bolt Cards (NFC):</strong> A standout feature of LifPay is its support for Bolt Cards. These are physical cards equipped with NFC chips that link directly to the custodial wallet. A user can tap their card at a merchant terminal to pay via Lightning, drawing from the same balance accessible via their lifpay.me address. This creates a unified financial experience across online (Nostr zaps) and offline (coffee shops) environments.12</li>
+</ul>
+<h3 id="24-current-the-hybrid-social-app"><a class="header" href="#24-current-the-hybrid-social-app">2.4 Current: The Hybrid Social App</a></h3>
+<p><strong>Current</strong> is another contender in the Nostr/Bitcoin social space. It simplifies the onboarding process by bundling the key pair generation with a custodial wallet setup.</p>
+<ul>
+<li><strong>Identity Bundling:</strong> When a user sets up Current, they choose a username that serves as both their NIP-05 verification handle and their Lightning Address. This significantly reduces the cognitive load for new users who often struggle to understand why their “username” (public key) is a random string of characters and why they need a separate “address” for money.13</li>
+</ul>
+<h2 id="3-the-media-consumption-layer-podcasting-20-and-music"><a class="header" href="#3-the-media-consumption-layer-podcasting-20-and-music">3. The Media Consumption Layer: Podcasting 2.0 and Music</a></h2>
+<p>The “Value for Value” (V4V) movement seeks to repair the broken monetization models of the web. Instead of selling user attention to advertisers, applications enable direct, streaming payments from consumers to creators.</p>
+<h3 id="31-fountain-the-premier-v4v-podcast-player"><a class="header" href="#31-fountain-the-premier-v4v-podcast-player">3.1 Fountain: The Premier V4V Podcast Player</a></h3>
+<p><strong>Fountain</strong> has fundamentally reimagined the podcast player. It is not merely a tool for audio playback; it is a financial streaming engine.</p>
+<h4 id="311-the-listener-as-a-financial-node"><a class="header" href="#311-the-listener-as-a-financial-node">3.1.1 The Listener as a Financial Node</a></h4>
+<p>In traditional media apps (Spotify, Apple Podcasts), the user is a passive consumer. In Fountain, the user is an active financial participant. Upon registration, every user is provisioned a custodial Lightning wallet with a <strong>Lightning Address</strong> (username @fountain.fm).14</p>
+<ul>
+<li><strong>Inbound Liquidity:</strong> This address allows users to fund their listening habits. A user can send USD 10 worth of Bitcoin from Cash App to their Fountain address.</li>
+<li><strong>Earning Mechanism:</strong> Uniquely, Fountain uses this address to <em>pay</em> listeners. Users can earn sats by listening to promoted episodes or clips. Advertisers pay Fountain, and Fountain streams a portion of that revenue directly to the listener’s wallet while the ad plays. This “Listen to Earn” model turns the listener’s time into liquid capital.16</li>
+</ul>
+<h4 id="312-streaming-payments-and-splits"><a class="header" href="#312-streaming-payments-and-splits">3.1.2 Streaming Payments and Splits</a></h4>
+<p>The core utility of the Fountain wallet is the ability to stream payments.</p>
+<ul>
+<li><strong>The Stream:</strong> A user sets a “value streaming” rate, such as 100 sats per minute. As long as the audio plays, the wallet executes micro-payments every minute.</li>
+<li><strong>The Split:</strong> The genius of the Podcasting 2.0 standard (specifically the &lt;podcast:value&gt; tag in the RSS feed) is that it allows for complex revenue splits. The 100 sats sent by the listener might be automatically divided: 70 sats to the host, 20 sats to the guest, 5 sats to the producer, and 5 sats to the app developer. Fountain’s custodial backend handles this complex multi-path routing instantly.17</li>
+<li><strong>Interoperability:</strong> Because the listener has a standard Lightning Address, they can use their Fountain balance to pay for things outside the app, or receive tips from other users for curating good clips. The wallet is portable, even if the primary interface is audio-focused.18</li>
+</ul>
+<h3 id="32-wavlake-decentralized-music-streaming"><a class="header" href="#32-wavlake-decentralized-music-streaming">3.2 Wavlake: Decentralized Music Streaming</a></h3>
+<p><strong>Wavlake</strong> applies the V4V model to the music industry, allowing artists to bypass labels and streaming platforms that take 90% of revenue.</p>
+<h4 id="321-the-artist-and-listener-wallet"><a class="header" href="#321-the-artist-and-listener-wallet">3.2.1 The Artist and Listener Wallet</a></h4>
+<p>Wavlake provides custodial wallets to both artists and listeners to facilitate immediate interaction.</p>
+<ul>
+<li><strong>For Listeners:</strong> Listeners can create an account and fund a wallet to stream value to artists. While Wavlake supports connecting external wallets (via NWC or extensions), the default web experience provides a hosted wallet for ease of use.19</li>
+<li><strong>For Artists:</strong> Historically, artists used a Wavlake-provided wallet to receive funds. However, Wavlake has recently innovated by allowing artists to “Bring Your Own Address.” This means an artist can input a Lightning Address from <em>another</em> provider (like Primal or ZBD) into their Wavlake profile. When a listener streams a song, Wavlake’s backend routes the payment directly to that external address. This reduces the custodial risk for artists, as they don’t have to leave funds sitting on the Wavlake platform.21</li>
+<li><strong>Partnership with ZBD:</strong> Wavlake has partnered with ZBD to power its infrastructure. This collaboration highlights the interconnected nature of this ecosystem: a gaming fintech company (ZBD) providing the payment rails for a music streaming service, all interoperable via the standard Lightning Address.22</li>
+</ul>
+<h3 id="33-vera-and-the-wider-podcasting-20-ecosystem"><a class="header" href="#33-vera-and-the-wider-podcasting-20-ecosystem">3.3 Vera and the Wider Podcasting 2.0 Ecosystem</a></h3>
+<p>While Fountain is the dominant “all-in-one” player with a built-in wallet, the ecosystem is vast.</p>
+<ul>
+<li><strong>Vera:</strong> The research snippets mention “Vera” in the context of podcast content and emotional intelligence 49 rather than as a distinct wallet app comparable to Fountain. It is likely a content creator utilizing the ecosystem rather than a platform provider.</li>
+<li><strong>Podverse &amp; Podcast Guru:</strong> These apps also support V4V but historically adopted a “bring your own wallet” approach, often integrating with Alby. This distinction is crucial: Fountain provides the wallet <em>inside</em> the app, whereas Podverse often acts as a <em>controller</em> for an external wallet. This makes Fountain the superior choice for users seeking a “free lightning address” out of the box without external setup.16</li>
+</ul>
+<h2 id="4-the-gaming-and-play-to-earn-sector"><a class="header" href="#4-the-gaming-and-play-to-earn-sector">4. The Gaming and Play-to-Earn Sector</a></h2>
+<p>Gaming is the “trojan horse” of Bitcoin adoption. Gamers are already accustomed to digital currencies (V-Bucks, Gold); Lightning simply makes that currency interoperable and real.</p>
+<h3 id="41-zbd-zebedee-the-engine-of-gamefi"><a class="header" href="#41-zbd-zebedee-the-engine-of-gamefi">4.1 ZBD (Zebedee): The Engine of GameFi</a></h3>
+<p><strong>ZBD</strong> is the heavyweight infrastructure provider in this space. While they offer a consumer app, their primary product is the API that allows game developers to integrate Lightning.</p>
+<h4 id="411-the-gamertag-as-a-financial-identity"><a class="header" href="#411-the-gamertag-as-a-financial-identity">4.1.1 The Gamertag as a Financial Identity</a></h4>
+<p>ZBD abstracts the Lightning Address into a “Gamertag” (gamertag @zbd.gg).</p>
+<ul>
+<li><strong>Static Identity:</strong> This address is permanent. A user can post it on their Twitch stream, Twitter bio, or inside a Discord server.</li>
+<li><strong>Cross-Game Portability:</strong> A user can earn sats in <em>Bitcoin Miner</em> (a mobile game), have them credited to their ZBD wallet, and then use those same sats to tip a player in <em>CS:GO</em> (via ZBD Infuse). The ZBD wallet acts as the central clearinghouse for this economy.24</li>
+<li><strong>Ad-Tech Integration:</strong> ZBD is aggressively expanding into the “attention economy.” They are integrating mechanisms where users can earn sats not just by winning games, but by viewing ads or engaging with sponsored content, effectively merging the gaming and “Slice-style” browsing rewards models.25</li>
+</ul>
+<h3 id="42-thndr-games-the-faucet-of-the-ecosystem"><a class="header" href="#42-thndr-games-the-faucet-of-the-ecosystem">4.2 THNDR Games: The Faucet of the Ecosystem</a></h3>
+<p><strong>THNDR Games</strong> produces high-quality mobile games like <em>Club Bitcoin: Solitaire</em>.</p>
+<ul>
+<li><strong>The Withdrawal Loop:</strong> THNDR games function as “faucets” that dispense value. They do not hold funds long-term; rather, they require the user to withdraw earnings to a Lightning Address.</li>
+<li><strong>Symbiosis:</strong> This creates a symbiotic relationship with apps like ZBD and Wallet of Satoshi. THNDR provides the <em>flow</em> of funds (the earnings), while ZBD provides the <em>bucket</em> (the address). This dynamic teaches users the utility of the Lightning Address: it is the universal connector that allows value to move from a game to a wallet.26</li>
+</ul>
+<h2 id="5-web-monetization-and-browser-utilities"><a class="header" href="#5-web-monetization-and-browser-utilities">5. Web Monetization and Browser Utilities</a></h2>
+<p>The browser extension is the most direct way to integrate Lightning into the desktop web experience.</p>
+<h3 id="51-slice-browsing-as-mining"><a class="header" href="#51-slice-browsing-as-mining">5.1 Slice: Browsing as Mining</a></h3>
+<p><strong>Slice</strong> is a browser extension that passively monetizes user attention. It replaces or overlays standard web ads with ads that pay the user.</p>
+<ul>
+<li><strong>The Payout:</strong> Users earn “Slices” which convert to Bitcoin. To withdraw, users must provide a Lightning Address.</li>
+<li><strong>Integration:</strong> Slice is increasingly integrating deeper wallet functionality. Following its acquisition by <strong>Lolli</strong>, a major Bitcoin rewards platform, the ecosystem is consolidating. Lolli provides a custodial environment for shopping rewards, and with Slice, it now captures browsing activity. This creates a unified “earning” wallet that supports withdrawals to Lightning Addresses, effectively turning the browser into a revenue generator for the user.28</li>
+</ul>
+<h3 id="52-mash-the-walletless-wallet"><a class="header" href="#52-mash-the-walletless-wallet">5.2 Mash: The Walletless Wallet</a></h3>
+<p><strong>Mash</strong> represents a radical approach to web monetization. It is designed to be invisible.</p>
+<ul>
+<li><strong>Progressive Web App (PWA):</strong> Mash does not have a native iOS or Android app in the stores. Instead, it operates as a PWA that can be installed from the browser. This allows it to bypass Apple’s draconian 30 percent fee on in-app payments, which would destroy the economics of micropayments.31</li>
+<li><strong>The Mash Experience:</strong> When a user visits a site powered by Mash (e.g., a blog or game), they are prompted to create a wallet. This wallet is hosted by Mash. It provides a Lightning Address (username @mash.com) that users can fund.</li>
+<li><strong>Content Unlocking:</strong> Once funded, the user can click “Boost” or “Unlock” on content. The payment happens instantly on Mash’s internal ledger. The user experience is akin to having a “universal coin” for the web.32</li>
+</ul>
+<h3 id="53-alby-the-transitioning-giant"><a class="header" href="#53-alby-the-transitioning-giant">5.3 Alby: The Transitioning Giant</a></h3>
+<p><strong>Alby</strong> has historically been the go-to browser extension for Lightning, offering a free custodial Lightning Address (<code>username@getalby.com</code>) to all users.</p>
+<ul>
+<li><strong>WebLN Standard:</strong> Alby injects the <strong>WebLN</strong> standard into the browser, allowing websites to prompt the user for payment (e.g., “Pay 50 sats to read this article?”).</li>
+<li><strong>The 2025 Pivot:</strong> Crucially, Alby is undergoing a major strategic shift. As of 2025, Alby is phasing out its shared custodial wallet service. They are transitioning users to <strong>Alby Hub</strong>, a self-custodial solution that connects to the user’s own cloud or home node.</li>
+<li><strong>Implication:</strong> While Alby <em>has</em> been a top provider of free custodial addresses, this service is being sunsetted for new users in favor of a sovereign model. This leaves a gap in the market that apps like Primal and ZBD are filling. Users looking for a <em>purely</em> custodial, zero-setup address in 2026 may no longer find Alby to be the default option, although Alby Hub still offers the Lightning Address functionality via the user’s own connected node.8</li>
+</ul>
+<h2 id="6-community-platforms-and-chat"><a class="header" href="#6-community-platforms-and-chat">6. Community Platforms and Chat</a></h2>
+<h3 id="61-stacker-news-the-economic-forum"><a class="header" href="#61-stacker-news-the-economic-forum">6.1 Stacker News: The Economic Forum</a></h3>
+<p><strong>Stacker News</strong> applies the Lightning Network to community moderation. To post, one must pay; to be visible, one must be upvoted (tipped).</p>
+<ul>
+<li><strong>Cowboy Credits:</strong> For users who do not connect their own wallet via NWC, Stacker News provides a custodial ledger system known as “Cowboy Credits.” Users can deposit funds to their generated username @stacker.news address.</li>
+<li><strong>Custodial to Sovereign Pipeline:</strong> Stacker News effectively acts as a custodian for new users, holding their earned sats until they are ready to withdraw. This “soft custody” model allows users to participate immediately without technical setup, while the platform nudges them toward self-custody (attaching their own wallet) as they accumulate value.1</li>
+</ul>
+<h3 id="62-satsmobi-the-telegram-wallet"><a class="header" href="#62-satsmobi-the-telegram-wallet">6.2 Sats.mobi: The Telegram Wallet</a></h3>
+<p><strong>Sats.mobi</strong> leverages the ubiquity of Telegram.</p>
+<ul>
+<li><strong>The Bot:</strong> By interacting with @SatsMobiBot, a user creates a wallet linked to their Telegram account.</li>
+<li><strong>The Address:</strong> It automatically generates a username @sats.mobi address.</li>
+<li><strong>Utility:</strong> This allows for seamless tipping within chat groups. If a user says something insightful in a group chat, another user can type /tip 100 and the funds move instantly. The bot also supports advanced features like converting the balance into a Point-of-Sale (POS) link for merchants, or linking an NFC card for physical payments.38</li>
+</ul>
+<h2 id="7-comparative-analysis-the-ecosystem-landscape"><a class="header" href="#7-comparative-analysis-the-ecosystem-landscape">7. Comparative Analysis: The Ecosystem Landscape</a></h2>
+<p>The following table synthesizes the functional capabilities of the primary applications analyzed.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Application</th><th style="text-align: left">Primary Domain</th><th style="text-align: left">Lightning Address Format</th><th style="text-align: left">Custodial Model</th><th style="text-align: left">Key Differentiator</th><th style="text-align: left">Best For</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Primal</strong></td><td style="text-align: left">Social (Nostr)</td><td style="text-align: left">user @primal.net</td><td style="text-align: left">Built-in, Seamless</td><td style="text-align: left">One-click setup, integrated feed, NWC support.</td><td style="text-align: left">New Nostr users, social networking.</td></tr>
+<tr><td style="text-align: left"><strong>Fountain</strong></td><td style="text-align: left">Podcasting</td><td style="text-align: left">user @fountain.fm</td><td style="text-align: left">Built-in, Streaming</td><td style="text-align: left">Value-for-Value streaming, earning by listening.</td><td style="text-align: left">Podcast listeners, audio creators.</td></tr>
+<tr><td style="text-align: left"><strong>ZBD</strong></td><td style="text-align: left">Gaming</td><td style="text-align: left">gamertag @zbd.gg</td><td style="text-align: left">Built-in, API-driven</td><td style="text-align: left">Deep game integration, developer API, ad-rewards.</td><td style="text-align: left">Gamers, developers, ad-tech.</td></tr>
+<tr><td style="text-align: left"><strong>LifPay</strong></td><td style="text-align: left">Commerce</td><td style="text-align: left">user @lifpay.me</td><td style="text-align: left">Built-in</td><td style="text-align: left">Bolt Card (NFC) support, merchant maps.</td><td style="text-align: left">Real-world payments, physical commerce.</td></tr>
+<tr><td style="text-align: left"><strong>Sats.mobi</strong></td><td style="text-align: left">Messaging</td><td style="text-align: left">user @sats.mobi</td><td style="text-align: left">Bot-based</td><td style="text-align: left">Telegram integration, POS features.</td><td style="text-align: left">Chat communities, quick tips.</td></tr>
+<tr><td style="text-align: left"><strong>Mash</strong></td><td style="text-align: left">Web Content</td><td style="text-align: left">user @mash.com</td><td style="text-align: left">Web-based (PWA)</td><td style="text-align: left">Bypasses app stores, content unlocking.</td><td style="text-align: left">Web creators, frictionless micro-payments.</td></tr>
+<tr><td style="text-align: left"><strong>Stacker News</strong></td><td style="text-align: left">Community</td><td style="text-align: left">user @stacker.news</td><td style="text-align: left">Hybrid (Credits/NWC)</td><td style="text-align: left">Earn-to-post model, community curation.</td><td style="text-align: left">Bitcoin discussion, writers.</td></tr>
+<tr><td style="text-align: left"><strong>Alby</strong></td><td style="text-align: left">Browser</td><td style="text-align: left">user @getalby.com</td><td style="text-align: left"><strong>Phasing Out</strong></td><td style="text-align: left">WebLN connector (Moving to Self-Custody).</td><td style="text-align: left">Power users transitioning to sovereignty.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="8-regulatory-security-and-privacy-implications"><a class="header" href="#8-regulatory-security-and-privacy-implications">8. Regulatory, Security, and Privacy Implications</a></h2>
+<h3 id="81-the-custodial-paradox"><a class="header" href="#81-the-custodial-paradox">8.1 The Custodial Paradox</a></h3>
+<p>The convenience of these applications comes at the cost of custody. The phrase “Not your keys, not your coins” remains the golden rule of Bitcoin.</p>
+<ul>
+<li><strong>Counterparty Risk:</strong> Users of Primal, ZBD, or Fountain are technically unsecured creditors of these companies. If ZBD were to face insolvency, the “sats” in a user’s gamertag are merely database entries that could be wiped out.</li>
+<li><strong>Mitigation Strategies:</strong> These apps are designed as “checking accounts” or “wallets” in the literal sense—places to carry small amounts of cash for daily spending. They are not savings accounts. Users are consistently encouraged to “sweep” excess funds to cold storage (hardware wallets).40</li>
+</ul>
+<h3 id="82-privacy-and-the-panopticon"><a class="header" href="#82-privacy-and-the-panopticon">8.2 Privacy and The Panopticon</a></h3>
+<p>A static Lightning Address is a persistent identifier that can be correlated with activity.</p>
+<ul>
+<li><strong>Social Graph Leaks:</strong> A primal.net address is publicly linked to a Nostr profile. Anyone can query the address to see the associated node (Primal’s node). While they cannot see the <em>user’s</em> specific balance (since it is pooled in the custodial wallet), the metadata of who is paying whom can be visible to the custodial provider.</li>
+<li><strong>Provider Visibility:</strong> ZBD knows exactly which games you play; Fountain knows exactly which podcasts you support. This data is valuable. Unlike traditional ad-tech which infers preference from clicks, these apps have hard data on preference based on <em>payments</em>. This creates a new paradigm of data privacy where the user trades transaction visibility for the utility of the service.3</li>
+</ul>
+<h3 id="83-regulatory-friction"><a class="header" href="#83-regulatory-friction">8.3 Regulatory Friction</a></h3>
+<p>As these apps grow, they face increasing scrutiny.</p>
+<ul>
+<li><strong>KYC/AML:</strong> In the US and EU, holding funds for a user classifies a company as a Money Transmitter or VASP (Virtual Asset Service Provider). This incurs heavy compliance costs.</li>
+<li><strong>The Impact:</strong> Wallet of Satoshi was forced to exit the US market due to this pressure. ZBD imposes tiered limits based on identity verification. Primal currently operates with low friction for small amounts, but as “zapping” scales, they may be forced to implement stricter KYC, which would erode the seamless onboarding experience that is their primary competitive advantage.27</li>
+</ul>
+<h2 id="9-future-outlook-the-convergence-of-protocols"><a class="header" href="#9-future-outlook-the-convergence-of-protocols">9. Future Outlook: The Convergence of Protocols</a></h2>
+<p>The future of this ecosystem lies in the convergence of custodial convenience with sovereign technologies.</p>
+<ul>
+<li><strong>NWC as the Standard:</strong> The adoption of NWC (Nostr Wallet Connect) by Stacker News and Primal suggests a future where the <em>app</em> is decoupled from the <em>wallet</em>. Primal could remain the interface, but the user could connect it to their own home node or a “community custody” solution like <strong>Fedimint</strong>.</li>
+<li><strong>Fedimint and Cashu:</strong> These technologies (Federated Chaumian Ecash) offer a middle ground. Instead of trusting a single company (like ZBD), users could trust a federation of community members. This would allow for the same ease of use and privacy (actually superior privacy due to blind signatures) without the single point of failure of a corporate custodian.</li>
+<li><strong>The Commoditization of the Address:</strong> Eventually, the “Lightning Address” may become as ubiquitous as an email field in a profile settings page. Every app will be a wallet, and every user will have multiple interoperable addresses, managed by an AI agent or a master key, routing funds automatically based on the context of the transaction.</li>
+</ul>
+<h2 id="10-conclusion"><a class="header" href="#10-conclusion">10. Conclusion</a></h2>
+<p>The applications analyzed in this report—<strong>Primal</strong>, <strong>Fountain</strong>, <strong>ZBD</strong>, and their peers—represent the “application layer” maturity of the Bitcoin network. They have successfully abstracted the complexity of the Lightning Network, wrapping it in the familiar UX of social media and gaming. By offering free, custodial Lightning Addresses, they have solved the “inbound liquidity” problem that plagued early adoption, allowing users to earn and receive value from the moment of registration.</p>
+<p>While the custodial model introduces risks regarding security and privacy, it is currently the only viable path for mass adoption of micropayments. It allows for the high-frequency, low-latency transactions required for “zapping” a meme or streaming sats to a podcast. As the infrastructure evolves towards protocols like NWC and Fedimint, we can anticipate a future where these “Super Apps” retain their seamless user experience while gradually restoring financial sovereignty to the user. For now, they stand as the most accessible gateways into the internet of value.</p>
+<hr>
+<p>References for data points:</p>
+<ul>
+<li>5 Primal, Nostr, and Current app features.</li>
+<li>14 Fountain, Podcasting 2.0, and V4V ecosystem.</li>
+<li>24 ZBD, Gaming API, and Gamertags.</li>
+<li>12 LifPay features, NIP-05, and Bolt Cards.</li>
+<li>11 Club Orange and geo-social features.</li>
+<li>1 Stacker News, Cowboy Credits, and NWC.</li>
+<li>38 Sats.mobi and Telegram functionality.</li>
+<li>31 Mash, PWA, and web monetization.</li>
+<li>28 Slice, Lolli acquisition, and browser rewards.</li>
+<li>8 Alby’s features and transition to self-custody.</li>
+<li>20 Wavlake, artist wallets, and ZBD partnership.</li>
+<li>1 Technical details of LUD-16 and LNURL.</li>
+<li>3 Custodial risks, regulatory pressure, and security.</li>
+</ul>
+<h2 id="works-cited"><a class="header" href="#works-cited">Works cited</a></h2>
+<ol>
+<li>
+<p>How Lightning Address Works | 21ideas, accessed January 8, 2026, <a href="https://21ideas.org/en/how-lightning-address-works/">https://21ideas.org/en/how-lightning-address-works/</a></p>
+</li>
+<li>
+<p>What’s A Lightning Address? The Email-Like System for Bitcoin Payments - Flash, accessed January 8, 2026, <a href="https://paywithflash.com/lightning-address-bitcoin-payments/">https://paywithflash.com/lightning-address-bitcoin-payments/</a></p>
+</li>
+<li>
+<p>Understanding Custodial Lightning Wallets: A Beginner’s Guide, accessed January 8, 2026, <a href="https://lightningpay.nz/help/learn/lightning-network-education/custodial-lightning-wallets-a-beginners-guide">https://lightningpay.nz/help/learn/lightning-network-education/custodial-lightning-wallets-a-beginners-guide</a></p>
+</li>
+<li>
+<p>supertestnet/zaplocker: Non-custodial lightning address server with base layer support too, accessed January 8, 2026, <a href="https://github.com/supertestnet/zaplocker">https://github.com/supertestnet/zaplocker</a></p>
+</li>
+<li>
+<p>Top Social Media Platforms for Lightning Network in 2025 - Slashdot, accessed January 8, 2026, <a href="https://slashdot.org/software/social-media/for-lightning-network/">https://slashdot.org/software/social-media/for-lightning-network/</a></p>
+</li>
+<li>
+<p>Primal Spark - Geyser Fund, accessed January 8, 2026, <a href="https://geyser.fund/project/primalspark?hero=geyser">https://geyser.fund/project/primalspark?hero=geyser</a></p>
+</li>
+<li>
+<p>The Power of Nostr: Decentralized Social Media and More - Lyn Alden, accessed January 8, 2026, <a href="https://www.lynalden.com/the-power-of-nostr/">https://www.lynalden.com/the-power-of-nostr/</a></p>
+</li>
+<li>
+<p>Which Apps And Wallets Support Nostr Wallet Connect? - Flash, accessed January 8, 2026, <a href="https://paywithflash.com/apps-wallets-nostr-wallet-connect/">https://paywithflash.com/apps-wallets-nostr-wallet-connect/</a></p>
+</li>
+<li>
+<p>Stacker News adds Self-custodial Spending with NWC - Alby, accessed January 8, 2026, <a href="https://blog.getalby.com/stacker-news-adds-non-custodial-spending-with-nwc/">https://blog.getalby.com/stacker-news-adds-non-custodial-spending-with-nwc/</a></p>
+</li>
+<li>
+<p>Curated list of awesome projects implementing Nostr Wallet Connect (NWC) - GitHub, accessed January 8, 2026, <a href="https://github.com/getAlby/awesome-nwc">https://github.com/getAlby/awesome-nwc</a></p>
+</li>
+<li>
+<p>Club Orange - Bitcoin Social - App Store - Apple, accessed January 8, 2026, <a href="https://apps.apple.com/us/app/club-orange-bitcoin-social/id1627034193">https://apps.apple.com/us/app/club-orange-bitcoin-social/id1627034193</a></p>
+</li>
+<li>
+<p>LifPay - App Store - Apple, accessed January 8, 2026, <a href="https://apps.apple.com/vn/app/lifpay/id1645840182">https://apps.apple.com/vn/app/lifpay/id1645840182</a></p>
+</li>
+<li>
+<p>Current | Nostr + Bitcoin - App Store - Apple, accessed January 8, 2026, <a href="https://apps.apple.com/us/app/current-nostr-bitcoin/id1668517032">https://apps.apple.com/us/app/current-nostr-bitcoin/id1668517032</a></p>
+</li>
+<li>
+<p>Guide to Value4Value RSS Music - RSS Blue, accessed January 8, 2026, <a href="https://rssblue.com/help/music-podcasts">https://rssblue.com/help/music-podcasts</a></p>
+</li>
+<li>
+<p>accessed January 8, 2026, <a href="https://rssblue.com/music#:~:text=Fountain%20is%20a%20music%20and,be%20username%40fountain.fm.">https://rssblue.com/music#:~:text=Fountain%20is%20a%20music%20and,be%20username%40fountain.fm.</a></p>
+</li>
+<li>
+<p>Music via RSS - RSS Blue, accessed January 8, 2026, <a href="https://rssblue.com/music">https://rssblue.com/music</a></p>
+</li>
+<li>
+<p>Use Value 4 Value to Monetize your Podcast - Podhome, accessed January 8, 2026, <a href="https://www.podhome.fm/docs/use-value-4-value">https://www.podhome.fm/docs/use-value-4-value</a></p>
+</li>
+<li>
+<p>Value-for-value | RSS Blue, accessed January 8, 2026, <a href="https://rssblue.com/help/v4v">https://rssblue.com/help/v4v</a></p>
+</li>
+<li>
+<p>Wavlake, accessed January 8, 2026, <a href="https://wavlake.com/">https://wavlake.com/</a></p>
+</li>
+<li>
+<p>Value for Value Music with Lightning: What a concept! - Wavlake Zine, accessed January 8, 2026, <a href="https://zine.wavlake.com/value-for-value-music-with-lightning-what-a-concept/">https://zine.wavlake.com/value-for-value-music-with-lightning-what-a-concept/</a></p>
+</li>
+<li>
+<p>Bring Your Own Lightning Address - Wavlake Zine, accessed January 8, 2026, <a href="https://zine.wavlake.com/bring-your-own-lightning-address/">https://zine.wavlake.com/bring-your-own-lightning-address/</a></p>
+</li>
+<li>
+<p>Wavlake Partners with ZBD: Powering a Fairer Music Distribution Ecosystem - Podnews, accessed January 8, 2026, <a href="https://podnews.net/press-release/wavlake-zbd">https://podnews.net/press-release/wavlake-zbd</a></p>
+</li>
+<li>
+<p>Podcast Apps - Podcasting 2.0, accessed January 8, 2026, <a href="https://podcasting2.org/apps">https://podcasting2.org/apps</a></p>
+</li>
+<li>
+<p>The Lightning Address - Send and receive Bitcoin like you do emails, accessed January 8, 2026, <a href="https://lightningaddress.com/">https://lightningaddress.com/</a></p>
+</li>
+<li>
+<p>Unleash AI-Powered Bitcoin Payments: A Deep Dive into the ZBD Lightning Network MCP Server - Skywork.ai, accessed January 8, 2026, <a href="https://skywork.ai/skypage/en/ai-bitcoin-payments-zbd-lightning/1981573861236338688">https://skywork.ai/skypage/en/ai-bitcoin-payments-zbd-lightning/1981573861236338688</a></p>
+</li>
+<li>
+<p>THNDR GAMES • LightningNetwork+, accessed January 8, 2026, <a href="https://lightningnetwork.plus/nodes/025a469a6cca6e2d40fdfdbededd305c3bbe8c4e41260ee63f03e143e389e39282">https://lightningnetwork.plus/nodes/025a469a6cca6e2d40fdfdbededd305c3bbe8c4e41260ee63f03e143e389e39282</a></p>
+</li>
+<li>
+<p>THNDR Games Case Study - Voltage Cloud, accessed January 8, 2026, <a href="https://www.voltage.cloud/case-studies/thndr-games-case-study">https://www.voltage.cloud/case-studies/thndr-games-case-study</a></p>
+</li>
+<li>
+<p>Slice - You browse. We pay. - Chrome Web Store, accessed January 8, 2026, <a href="https://chromewebstore.google.com/detail/slice-you-browse-we-pay/bdjlgibhgpkkohcmkdeknhggojiokgmj">https://chromewebstore.google.com/detail/slice-you-browse-we-pay/bdjlgibhgpkkohcmkdeknhggojiokgmj</a></p>
+</li>
+<li>
+<p>Bitcoin rewards app Lolli enables Lightning withdrawals - The Block, accessed January 8, 2026, <a href="https://www.theblock.co/post/382272/bitcoin-rewards-app-lolli-enables-lightning-withdrawals">https://www.theblock.co/post/382272/bitcoin-rewards-app-lolli-enables-lightning-withdrawals</a></p>
+</li>
+<li>
+<p>Bitcoin App: Slice, accessed January 8, 2026, <a href="https://thebitcoinmanual.com/articles/bitcoin-app-slice/">https://thebitcoinmanual.com/articles/bitcoin-app-slice/</a></p>
+</li>
+<li>
+<p>Mash Announces Lightning Bitcoin Wallet App For Android &amp; iOS Now In Beta - Nasdaq, accessed January 8, 2026, <a href="https://www.nasdaq.com/articles/mash-announces-lightning-bitcoin-wallet-app-for-android-ios-now-in-beta">https://www.nasdaq.com/articles/mash-announces-lightning-bitcoin-wallet-app-for-android-ios-now-in-beta</a></p>
+</li>
+<li>
+<p>Mash [Lightning] • LightningNetwork+, accessed January 8, 2026, <a href="https://lightningnetwork.plus/nodes/03cbd889bbb9036b58c66dedca9ee54cffba6818e237bcb457adf3d5f670f5c7f9">https://lightningnetwork.plus/nodes/03cbd889bbb9036b58c66dedca9ee54cffba6818e237bcb457adf3d5f670f5c7f9</a></p>
+</li>
+<li>
+<p>Mash • LightningNetwork+, accessed January 8, 2026, <a href="https://lightningnetwork.plus/stores/mash">https://lightningnetwork.plus/stores/mash</a></p>
+</li>
+<li>
+<p>lightning-address/README.md at main - GitHub, accessed January 8, 2026, <a href="https://github.com/andrerfneves/lightning-address/blob/main/README.md">https://github.com/andrerfneves/lightning-address/blob/main/README.md</a></p>
+</li>
+<li>
+<p>Top 6 Self-Custodial Lightning Wallets to Use in 2025 - Bringin, accessed January 8, 2026, <a href="https://bringin.xyz/blog/learn/top-6-self-custodial-lightning-wallets/">https://bringin.xyz/blog/learn/top-6-self-custodial-lightning-wallets/</a></p>
+</li>
+<li>
+<p>Embrace Alby Hub - phasing out Alby’s shared wallet | Alby Account - Alby Guides!, accessed January 8, 2026, <a href="https://guides.getalby.com/user-guide/alby-account/faq/embrace-alby-hub-phasing-out-albys-shared-wallet">https://guides.getalby.com/user-guide/alby-account/faq/embrace-alby-hub-phasing-out-albys-shared-wallet</a></p>
+</li>
+<li>
+<p>stacker.news - Lightning Terminal, accessed January 8, 2026, <a href="https://terminal.lightning.engineering/03cc1d0932bb99b0697f5b5e5961b83ab7fd66f1efc4c9f5c7bad66c1bcbe78f02">https://terminal.lightning.engineering/03cc1d0932bb99b0697f5b5e5961b83ab7fd66f1efc4c9f5c7bad66c1bcbe78f02</a></p>
+</li>
+<li>
+<p>massmux/SatsMobiBot: Bitcoin Lightning Wallet on Telegram ⚡️ w built-in POS, Scrub and NFC Cards - GitHub, accessed January 8, 2026, <a href="https://github.com/massmux/SatsMobiBot">https://github.com/massmux/SatsMobiBot</a></p>
+</li>
+<li>
+<p>What’s Sats.mobi ? - by Max Musumeci - massmux.org Labs, accessed January 8, 2026, <a href="https://massmux.org/p/whats-satsmobi">https://massmux.org/p/whats-satsmobi</a></p>
+</li>
+<li>
+<p>Sweep sats to a self custody wallet - Nostr, accessed January 8, 2026, <a href="https://nostr.how/en/guides/sweep-to-self-custody">https://nostr.how/en/guides/sweep-to-self-custody</a></p>
+</li>
+<li>
+<p>Vulnerable Podcasting 2.0 — Bitcoin LN Node Monetization Setup (2024) - Medium, accessed January 8, 2026, <a href="https://medium.com/cyberpower-telenoia/vulnerable-podcasting-2-0-bitcoin-ln-node-monetization-setup-2024-7a7f1484cb4f">https://medium.com/cyberpower-telenoia/vulnerable-podcasting-2-0-bitcoin-ln-node-monetization-setup-2024-7a7f1484cb4f</a></p>
+</li>
+<li>
+<p>ZBD: Earn Bitcoin Rewards - App Store - Apple, accessed January 8, 2026, <a href="https://apps.apple.com/us/app/zbd-earn-bitcoin-rewards/id1484394401">https://apps.apple.com/us/app/zbd-earn-bitcoin-rewards/id1484394401</a></p>
+</li>
+<li>
+<p>I made a tutorial for Wallet of Satoshi - TLDW; custodial so only good for quick lightning onboarding and small amounts. Main draw is newly implemented lightning addresses. Otherwise something like Muun (non-custodial) is preferable. : r/Bitcoin - Reddit, accessed January 8, 2026, <a href="https://www.reddit.com/r/Bitcoin/comments/tkcefo/i_made_a_tutorial_for_wallet_of_satoshi_tldw/">https://www.reddit.com/r/Bitcoin/comments/tkcefo/i_made_a_tutorial_for_wallet_of_satoshi_tldw/</a></p>
+</li>
+<li>
+<p>6 Best Lightning Wallet Apps for 2026 - Bitbo, accessed January 8, 2026, <a href="https://bitbo.io/tools/lightning-wallets/">https://bitbo.io/tools/lightning-wallets/</a></p>
+</li>
+<li>
+<p>How to use Podcasting 2.0 Platforms as a User and a Content Creator - Bull Bitcoin, accessed January 8, 2026, <a href="https://www.bullbitcoin.com/blog/how-to-use-podcasting-20-platforms-as-a-user-and-a-content-creator">https://www.bullbitcoin.com/blog/how-to-use-podcasting-20-platforms-as-a-user-and-a-content-creator</a></p>
+</li>
+<li>
+<p>Top 5 Bitcoin Lightning Wallets for 2025, accessed January 8, 2026, <a href="https://www.speed.app/blog/top-5-bitcoin-lightning-wallets-for-2025-best-bitcoin-wallets/">https://www.speed.app/blog/top-5-bitcoin-lightning-wallets-for-2025-best-bitcoin-wallets/</a></p>
+</li>
+<li>
+<p>ZBD Pricing - No setup costs. No hidden fees, accessed January 8, 2026, <a href="https://zbd.gg/z/pricing">https://zbd.gg/z/pricing</a></p>
+</li>
+<li>
+<p>Bitcoin rewards app Lolli acquires browser extension Slice to accelerate its adoption of the Lightning Network | Bitget News, accessed January 8, 2026, <a href="https://www.bitget.com/news/detail/12560605040049">https://www.bitget.com/news/detail/12560605040049</a></p>
+</li>
+<li>
+<p>Vera Helleman - Those who listen, are never lost - Helden en Hordes - YouTube, accessed January 8, 2026, <a href="https://www.youtube.com/watch?v=VZB0AIrbdeE">https://www.youtube.com/watch?v=VZB0AIrbdeE</a></p>
+</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="SBRnecessity.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="the-great-inversion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="SBRnecessity.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="the-great-inversion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

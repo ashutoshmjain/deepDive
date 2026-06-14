@@ -1,0 +1,552 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Bitcoin Lottery Solution - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="the-bitcoin-lottery-solution"><a class="header" href="#the-bitcoin-lottery-solution">The Bitcoin Lottery Solution</a></h1>
+<p><img src="./img/bitcoinLottery.png" alt=""></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>This report presents a comprehensive economic simulation and impact analysis regarding a hypothetical, systemic capital rotation: the redirection of aggregate United States lottery expenditures into the Bitcoin network. The premise involves the reallocation of approximately \113.3 billion USD in annual gross lottery sales—a sum currently categorized as consumption—into Bitcoin, a digital store of value.</p>
+<p>The simulation reveals that such a reallocation would constitute one of the largest retail-driven capital inflows in the history of financial markets, fundamentally altering Bitcoin’s price discovery mechanism, market structure, and the wealth demographic of the American populace.</p>
+<h2 id="key-findings"><a class="header" href="#key-findings">Key Findings:</a></h2>
+<ul>
+<li><strong>Magnitude of Capital</strong>: The US lottery system processed \113.3 billion USD in sales in FY2024.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> This flow is characterized by high velocity and inelastic demand. Diverting this capital to Bitcoin represents a daily buying pressure of approximately \310 million USD, roughly 7.6 times the daily issuance of new Bitcoin mined post-2024 halving.</li>
+<li><strong>The Multiplier Effect</strong>: Utilizing liquidity sensitivity models from Bank of America, CoinShares, and Glassnode, this report projects that the impact of this inflow would not be linear (1:1) but exponential. The “Crypto Multiplier” suggests that for every \1 USD entered, the market capitalization rises by \10 USD to \118. USD</li>
+<li><strong>Conservative Scenario (10x Multiplier)</strong>: Bitcoin price appreciates to approximately \147,000 USD within the first year.</li>
+<li><strong>Base Case (25x Multiplier)</strong>: Bitcoin price reaches \233,000, USD driven by “supply shock” dynamics similar to those observed during spot ETF launches.</li>
+<li><strong>Liquidity Crisis Scenario (118x Multiplier)</strong>: An extreme illiquidity event drives prices toward \765,000, USD as inelastic retail demand collides with inelastic supply.</li>
+<li><strong>“Just in USA” Arbitrage</strong>: While the buying pressure originates solely within the United States, the fungibility of Bitcoin ensures global price impact. However, the intensity of US-centric demand would likely create a persistent “Coinbase Premium,” where US spot prices trade higher than global averages, incentivizing massive arbitrage flows that drain Bitcoin from international markets into US custody.</li>
+<li><strong>Socioeconomic Transformation</strong>: This rotation would effectively convert the “regressive tax” of lotteries—which disproportionately affects lower-income demographics—into a vehicle for asset accumulation. However, it would simultaneously create a fiscal crisis for state governments, which currently rely on ~\30 billion USD in annual net lottery proceeds to fund education and infrastructure.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></li>
+</ul>
+<p>The following sections detail the granular mechanics of this rotation, utilizing on-chain data, state-level fiscal reports, and liquidity modeling.</p>
+<h2 id="1-the-us-lottery-economy-a-forensic-accounting-of-1133-usd-billion"><a class="header" href="#1-the-us-lottery-economy-a-forensic-accounting-of-1133-usd-billion">1. The US Lottery Economy: A Forensic Accounting of \113.3 USD Billion</a></h2>
+<p>To accurately model the impact on Bitcoin, we must first dissect the source of the capital. The US lottery market is not a monolith; it is a highly optimized, state-sponsored extraction engine targeting specific liquidity pools.</p>
+<h3 id="11-the-volume-of-the-flow"><a class="header" href="#11-the-volume-of-the-flow">1.1 The Volume of the Flow</a></h3>
+<p>According to the North American Association of State and Provincial Lotteries (NASPL), gross lottery sales in the United States totaled \113.3 billion USD in fiscal year 2024.<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup> This figure represents a robust upward trend, having grown from roughly \80 billion USD in 2020 and \105 billion USD in 2023.<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup></p>
+<p>This \113.3 billion USD figure serves as the Gross Inflow Proxy for our simulation. It represents the total volume of decisions made by consumers to purchase a ticket.</p>
+<p><strong>Table 1: US Lottery Sales Trajectory (Billions USD)</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Fiscal Year</th><th style="text-align: left">Total Sales</th><th style="text-align: left">YoY Growth</th><th style="text-align: left">Source</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">2020</td><td style="text-align: left">\80.1 USD B</td><td style="text-align: left">-</td><td style="text-align: left"><sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left">2021</td><td style="text-align: left">\95.5 USD B</td><td style="text-align: left">+19.2%</td><td style="text-align: left"><sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left">2022</td><td style="text-align: left">\97.9 USD B</td><td style="text-align: left">+2.5%</td><td style="text-align: left"><sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left">2023</td><td style="text-align: left">\103.3 USD B</td><td style="text-align: left">+5.5%</td><td style="text-align: left"><sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left">2024</td><td style="text-align: left">\113.3 USD B</td><td style="text-align: left">+9.7%</td><td style="text-align: left"><sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="12-net-liquidity-vs-gross-churn"><a class="header" href="#12-net-liquidity-vs-gross-churn">1.2 Net Liquidity vs. Gross Churn</a></h3>
+<p>A critical distinction must be made between “Gross Sales” and “Net Consumer Losses.”</p>
+<ul>
+<li><strong>The Churn Mechanism</strong>: In the lottery system, approximately 60% to 70% of gross revenue is returned to players as prizes.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup> For instance, Virginia returns 73.5% and Massachusetts returns 69.4%.<sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">3</a></sup> Players often “churn” these winnings—immediately using a \20 USD win to buy more tickets.</li>
+<li><strong>Net Consumer Expenditure</strong>: The actual amount of wealth permanently leaving the consumer class is Gross Sales minus Prizes. With \113.3 billion USD in sales and an estimated ~65% payout ratio, the Net Liquidity extracted is approximately \39.6 billion USD.</li>
+</ul>
+<p><strong>Implications for Bitcoin Inflows</strong>:</p>
+<p>If the behavioral shift is “Instead of buying a ticket, I buy Bitcoin,” two liquidity models emerge:</p>
+<ul>
+<li><strong>The “Sales Volume” Model (\113.3 USDB Inflow)</strong>: This assumes consumers divert the decision to buy. In a Bitcoin standard, capital is not “paid out” instantly like a lottery prize; it is saved. Therefore, the “churn” stops. The money that would have been re-wagered is instead accumulated. This model represents the maximum behavioral displacement.</li>
+<li><strong>The “Fresh Fiat” Model (\39.6 USDB Inflow)</strong>: This assumes consumers only have the net cash they were willing to lose. Without lottery winnings to fund further purchases, their purchasing power is limited to their disposable income allocated to gambling.</li>
+</ul>
+<p>This report prioritizes the \113.3 billion USD figure as the primary pressure metric, as it reflects the aggregate demand for “hope” or “speculation” that is being re-routed. Even if we adjust for the loss of churned winnings, the initial buying impulse of the US population equates to the gross sales figure.</p>
+<h3 id="13-geographic-concentration-of-capital"><a class="header" href="#13-geographic-concentration-of-capital">1.3 Geographic Concentration of Capital</a></h3>
+<p>The “Just in USA” impact is heavily weighted by specific jurisdictions. The rotation would not be uniform; it would be driven by “Mega-Whale” states.</p>
+<ul>
+<li>Florida: \9.4 billion USD in annual sales.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup></li>
+<li>California: \9.3 billion USD in annual sales.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup></li>
+<li>Texas: \8.4 billion USD in annual sales.<sup class="footnote-reference" id="fr-4-2"><a href="#footnote-4">4</a></sup></li>
+<li>New York: \8.2 billion USD in annual sales.<sup class="footnote-reference" id="fr-4-3"><a href="#footnote-4">4</a></sup></li>
+</ul>
+<p><strong>The Massachusetts Anomaly</strong>:</p>
+<p>Massachusetts represents the highest per-capita lottery spending in the nation at \867 USD per person annually.<sup class="footnote-reference" id="fr-2-7"><a href="#footnote-2">2</a></sup> If this specific population cohort—roughly 7 million people—shifted to Bitcoin, they alone would contribute over \6 billion USD in annual buying pressure <sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup>, equivalent to the total inflows of several mid-sized ETFs combined. This suggests that the “Just in USA” impact would be catalyzed by intense, localized buying frenzies in the Northeast and Sunbelt.</p>
+<h2 id="2-bitcoin-market-structure-the-vessel-for-inflows"><a class="header" href="#2-bitcoin-market-structure-the-vessel-for-inflows">2. Bitcoin Market Structure: The Vessel for Inflows</a></h2>
+<p>To understand what happens when \113.3 billion USD enters Bitcoin, we must analyze the liquidity conditions of the destination. Bitcoin is an asset characterized by absolute scarcity and increasing illiquidity.</p>
+<h3 id="21-the-supply-shock-dynamic"><a class="header" href="#21-the-supply-shock-dynamic">2.1 The Supply Shock Dynamic</a></h3>
+<p>Unlike fiat currency or equities with dilutive issuance, Bitcoin’s supply is algorithmically capped.</p>
+<ul>
+<li><strong>Total Supply</strong>: ~21 Million (Hard Cap).</li>
+<li><strong>Circulating Supply</strong>: ~19.95 Million (as of late 2025).<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup></li>
+<li><strong>Daily Issuance</strong>: Following the 2024 Halving, the block reward is 3.125 BTC. This equates to roughly 450 BTC mined per day. At a hypothetical price of \90,000 USD<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">6</a></sup>, the daily absorption required to maintain price stability is roughly \40.5 million USD.</li>
+</ul>
+<p><strong>The Illiquid Supply</strong>:</p>
+<p>Data from Glassnode indicates that a significant percentage of Bitcoin is held by “Long-Term Holders” (LTHs) who are statistically unlikely to sell.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup></p>
+<ul>
+<li><strong>Illiquid Supply</strong>: Fidelity Digital Assets and Glassnode estimate that over 28% to 70% of supply is illiquid or locked in corporate treasuries/cold storage.<sup class="footnote-reference" id="fr-7-2"><a href="#footnote-7">7</a></sup></li>
+<li><strong>Exchange Balances</strong>: Balances on exchanges (the “float” available for sale) have been trending downward, with massive withdrawals (“whale inflows” to custody) signaling accumulation.<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">8</a></sup></li>
+</ul>
+<h3 id="22-order-book-depth-and-liquidity"><a class="header" href="#22-order-book-depth-and-liquidity">2.2 Order Book Depth and Liquidity</a></h3>
+<p>Price is determined at the margins. The relevant metric is not Market Cap, but Market Depth—specifically, how much capital is required to move the price by 1%.</p>
+<ul>
+<li><strong>1% Market Depth</strong>: Analysis of order books (Binance, Coinbase, Kraken) suggests that the “1% depth” (the cost to push price up 1%) typically fluctuates between \100 million USD and \300 million USD globally.<sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">9</a></sup></li>
+</ul>
+<p><strong>The Mismatch</strong>: Our hypothetical lottery inflow is \310 million USD per day (\113.3 USDB / 365).</p>
+<ul>
+<li>This daily inflow exceeds the 1% market depth of the entire global order book.</li>
+<li>It is 7.6x larger than the daily miner issuance (\40.5 USDM).</li>
+</ul>
+<p><strong>Conclusion on Structure</strong>:</p>
+<p>The Bitcoin market is structurally incapable of absorbing a sustained \310 million USD daily “market buy” order without violent upward price repricing. The order books are too thin, and the new supply is too low.</p>
+<h3 id="23-the-crypto-multiplier-theory"><a class="header" href="#23-the-crypto-multiplier-theory">2.3 The “Crypto Multiplier” Theory</a></h3>
+<p>Because of the inelastic supply, money entering Bitcoin has a Multiplier Effect on the Market Capitalization. A \1 USD inflow often results in more than \1 USD of Market Cap growth because the marginal trade reprices the entire stock of 19.9 million coins.</p>
+<ul>
+<li><strong>Bank of America (118x)</strong>: A 2021 report estimated a multiplier of 118x, suggesting that a net inflow of just \93 million USD could move the price by 1%.<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">10</a></sup> This is the “Aggressive” model.</li>
+<li><strong>JMP Securities / Glassnode (25x - 50x)</strong>: In the wake of ETF launches, analysts estimated a multiplier of roughly 25x due to supply constraints.<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">11</a></sup></li>
+<li><strong>CoinShares (10x)</strong>: A more conservative estimate used for long-term valuation models.<sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">12</a></sup></li>
+</ul>
+<p>This report will utilize these three multipliers to model the “Lottery Shock.”</p>
+<h2 id="3-the-inflow-simulation-modeling-the-lottery-shock"><a class="header" href="#3-the-inflow-simulation-modeling-the-lottery-shock">3. The Inflow Simulation: Modeling the “Lottery Shock”</a></h2>
+<p>We now apply the \113.3 billion USD annual inflow to the Bitcoin market using the multiplier frameworks identified above.</p>
+<h3 id="31-scenario-a-the-conservative-model-10x-multiplier"><a class="header" href="#31-scenario-a-the-conservative-model-10x-multiplier">3.1 Scenario A: The Conservative Model (10x Multiplier)</a></h3>
+<p>This scenario assumes a highly liquid market where sellers (miners, old whales) actively distribute coins into the lottery buyers’ demand, dampening volatility. This aligns with the CoinShares methodology.<sup class="footnote-reference" id="fr-12-2"><a href="#footnote-12">12</a></sup></p>
+<ul>
+<li><strong>Annual Inflow</strong>: \113.3 USD Billion</li>
+<li><strong>Multiplier</strong>: 10x</li>
+<li><strong>Market Cap Increase</strong>: \113.3 USDB * 10 = \1.133 USD Trillion</li>
+<li><strong>Price Impact</strong>:
+<ul>
+<li><strong>Baseline Market Cap (Late 2025)</strong>: ~\1.8 USD Trillion (at ~\90,000 USD BTC).<sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">6</a></sup></li>
+<li><strong>New Market Cap</strong>: \2.93 USD Trillion.</li>
+<li><strong>Implied Price</strong>: ~<strong>\147,000 USD</strong> per BTC.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Analysis</strong>: Even in the most conservative view, replacing lottery tickets with Bitcoin creates a ~63% annual return, pushing the asset well into six-figure territory.</p>
+<h3 id="32-scenario-b-the-base-case-25x-multiplier"><a class="header" href="#32-scenario-b-the-base-case-25x-multiplier">3.2 Scenario B: The Base Case (25x Multiplier)</a></h3>
+<p>This scenario reflects the “supply shock” dynamics observed during the 2024 ETF inflows. It assumes that lottery players are “sticky” holders (similar to how they treat tickets—holding for a big win), reducing the sell-side pressure. This aligns with JMP Securities’ analysis.<sup class="footnote-reference" id="fr-11-2"><a href="#footnote-11">11</a></sup></p>
+<ul>
+<li><strong>Annual Inflow</strong>: \113.3 USD Billion</li>
+<li><strong>Multiplier</strong>: 25x</li>
+<li><strong>Market Cap Increase</strong>: \113.3 USDB * 25 = \2.83 USD Trillion</li>
+<li><strong>Price Impact</strong>:
+<ul>
+<li><strong>New Market Cap</strong>: \1.8 USDT + \2.83 USDT = \4.63 USD Trillion.</li>
+<li><strong>Implied Price</strong>: ~<strong>\233,000 USD</strong> per BTC.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Analysis</strong>: This scenario suggests a near-tripling of the price. The daily buy pressure of \310 million USD overwhelms OTC desks, forcing them to bid up spot markets aggressively.</p>
+<h3 id="33-scenario-c-the-liquidity-crisis-boa-118x-multiplier"><a class="header" href="#33-scenario-c-the-liquidity-crisis-boa-118x-multiplier">3.3 Scenario C: The Liquidity Crisis (BoA 118x Multiplier)</a></h3>
+<p>This scenario models a “hyper-illiquidity” event. It assumes the Bank of America regression <sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">10</a></sup> holds true: that very little supply is actually for sale, and the price must rise exponentially to induce HODLers to part with their coins.</p>
+<ul>
+<li><strong>Annual Inflow</strong>: \113.3 USD Billion</li>
+<li><strong>Multiplier</strong>: 118x</li>
+<li><strong>Market Cap Increase</strong>: \113.3 USDB * 118 = \13.37 USD Trillion</li>
+<li><strong>Price Impact</strong>:
+<ul>
+<li><strong>New Market Cap</strong>: \1.8 USDT + \13.37 USDT = \15.17 USD Trillion.</li>
+<li><strong>Implied Price</strong>: ~<strong>\765,000 USD</strong> per BTC.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Analysis</strong>: In this extreme but modeled scenario, Bitcoin flips Gold (~15T) in a single year solely due to US retail flows. This highlights the fragility of price discovery when massive inelastic demand meets perfectly inelastic supply.</p>
+<h3 id="34-the-just-in-usa-arbitrage-mechanism"><a class="header" href="#34-the-just-in-usa-arbitrage-mechanism">3.4 The “Just in USA” Arbitrage Mechanism</a></h3>
+<p>The query emphasizes impact “Just in USA.” However, Bitcoin is a global asset. If US lottery players (via US apps/exchanges like Coinbase, Cash App, Strike) start buying \310 million USD daily, the initial impact is local.</p>
+<ul>
+<li><strong>The Coinbase Premium</strong>: The immediate demand shock would occur on US-domiciled order books. The price on Coinbase (BTC/USD) would decouple from Binance (BTC/USDT), potentially trading 1-5% higher.</li>
+<li><strong>Global Arbitrage</strong>: Market makers (e.g., Jane Street, Jump Trading) would instantly detect this spread. They would buy BTC in Asia/Europe and sell it into the US bid.</li>
+<li><strong>The Result</strong>: The US essentially “exports” its lottery inflation to the Bitcoin network. The US absorbs the global supply of liquid Bitcoin.</li>
+<li><strong>Net Flow</strong>: Massive net inflow of BTC into the USA.</li>
+<li><strong>Price</strong>: Global price rises to match the US bid (minus friction costs).</li>
+<li><strong>Strategic Implication</strong>: The United States populace would rapidly accumulate a dominant percentage of the circulating supply, centralized in the wallets of the working class.</li>
+</ul>
+<p><strong>Table 2: Comparative Scenario Summary (Year 1)</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Scenario</th><th style="text-align: left">Multiplier</th><th style="text-align: left">Est. Market Cap Increase</th><th style="text-align: left">Projected Price (From \90 USDk)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Conservative (CoinShares)</td><td style="text-align: left">10x</td><td style="text-align: left">+\1.13 USD Trillion</td><td style="text-align: left">\147,000 USD</td></tr>
+<tr><td style="text-align: left">Base Case (Glassnode/JMP)</td><td style="text-align: left">25x</td><td style="text-align: left">+\2.83 USD Trillion</td><td style="text-align: left">\233,000 USD</td></tr>
+<tr><td style="text-align: left">Aggressive (Bank of America)</td><td style="text-align: left">118x</td><td style="text-align: left">+\13.37 USD Trillion</td><td style="text-align: left">\765,000 USD</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-behavioral-economics-the-lottery-investor-profile"><a class="header" href="#4-behavioral-economics-the-lottery-investor-profile">4. Behavioral Economics: The “Lottery Investor” Profile</a></h2>
+<p>The quantitative model assumes flow, but the qualitative nature of that flow is equally important. Who are these buyers, and how do they behave?</p>
+<h3 id="41-inelasticity-and-diamond-hands"><a class="header" href="#41-inelasticity-and-diamond-hands">4.1 Inelasticity and “Diamond Hands”</a></h3>
+<p>Lottery demand is regressive and inelastic. Studies show that low-income households spend a significantly higher percentage of their income on lotteries than high-income households.<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">5</a></sup></p>
+<p><strong>Behavioral Trait</strong>: Lottery players are accustomed to “losing” the money. They spend \20 USD expecting it to vanish or turn into millions.</p>
+<p><strong>Translation to Bitcoin</strong>: If this psychology transfers to Bitcoin, these buyers will likely be price-insensitive (buying regardless of whether BTC is \50 USDk or \100 USDk) and sticky (unlikely to panic sell on a 10% drop, as they are used to a 100% loss).</p>
+<p><strong>Impact</strong>: This creates a new class of “Diamond Hand” investors who treat Bitcoin as a binary bet (Moon or Dust), further restricting liquid supply and supporting the high-multiplier scenarios.</p>
+<h3 id="42-the-wealth-effect-vs-the-churn"><a class="header" href="#42-the-wealth-effect-vs-the-churn">4.2 The Wealth Effect vs. The Churn</a></h3>
+<p>Currently, the US lottery system is a wealth destruction engine for the player.</p>
+<ul>
+<li><strong>Current State</strong>: \113 USDB spent -&gt; \70 USDB returned (randomly) -&gt; \30 USDB lost to State -&gt; \13 USDB lost to Admin. The aggregate player base loses ~\43 USDB annually.</li>
+<li><strong>Bitcoin State</strong>: \113 USDB invested -&gt; Asset retained on balance sheet.</li>
+</ul>
+<p>Even in a flat market, the populace retains \113 USDB in equity.</p>
+<p>In the Base Case scenario (\233 USDk), the populace sees their \113 USDB grow to roughly \293 billion USD in value.</p>
+<p><strong>Macroeconomic Ripple</strong>: This shift creates a massive “Wealth Effect” in the lower-middle class. Households with historically zero savings would suddenly possess liquid assets. This could reduce reliance on social safety nets (SNAP, welfare) but also introduces volatility risk to essential household budgets.</p>
+<h2 id="5-socioeconomic--fiscal-consequences-just-in-usa"><a class="header" href="#5-socioeconomic--fiscal-consequences-just-in-usa">5. Socioeconomic &amp; Fiscal Consequences “Just in USA”</a></h2>
+<p>The rotation does not happen in a vacuum. The US lottery system is a critical limb of state finance. Amputating it has severe consequences.</p>
+<h3 id="51-the-crisis-of-state-revenues"><a class="header" href="#51-the-crisis-of-state-revenues">5.1 The Crisis of State Revenues</a></h3>
+<p>State governments rely on lottery proceeds to fund specific budget line items. In 2023/2024, lottery proceeds (net revenue) contributed approximately \30 billion USD to \35 billion USD to state coffers.<sup class="footnote-reference" id="fr-2-8"><a href="#footnote-2">2</a></sup></p>
+<p><strong>Dependency by State</strong>:</p>
+<ul>
+<li><strong>Florida</strong>: Uses lottery funds for the “Bright Futures” scholarship program. Loss of ~\2.5 USDB annual revenue.<sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">13</a></sup></li>
+<li><strong>Pennsylvania</strong>: Lottery proceeds fund senior citizen programs (property tax rebates, transit). Loss of ~\1.5 USDB annual revenue.<sup class="footnote-reference" id="fr-4-4"><a href="#footnote-4">4</a></sup></li>
+<li><strong>West Virginia / Rhode Island</strong>: Extremely high dependency, with lottery making up 3-7% of total state tax revenue.<sup class="footnote-reference" id="fr-2-9"><a href="#footnote-2">2</a></sup></li>
+</ul>
+<p><strong>The Fiscal Cliff</strong>:</p>
+<p>If \113 billion USD moves to Bitcoin, states lose \35 billion USD in “voluntary tax” revenue.</p>
+<ul>
+<li><strong>Immediate Impact</strong>: Budget deficits in 45 states.</li>
+<li><strong>Response</strong>: States would be forced to raise Sales Tax, Property Tax, or Income Tax to fill the hole. This essentially shifts the burden from “voluntary gamblers” to the general taxpayer.</li>
+</ul>
+<h3 id="52-capital-gains-the-delayed-offset"><a class="header" href="#52-capital-gains-the-delayed-offset">5.2 Capital Gains: The Delayed Offset</a></h3>
+<p>While states lose lottery revenue, they gain potential Capital Gains Tax revenue.</p>
+<p>If the US populace holds \2.8 trillion USD in Bitcoin profit (Base Case), that represents a taxable event upon sale.</p>
+<p><strong>The Problem</strong>: The “Lottery HODLer” might not sell for years. Lottery revenue is immediate; Capital Gains revenue is deferred. This creates a liquidity gap that could bankrupt municipal programs in the interim.</p>
+<h2 id="6-detailed-liquidity-analysis--just-in-usa-pricing-isolation"><a class="header" href="#6-detailed-liquidity-analysis--just-in-usa-pricing-isolation">6. Detailed Liquidity Analysis &amp; “Just in USA” Pricing Isolation</a></h2>
+<p>We must address the specific prompt constraint: “impact… just in USA.”</p>
+<h3 id="61-the-coinbase-premium-phenomenon"><a class="header" href="#61-the-coinbase-premium-phenomenon">6.1 The “Coinbase Premium” Phenomenon</a></h3>
+<p>Historically, when US retail demand surges (e.g., during the 2021 bull run), the price on Coinbase Pro (USD pair) trades higher than on Binance (USDT pair).</p>
+<ul>
+<li><strong>Mechanism</strong>: The lottery inflow is strictly USD-denominated and originates from US banking rails (ACH/Wire).</li>
+<li><strong>Effect</strong>: This buying pressure hits the BTC/USD pair first.</li>
+<li><strong>Quantification</strong>: If \310 million USD/day hits Coinbase, and arbitrageurs are slow (due to banking limits), the Coinbase Premium could sustain at 100-500 basis points (1-5%).</li>
+<li><strong>Result</strong>: “Bitcoin Price just in USA” would functionally be higher than the rest of the world. A Bitcoin might cost \235,000 USD in New York, while trading for \230,000 USD in Tokyo.</li>
+</ul>
+<h3 id="62-otc-desk-depletion"><a class="header" href="#62-otc-desk-depletion">6.2 OTC Desk Depletion</a></h3>
+<p>Institutional OTC desks (e.g., Cumberland, Genesis, NYDIG) act as buffers. They hold inventory to service large buy orders.</p>
+<ul>
+<li><strong>Inventory Drain</strong>: A persistent \310 million USD daily retail bid would drain OTC inventories within weeks.</li>
+<li><strong>Forced Spot Buying</strong>: Once OTC desks are empty, they must replenish by buying on public spot markets. This effectively removes the “buffer” between retail demand and price discovery, leading to slippage and vertical price candles.</li>
+</ul>
+<p><strong>Table 3: Estimated 1% Market Depth vs. Lottery Inflow</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Exchange</th><th style="text-align: left">Est. 1% Bid Depth (USD)</th><th style="text-align: left">Lottery Daily Inflow</th><th style="text-align: left">Ratio</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Coinbase</td><td style="text-align: left">~\35 USD Million</td><td style="text-align: left">N/A</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">Binance</td><td style="text-align: left">~\70 USD Million</td><td style="text-align: left">N/A</td><td style="text-align: left">-</td></tr>
+<tr><td style="text-align: left">Global Agg.</td><td style="text-align: left">~\200 USD Million</td><td style="text-align: left">\310 USD Million</td><td style="text-align: left">1.55x</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Interpretation</strong>: The daily lottery inflow is 1.55 times larger than the global 1% depth. This implies that without massive new sell orders appearing, the price would mechanically rise by &gt;1% every single day.</p>
+<h2 id="7-conclusion-the-asymmetric-shock"><a class="header" href="#7-conclusion-the-asymmetric-shock">7. Conclusion: The Asymmetric Shock</a></h2>
+<p>The simulation of replacing US lottery tickets with Bitcoin purchases reveals a scenario of extreme financial asymmetry.</p>
+<ul>
+<li><strong>Price Asymmetry</strong>: The relatively small global Bitcoin market (compared to equities or real estate) is unprepared for a \113 billion USD annual persistence shock. Even modest multiplier models predict a price floor exceeding \140,000, USD with probable targets in the \230,000 USD+ range.</li>
+<li><strong>Wealth Asymmetry</strong>: The rotation would execute a historic transfer of ownership. The “Just in USA” nature of the flow means that within 3-5 years, the US working class could control a supermajority of the global Bitcoin supply, effectively cornering the market of the premier digital collateral.</li>
+<li><strong>Fiscal Asymmetry</strong>: The US public sector (State Governments) would face immediate insolvency in discretionary budgets, while the private sector (Households) would experience a massive, albeit volatile, balance sheet expansion.</li>
+</ul>
+<p>In essence, if the “idiot tax” of the lottery became the “savings plan” of the Bitcoin network, the impact would be the rapid demonetization of state lotteries and the simultaneous remonetization of Bitcoin at a valuation rivaling Gold.</p>
+<p>(Note: This report utilizes data from NASPL 2024 reports<sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">1</a></sup>, Glassnode On-Chain Analytics<sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">14</a></sup>, and multiplier methodologies from Bank of America<sup class="footnote-reference" id="fr-10-3"><a href="#footnote-10">10</a></sup>, CoinShares<sup class="footnote-reference" id="fr-12-3"><a href="#footnote-12">12</a></sup>, and JMP Securities.<sup class="footnote-reference" id="fr-11-3"><a href="#footnote-11">11</a></sup>)</p>
+<hr>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>North American Association of State and Provincial Lotteries (NASPL). (2025). <em>2024 Annual Report</em>. <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a></p>
+</li>
+<li id="footnote-2">
+<p>LaVigne, C. (2024, August 27). <em>A Year of Adjustment for Lotteries</em>. NASPL Insights. <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a> <a href="#fr-2-7">↩7</a> <a href="#fr-2-8">↩8</a> <a href="#fr-2-9">↩9</a></p>
+</li>
+<li id="footnote-3">
+<p>(2023). <em>Comprehensive Annual Financial Report for the Fiscal Year Ended June 30, 2023</em>. Virginia Lottery. <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a></p>
+</li>
+<li id="footnote-4">
+<p>(2024). <em>State Lottery Revenue and Spending</em>. Urban Institute. <a href="#fr-4-1">↩</a> <a href="#fr-4-2">↩2</a> <a href="#fr-4-3">↩3</a> <a href="#fr-4-4">↩4</a></p>
+</li>
+<li id="footnote-5">
+<p>Kearney, M. S. (2005). <em>The Economic Winners and Losers of Legalized Gambling</em>. National Bureau of Economic Research. <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a></p>
+</li>
+<li id="footnote-6">
+<p><em>Bitcoin</em>. (2025). CoinMarketCap. <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a></p>
+</li>
+<li id="footnote-7">
+<p><em>The Week On-chain</em>. (2024). Glassnode. <a href="#fr-7-1">↩</a> <a href="#fr-7-2">↩2</a> <a href="#fr-7-3">↩3</a></p>
+</li>
+<li id="footnote-8">
+<p><em>Bitcoin: Exchange Balances</em>. (2024). Glassnode. <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a></p>
+</li>
+<li id="footnote-9">
+<p><em>Crypto Market Depth</em>. (2024). Kaiko. <a href="#fr-9-1">↩</a></p>
+</li>
+<li id="footnote-10">
+<p>Bank of America. (2021, March). <em>Bitcoin’s Dirty Little Secrets</em>. <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a> <a href="#fr-10-3">↩3</a></p>
+</li>
+<li id="footnote-11">
+<p>JMP Securities. (2024). <em>JMP Securities Initiates Coverage of the Crypto Economy</em>. <a href="#fr-11-1">↩</a> <a href="#fr-11-2">↩2</a> <a href="#fr-11-3">↩3</a></p>
+</li>
+<li id="footnote-12">
+<p>CoinShares. (2024). <em>Bitcoin Valuation by Savings Adoption</em>. <a href="#fr-12-1">↩</a> <a href="#fr-12-2">↩2</a> <a href="#fr-12-3">↩3</a></p>
+</li>
+<li id="footnote-13">
+<p><em>Bright Futures Scholarship Program</em>. (2024). Florida Department of Education. <a href="#fr-13-1">↩</a></p>
+</li>
+<li id="footnote-14">
+<p>See <sup class="footnote-reference" id="fr-7-3"><a href="#footnote-7">7</a></sup> and <sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">8</a></sup>. <a href="#fr-14-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="appStoreTOagentStore.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="the-age-of-autonomous-robots.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="appStoreTOagentStore.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="the-age-of-autonomous-robots.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

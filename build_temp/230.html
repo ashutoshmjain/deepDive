@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>230 : STRC - derivatives and inflows - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="230--strc---derivatives-and-inflows"><a class="header" href="#230--strc---derivatives-and-inflows">230 : STRC - derivatives and inflows</a></h1>
+<p><img src="img/230.png" alt="STRC - derivatives and inflows"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The global financial landscape in 2026 is defined by a fundamental divergence between traditional fiat-based capital and the emerging sovereign credit layer constructed atop the Bitcoin network. At the vanguard of this transformation is Strategy Inc., the organization formerly known as MicroStrategy, which has successfully transitioned from an enterprise software provider into the worlds preeminent Bitcoin development company.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> While much of the public discourse has focused on the companys massive spot Bitcoin accumulation, the true innovation lies in the engineering of its capital stack, specifically the Variable Rate Series A Perpetual Preferred Stock, known as STRC.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> This instrument represents the birth of “Digital Credit“a financial product that utilizes the transparency and scarcity of Bitcoin to offer high-yield, low-volatility returns to a global investor base that is increasingly desperate for yield in a debased currency environment.<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">3</a></sup></p>
+<h2 id="market-capitalization-and-liquidity-dynamics-of-the-strc-instrument"><a class="header" href="#market-capitalization-and-liquidity-dynamics-of-the-strc-instrument"><strong>Market Capitalization and Liquidity Dynamics of the STRC Instrument</strong></a></h2>
+<p>As of late April 2026, the STRC preferred equity has become the primary capital-raising engine for Strategy Inc., surpassing even its convertible debt in strategic importance.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">4</a></sup> The instrument is specifically designed to function as a “Global Bitcoin Dollar Cost Average” (DCA) mechanism, allowing the company to raise billions of dollars regardless of the local peaks or troughs in the Bitcoin spot price.<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">5</a></sup> Unlike the common equity (MSTR), which trades as a high-beta proxy for Bitcoin with significant price swings, STRC is engineered for price stability anchored around a 100 USD par value.<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup></p>
+<h3 id="strategy-inc-capital-structure-and-instrument-performance-april-2026"><a class="header" href="#strategy-inc-capital-structure-and-instrument-performance-april-2026"><strong>Strategy Inc. Capital Structure and Instrument Performance (April 2026)</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Metric</th><th style="text-align: left">Strategy Inc. Common (MSTR)</th><th style="text-align: left">Stretch Preferred (STRC)</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Current Market Price</strong></td><td style="text-align: left">171.02 USD</td><td style="text-align: left">99.39 USD <sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Market Capitalization / Notional</strong></td><td style="text-align: left">59.69 Billion USD</td><td style="text-align: left">8.54 Billion USD <sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>30-Day Average Daily Volume</strong></td><td style="text-align: left">2.85 Billion USD</td><td style="text-align: left">385 Million USD <sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Annualized Dividend Rate</strong></td><td style="text-align: left">0.00%</td><td style="text-align: left">11.50% (Variable) <sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Effective Yield</strong></td><td style="text-align: left">N/A</td><td style="text-align: left">11.57% <sup class="footnote-reference" id="fr-2-7"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Historical Volatility (30-Day)</strong></td><td style="text-align: left">72.0%</td><td style="text-align: left">2.9% <sup class="footnote-reference" id="fr-2-8"><a href="#footnote-2">2</a></sup></td></tr>
+<tr><td style="text-align: left"><strong>Enterprise Value</strong></td><td style="text-align: left">79.18 Billion USD</td><td style="text-align: left">N/A</td></tr>
+<tr><td style="text-align: left"><strong>Relationship to Par</strong></td><td style="text-align: left">N/A</td><td style="text-align: left">-0.61% (Discount) <sup class="footnote-reference" id="fr-2-9"><a href="#footnote-2">2</a></sup></td></tr>
+</tbody>
+</table>
+</div>
+<p>The liquidity profile of STRC has expanded rapidly since its July 2025 debut. In March 2026, the instrument reached a milestone with single-day trading volumes exceeding 746 million USD .<sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">6</a></sup> This deep liquidity is essential for the “accumulation flywheel” that Michael Saylor has constructed. When the instrument trades near or above its 100 USD par value, the company utilizes its At-The-Market (ATM) offering to sell new shares, generating immediate cash that is funneled directly into Bitcoin purchases.<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup></p>
+<h2 id="enormous-success-of-strc"><a class="header" href="#enormous-success-of-strc"><strong>Enormous Success of STRC</strong></a></h2>
+<p>The STRC instrument has shattered multiple global financial records since its inception, establishing itself as a dominant force in modern capital markets:</p>
+<ul>
+<li><strong>World Record Liquidity for Preferred Equity:</strong> STRC reached a milestone single-session trading volume of 1.16 billion USD on April 13, 2026the highest in the history of preferred stock.<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">8</a></sup></li>
+<li><strong>Unprecedented Sharpe Ratio:</strong> In March 2026, STRC’s Sharpe ratio reached a historical high of 5.37, setting a new record for risk-adjusted returns and vastly outperforming tech giants like NVIDIA (1.89).<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">9</a></sup></li>
+<li><strong>Fastest-Growing Credit Product in History:</strong> The program scaled from zero to 8.5 billion USD in notional value in just nine months, representing an annualized growth rate of approximately 350%.<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">4</a></sup></li>
+<li><strong>Superior Capital Accumulation Velocity:</strong> In 2026 year-to-date, STRC has financed the acquisition of roughly 77,000 BTCten times the net inflows of all U.S. spot Bitcoin ETFs combined during the same period.<sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">4</a></sup></li>
+</ul>
+<h2 id="tracking-the-money-why-capital-is-flowing-to-strc"><a class="header" href="#tracking-the-money-why-capital-is-flowing-to-strc"><strong>Tracking the Money: Why Capital is Flowing to STRC</strong></a></h2>
+<p>The aggressive expansion of STRC is driven by a massive migration of capital seeking refuge from the inefficiencies of traditional finance and the volatility of spot digital assets.</p>
+<ul>
+<li><strong>The Private Equity Pivot:</strong> Michael Saylor has positioned STRC as the superior alternative to the 3.5 trillion USD global private credit market. Traditional private credit is often criticized as illiquid and fee-burdened, whereas STRC offers institutional-grade liquidity and zero management fees.<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">10</a></sup></li>
+<li><strong>ETF Tax-Loss Harvesting Rotation:</strong> Investors who entered the Bitcoin market via spot ETFs at the 2025 peak are utilizing current drawdowns for strategic tax planning.<sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">11</a></sup> By booking capital losses on their ETF positions, these investors are rotating into STRC to maintain “Bitcoin economy” exposure with a stable, par-anchored instrument and tax-advantaged “return of capital” distributions.<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup></li>
+<li><strong>Pseudo-Savings Account Status:</strong> Marketing efforts have branded STRC as a “high-yield savings account” for the digital age. With a volatility of 2.9% and an 11.5% yield, STRC has become the primary destination for retail and corporate treasury cash previously stagnant in low-yield funds.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">12</a></sup></li>
+</ul>
+<h2 id="the-emerging-strc-ecosystem-programmable-digital-credit"><a class="header" href="#the-emerging-strc-ecosystem-programmable-digital-credit"><strong>The Emerging STRC Ecosystem: Programmable Digital Credit</strong></a></h2>
+<p>A sophisticated financial ecosystem is rapidly forming on top of the STRC instrument, transforming it from a simple preferred share into the primary primitive for “Digital Money.”</p>
+<h3 id="saturn-labs-the-tether-of-digital-credit"><a class="header" href="#saturn-labs-the-tether-of-digital-credit"><strong>Saturn Labs: The “Tether of Digital Credit”</strong></a></h3>
+<p>Saturn Labs has emerged as the most significant infrastructure builder in the STRC space, having recently increased its total investment in the instrument to 33 million USD .</p>
+<ul>
+<li><strong>USDat and sUSDat:</strong> Saturn tokenizes STRC through a two-token design. USDat is a liquidity-focused dollar token, while sUSDat is a staked variant that captures the 11.5%+ yield.</li>
+<li><strong>Three-Stage Vision:</strong> Saturn’s CEO Kevin Li aims to scale the protocol to 10 billion USD , providing 500 million global stablecoin users with access to Bitcoin-backed yield without requiring a U.S. brokerage account.</li>
+<li><strong>Advanced DeFi Utilities:</strong> Saturn is enabling “looping” for higher leverage, yield trading via <strong>Pendle</strong>, and is preparing for risk tranching through <strong>Strata</strong>.</li>
+</ul>
+<h3 id="apyx-and-the-bitcoin-dollar"><a class="header" href="#apyx-and-the-bitcoin-dollar"><strong>Apyx and the Bitcoin Dollar</strong></a></h3>
+<p>Apyx Protocol has launched what it calls the first dividend-backed stablecoin, <strong>apxUSD</strong>, which is overcollateralized by STRC and other digital asset treasury (DAT) preferred shares.</p>
+<ul>
+<li><strong>Yield Amplification:</strong> Using a high-yield version called <strong>apyUSD</strong>, the protocol generates up to 30% returns by bundling diversified preferred shares and leveraging on-chain lending protocols.</li>
+<li><strong>Risk Management:</strong> Apyx utilizes a “theta-minimized gamma hedge strategy” using put options on Bitcoin to ensure the stablecoin remains overcollateralized even during sharp market drawdowns.</li>
+</ul>
+<h3 id="buck-labs-savings-for-the-unbanked"><a class="header" href="#buck-labs-savings-for-the-unbanked"><strong>Buck Labs: Savings for the Unbanked</strong></a></h3>
+<p>Led by former Uber and Lyft executive Travis VanderZanden, <strong>Buck Labs</strong> has introduced “Buck,” a savings-focused coin yielding 7% annualized.</p>
+<ul>
+<li><strong>Minute-by-Minute Rewards:</strong> Buck rewards accrue continuously down to the minute, funded indirectly through the STRC yields in its treasury.</li>
+<li><strong>Digital Checking vs. Savings:</strong> Buck is positioned as the savings layer of the crypto stack, while traditional stablecoins function like checking accounts.</li>
+</ul>
+<h3 id="the-tokenized-transformation-xstocks-and-nasdaq"><a class="header" href="#the-tokenized-transformation-xstocks-and-nasdaq"><strong>The Tokenized Transformation: xStocks and Nasdaq</strong></a></h3>
+<p><strong>xStocks</strong> has partnered with Kraken and <strong>Nasdaq</strong> to link tokenized equities with DeFi networks.</p>
+<ul>
+<li><strong>MSTRx:</strong> This 1:1 tokenized representation allows for 24/5 trading of Strategy common stock on-chain, with plans to expand this “equities transformation gateway” to STRC by 2027.</li>
+<li><strong>Institutional Vaults:</strong> <strong>Hermetica</strong> has launched <strong>hBTC</strong>, a self-custodial Bitcoin yield vault that sources institutional returns from STRC via Saturn’s sUSDat.</li>
+</ul>
+<h2 id="michael-saylors-vision-the-three-layer-financial-architecture"><a class="header" href="#michael-saylors-vision-the-three-layer-financial-architecture"><strong>Michael Saylors Vision: The Three-Layer Financial Architecture</strong></a></h2>
+<p>The vision articulated by Michael Saylor is one of a wholesale reorganization of the global financial architecture. He frames this as a three-layer model: <strong>Bitcoin</strong> as digital capital, <strong>STRC</strong> as digital credit, and <strong>stablecoins</strong> as digital money.<sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">8</a></sup></p>
+<h3 id="operational-roadmap-the-shift-to-semi-monthly-dividends"><a class="header" href="#operational-roadmap-the-shift-to-semi-monthly-dividends"><strong>Operational Roadmap: The Shift to Semi-Monthly Dividends</strong></a></h3>
+<p>In a major step toward standardizing STRC as a “Digital Bank Account,” Strategy Inc. has opened a shareholder vote to shift dividend payments from a monthly to a <strong>semi-monthly (bi-monthly)</strong> schedule.</p>
+<ul>
+<li><strong>Objectives:</strong> The goal is to reduce reinvestment delays, further compress volatility, and improve pricing efficiency.</li>
+<li><strong>Timeline:</strong> Voting closes on June 8, 2026. If approved, the first semi-monthly record date will be June 30, with payments starting in July 2025.</li>
+</ul>
+<h3 id="etf-and-index-integration"><a class="header" href="#etf-and-index-integration"><strong>ETF and Index Integration</strong></a></h3>
+<p>Saylor believes the “Next Unlock” is the integration of STRC into public ETFs and indexes.<sup class="footnote-reference" id="fr-10-3"><a href="#footnote-10">8</a></sup></p>
+<ul>
+<li><strong>Current Adoption:</strong> STRC is already the third-largest holding for BlackRock’s iShares Preferred &amp; Income Securities ETF (PFF) and VanEck credit funds.</li>
+<li><strong>Scaling Potential:</strong> By capturing 10% of the 3.5 trillion USD private credit market, Saylor forecasts STRC could scale to 350 billion USD , eventually helping push Bitcoin to 10 million USD per coin.</li>
+</ul>
+<h2 id="the-competitor-void-why-banks-and-fintechs-are-sidelined"><a class="header" href="#the-competitor-void-why-banks-and-fintechs-are-sidelined"><strong>The Competitor Void: Why Banks and Fintechs Are Sidelined</strong></a></h2>
+<p>A central question for institutional investors is why traditional financial giantssuch as JPMorgan, Goldman Sachs, or fintech leaders like Coinbase and Blockhave not launched a direct competitor to STRC.</p>
+<h3 id="the-regulatory-blockade-and-the-sab-122-transition"><a class="header" href="#the-regulatory-blockade-and-the-sab-122-transition"><strong>The Regulatory Blockade and the SAB 122 Transition</strong></a></h3>
+<p>While the SEC rescinded SAB 121 and replaced it with SAB 122 in early 2025, banks are still subject to high risk-weights for non-stablecoin crypto assets under Basel III/IV frameworks. Strategy Inc., as a “Bitcoin Development Company,” is not subject to these banking-specific capital ratios, giving it a structural advantage.<sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup></p>
+<h3 id="the-mnav-moat-and-the-saylor-premium"><a class="header" href="#the-mnav-moat-and-the-saylor-premium"><strong>The mNAV Moat and the “Saylor Premium”</strong></a></h3>
+<p>The “Saylor Premium” (mNAV &gt; 1) allows Strategy to raise capital that is accretive to its Bitcoin-per-share metric.<sup class="footnote-reference" id="fr-6-4"><a href="#footnote-6">4</a></sup> Traditional banks almost always trade at a discount to book value (mNAV &lt; 1), meaning any issuance to buy Bitcoin would be immediately dilutive.<sup class="footnote-reference" id="fr-6-5"><a href="#footnote-6">4</a></sup></p>
+<h2 id="eventual-impact-on-bitcoin-price-1-2-and-5-year-time-horizons"><a class="header" href="#eventual-impact-on-bitcoin-price-1-2-and-5-year-time-horizons"><strong>Eventual Impact on Bitcoin Price: 1, 2, and 5-Year Time Horizons</strong></a></h2>
+<p>The accumulation of 818,334 BTC by a single corporation removals supply from the “free float,” creating a persistent supply shock.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup></p>
+<ul>
+<li><strong>One-Year Horizon (2027):</strong> Analysts expect Bitcoin to reach new all-time highs as the transition to a nation-state “strategic asset” continues via SBR legislation. Estimated Range: <strong>120,000 t USD o 160,000 USD per BTC</strong>.</li>
+<li><strong>Two-Year Horizon (2028):</strong> The post-halving environment combined with the STRC “accumulation machine” reaching its planned 42 billion USD capacity is expected to drive prices higher. Estimated Range: <strong>150,000 t USD o 250,000 USD per BTC</strong>.<sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">13</a></sup></li>
+<li><strong>Five-Year Horizon (2031):</strong> By 2031, Bitcoin is projected to emerge as a global reserve asset. Institutional consensus ranges from <strong>500,000 t USD o 1.3 million USD per BTC</strong>.</li>
+</ul>
+<h2 id="risks-and-quantitative-scenarios-the-death-by-dilution-threat"><a class="header" href="#risks-and-quantitative-scenarios-the-death-by-dilution-threat"><strong>Risks and Quantitative Scenarios: The “Death by Dilution” Threat</strong></a></h2>
+<p>The real threat to Strategy Inc. is the erosion of the “Saylor Premium” during a prolonged bear market. If <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> for a prolonged period, new share issuance becomes dilutive, potentially reversing the accumulation flywheel.</p>
+<h3 id="institutional-resilience-the-usd-reserve-buffer"><a class="header" href="#institutional-resilience-the-usd-reserve-buffer"><strong>Institutional Resilience: The USD Reserve Buffer</strong></a></h3>
+<p>To mitigate these risks, Strategy Inc. has established a “USD Reserve” of **2.25 billion USD ** as of April 2026, which provides approximately <strong>18.1 months</strong> of coverage for the company’s dividend and interest obligations. Strategy tracks its performance through its “BTC Yield,” which in April 2026 was targeted at 22% to 26%.</p>
+<h2 id="final-appraisal-the-structural-inevitability-of-digital-credit"><a class="header" href="#final-appraisal-the-structural-inevitability-of-digital-credit"><strong>Final Appraisal: The Structural Inevitability of Digital Credit</strong></a></h2>
+<p>The STRC instrument and Michael Saylors broader vision represent the first successful attempt to industrialize Bitcoins capital structure. By capturing capital from “yield-starved” private credit markets and anchoring an ecosystem of stablecoins (Saturn, Apyx, Buck), Strategy Inc. has created a source of funding that operates independently of Bitcoin’s spot price volatility. As the global economy continues to grapple with fiat instability, the transition of Bitcoin from an “investment” to a “sovereign credit layer” appears structurally inevitable.</p>
+<h4 id="works-cited"><a class="header" href="#works-cited"><strong>Works cited</strong></a></h4>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Strategy Will Keep Buying Bitcoin Forever, Saylor Says - Bitcoin Magazine, accessed April 28, 2026, <a href="https://bitcoinmagazine.com/news/strategy-mstr-michael-saylor-bitcoin-buys">https://bitcoinmagazine.com/news/strategy-mstr-michael-saylor-bitcoin-buys</a> <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a></p>
+</li>
+<li id="footnote-2">
+<p>STRC Information - Strategy, accessed April 28, 2026, <a href="https://www.strategy.com/strc/learn">https://www.strategy.com/strc/learn</a> <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a> <a href="#fr-2-7">↩7</a> <a href="#fr-2-8">↩8</a> <a href="#fr-2-9">↩9</a></p>
+</li>
+<li id="footnote-4">
+<p>Everyone is frothing about Bitcoin treasury company Strategy’s …, accessed April 28, 2026, <a href="https://www.dlnews.com/articles/markets/bitcoin-treasury-strategy-strc-popular-analysts-issue-warning/">https://www.dlnews.com/articles/markets/bitcoin-treasury-strategy-strc-popular-analysts-issue-warning/</a> <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>STRC, SATA, and the Bitcoin-Backed Preferred Family - NYDIG, accessed April 28, 2026, <a href="https://www.nydig.com/research/strc-sata-and-the-bitcoin-backed-preferred-family">https://www.nydig.com/research/strc-sata-and-the-bitcoin-backed-preferred-family</a> <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a> <a href="#fr-6-4">↩4</a> <a href="#fr-6-5">↩5</a></p>
+</li>
+<li id="footnote-8">
+<p>STRC: The Global Bitcoin Dollar Cost Average, accessed April 28, 2026, <a href="https://bitcoinmagazine.com/bitcoin-for-corporations/strc-the-bitcoin-dca">https://bitcoinmagazine.com/bitcoin-for-corporations/strc-the-bitcoin-dca</a> <a href="#fr-8-1">↩</a></p>
+</li>
+<li id="footnote-9">
+<p>What are Strategy’s products? From STRK to STRC explained - The Block, accessed April 28, 2026, <a href="https://www.theblock.co/learn/394455/what-are-mstr-strk-and-strc-strategys-stock-and-preferred-shares-explained">https://www.theblock.co/learn/394455/what-are-mstr-strk-and-strc-strategys-stock-and-preferred-shares-explained</a> <a href="#fr-9-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>MicroStrategy Incorporated Variable Rate Series A Perpetual Stretch Preferred Stock Stock Price: Quote, Forecast, Splits &amp; News (STRC) - Perplexity, accessed April 28, 2026, <a href="https://www.perplexity.ai/finance/STRC">https://www.perplexity.ai/finance/STRC</a> <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-10">
+<p>Saturn raises 800 k USD from Sora Ventures and YZi Labs to build USDat, a 11%+ yield-bearing stablecoin backed by Michael Saylor’s Digital Credit, accessed April 28, 2026, <a href="https://sora.vc/saturn-raises-800k-from-sora-ventures-and-yzi-labs-to-build-usdat-a-11-yield-bearing-stablecoin-backed-by-michael-saylors-digital-credit/">https://sora.vc/saturn-raises-800k-from-sora-ventures-and-yzi-labs-to-build-usdat-a-11-yield-bearing-stablecoin-backed-by-michael-saylors-digital-credit/</a> <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a> <a href="#fr-10-3">↩3</a></p>
+</li>
+<li id="footnote-5">
+<p>Michael J. Saylor, accessed April 28, 2026, <a href="https://www.michael.com/">https://www.michael.com/</a> <a href="#fr-5-1">↩</a></p>
+</li>
+<li id="footnote-11">
+<p>Coinbase CEO Brian Armstrong Accuses Banks of Undermining Trump’s Crypto Agenda, accessed April 28, 2026, <a href="https://bitcoinmagazine.com/news/coinbase-ceo-accuses-banks-crypto">https://bitcoinmagazine.com/news/coinbase-ceo-accuses-banks-crypto</a> <a href="#fr-11-1">↩</a></p>
+</li>
+<li id="footnote-12">
+<p>Strategy’s (MSTR) Bitcoin Ambition Is Reshaping Corporate Finance. Everyone Else Is Falling Behind, accessed April 28, 2026, <a href="https://bitcoinmagazine.com/news/strategys-bitcoin-ambition-is-reshaping">https://bitcoinmagazine.com/news/strategys-bitcoin-ambition-is-reshaping</a> <a href="#fr-12-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p>STRC by Strategy: A High-Yield Alternative to Savings Accounts - ERIC KIM, accessed April 28, 2026, <a href="https://erickimphotography.com/strc-by-strategy-a-high-yield-alternative-to-savings-accounts/">https://erickimphotography.com/strc-by-strategy-a-high-yield-alternative-to-savings-accounts/</a> <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p>Bitcoin Price Prediction 20262030: Can BTC Break 150K? - Backpack Learn, accessed April 28, 2026, <a href="https://learn.backpack.exchange/articles/bitcoin-price-prediction-2026-2030">https://learn.backpack.exchange/articles/bitcoin-price-prediction-2026-2030</a> <a href="#fr-13-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="231.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="229.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="231.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="229.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

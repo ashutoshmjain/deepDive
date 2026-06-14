@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>From App Store to Agent - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="from-app-store-to-agent"><a class="header" href="#from-app-store-to-agent">From App Store to Agent</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The trajectory of personal computing has reached a critical inflection point where the fundamental unit of software value is shifting from the discrete application to the autonomous agent. To understand this transition, one must look beyond the aesthetic evolution of hardware and analyze the underlying orchestration of capabilities that has defined every successful computing platform of the last forty years. While the physical form factor of a device—be it the desktop PC, the smartphone, or the emerging class of AI-first hardware—serves as the primary consumer touchpoint, the real innovation has always resided in the software distribution model and the depth of the available developer ecosystem. The historical success of Windows in the 1990s and the iPhone in the 2000s was predicated not on superior hardware specifications, but on the creation of a “flywheel effect” where software availability drove hardware adoption, which in turn attracted more software development.1</p>
+<p>As the industry moves toward the “Agent Store,” the core distinction lies in the nature of the transaction. The legacy App Store model was built on a foundation of one-time fees, in-app purchases, and subscription-based access to tools that required constant human instruction. The emerging Agent Store model, however, is fundamentally transactional and autonomous. In this paradigm, software agents do not merely assist the user; they act as “autonomous economic actors” capable of negotiating value, discovering services, and settling payments without human intervention.3 The entity that successfully defines the infrastructure for agentic commerce—integrating the seamless orchestration of cognitive capabilities with a robust, machine-to-machine financial rail—will likely win the race to define the next era of personal computing.</p>
+<h2 id="the-nextstep-foundation-and-the-genesis-of-orchestration"><a class="header" href="#the-nextstep-foundation-and-the-genesis-of-orchestration">The NeXTSTEP Foundation and the Genesis of Orchestration</a></h2>
+<p>The modern mobile application revolution, ostensibly beginning with the 2008 launch of the Apple App Store, possesses deep architectural roots in the founding of NeXT by Steve Jobs in 1985. Following his departure from Apple, Jobs focused on creating a development environment that could solve the primary bottleneck in software engineering: the time required to build complex user interfaces and manage networked resources. The resulting operating system, NeXTSTEP, introduced a dynamic object-oriented programming model that treated software components as discrete, interacting entities.5</p>
+<p>Jobs’ vision, which he termed “inter-personal computing,” anticipated the pervasive networking that defines the current era. At the 1997 MacWorld Expo, following Apple’s acquisition of NeXT, Jobs demonstrated how NeXTSTEP’s technology—specifically the OpenStep framework—could reduce the time required for a developer to create a functional application user interface from ninety percent of the project’s duration to a mere ten percent.5 This was not merely a technical improvement; it was a philosophical shift toward “orchestration.” By providing developers with a robust set of pre-built “capabilities” (the Cocoa and Cocoa Touch frameworks), Apple enabled a level of software modularity and aesthetic consistency that would later become the hallmark of the iOS ecosystem.1</p>
+<h3 id="the-evolution-of-developer-and-consumer-ecosystems"><a class="header" href="#the-evolution-of-developer-and-consumer-ecosystems"><strong>The Evolution of Developer and Consumer Ecosystems</strong></a></h3>
+<p>The history of software distribution reflects a tension between the need for developer utility and the requirement for consumer-grade simplicity. While the App Store popularized a “walled garden” approach for the general public, the developer community continued to rely on command-line package managers that prioritized transparency, reproducibility, and precision.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Distribution Model</th><th style="text-align: left">Target Audience</th><th style="text-align: left">Primary Philosophy</th><th style="text-align: left">Key Mechanism</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Command-Line (APT)</strong></td><td style="text-align: left">Developers / SysAdmins</td><td style="text-align: left">Global Dependency Management</td><td style="text-align: left">Centralized binary repositories; system-wide installation.6</td></tr>
+<tr><td style="text-align: left"><strong>Functional (Nix)</strong></td><td style="text-align: left">Developers / DevOps</td><td style="text-align: left">Reproducibility &amp; Isolation</td><td style="text-align: left">Content-addressed store; atomic upgrades and rollbacks.6</td></tr>
+<tr><td style="text-align: left"><strong>Language-Specific (Cargo/NPM)</strong></td><td style="text-align: left">Software Engineers</td><td style="text-align: left">Modular Reusability</td><td style="text-align: left">Registry-based distribution of code libraries (crates/packages).8</td></tr>
+<tr><td style="text-align: left"><strong>Consumer (App Store)</strong></td><td style="text-align: left">General Public</td><td style="text-align: left">Curated Experience</td><td style="text-align: left">Mandatory gateway; technical and legal sandboxing; “Apple Tax”.9</td></tr>
+</tbody>
+</table>
+</div>
+<p>Systems like APT manage software at the system level, resolving dependencies within a shared environment. However, this often leads to “dependency hell,” where updating one package inadvertently breaks another. Nix emerged as a more advanced alternative, treating software installation as a functional programming problem. By storing every version of a package in a unique, isolated directory within the /nix/store/, Nix allows for multiple versions of the same dependency to coexist without conflict.6 This level of precision is essential for modern development, yet it remains largely invisible to the consumer who interacts with a simplified, button-driven interface.</p>
+<h2 id="the-strategy-of-the-mandatory-gateway"><a class="header" href="#the-strategy-of-the-mandatory-gateway">The Strategy of the Mandatory Gateway</a></h2>
+<p>Steve Jobs’ strategy for the iOS App Store was built on the premise that the device should confront the user with underlying technology as little as possible.11 He understood that a great customer experience involved a product that “just worked,” which required total control over the software distribution chain. By enforcing the App Store as the mandatory software gateway, Apple could ensure quality, security, and—most importantly—a consistent monetization model.</p>
+<p>This strategy transformed Apple from a hardware manufacturer into a “software platform steward”.1 The 30 percent commission, often referred to as the “Apple Tax,” was modeled after the success of the iTunes Store, where Jobs had successfully broken the logjam with record labels by creating a simple, 0.99 US-dollar-per-song pricing model.9 This “tax” covers payment processing, discovery, and the maintenance of a secure sandbox, but it also creates significant lock-in. By 2024, the iOS ecosystem had achieved industry-leading retention rates of 92 percent, as users found it increasingly “difficult and inconvenient” to leave an environment where they had invested heavily in apps and services.1</p>
+<p>The innovation of the iPhone was not simply the touch screen or the industrial design; it was the orchestration of hardware, software, and services into a single, defensible platform advantage. This mirrored the earlier success of Microsoft Windows, which dominated the desktop era not by having the most elegant user interface, but by ensuring that there was “so much software available for the platform” that it became the default choice for both businesses and consumers.13</p>
+<h2 id="the-shift-to-agentic-ai-from-swiping-to-delegating"><a class="header" href="#the-shift-to-agentic-ai-from-swiping-to-delegating">The Shift to Agentic AI: From Swiping to Delegating</a></h2>
+<p>The current transition from an “app store” to an “agent store” marks the beginning of a paradigm shift in user experience and digital commerce. In the legacy model, applications are “command hubs” where the user acts as the primary orchestrator, manually navigating between disjointed tools—the “swivel chair” problem.15 AI agents, by contrast, function as an intelligent layer that sits above these applications, transforming them into “invisible” data sources and execution engines.15</p>
+<p>AI agents are defined by their autonomy, reactivity, proactivity, and social ability.16 Unlike traditional software, which follows rule-based, predefined logic paths, agents use Large Language Models (LLMs) to reason about high-level intent, decompose goals into multi-step workflows, and adapt to dynamic environment conditions.17</p>
+<h3 id="comparison-of-functional-paradigms-software-vs-agents"><a class="header" href="#comparison-of-functional-paradigms-software-vs-agents"><strong>Comparison of Functional Paradigms: Software vs. Agents</strong></a></h3>
+<p>The fundamental difference between traditional software and agentic systems is the transition from “instruction authorship” to “intelligence orchestration”.19</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Traditional Software (Apps)</th><th style="text-align: left">AI Agents</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Logic Model</strong></td><td style="text-align: left">Rule-based; fixed workflows.</td><td style="text-align: left">Reasoning-based; adaptive planning.</td></tr>
+<tr><td style="text-align: left"><strong>User Interaction</strong></td><td style="text-align: left">Menu/Button-driven; manual.</td><td style="text-align: left">Conversational; natural language.17</td></tr>
+<tr><td style="text-align: left"><strong>Task Handling</strong></td><td style="text-align: left">Reactive; one task at a time.</td><td style="text-align: left">Proactive; multi-tasking and context-aware.</td></tr>
+<tr><td style="text-align: left"><strong>Execution</strong></td><td style="text-align: left">Step-by-step instructions.</td><td style="text-align: left">Goal-oriented; self-correcting.19</td></tr>
+<tr><td style="text-align: left"><strong>Monetization</strong></td><td style="text-align: left">One-time / Subscription.</td><td style="text-align: left">Fully Transactional / Usage-based.</td></tr>
+</tbody>
+</table>
+</div>
+<p>The “innovation” of the next era will be the ability to coordinate these agents at scale. If the last decade was defined by the mobile app, the coming days will be shaped by agents that work across them, making contextual decisions on behalf of the user.15 For enterprise technology, this means moving away from bespoke pipelines toward managed, portable “Agent Operating Systems” that can virtualize intelligence the way a classical OS virtualizes hardware.20</p>
+<h2 id="agentic-commerce-the-transactional-imperative"><a class="header" href="#agentic-commerce-the-transactional-imperative">Agentic Commerce: The Transactional Imperative</a></h2>
+<p>The core distinction of the Agent Store is that it is built for “fully transactional” agents. This is the birth of “Agentic Commerce,” a “new commerce layer” where autonomous agents discover services, negotiate prices, and transact value on behalf of humans.3 By 2030, AI shopping agents are expected to be a mainstream component of the digital economy, shifting the path to purchase from “click-to-buy” to “delegated, policy-driven actions”.21</p>
+<p>In this model, the human sets the constraints—such as a budget, a deadline, or a quality preference—and the agent carries out the transaction end-to-end. This requires a profound transformation of the technological stack, as current payment infrastructures are designed for direct human interaction and lack the mechanisms to securely authorize and verify agent-led operations.3</p>
+<h3 id="the-x402-protocol-and-machine-to-machine-payments"><a class="header" href="#the-x402-protocol-and-machine-to-machine-payments"><strong>The x402 Protocol and Machine-to-Machine Payments</strong></a></h3>
+<p>The development of the x402 protocol represents a significant step toward realizing this transactional future. Named after the “HTTP 402 Payment Required” status code—a feature of the original web specification that sat dormant for decades—x402 enables autonomous crypto transactions within standard web interactions.23</p>
+<p>The x402 stack facilitates value flow starting at the agent layer, moving through “Facilitators” who abstract away blockchain complexity, and finally settling on-chain using stablecoins like USDC.23 This allows for sub-cent micropayments and “pay-per-call” API models that are more capital-efficient than traditional subscriptions.25</p>
+<h3 id="transactional-infrastructure-players-and-protocols"><a class="header" href="#transactional-infrastructure-players-and-protocols"><strong>Transactional Infrastructure Players and Protocols</strong></a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Entity / Protocol</th><th style="text-align: left">Role in the Ecosystem</th><th style="text-align: left">Key Innovation</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>x402 Protocol</strong></td><td style="text-align: left">Foundation Standard</td><td style="text-align: left">HTTP-native, blockchain-agnostic micropayments.23</td></tr>
+<tr><td style="text-align: left"><strong>Coinbase Agentic Wallets</strong></td><td style="text-align: left">Infrastructure</td><td style="text-align: left">Plugs-and-play wallets that allow agents to hold funds and trade.26</td></tr>
+<tr><td style="text-align: left"><strong>Stripe ACP</strong></td><td style="text-align: left">Traditional Fintech</td><td style="text-align: left">The Agentic Commerce Protocol; standards for programmatic commerce.28</td></tr>
+<tr><td style="text-align: left"><strong>Visa Agent APIs</strong></td><td style="text-align: left">Global Payments</td><td style="text-align: left">Tokenization and authentication for secure agentic checkout.30</td></tr>
+<tr><td style="text-align: left"><strong>Model Context Protocol (MCP)</strong></td><td style="text-align: left">Data/Context</td><td style="text-align: left">Enables LLMs to access structured data and blockchain wallets.23</td></tr>
+</tbody>
+</table>
+</div>
+<p>The emergence of these protocols suggests that the “Agent Store” will not just be a repository of software, but a dynamic marketplace where agents can programmatically discover and pay for services. Stripe’s “Agentic Commerce Suite” allows businesses to make their products discoverable by AI agents with a single integration, handling the complexity of taxes, shipping, and fulfillment post-purchase.28 This effectively makes the merchant’s existing commerce stack “agent-ready” without requiring a total overhaul of their systems.</p>
+<h2 id="the-race-for-the-next-iphone-esque-device"><a class="header" href="#the-race-for-the-next-iphone-esque-device">The Race for the Next “iPhone-esque” Device</a></h2>
+<p>The shift from apps to agents is prompting a race to develop a new class of physical hardware that can serve as the primary orchestration point for these capabilities. Prominent tech investors and designers are betting that LLMs will enable new vistas of personalized computing that move away from screens and toward ambient, voice-first interaction.31</p>
+<p>Currently, this race is being fought between fast-moving startups and established legends. Gadgets like the Rabbit R1 and the Humane AI Pin are early attempts to “boil the Internet down to a single interactive voice”.32 The Rabbit R1 utilizes a “Large Action Model” (LAM) to interact with existing app interfaces on behalf of the user, while the Humane AI Pin offers a laser-projected display and gesture-based control.32</p>
+<h3 id="the-jony-ive-and-sam-altman-partnership"><a class="header" href="#the-jony-ive-and-sam-altman-partnership"><strong>The Jony Ive and Sam Altman Partnership</strong></a></h3>
+<p>The most anticipated entry in this category is the collaboration between Jony Ive (the former Apple design chief) and Sam Altman of OpenAI. Their venture, “io,” which was acquired by OpenAI in 2025, aims to create a “third core device” designed for seamless integration into daily life.34</p>
+<p>Ive’s design philosophy for this new class of hardware emphasizes “naïve simplicity” and tactile beauty—objects that users want to touch and use “almost carelessly” without the intimidation of a traditional screen.36 This approach reflects a desire to reclaim user attention from the “hijacking” nature of current smartphones, focusing on freedom and wellness-centered design.35 The involvement of Jony Ive, who defined the aesthetic and functional standards of the iPhone, suggests that the “innovation” of this next device will again be the perfect symbiosis between form and the orchestration of capabilities.34</p>
+<h2 id="orchestration-of-capabilities-as-the-final-frontier"><a class="header" href="#orchestration-of-capabilities-as-the-final-frontier">Orchestration of Capabilities as the Final Frontier</a></h2>
+<p>At the end of the day, a device—whether it is an iPhone, a Rabbit R1, or a screenless AI “stone”—is only as useful as the capabilities it can orchestrate. The real innovation of the iPhone was not the hardware, but the software ecosystem that allowed it to become a “pocket-sized office”.37 Similarly, the next dominant platform will be the one that provides the most efficient “Agent Operating System.”</p>
+<h3 id="the-anatomy-of-an-agent-operating-system"><a class="header" href="#the-anatomy-of-an-agent-operating-system"><strong>The Anatomy of an Agent Operating System</strong></a></h3>
+<p>A modern Agent OS must go beyond traditional resource management to manage “intelligence and purpose”.19</p>
+<ul>
+<li><strong>Cognitive Resource Allocation:</strong> Instead of managing CPU cycles, the Agent OS allocates “reasoning time” and manages context windows and long-term knowledge bases.19</li>
+<li><strong>Orchestration Layer:</strong> It decomposes high-level goals into sub-tasks and coordinates multiple specialized agents (e.g., a “research agent,” a “booking agent,” and a “payment agent”) to achieve a collective objective.16</li>
+<li><strong>Zero-Trust Microkernel:</strong> Ensures that agents execute within “contracts” and capabilities, providing a secure, audit-trailed foundation for enterprise and safety-critical deployments.20</li>
+<li><strong>Semantic Memory:</strong> Blends classical computer architecture concepts with contextual and personalized memory indexing, allowing agents to maintain continuity across interactions.38</li>
+</ul>
+<p>The winner of the “Agent Store” race will be the one who gets this orchestration right. This requires more than just building a better chatbot; it requires creating a unified, security-by-design infrastructure where agents can autonomously navigate the world of digital services and commerce. Just as Windows won by having the most software, and Apple won by having the most curated experience, the next winner will win by having the most capable and transactional agent ecosystem.</p>
+<h2 id="conclusion-the-new-commerce-layer-and-the-future-of-intent"><a class="header" href="#conclusion-the-new-commerce-layer-and-the-future-of-intent">Conclusion: The New Commerce Layer and the Future of Intent</a></h2>
+<p>The transition from “App Store” to “Agent Store” represents the final evolution of Steve Jobs’ vision of interpersonal computing. By moving away from reactive tools and toward autonomous, transactional agents, we are entering an era where software no longer just <em>assists</em> with a purchase—it <em>is</em> the purchaser.40 The economic value is shifting from “attention” to “intent,” and the digital economy is being re-architected to support machine-mediated transactions at a scale and frequency that would be impossible for humans to manage manually.</p>
+<p>The “iPhone-esque” physical device of the future will succeed not because of its industrial design alone, but because it serves as the most effective “front door” to this agentic ecosystem.15 Whether this device is developed by a startup like Rabbit or a giant like OpenAI and LoveFrom, its success will depend on its ability to orchestrate a vast array of specialized agents and provide them with the transactional rails—such as the x402 protocol and Stripe’s Agentic Commerce Suite—necessary to act in the real world. In this new paradigm, the orchestration of capabilities is the ultimate moat, and the “Agent Store” is the foundational marketplace of the autonomous age.</p>
+<h2 id="works-cited"><a class="header" href="#works-cited">Works cited</a></h2>
+<ol>
+<li>
+<p>Tech Giants’ Ecosystem Strategies - FRANKI T, accessed February 13, 2026, <a href="https://www.francescatabor.com/articles/2025/8/17/tech-giants-ecosystem-strategies">https://www.francescatabor.com/articles/2025/8/17/tech-giants-ecosystem-strategies</a></p>
+</li>
+<li>
+<p>The next big arenas of competition - McKinsey Global Institute, accessed February 13, 2026, <a href="https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/the%20next%20big%20arenas%20of%20competition/the-next-big-arenas-of-competition_final.pdf">https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/the%20next%20big%20arenas%20of%20competition/the-next-big-arenas-of-competition_final.pdf</a></p>
+</li>
+<li>
+<p>TessPay: Verify-then-Pay Infrastructure for Trusted Agentic Commerce - arXiv, accessed February 13, 2026, <a href="https://arxiv.org/html/2602.00213v1">https://arxiv.org/html/2602.00213v1</a></p>
+</li>
+<li>
+<p>Mapping the emerging models of agentic commerce | Worldpay, accessed February 13, 2026, <a href="https://www.worldpay.com/en/insights/articles/mapping-emerging-models-of-agentic-commerce">https://www.worldpay.com/en/insights/articles/mapping-emerging-models-of-agentic-commerce</a></p>
+</li>
+<li>
+<p>The Deep History of Your Apps: Steve Jobs, NeXTSTEP, and Early Object-Oriented Programming, accessed February 13, 2026, <a href="https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/">https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/</a></p>
+</li>
+<li>
+<p>Nix Package Manager on Linux: How Is It Different From APT …, accessed February 13, 2026, <a href="https://hackernoon.com/nix-package-manager-on-linux-how-is-it-different-from-apt">https://hackernoon.com/nix-package-manager-on-linux-how-is-it-different-from-apt</a></p>
+</li>
+<li>
+<p>The package manager to rule them all | by Patrick Walsh - Medium, accessed February 13, 2026, <a href="https://medium.com/@zmre/the-package-manager-to-rule-them-all-9a8829e4f392">https://medium.com/@zmre/the-package-manager-to-rule-them-all-9a8829e4f392</a></p>
+</li>
+<li>
+<p>Cargo and crates.io is easily as simple as npm for installation and distribution… | Hacker News, accessed February 13, 2026, <a href="https://news.ycombinator.com/item?id=38654212">https://news.ycombinator.com/item?id=38654212</a></p>
+</li>
+<li>
+<p>Does the Case of Apple’s App Store Indicate It’s Time for an American Digital Markets Act?, accessed February 13, 2026, <a href="https://www.promarket.org/2025/11/13/does-the-case-of-apples-app-store-indicate-its-time-for-an-american-digital-markets-act/">https://www.promarket.org/2025/11/13/does-the-case-of-apples-app-store-indicate-its-time-for-an-american-digital-markets-act/</a></p>
+</li>
+<li>
+<p>Do you have to pay the Apple Tax? It’s complicated. - Insight Partners, accessed February 13, 2026, <a href="https://www.insightpartners.com/ideas/do-you-have-to-pay-the-apple-tax-its-complicated/">https://www.insightpartners.com/ideas/do-you-have-to-pay-the-apple-tax-its-complicated/</a></p>
+</li>
+<li>
+<p>Steve Jobs’ Greatest Legacy: The Customer Experience - Adam Toporek, accessed February 13, 2026, <a href="https://customersthatstick.com/blog/steve-jobs-greatest-legacy-the-customer-experience/">https://customersthatstick.com/blog/steve-jobs-greatest-legacy-the-customer-experience/</a></p>
+</li>
+<li>
+<p>Steve Jobs, the iPhone and Apple Strategy - have we seen this story before?, accessed February 13, 2026, <a href="https://www.pjmconsult.com/index.php/2007/07/steve-jobs-iphone-and-apple-strategy.html">https://www.pjmconsult.com/index.php/2007/07/steve-jobs-iphone-and-apple-strategy.html</a></p>
+</li>
+<li>
+<p>Breaking down the Microsoft and Apple ecosystems - Neowin, accessed February 13, 2026, <a href="https://www.neowin.net/news/breaking-down-the-microsoft-and-apple-ecosystems/">https://www.neowin.net/news/breaking-down-the-microsoft-and-apple-ecosystems/</a></p>
+</li>
+<li>
+<p>Apple Services and the ecosystem of value capture - AppleInsider, accessed February 13, 2026, <a href="https://appleinsider.com/articles/18/08/11/apple-services-and-the-ecosystem-of-value-capture">https://appleinsider.com/articles/18/08/11/apple-services-and-the-ecosystem-of-value-capture</a></p>
+</li>
+<li>
+<p>The Great Digital Shift from Apps to AI Agents - CTO Magazine, accessed February 13, 2026, <a href="https://ctomagazine.com/the-great-digital-shift-from-apps-to-ai-agents/">https://ctomagazine.com/the-great-digital-shift-from-apps-to-ai-agents/</a></p>
+</li>
+<li>
+<p>The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption, accessed February 13, 2026, <a href="https://arxiv.org/html/2601.13671v1">https://arxiv.org/html/2601.13671v1</a></p>
+</li>
+<li>
+<p>AI Agents vs.Traditional Software: Key Differences - Deveit, accessed February 13, 2026, <a href="https://deveit.com/blog/ai-agents-vs-traditional-software/">https://deveit.com/blog/ai-agents-vs-traditional-software/</a></p>
+</li>
+<li>
+<p>The rise of Agentic Commerce - Part 1 - Business payment solutions …, accessed February 13, 2026, <a href="https://corporate.visa.com/content/dam/VCOM/corporate/services/documents/vca-rise-of-agentic-commerce.pdf">https://corporate.visa.com/content/dam/VCOM/corporate/services/documents/vca-rise-of-agentic-commerce.pdf</a></p>
+</li>
+<li>
+<p>AI Agents Are Becoming Operating Systems: What Developers Must Know in 2026 - Klizos, accessed February 13, 2026, <a href="https://klizos.com/ai-agents-are-becoming-operating-systems-in-2026/">https://klizos.com/ai-agents-are-becoming-operating-systems-in-2026/</a></p>
+</li>
+<li>
+<p>Agent Operating Systems (Agent-OS): A Blueprint Architecture for Real-Time, Secure, and Scalable AI Agents - Preprints.org, accessed February 13, 2026, <a href="https://www.preprints.org/manuscript/202509.0077/v1">https://www.preprints.org/manuscript/202509.0077/v1</a></p>
+</li>
+<li>
+<p>Agentic payments: a new frontier in digital commerce | Kearney, accessed February 13, 2026, <a href="https://www.kearney.com/industry/financial-services/article/agentic-payments-a-new-frontier-in-digital-commerce">https://www.kearney.com/industry/financial-services/article/agentic-payments-a-new-frontier-in-digital-commerce</a></p>
+</li>
+<li>
+<p>Agentic commerce: How agents are ushering in a new era | McKinsey, accessed February 13, 2026, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants">https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants</a></p>
+</li>
+<li>
+<p>x402, Agentic Payments, and Crypto’s Emerging Role in the AI …, accessed February 13, 2026, <a href="https://www.galaxy.com/insights/research/x402-ai-agents-crypto-payments">https://www.galaxy.com/insights/research/x402-ai-agents-crypto-payments</a></p>
+</li>
+<li>
+<p>Coinbase Unveils Wallet Infrastructure for AI Agents - ForkLog, accessed February 13, 2026, <a href="https://forklog.com/en/coinbase-unveils-wallet-infrastructure-for-ai-agents/">https://forklog.com/en/coinbase-unveils-wallet-infrastructure-for-ai-agents/</a></p>
+</li>
+<li>
+<p>Agentic AI Comparison: Skyfire vs x402 Protocol, accessed February 13, 2026, <a href="https://aiagentstore.ai/compare-ai-agents/skyfire-vs-x402-protocol">https://aiagentstore.ai/compare-ai-agents/skyfire-vs-x402-protocol</a></p>
+</li>
+<li>
+<p>Agentic Wallet - Coinbase Developer Documentation, accessed February 13, 2026, <a href="https://docs.cdp.coinbase.com/agentic-wallet/welcome">https://docs.cdp.coinbase.com/agentic-wallet/welcome</a></p>
+</li>
+<li>
+<p>Coinbase rolls out AI tool to ‘give any agent a wallet’ | The Block, accessed February 13, 2026, <a href="https://www.theblock.co/post/389524/coinbase-rolls-out-ai-tool-to-give-any-agent-a-wallet">https://www.theblock.co/post/389524/coinbase-rolls-out-ai-tool-to-give-any-agent-a-wallet</a></p>
+</li>
+<li>
+<p>Introducing the Agentic Commerce Suite: A complete solution for …, accessed February 13, 2026, <a href="https://stripe.com/blog/agentic-commerce-suite">https://stripe.com/blog/agentic-commerce-suite</a></p>
+</li>
+<li>
+<p>Stripe launches the Agentic Commerce Suite to help every business thrive in the AI-enabled commerce era, accessed February 13, 2026, <a href="https://stripe.com/newsroom/news/agentic-commerce-suite">https://stripe.com/newsroom/news/agentic-commerce-suite</a></p>
+</li>
+<li>
+<p>Enabling AI agents to buy securely and seamlessly | Visa, accessed February 13, 2026, <a href="https://www.visa.com/en-us/products/intelligent-commerce">https://www.visa.com/en-us/products/intelligent-commerce</a></p>
+</li>
+<li>
+<p>Startups Are Racing to Create the iPhone of AI - Time Magazine, accessed February 13, 2026, <a href="https://time.com/6553910/ai-device-rabbit-r1-humane/">https://time.com/6553910/ai-device-rabbit-r1-humane/</a></p>
+</li>
+<li>
+<p>Rabbit R1 &amp; AI Pin: Future of Smartphones or Tech Dead-End? - Audioholics, accessed February 13, 2026, <a href="https://www.audioholics.com/editorials/rabbit-r1-ai-pin-future-of-smartphones-or-tech-dead-end">https://www.audioholics.com/editorials/rabbit-r1-ai-pin-future-of-smartphones-or-tech-dead-end</a></p>
+</li>
+<li>
+<p>Rabbit r1 vs Humane AI Pin | What are Main Differences and Similarities? - YouTube, accessed February 13, 2026, <a href="https://www.youtube.com/watch?v=05M1mGy9mCY">https://www.youtube.com/watch?v=05M1mGy9mCY</a></p>
+</li>
+<li>
+<p>A letter from Sam &amp; Jony | OpenAI, accessed February 13, 2026, <a href="https://openai.com/sam-and-jony/">https://openai.com/sam-and-jony/</a></p>
+</li>
+<li>
+<p>Designing the Future of AI Devices in the Age of Jony Ive and Sam Altman, accessed February 13, 2026, <a href="https://www.samharrons.co.uk/product-design/jony-ive-sam-altman-ai-device-designs">https://www.samharrons.co.uk/product-design/jony-ive-sam-altman-ai-device-designs</a></p>
+</li>
+<li>
+<p>LoveFrom has a prototype for the first piece of OpenAI Hardware - AppleInsider, accessed February 13, 2026, <a href="https://appleinsider.com/articles/25/11/24/lovefrom-has-a-prototype-for-the-first-piece-of-openai-hardware">https://appleinsider.com/articles/25/11/24/lovefrom-has-a-prototype-for-the-first-piece-of-openai-hardware</a></p>
+</li>
+<li>
+<p>The Rise of AI Marketplaces: Why Agent Stores Are the Next Big Platform Shift - Kellton, accessed February 13, 2026, <a href="https://www.kellton.com/kellton-tech-blog/rise-of-ai-marketplaces-agent-stores-platform-shift">https://www.kellton.com/kellton-tech-blog/rise-of-ai-marketplaces-agent-stores-platform-shift</a></p>
+</li>
+<li>
+<p>The Future is Agentic: Understanding the Evolution and Architecture of AI Agents - Medium, accessed February 13, 2026, <a href="https://medium.com/@patriwala/the-future-is-agentic-understanding-the-evolution-and-architecture-of-ai-agents-e58bba315070">https://medium.com/@patriwala/the-future-is-agentic-understanding-the-evolution-and-architecture-of-ai-agents-e58bba315070</a></p>
+</li>
+<li>
+<p>AI-Driven Operating Systems - Emergent Mind, accessed February 13, 2026, <a href="https://www.emergentmind.com/topics/ai-driven-operating-systems">https://www.emergentmind.com/topics/ai-driven-operating-systems</a></p>
+</li>
+<li>
+<p>What is agentic commerce? A guide to getting started - Stripe, accessed February 13, 2026, <a href="https://stripe.com/guides/agentic-commerce">https://stripe.com/guides/agentic-commerce</a></p>
+</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="SAPinAIera.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="bitcoinLottery.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="SAPinAIera.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="bitcoinLottery.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

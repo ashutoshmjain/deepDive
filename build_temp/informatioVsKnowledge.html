@@ -1,0 +1,546 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Architecture of Uncertainty - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="architecture-of-uncertainty"><a class="header" href="#architecture-of-uncertainty">Architecture of Uncertainty</a></h1>
+<p><img src="./img/informationVsKnowledge.png" alt="cover image"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p><strong>A Comprehensive Analysis of Probability Theory, Its Axiomatic Foundations, and Its Role as the Logic of Science.</strong></p>
+<h1 id="1-introduction-the-taming-of-chance"><a class="header" href="#1-introduction-the-taming-of-chance">1. Introduction: The Taming of Chance</a></h1>
+<p>Probability theory represents one of the most significant intellectual leaps in the history of human thought. It is the discipline that transformed the chaotic, unpredictable nature of chance into a rigorous mathematical structure, allowing humanity to quantify uncertainty, predict the behavior of complex systems, and ultimately build the technologies that define the modern era. From the motion of atoms to the generation of language by artificial intelligence, probability serves as the invisible syntax of reality.</p>
+<p>The transition from viewing randomness as divine providence or inscrutable fate to viewing it as a measurable quantity governed by immutable laws was neither immediate nor intuitive. It required a fundamental shift in epistemology—a realization that while individual events might be unpredictable, the aggregate behavior of such events adheres to precise, deterministic patterns.</p>
+<p>This report provides an exhaustive examination of probability theory, tracing its genesis from the gambling parlors of the 17th century to the high-performance computing clusters of the 21st. We will dissect the axiomatic foundations laid by Andrey Kolmogorov, explore how these abstract rules mirror the physical reality of our universe, and debate the pedagogical and disciplinary standing of probability in the modern academic landscape.</p>
+<h1 id="2-the-historical-crucible-from-the-doctrine-of-chances-to-the-calculus-of-probability"><a class="header" href="#2-the-historical-crucible-from-the-doctrine-of-chances-to-the-calculus-of-probability">2. The Historical Crucible: From the Doctrine of Chances to the Calculus of Probability</a></h1>
+<p>The formalization of probability is a relatively recent development compared to geometry or algebra. While the ancients played games of chance, they lacked the mathematical tools—specifically combinatorics and algebra—to analyze them rigorously. The birth of probability theory is effectively a story of how humanity learned to count the future.</p>
+<h2 id="21-the-pre-history-and-the-silent-millennia"><a class="header" href="#21-the-pre-history-and-the-silent-millennia">2.1 The Pre-History and the Silent Millennia</a></h2>
+<p>Archaeological findings, such as the astragalus bones (knucklebones) found at various ancient sites, confirm that games of chance have been a part of human culture for millennia.1 These early randomization devices were used not only for gaming but for divination, reflecting a worldview where random outcomes were expressions of the will of the gods or “The Fates”.1</p>
+<p>For centuries, there was a philosophical barrier to the mathematics of chance. If an outcome was determined by God, calculating its likelihood seemed futile or even blasphemous. Furthermore, the absence of a robust notation system for algebra and the lack of a concept of “frequency” over “certainty” hindered progress. It was not until the Renaissance that the intellectual climate shifted.</p>
+<p>Gerolamo Cardano, a polymath, physician, and compulsive gambler of the 16th century, wrote the Liber de Ludo Aleae (Book on Games of Chance). Though not published until 1663 (a century after it was written), it contained the first crude definition of probability as a ratio of favorable outcomes to total outcomes.2 Cardano analyzed dice throws, understanding that a 6-sided die treats all faces equally—a concept later formalized as the Principle of Indifference. However, his work remained obscure, and the true ignition of the field required a specific, vexing problem to capture the attention of the era’s greatest minds.</p>
+<h2 id="22-the-chevalier-de-méré-and-the-problem-of-points"><a class="header" href="#22-the-chevalier-de-méré-and-the-problem-of-points">2.2 The Chevalier de Méré and the Problem of Points</a></h2>
+<p>In the mid-17th century, Antoine Gombaud, the Chevalier de Méré, a French nobleman and writer, found himself perplexed by a discrepancy between his gambling intuition and his financial losses. He posed two problems to the mathematician Blaise Pascal.</p>
+<p>The first was the “Dice Problem”: Why was betting on getting at least one ‘6’ in four rolls of a single die profitable, while betting on getting at least one ‘double-6’ in 24 rolls of two dice was not? De Méré intuitively felt the ratio of rolls (4 to 6 sides vs. 24 to 36 combinations) should preserve the probability. He was wrong, and the calculation of these odds (using the complement rule: 1 USD - (35/36)^{24}\$) revealed the non-linear nature of multiplicative probability.1</p>
+<p>The second, and far more profound, challenge was the “Problem of Points.” This ancient puzzle asked: How should the stakes be fairly divided between two players if a game is interrupted before either has reached the required number of points to win?.2</p>
+<h2 id="23-the-correspondence-of-1654-the-birth-of-a-discipline"><a class="header" href="#23-the-correspondence-of-1654-the-birth-of-a-discipline">2.3 The Correspondence of 1654: The Birth of a Discipline</a></h2>
+<p>During the summer of 1654, Blaise Pascal and Pierre de Fermat exchanged a series of letters that effectively invented modern probability theory. Their approach to the Problem of Points differed in method but agreed in result, establishing the dual nature of probabilistic reasoning that persists to this day: the combinatorial (counting) approach and the analytical (expectational) approach.</p>
+<p>Fermat’s Combinatorial Method:
+Fermat approached the problem by imagining that the game continued for the maximum possible number of rounds needed to decide a winner. If Player A needs \$a\$ points and Player B needs \$b\$ points, the game must end within \$(a + b - 1)\$ rounds. Fermat listed every possible permutation of wins and losses over these hypothetical rounds. By counting how many of these “possible worlds” resulted in a victory for A versus B, he determined the ratio for dividing the stakes.4 This method relied on the concept of the “sample space”—the set of all possible outcomes—though the term would not be coined for centuries.</p>
+<p>Pascal’s Method of Expectations:
+Pascal found Fermat’s enumeration tedious for large numbers. He developed a recursive method, now known as Backward Induction. He reasoned from the state of the game just before a win.
+If a player needs 0 points, the value of the game to them is the full stake (100%).
+If both players need equal points, the value is 50%.
+For any intermediate state, the value is the average of the values of the two possible subsequent states (winning the next round or losing it).
+For example, if the total stake is 64 pistoles, and Player A needs 1 point while Player B needs 2:
+If A wins the next throw, A wins 64.
+If A loses the next throw, the state becomes equal (both need 1 point), so A is entitled to 32.
+Therefore, the current value for A is the average of 64 and 32, which is 48 pistoles.4
+This recursive logic introduced the concept of Mathematical Expectation (\$E[X]\$), which remains the cornerstone of modern decision theory, economics, and algorithmic reinforcement learning. Pascal later systematized these counts using his famous “Arithmetical Triangle” (Pascal’s Triangle), linking probability directly to the binomial coefficients and combinatorial mathematics.2</p>
+<h2 id="24-the-classical-era-from-games-to-laws"><a class="header" href="#24-the-classical-era-from-games-to-laws">2.4 The Classical Era: From Games to Laws</a></h2>
+<p>Following the Pascal-Fermat correspondence, probability theory expanded rapidly, moving from the analysis of discrete games to continuous variables and scientific inference.</p>
+<p>Jacob Bernoulli and the Law of Large Numbers (1713):
+In Ars Conjectandi, Bernoulli proved that as the number of trials in a random experiment increases, the observed frequency of an event will converge to its theoretical probability.1 This was the first bridge between the abstract “probability” (a number between 0 and 1) and physical reality (frequency of occurrence). It legitimized the use of statistics to estimate unknown probabilities from data.</p>
+<p>Abraham de Moivre and the Normal Curve (1718):
+In The Doctrine of Chances, De Moivre tackled the behavior of binomial distributions for large numbers of trials. He discovered that the discrete binomial distribution could be approximated by a continuous, bell-shaped curve—the Normal Distribution.3 This was the precursor to the Central Limit Theorem and marked the entry of calculus into probability theory.</p>
+<p>Pierre-Simon Laplace and the Scientific Method (1812):
+Laplace’s Théorie analytique des probabilités was a monumental synthesis. He extended probability to problems of astronomy (reducing errors in observations), jurisprudence (reliability of witnesses), and demographics. Laplace famously defined probability as the ratio of favorable cases to all possible cases, provided the cases are “equally possible”.2 This “Classical Definition” dominated the 19th century, but it contained a fatal logical flaw: it defined probability in terms of “equally possible” events—essentially defining probability by using the concept of probability.</p>
+<h1 id="3-the-crisis-of-rigor-and-the-kolmogorov-synthesis"><a class="header" href="#3-the-crisis-of-rigor-and-the-kolmogorov-synthesis">3. The Crisis of Rigor and the Kolmogorov Synthesis</a></h1>
+<p>By the turn of the 20th century, mathematics faced a crisis of foundations. The paradoxes of set theory (Russell’s Paradox) and the ambiguities of the “Classical Definition” of probability made the field seem shaky compared to the rigorous new axiomatizations of geometry and algebra.</p>
+<h2 id="31-the-failure-of-classical-and-frequentist-definitions"><a class="header" href="#31-the-failure-of-classical-and-frequentist-definitions">3.1 The Failure of Classical and Frequentist Definitions</a></h2>
+<p>The Classical definition failed when the number of outcomes was infinite (e.g., picking a random real number). The Frequentist definition (probability is the limit of relative frequency) was circular: it assumed the limit existed, which relied on the Strong Law of Large Numbers, which in turn relied on the definition of probability.</p>
+<p>Furthermore, Bertrand’s Paradox (1889) demonstrated that for continuous problems, “equally likely” is ill-defined. If one asks for the probability that a “random chord” in a circle is longer than the side of an inscribed equilateral triangle, the answer depends entirely on the physical process of choosing the chord:
+Random Endpoints: Probability = 1 USD/3. USD
+Random Radius: Probability = 1 USD/2. USD
+Random Midpoint: Probability = 1 USD/4.8 USD</p>
+<p>These contradictions proved that probability could not simply be “derived” from physical intuition; it required a rigorous, abstract mathematical structure that specified the measure explicitly before any calculation could begin.</p>
+<h2 id="32-kolmogorovs-1933-axioms"><a class="header" href="#32-kolmogorovs-1933-axioms">3.2 Kolmogorov’s 1933 Axioms</a></h2>
+<p>The resolution came from the Russian mathematician Andrey Kolmogorov in his monograph Grundbegriffe der Wahrscheinlichkeitsrechnung (Foundations of the Theory of Probability).3 Kolmogorov’s genius was to sever probability from its interpretation (beliefs or frequencies) and treat it purely as a branch of Measure Theory, a field of real analysis developed by Borel and Lebesgue.</p>
+<p>Kolmogorov defined a Probability Space as a triplet \$(\Omega, \mathcal{F}, P), USD where:
+\$\Omega\$ (Omega) is the Sample Space: The set of all possible elementary outcomes.
+\$\mathcal{F}\$ (Sigma-Algebra) is the Event Space: A collection of subsets of \$\Omega\$ that we are allowed to measure.
+\$P\$ is the Probability Measure: A function mapping events to real numbers.12</p>
+<p>This structure resolved the paradoxes. In Bertrand’s case, specifying \$(\Omega, \mathcal{F}, P)\$ forces the mathematician to state exactly which measure they are using (e.g., uniform on radius vs. uniform on circumference), eliminating the ambiguity.</p>
+<h2 id="33-the-main-axioms-of-probability"><a class="header" href="#33-the-main-axioms-of-probability">3.3 The Main Axioms of Probability</a></h2>
+<p>Kolmogorov condensed the entire theory into three fundamental axioms 14:
+Axiom 1: Non-Negativity</p>
+<p>\$\$P(A) \ge 0 \quad \forall A \in \mathcal{F}\$\$</p>
+<p>Reflection of Reality: In the physical world, “chance” measures the potential for existence. An event can either not occur (0) or occur (positive). “Negative probability” corresponds to no observable phenomenon in classical reality. While some quasiprobability distributions in quantum optics (like the Wigner function) can take negative values, these are not true probabilities in the Kolmogorovian sense but computational tools for phase-space analysis. The axiom anchors probability to the logic of existence.12</p>
+<p>Axiom 2: Normalization (Unit Measure)</p>
+<p>\$\$P(\Omega) = 1\$\$</p>
+<p>Reflection of Reality: This is the axiom of certainty. It states that something must happen. The set of all possible outcomes \$\Omega\$ is exhaustive. If the probability of the universe of outcomes were less than 1, it would imply a “hole” in reality where no outcome occurs. If greater than 1, it implies redundant existence. This normalization allows probabilities to be compared across different contexts and scales.17</p>
+<p>Axiom 3: Countable Additivity (\$\sigma\$-Additivity)
+For any countable sequence of pairwise mutually exclusive events \$E_1, E_2, \dots\$:</p>
+<p>\$\$P\left(\bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} P(E_i)\$\$</p>
+<p>Reflection of Reality: This is the mathematical engine that allows probability to handle infinity. It implies that the probability of “at least one” of a disjoint set of events occurring is simply the sum of their individual probabilities.
+Finite Additivity: The sum rule for two events (\$P(A \cup B) = P(A) + P(B)\$) is intuitive. If a coin cannot be both Heads and Tails, the chance of it being “Heads or Tails” is the sum of the parts.
+The Infinite Extension: Countable additivity allows us to define continuous probability distributions (like the Normal distribution) where the probability of any single point is exactly 0, yet the probability of an interval is positive. Without this axiom, calculus (integration) could not be applied to probability, severing the link between probability and the laws of physics.12</p>
+<h1 id="4-the-philosophical-controversy-finite-vs-infinite-universes"><a class="header" href="#4-the-philosophical-controversy-finite-vs-infinite-universes">4. The Philosophical Controversy: Finite vs. Infinite Universes</a></h1>
+<p>While Kolmogorov’s axioms are universally accepted in mathematics for their utility, Axiom 3 (Countable Additivity) remains the subject of intense debate regarding its reflection of physical reality.</p>
+<h2 id="41-the-finite-universe-objection"><a class="header" href="#41-the-finite-universe-objection">4.1 The Finite Universe Objection</a></h2>
+<p>Skeptics argue that the physical universe appears to be finite. If space-time is discrete at the Planck scale, and the total information content of the observable universe is bounded (Bekenstein bound), then true “infinity” does not physically exist. Therefore, an axiom that dictates behavior for infinite sequences of events is a mathematical convenience, not a physical necessity.18</p>
+<h2 id="42-de-finetti-and-the-infinite-lottery"><a class="header" href="#42-de-finetti-and-the-infinite-lottery">4.2 De Finetti and the Infinite Lottery</a></h2>
+<p>Bruno de Finetti, a champion of subjective Bayesianism, fiercely opposed Countable Additivity. He proposed the “Infinite Lottery”: Imagine picking a winning number from the set of all natural numbers \$\mathbb{N} = {1, 2, 3, \dots}\$ such that every number has an equal chance of being picked.</p>
+<p>If the probability of picking any number \$n\$ is zero (\$P(n)=0\$), then by Countable Additivity, the probability of picking any number is \$\sum 0 = 0. USD This contradicts Axiom 2 (\$P(\Omega)=1\$).</p>
+<p>If the probability is some small \$\epsilon &gt; 0, USD then the sum diverges to infinity, also contradicting Axiom 2.</p>
+<p>Therefore, a uniform distribution on the natural numbers is impossible under Kolmogorov’s axioms. De Finetti argued this was absurd; conceptually, we can imagine being indifferent among all integers. He argued for Finite Additivity, which permits such distributions but breaks the link with standard calculus.18</p>
+<h2 id="43-resolution-probability-as-idealized-physics"><a class="header" href="#43-resolution-probability-as-idealized-physics">4.3 Resolution: Probability as Idealized Physics</a></h2>
+<p>The consensus today is that while the universe may be finite, the models we use to describe it (calculus, real numbers) are continuous and infinite. To do physics (e.g., statistical mechanics), we need integration. Countable additivity is the necessary bridge that allows us to approximate large, discrete systems (like gas molecules) as continuous fields.</p>
+<p>It forces our probability models to “decay”—probability mass must eventually drop off (like the tails of a Bell curve) so that the sum remains 1. This matches physical observations: energy and mass are always localized, never uniformly distributed across an infinite expanse.21</p>
+<h1 id="5-probability-as-the-logic-of-science-jaynes-robot"><a class="header" href="#5-probability-as-the-logic-of-science-jaynes-robot">5. Probability as the Logic of Science: Jaynes’ Robot</a></h1>
+<p>If Kolmogorov provided the syntax of probability, who defined the semantics? What does \$P(A)\$ mean?</p>
+<h2 id="51-the-logical-interpretation"><a class="header" href="#51-the-logical-interpretation">5.1 The Logical Interpretation</a></h2>
+<p>E.T. Jaynes, in Probability Theory: The Logic of Science, argued that probability is neither a physical frequency nor a subjective whim. It is Extended Logic. Just as Aristotelian logic provides the rules for reasoning with certainties (If A then B), probability theory provides the unique, consistent rules for reasoning with uncertainties.22</p>
+<h2 id="52-the-reasoning-robot"><a class="header" href="#52-the-reasoning-robot">5.2 The Reasoning Robot</a></h2>
+<p>Jaynes proposed a thought experiment: Design a “Reasoning Robot” to process information and form degrees of belief about propositions. We impose only simple, qualitative “desiderata” on this robot:
+Representation: Degrees of plausibility are represented by real numbers.
+Common Sense: The robot’s reasoning matches qualitative human intuition (e.g., if new evidence supports A, the plausibility of A cannot decrease).
+Consistency:
+Path Independence: If a conclusion can be reached via two different derivations, the result must be the same.
+Non-Ideology: The robot must use all available evidence; it cannot arbitrarily ignore information.
+Equivalence: Equivalent states of knowledge must yield equivalent probability assignments.23</p>
+<p>Cox’s Theorem proves that any system satisfying these logical requirements must operate according to the rules of probability (Sum Rule and Product Rule). This was a profound result: it implies that probability is not just “one way” to handle uncertainty; it is the only consistent way. Any deviation from Bayesian probability theory inevitably leads to logical inconsistencies (Dutch Books) where the system can be tricked into contradictory beliefs.18</p>
+<h1 id="6-reflections-of-reality-the-normal-distribution-and-thermodynamics"><a class="header" href="#6-reflections-of-reality-the-normal-distribution-and-thermodynamics">6. Reflections of Reality: The Normal Distribution and Thermodynamics</a></h1>
+<p>The abstract axioms of probability manifest in the physical world with startling ubiquity. The two most prominent examples are the Normal Distribution and the laws of Thermodynamics.</p>
+<h2 id="61-the-ubiquity-of-the-bell-curve"><a class="header" href="#61-the-ubiquity-of-the-bell-curve">6.1 The Ubiquity of the Bell Curve</a></h2>
+<p>Why do human heights, measurement errors, IQ scores, and the velocities of gas particles all follow the Gaussian (Normal) distribution? It is not a coincidence; it is a mathematical inevitability driven by the Central Limit Theorem (CLT).</p>
+<p>The CLT states that the sum (or average) of a large number of independent, identically distributed random variables will converge to a Normal distribution, regardless of the shape of the original distribution.5</p>
+<p>Human Height: Height is determined by thousands of genetic variants and environmental factors. Each factor adds a small “plus” or “minus” to the total. The aggregate of these thousands of small, independent random effects results in a Bell curve.</p>
+<p>Measurement Error: Any experimental measurement is subject to myriads of tiny perturbations—thermal fluctuations, atmospheric vibrations, electronic noise. The sum of these errors distributes normally.</p>
+<p>Maximum Entropy: From an information-theoretic perspective, the Normal distribution is the distribution of “Maximum Entropy” (maximum ignorance) for a fixed mean and variance. It assumes the least amount of structure possible. Nature appears to default to this state of maximum disorder consistent with energy constraints.27</p>
+<h2 id="62-statistical-mechanics-deriving-physics-from-probability"><a class="header" href="#62-statistical-mechanics-deriving-physics-from-probability">6.2 Statistical Mechanics: Deriving Physics from Probability</a></h2>
+<p>James Clerk Maxwell and Ludwig Boltzmann derived the fundamental laws of thermodynamics not from mechanics, but from probability.</p>
+<p>The Derivation:
+Consider a gas of \$N\$ particles with total energy \$U. USD How is energy distributed among the particles?
+Microstates: We treat the particles as placing balls into bins (energy levels).
+Combinatorics: We calculate the number of ways \$W\$ to arrange particles such that the total energy is \$U. USD
+Maximization: We assume, based on the Principle of Indifference, that every microstate is equally likely. The macroscopic state we observe (temperature, pressure) corresponds to the configuration with the vastest number of microstates.
+Using Lagrange multipliers to maximize \$W\$ (or \$\ln W, USD which is Entropy), we derive the Maxwell-Boltzmann Distribution:</p>
+<p>\$\$P(E) \propto e^{-\frac{E}{k_B T}}\$\$</p>
+<p>Here, temperature (\$T\$) is not a fundamental quantity; it is a statistical parameter that emerges from the probability distribution of particle energies.29 This proved that the “laws” of heat are simply the laws of large numbers applied to atoms.</p>
+<h1 id="7-modern-applications-i-the-quantum-ontological-shift"><a class="header" href="#7-modern-applications-i-the-quantum-ontological-shift">7. Modern Applications I: The Quantum Ontological Shift</a></h1>
+<p>In classical physics, probability was epistemic—it reflected our ignorance of the precise positions of particles. In Quantum Mechanics (QM), probability became ontological—it reflects the fundamental nature of reality.</p>
+<h2 id="71-the-born-rule"><a class="header" href="#71-the-born-rule">7.1 The Born Rule</a></h2>
+<p>The connection between the abstract quantum state vector \$|\Psi\rangle\$ and physical reality is given by the Born Rule, postulated by Max Born in 1926. It states that the probability of measuring a system in a state \$|a\rangle\$ is proportional to the square of the amplitude:</p>
+<p>\$\$P(a) = |\langle a | \Psi \rangle|^2\$\$</p>
+<p>This rule is the linchpin of quantum theory. Without it, the Schrödinger equation is just abstract algebra. The Born Rule connects the math to the experimental clicks of a Geiger counter.32</p>
+<h2 id="72-deriving-the-rule"><a class="header" href="#72-deriving-the-rule">7.2 Deriving the Rule</a></h2>
+<p>Is the Born Rule an axiom, or can it be derived?</p>
+<p>Gleason’s Theorem: Mathematically, Gleason proved that in dimensions \$&gt;2, USD the Born Rule is the only consistent probability measure on the lattice of quantum subspaces. This gives it a rigor similar to Kolmogorov’s axioms.33</p>
+<p>Many-Worlds Interpretation (MWI): In MWI, where all outcomes occur in branching universes, deriving the Born Rule is controversial. If all outcomes happen, does “probability” make sense? Deutsch and Wallace argue that a rational agent in a branching universe would bet on outcomes according to the Born Rule to maximize utility, effectively recovering probability from decision theory.32</p>
+<h2 id="73-qbism-quantum-bayesianism"><a class="header" href="#73-qbism-quantum-bayesianism">7.3 QBism: Quantum Bayesianism</a></h2>
+<p>A modern interpretation, QBism, treats the quantum state not as a description of the world, but as an observer’s belief about the world. Here, the Born Rule is an extension of the laws of consistency (Dutch Book arguments) into the quantum realm. It suggests that probability theory is the fundamental interface between the observer and the universe.25</p>
+<h1 id="8-modern-applications-ii-artificial-intelligence-and-stochastic-computing"><a class="header" href="#8-modern-applications-ii-artificial-intelligence-and-stochastic-computing">8. Modern Applications II: Artificial Intelligence and Stochastic Computing</a></h1>
+<p>In the 21st century, probability has become the engine of Artificial Intelligence. The generative AI revolution—from ChatGPT to Stable Diffusion—is essentially an industrial-scale application of advanced probability theory.</p>
+<h2 id="81-large-language-models-llms-as-probability-engines"><a class="header" href="#81-large-language-models-llms-as-probability-engines">8.1 Large Language Models (LLMs) as Probability Engines</a></h2>
+<p>At its core, an LLM is a conditional probability distribution estimating the likelihood of the next word (token) given a sequence of previous words:</p>
+<p>\$\$P(w_t | w_{t-1}, w_{t-2}, \dots, w_1)\$\$</p>
+<p>The model does not “know” facts; it knows the probability of token co-occurrences in the training data.</p>
+<p>Sampling and Temperature:
+The model produces a vector of “logits” (raw scores) for every possible word. These are converted to probabilities using the Softmax function with a Temperature parameter (\$T\$):</p>
+<p>\$\$P_i = \frac{\exp(z_i / T)}{\sum \exp(z_j / T)}\$\$
+High Temperature (\$T &gt; 1\$): The distribution flattens (Entropy increases). The model becomes more random, “creative,” and prone to hallucination.
+Low Temperature (\$T &lt; 1\$): The distribution sharpens (Entropy decreases). The model becomes deterministic and repetitive.35</p>
+<p>Nucleus Sampling (Top-p):
+To prevent the model from choosing absurdly low-probability words, methods like Top-p sampling are used. The model sums the probabilities of the most likely words until the sum reaches a threshold \$p\$ (e.g., 0.95), and samples only from that “Nucleus.” This dynamically adjusts the vocabulary size based on the model’s confidence—a direct application of Kolmogorov’s Axiom 2 (Normalization) to control algorithmic output.37</p>
+<h2 id="82-generative-art-diffusion-models-and-langevin-dynamics"><a class="header" href="#82-generative-art-diffusion-models-and-langevin-dynamics">8.2 Generative Art: Diffusion Models and Langevin Dynamics</a></h2>
+<p>Text-to-Image models (like Stable Diffusion) utilize Diffusion Probabilistic Models. These models are trained to reverse the process of entropy.
+Forward Process: A Markov chain gradually adds Gaussian noise to an image until it becomes pure random static. This simulates a physical diffusion process (like ink spreading in water).
+Reverse Process: The AI learns to reverse time, predicting the original image from the noise.</p>
+<p>Langevin Dynamics:
+Mathematically, this generation process is modeled using Stochastic Differential Equations (SDEs) and Langevin Dynamics. The process moves the image along the gradient of the data distribution (moving towards “likely” images) while adding a specific amount of noise to avoid getting stuck in local optima.</p>
+<p>\$\$x_{t+1} = x_t + \frac{\epsilon}{2} \nabla_x \log p(x) + \sqrt{\epsilon} z_t\$\$</p>
+<p>This equation connects modern AI generation directly to the physics of Brownian motion modeled by Paul Langevin in 1908. The AI is literally “condensing” order out of chaos using the laws of statistical mechanics.39</p>
+<h2 id="83-stochastic-gradient-descent-sgd"><a class="header" href="#83-stochastic-gradient-descent-sgd">8.3 Stochastic Gradient Descent (SGD)</a></h2>
+<p>The training of these massive neural networks relies on Stochastic Gradient Descent. Computing the true gradient of the loss function over terabytes of data is impossible. Instead, we estimate the gradient using small, random batches of data.</p>
+<p>Why it works: The expected value of the stochastic gradient is the true gradient. Furthermore, the “noise” introduced by the random sampling helps the optimization algorithm escape saddle points in the high-dimensional loss landscape, acting as a form of regularization. The randomness is not a bug; it is a feature that allows learning to generalize.42</p>
+<h1 id="9-the-metaphysics-of-probability-knowledge-information-and-infinite-divisibility"><a class="header" href="#9-the-metaphysics-of-probability-knowledge-information-and-infinite-divisibility">9. The Metaphysics of Probability: Knowledge, Information, and Infinite Divisibility</a></h1>
+<p>Recent interdisciplinary synthesis has illuminated a profound connection between the mathematical structure of probability and ancient metaphysical concepts of “The One” and “The Many.” By refining the definitions of “Information” and “Knowledge” through the lens of modern probability, we can mathematically formalize how a unified reality decentralizes into infinite diversity while retaining its singularity.</p>
+<h2 id="91-formalizing-the-distinction-signal-vs-noise"><a class="header" href="#91-formalizing-the-distinction-signal-vs-noise">9.1 Formalizing the Distinction: Signal vs. Noise</a></h2>
+<p>To understand this mechanism, we must first rigorously define our terms using Information Theory and Kolmogorov’s framework:
+Information (\$\mathcal{I}\$) is the Realization of a stochastic process. It corresponds to Vikara (modification/change). It is the specific, historical path taken by reality—the “noise.” In a coin flip experiment, getting a sequence of “H, T, T, H…” is information. It is high-entropy, expensive to store, and “lossy” because a single realization does not fully capture the underlying law.</p>
+<p>Knowledge (\$\mathcal{K}\$) is the Probability Measure itself. It corresponds to Atman (the invariant self). It is the “signal”—the compressed, invariant algorithm (\$P(H)=0.5\$) that generates the information. Knowledge is “lossless” because it describes the potential of all possible paths.</p>
+<h2 id="92-the-mechanism-of-decentralization-infinite-divisibility"><a class="header" href="#92-the-mechanism-of-decentralization-infinite-divisibility">9.2 The Mechanism of Decentralization: Infinite Divisibility</a></h2>
+<p>How does the “One” (Knowledge) become the “Many” (Information) without losing its nature? The mathematical answer lies in the concept of Infinite Divisibility.</p>
+<p>A probability distribution \$F\$ is defined as Infinitely Divisible if, for any integer \$n, USD it can be represented as the sum of \$n\$ independent, identically distributed (i.i.d.) random variables:</p>
+<p>\$\$Y = X_1 + X_2 + \dots + X_n\$\$</p>
+<p>This concept mirrors the metaphysical process of Decentralization.
+The Whole in the Parts: The properties of the macroscopic “Whole” (\$Y\$) are encoded in the microscopic “Parts” (\$X_i\$). For example, the Normal distribution is infinitely divisible; if you slice a Bell Curve into \$n\$ parts, the parts are also Bell Curves (with scaled variance).</p>
+<p>Lévy Stability: This decentralization is governed by Lévy Stability, which ensures that the sum of independent copies of a variable retains the same distribution shape as the original. This is the mathematical proof that “Atman reflects as a full copy.” Whether we look at the height of one oak tree (a realization/Information) or the distribution of a forest (the law/Knowledge), the underlying “code” is invariant.</p>
+<h2 id="93-the-unity-of-the-whole-normalization-as-atman"><a class="header" href="#93-the-unity-of-the-whole-normalization-as-atman">9.3 The Unity of the Whole: Normalization as Atman</a></h2>
+<p>The most striking feature of this framework is how it resolves the “One vs. Many” paradox through Kolmogorov’s Normalization Axiom:</p>
+<p>\$\$P(\Omega) = 1\$\$</p>
+<p>No matter how infinitely divisible the system is, and no matter how many trillions of independent “form factors” (realizations/Vikara) are generated, the total probability mass must always sum to exactly One.</p>
+<p>Conservation of Existence: Just as energy is conserved, “possibility” is conserved. The infinite diversity of the manifest world (Information) is merely a decentralized expression of a singular, unified Probability Measure (Knowledge).</p>
+<p>The Grand Scheme: In this view, the “Normal Distribution” observed in nature is not just a statistical artifact; it is the visible signature of the “One” (Knowledge) dispersing itself into the “Many” (Information) through the mechanism of infinite divisibility, while strictly adhering to the unity of the Normalization axiom.</p>
+<h1 id="10-the-pedagogical-imperative-probability-vs-the-calculus-hegemony"><a class="header" href="#10-the-pedagogical-imperative-probability-vs-the-calculus-hegemony">10. The Pedagogical Imperative: Probability vs. The Calculus Hegemony</a></h1>
+<p>Despite its centrality to modern science and technology, probability theory is often marginalized in high school curricula in favor of Calculus. This “Calculus Trap” is increasingly challenged by educators and statisticians who argue that probabilistic literacy is a prerequisite for modern citizenship.</p>
+<h2 id="101-the-case-for-statistics-over-calculus"><a class="header" href="#101-the-case-for-statistics-over-calculus">10.1 The Case for Statistics Over Calculus</a></h2>
+<p>Mathematician Arthur Benjamin argues that the “summit” of high school math should be statistics, not calculus.</p>
+<p>Utility: Calculus is essential for engineers and physicists. Probability is essential for everyone. Doctors must interpret test sensitivities; voters must interpret polls; investors must interpret risk.</p>
+<p>The Data Age: We live in a world of Big Data. Understanding distributions, variability, and correlation is arguably more critical for the average citizen than computing the volume of a solid of revolution.44</p>
+<h2 id="102-cognitive-biases-and-the-gaise-report"><a class="header" href="#102-cognitive-biases-and-the-gaise-report">10.2 Cognitive Biases and the GAISE Report</a></h2>
+<p>Research by Daniel Kahneman and Amos Tversky exposed the fragility of human intuition regarding chance. We suffer from systematic “Cognitive Biases”:
+Base Rate Neglect: Ignoring general prevalence information (e.g., assuming a medical test is accurate without considering how rare the disease is).
+Conjunction Fallacy: Believing specific conditions are more probable than general ones (e.g., thinking “Linda is a feminist bank teller” is more likely than “Linda is a bank teller”).46</p>
+<p>The GAISE (Guidelines for Assessment and Instruction in Statistics Education) reports emphasize that education must focus on “Statistical Literacy”—the ability to reason with data and uncertainty—rather than just procedural calculation. By formally teaching probability, we equip students with the cognitive tools to overcome these innate biases, making them less susceptible to manipulation by misleading statistics in media and politics.48</p>
+<h1 id="11-disciplinary-identity-mathematics-or-science"><a class="header" href="#11-disciplinary-identity-mathematics-or-science">11. Disciplinary Identity: Mathematics or Science?</a></h1>
+<p>Finally, we address the standing of the field itself. Should Probability be its own subject, distinct from Pure Mathematics?</p>
+<h2 id="111-the-argument-for-separation"><a class="header" href="#111-the-argument-for-separation">11.1 The Argument for Separation</a></h2>
+<p>Probability and Statistics possess a distinct epistemology from Pure Math.</p>
+<p>Inductive vs. Deductive: Pure Math is deductive (Axioms \$\to\$ Theorems). Statistics is often inductive (Data \$\to\$ Inference).</p>
+<p>Falsifiability: Statistical models are scientific hypotheses about the world, subject to empirical validation. A mathematical proof is eternally true; a statistical model is only “useful” or “not useful”.51</p>
+<p>The Science of Data: Many argue that Statistics is a separate science (Data Science) that uses mathematics, much like Physics uses mathematics, but is defined by its own focus on uncertainty and measurement.52</p>
+<h2 id="112-the-argument-for-unity"><a class="header" href="#112-the-argument-for-unity">11.2 The Argument for Unity</a></h2>
+<p>However, the foundations of probability are firmly rooted in Pure Analysis.</p>
+<p>Measure Theory: As Kolmogorov showed, probability is a subset of Measure Theory. To understand advanced concepts like Brownian Motion, Stochastic Calculus (Itô Calculus), or the convergence of random variables, one requires the rigorous machinery of Real Analysis and Topology.</p>
+<p>Interconnectedness: Probability has deep connections to Number Theory (Riemann Hypothesis and Random Matrices), Geometry, and Logic. Severing it from math would impoverish both fields.</p>
+<p>Synthesis: Probability occupies a unique “Superposition.” Its axiomatic core is pure mathematics. Its interpretive logic (Bayesianism) is philosophy. Its application (Statistics, AI, Physics) is empirical science. It is the bridge between the abstract world of logic and the noisy world of data.</p>
+<h1 id="12-conclusion"><a class="header" href="#12-conclusion">12. Conclusion</a></h1>
+<p>Who postulated probability theory? It was not a single mind, but a centuries-long dialogue between the specific and the general. It began with Cardano and De Méré observing the idiosyncrasies of dice. It was birthed as a mathematical discipline by Pascal and Fermat in the summer of 1654. It was expanded into a description of the natural world by Bernoulli, De Moivre, and Laplace. And finally, it was crystallized into a rigorous axiomatic structure by Andrey Kolmogorov in 1933.</p>
+<p>The axioms of Non-Negativity, Normalization, and Countable Additivity are not merely dry mathematical rules. They are the structural pillars of rational thought. They reflect a universe that is consistent, unitary, and continuous.</p>
+<p>From the thermodynamic distribution of stars to the generative algorithms of artificial intelligence, probability theory remains the most effective tool humanity has devised to navigate the unknown. It is, as Jaynes argued, the logic of science itself—the rigorous calculus of common sense in a world of uncertainty.
+Data Tables and Comparisons
+Table 1: The Evolution of Probability Definitions</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Era</th><th>Definition of Probability</th><th>Proponent</th><th>Key Limitation</th></tr>
+</thead>
+<tbody>
+<tr><td>Pre-1650</td><td>Qualitative / Propensity</td><td>Aristotle, Cardano</td><td>Lack of mathematical quantification; reliance on “fate.”</td></tr>
+<tr><td>1654-1800</td><td>Classical Ratio</td><td>Pascal, Laplace</td><td>Defined as ratio of “Equally Likely” outcomes. Circular definition; fails for infinite sets (Bertrand’s Paradox).</td></tr>
+<tr><td>1800-1930</td><td>Frequentist Limit</td><td>Venn, Von Mises</td><td>Limit of relative frequency as \$N \to \infty. USD Circular reliance on LLN; cannot handle unique events.</td></tr>
+<tr><td>1933-Present</td><td>Axiomatic Measure</td><td>Kolmogorov</td><td>defined on \$(\Omega, \mathcal{F}, P). USD Mathematically rigorous; interpretation-agnostic.</td></tr>
+<tr><td>1950-Present</td><td>Subjective Bayesian</td><td>De Finetti, Savage, Jaynes</td><td>Degree of belief / Logical plausibility. Requires priors; debate over objectivity.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Table 2: Probability Sampling in AI (LLMs)</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Parameter</th><th>Mechanism</th><th>Effect on Output</th><th>Use Case</th></tr>
+</thead>
+<tbody>
+<tr><td>Temperature (\$T\$)</td><td>Scales logits before Softmax: \$P_i \propto e^{z_i/T}\$</td><td>High T: Increases diversity, randomness.</td><td>High for creative writing; Low for coding/logic.</td></tr>
+<tr><td></td><td></td><td>Low T: Increases determinism, repetition.</td><td></td></tr>
+<tr><td>Top-k</td><td>Samples from top \$k\$ tokens only.</td><td>Prevents wild hallucinations by cutting off the “long tail” of low-probability words.</td><td>General purpose generation.</td></tr>
+<tr><td>Nucleus (Top-p)</td><td>Samples from smallest set summing to \$p. USD</td><td>Dynamic vocabulary size. Balances diversity and coherence better than Top-k.</td><td>Modern standard for high-quality text generation.</td></tr>
+</tbody>
+</table>
+</div>
+<h1 id="references"><a class="header" href="#references">References</a></h1>
+<ol>
+<li>History of Probability | Research Starters - EBSCO, accessed December 9, 2025, https://www.ebsco.com/research-starters/mathematics/history-probability</li>
+<li>History of probability - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/History_of_probability</li>
+<li>Birth of probability theory - SCIENCE, accessed December 9, 2025, https://jfgouyet.fr/en/birth-of-probability-theory/</li>
+<li>FERMAT AND PASCAL ON PROBABILITY - University of York, accessed December 9, 2025, https://www.york.ac.uk/depts/maths/histstat/pascal.pdf</li>
+<li>Chapter 7 Central Limit Theorem and law of large numbers | Foundations of Statistics, accessed December 9, 2025, https://bookdown.org/peter_neal/math4081-lectures/Sec_CLT.html</li>
+<li>Probability theory - Central Limit, Statistics, Mathematics | Britannica, accessed December 9, 2025, https://www.britannica.com/science/probability-theory/The-central-limit-theorem</li>
+<li>The Unifying Framework of Probability: Interpretations and Axioms | by Gadeabhishekreddy | Nov, 2025 | Medium, accessed December 9, 2025, https://medium.com/@gadeabhishekreddy/the-unifying-framework-of-probability-interpretations-and-axioms-7abd697f3134</li>
+<li>Bertrand’s Paradox Resolution and Its Implications for the Bing–Fisher Problem - MDPI, accessed December 9, 2025, https://www.mdpi.com/2227-7390/11/15/3282</li>
+<li>Bertrand’s Paradox and the Principle of Indifference | Philosophy of …, accessed December 9, 2025, https://www.cambridge.org/core/journals/philosophy-of-science/article/bertrands-paradox-and-the-principle-of-indifference/DC735A7B90AD19EB0572A5EA9C5B07BB</li>
+<li>Andrei Nikolaevich Kolmogorov (1903-1987) - Utah State University, accessed December 9, 2025, https://www.usu.edu/math/schneit/StatsHistory/Probabilists/Kolmogorov</li>
+<li>Foundations of Probability Theory - Assets - Cambridge University Press, accessed December 9, 2025, https://assets.cambridge.org/97811084/18744/excerpt/9781108418744_excerpt.pdf</li>
+<li>Probability axioms - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Probability_axioms</li>
+<li>Kolmogorov and Probability Theory - CORE, accessed December 9, 2025, https://core.ac.uk/download/pdf/268083255.pdf</li>
+<li>Kolmogorov Axioms - acemate | The AI, accessed December 9, 2025, https://acemate.ai/glossary/kolmogorov-axioms</li>
+<li>Probability axioms | Thinking Like a Mathematician Class Notes - Fiveable, accessed December 9, 2025, https://fiveable.me/thinking-like-a-mathematician/unit-6/probability-axioms/study-guide/tW61rdJMoeWxXQgU</li>
+<li>Understanding Probability and Its Fundamental Axioms - sunrise classes, accessed December 9, 2025, https://www.sunriseclassesiss.com/post/understanding-probability-and-its-fundamental-axioms</li>
+<li>Axiomatic Definition of Probability Explained with Examples - Vedantu, accessed December 9, 2025, https://www.vedantu.com/maths/axiomatic-definition-of-probability</li>
+<li>Why Countable Additivity? - Joel Velasco, accessed December 9, 2025, https://joelvelasco.net/teaching/5311/easwaran14-whyCountable.pdf</li>
+<li>A debate about the physics of the universe and the concept of infinity. : r/AskPhysics - Reddit, accessed December 9, 2025, https://www.reddit.com/r/AskPhysics/comments/1gez0tw/a_debate_about_the_physics_of_the_universe_and/</li>
+<li>LOST CAUSES IN STATISTICS I: Finite Additivity | Normal Deviate - WordPress.com, accessed December 9, 2025, https://normaldeviate.wordpress.com/2013/06/30/lost-causes-in-statistics-i-finite-additivity/</li>
+<li>Against countable additivity - Wolfgang Schwarz, accessed December 9, 2025, https://www.umsu.de/blog/2013/598</li>
+<li>Probability Theory: The Logic of Science - Department of Mathematics and Statistics, accessed December 9, 2025, http://www.mscs.dal.ca/~gabor/book/cpreambl.ps.gz</li>
+<li>Book Notes: Probability Theory by E.T. Jaynes — Ad Astra Major, accessed December 9, 2025, https://www.adastramajor.com/aam-blog/2019/5/24/book-notes-probability-theory-by-et-jaynes</li>
+<li>The reasoning robot, Jaynes’ desiderata, and Cox’s Theorem | Scrub Physics, accessed December 9, 2025, https://leepavelich.wordpress.com/2014/08/26/the-reasoning-robot-jaynes-desiderata-and-coxs-theorem/</li>
+<li>[2012.14397] Born’s rule as a quantum extension of Bayesian coherence - arXiv, accessed December 9, 2025, https://arxiv.org/abs/2012.14397</li>
+<li>Central limit theorem: the cornerstone of modern statistics - PMC, accessed December 9, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC5370305/</li>
+<li>Why is the normal distribution considered a universal phenomenon? - Reddit, accessed December 9, 2025, https://www.reddit.com/r/AskScienceDiscussion/comments/ajoq9g/why_is_the_normal_distribution_considered_a/</li>
+<li>Why is normal distribution so ubiquitous? - Let’s talk about science!, accessed December 9, 2025, https://ekamperi.github.io/mathematics/2021/01/29/why-is-normal-distribution-so-ubiquitous.html</li>
+<li>The Boltzmann factor: A simplified derivation - Technische Universität Braunschweig, accessed December 9, 2025, https://www.tu-braunschweig.de/index.php?eID=dumpFile&amp;t=f&amp;f=138377&amp;token=ce78f1a73be3528669c0a5a4a6675d0e3284b02e</li>
+<li>Maxwell–Boltzmann distribution - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution</li>
+<li>Maxwell Boltzmann Distribution Derivation - BYJU’S, accessed December 9, 2025, https://byjus.com/physics/maxwell-boltzmann-distribution-derivation/</li>
+<li>Born rule - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Born_rule</li>
+<li>Derivations of the Born Rule - PhilSci-Archive, accessed December 9, 2025, https://philsci-archive.pitt.edu/15943/1/BornRule24-4-19.pdf</li>
+<li>Bayes’ rule goes quantum - Physics World, accessed December 9, 2025, https://physicsworld.com/a/bayes-rule-goes-quantum/</li>
+<li>What is LLM Temperature? - IBM, accessed December 9, 2025, https://www.ibm.com/think/topics/llm-temperature</li>
+<li>LLM Parameters Explained: A Practical, Research-Oriented Guide with Examples, accessed December 9, 2025, https://promptrevolution.poltextlab.com/llm-parameters-explained-a-practical-research-oriented-guide-with-examples/</li>
+<li>Understanding Temperature, Top-k, and Top-p Sampling in Generative Models - Codefinity, accessed December 9, 2025, https://codefinity.com/blog/Understanding-Temperature%2C-Top-k%2C-and-Top-p-Sampling-in-Generative-Models</li>
+<li>Top-p sampling - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Top-p_sampling</li>
+<li>What are Diffusion Models? | Lil’Log, accessed December 9, 2025, https://lilianweng.github.io/posts/2021-07-11-diffusion-models/</li>
+<li>Lecture 3 – Langevin algorithms 3.1 Introduction - metaphor, accessed December 9, 2025, https://metaphor.ethz.ch/x/2024/fs/401-4634-DRL/lec/Lecture03.pdf</li>
+<li>(PDF) Diffusion models learn distributions generated by complex Langevin dynamics, accessed December 9, 2025, https://www.researchgate.net/publication/386419325_Diffusion_models_learn_distributions_generated_by_complex_Langevin_dynamics</li>
+<li>Stochastic gradient descent - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Stochastic_gradient_descent</li>
+<li>Stochastic Gradient Descent in Theory and Practice - Stanford AI Lab, accessed December 9, 2025, https://ai.stanford.edu/~optas/data/stanford_qual_exams.pdf</li>
+<li>Math that Matters: The Case for Probability over Polynomials - Anand Sanwal, accessed December 9, 2025, https://anandsanwal.me/math-eduction-more-probability-statistics-less-calculus/</li>
+<li>Arthur Benjamin: Teach statistics before calculus! - Andrew B. Collier / @datawookie, accessed December 9, 2025, https://datawookie.dev/blog/2016/07/arthur-benjamin-teach-statistics-before-calculus/</li>
+<li>Gerd Gigerenzer on the legacy of Daniel Kahneman, accessed December 9, 2025, https://statmodeling.stat.columbia.edu/2025/12/03/gerd-gigerenzer-on-the-legacy-of-daniel-kahneman/</li>
+<li>kahneman-tversky.pdf, accessed December 9, 2025, https://home.cs.colorado.edu/~martin/Csci6402/Papers/kahneman-tversky.pdf</li>
+<li>Guidelines for Assessment and Instruction in Statistics Education - Wikipedia, accessed December 9, 2025, https://en.wikipedia.org/wiki/Guidelines_for_Assessment_and_Instruction_in_Statistics_Education</li>
+<li>Guidelines for Assessment and Instruction in Statistics Education (GAISE) - Stat@Duke, accessed December 9, 2025, https://www2.stat.duke.edu/courses/Fall12/sta790.04/GAISE.pdf</li>
+<li>Guidelines for Assessment and Instruction in Statistics Education (GAISE) in Statistics Education (GAISE) College Report College - Montgomery College, accessed December 9, 2025, https://www.montgomerycollege.edu/_documents/offices/elite/gaise-college.pdf</li>
+<li>Why are mathematics and statistics considered two different subjects in college? - Quora, accessed December 9, 2025, https://www.quora.com/Why-are-mathematics-and-statistics-considered-two-different-subjects-in-college</li>
+<li>Why is statistics considered a different discipline than mathematics rather than as a branch of mathematics?, accessed December 9, 2025, https://math.stackexchange.com/questions/1970337/why-is-statistics-considered-a-different-discipline-than-mathematics-rather-than</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="apple-creator-studio.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="beating-the-copyright-bots.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="apple-creator-studio.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="beating-the-copyright-bots.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

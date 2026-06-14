@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>AI and the Jevons Paradox - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="ai-and-the-jevons-paradox"><a class="header" href="#ai-and-the-jevons-paradox">AI and the Jevons Paradox</a></h1>
+<p><img src="./img/jevonsParadoxAI.png" alt="jevonsParadoxAI.png"></p>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<p>The contemporary labor market is currently navigating a period of structural volatility that defies traditional economic intuition. By the first quarter of 2026, the technology sector and the broader knowledge economy have witnessed a phenomenon that can be termed the “Great Cognitive Rotation.” This transition is characterized by a stark numerical divergence: the displacement of approximately 55,000 workers in established technology roles contrasted against the emergence of 1.3 million new positions fundamentally enabled or defined by artificial intelligence<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> This ratio, representing nearly 24 new roles for every one lost, finds its theoretical underpinning in the Jevons Paradox. As the “cost of cognition”—the marginal expense associated with human-like reasoning, data synthesis, and software code creation—approaches a state of collapse, the systemic demand for these outputs has not diminished but has instead exploded<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">2</a></sup></p>
+<h2 id="the-theoretical-framework-of-the-jevons-paradox"><a class="header" href="#the-theoretical-framework-of-the-jevons-paradox">The Theoretical Framework of the Jevons Paradox</a></h2>
+<p>The Jevons Paradox, also known as the Jevons effect, originated in the nineteenth-century observations of economist William Stanley Jevons. In his 1865 work, <em>The Coal Question<sup class="footnote-reference" id="fr-9-1"><a href="#footnote-9">3</a></sup></em>, Jevons challenged the prevailing assumption that technological improvements leading to more efficient resource use would inevitably result in a decrease in total resource consumption<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">4</a></sup> Jevons focused on the coal-fired steam engine, observing that as James Watt’s innovations made the engine significantly more fuel-efficient than Thomas Newcomen’s earlier design, the total consumption of coal in Britain soared rather than declined<sup class="footnote-reference" id="fr-6-2"><a href="#footnote-6">4</a></sup> The efficiency gain reduced the marginal cost of power, making the steam engine economically viable for a vast array of new industrial applications that were previously impossible to power<sup class="footnote-reference" id="fr-6-3"><a href="#footnote-6">4</a></sup></p>
+<p>In the context of the twenty-first century<sup class="footnote-reference" id="fr-10-1"><a href="#footnote-10">5</a></sup>, “cognition” and “code” have become the primary resources of production, mirroring the role of coal during the Industrial Revolution<sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">2</a></sup> The Jevons Paradox occurs when the demand for a resource is highly price-elastic; when the cost of a unit of cognition falls due to AI-driven efficiency, the “rebound effect” induces a surge in demand that more than offsets the initial savings<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">6</a></sup> <sup class="footnote-reference" id="fr-12-1"><a href="#footnote-12">7</a></sup></p>
+<h3 id="the-microeconomics-of-rebound-and-induced-demand"><a class="header" href="#the-microeconomics-of-rebound-and-induced-demand">The Microeconomics of Rebound and Induced Demand</a></h3>
+<p>The mechanics of the Jevons Paradox in the cognitive era can be analyzed through the lens of price elasticity of demand. If the efficiency of code creation doubles, the effective price of software development is halved. If the demand for software is elastic, meaning the percentage increase in quantity demanded is greater than the percentage decrease in price, total labor and capital allocated to software will increase<sup class="footnote-reference" id="fr-6-4"><a href="#footnote-6">4</a></sup></p>
+<p>The transition is further driven by two distinct economic effects:</p>
+<ol>
+<li>The Substitution Effect: As cognitive labor becomes cheaper relative to other inputs, firms substitute human-only workflows with AI-augmented or AI-led processes<sup class="footnote-reference" id="fr-11-1"><a href="#footnote-11">8</a></sup></li>
+<li>The Income Effect: The cost savings from cheaper cognition increase the “disposable” operational budget of a firm, allowing it to reinvest in higher-order complexity and new projects<sup class="footnote-reference" id="fr-11-2"><a href="#footnote-11">8</a></sup></li>
+</ol>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Historical Resource</th><th style="text-align: left">Efficiency Innovation</th><th style="text-align: left">Impact on Unit Cost</th><th style="text-align: left">Long-term Consumption Trend</th><th style="text-align: left">Modern Parallel</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Coal</td><td style="text-align: left">Watt Steam Engine</td><td style="text-align: left">Significant Reduction</td><td style="text-align: left">Massive Increase (Industrialization)</td><td style="text-align: left">Compute Power</td></tr>
+<tr><td style="text-align: left">Transistors</td><td style="text-align: left">Moore’s Law</td><td style="text-align: left">Near-Zero Marginal Cost</td><td style="text-align: left">Exponential Vertical Growth</td><td style="text-align: left">Inference Cost</td></tr>
+<tr><td style="text-align: left">Lighting</td><td style="text-align: left">LED Technology</td><td style="text-align: left">75% Reduction</td><td style="text-align: left">Diversification (Ubiquitous Lighting)</td><td style="text-align: left">Content Creation</td></tr>
+<tr><td style="text-align: left">Software Code</td><td style="text-align: left">Generative AI</td><td style="text-align: left">Collapsing</td><td style="text-align: left">Proliferation of Micro-services</td><td style="text-align: left">Cognitive Labor</td></tr>
+</tbody>
+</table>
+</div>
+<p>Table 1: Historical applications of the Jevons Paradox and their modern cognitive equivalents<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">9</a></sup></p>
+<h2 id="the-collapse-of-cognitive-costs-and-code-creation"><a class="header" href="#the-collapse-of-cognitive-costs-and-code-creation">The Collapse of Cognitive Costs and Code Creation</a></h2>
+<p>The “cost of cognition” refers to the expenses—human time, computational power, and energy—required to perform tasks that involve reasoning, pattern recognition, and the generation of structured information<sup class="footnote-reference" id="fr-3-3"><a href="#footnote-3">2</a></sup> In early 2026, this cost is experiencing a “collapse” driven by several technological waves: predictive AI, generative AI, and the emerging era of agentive AI<sup class="footnote-reference" id="fr-4-2"><a href="#footnote-4">9</a></sup></p>
+<h3 id="from-generation-to-agentic-orchestration"><a class="header" href="#from-generation-to-agentic-orchestration">From Generation to Agentic Orchestration</a></h3>
+<p>While generative AI revolutionized the speed at which text and code could be drafted, agentive AI systems are capable of reasoning, planning, and executing multi-step workflows autonomously<sup class="footnote-reference" id="fr-4-3"><a href="#footnote-4">9</a></sup> This shift allows for “Vibe Coding,” where individuals can describe desired software functionality in natural language and receive production-grade applications<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">6</a></sup> The implications for software engineering are profound; tasks that once required weeks of deterministic scripting now take minutes of “agentic orchestration”<sup class="footnote-reference" id="fr-14-1"><a href="#footnote-14">10</a></sup></p>
+<p>However, the Jevons Paradox suggests that this efficiency will lead to an even more software-dense world. When the “cost of entry” for complex tasks like data analysis or application development drops, the number of participants in the digital economy explodes<sup class="footnote-reference" id="fr-3-4"><a href="#footnote-3">2</a></sup> <sup class="footnote-reference" id="fr-34-1"><a href="#footnote-34">11</a></sup> This democratization leads to a surge in total economic activity, requiring more human intervention to manage the resulting scale and complexity<sup class="footnote-reference" id="fr-3-5"><a href="#footnote-3">2</a></sup></p>
+<h3 id="quantitative-efficiency-gains-in-the-enterprise"><a class="header" href="#quantitative-efficiency-gains-in-the-enterprise">Quantitative Efficiency Gains in the Enterprise</a></h3>
+<p>Early data from the 2025-2026 period indicates that firms are already seeing the impact of these efficiency gains. At Meta, for instance, engineer output rose 30% throughout 2025, while “power users” of AI-native coding tools experienced an 80% increase in productivity<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup> At Block, leadership has targeted a “gross profit per person” exceeding \2 million USD, representing a 4x increase in organizational economic density achieved through flattening teams and leveraging AI force-multipliers<sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup></p>
+<h2 id="dissecting-the-55000-displacement-and-restructuring"><a class="header" href="#dissecting-the-55000-displacement-and-restructuring">Dissecting the 55,000: Displacement and Restructuring</a></h2>
+<p>By mid-March 2026, approximately 55,911 tech workers were impacted by 171 global layoff events<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup> <sup class="footnote-reference" id="fr-17-1"><a href="#footnote-17">12</a></sup> While headlines often present these as “AI layoffs,” the reality is a nuanced mixture of proactive restructuring, macroeconomic cooling, and strategic shifts toward AI-native infrastructure.</p>
+<h3 id="the-myth-of-the-jobpocalypse"><a class="header" href="#the-myth-of-the-jobpocalypse">The Myth of the Jobpocalypse</a></h3>
+<p>The term “Jobpocalypse” has gained traction to describe the feared mass displacement of white-collar workers<sup class="footnote-reference" id="fr-16-1"><a href="#footnote-16">13</a></sup> However, research indicates that AI is often used as a convenient “scapegoat” for layoffs that are actually driven by interest rate hikes, the end of pandemic-era over-hiring, and traditional cost-cutting<sup class="footnote-reference" id="fr-16-2"><a href="#footnote-16">13</a></sup> Only about 20% of the recorded 55,00 layoffs were explicitly attributed to AI by the companies themselves<sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">1</a></sup></p>
+<p>Instead of simple replacement, many firms are engaging in “strategic density” plays. Companies like Cisco, Microsoft, and SAP have announced headcount reductions while simultaneously increasing investment in AI R&amp;D and data center infrastructure<sup class="footnote-reference" id="fr-10-2"><a href="#footnote-10">5</a></sup> This suggests a “handoff” of productivity leadership from maturing information and communication technologies (ICTs) to a new generation of AI-driven systems<sup class="footnote-reference" id="fr-18-1"><a href="#footnote-18">14</a></sup></p>
+<h3 id="the-impact-of-density-and-flattened-organizations"><a class="header" href="#the-impact-of-density-and-flattened-organizations">The Impact of “Density” and Flattened Organizations</a></h3>
+<p>Executive strategies in 2026, particularly those championed by Mark Zuckerberg and Jack Dorsey, emphasize the “talented individual” as a force-multiplier<sup class="footnote-reference" id="fr-1-6"><a href="#footnote-1">1</a></sup> By using AI to handle the “baseline technical work,” companies are moving toward smaller, higher-skilled teams where the individual contributor has the same output capacity as a mid-sized department of the previous decade<sup class="footnote-reference" id="fr-1-7"><a href="#footnote-1">1</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Company</th><th style="text-align: left">Workforce Action (2025-26)</th><th style="text-align: left">Strategic Driver</th><th style="text-align: left">Reported Efficiency Result</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Meta</td><td style="text-align: left">Targeted Team Flattening</td><td style="text-align: left">Elevating “Power Users”</td><td style="text-align: left">80% increase in output for top tier</td></tr>
+<tr><td style="text-align: left">Block</td><td style="text-align: left">Proactive Reductions</td><td style="text-align: left">Gross Profit per Person focus</td><td style="text-align: left">Targeted \2 USDM+ per employee</td></tr>
+<tr><td style="text-align: left">Cisco</td><td style="text-align: left">Workforce Restructuring</td><td style="text-align: left">Pivot to AI Networking</td><td style="text-align: left">Re-allocation of CapEx</td></tr>
+<tr><td style="text-align: left">Federal Gov (DOGE)</td><td style="text-align: left">308,167 cuts (announced)</td><td style="text-align: left">Efficiency/Reduction Mandate</td><td style="text-align: left">703% increase in cuts vs 2024</td></tr>
+</tbody>
+</table>
+</div>
+<p>Table 2: Comparative analysis of workforce restructuring and efficiency drivers in 2026<sup class="footnote-reference" id="fr-1-8"><a href="#footnote-1">1</a></sup>[^1]</p>
+<h2 id="the-12-million-unpacking-the-new-roles"><a class="header" href="#the-12-million-unpacking-the-new-roles">The 1<sup class="footnote-reference" id="fr-3-6"><a href="#footnote-3">2</a></sup> Million: Unpacking the New Roles</a></h2>
+<p>The LinkedIn 2026 Davos report, “Building a Future of Work That Works,” provides a counter-narrative to the displacement story. It identifies over 1.3 million new AI-enabled jobs created globally over a two-year period, along with 600,000 new positions in data center operations<sup class="footnote-reference" id="fr-1-9"><a href="#footnote-1">1</a></sup></p>
+<h3 id="methodology-and-the-ai-enabled-label"><a class="header" href="#methodology-and-the-ai-enabled-label">Methodology and the “AI-Enabled” Label</a></h3>
+<p>It is critical to understand how these figures are derived. LinkedIn tracks “AI-related jobs” by monitoring changes in job descriptions, titles, and skills listed on user profiles<sup class="footnote-reference" id="fr-1-10"><a href="#footnote-1">1</a></sup> When an existing role, such as a marketing analyst, adds “generative AI workflow” to their skillset, it is often counted in the growth of AI roles. Therefore, a portion of the 1.3 million jobs are not entirely “new” positions but represent the “upskilling” of the existing workforce<sup class="footnote-reference" id="fr-1-11"><a href="#footnote-1">1</a></sup></p>
+<p>Despite this, certain roles are genuinely new or have seen exponential growth. The title of “AI Engineer” has remained the top job in the U.S. for two consecutive years, while “Forward Deployed Engineer”—a role that bridges technical AI capability with customer-facing business value—has grown 42-fold<sup class="footnote-reference" id="fr-1-12"><a href="#footnote-1">1</a></sup></p>
+<h3 id="the-rise-of-the-new-collar-era"><a class="header" href="#the-rise-of-the-new-collar-era">The Rise of the “New Collar” Era</a></h3>
+<p>The emergence of these roles signals the “New Collar” era, where skills and certifications are prioritized over traditional four-year degrees<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">15</a></sup> By 2030, it is projected that 60% of new jobs will come from occupations that do not typically require a degree, provided the workers have the technical literacy to operate alongside AI systems<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">15</a></sup> This democratization of specialized tasks is a direct result of “expertise-leveling” technologies that enable a broader set of workers to perform tasks that previously demanded elite domains of expertise<sup class="footnote-reference" id="fr-19-1"><a href="#footnote-19">16</a></sup></p>
+<h2 id="induced-demand-and-the-proliferation-of-software"><a class="header" href="#induced-demand-and-the-proliferation-of-software">Induced Demand and the Proliferation of Software</a></h2>
+<p>The Jevons Paradox in the software domain manifests through several mechanisms that expand the total demand for human labor, despite individual tasks becoming more efficient. This is known as the “Scale Effect”—where automation-related price decreases expand the product market so much that more workers are needed to meet the new demand<sup class="footnote-reference" id="fr-18-2"><a href="#footnote-18">14</a></sup></p>
+<h3 id="the-maintenance-multiplier"><a class="header" href="#the-maintenance-multiplier">The Maintenance Multiplier</a></h3>
+<p>One of the most persistent drivers of labor demand is the “maintenance multiplier.” More software inevitably leads to more software that must be updated, secured, integrated, and monitored<sup class="footnote-reference" id="fr-5-3"><a href="#footnote-5">6</a></sup> The “lifecycle costs” of an application do not vanish because it was generated by an AI; in many cases, the ease of creation leads to a “sprawl” of software in various states of disrepair, creating a massive backlog for professional developers who must “untangle” these systems<sup class="footnote-reference" id="fr-5-4"><a href="#footnote-5">6</a></sup></p>
+<h3 id="the-someday-pile-and-latent-opportunities"><a class="header" href="#the-someday-pile-and-latent-opportunities">The “Someday Pile” and Latent Opportunities</a></h3>
+<p>As the cost of “thinking” drops, organizations begin to apply intelligence to problems that were previously ruled out as too time-consuming or expensive<sup class="footnote-reference" id="fr-3-7"><a href="#footnote-3">2</a></sup> This includes the development of hyper-niche software—such as custom CRMs for independent funeral homes or apps for tracking Rubik’s cube solving times—that would never have justified a traditional development budget<sup class="footnote-reference" id="fr-5-5"><a href="#footnote-5">6</a></sup> The explosion of these niche markets creates a vast “tail” of demand for engineers who can maintain and integrate these specialized tools<sup class="footnote-reference" id="fr-5-6"><a href="#footnote-5">6</a></sup></p>
+<h3 id="ai-workload-creep"><a class="header" href="#ai-workload-creep">AI Workload Creep</a></h3>
+<p>A psychological and organizational phenomenon known as “AI workload creep” further drives demand. When an employee uses AI to finish a task 40% faster, the time savings rarely result in “leisure.” Instead, the “cost” of the task drops, making it reasonable for managers to request more frequent analyses, faster content pipelines, or the initiation of projects that previously lived in the “someday” pile<sup class="footnote-reference" id="fr-21-1"><a href="#footnote-21">17</a></sup> This “induced demand” for output ensures that the total work time remains constant or even increases<sup class="footnote-reference" id="fr-21-2"><a href="#footnote-21">17</a></sup></p>
+<h2 id="the-forward-deployed-engineer-fde-and-the-deployment-gap"><a class="header" href="#the-forward-deployed-engineer-fde-and-the-deployment-gap">The “Forward Deployed Engineer” (FDE) and the Deployment Gap</a></h2>
+<p>The growth of the Forward Deployed Engineer (FDE) role highlights the primary constraint on the Intelligence Age: the “deployment problem”<sup class="footnote-reference" id="fr-14-2"><a href="#footnote-14">10</a></sup> While foundational models like GPT-4 and Claude 3<sup class="footnote-reference" id="fr-5-7"><a href="#footnote-5">6</a></sup> offer extraordinary capabilities, approximately 65% of organizations abandoned AI projects in 2025 due to a lack of deployment skills<sup class="footnote-reference" id="fr-14-3"><a href="#footnote-14">10</a></sup></p>
+<h3 id="the-fde-toolkit-and-function"><a class="header" href="#the-fde-toolkit-and-function">The FDE Toolkit and Function</a></h3>
+<p>The FDE role is a hybrid of a software engineer, solutions architect<sup class="footnote-reference" id="fr-23-1"><a href="#footnote-23">18</a></sup>, and technical account manager<sup class="footnote-reference" id="fr-13-1"><a href="#footnote-13">19</a></sup> <sup class="footnote-reference" id="fr-22-1"><a href="#footnote-22">20</a></sup> They are responsible for “jumping into complex customer environments” to translate real-world challenges into working AI solutions<sup class="footnote-reference" id="fr-22-2"><a href="#footnote-22">20</a></sup> This role is essential because many corporate workflows are “black boxes”—messy, poorly documented processes that are not yet ready for digital automation<sup class="footnote-reference" id="fr-24-1"><a href="#footnote-24">21</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Skill Tier</th><th style="text-align: left">Component</th><th style="text-align: left">Importance in 2026</th><th style="text-align: left">Role in Jevons Paradox</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Tier 1: Foundations</td><td style="text-align: left">Python, RPA Platforms, LLM APIs</td><td style="text-align: left">Non-Negotiable</td><td style="text-align: left">Enabling basic efficiency</td></tr>
+<tr><td style="text-align: left">Tier 2: Differentiators</td><td style="text-align: left">LangChain, RAG Pipelines</td><td style="text-align: left">High-Value</td><td style="text-align: left">Managing complexity/context</td></tr>
+<tr><td style="text-align: left">Tier 3: Human-Centric</td><td style="text-align: left">Discovery, Stakeholder Management</td><td style="text-align: left">Critical</td><td style="text-align: left">Bridging the “Black Box” gap</td></tr>
+<tr><td style="text-align: left">Tier 4: Emerging</td><td style="text-align: left">Multi-modal AI, Fine-tuning</td><td style="text-align: left">Strategic</td><td style="text-align: left">Customizing the commodity</td></tr>
+</tbody>
+</table>
+</div>
+<p>Table 3: The technical and human skill hierarchy for AI automation and Forward Deployed Engineers<sup class="footnote-reference" id="fr-14-4"><a href="#footnote-14">10</a></sup></p>
+<p>FDEs are effectively the “civil engineers” of the digital age. Just as a civil engineer does not spend their time hauling concrete but instead solves complex structural problems, the FDE uses AI as a tool to solve “governance, privacy, and integration” challenges<sup class="footnote-reference" id="fr-22-3"><a href="#footnote-22">20</a></sup> The demand for these professionals is growing at roughly 20% annually, while the supply remains severely constrained, leading to mean salaries exceeding \135,000 USD<sup class="footnote-reference" id="fr-14-5"><a href="#footnote-14">10</a></sup></p>
+<h2 id="theoretical-constraints-amdahl-brooks-and-the-limits-of-speedup"><a class="header" href="#theoretical-constraints-amdahl-brooks-and-the-limits-of-speedup">Theoretical Constraints: Amdahl, Brooks, and the Limits of Speedup</a></h2>
+<p>To understand why the creation of 1.3 million jobs is necessary to manage the efficiency gained from AI, we must look at the traditional “laws” of computation and project management.</p>
+<h3 id="amdahls-law-and-the-human-bottleneck"><a class="header" href="#amdahls-law-and-the-human-bottleneck">Amdahl’s Law and the “Human Bottleneck”</a></h3>
+<p>Amdahl’s Law states that the speedup of a task is limited by its “serial” components—the parts that cannot be parallelized or automated<sup class="footnote-reference" id="fr-26-1"><a href="#footnote-26">22</a></sup> In the context of AI, even if the “coding” part of a job is accelerated by 90%, the “human” parts—such as gathering requirements, ethical review, and strategic alignment—remain serial bottlenecks<sup class="footnote-reference" id="fr-1-13"><a href="#footnote-1">1</a></sup> As the automated portions of work become faster and cheaper, the relative value and time-cost of the human components increase, requiring more “orchestrators” to keep the system moving<sup class="footnote-reference" id="fr-21-3"><a href="#footnote-21">17</a></sup></p>
+<h3 id="brooks-law-and-communication-overhead"><a class="header" href="#brooks-law-and-communication-overhead">Brooks’ Law and Communication Overhead</a></h3>
+<p>Brooks’ Law—the principle that adding human resources to a late software project makes it later—remains relevant<sup class="footnote-reference" id="fr-26-2"><a href="#footnote-26">22</a></sup> While AI allows a “single talented person” to do more, the proliferation of AI agents and automated workflows increases the “communication overhead” between human and machine<sup class="footnote-reference" id="fr-21-4"><a href="#footnote-21">17</a></sup> This complexity can lead to “diseconomies of scale” unless a new class of managers and engineers is hired to oversee the “agentic hive”<sup class="footnote-reference" id="fr-4-4"><a href="#footnote-4">9</a></sup></p>
+<h2 id="pro-worker-ai-vs-automation-the-acemoglu-autor-framework"><a class="header" href="#pro-worker-ai-vs-automation-the-acemoglu-autor-framework">Pro-Worker AI vs. Automation: The Acemoglu-Autor Framework</a></h2>
+<p>Daron Acemoglu and David Autor of MIT have articulated a critical distinction between “automating” technologies and “new task-creating” technologies<sup class="footnote-reference" id="fr-19-2"><a href="#footnote-19">16</a></sup></p>
+<h3 id="the-risk-of-the-automation-ideology"><a class="header" href="#the-risk-of-the-automation-ideology">The Risk of the “Automation Ideology”</a></h3>
+<p>The MIT research identifies a market failure: firm leadership often perceives a greater economic return from “automating expertise” than from “creating new tasks”<sup class="footnote-reference" id="fr-19-3"><a href="#footnote-19">16</a></sup> If AI is used solely to substitute machinery for tasks previously performed by humans, it may raise average productivity while reducing “marginal productivity”—the additional contribution a human worker brings to the table<sup class="footnote-reference" id="fr-27-1"><a href="#footnote-27">23</a></sup> This can lead to a decline in the labor share of national income, even as corporate profits soar<sup class="footnote-reference" id="fr-19-4"><a href="#footnote-19">16</a></sup></p>
+<h3 id="the-new-task-pathway"><a class="header" href="#the-new-task-pathway">The “New Task” Pathway</a></h3>
+<p>Conversely, “New Task-Creating” technologies are unambiguously pro-worker<sup class="footnote-reference" id="fr-20-1"><a href="#footnote-20">24</a></sup> <sup class="footnote-reference" id="fr-28-1"><a href="#footnote-28">25</a></sup> These innovations open up uses for human labor that did not exist before. Examples include:</p>
+<ul>
+<li>MRI Radiologists (who did not exist 80 years ago)<sup class="footnote-reference" id="fr-27-2"><a href="#footnote-27">23</a></sup></li>
+<li>AI Forensic Analysts (who investigate the origins of machine errors)<sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">15</a></sup></li>
+<li>Prompt Engineers and AI Integrators<sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">15</a></sup></li>
+</ul>
+<p>The 1.3 million jobs identified in the LinkedIn Davos report represent the “New Task” pathway, where AI serves as a “collaborator” that extends human judgment and enables individuals to tackle more sophisticated problems<sup class="footnote-reference" id="fr-19-5"><a href="#footnote-19">16</a></sup></p>
+<h2 id="the-energy-and-infrastructure-nexus"><a class="header" href="#the-energy-and-infrastructure-nexus">The Energy and Infrastructure Nexus</a></h2>
+<p>The Jevons Paradox in cognitive labor is inextricably linked to the physical reality of data centers and energy consumption<sup class="footnote-reference" id="fr-31-1"><a href="#footnote-31">26</a></sup>. While the “cost of thinking” may be collapsing for the end-user, the “cost of powering” those thoughts is skyrocketing<sup class="footnote-reference" id="fr-4-5"><a href="#footnote-4">9</a></sup></p>
+<h3 id="the-data-center-boom"><a class="header" href="#the-data-center-boom">The Data Center Boom</a></h3>
+<p>The “explosive growth in attention to AI” has fueled a global construction boom in data centers, which play a central role in the modern economy<sup class="footnote-reference" id="fr-30-1"><a href="#footnote-30">27</a></sup> Last year alone, 600,000 “AI-enabled data center jobs” were created to maintain the high-voltage transmission lines<sup class="footnote-reference" id="fr-32-1"><a href="#footnote-32">28</a></sup>, substations, and cooling systems required by these facilities<sup class="footnote-reference" id="fr-1-14"><a href="#footnote-1">1</a></sup> In the U.S., AI is projected to drive 20% of total electricity demand by 2030[^8]</p>
+<h3 id="the-efficiency-paradox-in-hardware"><a class="header" href="#the-efficiency-paradox-in-hardware">The Efficiency Paradox in Hardware</a></h3>
+<p>The paradox repeats in energy: as AI models become more efficient, we do not use less energy; we build more models<sup class="footnote-reference" id="fr-4-6"><a href="#footnote-4">9</a></sup> For example, the Chinese model “DeepSeek” reportedly runs on 10 to 40 times less energy than comparable U.S. models<sup class="footnote-reference" id="fr-29-1"><a href="#footnote-29">29</a></sup> Rather than reducing global energy demand, such efficiency breakthroughs act as a “catalyst” for even more widespread adoption, turning AI into a “commodity we just can’t get enough of”<sup class="footnote-reference" id="fr-8-1"><a href="#footnote-8">30</a></sup></p>
+<h3 id="stranded-assets-and-the-energy-transition"><a class="header" href="#stranded-assets-and-the-energy-transition">Stranded Assets and the Energy Transition</a></h3>
+<p>A significant risk in the 2026-2029 period is the “Investment Trap”<sup class="footnote-reference" id="fr-29-2"><a href="#footnote-29">29</a></sup> Tech giants have invested hundreds of billions into natural gas-powered data centers with 30-year lifespans<sup class="footnote-reference" id="fr-29-3"><a href="#footnote-29">29</a></sup> If more efficient systems or different energy sources (like Small Modular Reactors or SMRs) become the standard, these gas plants could become “economically unviable” stranded assets<sup class="footnote-reference" id="fr-29-4"><a href="#footnote-29">29</a></sup> This pressure could drive the fastest energy transition in history, but it will be driven by “economic pain” and competitive pressure rather than central planning<sup class="footnote-reference" id="fr-29-5"><a href="#footnote-29">29</a></sup></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Energy Metric</th><th style="text-align: left">Pre-AI (2020)</th><th style="text-align: left">AI-Boom (2025-26)</th><th style="text-align: left">2030 Projection</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">Data Center Electricity Use</td><td style="text-align: left">~1-2% Global</td><td style="text-align: left">~4-6% Global</td><td style="text-align: left">Up to 10% Global</td></tr>
+<tr><td style="text-align: left">U.S. Grid Demand from AI</td><td style="text-align: left">Negligible</td><td style="text-align: left">Rising</td><td style="text-align: left">20% of total</td></tr>
+<tr><td style="text-align: left">Data Center Construction CapEx</td><td style="text-align: left">Millions</td><td style="text-align: left">\750 USD Billion (Annual)</td><td style="text-align: left">\3 USD Trillion (Cumulative)</td></tr>
+<tr><td style="text-align: left">Fossil Fuel Dependency (Gas)</td><td style="text-align: left">Baseline</td><td style="text-align: left">40% of DC power</td><td style="text-align: left">Volatile/Transitioning</td></tr>
+</tbody>
+</table>
+</div>
+<p>Table 4: Macro-trends in energy consumption and infrastructure investment driven by the Jevons Paradox<sup class="footnote-reference" id="fr-8-2"><a href="#footnote-8">30</a></sup></p>
+<h2 id="psychological-factors-loss-aversion-and-the-skill-preparedness-gap"><a class="header" href="#psychological-factors-loss-aversion-and-the-skill-preparedness-gap">Psychological Factors: Loss Aversion and the Skill Preparedness Gap</a></h2>
+<p>The transition from a labor market defined by “coding” to one defined by “orchestration” is complicated by human psychology. The Jevons Paradox explains why the jobs are there, but “loss aversion” explains why the 55,000 lost jobs hurt more than the 1.3 million new ones inspire<sup class="footnote-reference" id="fr-33-1"><a href="#footnote-33">31</a></sup></p>
+<h3 id="the-hurt-of-selling-the-skill-house"><a class="header" href="#the-hurt-of-selling-the-skill-house">The Hurt of Selling the “Skill House”</a></h3>
+<p>Economic psychologists observe that “loss aversion” makes the psychological pain of losing a job (or the value of a hard-won skill) outweigh the potential gain of a new one<sup class="footnote-reference" id="fr-33-2"><a href="#footnote-33">31</a></sup> Many tech workers are effectively living in a “Manchester-to-Edinburgh” commute situation—commuting between an old skill set that is losing value and a new role that requires total dislocation of their professional identity<sup class="footnote-reference" id="fr-33-3"><a href="#footnote-33">31</a></sup></p>
+<h3 id="the-preparedness-crisis"><a class="header" href="#the-preparedness-crisis">The Preparedness Crisis</a></h3>
+<p>While the LinkedIn data shows that “job seekers outpace job openings at the highest level since the pandemic<sup class="footnote-reference" id="fr-25-1"><a href="#footnote-25">32</a></sup>,” it also reveals that nearly 80% of workers feel “unprepared” to make a career move in the age of AI<sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">15</a></sup> Only 3% of LinkedIn members have listed AI skills on their profiles, yet 75% of companies agree that “people skills” (adaptability, critical thinking, collaboration) are now the primary differentiator<sup class="footnote-reference" id="fr-1-15"><a href="#footnote-1">1</a></sup></p>
+<h2 id="mathematical-modeling-of-the-cognitive-rebound"><a class="header" href="#mathematical-modeling-of-the-cognitive-rebound">Mathematical Modeling of the Cognitive Rebound</a></h2>
+<p>To quantify the Jevons Paradox in this context, we can define the “Rebound Effect” (\$R\$) as the ratio of the “taken back” efficiency gains to the initial gain.</p>
+<p>If \$\Delta \eta\$ is the initial efficiency improvement (e.g., AI makes coding 50% faster) and \$\Delta U\$ is the subsequent increase in usage (e.g., the company builds 100% more software features), then:</p>
+<p>\$\$R = \frac{\Delta U}{\Delta \eta}\$\$<br>When \$R &gt; 100%, USD we observe the Jevons Paradox<sup class="footnote-reference" id="fr-5-8"><a href="#footnote-5">6</a></sup> In the 2026 software market, with output per power user up 80% and the 1.3M/55K job ratio, the estimated rebound effect for cognitive labor is well over 200%, suggesting that for every unit of work “automated,” more than two units of new work are “induced” by the lower cost and higher complexity of the ecosystem<sup class="footnote-reference" id="fr-1-16"><a href="#footnote-1">1</a></sup></p>
+<h2 id="the-geopolitical-architecture-of-the-intelligence-age"><a class="header" href="#the-geopolitical-architecture-of-the-intelligence-age">The Geopolitical Architecture of the Intelligence Age</a></h2>
+<p>The national ability to dominate the AI technology stack is now viewed as the primary dictate of geopolitical, economic, and moral architecture in the twenty-first century<sup class="footnote-reference" id="fr-10-3"><a href="#footnote-10">5</a></sup></p>
+<h3 id="the-us-vs-china-wildcard"><a class="header" href="#the-us-vs-china-wildcard">The U.S. vs. China Wildcard</a></h3>
+<p>While the U.S. is spending hundreds of billions on energy-hungry infrastructure, China’s focus on efficiency (evidenced by DeepSeek) presents a “Wildcard”<sup class="footnote-reference" id="fr-29-6"><a href="#footnote-29">29</a></sup> If the U.S. is locked into fossil-fuel-dependent, expensive infrastructure while competitors develop systems that run on 4[^0] times less energy, a massive “market correction” could occur<sup class="footnote-reference" id="fr-29-7"><a href="#footnote-29">29</a></sup> This highlights that the Jevons Paradox is not just an internal labor market dynamic but a global competitive race where “lagging economies risk falling into a state of insurmountable stagnation<sup class="footnote-reference" id="fr-10-4"><a href="#footnote-10">5</a></sup>”<sup class="footnote-reference" id="fr-10-5"><a href="#footnote-10">5</a></sup></p>
+<h3 id="the-systemic-macroeconomic-effect"><a class="header" href="#the-systemic-macroeconomic-effect">The “Systemic Macroeconomic Effect”</a></h3>
+<p>The White House Council of Economic Advisers (CEA) has adopted the Jevons Paradox as its theoretical framework for workforce policy<sup class="footnote-reference" id="fr-10-6"><a href="#footnote-10">5</a></sup> Their data suggests that while AI substitutes for specific “codifiable” tasks, its systemic effect is “profoundly augmentative<sup class="footnote-reference" id="fr-10-7"><a href="#footnote-10">5</a></sup>”<sup class="footnote-reference" id="fr-10-8"><a href="#footnote-10">5</a></sup> By driving down the marginal cost of cognitive labor, AI enables “service vectors” in medicine<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">33</a></sup>, scientific discovery, and environmental management<sup class="footnote-reference" id="fr-10-9"><a href="#footnote-10">5</a></sup> that were previously “economically unviable” due to high human capital costs<sup class="footnote-reference" id="fr-10-10"><a href="#footnote-10">5</a></sup></p>
+<h2 id="conclusion-the-great-rotation-and-the-human-premium"><a class="header" href="#conclusion-the-great-rotation-and-the-human-premium">Conclusion: The Great Rotation and the Human Premium</a></h2>
+<p>The analysis of the 55,000 lost jobs versus the 1.3 million created roles indicates that the framework of the Jevons Paradox is an accurate predictor of the current cognitive labor market. The “collapse of cognitive costs” has not led to a world with less work, but a world with <em>more</em> work that is fundamentally <em>different</em> in nature<sup class="footnote-reference" id="fr-3-8"><a href="#footnote-3">2</a></sup></p>
+<p>The primary findings of this investigation are:</p>
+<ul>
+<li><strong>Efficiency creates Demand</strong>: The collapse in the cost of creating code has induced a massive surge in the demand for software, leading to a proliferation of micro-services and internal tools that require human oversight<sup class="footnote-reference" id="fr-3-9"><a href="#footnote-3">2</a></sup></li>
+<li><strong>The Deployment Gap is the new Bottleneck</strong>: The creation of 1.3 million roles is largely concentrated in “bridging” positions like the Forward Deployed Engineer, who handles the complexity that AI cannot yet navigate<sup class="footnote-reference" id="fr-14-6"><a href="#footnote-14">10</a></sup></li>
+<li><strong>Physical Infrastructure is the Ceiling</strong>: The Jevons Paradox in software is driving a 600,000-job boom in the physical construction and maintenance of data centers, with energy demand becoming the ultimate constraint on cognitive abundance<sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">15</a></sup></li>
+<li><strong>Human Capital must Pivot</strong>: The “Jobpocalypse” is a myth of displacement that ignores the “Great Rotation.” However, the transition is hampered by a significant skill gap<sup class="footnote-reference" id="fr-35-1"><a href="#footnote-35">34</a></sup>, with 80% of the workforce feeling unprepared for the “New Collar” era<sup class="footnote-reference" id="fr-1-17"><a href="#footnote-1">1</a></sup></li>
+</ul>
+<p>Ultimately, the Intelligence Age is not defined by the replacement of the human mind, but by its reallocation to higher-order tasks of strategy, empathy, and complex orchestration<sup class="footnote-reference" id="fr-3-10"><a href="#footnote-3">2</a></sup> As basic cognition becomes a commodity, the “Human Premium”—the value of judgment, ethics, and “listening hard” to uncover root causes—will become the most sought-after resource in the global economy<sup class="footnote-reference" id="fr-3-11"><a href="#footnote-3">2</a></sup> The Jevons Paradox ensures that as thinking becomes cheaper, we will only find more things worth thinking about<sup class="footnote-reference" id="fr-3-12"><a href="#footnote-3">2</a></sup></p>
+<h1 id=""><a class="header" href="#"></a></h1>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>AI Productivity Scam? 2026 Labor Data is Wild | by Amelia Lee - Medium, accessed March 25, 2026, <a href="https://medium.com/@weare1010/the-ai-layoff-paradox-55-000-jobs-cut-1-3-million-created-and-the-workers-left-behind-e4a41fea5d2b">https://medium.com/@weare1010/the-ai-layoff-paradox-55-000-jobs-cut-1-3-million-created-and-the-workers-left-behind-e4a41fea5d2b</a> <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a> <a href="#fr-1-6">↩6</a> <a href="#fr-1-7">↩7</a> <a href="#fr-1-8">↩8</a> <a href="#fr-1-9">↩9</a> <a href="#fr-1-10">↩10</a> <a href="#fr-1-11">↩11</a> <a href="#fr-1-12">↩12</a> <a href="#fr-1-13">↩13</a> <a href="#fr-1-14">↩14</a> <a href="#fr-1-15">↩15</a> <a href="#fr-1-16">↩16</a> <a href="#fr-1-17">↩17</a></p>
+</li>
+<li id="footnote-3">
+<p>AI Entrepreneurs Hub, accessed March 25, 2026, <a href="https://tac.whitebeardstrategies.com/communities/groups/ai-entrepreneurs/home/posts/6902183cf78330aeaa6325af">https://tac.whitebeardstrategies.com/communities/groups/ai-entrepreneurs/home/posts/6902183cf78330aeaa6325af</a> <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a> <a href="#fr-3-3">↩3</a> <a href="#fr-3-4">↩4</a> <a href="#fr-3-5">↩5</a> <a href="#fr-3-6">↩6</a> <a href="#fr-3-7">↩7</a> <a href="#fr-3-8">↩8</a> <a href="#fr-3-9">↩9</a> <a href="#fr-3-10">↩10</a> <a href="#fr-3-11">↩11</a> <a href="#fr-3-12">↩12</a></p>
+</li>
+<li id="footnote-9">
+<p>The Jevons Paradox and the Myth of Resource Efficiency Improvements - Uberty, accessed March 25, 2026, <a href="https://uberty.org/wp-content/uploads/2015/08/John_M._Polimeni_Kozo_Mayumi_Mario_Giampietro.pdf">https://uberty.org/wp-content/uploads/2015/08/John_M._Polimeni_Kozo_Mayumi_Mario_Giampietro.pdf</a> <a href="#fr-9-1">↩</a></p>
+</li>
+<li id="footnote-6">
+<p>Jevons paradox - Wikipedia, accessed March 25, 2026, <a href="https://en.wikipedia.org/wiki/Jevons_paradox">https://en.wikipedia.org/wiki/Jevons_paradox</a> <a href="#fr-6-1">↩</a> <a href="#fr-6-2">↩2</a> <a href="#fr-6-3">↩3</a> <a href="#fr-6-4">↩4</a></p>
+</li>
+<li id="footnote-10">
+<p>The United States’ Strategic Wager on Artificial Intelligence and the Future of Work, accessed March 25, 2026, <a href="https://www.timetrex.com/blog/us-strategic-wager-on-ai">https://www.timetrex.com/blog/us-strategic-wager-on-ai</a> <a href="#fr-10-1">↩</a> <a href="#fr-10-2">↩2</a> <a href="#fr-10-3">↩3</a> <a href="#fr-10-4">↩4</a> <a href="#fr-10-5">↩5</a> <a href="#fr-10-6">↩6</a> <a href="#fr-10-7">↩7</a> <a href="#fr-10-8">↩8</a> <a href="#fr-10-9">↩9</a> <a href="#fr-10-10">↩10</a></p>
+</li>
+<li id="footnote-5">
+<p>Jevons’ Paradox and AI: Why It Means More Developers, Not Fewer - Mr. Phil Games, accessed March 25, 2026, <a href="https://www.mrphilgames.com/blog/jevons-paradox-software-development-ai-more-developers">https://www.mrphilgames.com/blog/jevons-paradox-software-development-ai-more-developers</a> <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a> <a href="#fr-5-3">↩3</a> <a href="#fr-5-4">↩4</a> <a href="#fr-5-5">↩5</a> <a href="#fr-5-6">↩6</a> <a href="#fr-5-7">↩7</a> <a href="#fr-5-8">↩8</a></p>
+</li>
+<li id="footnote-12">
+<p>Rebound Effects of AI on Sustainability: Economic and Policy Perspectives, accessed March 25, 2026, <a href="https://sciintl.scione.com/cms/fulltext.php?id=341">https://sciintl.scione.com/cms/fulltext.php?id=341</a> <a href="#fr-12-1">↩</a></p>
+</li>
+<li id="footnote-11">
+<p>The European Union Green Deal: Clean Energy Wellbeing Opportunities and the Risk of the Jevons Paradox - MDPI, accessed March 25, 2026, <a href="https://www.mdpi.com/1996-1073/14/14/4148">https://www.mdpi.com/1996-1073/14/14/4148</a> <a href="#fr-11-1">↩</a> <a href="#fr-11-2">↩2</a></p>
+</li>
+<li id="footnote-4">
+<p>DeepSeek: Are US tech giants in danger? - CPR Asset Management, accessed March 25, 2026, <a href="https://cpram.com/fra/en/individual/publications/megatrends/deepseek-are-us-tech-giants-in-danger">https://cpram.com/fra/en/individual/publications/megatrends/deepseek-are-us-tech-giants-in-danger</a> <a href="#fr-4-1">↩</a> <a href="#fr-4-2">↩2</a> <a href="#fr-4-3">↩3</a> <a href="#fr-4-4">↩4</a> <a href="#fr-4-5">↩5</a> <a href="#fr-4-6">↩6</a></p>
+</li>
+<li id="footnote-14">
+<p>The AI Automation Engineer in 2026: A Comprehensive Technical and Career Guide - Sundeep Teki, accessed March 25, 2026, <a href="https://www.sundeepteki.org/advice">https://www.sundeepteki.org/advice</a> <a href="#fr-14-1">↩</a> <a href="#fr-14-2">↩2</a> <a href="#fr-14-3">↩3</a> <a href="#fr-14-4">↩4</a> <a href="#fr-14-5">↩5</a> <a href="#fr-14-6">↩6</a></p>
+</li>
+<li id="footnote-34">
+<p>Future Market Blueprints: Harnessing Artificial Intelligence in a World Wired for Wonder - Scholarly Commons, accessed March 25, 2026, <a href="https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=1909&amp;context=njilb">https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=1909&amp;context=njilb</a> <a href="#fr-34-1">↩</a></p>
+</li>
+<li id="footnote-17">
+<p>Sean Malady, Author at J &amp; J Staffing Resources - Page 4 of 10, accessed March 25, 2026, <a href="https://www.jjstaff.com/author/admin/page/4/">https://www.jjstaff.com/author/admin/page/4/</a> <a href="#fr-17-1">↩</a></p>
+</li>
+<li id="footnote-16">
+<p>The Jobpocalypse Is Real, but AI Isn’t To Blame - mastergradschools, accessed March 25, 2026, <a href="https://mastergradschools.com/master-industry-trends/jobpocalypse-ai-master-graduate-advice">https://mastergradschools.com/master-industry-trends/jobpocalypse-ai-master-graduate-advice</a> <a href="#fr-16-1">↩</a> <a href="#fr-16-2">↩2</a></p>
+</li>
+<li id="footnote-18">
+<p>Growth trends for selected occupations considered at risk from automation, accessed March 25, 2026, <a href="https://www.bls.gov/opub/mlr/2022/article/growth-trends-for-selected-occupations-considered-at-risk-from-automation.htm">https://www.bls.gov/opub/mlr/2022/article/growth-trends-for-selected-occupations-considered-at-risk-from-automation.htm</a> <a href="#fr-18-1">↩</a> <a href="#fr-18-2">↩2</a></p>
+</li>
+<li id="footnote-2">
+<p>A New World of Work: Global Labor Market Rotates, Not Retreats - LinkedIn Pressroom, accessed March 25, 2026, <a href="https://news.linkedin.com/2026/2026-Davos-Press-Release">https://news.linkedin.com/2026/2026-Davos-Press-Release</a> <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a></p>
+</li>
+<li id="footnote-19">
+<p>NBER WORKING PAPER SERIES BUILDING PRO-WORKER ARTIFICIAL INTELLIGENCE Daron Acemoglu David Autor Simon Johnson Working Paper 348, accessed March 25, 2026, <a href="https://www.nber.org/system/files/working_papers/w34854/w34854.pdf">https://www.nber.org/system/files/working_papers/w34854/w34854.pdf</a> <a href="#fr-19-1">↩</a> <a href="#fr-19-2">↩2</a> <a href="#fr-19-3">↩3</a> <a href="#fr-19-4">↩4</a> <a href="#fr-19-5">↩5</a></p>
+</li>
+<li id="footnote-21">
+<p>What Is AI Workload Creep? How AI Tools Expand Your Task List Instead of Shrinking It, accessed March 25, 2026, <a href="https://www.mindstudio.ai/blog/what-is-ai-workload-creep/">https://www.mindstudio.ai/blog/what-is-ai-workload-creep/</a> <a href="#fr-21-1">↩</a> <a href="#fr-21-2">↩2</a> <a href="#fr-21-3">↩3</a> <a href="#fr-21-4">↩4</a></p>
+</li>
+<li id="footnote-23">
+<p>Forward Deployed Engineer, Deepgram - Remote Rocketship, accessed March 25, 2026, <a href="https://www.remoterocketship.com/us/company/deepgram/jobs/forward-deployed-engineer-deepgram-united-states-remote/">https://www.remoterocketship.com/us/company/deepgram/jobs/forward-deployed-engineer-deepgram-united-states-remote/</a> <a href="#fr-23-1">↩</a></p>
+</li>
+<li id="footnote-13">
+<p>Forward Deployed Engineer at DOMO DOMO - Remote Rocketship, accessed March 25, 2026, <a href="https://www.remoterocketship.com/company/domo-domo/jobs/forward-deployed-engineer-united-states-remote">https://www.remoterocketship.com/company/domo-domo/jobs/forward-deployed-engineer-united-states-remote</a> <a href="#fr-13-1">↩</a></p>
+</li>
+<li id="footnote-22">
+<p>Job Application for Forward Deployed Engineer (West) at Relyance AI - Greenhouse, accessed March 25, 2026, <a href="https://job-boards.greenhouse.io/relyance/jobs/5819515004">https://job-boards.greenhouse.io/relyance/jobs/5819515004</a> <a href="#fr-22-1">↩</a> <a href="#fr-22-2">↩2</a> <a href="#fr-22-3">↩3</a></p>
+</li>
+<li id="footnote-24">
+<p>Predictions for an AI Future, Now - Syllepsis, accessed March 25, 2026, <a href="https://syllepsis.live/2026/02/22/predictions-for-an-ai-future-now/">https://syllepsis.live/2026/02/22/predictions-for-an-ai-future-now/</a> <a href="#fr-24-1">↩</a></p>
+</li>
+<li id="footnote-26">
+<p>dwmkerr/hacker-laws: Laws, Theories, Principles and Patterns for developers and technologists. - GitHub, accessed March 25, 2026, <a href="https://github.com/dwmkerr/hacker-laws">https://github.com/dwmkerr/hacker-laws</a> <a href="#fr-26-1">↩</a> <a href="#fr-26-2">↩2</a></p>
+</li>
+<li id="footnote-27">
+<p>Rebalancing AI-Daron Acemoglu Simon Johnson - International Monetary Fund, accessed March 25, 2026, <a href="https://www.imf.org/en/publications/fandd/issues/2023/12/rebalancing-ai-acemoglu-johnson">https://www.imf.org/en/publications/fandd/issues/2023/12/rebalancing-ai-acemoglu-johnson</a> <a href="#fr-27-1">↩</a> <a href="#fr-27-2">↩2</a></p>
+</li>
+<li id="footnote-20">
+<p>Building pro-worker AI - Brookings Institution, accessed March 25, 2026, <a href="https://www.brookings.edu/articles/building-pro-worker-ai/">https://www.brookings.edu/articles/building-pro-worker-ai/</a> <a href="#fr-20-1">↩</a></p>
+</li>
+<li id="footnote-28">
+<p>Building pro-worker AI - The Hamilton Project, accessed March 25, 2026, <a href="https://www.hamiltonproject.org/publication/paper/building-pro-worker-ai/">https://www.hamiltonproject.org/publication/paper/building-pro-worker-ai/</a> <a href="#fr-28-1">↩</a></p>
+</li>
+<li id="footnote-31">
+<p>Sustainable and Low Carbon Development in the Energy Sector - MDPI, accessed March 25, 2026, <a href="https://mdpi-res.com/bookfiles/book/12432/Sustainable_and_Low_Carbon_Development_in_the_Energy_Sector.pdf?v=1773168382">https://mdpi-res.com/bookfiles/book/12432/Sustainable_and_Low_Carbon_Development_in_the_Energy_Sector.pdf?v=1773168382</a> <a href="#fr-31-1">↩</a></p>
+</li>
+<li id="footnote-30">
+<p>SUSTAINABLE DATA CENTERS ROADMAP - Innovation for Cool Earth Forum (ICEF), accessed March 25, 2026, <a href="https://icef.go.jp/wp-content/themes/icef_new/pdf/roadmap/icef2025_roadmap%20Oct%209.pdf">https://icef.go.jp/wp-content/themes/icef_new/pdf/roadmap/icef2025_roadmap%20Oct%209.pdf</a> <a href="#fr-30-1">↩</a></p>
+</li>
+<li id="footnote-32">
+<p>Combined Vehicle to Building (V2B) and Vehicle to Home (V2H) strategy to increase electric vehicle market share | Request PDF - ResearchGate, accessed March 25, 2026, <a href="https://www.researchgate.net/publication/353595134_Combined_Vehicle_to_Building_V2B_and_Vehicle_to_Home_V2H_strategy_to_increase_electric_vehicle_market_share">https://www.researchgate.net/publication/353595134_Combined_Vehicle_to_Building_V2B_and_Vehicle_to_Home_V2H_strategy_to_increase_electric_vehicle_market_share</a> <a href="#fr-32-1">↩</a></p>
+</li>
+<li id="footnote-29">
+<p>Theory: The AI bubble<sup class="footnote-reference" id="fr-15-1"><a href="#footnote-15">35</a></sup> might accidentally force the fastest energy transition in history (just not how anyone planned) - Reddit, accessed March 25, 2026, <a href="https://www.reddit.com/r/collapse/comments/1otgsor/theory_the_ai_bubble_might_accidentally_force_the/">https://www.reddit.com/r/collapse/comments/1otgsor/theory_the_ai_bubble_might_accidentally_force_the/</a> <a href="#fr-29-1">↩</a> <a href="#fr-29-2">↩2</a> <a href="#fr-29-3">↩3</a> <a href="#fr-29-4">↩4</a> <a href="#fr-29-5">↩5</a> <a href="#fr-29-6">↩6</a> <a href="#fr-29-7">↩7</a></p>
+</li>
+<li id="footnote-8">
+<p>What is Jevons Paradox? And why it may — or may not — predict AI’s future, accessed March 25, 2026, <a href="https://news.northeastern.edu/2025/02/07/jevons-paradox-ai-future/">https://news.northeastern.edu/2025/02/07/jevons-paradox-ai-future/</a> <a href="#fr-8-1">↩</a> <a href="#fr-8-2">↩2</a></p>
+</li>
+<li id="footnote-33">
+<p>The Cambridge Handbook of Psychology and Economic Behaviour [2 ed.] 1107161398, 9781107161399 - DOKUMEN.PUB, accessed March 25, 2026, <a href="https://dokumen.pub/the-cambridge-handbook-of-psychology-and-economic-behaviour-2nbsped-1107161398-9781107161399.html">https://dokumen.pub/the-cambridge-handbook-of-psychology-and-economic-behaviour-2nbsped-1107161398-9781107161399.html</a> <a href="#fr-33-1">↩</a> <a href="#fr-33-2">↩2</a> <a href="#fr-33-3">↩3</a></p>
+</li>
+<li id="footnote-25">
+<p>Honest question to those who think AI won’t take our jobs : r/cscareers - Reddit, accessed March 25, 2026, <a href="https://www.reddit.com/r/cscareers/comments/1qm9y3q/honest_question_to_those_who_think_ai_wont_take/">https://www.reddit.com/r/cscareers/comments/1qm9y3q/honest_question_to_those_who_think_ai_wont_take/</a> <a href="#fr-25-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>Jevons Paradox: Rise of the Machines May Create More Work for Physicians - PMC, accessed March 25, 2026, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12959442/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12959442/</a> <a href="#fr-7-1">↩</a></p>
+</li>
+<li id="footnote-35">
+<p>Minding the gap: the LBS Data Science and AI initiative | London Business School, accessed March 25, 2026, <a href="https://www.london.edu/think/minding-the-gap-the-lbs-institute-for-data-science-and-ai">https://www.london.edu/think/minding-the-gap-the-lbs-institute-for-data-science-and-ai</a> <a href="#fr-35-1">↩</a></p>
+</li>
+<li id="footnote-15">
+<p>Is it a bubble? - Hacker News, accessed March 25, 2026, <a href="https://news.ycombinator.com/item?id=46220640">https://news.ycombinator.com/item?id=46220640</a> <a href="#fr-15-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="googleAsLispMachine.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="mainframesToAI.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="googleAsLispMachine.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="mainframesToAI.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

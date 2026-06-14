@@ -1,0 +1,561 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Gatekeepers of Capital - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="the-gatekeepers-of-capital"><a class="header" href="#the-gatekeepers-of-capital">The Gatekeepers of Capital</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="introduction-the-passive-paradox-and-the-crisis-of-capital-allocation"><a class="header" href="#introduction-the-passive-paradox-and-the-crisis-of-capital-allocation">Introduction: The Passive Paradox and the Crisis of Capital Allocation</a></h2>
+<p>The global financial architecture currently sits atop a tectonic fault line, the tremors of which have been increasingly felt in the chaotic market events of late 2025 and early 2026. This fault line is the overwhelming dominance of passive investing—a strategy originally conceived as a humble tool for the democratization of wealth, which has mutated into a monolithic, market-shaping force. The recent confrontation between MicroStrategy (Strategy Inc, ticker: MSTR) and the index provider MSCI serves as a defining case study of this systemic fragility. It exposes a market structure where the mechanical flows of passive capital have decoupled from fundamental value, creating feedback loops that reward financial engineering over productive enterprise. More critically, it reveals the emergence of index providers not as neutral scorekeepers, but as “quasi-regulators” wielding the power to destroy shareholder value through opaque decision-making processes and “enforcement by news cycle.”</p>
+<p>The core thesis of this report is that the passive investing complex, managed by gatekeepers like MSCI and S and P Global, has inadvertently created a regulatory chokepoint. This chokepoint suppresses corporate innovation that does not fit 20th-century molds, as evidenced by the “freeze” placed on MicroStrategy’s share count metrics. Drawing upon the insights of venture capitalist Mark Andreessen regarding the capacity of regulators to “spook” markets, this report argues that the threat of exclusion from indices acts as a de facto “de-banking” of equity capital. The resulting destruction of value—where MicroStrategy lost nearly half its market capitalization in response to a proposal affecting a fraction of that value in passive flowsdemonstrates a dangerous asymmetry.</p>
+<p>This analysis proceeds by first dissecting the evolution of passive investing from the stewardship-focused philosophy of John “Jack” Bogle to the current era of high-velocity speculation. It then examines the specific mechanics of the MicroStrategy “Bitcoin Treasury” flywheel and how it exploited the flaws in capitalization-weighted indexing. We then turn to the actions of MSCI, analyzing their “Digital Asset Treasury Company” (DATCO) proposal as a form of private regulation. Finally, we contrast the speculative strategies of Elon Musk and Michael Saylor to illustrate the gatekeepers’ bias, before proposing concrete regulatory remedies, such as mandatory holding periods and time-weighted index methodologies, to restore sanity to the capital markets.</p>
+<hr>
+<h2 id="the-broken-haystack-evolution-of-the-passive-paradigm"><a class="header" href="#the-broken-haystack-evolution-of-the-passive-paradigm">The Broken Haystack: Evolution of the Passive Paradigm</a></h2>
+<h3 id="bogles-stewardship-and-the-mathematics-of-the-haystack"><a class="header" href="#bogles-stewardship-and-the-mathematics-of-the-haystack">Bogle’s: Stewardship and the Mathematics of the Haystack</a></h3>
+<p>The intellectual foundation of the modern equity market rests on the work of John “Jack” Bogle, the founder of Vanguard. Bogles philosophy was rooted in a specific interpretation of the Efficient Market Hypothesis (EMH). His premise was mathematical and, at the time, irrefutable: the gross return of the market as a whole is the weighted average return of its constituents. Therefore, the net return of the average investor must be the market return minus costs. Since active managers charge higher fees and incur higher transaction costs through turnover, the average active manager must mathematically underperform the passive index fund over the long term.1</p>
+<p>Bogles famous advice was to stop searching for the “needle” in the haystack—the one winning stock that would generate alphaand instead buy the “haystack” itself.1 This approach was designed to democratize investing, allowing the average worker to capture the compounding growth of corporate America without falling prey to the “croupiers” of Wall Street. Bogle viewed the stock market as a “giant distraction” from the business of investing; he championed a culture of stewardship where investors held broad, diversified portfolios for decades.1</p>
+<p>Crucially, Bogles vision assumed a specific market ecology. He assumed that active managers would remain the dominant force in price setting—the “marginal price setter“ensuring that stock prices reflected fundamental reality. Passive funds would simply be “price takers,” riding the wake of the active managers’ discovery work. He advocated for low turnover, citing that in the 1960s, the average holding period for stocks was eight years. By the 2020s, this had collapsed to less than a year.1 Bogle himself, late in his life, began to warn about the potential dangers if passive investing became too large, asking, “What happens if everybody buys the haystack?”.2</p>
+<h3 id="the-mutation-from-price-taker-to-price-setter"><a class="header" href="#the-mutation-from-price-taker-to-price-setter">The Mutation: From Price Taker to Price Setter</a></h3>
+<p>The success of Bogles revolution sowed the seeds of the current crisis. As passive funds grew to control over 50% of U.S. equity assets 1, the ecology of the market flipped. Passive funds transitioned from being price takers to price setters. This shift fundamentally altered the mechanism of capital allocation.</p>
+<p>In a passive-dominated regime, capital flows are not directed by an analysis of Return on Invested Capital (ROIC), innovation potential, or solvency. Instead, they are directed by <strong>market capitalization</strong>. If a company’s stock price rises, its weight in the index increases, forcing passive funds to buy more of it. This creates a “momentum machine”.3</p>
+<ul>
+<li><strong>The Feedback Loop:</strong> When a stock enters a major index or increases in weight, passive funds must purchase it regardless of valuation. This buying pressure pushes the price higher, which increases the market cap, which increases the weight, which forces more buying.</li>
+<li><strong>The Divorce from Fundamentals:</strong> This mechanical buying is “price insensitive.” A passive fund does not care if a stock is trading at 10 times earnings or 1,000 times earnings. It buys because the rules dictate it must.</li>
+</ul>
+<p>This dynamic has created what some analysts call “the dumbest market in history”.4 The “margin of safety”—the buffer between price and value that protects investorshas been eroded by a tsunami of automated flows. The market no longer disciplines capital allocation; it reinforces size. The largest companies get cheaper capital simply because they are large, creating an entrenchment of incumbents and a distortion of the competitive landscape.4</p>
+<h3 id="the-speculative-shift-turnover-and-short-termism"><a class="header" href="#the-speculative-shift-turnover-and-short-termism">The Speculative Shift: Turnover and Short-Termism</a></h3>
+<p>Bogle explicitly warned against the shift from “investment” to “speculation.” He defined investment as forecasting the yield on assets over their life, while speculation is forecasting the psychology of the market.6 The modern index fund ecosystem, despite being labeled “passive,” facilitates massive speculation.</p>
+<ul>
+<li><strong>High Turnover in “Passive” Vehicles:</strong> While the funds themselves hold stocks passively, the investors <em>in</em> the funds trade them actively. ETFs (Exchange Traded Funds) allow investors to trade the “haystack” with high frequency. The turnover rate of the SPY ETF, for example, is astronomically high compared to the underlying holding periods Bogle envisioned.6</li>
+<li><strong>The Velocity of Money:</strong> This high-velocity trading of index products transmits volatility into the underlying securities. When macro sentiment shifts, billions of dollars slosh in or out of the entire market instantaneously, causing all stocks to move in lockstep (high correlation), destroying the benefits of diversification that indexing was supposed to provide.5</li>
+</ul>
+<p>Thus, the tool Bogle created to bypass Wall Street speculation has been co-opted to become the ultimate instrument of it. It is within this distorted, momentum-driven environment that Strategy Inc (MicroStrategy) launched its assault on the conventional corporate treasury model.</p>
+<hr>
+<h2 id="the-bitcoin-treasury-flywheel-exploiting-the-passive-flaw"><a class="header" href="#the-bitcoin-treasury-flywheel-exploiting-the-passive-flaw">The Bitcoin Treasury Flywheel: Exploiting the Passive Flaw</a></h2>
+<h3 id="the-microstrategy-thesis"><a class="header" href="#the-microstrategy-thesis">The MicroStrategy Thesis</a></h3>
+<p>In August 2020, MicroStrategy, under the leadership of Michael Saylor, adopted the “Bitcoin Standard.” The company converted its depleting cash reserves into Bitcoin (BTC), viewing the digital asset as a superior store of value to the US dollar in an era of monetary expansion. This move transformed MSTR from a stagnant software company into a high-beta proxy for Bitcoin.8</p>
+<p>However, the strategy evolved beyond simple holding. Saylor recognized the unique arbitrage opportunity presented by the passive-dominated equity market.</p>
+<ul>
+<li><strong>The Premium:</strong> Because many institutions and retail investors could not access Bitcoin directly (due to regulatory mandates or lack of ETFs), they bought MSTR as a proxy. This demand drove MSTR’s stock price to trade at a significant premium to the Net Asset Value (NAV) of its Bitcoin holdings.10</li>
+<li><strong>The Issuance:</strong> MSTR utilized this premium to issue new equity and convertible debt. If the stock trades at 2x NAV, MSTR can issue 1 billion USD in stock to buy 1 billion USD in Bitcoin, and the per-share value of Bitcoin for existing shareholders actually <em>increases</em>. This is accretive dilution.8</li>
+</ul>
+<h3 id="the-index-inclusion-infinite-money-glitch"><a class="header" href="#the-index-inclusion-infinite-money-glitch">The Index Inclusion “Infinite Money Glitch”</a></h3>
+<p>The genius—and dangerof the strategy lay in its interaction with passive indexing.</p>
+<ol>
+<li><strong>Step 1: Buy Bitcoin.</strong> MSTR buys BTC. BTC price rises.</li>
+<li><strong>Step 2: Stock Appreciates.</strong> MSTR stock rises, often amplifying the BTC move due to the NAV premium and leverage.</li>
+<li><strong>Step 3: Market Cap Expands.</strong> MSTRs market capitalization grows, triggering its inclusion in more indices (e.g., MSCI World, potentially S and P 500) and increasing its weight in existing ones.</li>
+<li><strong>Step 4: Forced Passive Buying.</strong> Index funds are forced to buy MSTR to match the new weight. This buying is price-insensitive.9</li>
+<li><strong>Step 5: Repeat.</strong> The passive buying supports the high stock price, allowing MSTR to issue more equity to buy more Bitcoin, restarting the cycle.</li>
+</ol>
+<p>This “flywheel” effectively weaponized the passive investing mandate. The index funds were acting as the “greater fool,” providing the liquidity that allowed MSTR to corner the Bitcoin market. It turned the passive market’s mechanical rules into a source of perpetual funding for a speculative treasury strategy.8</p>
+<h3 id="the-distortion-of-operating-companies"><a class="header" href="#the-distortion-of-operating-companies">The Distortion of “Operating” Companies</a></h3>
+<p>Critics argue this strategy violates the spirit of public equity markets. MSTR was no longer primarily an “operating company” creating value through software sales; it had become a “Digital Asset Treasury Company” (DATCO), essentially a leveraged holding company or a closed-end fund masquerading as a tech stock to access index capital.11</p>
+<ul>
+<li><strong>The “Closed-End Fund” Risk:</strong> If the premium collapses and MSTR trades at a discount to NAV, the flywheel reverses. The company cannot issue accretive equity. If it has to sell Bitcoin to service debt, it could trigger a death spiral. Passive investors would be left holding the bag.10</li>
+</ul>
+<hr>
+<h2 id="the-quasi-regulators-mscis-intervention-and-the-chokepoint"><a class="header" href="#the-quasi-regulators-mscis-intervention-and-the-chokepoint">The Quasi-Regulators: MSCIs Intervention and the “Chokepoint”</a></h2>
+<p>The reaction to MSTR’s strategy by the index provider MSCI highlights the immense, unregulated power these entities now hold.</p>
+<h3 id="the-proposal-enforcement-by-news-cycle"><a class="header" href="#the-proposal-enforcement-by-news-cycle">The Proposal: “Enforcement by News Cycle”</a></h3>
+<p>In late 2025, recognizing the systemic risk posed by DATCOs, MSCI released a consultation paper proposing to exclude companies from its global indices if their digital asset holdings exceeded 50% of total assets.12</p>
+<ul>
+<li><strong>The Immediate Impact:</strong> The mere *proposal—not a final ruletriggered a catastrophic repricing. MSTR shares fell over 50% in Q4 2025.12</li>
+<li><strong>Value Destruction:</strong> The passive contribution to MSTRs market cap was estimated at roughly 2.8 billion USD.13 However, the market cap loss was tens of billions. This discrepancy reveals the “multiplier effect” of index inclusion. The <em>threat</em> of losing the passive bid signaled to the entire market that MSTR was “uninvestable” for institutional mandates.</li>
+</ul>
+<p>This phenomenon is “enforcement by news cycle.” MSCI did not need to pass a law or win a court case. By simply floating a headline, they regulated MSTRs valuation down by 50%. This is a form of “soft power” that rivals the hard power of the SEC.12</p>
+<h3 id="the-decision-the-freeze-as-regulatory-sanction"><a class="header" href="#the-decision-the-freeze-as-regulatory-sanction">The Decision: The “Freeze” as Regulatory Sanction</a></h3>
+<p>On January 6, 2026, MSCI announced its final decision. It retreated from full exclusion, likely due to the intense backlash and the complexity of defining “digital assets” (as many firms hold crypto). Instead, they implemented a “freeze” on share count metrics for DATCOs.8</p>
+<ul>
+<li><strong>The Mechanism:</strong> MSCI stated it would “not implement increases to the Number of Shares (NOS)… for these securities”.8</li>
+<li><strong>The Consequence:</strong> This surgical strike was designed to break the MSTR flywheel. If MSTR issues new shares to buy Bitcoin, MSCI will not count those new shares in the index weight. Passive funds are therefore <em>not</em> forced to buy the new issuance.</li>
+<li><strong>De-Indexing Growth:</strong> While MSTR remains in the index, its <em>growth mechanism</em> has been de-indexed. This turns off the tap of automatic passive capital for future expansion, effectively regulating the company’s ability to raise capital.8</li>
+</ul>
+<h3 id="index-providers-as-quasi-regulators"><a class="header" href="#index-providers-as-quasi-regulators">Index Providers as Quasi-Regulators</a></h3>
+<p>This episode confirms that index providers have become “Quasi-Regulators.” They are private entities setting public policy for capital markets.</p>
+<ul>
+<li><strong>Comparison to Proxy Advisors:</strong> Much like ISS and Glass Lewis control shareholder voting through “robo-voting” recommendations 14, MSCI and S and P control capital flows through “robo-investing” mandates.</li>
+<li><strong>Private Regulation:</strong> Legal scholars define this as “private regulation” because these entities use their influence to manipulate the behavior of others to further a perceived social or market good (in this case, “index stability”).15</li>
+<li><strong>Lack of Due Process:</strong> Unlike the SEC, MSCI has no congressional mandate, no administrative procedure act to follow, and limited accountability. Their “Index Committees” operate in secrecy, making discretionary decisions about which companies survive and which starve.16</li>
+</ul>
+<p>The table below summarizes the asymmetry of the MSCI impact:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Metric</th><th style="text-align: left">Value / Impact</th><th style="text-align: left">Source</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>MSTR Market Cap Loss (Q4 2025)</strong></td><td style="text-align: left">~50% drop (Tens of Billions USD)</td><td style="text-align: left">12</td></tr>
+<tr><td style="text-align: left"><strong>Bitcoin Price Decline (Same Period)</strong></td><td style="text-align: left">~25%</td><td style="text-align: left">12</td></tr>
+<tr><td style="text-align: left"><strong>Est. Passive Capital at Risk</strong></td><td style="text-align: left">~2.8 Billion USD</td><td style="text-align: left">13</td></tr>
+<tr><td style="text-align: left"><strong>Ratio of Loss to Passive Flow</strong></td><td style="text-align: left">&gt; 10x</td><td style="text-align: left">12</td></tr>
+<tr><td style="text-align: left"><strong>Regulatory Action</strong></td><td style="text-align: left">Share Count Freeze (No new passive buying)</td><td style="text-align: left">8</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Table 1: The Multiplier Effect of Index Exclusion.</strong> <em>The market cap loss far exceeded the actual amount of passive capital, indicating that index eligibility is a primary driver of valuation multiples.</em></p>
+<hr>
+<h2 id="the-andreessen-critique-spooking-the-market-and-the-chokepoint"><a class="header" href="#the-andreessen-critique-spooking-the-market-and-the-chokepoint">The Andreessen Critique: “Spooking” the Market and the Chokepoint</a></h2>
+<p>The actions of MSCI and the broader regulatory environment surrounding crypto-adjacent companies resonate deeply with the observations of venture capitalist Mark Andreessen. In his appearances on the Joe Rogan Experience podcast, Andreessen articulated a theory of how modern regulation—both public and private—stifles innovation through fear and “chokepoints.”</p>
+<h3 id="regulators-spooking-the-market"><a class="header" href="#regulators-spooking-the-market">Regulators “Spooking” the Market</a></h3>
+<p>Andreessen argues that regulators do not always need to take formal action to destroy an industry; they simply need to “spook” the market. By creating an environment of ambiguity and threat, they deter capital from entering specific sectors.18</p>
+<ul>
+<li><strong>The MSCI “Spook”:</strong> The consultation paper on DATCOs was a classic “spook.” It created existential uncertainty for MSTR shareholders. Even though the final decision was a compromise (a freeze rather than exclusion), the volatility introduced by the process achieved the regulator’s goal: it cooled off the speculation and broke the momentum.12</li>
+<li><strong>Psychological Operations:</strong> Andreessen notes that this creates a “chilling effect.” Other companies observing MSTRs punishment will be deterred from adopting a Bitcoin Treasury strategy, fearing similar retaliation from index providers. Thus, the index provider effectively bans a corporate strategy without ever having to explicitly outlaw it.19</li>
+</ul>
+<h3 id="operation-chokepoint-and-debanking"><a class="header" href="#operation-chokepoint-and-debanking">Operation Chokepoint and Debanking</a></h3>
+<p>Andreessen frequently references “Operation Chokepoint,” an Obama-era initiative where regulators pressured banks to cut off services to disfavored but legal industries (e.g., gun manufacturers, payday lenders).</p>
+<ul>
+<li><strong>De-Indexing as Debanking:</strong> In the modern era, being “de-indexed” is the capital markets equivalent of being “de-banked.” For a public company, the index is the primary source of liquidity and capital stability. Being cut off from the S and P 500 or MSCI World is a death sentence for valuation.20</li>
+<li><strong>The Elite/Public Gap:</strong> Andreessen identifies a divergence between “elites” (who favor stability, control, and traditional models) and the “public” (who favor innovation and new asset classes). The public market clearly desires Bitcoin exposure through MSTR, valuing it at a premium. The elite gatekeepers (MSCI Index Committee) intervened to “correct” this market preference, viewing it as illegitimate speculation.18</li>
+</ul>
+<h3 id="the-stagnation-of-innovation"><a class="header" href="#the-stagnation-of-innovation">The Stagnation of Innovation</a></h3>
+<p>By enforcing rigid definitions of what an “operating company” is, index providers enforce stagnation. Andreessen argues that institutional systems are “wired” to reject things that challenge them.18 A company like MicroStrategy, which blurs the line between a software firm and a commodity hedge fund, disrupts the neat categorization required by passive index methodologies. The “freeze” is the system’s antibody response to this disruption, protecting the status quo of 20th-century corporate models at the expense of 21st-century financial experimentation.22</p>
+<hr>
+<h2 id="comparative-speculation-musk-vs-saylor"><a class="header" href="#comparative-speculation-musk-vs-saylor">Comparative Speculation: Musk vs. Saylor</a></h2>
+<p>To understand the specific bias of the gatekeepers, it is instructive to compare the treatment of Michael Saylor’s MicroStrategy with Elon Musk’s Tesla. Both engaged in forms of speculation that challenged index providers, but their outcomes differed.</p>
+<h3 id="productive-vs-financial-speculation"><a class="header" href="#productive-vs-financial-speculation">Productive vs. Financial Speculation</a></h3>
+<ul>
+<li><strong>Tesla (Productive Speculation):</strong> Tesla was excluded from the S and P 500 for years despite meeting market cap requirements. The Index Committee cited “quality of earnings” and volatility concerns.17 Tesla was essentially a speculative bet on a new energy future. However, its speculation was “productive—it built factories, developed technology, and employed thousands. Eventually, once it showed GAAP profitability, the S&amp;P Committee capitulated and added it, leading to a massive buying frenzy.17</li>
+<li><strong>MicroStrategy (Financial Speculation):</strong> Saylor’s speculation is purely financial. MSTR is not building “Bitcoin factories”; it is hoarding a bearer asset. The “flywheel” relies on financial engineering (issuing equity to buy assets) rather than operational growth. To the index committee, this looks less like a company and more like a structured product or an ETF wrapper.24</li>
+</ul>
+<h3 id="the-bias-against-crypto"><a class="header" href="#the-bias-against-crypto">The Bias Against Crypto</a></h3>
+<p>There is a perception among analysts of a “bias against Bitcoin” within the index committees.23</p>
+<ul>
+<li><strong>The “Conservative” Mindset:</strong> S and P and MSCI view themselves as guardians of the “broad economy.” They are hesitant to legitimize an asset class (crypto) that challenges the sovereign currency system upon which the indices are denominated.25</li>
+<li><strong>Discretionary Exclusion:</strong> While Tesla was delayed, MSTR faces a unique “technical freeze.” This suggests that financial engineering is viewed with more hostility than operational volatility. The gatekeepers are signaling that using the public markets to hoard commodities is an abuse of the passive indexing mechanism.11</li>
+</ul>
+<p>However, this distinction is arbitrary. Many resource companies (gold miners, oil majors) are essentially levered bets on commodity prices. The singling out of “Digital Asset” treasuries suggests that the “Quasi-Regulators” are enforcing a specific monetary ideology rather than neutral market measurement.22</p>
+<hr>
+<h2 id="regulatory-remedies-and-future-market-structure"><a class="header" href="#regulatory-remedies-and-future-market-structure">Regulatory Remedies and Future Market Structure</a></h2>
+<p>The MSTR/MSCI saga proves that the current market structure, dominated by unregulated passive gatekeepers, is unsustainable. It concentrates too much power in the hands of private committees and creates systemic fragility. To restore the “stewardship” model Bogle envisioned and protect the market from “spooking,” several regulatory remedies are necessary.</p>
+<h3 id="remedy-1-mandatory-holding-periods"><a class="header" href="#remedy-1-mandatory-holding-periods">Remedy 1: Mandatory Holding Periods</a></h3>
+<p>The most direct antidote to the “momentum machine” and the “enforcement by news cycle” is to slow down the capital. Regulators should implement <strong>Mandatory Holding Periods</strong> for funds that market themselves as “passive” or “index” investments.</p>
+<ul>
+<li><strong>The Mechanism:</strong> Investors in broad market index funds (e.g., S and P 500 ETFs) would be required to hold their positions for a minimum period (e.g., 6 months to 1 year) to qualify for favorable tax treatment, or face redemption fees for early withdrawal.26</li>
+<li><strong>Precedents:</strong>
+<ul>
+<li><strong>ELSS (India):</strong> Equity Linked Savings Schemes have a mandatory 3-year lock-in.26</li>
+<li><strong>Exchange Funds:</strong> These require 7-year holding periods for tax deferral.27</li>
+<li><strong>Employee Stock Plans:</strong> Often have 6-month lock-ups.28</li>
+</ul>
+</li>
+<li><strong>The Impact:</strong> This would reduce the “sloshing” of capital. If passive investors cannot flee at the first headline (like the MSCI proposal), the volatility of the underlying stocks would dampen. It would force investors to adopt the long-term horizon Bogle intended, turning them from “renters” of stock into “owners”.6</li>
+</ul>
+<h3 id="remedy-2-time-weighted-index-methodologies"><a class="header" href="#remedy-2-time-weighted-index-methodologies">Remedy 2: Time-Weighted Index Methodologies</a></h3>
+<p>The vulnerability of MSTR to the MSCI “freeze” was due to the nature of <strong>Capitalization-Weighted</strong> indices. A spike in price immediately grants a higher weight, fueling the flywheel. A shift to <strong>Time-Weighted</strong> methodologies would smooth this distortion.</p>
+<ul>
+<li><strong>The Methodology:</strong> Instead of using the spot price to determine market cap weight, indices could use a Time-Weighted Average Price (TWAP) over a significant lookback period (e.g., 12 months).
+<ul>
+<li><em>Formula:</em> The weight would be derived from \$\text{TWAP} = \frac{\sum P_i \times T_i}{\sum T_i}\$ rather than \$P_{\text{current}}.29 USD</li>
+</ul>
+</li>
+<li><strong>The Effect:</strong> A sudden, speculative spike in MSTRs price would not immediately result in forced passive buying. The index would “wait” to see if the valuation is sustained over time. This would break the “instant feedback loop” that Saylor exploited, preventing the flywheel from overheating while protecting passive investors from buying the top.30</li>
+<li><strong>Fallen Angel Precedent:</strong> FTSE already uses time-weighted methodologies for “Fallen Angel” bond indices to capture price rebounds without over-allocating to distress.30</li>
+</ul>
+<h3 id="remedy-3-regulating-the-quasi-regulators"><a class="header" href="#remedy-3-regulating-the-quasi-regulators">Remedy 3: Regulating the Quasi-Regulators</a></h3>
+<p>Finally, the “Quasi-Regulators” themselves must be brought under the rule of law.</p>
+<ul>
+<li><strong>Designation as SIFMUs:</strong> Major index providers (MSCI, S and P, FTSE) should be designated as Systemically Important Financial Market Utilities (SIFMUs).</li>
+<li><strong>Transparency and Due Process:</strong> Index committees should be required to publish the minutes of their meetings and provide clear, objective criteria for inclusion/exclusion. The “black box” discretion that allowed for the MSTR freeze must be replaced by transparent, rules-based governance.16</li>
+<li><strong>Prohibition on “Chokepoints”:</strong> Regulators should prohibit index providers from discriminating against companies based on asset composition (e.g., DATCOs) unless there is a proven solvency risk. This would prevent the ideological “debanking” of crypto-adjacent firms.32</li>
+</ul>
+<h3 id="remedy-4-loyalty-shares-l-shares"><a class="header" href="#remedy-4-loyalty-shares-l-shares">Remedy 4: Loyalty Shares (L-Shares)</a></h3>
+<p>To empower long-term shareholders against the transient passive flow, corporations should be encouraged to issue <strong>Loyalty Shares</strong>.</p>
+<ul>
+<li><strong>Concept:</strong> Shareholders who hold stock for a defined period (e.g., &gt;2 years) receive increased voting rights (e.g., 2 votes per share vs 1).33</li>
+<li><strong>Passive Impact:</strong> Since passive funds trade frequently to rebalance, they would rarely qualify for the full voting power. This would shift governance control back to active, long-term shareholders (founders, families, active managers), restoring the “owner” mindset to the corporation.35</li>
+</ul>
+<hr>
+<h2 id="conclusion-the-necessity-of-intervention"><a class="header" href="#conclusion-the-necessity-of-intervention">Conclusion: The Necessity of Intervention</a></h2>
+<p>The conflict between MicroStrategy and MSCI is not merely a squabble over index weighting; it is a structural crisis signal. It demonstrates that the passive investing revolution has reached a point of diminishing returns, where the mechanisms designed to lower costs are now raising systemic risks.</p>
+<p>Jack Bogles vision of a low-cost “haystack” has been corrupted into a high-speed “momentum machine.” Michael Saylor’s exploitation of this machine through the Bitcoin flywheel was a rational response to the incentives provided. MSCI’s response acting as a private regulator to “freeze” this activityreveals the dangerous, unaccountable power of index providers to destroy value via “enforcement by news cycle.”</p>
+<p>As Mark Andreessen warned, when regulators and gatekeepers “spook” the market, they drive capital away from innovation and enforce a stagnant conformity. The “de-indexing” of MicroStrategy is a warning shot to any public company that dares to deviate from the standard operating model.</p>
+<p>To preserve the integrity of the public markets, we must move beyond the naive acceptance of passive dominance. We need a regulatory framework that acknowledges the reality of “Quasi-Regulators” and imposes checks on their power. Through mandatory holding periods, time-weighted indices, and the protection of long-term voting rights, we can redesign the market to serve its true purpose: the efficient allocation of capital to the future, not just the blind replication of the past.</p>
+<hr>
+<h2 id="appendix-a-comparative-methodology-of-index-weighting"><a class="header" href="#appendix-a-comparative-methodology-of-index-weighting">Appendix A: Comparative Methodology of Index Weighting</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Feature</th><th style="text-align: left">Market-Cap Weighted (Current)</th><th style="text-align: left">Time-Weighted (Proposed)</th><th style="text-align: left">Impact on “Flywheel” Strategies</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Input Data</strong></td><td style="text-align: left">Spot Price (\$P_t\$) and Shares Outstanding</td><td style="text-align: left">TWAP (e.g., 12-mo avg) and Shares</td><td style="text-align: left"><strong>High Impact:</strong> TWAP lags spot price, delaying index inclusion/weight increase.</td></tr>
+<tr><td style="text-align: left"><strong>Rebalancing</strong></td><td style="text-align: left">Quarterly (typically)</td><td style="text-align: left">Rolling or Quarterly</td><td style="text-align: left"><strong>Dampening:</strong> Prevents rapid accumulation of weight during bubbles.</td></tr>
+<tr><td style="text-align: left"><strong>Momentum Bias</strong></td><td style="text-align: left">High (Buys winners immediately)</td><td style="text-align: left">Low (Buys sustained value)</td><td style="text-align: left"><strong>Negative:</strong> Breaks the “price rises -&gt; buy more” feedback loop.</td></tr>
+<tr><td style="text-align: left"><strong>Volatility</strong></td><td style="text-align: left">High (Transmits volatility to fund)</td><td style="text-align: left">Low (Smoothes volatility)</td><td style="text-align: left"><strong>Stabilizing:</strong> Protects passive investors from volatility spikes.</td></tr>
+<tr><td style="text-align: left"><strong>Example Use</strong></td><td style="text-align: left">S and P 500, MSCI World</td><td style="text-align: left">FTSE Fallen Angel Bond Index</td><td style="text-align: left"><strong>Applicability:</strong> Could be applied to high-beta sectors (Crypto, Tech).</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Table 2: Market-Cap vs. Time-Weighted Methodologies.</strong> Source: Analysis of Nasdaq 29 and FTSE 30 methodology documents.</p>
+<hr>
+<h2 id="works-cited"><a class="header" href="#works-cited">Works cited</a></h2>
+<ol>
+<li>
+<p>Wealth quote of the day by John Jack Bogle, The stock market is a giant distraction from the business of investing. Why the Vanguard Method of Owning the Haystack, Not the Needle beat Wall Street’s stock-picking game - The Economic Times, accessed January 13, 2026, <a href="https://m.economictimes.com/news/international/us/wealth-quote-of-the-day-by-john-jack-bogle-the-stock-market-is-a-giant-distraction-from-the-business-of-investing-why-the-vanguard-method-of-owning-the-haystack-not-the-needle-beat-wall-streets-stock-picking-game/articleshow/126394872.cms">https://m.economictimes.com/news/international/us/wealth-quote-of-the-day-by-john-jack-bogle-the-stock-market-is-a-giant-distraction-from-the-business-of-investing-why-the-vanguard-method-of-owning-the-haystack-not-the-needle-beat-wall-streets-stock-picking-game/articleshow/126394872.cms</a></p>
+</li>
+<li>
+<p>Jack Bogle looks back on the 40th anniversary of the index fund - InvestmentNews, accessed January 13, 2026, <a href="https://www.investmentnews.com/etfs/jack-bogle-looks-back-on-the-40th-anniversary-of-the-index-fund/69964">https://www.investmentnews.com/etfs/jack-bogle-looks-back-on-the-40th-anniversary-of-the-index-fund/69964</a></p>
+</li>
+<li>
+<p>The Increasing Risks of Passive Dominance | Research Affiliates, accessed January 13, 2026, <a href="https://www.researchaffiliates.com/content/dam/ra/publications/pdf/1078-passive-aggressive-risks-of-passive-dominance.pdf">https://www.researchaffiliates.com/content/dam/ra/publications/pdf/1078-passive-aggressive-risks-of-passive-dominance.pdf</a></p>
+</li>
+<li>
+<p>The Most Dangerous Era In History - RIA - Real Investment Advice, accessed January 13, 2026, <a href="https://realinvestmentadvice.com/resources/blog/passive-investing-driving-the-most-dangerous-era-in-history/">https://realinvestmentadvice.com/resources/blog/passive-investing-driving-the-most-dangerous-era-in-history/</a></p>
+</li>
+<li>
+<p>The Hidden Risks of Passive Investing - Banque de Luxembourg Investments, accessed January 13, 2026, <a href="https://www.banquedeluxembourginvestments.com/en/bank/bli/blog/-/blogpost/the-hidden-risks-of-passive-investing">https://www.banquedeluxembourginvestments.com/en/bank/bli/blog/-/blogpost/the-hidden-risks-of-passive-investing</a></p>
+</li>
+<li>
+<p>The Wisdom of Jack Bogle: Part 2 - Marotta On Money, accessed January 13, 2026, <a href="https://marottaonmoney.com/the-wisdom-of-jack-bogle-part-2/">https://marottaonmoney.com/the-wisdom-of-jack-bogle-part-2/</a></p>
+</li>
+<li>
+<p>The Risks of Passive Investing Dominance - Alpha Architect, accessed January 13, 2026, <a href="https://alphaarchitect.com/passive-investing/">https://alphaarchitect.com/passive-investing/</a></p>
+</li>
+<li>
+<p>MSCI freezes share count for Bitcoin treasury firms, ending … - BingX, accessed January 13, 2026, <a href="https://bingx.com/en/news/post/msci-freezes-share-count-for-bitcoin-treasury-firms-ending-strategy-s-index-driven-funding-loop">https://bingx.com/en/news/post/msci-freezes-share-count-for-bitcoin-treasury-firms-ending-strategy-s-index-driven-funding-loop</a></p>
+</li>
+<li>
+<p>General MSTR Summary | PDF | Bitcoin | Exchange Traded Fund - Scribd, accessed January 13, 2026, <a href="https://www.scribd.com/document/923479399/General-MSTR-Summary">https://www.scribd.com/document/923479399/General-MSTR-Summary</a></p>
+</li>
+<li>
+<p>MSTR’s Net Bitcoin Holdings Now Exceed Its Market Cap by 3.4 USDB - CCN.com, accessed January 13, 2026, <a href="https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/">https://www.ccn.com/education/crypto/mstr-market-cap-below-bitcoin-value-risk-analysis/</a></p>
+</li>
+<li>
+<p>Strategy gets to remain in MSCI indexes, stock gains over 6% | Seeking Alpha, accessed January 13, 2026, <a href="https://seekingalpha.com/news/4537196-strategy-gets-to-remain-in-msci-indexes">https://seekingalpha.com/news/4537196-strategy-gets-to-remain-in-msci-indexes</a></p>
+</li>
+<li>
+<p>MicroStrategy Gets to Stay in MSCI Indexes. Is That Win Enough to Keep Buying MSTR Stock in 2026? - Barchart.com, accessed January 13, 2026, <a href="https://www.barchart.com/story/news/36952103/microstrategy-gets-to-stay-in-msci-indexes-is-that-win-enough-to-keep-buying-mstr-stock-in-2026">https://www.barchart.com/story/news/36952103/microstrategy-gets-to-stay-in-msci-indexes-is-that-win-enough-to-keep-buying-mstr-stock-in-2026</a></p>
+</li>
+<li>
+<p>MSTR Stock Breaks Above 20-Day Moving Average on MSCI Win. Should You Buy Shares Here? - Barchart.com, accessed January 13, 2026, <a href="https://www.barchart.com/story/news/36945988/mstr-stock-breaks-above-20-day-moving-average-on-msci-win-should-you-buy-shares-here">https://www.barchart.com/story/news/36945988/mstr-stock-breaks-above-20-day-moving-average-on-msci-win-should-you-buy-shares-here</a></p>
+</li>
+<li>
+<p>The Realities of Robo-Voting, accessed January 13, 2026, <a href="https://corpgov.law.harvard.edu/2018/11/29/the-realities-of-robo-voting/">https://corpgov.law.harvard.edu/2018/11/29/the-realities-of-robo-voting/</a></p>
+</li>
+<li>
+<p>Private Regulation of Morality - UC Davis Law Review, accessed January 13, 2026, <a href="https://lawreview.law.ucdavis.edu/sites/g/files/dgvnsk15026/files/2025-12/59-Online_Thusi.pdf">https://lawreview.law.ucdavis.edu/sites/g/files/dgvnsk15026/files/2025-12/59-Online_Thusi.pdf</a></p>
+</li>
+<li>
+<p>S and P AFE 40 - Methodology, accessed January 13, 2026, <a href="https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-afe-40-index.pdf">https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-afe-40-index.pdf</a></p>
+</li>
+<li>
+<p>The largest Bitcoin-holding company failed to be included in the S and P 500, as cryptocurrency-related enterprises continue to face an ‘identity crisis.’, accessed January 13, 2026, <a href="https://news.futunn.com/en/post/61882149/the-largest-bitcoin-holding-company-failed-to-be-included-in">https://news.futunn.com/en/post/61882149/the-largest-bitcoin-holding-company-failed-to-be-included-in</a></p>
+</li>
+<li>
+<p>Huberman Lab Podcast - Marc Andreessen on Innovation and AI …, accessed January 13, 2026, <a href="https://coconote.app/notes/00ef498a-17f5-417c-8b80-f79660b671be/transcript">https://coconote.app/notes/00ef498a-17f5-417c-8b80-f79660b671be/transcript</a></p>
+</li>
+<li>
+<p>[The AI Show Episode 184]: OpenAI Code Red, Gemini 3 Deep Think, Recursive Self-Improvement, ChatGPT Ads, Apple Talent Woes &amp; New Data on AI Job Cuts, accessed January 13, 2026, <a href="https://podcast.smarterx.ai/shownotes/184">https://podcast.smarterx.ai/shownotes/184</a></p>
+</li>
+<li>
+<p>Governance by One-Lot Shares - Cambridge University Press &amp; Assessment, accessed January 13, 2026, <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/70187390875C59AB07CC8E441701BCC3/S0022109024000516a.pdf/governance-by-one-lot-shares.pdf">https://www.cambridge.org/core/services/aop-cambridge-core/content/view/70187390875C59AB07CC8E441701BCC3/S0022109024000516a.pdf/governance-by-one-lot-shares.pdf</a></p>
+</li>
+<li>
+<p>Keen On America - Substack, accessed January 13, 2026, <a href="https://api.substack.com/feed/podcast/309494.rss">https://api.substack.com/feed/podcast/309494.rss</a></p>
+</li>
+<li>
+<p>Strategy Urges MSCI To Keep DATs In Global Indexes - Bitcoin Magazine, accessed January 13, 2026, <a href="https://bitcoinmagazine.com/featured/strategy-msci-keep-dats-in-indexes">https://bitcoinmagazine.com/featured/strategy-msci-keep-dats-in-indexes</a></p>
+</li>
+<li>
+<p>‘Bias against bitcoin’: Analysts compare Strategy’s S and P 500 exclusion to previous Tesla, Facebook snubs | The Block, accessed January 13, 2026, <a href="https://www.theblock.co/post/369909/bias-against-bitcoin-strategys-sp-500-exclusion-tesla-facebook-snubs">https://www.theblock.co/post/369909/bias-against-bitcoin-strategys-sp-500-exclusion-tesla-facebook-snubs</a></p>
+</li>
+<li>
+<p>NBIM DIscussIoN NoTE Global equity indices, accessed January 13, 2026, <a href="https://www.nbim.no/globalassets/documents/dicussion-paper/2014/discussionnote_2_2014.pdf">https://www.nbim.no/globalassets/documents/dicussion-paper/2014/discussionnote_2_2014.pdf</a></p>
+</li>
+<li>
+<p>Filed - SEC.gov, accessed January 13, 2026, <a href="https://www.sec.gov/Archives/edgar/data/2056263/000121390025087046/ea0257134-425_procap.htm">https://www.sec.gov/Archives/edgar/data/2056263/000121390025087046/ea0257134-425_procap.htm</a></p>
+</li>
+<li>
+<p>Lock-in Period of Mutual Funds: Meaning, Types and Benefits, accessed January 13, 2026, <a href="https://www.bajajamc.com/knowledge-centre/lock-in-period-of-mutual-fund-investments">https://www.bajajamc.com/knowledge-centre/lock-in-period-of-mutual-fund-investments</a></p>
+</li>
+<li>
+<p>Exchange Funds: A Tax-Efficient Strategy for Portfolio Diversification - Inside Sales Expert, accessed January 13, 2026, <a href="https://www.insidesalesexpert.com/blog/Exchange%20Funds:%20A%20Tax-Efficient%20Strategy%20for%20Portfolio%20Diversification">https://www.insidesalesexpert.com/blog/Exchange%20Funds:%20A%20Tax-Efficient%20Strategy%20for%20Portfolio%20Diversification</a></p>
+</li>
+<li>
+<p>personal account dealing (pad) policy - SEC.gov, accessed January 13, 2026, <a href="https://www.sec.gov/Archives/edgar/data/1320615/000093041314003318/c78212_ex99-p15.htm">https://www.sec.gov/Archives/edgar/data/1320615/000093041314003318/c78212_ex99-p15.htm</a></p>
+</li>
+<li>
+<p>NASDAQ-100 DAILY COVERED CALL 101TM INDEX NDXDC01, accessed January 13, 2026, <a href="https://indexes.nasdaqomx.com/docs/NDXDC01%20Methodology.pdf">https://indexes.nasdaqomx.com/docs/NDXDC01%20Methodology.pdf</a></p>
+</li>
+<li>
+<p>FTSE Time-Weighted US Fallen Angel Bond Select Index | LSEG, accessed January 13, 2026, <a href="https://www.lseg.com/content/dam/ftse-russell/en_us/documents/ground-rules/ftse-time-weighted-us-fallen-angel-bond-select-index-ground-rules.pdf">https://www.lseg.com/content/dam/ftse-russell/en_us/documents/ground-rules/ftse-time-weighted-us-fallen-angel-bond-select-index-ground-rules.pdf</a></p>
+</li>
+<li>
+<p>FUTURE STATE OF THE INVESTMENT PROFESSION - CFA Institute Research and Policy Center, accessed January 13, 2026, <a href="https://rpc.cfainstitute.org/sites/default/files/-/media/documents/survey/future-state-appendix-a.pdf">https://rpc.cfainstitute.org/sites/default/files/-/media/documents/survey/future-state-appendix-a.pdf</a></p>
+</li>
+<li>
+<p>BPInsights: Nov. 2, 2024 - Bank Policy Institute, accessed January 13, 2026, <a href="https://bpi.com/bpinsights-nov-2-2024/">https://bpi.com/bpinsights-nov-2-2024/</a></p>
+</li>
+<li>
+<p>The revival of dual class shares | Baker McKenzie, accessed January 13, 2026, <a href="https://www.bakermckenzie.com/-/media/files/insight/publications/2020/03/the-revival-of-dual-class-shares.pdf">https://www.bakermckenzie.com/-/media/files/insight/publications/2020/03/the-revival-of-dual-class-shares.pdf</a></p>
+</li>
+<li>
+<p>Should Shareholders Be Rewarded for Loyalty? European Experiments on the Wedge Between Tenured Voting and Takeover Law, accessed January 13, 2026, <a href="https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1085&amp;context=mbelr">https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1085&amp;context=mbelr</a></p>
+</li>
+<li>
+<p>CONSULTATION ON THE TREATMENT OF UNEQUAL VOTING STRUCTURES IN THE MSCI EQUITY INDEXES, accessed January 13, 2026, <a href="https://www.msci.com/documents/1296102/8328554/Consultation_Voting+Rights.pdf/15d99336-9346-4e42-9cd3-a4a03ecff339">https://www.msci.com/documents/1296102/8328554/Consultation_Voting+Rights.pdf/15d99336-9346-4e42-9cd3-a4a03ecff339</a></p>
+</li>
+</ol>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="corporate-treasury-report.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="pathTo15percentGDP.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="corporate-treasury-report.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="pathTo15percentGDP.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

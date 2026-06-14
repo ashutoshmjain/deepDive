@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="sw-register.js"></script>
+    <script>
+        // Reading Persistence Script
+        (function() {
+            const storageKey = 'deepdive-last-read';
+            const currentPath = window.location.pathname;
+            
+            // Don't save if we are on the homepage or cover
+            if (!currentPath.endsWith('/') && !currentPath.endsWith('index.html') && !currentPath.endsWith('cover.html')) {
+                localStorage.setItem(storageKey, window.location.href);
+            }
+
+            // If we are on the homepage, check if we should redirect
+            if (currentPath.endsWith('/') || currentPath.endsWith('index.html')) {
+                const lastRead = localStorage.getItem(storageKey);
+                if (lastRead && lastRead !== window.location.href) {
+                    // Optional: You can make this an automatic redirect or a "Resume Reading" button.
+                    // For now, let's do an automatic redirect for a seamless PWA experience.
+                    window.location.href = lastRead;
+                }
+            }
+        })();
+    </script>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Topology of Thought - deepDive</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="A deep dive into various topics with Gemini.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom-2ae0a633.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-fa079d11.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-67bad4d3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">deepDive</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="the-topology-of-thought"><a class="header" href="#the-topology-of-thought">The Topology of Thought</a></h1>
+<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://music.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe&amp;si=o534zFZsc7p5XA9Q" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube Music</a><a href="https://www.youtube.com/playlist?list=PLIX4sFsmu37qtJMlv-VzMYWM26M1QyXTe" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">YouTube</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
+<h2 id="1-introduction-the-isomorphism-of-mechanism-and-mind"><a class="header" href="#1-introduction-the-isomorphism-of-mechanism-and-mind">1. Introduction: The Isomorphism of Mechanism and Mind</a></h2>
+<p>The history of intellectual inquiry is often characterized by the convergence of disparate disciplines upon a single, underlying structural truth. The proposition that <strong>“what is symmetry internally to a mechanism appears as invariance to the external”</strong> represents one such convergence, serving as a Rosetta Stone that translates the fundamental architecture of modern physics into a rigorous framework for understanding the nature of thought. In the domain of gauge field theory, this proposition is not a metaphor but a mathematical necessity: the internal freedom to alter the mathematical description of a system (a symmetry) without altering its physical reality necessitates the existence of external forces that maintain observable consistencies (invariances). The “mechanism” is the internal redundancy of the description; the “appearance” is the tangible force field that governs the universe.<br>When applied to the philosophy of mind and cognitive science, this distinction offers a radical method for defining the “degrees of freedom” of an idea. If an idea is analogous to a physical field, its “degrees of freedom” are not merely a measure of its complexity, but of its <strong>symmetry</strong>—the extent to which it can be internally transformed, rephrased, recontextualized, or encoded without losing its essential truth value. This perspective transforms the abstract notion of “meaning” into a geometric invariant, preserved across the manifold of language and neural representation by a cognitive equivalent of a gauge field.<br>This report undertakes an exhaustive validation of this proposition, synthesizing principles from Yang-Mills theory, Robert Nozick’s epistemology of invariance, Nikolai Bernstein’s motor control theory, and the Free Energy Principle of neuroscience. We will dissect the machinery of “internal symmetry” to define the dimensional action space of human thought. Furthermore, we will push this analogy to its asymptotic limit to speculate on the existence of a <strong>“circular thought”</strong>—a cognitive singularity possessing infinite internal degrees of freedom and absolute external invariance. By integrating the monism of Parmenides , the recursive logic of tautologies , and the topology of self-reference , we define the circular thought not as a logical fallacy, but as the ground state of consciousness: a perfect symmetry where the distinction between the thinker and the thought collapses into a dimensionless point of pure being.</p>
+<h2 id="2-the-physical-foundation-internal-symmetry-as-the-generator-of-reality"><a class="header" href="#2-the-physical-foundation-internal-symmetry-as-the-generator-of-reality">2. The Physical Foundation: Internal Symmetry as the Generator of Reality</a></h2>
+<p>To validate the central proposition, one must first perform a deep excavation of its source material: the gauge principle in theoretical physics. The evolution of physics from Newton to the Standard Model is essentially the story of realizing that “invariance” (observable stability) is the child of “symmetry” (internal redundancy).</p>
+<h3 id="21-the-nature-of-internal-symmetry"><a class="header" href="#21-the-nature-of-internal-symmetry"><strong>2.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> The Nature of Internal Symmetry</strong></a></h3>
+<p>In classical mechanics, symmetries were often intuitive—a spinning top behaves the same way regardless of where it is placed on a table (translational symmetry). However, the “internal symmetries” relevant to our inquiry are subtler. They are transformations that do not affect the spacetime coordinates of a particle but alter its internal mathematical labels.<br>Consider the quantum wavefunction of an electron, \psi(x). This function is a complex number, possessing both a magnitude and a phase. The fundamental discovery of 20th-century physics was that the “phase” of the electron is unobservable. We can rotate this phase by an arbitrary angle \theta (a U(1) transformation: \psi \to e^{i\theta}\psi) without changing the probability density |\psi|^2, which is the only physically measurable quantity. This is a <strong>Global Internal Symmetry</strong>: an operation performed identically everywhere in the universe that leaves the physical predictions invariant.<br>However, the proposition speaks of a mechanism that “appears” as invariance. This appearance emerges only when we radicalize the symmetry from <strong>global</strong> to <strong>local</strong>.</p>
+<h3 id="22-the-gauge-argument-manufacturing-invariance"><a class="header" href="#22-the-gauge-argument-manufacturing-invariance"><strong>2.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> The Gauge Argument: Manufacturing Invariance</strong></a></h3>
+<p>The transition from global to local symmetry is the mechanism by which “internal freedom” generates “external reality.” If we demand the freedom to rotate the electron’s phase by a <em>different</em> amount at every point in space-time—\theta(x)—we introduce a profound problem. The laws of physics depend on how the field changes from point to point (its derivative). If the internal standard of reference (the phase) is shifting chaotically from A to B, the derivative becomes meaningless. The “symmetry” threatens to destroy the “invariance” of the physical law.<br>Nature solves this by introducing a <strong>connection</strong>—a new field that compensates for the internal shift. In the case of the electron, this field is the <strong>photon</strong> (the electromagnetic potential). The photon field “connects” the disparate phase choices at different points, allowing us to compare them meaningfully.</p>
+<ul>
+<li><strong>The Mechanism:</strong> The internal freedom to choose a local reference frame (local gauge symmetry).</li>
+<li><strong>The External Appearance:</strong> The existence of a force field (electromagnetism) and the conservation of charge.</li>
+</ul>
+<p>Here, the proposition is validated with absolute precision. What is “symmetry internally” (the arbitrary choice of phase) manifests as “invariance to the external” (the conservation of electric charge and the stability of atomic orbitals). The “force” is merely the shadow cast by the system’s internal redundancy.</p>
+<h3 id="23-redundancy-vs-reality-the-ontological-status-of-the-gauge"><a class="header" href="#23-redundancy-vs-reality-the-ontological-status-of-the-gauge"><strong>2.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup> Redundancy vs. Reality: The Ontological Status of the Gauge</strong></a></h3>
+<p>A critical distinction for our cognitive analogy is the status of these internal symmetries. Are they “real”?</p>
+<ul>
+<li><strong>The Redundancy View:</strong> Physicists like David Tong describe gauge symmetry as a “redundancy in our description”. It is not a property of nature itself but of the language we use to describe it. We use variables (like the vector potential) that have more degrees of freedom than the physical reality they represent.</li>
+<li><strong>The Invariance View:</strong> The only “real” things are the gauge-invariant quantities (observables like field strength or charge).</li>
+</ul>
+<p>This dichotomy is the template for understanding “Thought” vs. “Expression.” The “thought” (meaning) is the gauge-invariant observable. The “expression” (language, neural firing pattern) is the gauge-dependent description, laden with redundancy. We have thousands of ways to say “I am hungry”—this is the internal symmetry. The fact that the listener understands the singular biological need regardless of the phrasing is the external invariance.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Physical Concept</th><th style="text-align: left">Cognitive Isomorphism</th><th style="text-align: left">Function</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Gauge Field</strong></td><td style="text-align: left"><strong>Attention / Context</strong></td><td style="text-align: left">Compensates for local variations to maintain coherence.</td></tr>
+<tr><td style="text-align: left"><strong>Global Symmetry</strong></td><td style="text-align: left"><strong>Universal Truth</strong></td><td style="text-align: left">A concept valid in all contexts (e.g., Logic).</td></tr>
+<tr><td style="text-align: left"><strong>Local Symmetry</strong></td><td style="text-align: left"><strong>Subjective Perspective</strong></td><td style="text-align: left">The freedom to view a concept from a specific mental “angle.”</td></tr>
+<tr><td style="text-align: left"><strong>Conserved Charge</strong></td><td style="text-align: left"><strong>Core Meaning</strong></td><td style="text-align: left">The invariant semantic payload that survives transmission.</td></tr>
+<tr><td style="text-align: left"><strong>Field Strength (Force)</strong></td><td style="text-align: left"><strong>Cognitive Dissonance / Surprise</strong></td><td style="text-align: left">The “curvature” felt when internal models fail to align (prediction error).</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-the-degrees-of-freedom-of-an-idea"><a class="header" href="#3-the-degrees-of-freedom-of-an-idea">3. The Degrees of Freedom of an Idea</a></h2>
+<p>Having established the physical isomorphism, we now define the “degrees of freedom” (DoF) of an idea. In mechanics, DoF represents the number of independent parameters defining a configuration. In the “Gauge Theory of Cognition,” the DoF of an idea is the <strong>dimensionality of its semantic symmetry group</strong>.</p>
+<h3 id="31-defining-the-cognitive-action-space"><a class="header" href="#31-defining-the-cognitive-action-space"><strong>3.<sup class="footnote-reference" id="fr-1-2"><a href="#footnote-1">1</a></sup> Defining the Cognitive Action Space</strong></a></h3>
+<p>Cognitive science increasingly views the mind as navigating an abstract “action space” or “conceptual space”. An idea is not a point in this space but a <strong>manifold</strong>—a continuous shape defined by the set of all possible representations that map to the same meaning.<br><strong>Definition:</strong> The <em>Degrees of Freedom</em> of an idea I is the number of independent transformations T (linguistic, logical, or perspectival) such that Meaning(T(I)) = Meaning(I).</p>
+<h4 id="311-the-semantic-symmetry-group"><a class="header" href="#311-the-semantic-symmetry-group"><strong>3.<sup class="footnote-reference" id="fr-1-3"><a href="#footnote-1">1</a></sup>.<sup class="footnote-reference" id="fr-1-4"><a href="#footnote-1">1</a></sup> The Semantic Symmetry Group</strong></a></h4>
+<p>Just as a sphere has rotational symmetry (it looks the same from any angle), a robust idea has <strong>semantic symmetry</strong>.</p>
+<ul>
+<li><strong>Translation Symmetry:</strong> The ability to move the idea from one context to another (e.g., from physics to philosophy) without breaking it.</li>
+<li><strong>Scale Symmetry:</strong> The ability to express the idea at different levels of resolution (e.g., a 5-second summary vs. a 500-page book).</li>
+<li><strong>Paraphrase Symmetry:</strong> The ability to completely alter the syntax and vocabulary (the “internal mechanism”) while preserving the proposition (the “external invariant”).</li>
+</ul>
+<p>The “dimensionality” of this group determines the “abstractness” of the thought.</p>
+<ul>
+<li><strong>Low DoF (The Concrete):</strong> “This apple is red.”
+<ul>
+<li><em>Symmetry:</em> Minimal. Changing “red” to “colored” loses information. Changing “this” to “that” changes the referent. It is fragile. It breaks under transformation.</li>
+<li><em>Nature:</em> Concrete facts are “scalars” or low-dimensional vectors. They are rigid.</li>
+</ul>
+</li>
+<li><strong>High DoF (The Universal):</strong> “Justice is fairness.”
+<ul>
+<li><em>Symmetry:</em> Massive. “Justice” can be mapped to retributive systems, distributive systems, divine law, or social contracts. The concept “Justice” is invariant under the transformation of <em>centuries</em> of cultural change.</li>
+<li><em>Nature:</em> Abstract concepts are “tensors.” They transform predictably across coordinate systems (minds) but retain their essential relationships.</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-bernsteins-problem-the-curse-of-dimensionality"><a class="header" href="#32-bernsteins-problem-the-curse-of-dimensionality"><strong>3.<sup class="footnote-reference" id="fr-2-2"><a href="#footnote-2">2</a></sup> Bernstein’s Problem: The Curse of Dimensionality</strong></a></h3>
+<p>Nikolai Bernstein revolutionized motor control by identifying the “Degrees of Freedom Problem”. The human arm has<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup> mechanical DoF, but a task like “touching a nose” only requires<sup class="footnote-reference" id="fr-3-2"><a href="#footnote-3">3</a></sup> spatial coordinates. This creates an <strong>ill-posed problem</strong>: there are infinite trajectories that achieve the goal.</p>
+<ul>
+<li><strong>The Cognitive Parallel:</strong> If a thought like “I love you” has infinite semantic degrees of freedom (infinite ways to express it), how does the brain choose <em>one</em>?</li>
+<li><strong>The Gauge-Fixing of Thought:</strong> The act of articulation is <strong>gauge fixing</strong>. We must arbitrarily slice through the fiber bundle of possibilities to select a single “section” (sentence).</li>
+<li><strong>Synergies:</strong> Bernstein proposed that the brain solves the DoF problem by creating “synergies”—functional couplings of muscles that reduce the effective DoF. Similarly, the mind uses <strong>idioms, clichés, and heuristic frames</strong> as cognitive synergies. They reduce the infinite search space of language into manageable, low-dimensional chunks.</li>
+</ul>
+<h3 id="33-the-free-energy-principle-the-brain-as-a-gauge-machine"><a class="header" href="#33-the-free-energy-principle-the-brain-as-a-gauge-machine"><strong>3.<sup class="footnote-reference" id="fr-3-3"><a href="#footnote-3">3</a></sup> The Free Energy Principle: The Brain as a Gauge Machine</strong></a></h3>
+<p>Karl Friston’s Free Energy Principle argues that the brain’s imperative is to minimize “variational free energy,” which is essentially <strong>surprise</strong> or prediction error.</p>
+<ul>
+<li><strong>The Link to Gauge Theory:</strong> Sengupta and Friston explicitly propose a “Gauge Theory of the Brain.” The brain maintains an “internal” model of the world. Sensory data is the “external” reality.</li>
+<li><strong>The Perturbation:</strong> As the organism moves, sensory data changes (a transformation).</li>
+<li><strong>The Invariance:</strong> The brain must transform its internal states (internal symmetry) to compensate for these sensory changes so that its <em>understanding</em> of the world remains invariant.</li>
+<li><strong>Deep Insight:</strong> The “degrees of freedom” of a thought are the “buffer zone” the brain uses to absorb surprise. A thought with high DoF (a flexible model) can accommodate a wide range of data without “breaking” (requiring a complete model update). A rigid thought (Low DoF) is brittle; a single contradictory datum creates massive free energy (cognitive dissonance).</li>
+</ul>
+<h3 id="35-semantic-entropy-and-the-measure-of-freedom"><a class="header" href="#35-semantic-entropy-and-the-measure-of-freedom"><strong>3.<sup class="footnote-reference" id="fr-5-1"><a href="#footnote-5">5</a></sup> Semantic Entropy and the Measure of Freedom</strong></a></h3>
+<p>We can quantify the DoF of a thought using <strong>Semantic Entropy</strong>.</p>
+<ul>
+<li>If we define the “paraphrase space” of an idea as the volume \Omega of all valid expressions, the Semantic DoF is proportional to \ln(\Omega).</li>
+<li><strong>Redundancy as Robustness:</strong> In information theory, redundancy is not waste; it is protection. A high-DoF idea is robust against “channel noise” (misunderstanding). If I miss one word of a high-DoF explanation, I can reconstruct the invariant meaning from the context (the gauge field). If I miss one digit of a low-DoF password, the meaning is lost.</li>
+</ul>
+<h2 id="4-nozicks-invariance-the-evolution-of-objective-thought"><a class="header" href="#4-nozicks-invariance-the-evolution-of-objective-thought">4. Nozick’s Invariance: The Evolution of Objective Thought</a></h2>
+<p>Before speculating on the “circular thought,” we must ground our definition of “truth” in Robert Nozick’s <em>Invariances</em>. Nozick argues that objectivity is not a property of things-in-themselves, but a property of invariance under transformation.</p>
+<h3 id="41-truth-as-invariance"><a class="header" href="#41-truth-as-invariance"><strong>4.<sup class="footnote-reference" id="fr-1-5"><a href="#footnote-1">1</a></sup> Truth as Invariance</strong></a></h3>
+<p>Nozick posits that an objective fact is one that remains true across different frames of reference.</p>
+<ul>
+<li><em>Subjective:</em> “I feel cold.” (Varies with the observer).</li>
+<li><em>Objective:</em> “The molecules are vibrating at rate X.” (Invariant under observer transformation).</li>
+<li><strong>The Cognitive Implication:</strong> To “think objectively” is to strip a thought of its gauge-dependent features (emotional coloring, specific language, personal bias) until only the gauge-invariant core remains. The “degrees of freedom” of an objective thought are the transformations it can withstand.</li>
+</ul>
+<h3 id="42-evolutionary-cosmology-and-the-heritability-of-laws"><a class="header" href="#42-evolutionary-cosmology-and-the-heritability-of-laws"><strong>4.<sup class="footnote-reference" id="fr-2-3"><a href="#footnote-2">2</a></sup> Evolutionary Cosmology and the “Heritability” of Laws</strong></a></h3>
+<p>Nozick extends this to the universe itself. He speculates that the laws of physics are not random but the result of <strong>Cosmological Natural Selection</strong>.</p>
+<ul>
+<li><strong>Mechanism:</strong> Universes reproduce (perhaps via black holes).</li>
+<li><strong>Selection Pressure:</strong> The “offspring” universes inherit the laws of the parent.</li>
+<li><strong>The Invariant:</strong> The laws that are “stable” (invariant) under the violent transformation of universe-reproduction are the ones that accumulate in the multiverse population.</li>
+<li><strong>Cognitive Analog:</strong> Thoughts undergo “memetic selection.” Thoughts that are <strong>circularly invariant</strong> (self-reinforcing) are the most “heritable.” They survive the transmission from mind to mind intact. A thought that depends too much on specific context (low symmetry) dies in transmission. A thought that is invariant (high symmetry) replicates.</li>
+</ul>
+<h2 id="5-the-circular-thought-a-speculation-on-cognitive-singularities"><a class="header" href="#5-the-circular-thought-a-speculation-on-cognitive-singularities">5. The Circular Thought: A Speculation on Cognitive Singularities</a></h2>
+<p>We now arrive at the speculative apex of the report: the <strong>“Circular Thought.”</strong> By pushing the “symmetry = invariance” analogy to infinity, we can define this theoretical state.</p>
+<h3 id="51-the-topology-of-circularity"><a class="header" href="#51-the-topology-of-circularity"><strong>5.<sup class="footnote-reference" id="fr-1-6"><a href="#footnote-1">1</a></sup> The Topology of Circularity</strong></a></h3>
+<p>In topology, a circle (S^1) is the simplest non-trivial manifold. It possesses U(1) symmetry—it is invariant under infinite continuous rotations.</p>
+<ul>
+<li><strong>Definition:</strong> A <em>Circular Thought</em> is a cognitive state \Psi that is invariant under the operation of its own internal processing mechanism M.</li>
+<li><strong>Degrees of Freedom:</strong> Infinite. Just as a circle can be rotated by any real number angle, a circular thought can be “processed” indefinitely without ever changing its truth value or output.</li>
+</ul>
+<h3 id="52-candidate-i-the-tautology-the-empty-circle"><a class="header" href="#52-candidate-i-the-tautology-the-empty-circle"><strong>5.<sup class="footnote-reference" id="fr-2-4"><a href="#footnote-2">2</a></sup> Candidate I: The Tautology (The Empty Circle)</strong></a></h3>
+<p>The most mathematically precise candidate is the <strong>Logical Tautology</strong> (e.g., “A is A”).</p>
+<ul>
+<li><strong>Symmetry Group:</strong> The symmetry group of a tautology is the <strong>Full Symmetric Group</strong> of the universe. You can replace the variable “A” with <em>any</em> object, concept, or quality in existence, and the truth value (True) remains invariant.</li>
+<li><strong>DoF:</strong> Infinite.</li>
+<li><strong>The Paradox:</strong> Despite having infinite degrees of freedom (infinite applicability), it has zero <em>informational</em> content (Shannon entropy = 0).</li>
+<li><strong>Gauge Theory Connection:</strong> This is analogous to a <strong>Pure Gauge</strong> configuration in physics—a field that looks like a wave but carries no energy and exerts no force (zero curvature). It is a “ghost” thought. It is the “identity element” of the cognitive group.</li>
+</ul>
+<h3 id="53-candidate-ii-the-well-rounded-truth-parmenides"><a class="header" href="#53-candidate-ii-the-well-rounded-truth-parmenides"><strong>5.<sup class="footnote-reference" id="fr-3-4"><a href="#footnote-3">3</a></sup> Candidate II: The “Well-Rounded Truth” (Parmenides)</strong></a></h3>
+<p>Parmenides provides a metaphysical candidate: the “Sphere of Being”.</p>
+<ul>
+<li><strong>Fragment B8:</strong> “It is complete on every side, like the mass of a well-rounded ball.”</li>
+<li><strong>Monism:</strong> Parmenides argues that “Thinking and Being are the same.” This collapses the internal (thinking) and external (being) into a single unity.</li>
+<li><strong>The Symmetry:</strong> If Subject = Object, the system has <strong>perfect symmetry</strong>. There is no “external” to measure against the “internal.” The observer is the observed.</li>
+<li><strong>The Circularity:</strong> This thought does not “go anywhere” (it is static/invariant), but unlike the tautology, it is not empty—it is <strong>full</strong>. It contains all existence. It is a thought with infinite DoF that has “gauge-fixed” itself into a singularity of pure presence.</li>
+</ul>
+<h3 id="55-candidate-iii-the-anthropic-loop-the-recursive-trap"><a class="header" href="#55-candidate-iii-the-anthropic-loop-the-recursive-trap"><strong>5.<sup class="footnote-reference" id="fr-5-2"><a href="#footnote-5">5</a></sup> Candidate III: The Anthropic Loop (The Recursive Trap)</strong></a></h3>
+<p>A more dynamic “circular thought” is found in the <strong>Anthropic Principle</strong> or <strong>Circular Reasoning</strong>.</p>
+<ul>
+<li><strong>Structure:</strong> Premise \to Inference \to Conclusion \to Premise.</li>
+<li><strong>Example:</strong> “The Bible is true because it says it is true, and it is true because it is the word of God.”</li>
+<li><strong>Invariance:</strong> This thought system is immune to external falsification. Any external data is re-interpreted (gauge transformed) to fit the circle.</li>
+<li><strong>The Topological Trap:</strong> This represents a “closed timelike curve” in the geometry of reason. It is a logic trap. While stable (invariant), it is pathological because it disconnects the internal mechanism from the external reality check. It creates a “disconnected component” in the cognitive manifold.</li>
+</ul>
+<h3 id="56-the-singularity-of-meaning"><a class="header" href="#56-the-singularity-of-meaning"><strong>5.<sup class="footnote-reference" id="fr-6-1"><a href="#footnote-6">6</a></sup> The Singularity of Meaning</strong></a></h3>
+<p>The “Circular Thought” represents a <strong>singularity</strong> in the gauge theory of mind.</p>
+<ul>
+<li><strong>Infinite Internal Symmetry:</strong> It can be anything.</li>
+<li><strong>Absolute External Invariance:</strong> It never changes.</li>
+<li><strong>The Result:</strong> It is the cognitive equivalent of a <strong>Black Hole</strong>. Information can enter (be interpreted by it), but no information can escape (no prediction is made). It is the state of <strong>maximal symmetry</strong> and <strong>minimal utility</strong>.</li>
+<li><strong>Necessity of Symmetry Breaking:</strong> For a mind to be functional, it must <strong>break the symmetry</strong> of the circular thought. It must introduce a “Goldstone Boson” of doubt or distinction. It must degrade the perfect sphere of Parmenidean Truth into the jagged, low-DoF shards of Aristotelian logic to interact with the world.</li>
+</ul>
+<h2 id="6-synthesis-the-architecture-of-thought"><a class="header" href="#6-synthesis-the-architecture-of-thought">6. Synthesis: The Architecture of Thought</a></h2>
+<p>The synthesis of these domains leads to a novel architectural model of the mind.</p>
+<h3 id="61-the-cognitive-lagrangian"><a class="header" href="#61-the-cognitive-lagrangian"><strong>6.<sup class="footnote-reference" id="fr-1-7"><a href="#footnote-1">1</a></sup> The Cognitive Lagrangian</strong></a></h3>
+<p>We can postulate that the mind operates according to a “Cognitive Lagrangian” that balances two competing terms, analogous to the Action Principle in physics :</p>
+<ol>
+<li><strong>The Symmetry Term (Maximizing DoF):</strong> The mind seeks high-level, abstract, invariant concepts (Circular Thoughts, Universal Truths) to compress the complexity of the world. This minimizes storage cost and maximizes “heritability” or robustness.<sup class="footnote-reference" id="fr-2-5"><a href="#footnote-2">2</a></sup>. <strong>The Interaction Term (Breaking Symmetry):</strong> The mind must interact with a specific, changing environment. This requires breaking the symmetry—collapsing the infinite “potential” of the circular thought into the specific “kinetic” action of a low-DoF decision (Gauge Fixing).</li>
+</ol>
+<h3 id="62-ologs-and-the-geometry-of-truth"><a class="header" href="#62-ologs-and-the-geometry-of-truth"><strong>6.<sup class="footnote-reference" id="fr-2-6"><a href="#footnote-2">2</a></sup> Ologs and the Geometry of Truth</strong></a></h3>
+<p>The use of <strong>Ologs</strong> (Ontology Logs) and Category Theory provides the rigorous mathematical language for this synthesis.</p>
+<ul>
+<li><strong>Commutative Diagrams:</strong> An Olog is a system of “types” (objects) and “aspects” (arrows). A “fact” is a commutative diagram—a loop where different paths yield the same result.</li>
+<li><strong>The Circular Thought as a Point:</strong> In Category Theory, a diagram that commutes perfectly (where all paths are equivalent) can often be contracted to a single point (a limit). The “Circular Thought” is the <strong>limit object</strong> of the cognitive category. It is the “One” from which all diversity emanates and to which all reasoning returns.</li>
+</ul>
+<h2 id="7-detailed-analysis-of-research-snippets"><a class="header" href="#7-detailed-analysis-of-research-snippets">7. Detailed Analysis of Research Snippets</a></h2>
+<h3 id="71-physics-and-gauge-theory"><a class="header" href="#71-physics-and-gauge-theory"><strong>7.<sup class="footnote-reference" id="fr-1-8"><a href="#footnote-1">1</a></sup> Physics and Gauge Theory</strong></a></h3>
+<p>The snippets through provide the bedrock.</p>
+<ul>
+<li>*Snippet * clarifies that local symmetry is a “redundancy” that introduces degrees of freedom. This supports the view of language/thought as a redundant system for error correction.</li>
+<li>*Snippet * (Tong) emphasizes that gauge symmetry is “not a property of Nature.” This reinforces the Subjective/Internal nature of the “mechanism.” The “external invariance” (reality) is independent of the gauge.</li>
+</ul>
+<h3 id="72-philosophy-and-invariance"><a class="header" href="#72-philosophy-and-invariance"><strong>7.<sup class="footnote-reference" id="fr-2-7"><a href="#footnote-2">2</a></sup> Philosophy and Invariance</strong></a></h3>
+<ul>
+<li><em>Snippet</em>  (Nozick) is crucial for linking physics to “truth.” The idea that “invariance = objectivity” allows us to mathematically grade thoughts on an “objectivity scale” based on their symmetry groups.</li>
+<li>*Snippet * (Melandri) explicitly discusses “circular thought” as “it is whatever it is,” confirming the Tautology candidate.</li>
+</ul>
+<h3 id="73-cognitive-science-and-motor-control"><a class="header" href="#73-cognitive-science-and-motor-control"><strong>7.<sup class="footnote-reference" id="fr-3-5"><a href="#footnote-3">3</a></sup> Cognitive Science and Motor Control</strong></a></h3>
+<ul>
+<li>*Snippet * (Bernstein) provides the “cost function” for degrees of freedom. Infinite freedom is a problem to be solved (the “DoF Problem”). The mind “solves” circular thoughts by breaking them.</li>
+<li><em>Snippet</em>  (Sengupta/Friston) validates the “Gauge Theory of the Brain.” The brain <em>is</em> a mechanism for maintaining internal symmetry against external perturbation.</li>
+</ul>
+<h3 id="75-topology-and-lie-groups"><a class="header" href="#75-topology-and-lie-groups"><strong>7.<sup class="footnote-reference" id="fr-5-3"><a href="#footnote-5">5</a></sup> Topology and Lie Groups</strong></a></h3>
+<ul>
+<li><em>Snippet</em>  and discuss the “Identity Component” of Lie groups. This gives us the technical vocabulary to describe the “Circular Thought” not just as a loop, but as the <strong>connected component of the identity</strong>—the set of all thoughts continuously reachable from the “Self” without a discrete jump (paradigm shift).</li>
+</ul>
+<h2 id="8-conclusion"><a class="header" href="#8-conclusion">8. Conclusion</a></h2>
+<p>The validation of the proposition <strong>“what is symmetry internally to a mechanism appears as invariance to the external”</strong> reveals that the structure of thought mirrors the structure of the physical universe.<sup class="footnote-reference" id="fr-1-9"><a href="#footnote-1">1</a></sup>. <strong>Thinking is a Gauge Theory:</strong> The mind maintains a stable external reality (invariance) by actively manipulating its internal representations (symmetry). The “force” of Meaning is the gauge field that connects these representations.<sup class="footnote-reference" id="fr-2-8"><a href="#footnote-2">2</a></sup>. <strong>Degrees of Freedom are Semantic Symmetries:</strong> The power of an idea lies in its redundancy—its ability to be transformed, rephrased, and rotated in the mental space without losing its core truth.<sup class="footnote-reference" id="fr-3-6"><a href="#footnote-3">3</a></sup>. <strong>The Circular Thought is the Ground State:</strong> The “Circular Thought” exists as the asymptotic limit of this system—a state of infinite internal symmetry and absolute invariance. It is the <strong>Singularity of Logic</strong> (Tautology) and the <strong>Singularity of Being</strong> (Consciousness). While it explains nothing in the linear world of cause and effect, it constitutes the stable, invariant background—the “vacuum state”—upon which all other thoughts are excited.</p>
+<p>In the final analysis, the human mind is a mechanism designed to navigate the dangerous territory between the chaos of infinite degrees of freedom and the stasis of the circular thought, creating in the process the fragile, beautiful invariance we call Reality.<br><strong>Table 2: The Spectrum of Cognitive Degrees of Freedom</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">Thought Type</th><th style="text-align: left">Internal Symmetry Group</th><th style="text-align: left">Degrees of Freedom</th><th style="text-align: left">External Invariance</th><th style="text-align: left">Physical Analog</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><strong>Particular Fact</strong></td><td style="text-align: left">Trivial (I)</td><td style="text-align: left">\approx<sup class="footnote-reference" id="fr-7-1"><a href="#footnote-7">7</a></sup></td><td style="text-align: left">Fragile (Context Dependent)</td><td style="text-align: left">Scalar Field (Mass)</td></tr>
+<tr><td style="text-align: left"><strong>Scientific Law</strong></td><td style="text-align: left">Global Symmetry (G)</td><td style="text-align: left">High</td><td style="text-align: left">Robust (Context Independent)</td><td style="text-align: left">Conserved Current</td></tr>
+<tr><td style="text-align: left"><strong>Abstract Ideal</strong></td><td style="text-align: left">High-Dim Lie Group (SU(N))</td><td style="text-align: left">Very High</td><td style="text-align: left">Universal (Cultural/Temporal)</td><td style="text-align: left">Gauge Boson (Force)</td></tr>
+<tr><td style="text-align: left"><strong>Circular Thought</strong></td><td style="text-align: left">Infinite/Identity (U(\infty))</td><td style="text-align: left">Infinite</td><td style="text-align: left">Absolute (Tautological)</td><td style="text-align: left">Pure Vacuum State</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="tips-and-donations"><a class="header" href="#tips-and-donations">Tips and Donations</a></h3>
+<p>If you enjoyed this deep dive, consider supporting the project with a tip in <strong>Sats</strong>. It’s a simple, global way to support independent research.</p>
+<p><lightning-widget name="Thanks for supporting the publication" accent="#f9ce00" to="shutosha@primal.net" image="https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp" /></p>
+<script src="https://embed.twentyuno.net/js/app.js"></script>
+<p>To send Sats, you’ll need a <a href="https://lightningaddress.com/">lightning wallet</a>.</p>
+<hr>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>field theory - The relation between gauge symmetry and global …, https://physics.stackexchange.com/questions/597957/the-relation-between-gauge-symmetry-and-global-internal-symmetry <a href="#fr-1-1">↩</a> <a href="#fr-1-2">↩2</a> <a href="#fr-1-3">↩3</a> <a href="#fr-1-4">↩4</a> <a href="#fr-1-5">↩5</a> <a href="#fr-1-6">↩6</a> <a href="#fr-1-7">↩7</a> <a href="#fr-1-8">↩8</a> <a href="#fr-1-9">↩9</a></p>
+</li>
+<li id="footnote-2">
+<p>Gauge theory - Wikipedia, https://en.wikipedia.org/wiki/Gauge_theory <a href="#fr-2-1">↩</a> <a href="#fr-2-2">↩2</a> <a href="#fr-2-3">↩3</a> <a href="#fr-2-4">↩4</a> <a href="#fr-2-5">↩5</a> <a href="#fr-2-6">↩6</a> <a href="#fr-2-7">↩7</a> <a href="#fr-2-8">↩8</a></p>
+</li>
+<li id="footnote-3">
+<p>UNIVERSE AND INNER SELF IN EARLY INDIAN AND EARLY GREEK THOUGHT, https://edinburghuniversitypress.com/pub/media/ebooks/9781474411004.pdf <a href="#fr-3-1">↩</a> <a href="#fr-3-2">↩2</a> <a href="#fr-3-3">↩3</a> <a href="#fr-3-4">↩4</a> <a href="#fr-3-5">↩5</a> <a href="#fr-3-6">↩6</a></p>
+</li>
+<li id="footnote-4">
+<p>Symmetry-Based Representations for Artificial and Biological General Intelligence - PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC9049963/ <a href="#fr-4-1">↩</a></p>
+</li>
+<li id="footnote-5">
+<p>Paradigms and Logical Morphology in Wittgenstein’s Philosophy - UNM Digital Repository, https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1059&amp;context=phil_etds <a href="#fr-5-1">↩</a> <a href="#fr-5-2">↩2</a> <a href="#fr-5-3">↩3</a></p>
+</li>
+<li id="footnote-6">
+<p>The Anthropic Principle. Finding Ourselves in the Middle of… | by Boris (Bruce) Kriger, https://medium.com/@krigerbruce/the-anthropic-principle-0aa108366d4a <a href="#fr-6-1">↩</a></p>
+</li>
+<li id="footnote-7">
+<p>A Vexing Question in Motor Control: The Degrees of Freedom, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8801616/ <a href="#fr-7-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="QM1-Uniqueness.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="the-physics-of-value-the-strc-bridge.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="QM1-Uniqueness.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="the-physics-of-value-the-strc-bridge.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
