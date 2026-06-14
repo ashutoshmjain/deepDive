@@ -26,3 +26,7 @@ theme = "theme"
 additional-css = ["theme/custom.css"]
 cname = "deepdive.shutri.com"
 no-section-label = true
+
+[output.html.fold]
+enable = true
+level = 0
