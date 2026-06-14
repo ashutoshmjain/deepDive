@@ -11,8 +11,8 @@
     - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
 
 # Current Block (21 Episodes)
-- [Current Block](current.md)
 <!-- RECENT_START -->
+- [Current Block](current.md)
     - [241 : What exactly is Immutability?](241.md)
     - [240 : Rise of the Observer](240.md)
     - [239 : Unification of #Resurrection and #Reincarnation](239.md)
@@ -34,6 +34,7 @@
     - [223 : Observer Patch Holography](223.md)
     - [222 : Homeownership - American Dream!](222.md)
     - [221 : The perfect playbook](221.md)
+
 <!-- RECENT_END -->
 
 # Deep Storage (The Ledger)
