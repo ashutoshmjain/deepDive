@@ -1,6 +1,6 @@
 <center>
 
-![deepDive](./nanoGanesa_transparent.png)
+![deepDive](./img/nanoGanesa_transparent.png)
 
 _An integrated exploration of intelligence - that sticks :-)_
 
