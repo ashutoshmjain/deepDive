@@ -5,6 +5,6 @@ In a blockchain, the mempool is where transactions wait to be verified. Here, th
 ### Offline Access & Contribution
 To work on these episodes locally, clone the repository:
 
-``bash
+```bash
 git clone https://github.com/ashutoshmjain/deepDive.git
 ```
