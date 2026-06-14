@@ -1,4 +1,4 @@
-# chain
+# chain : the master chain
 
 the chain is our commitment to permanence. it is the immutable record of our shared discovery, where the chronological mining of research (the blocks) meets the foundational gravity of the universe (the genesis). 
 

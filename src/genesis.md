@@ -1,4 +1,4 @@
-# genesis
+# genesis : the genesis bump
 
 genesis is the discovery layer that pre-dates the chain. it represents the "bare minimum" of thematic understanding required to anchor a blockchain of knowledge in reality. while the chain records the chronological mining of research, genesis defines the universal gravity that holds the links together.
 
