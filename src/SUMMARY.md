@@ -2,13 +2,11 @@
 
 - [deepDive](./cover.md)
 
-
-
-- [The Mempool (WIP)](mempool.md)
+- [mempool](mempool.md)
     - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
 
-- [Current Block](current.md)
 <!-- RECENT_START -->
+- [block template](current.md)
     - [241 : What exactly is Immutability?](241.md)
 <!-- RECENT_END -->
 
@@ -62,6 +60,8 @@
             - [Google’s New AI Hardware](./googleAsLispMachine.md)
             - [SAP and the AI Agent](./SAPinAIera.md)
             - [The Inevitability of Open Source](./longliveOpenSource.md)
+            - [Sovereignty in the AI Age](./clawdBot.md)
+            - [The AI Adaptive Vanguard](./doomVsBoom.md)
         - [digital credit]()
             - [STRC: The 8,000 Bitcoin Model](./STRC8k.md)
             - [Bitcoin: From Cash to Credit](./the-pivot-from-ecash-to-digital-credit.md)
@@ -75,6 +75,9 @@
             - [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
             - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
             - [The Great Credit Pivot](./strcPE.md)
+            - [The Physics of Value](./the-physics-of-value-the-strc-bridge.md)
+            - [The Stabilization of Mass](./accountingMass.md)
+            - [The Standard Model of Decay](./universalAccounting.md)
             - [Triple-Entry: The Future of Value](./tripleEntry.md)
             - [What is Digital Credit?](./digital-credit.md)
         - [capital]()
@@ -86,9 +89,6 @@
             - [The Great NVIDIA Decoupling](./mag7split.md)
         - [physics]()
             - [The Law of Samkhya](./samkhyaBellCurve.md)
-            - [The Physics of Value](./the-physics-of-value-the-strc-bridge.md)
-            - [The Stabilization of Mass](./accountingMass.md)
-            - [The Standard Model of Decay](./universalAccounting.md)
             - [The Topology of Thought](./gaugeTheoryOfThought.md)
             - [Uniqueness and Prime Identities](./QM1-Uniqueness.md)
             - [Universal Zero-Knowledge Proofs](./QM2-verification.md)
