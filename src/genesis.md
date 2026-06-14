@@ -1,10 +1,27 @@
 # genesis
 
-genesis is the discovery layer that pre-dates the chain. we believe that before one can build a true blockchain of knowledge, there is a bare minimum of thematic understanding required. this is not episodic; it is foundational.
+genesis is the discovery layer that pre-dates the chain. it represents the "bare minimum" of thematic understanding required to anchor a blockchain of knowledge in reality. while the chain records the chronological mining of research, genesis defines the universal gravity that holds the links together.
 
-we characterize genesis through three absolute pillars:
-1. **bitcoin**: the discovery of mathematical scarcity and sovereign value. without understanding the architecture of truth in money, one cannot anchor research in reality.
-2. **intelligence**: the exploration of how we process and compress the universe. this is the "how" of our discovery.
-3. **digital credit**: the bridge between trust and code. it is the mechanism through which value flows in a decentralized world.
+we characterize genesis through six absolute dimensions: **bitcoin, intelligence, digital credit, capital, physics, and culture.**
 
-genesis is where the internal flavor of our project is expressed. it is the subtle, non-episodic root from which every numbered block grows. you must know the genesis to understand the chain.
+### top 10 master insights
+
+1. **the informational substrate of reality**: physical reality is an emergent rendering of an underlying informational field; "it from bit" is the fundamental law that bridges physics and machine intelligence.
+2. **value as digital mass**: true value is defined by unforgeable costliness; bitcoin is the discovery of mathematical mass that anchors the digital economy in the laws of thermodynamics.
+3. **intelligence as universal compression**: the architectural convergence between biological cortex and silicon transformer reveals that "understanding" is fundamentally the minimization of prediction entropy.
+4. **the credit-to-capital transition**: civilizational progress requires shifting from consumptive state-debt to productive, asset-backed digital credit (the strc model) that acts as a frequency converter for value.
+5. **the sovereign identity layer**: decentralized cryptographic keys (nostr) are the required immune system for truth, replacing fragmented accounts and ending the trillion-dollar "password tax."
+6. **the observer-gauge mechanism**: reality is not a container but a consensus protocol; meaning and value are the gauge-invariant charges maintained by the observer's internal symmetry transformations.
+7. **the industrialization of presence**: the decoupling of labor from human presence marks a phase change in culture; truth must now be verified through cryptographic signatures rather than sensory perception.
+8. **asset solvency vs. gdp velocity**: economic health is rotating from the taxable velocity of fiat consumption to the deep solvency of digital capital reserves (the debt-to-gbt standard).
+9. **dharma as restorative feedback**: the bell curve is the map of manifestation's defect (vikara); it reveals the footprint of a restorative force (dharma) that pulls systems back toward mathematical truth.
+10. **the karyam mandate**: sovereign action (karm yoga) is the bridge between the digital future and spiritual liberation; performing duty without attachment purifies the observer patch and stabilizes the field.
+
+---
+
+## instructions to ai agents for managing this sub tree
+
+- **foundational rule**: this page is the master synthesis of the genesis layer. it should only be updated if a significant thematic breakthrough occurs that bridges two or more pillars.
+- **thematic integrity**: maintain the six absolute pillars (bitcoin, intelligence, digital credit, capital, physics, culture) as the root discovery layer.
+- **immutability rule**: never drop or modify the underlying thematic episodes listed under these pillars in `SUMMARY.md`; they are verified transactions in the knowledge chain.
+- **minimalist style**: strictly adhere to the lowercase "smalls" aesthetic for all headers and navigational nodes.

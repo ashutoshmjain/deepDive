@@ -1,60 +1,27 @@
-# Project-Specific Permissions & Automation
+# deepDive Project Rules
 
-> **MANDATE:** Operational actions (Git, Scripts, Cleanup, Markdown) are **pre-authorized** via the project's automation policy (`.gemini/policies/automation.toml`). The agent MUST read this file at the start of every session to align with the current toolchain standards but should NOT interrupt the user for verbal approval for these specific tasks.
+## **Summary Management Guideline**
+AI agents MUST follow the subtree-specific governance rules defined in the "Instructions to AI Agents" section found at the bottom of the following navigational nodes:
+1. `src/mempool.md` (mempool management)
+2. `src/current.md` (block template & mining logic)
+3. `src/archive.md` (chain immutability & ledger order)
+4. `src/genesis.md` (foundational thematic research)
+5. `src/SUMMARY.md` (master hierarchy & tree structure)
 
-## **Overarching Goal: The Publication Toolchain**
-The primary mission of this workspace is the iterative development of the automated publication toolchain. The goal is to automate the manual labor of publishing an `mdbook`:
-1.  **Fix KaTeX/LaTeX Issues:** Ensuring mathematical formulas render perfectly in `mdbook` via the **mdbook-ingest preprocessor**.
-2.  **Automate Asset Integration:** Inserting cover images, podcast links, and videos based on filename patterns.
-3.  **Synchronize SUMMARY.md:** Maintaining a chronological `# Recent ..` section for all numbered episodes.
-4.  **Wallet Integration:** Automating the insertion of Lightning widgets (`shutosha@primal.net`).
+**Core Mandate:** Before performing any edit within a specific folder of the sidebar, the agent must read the corresponding navigational markdown file to understand the content rules and editing constraints for that specific "link in the chain".
 
-### **Long-Term Vision: End-to-End Publishing Automation**
-We intelligently automate what we regularly do. Our software automation reflects real, lived objectives because we are the **first and power users** of the tools we build.
+## **Hardened Testing Workflow**
+1.  **Snapshot:** Record current state.
+2.  **Trial 1:** Execute core change.
+3.  **Refine:** Adjust based on build results.
+4.  **Trial 2:** Final automated pass.
+5.  **Manual:** Provide local link for user verification.
 
-**The "Master Key" Strategy:**
-To simplify synchronization between the website, repository, and podcast shows, the **Episode Number** (e.g., `225`) is the master key for all assets. 
-- **Targeted Processing:** All asset operations (Markdown, Pics, Vids) MUST be surgical. The agent is prohibited from performing global "discovery" searches. If an asset is named `XXX`, it belongs ONLY to `src/XXX.md`.
-- **Zero-Sweep Rule:** Do not "sweep" or "fix" files outside the target Episode Number unless explicitly directed to perform repository-wide maintenance. This minimizes the user's testing burden.
+## **Visual Standards**
+- **Casing:** All taxonomy links and headers should be lowercase/minimal ("smalls").
+- **Tree Structure:** Strictly enforce 4-space indentation for nested lists in `SUMMARY.md`.
+- **Media:** Relocate all transparent project assets to `src/img/`.
 
-## **The Publication Protocol**
-
-The publication process is now unified under the **md-publish** engine, a hardened Rust-based utility that replaces legacy Python scripts. It automates text sanitization, KaTeX hardening, media enrichment, and **SUMMARY.md synchronization** in a single, surgical workflow. Running this command effectively "publishes" the episode to your local `mdbook` environment.
-
-### **Command Triggers & Protocols**
-When the user gives these specific commands, the agent must execute the corresponding preprocessor actions, run `mdbook build` to validate, and report status:
-
-- **"Ingest Text [Number]":** Runs `md-publish --text XXX`. Focuses on content integrity, KaTeX, and footnotes.
-- **"Ingest Image [Number]":** Runs `md-publish --image XXX`. Handles cover art, social snippets, and site index.
-- **"Process Episode [Number]":** The **Master Orchestrator**. Runs both text and image ingestion in sequence, followed by `mdbook build`.
-
-### **Agent Responsibilities during Orchestration**
-1.  **Intelligent Sanitization:** Before running scripts, the agent must check for and strip invisible Unicode characters.
-2.  **Semantic Media Placement:** The agent is responsible for reading the text and identifying the best location to insert `[vid: ...]` markers or additional images.
-3.  **Build Validation:** Every automated run MUST be followed by `mdbook build`.
-4.  **Finality:** Upon approval, commit and push the updated assets and `SUMMARY.md`.
-
-## **Operational Standards**
-
-### **0. Repository Isolation**
-- **User Initiation Only:** Autonomous cross-repository activities (e.g., syncing with `mdIngest`) are strictly prohibited. The agent must never perform actions that cross repository boundaries without a direct user instruction for that specific instance.
-
-### **1. Filename Convention (The Master Key)**
-- **Markdown Files:** Must be named strictly by their episode number (e.g., `src/225.md`).
-- **Image Files:** Must be named strictly by their episode number (e.g., `src/img/225.png`).
-- **Video Files:** Must be named by their episode number followed by a descriptive suffix (e.g., `src/vid/234-intro.mp4`). This helps with visualization and avoids memory bottlenecks.
-
-### **2. Title Formatting**
-- Every new page must start with its index number and a colon in the H1 header (e.g., `# 225 : Title`). The title text should be descriptive but concise (max 5 words).
-
-### **3. SUMMARY.md Organization**
-- **Numbered Posts:** Must remain **strictly** in the `# Recent ..` section. They should NOT be moved to thematic categories.
-
-## **The Hardened Testing Workflow**
-To minimize manual "intelligence" and maximize tool robustness:
-1.  **Snapshot:** Create backups of the new `.md` files (e.g., `230.md.bak`).
-2.  **Execution:** Run the `mdbook-ingest` preprocessor.
-3.  **Validation:** Run `mdbook build` and check for errors.
-4.  **RCA & Refine:** If errors exist, fix the **Rust codebase** (`crate/src/sanitizer.rs`), and revert the data to the backup.
-5.  **Manual Supplement:** Only for surgical manual fixes (e.g., web-fetching missing URLs).
-6.  **Finality:** Commit and push the **hardened preprocessor**, the new data, and the updated `SUMMARY.md`.
+## **Automation Policy**
+- Use `md-publish` for all summary regenerations.
+- Re-prime `SUMMARY.md` from a clean header if tree corruption occurs.

@@ -22,6 +22,20 @@ This is a **Clean Internet** publication: universally accessible, anonymous, and
 - **Publish:** Iteratively refined papers are published here for open-source review.
 - **Listen:** Research is transformed into concise, high-quality audio episodes. 
 
+### The Blockchain of Knowledge
+This publication is structured like a decentralized ledger—a **Blockchain of Knowledge** designed for permanence and mathematical integrity.
+
+- **mempool:** The catchment area for high-entropy raw research. This is where we catch signals from the world before they are filtered and mined into history.
+- **block template:** The active mining space. Each block is strictly governed by the **Law of 21**; once the 21st episode is confirmed, the block is locked and moved to the immutable chain.
+- **chain:** Our commitment to permanence. Each link represents a verified epoch of research (e.g., **block 1**), where industrialized insights meet the foundational gravity of the universe.
+- **genesis:** The non-episodic discovery layer. It anchors the chain through six absolute dimensions: **bitcoin, intelligence, digital credit, capital, physics, and culture.**
+
+### The Hierarchy of Synthesis
+We don't just aggregate data; we compress it into truth. 
+1. **Pillar Syntheses:** Each dimension in **genesis** hosts its own top 10 insights.
+2. **The Genesis Bump:** These insights "bump" up into the **Master Genesis** narrative.
+3. **The Master Chain:** Epoch-level block insights are finally merged with the Master Genesis to form the **Master Chain**—the highest point of distillation for the entire ledger.
+
 ---
 
 <center>
