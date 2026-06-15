@@ -2,6 +2,7 @@
 
 - [deepDive](./cover.md)
 
+
 - [mempool](mempool.md)
     - [_cancer-self-destruct : Triggering Cancer Self-Destruct Signal](_cancer-self-destruct.md)
 
@@ -32,7 +33,7 @@
         - [222 : Homeownership - American Dream!](222.md)
         - [221 : The perfect playbook](221.md)
         - [220 : AI Made Me a Believer](220.md)
-    - [genesis](genesis.md)
+    - [block 0](genesis.md)
         - [bitcoin](bitcoin.md)
             - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)
             - [Bitcoin: The Architecture of Value](./bitcoinAsTechStock.md)
@@ -71,6 +72,7 @@
             - [STRC and Digital Capital](./strcBlackhole.md)
             - [STRC and Private Credit](./STRCImpactOnCredit.md)
             - [STRC for Peaceful Retirement](./strcRetirement.md)
+            - [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
             - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
             - [The Great Credit Pivot](./strcPE.md)
             - [The Physics of Value](./the-physics-of-value-the-strc-bridge.md)
