@@ -1,14 +1,11 @@
 # Summary
 
 - [deepDive](./cover.md)
-
 - [mempool](mempool.md)
-    - [242 : Triggering Cancer Self-Destruct Signal](_242.md)
-
-- [block template](current.md)
+    - [_cancer-self-destruct : Triggering Cancer Self-Destruct Signal](_cancer-self-destruct.md)
+- [template](template.md)
     - [241 : What exactly is Immutability?](241.md)
-
-- [chain](archive.md)
+- [chain](chain.md)
     - [block 1](block1.md)
         - [240 : Rise of the Observer](240.md)
         - [239 : Unification of #Resurrection and #Reincarnation](239.md)
@@ -31,7 +28,6 @@
         - [222 : Homeownership - American Dream!](222.md)
         - [221 : The perfect playbook](221.md)
         - [220 : AI Made Me a Believer](220.md)
-
     - [genesis](genesis.md)
         - [bitcoin](bitcoin.md)
             - [Battle for the Balance Sheet](./battle-for-balance-sheet.md)

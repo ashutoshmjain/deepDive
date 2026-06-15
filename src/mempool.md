@@ -4,7 +4,7 @@ the title "mempool" is a deliberate choice from the architecture of decentralize
 
 what you find here is the "mempool of thought." these are the episodes currently being researched, debated, and refined. we do not work in isolation. we treat our readers and collaborators as validating nodes. this is the layer of discovery where we invite the network to challenge the signal. the mempool is where we collaborate with domain experts to ensure the fidelity of our research. it is a space of open participation. we believe that for knowledge to be sovereign, it must be hardened by scrutiny before it becomes part of the permanent ledger. 
 
-when you explore the mempool, you are seeing the research in its most vulnerable and honest state. once these drafts are refined, they move to the block template, but while they are here, they are the living breath of the project. if you are an expert, a researcher, or a seeker who has found a signal we missed, your contribution is the consensus mechanism we rely on. we act as the filter, but the network provides the proof. this is where we build the truth, one unconfirmed transaction at a time.
+when you explore the mempool, you are seeing the research in its most vulnerable and honest state. once these drafts are refined, they move to the template, but while they are here, they are the living breath of the project. if you are an expert, a researcher, or a seeker who has found a signal we missed, your contribution is the consensus mechanism we rely on. we act as the filter, but the network provides the proof. this is where we build the truth, one unconfirmed transaction at a time.
 
 ---
 
