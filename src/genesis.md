@@ -19,9 +19,12 @@ we characterize genesis through six absolute dimensions: **bitcoin, intelligence
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **foundational rule**: this page is the master synthesis of the genesis layer. it should only be updated if a significant thematic breakthrough occurs that bridges two or more pillars.
 - **thematic integrity**: maintain the six absolute pillars (bitcoin, intelligence, digital credit, capital, physics, culture) as the root discovery layer.
 - **immutability rule**: never drop or modify the underlying thematic episodes listed under these pillars in `SUMMARY.md`; they are verified transactions in the knowledge chain.
 - **minimalist style**: strictly adhere to the lowercase "smalls" aesthetic for all headers and navigational nodes.
+- **indentation**: genesis node is at 4 spaces; pillars (e.g., bitcoin) are at 8 spaces; thematic articles are at 12 spaces.
+```

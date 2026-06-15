@@ -17,9 +17,12 @@ this pillar represents the discovery of how we organize truth, meaning, and iden
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **foundational integrity**: this page is a synthesis of the `culture` pillar. it should only be updated if a new foundational research article is added to the sub-tree.
 - **immutability rule**: never drop or modify the underlying thematic episodes listed under this pillar in `SUMMARY.md`; they are verified transactions in the knowledge chain.
 - **smalls style**: maintain the minimalist lowercase aesthetic and "smalls" naming convention.
 - **logic over format**: prioritize the "sovereignty vs dependency" and "grounded meaning" frameworks when updating insights.
+- **indentation**: pillar node is at 8 spaces; thematic articles under it are at 12 spaces.
+```

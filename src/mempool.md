@@ -8,9 +8,12 @@ when you explore the mempool, you are seeing the research in its most vulnerable
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **catchment rule**: this subtree is the high-entropy zone for raw research and parked episodes.
 - **collaboration**: agents should prioritize expert input and external signals when refining drafts here.
 - **renumbering**: episodes here may be renumbered or renamed as they are not yet 'cast in stone'.
 - **participation**: always maintain the link to the call for participation and github.
+- **indentation**: mempool node is at 0 spaces; unnumbered drafts are at 4 spaces.
+```

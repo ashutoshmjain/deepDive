@@ -19,10 +19,13 @@ descend into the ledger to explore the verified blocks, or go deeper to reach th
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **immutability rule**: episodes in this subtree are 'cast in stone'. zero editing of source content is permitted.
 - **ledger order**: blocks must be maintained in descending numerical order.
 - **summarization only**: agents may update this master chain synthesis only when a new block (e.g., block 2) is finalized and its insights must be merged.
 - **permanence**: ensure url paths never change to prevent breaking external links.
 - **minimalist style**: strictly adhere to the lowercase "smalls" aesthetic for all headers and navigational nodes.
+- **indentation**: root node is at 0 spaces; sub-blocks (e.g., block 1) and genesis are at 4 spaces; episodes/pillars are at 8 spaces.
+```

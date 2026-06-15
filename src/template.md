@@ -10,9 +10,12 @@ the template is where the ephemeral becomes historical. as a miner of knowledge,
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **scarcity rule**: the block space is strictly limited to 21 episodes.
 - **mining logic**: once the 21st episode is confirmed, this entire block must be moved to the 'chain' subtree as a numbered block (e.g., block 2).
 - **volatility**: research here is finalizing. minor polish is allowed, but the core thesis should be stable.
 - **exclusivity**: only select high-fidelity signals from the mempool for inclusion in this template.
+- **indentation**: template node is at 0 spaces; active episodes are at 4 spaces.
+```

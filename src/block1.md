@@ -17,7 +17,10 @@ this block represents the first completed link in the knowledge chain, spanning 
 
 ---
 
-## instructions to ai agents for managing this sub tree
+```text
+### instructions to ai agents for managing this sub tree
 
 - **historical record**: this page is a summary of a completed block. it should only be updated if a significant thematic connection is discovered that bridges this block with a future chain.
 - **immutable episodes**: do not modify the underlying episodes listed under this block; they are finalized transactions in the ledger.
+- **indentation**: this block node is at 4 spaces; episodes under it are at 8 spaces.
+```

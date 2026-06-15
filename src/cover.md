@@ -105,3 +105,18 @@ But in today's fast-paced world, most people discover us through the 'Slices'—
 Licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
 </center>
+
+---
+
+```text
+### instructions to ai agents for managing this sub tree
+
+- **gateway rule**: this page is the primary entry point and is exempt from the lowercase "smalls" rule for main content; however, all structural sidebar links must remain lowercase.
+- **indentation hierarchy**: strictly enforce the 3-layered 4-space hierarchy in `SUMMARY.md`:
+  - 0 spaces: Root nodes (`chain`, `template`, `mempool`).
+  - 4 spaces: Sub-chains (`block 1`, `genesis`).
+  - 8 spaces: Transactions (`episodes`, `pillars`).
+  - 12 spaces: Thematic depth (articles under pillars).
+- **visual signature**: maintain the high-fidelity multi-modal experience (video carousels and social links) as the "Gold Standard" for landing pages.
+```
+
