@@ -1,10 +1,14 @@
 # Summary
 
 - [deepDive](./cover.md)
+
 - [mempool](mempool.md)
     - [_cancer-self-destruct : Triggering Cancer Self-Destruct Signal](_cancer-self-destruct.md)
+
 - [template](template.md)
+    - [242 : Intelligent Time](242.md)
     - [241 : What exactly is Immutability?](241.md)
+
 - [chain](chain.md)
     - [block 1](block1.md)
         - [240 : Rise of the Observer](240.md)
@@ -67,7 +71,6 @@
             - [STRC and Digital Capital](./strcBlackhole.md)
             - [STRC and Private Credit](./STRCImpactOnCredit.md)
             - [STRC for Peaceful Retirement](./strcRetirement.md)
-            - [STRC: The Hard Capital Reserve](./STRCUpdateDec2025.md)
             - [STRC: The Sharpe Ratio Benchmark](./strcSharpRatio.md)
             - [The Great Credit Pivot](./strcPE.md)
             - [The Physics of Value](./the-physics-of-value-the-strc-bridge.md)

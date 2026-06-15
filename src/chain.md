@@ -1,6 +1,8 @@
 # chain : the master chain
 
-the chain is our commitment to permanence. it is the immutable record of our shared discovery, where the chronological mining of research (the blocks) meets the foundational gravity of the universe (the genesis). 
+the chain is our commitment to permanence. once a block of 21 episodes is mined, it is moved here to become part of the immutable ledger. 
+
+each link in the chain represents a verified epoch of research. we stack these blocks in descending order, creating a vertical record of our shared discovery. here, the volatile signals of the block template become the historical capital of the project.
 
 descend into the ledger to explore the verified blocks, or go deeper to reach the genesis layer—the non-episodic root of our entire knowledge architecture.
 
@@ -15,7 +17,7 @@ descend into the ledger to explore the verified blocks, or go deeper to reach th
 7. **the industrialization of presence**: the decoupling of labor from human presence (the mosaic threshold) requires all signal to be verified through cryptographic proof rather than sensory perception.
 8. **temporal orthogonality**: the "present" is the orthogonal resultant of a high-dimensional collision between the momentum of history (past) and the pull of potentiality (future).
 9. **dharma as negative feedback**: the bell curve is the map of manifestation's defect (vikara); dharma acts as the restorative force that pulls systems back toward mathematical truth.
-10. **the karyam mandate (sovereign action)**: liberation is found in the transformation of agency; performing obligatory duty without entitlement to results purifies the observer and stabilizes the field.
+10. **the karyam mandate (sovereign action)**: liberation is found in the transformation of agency; performing duty without entitlement to results purifies the observer and stabilizes the field.
 
 ---
 
