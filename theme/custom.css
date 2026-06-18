@@ -1,2 +1,7 @@
 h1 { text-align: center; }
 .sidebar li a { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+
+/* Restrict sidebar navigation to show only H1 and H2 headings */
+.sidebar .header-item .header-item {
+    display: none !important;
+}

@@ -2,9 +2,9 @@
 
 ## **Summary Management Guideline**
 AI agents MUST follow the subtree-specific governance rules defined in the "Instructions to AI Agents" section found at the bottom of the following navigational nodes:
-1. `src/mempool.md` (mempool management)
-2. `src/current.md` (block template & mining logic)
-3. `src/archive.md` (chain immutability & ledger order)
+1. `src/mempool.md` (mempool catchment)
+2. `src/template.md` (active block template)
+3. `src/chain.md` (master chain & immutable ledger)
 4. `src/genesis.md` (foundational thematic research)
 5. `src/SUMMARY.md` (master hierarchy & tree structure)
 
@@ -19,7 +19,11 @@ AI agents MUST follow the subtree-specific governance rules defined in the "Inst
 
 ## **Visual Standards**
 - **Casing:** All taxonomy links and headers should be lowercase/minimal ("smalls").
-- **Tree Structure:** Strictly enforce 4-space indentation for nested lists in `SUMMARY.md`.
+- **Tree Structure:** Strictly enforce the 3-layered 4-space hierarchy in `SUMMARY.md`:
+  - 0 spaces: Root nodes (`chain`, `template`, `mempool`).
+  - 4 spaces: Sub-chains (`block 1`, `genesis`).
+  - 8 spaces: Transactions (`episodes`, `pillars`).
+  - 12 spaces: Thematic depth (articles under pillars).
 - **Media:** Relocate all transparent project assets to `src/img/`.
 
 ## **Automation Policy**

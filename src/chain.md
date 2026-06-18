@@ -17,7 +17,7 @@ descend into the ledger to explore the verified blocks, or go deeper to reach th
 7. **the industrialization of presence**: the decoupling of labor from human presence (the mosaic threshold) requires all signal to be verified through cryptographic proof rather than sensory perception.
 8. **temporal orthogonality**: the "present" is the orthogonal resultant of a high-dimensional collision between the momentum of history (past) and the pull of potentiality (future).
 9. **dharma as negative feedback**: the bell curve is the map of manifestation's defect (vikara); dharma acts as the restorative force that pulls systems back toward mathematical truth.
-10. **the karyam mandate (sovereign action)**: liberation is found in the transformation of agency; performing duty without entitlement to results purifies the observer and stabilizes the field.
+10. **the karyam mandate (sovereign action)**: liberation is found in the transformation of agency; performing obligatory duty without entitlement to results purifies the observer and stabilizes the field.
 
 ---
 
