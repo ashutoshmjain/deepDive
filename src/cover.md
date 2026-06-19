@@ -8,6 +8,9 @@ _An integrated exploration of intelligence - that sticks :-)_
 
 ---
 
+> [!NOTE]
+> **Collaborative Research Ingestion:** We are actively seeking independent research submissions. Learn how to stage your thesis in the Mempool and submit your article URL directly at [shutri.com](http://shutri.com).
+
 This is a **Clean Internet** publication: universally accessible, anonymous, and clutter-free. No trackers, no cookies, no ads. We conduct deep research into technology, finance, and philosophy, refined in our [open-source repository](https://github.com/ashutoshmjain/deepDive).
 
 ### Quick Start
