@@ -13,6 +13,8 @@ _An integrated exploration of intelligence - that sticks :-)_
 
 This is a **Clean Internet** publication: universally accessible, anonymous, and clutter-free. No trackers, no cookies, no ads. We conduct deep research into technology, finance, and philosophy, refined in our [open-source repository](https://github.com/ashutoshmjain/deepDive).
 
+To further democratize access and truly **opensource the knowledge** built across these deep dives, we integrate **dm** (the DeepMind NotebookLM interface). By accessing the [deepMind Chat Window](https://notebooklm.google.com/notebook/423ab1b2-3722-4e3f-875c-3ea1606ef4fc/preview) (on mobile, long-press the link and select "Open in New Tab" to bypass app redirects), you can interrogate the complete research corpus, ask arbitrary queries, and explore our sources dynamically in a conversational sandbox.
+
 ### Quick Start
 - **Navigation:** Toggle the <i class="fa-solid fa-bars"></i> sidebar for chapters, or use <i class="fa-solid fa-magnifying-glass"></i> to search.
 - **Install as App:** Enjoy **offline access**, faster loading, and a clean home-screen icon.
