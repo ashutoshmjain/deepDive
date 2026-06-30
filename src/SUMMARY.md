@@ -12,8 +12,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - [mempool](mempool.md)
     - [_mathematics-of-cognition : Mathematics of Cognition](_mathematics-of-cognition.md)
+    - [_scientific-subversion : Scientific Subversion](_scientific-subversion.md)
 
 - [template](template.md)
     - [243 : Life, Death, and the Lysosome](243.md)
