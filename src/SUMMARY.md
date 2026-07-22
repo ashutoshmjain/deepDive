@@ -32,9 +32,9 @@
 
 - [mempool](mempool.md)
     - [_mathematics-of-cognition : Mathematics of Cognition](_mathematics-of-cognition.md)
-    - [_scientific-subversion : Scientific Subversion](_scientific-subversion.md)
 
 - [template](template.md)
+    - [244 : Architecture of Intellectual Demolition](244.md)
     - [243 : Life, Death, and the Lysosome](243.md)
     - [242 : Intelligent Time](242.md)
     - [241 : What exactly is Immutability?](241.md)

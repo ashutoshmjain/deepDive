@@ -56,4 +56,4 @@ To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
 
 #### **Works cited**
 
-[^1]: [Wikipedia Contributors, Sedenion, 2024]([https://en.wikipedia.org/wiki/Sedenion](https://en.wikipedia.org/wiki/Sedenion))
+[^1]: [Wikipedia Contributors, Sedenion, 2024](https://en.wikipedia.org/wiki/Sedenion)
