@@ -34,6 +34,7 @@
     - [_mathematics-of-cognition : Mathematics of Cognition](_mathematics-of-cognition.md)
 
 - [template](template.md)
+    - [245 : What Exactly Is Singularity?](245.md)
     - [244 : Architecture of Intellectual Demolition](244.md)
     - [243 : Life, Death, and the Lysosome](243.md)
     - [242 : Intelligent Time](242.md)
