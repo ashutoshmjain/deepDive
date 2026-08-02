@@ -6,3 +6,8 @@ book/
 
 # Ignore Zone.Identifier files
 *:Zone.Identifier
+
+# Ignore DDMA scratch & temporary build folders
+ddma/scratch/
+ddma/build_temp/
+ddma/**/__pycache__/

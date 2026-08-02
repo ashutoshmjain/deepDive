@@ -1,0 +1,67 @@
+{
+  "status": "ready",
+  "current_stage": 6,
+  "percent": 100,
+  "action_text": "Episode ingestion complete! Project ready in Curator.",
+  "stages": [
+    {
+      "index": 1,
+      "name": "Transcription",
+      "icon": "\ud83c\udf99\ufe0f",
+      "label": "Transcribing Raw Audio"
+    },
+    {
+      "index": 2,
+      "name": "Storyboarding",
+      "icon": "\ud83e\udde0",
+      "label": "Structuring Clip Boundaries"
+    },
+    {
+      "index": 3,
+      "name": "Audio Cutting",
+      "icon": "\u2702\ufe0f",
+      "label": "Normalizing Audio Clips"
+    },
+    {
+      "index": 4,
+      "name": "Draft Muxing",
+      "icon": "\ud83c\udfa5",
+      "label": "Muxing Black Canvas Videos"
+    },
+    {
+      "index": 5,
+      "name": "Rendering Intros",
+      "icon": "\ud83c\udfac",
+      "label": "Compiling Intros & Outros"
+    },
+    {
+      "index": 6,
+      "name": "Manifest Sync",
+      "icon": "\ud83d\ude80",
+      "label": "Registering Episode Manifest"
+    }
+  ],
+  "logs": [
+    "[08:34:33] Started ingestion pipeline for Episode 245: Singularity - the greatest intellectual duct tape ! (Mode: structured)",
+    "[08:34:33] Running Whisper transcription with word timestamps (tiny.en)...",
+    "[08:35:03] Started ingestion pipeline for Episode 245: Singularity - the greatest intellectual duct tape ! (Mode: structured)",
+    "[08:35:03] Running Whisper transcription with word timestamps (tiny.en)...",
+    "[08:37:10] Transcription complete with word-level timestamps.",
+    "[08:37:10] Dividing timeline into 18 structural segments.",
+    "[08:37:10] Created storyboard plan with 18 clips.",
+    "[08:37:10] Updating docs/episodes.json for GitHub Pages routing.",
+    "[08:37:10] Episode 245 instant ingestion pipeline completed successfully.",
+    "[08:45:45] Started ingestion pipeline for Episode 245: Singularity - the greatest intellectual duct tape ! (Mode: structured)",
+    "[08:45:45] Transcription complete with word-level timestamps.",
+    "[08:45:45] Dividing timeline into 18 structural segments.",
+    "[08:45:45] Created storyboard plan with 18 clips.",
+    "[08:45:45] Updating docs/episodes.json for GitHub Pages routing.",
+    "[08:45:45] Episode 245 instant ingestion pipeline completed successfully.",
+    "[08:50:18] Started ingestion pipeline for Episode 245: Singularity - the greatest intellectual duct tape ! (Mode: structured)",
+    "[08:50:18] Transcription complete with word-level timestamps.",
+    "[08:50:18] Dividing timeline into 18 structural segments.",
+    "[08:50:18] Created storyboard plan with 18 clips.",
+    "[08:50:19] Updating docs/episodes.json for GitHub Pages routing.",
+    "[08:50:19] Episode 245 instant ingestion pipeline completed successfully."
+  ]
+}

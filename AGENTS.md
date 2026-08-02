@@ -4,15 +4,17 @@
 
 ---
 
-## 🏛️ Pillar 2: Production Application & PWA Ledger
+## 🏛️ Pillar 2 & 3: Master Knowledge Ledger & Media Kitchen
 
-**`deepDive`** is the live production application and knowledge ledger of the **Shutri Media Solution** ([deepdive.shutri.com](https://deepdive.shutri.com)).
+**`deepDive`** is the master production application, knowledge ledger, and internal media kitchen of the **Shutri Media Solution** ([deepdive.shutri.com](https://deepdive.shutri.com)).
 
-It is the real-world testbed where 200+ episodes, square video carousels, and PWA service workers reside.
+While **`mdIngest`** and **`ddma`** serve as the public, open-source engine codebases ("the open restaurants"), **`deepDive`** acts as the internal kitchen holding:
+1. **The `mdBook` Research Ledger (`src/`, `SUMMARY.md`, PWA):** 200+ episode texts and KaTeX math hardening.
+2. **The Integrated DDMA Media Automator (`deepDive/ddma/`):** Live DDMA application engine (`ddma.py`, `curator.html`) and all generated audio podcasts, Nostr 740x740 square video clips, and infographic assets.
 
 ```mermaid
 graph TD
-    SOUL["shutri/SOUL.md (Foundational Blueprint)"] --> DD["deepDive Agent (Pillar 2 App)"]
+    SOUL["shutri/SOUL.md (Foundational Blueprint)"] --> DD["deepDive Agent (Master Kitchen)"]
     Direct["Human Editor Directive"] -->|Internal Track| Template["src/245.md (Numeric Key in Template)"]
     Direct -->|External Track| Mempool["src/_slug.md (Unnumbered Slug in Mempool)"]
     Template --> Build["mdbook build"]
@@ -20,6 +22,7 @@ graph TD
     Build --> Verify["Present Build Output to Human Editor for Verification"]
     Mempool -->|Reviewer posts /approve 245| Unpark["md-publish --unpark _slug 245"]
     Unpark --> Template
+    DD -->|Invokes Integrated App| DDMA["deepDive/ddma/ (Media Automator & Assets)"]
 ```
 
 ---
