@@ -52,3 +52,7 @@ graph TD
 ### 3. Build & Human Verification Handshake
 - After executing ingestion or promotion, ALWAYS run `mdbook build`.
 - Present the build log and local preview link to the Human Editor for verification before the Intake Agent updates the GitHub Issue.
+
+### 4. Continuous Puppeteer Test Bed Expansion & Bug Regression Contract
+- **Mandatory Test Bed Synchrony:** Every single time a bug is fixed or a new feature is introduced in the workspace (e.g., in `curator.html`, `run_curator.py`, or media controls), the agent MUST update and expand the headless Puppeteer test suites (`test_curator.js`, `test_player.js`) to assert and verify that exact interaction BEFORE declaring success or presenting changes to the Human Editor.
+- **No Regressions Policy:** Never fix a bug without adding a corresponding automated test case asserting the fix, preventing resolved issues from resurfacing in future refactors.
