@@ -441,7 +441,7 @@
         "end": 1426.51,
         "duration": 135.48,
         "bridge_text": [
-            "Lets look at a more relevant example - modern computing !"
+            "Lets look at a more relevant example - modern computing in next one !"
         ],
         "segments": [
             {
@@ -475,7 +475,7 @@
             {
                 "type": "music",
                 "music_file": "deepDive-soft-ok.mp3",
-                "duration": 5.5,
+                "duration": 7.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
