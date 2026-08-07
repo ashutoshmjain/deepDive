@@ -386,12 +386,62 @@
     },
     {
         "num": 9,
-        "title": "Commutative Geometry",
+        "title": "Cognitive untangling",
         "start": 1146.85,
         "end": 1283.97,
         "duration": 137.12,
         "bridge_text": [
-            "Coming up in Part 10: The Imbibed Intelligence Analyzes That 3d \u2014 What is the deeper secret?"
+            "Coming up in Part 10: Central Dogma of cellular biology."
+        ],
+        "segments": [
+            {
+                "type": "music",
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+                "duration": 3.5,
+                "crossfade": 0,
+                "volume": 1
+            },
+            {
+                "type": "audio",
+                "start": 1222.51,
+                "end": 1343.73,
+                "duration": 121.22,
+                "text": "Refining  our  mental  models  based  on  collaborative  feedback  to  achieve  perfect  clarity  is  a  real  world  example  of  what  this  research  paper  defines  as  untangling.  Untangling.  Let's  get  back  to  the  physics  of  how  a  system  achieves  cognitive  clarity.  Untangling  the  universe  doesn't  mean  destroying  it.  It  means  finally  understanding  the  joke.  Demystifying  the  physical  universe  is  a  cognitive  process,  not  a  destructive  physical  event.  A  white  paper  addresses  a  massive  misconception  in  this  section,  one  that  frequently  bridges  high  level  physical  theories  and  even  effortary  spiritual  traditions.  When  people  hear  phrases  like  untangling  the  universe  or  dimensional  collapse,  they  picture  apocalypse.  Right,  they  think  of  the  end  of  the  world.  It  sounds  like  Thanos  snapping  his  fingers  and  turning  half  the  universe  to  dust.  It  sounds  like  the  literal  physical  dissolution  of  matter.  Within  this  rigorous  topological  framework,  untangling  has  a  very  specific  non -destructive  definition.  Untangling  is  strictly  defined  as  achieving  cognitive  clarity.  Cognitive  clarity.  It  is  the  progressive  step -by -step  demystification  of  physical  reality  through  the  application  of  intelligence.  Let's  bring  back  our  dice  metaphor  to  visualize  this.  If  the  forward  physical  manifestation  of  reality  is  rolling  the  dice  forward  and  then  to  the  right  to  construct  the  physical  knots  of  matter  in  space  time,  then  cognitive  untangling  is  the  exact  inverse  vector  transformation.  It  is  executing  the  mathematical  inverse  of  that  quaternionic  cross  product.  So  it's  rolling  the  dice  backward  in  your  mind  to  understand  why  it  landed  that  way  in  the  analyzing  the  rotation  from  within  the  intelligence  manifold.  The  key  distinction  in  the  paper  makes  is  that  you  do  not  have  to  physically  break  or  dissolve  the  matter  to  untangle  it.  Oh,  wait,  just...  You  unpule  the  layers  of  physical  reality  using  your  intellect.  You  trace  the  complex  physical  structure  backward  to  its  original  structural  intent  until  the  physical  matter  and  the  informational  intent  represent  one  single  perfectly  unified  picture."
+            },
+            {
+                "type": "music",
+                "music_file": "deepDive-strong.mp3",
+                "duration": 5.5,
+                "crossfade": 0,
+                "volume": 1
+            },
+            {
+                "type": "audio",
+                "start": 1149.75,
+                "end": 1163.55,
+                "duration": 13.8,
+                "text": "We  don't  want  to  just  talk  in  you  for  an  hour.  We  want  you  to  check  it  out,  interact  with  the  research,  ask  questions,  and  let  us  know  what  you  think.  Your  listener  feedback  is  the  cognitive  intelligence  we  need  to  fit  into  the  physical  structure  of  this  show.",
+                "volume": 2
+            },
+            {
+                "type": "music",
+                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+                "duration": 4.5,
+                "crossfade": 0.3,
+                "volume": 1
+            }
+        ],
+        "locked": true,
+        "mosaic_run_id": "01339a08-b851-4c18-9f8a-22592307656f"
+    },
+    {
+        "num": 10,
+        "title": "DNA to folded proteins",
+        "start": 1291.03,
+        "end": 1426.51,
+        "duration": 135.48,
+        "bridge_text": [
+            "Lets look at a more relevant example - modern computing !"
         ],
         "segments": [
             {
@@ -403,10 +453,10 @@
             },
             {
                 "type": "audio",
-                "start": 1152.23,
-                "end": 1169.61,
-                "duration": 17.38,
-                "text": "We  want  you  to  check  it  out,  interact  with  the  research,  ask  questions,  and  let  us  know  what  you  think.  Your  listener  feedback  is  the  cognitive  intelligence  we  need  to  fit  into  the  physical  structure  of  this  show.  Which  leads  to  our  second  insight.  Over  the  past  few  weeks,  we've  implemented  quite  a  few  structural"
+                "start": 1344.31,
+                "end": 1374.77,
+                "duration": 30.46,
+                "text": "Okay,  so  physical  construction  moves  forward  through  physical  sequence  building  the  knots  while  cognitive  untangling  moves  in  reverse  operational  sequence,  understanding  the  knots.  Correct.  But  I  have  to  be  honest,  that  still  sounds  incredibly  abstract.  It  sounds  like  a  metaphor  for  going  to  therapy.  Do  we  have  any  tangible,  hard  scientific  proof  that  systems  actually  operate  using  this  forward  reverse  vector  cycle  in  the  real  world?  The  proof  is  literally  running  through  your  veins  and  dividing  in  your  cells  right  this  very  second."
             },
             {
                 "type": "music",
@@ -417,68 +467,20 @@
             },
             {
                 "type": "audio",
-                "start": 1173.77,
-                "end": 1283.97,
-                "duration": 110.2,
-                "text": "The platform is now divided into three main categories, Mempool, template, and chain. Let's define those categories. Mempool is where we house all the active bleeding edge research. This is where we work directly with open independent researchers to hash out these raw concepts before they are fully formed. Intemplate is where we place the research for public scrutiny. We post our artifacts there like this very audio deep dive you are listening to or the visual infographics we design such as the dice metaphor we use for non -commutative geometry. We want to engage with all of you in the template phase. We read your comments and we literally iterate over them to refine our mental models. We adjust the glove to fit the hand. Finally, a template of 21 episodes is cast into what we call a block and those blocks are permanently added to the chain of knowledge. Refining our mental models based on collaborative feedback to achieve perfect clarity is a real world example of what this research paper defines as untangling. Untangling. Let's get back to the physics of how a system achieves cognitive clarity. Untangling the universe doesn't mean destroying it. It means finally understanding the joke. Demystifying the physical universe is a cognitive process, not a destructive physical event. A white paper addresses a massive misconception in this section, one that frequently bridges high level physical theories and even effortary spiritual traditions. When people hear phrases like untangling the universe or dimensional collapse, they picture apocalypse. Right, they think of the end of the world. It sounds like Thanos snapping his fingers and turning half the universe to dust. It sounds like the literal physical dissolution of matter. Within this rigorous topological framework, untangling has a very specific non -destructive definition. Untangling is strictly defined as achieving cognitive clarity. Cognitive clarity. It"
+                "start": 1393.27,
+                "end": 1516.69,
+                "duration": 123.42,
+                "text": "The  white  paper  explicitly  uses  cellular  biology  as  a  definitive  proof  of  this  forward  and  perspective  cycle.  Let's  trace  the  forward  physical  vector  in  biology.  It  operates  sequentially  from  genetic  code  to  spatial  structure.  The  informational  intent  encoded  in  your  DNA  dictates  the  highly  specific  physical  folding  of  proteins  into  three -dimensional  space.  Using  our  metaphor,  the  DNA's  intelligence  is  pushing  out  the  physical  fingers  of  the  protein  glove.  It  is  manifesting  structure.  Yes.  And  once  the  structure  is  built,  the  reverse  cognitive  vector  activates.  To  maintain  the  health  of  the  cell,  the  imbibed  intelligence  analyzes  that  3D -folded  protein  structure  and  decipheringly  traces  it  backward  to  map  it  against  the  underlying  DNA  sequence.  It's  untangling  it.  The  cell  is  rolling  and  the  biological  dice  backward  to  check  its  own  work.  So  what  happens  when  the  cell  checks  the  work  and  the  structural  protein  perfectly  matches  the  DNA  intent?  If  the  DNA  intelligence  and  the  physical  protein  folding  are  in  perfect,  error -free  synchronization,  meaning  the  mathematical  chiral  delta  equals  precisely  zero,  the  cell  achieves  structural  equilibrium.  It  avoids  metabolic  decay.  Wow.  It  divides  naturally  functioning  as  a  perfectly  symbiotic  system.  But  wait,  I  have  a  major  pushback  here.  Are  you  implying  that  a  perfectly  balanced  cell  with  a  delta  of  zero  is  effectively  immortal?  It  operates  as  its  own  mini -singularity.  Do  immortal  cells  even  exist  in  nature?  Well,  according  to  the  paper's  framework,  a  system  at  delta  zero  does  not  experience  emergent  time  or  in  tropic  decay  in  the  same  manner.  While  biological  constraints  in  a  high -friction  environment  make  delta  zero  incredibly  difficult  to  maintain,  we  do  see  anomalous  biological  behavior  like  helis  cells  that  resist  standard  decay.  That's  true.  However,  in  the  standard  observed  domain,  when  protein  misfolding  occurs  or  genetic  chiral  delta  greater  than  zero  appears,  the  hand  doesn't  fit  the  glove,  the  untangling  fails.  That  is  the  literal  mechanical  cause  of  rapid  cellular  decay.  Aging  is  fundamentally  a  large  uncompensated  chiral  delta."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
-                "crossfade": 0.3,
-                "volume": 1
-            }
-        ],
-        "locked": false
-    },
-    {
-        "num": 10,
-        "title": "The Imbibed Intelligence Analyzes That 3d",
-        "start": 1291.03,
-        "end": 1426.51,
-        "duration": 135.48,
-        "bridge_text": [
-            "So what happens when the cell checks the work and the structural protein perfectly matches the DNA intent?"
-        ],
-        "segments": [
-            {
-                "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+                "music_file": "deepDive-soft-ok.mp3",
                 "duration": 5.5,
-                "crossfade": 1.3,
-                "volume": 1
-            },
-            {
-                "type": "audio",
-                "start": 1294.81,
-                "end": 1320.97,
-                "duration": 26.16,
-                "text": "If the forward physical manifestation of reality is rolling the dice forward and then to the right to construct the physical knots of matter in space time, then cognitive untangling is the exact inverse vector transformation. It is executing the mathematical inverse of that quaternionic cross product. So it's rolling the dice backward in your mind to understand why it landed that way in the analyzing the rotation from within the intelligence manifold."
-            },
-            {
-                "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
-                "crossfade": 0,
-                "volume": 1
-            },
-            {
-                "type": "audio",
-                "start": 1321.05,
-                "end": 1426.51,
-                "duration": 105.46,
-                "text": "The key distinction in the paper makes is that you do not have to physically break or dissolve the matter to untangle it. Oh, wait, just... You unpule the layers of physical reality using your intellect. You trace the complex physical structure backward to its original structural intent until the physical matter and the informational intent represent one single perfectly unified picture. Okay, so physical construction moves forward through physical sequence building the knots while cognitive untangling moves in reverse operational sequence, understanding the knots. Correct. But I have to be honest, that still sounds incredibly abstract. It sounds like a metaphor for going to therapy. Do we have any tangible, hard scientific proof that systems actually operate using this forward reverse vector cycle in the real world? The proof is literally running through your veins and dividing in your cells right this very second. Your cells are constantly trying to achieve singularity and when they fail, you age. Cellular biology provides a totally observable theater for this carol vector equilibrium in action. Let's take this massive cosmic framework of observers and non -commutative geometry and apply it to something microscopic. The white paper explicitly uses cellular biology as a definitive proof of this forward and perspective cycle. Let's trace the forward physical vector in biology. It operates sequentially from genetic code to spatial structure. The informational intent encoded in your DNA dictates the highly specific physical folding of proteins into three -dimensional space. Using our metaphor, the DNA's intelligence is pushing out the physical fingers of the protein glove. It is manifesting structure. Yes. And once the structure is built, the reverse cognitive vector activates."
-            },
-            {
-                "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true
     },
     {
         "num": 11,
@@ -526,7 +528,8 @@
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": false,
+        "hidden": true
     },
     {
         "num": 12,
