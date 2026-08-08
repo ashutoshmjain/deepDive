@@ -532,6 +532,20 @@ async function runTest() {
             if (aStream.sample_rate !== '48000') {
                 throw new Error(`FAIL: Audio sample rate ${aStream.sample_rate}Hz does not match required 48000Hz!`);
             }
+
+            // Verify Clip 12 Mosaic Render Integrity if Clip 12 exists
+            const clip12VideoPath = path.resolve(__dirname, '../../clips/245-12.mp4');
+            const clip12OrigPath = path.resolve(__dirname, '../../clips/245-12-original.mp4');
+            if (fs.existsSync(clip12VideoPath)) {
+                const probe12Str = execSync(`ffprobe -v error -show_streams -of json "${clip12VideoPath}"`).toString();
+                const probe12Data = JSON.parse(probe12Str);
+                const v12Stream = probe12Data.streams.find(s => s.codec_type === 'video');
+                const v12Bitrate = parseInt(v12Stream ? v12Stream.bit_rate || 0 : 0);
+                console.log(`- Clip 12 Video Stream Bitrate: ${v12Bitrate} bps (Original raw file present: ${fs.existsSync(clip12OrigPath)})`);
+                if (fs.existsSync(clip12OrigPath) && v12Bitrate < 20000) {
+                    throw new Error(`FAIL: Clip 12 compiled video bitrate (${v12Bitrate} bps) indicates dark mux black canvas overwrite instead of preserving Mosaic motion graphics!`);
+                }
+            }
         } else {
             throw new Error(`FAIL: Expected compiled video ${clip10VideoPath} does not exist on disk after successful compilation!`);
         }
