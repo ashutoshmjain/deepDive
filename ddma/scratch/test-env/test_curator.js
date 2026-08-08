@@ -683,6 +683,32 @@ async function runTest() {
             throw new Error(`FAIL: Scenario C (Export Clip) compilation failed! Error: ${exportCompResult.error}`);
         }
 
+        // 🧪 TEST 14: Verifying Frame-by-Frame Motion Graphics Visual Integrity & Continuous Infographics Rendering (Clip 12)
+        console.log("\n🧪 TEST 14: Verifying Frame-by-Frame Motion Graphics Visual Integrity across Time (Clip 12)...");
+        const clip12Path = path.resolve(__dirname, '../../clips/245-12.mp4');
+        if (fs.existsSync(clip12Path)) {
+            const sampleTimes = [40, 70, 130];
+            for (const t of sampleTimes) {
+                const tmpFrame = path.resolve(__dirname, `../../temp_test14_frame_${t}.png`);
+                try {
+                    execSync(`ffmpeg -y -ss ${t} -i "${clip12Path}" -vframes 1 "${tmpFrame}"`, { stdio: 'pipe' });
+                    if (fs.existsSync(tmpFrame)) {
+                        const pyCheck = `python -c "import os; from PIL import Image, ImageStat; stat = ImageStat.Stat(Image.open(r'${tmpFrame}')); print(stat.stddev[0])"`;
+                        const stddevVal = parseFloat(execSync(pyCheck).toString().trim());
+                        console.log(`  - Frame at t=${t}s Pixel StdDev: ${stddevVal.toFixed(2)}`);
+                        if (fs.existsSync(tmpFrame)) fs.unlinkSync(tmpFrame);
+                        if (stddevVal < 2.0) {
+                            throw new Error(`FAIL: Frame at t=${t}s has pixel StdDev ${stddevVal.toFixed(2)} indicating dark mux black canvas dropout!`);
+                        }
+                    }
+                } catch (frameErr) {
+                    if (fs.existsSync(tmpFrame)) fs.unlinkSync(tmpFrame);
+                    throw new Error(`FAIL: Frame extraction at t=${t}s failed: ${frameErr.message}`);
+                }
+            }
+            console.log(`  - Continuous Infographics Motion Graphics Verified across 40s, 70s, and 130s!`);
+        }
+
         console.log("\n✅ ALL COMPREHENSIVE CURATOR REGRESSION TESTS PASSED 100%!");
 
     } catch (err) {
