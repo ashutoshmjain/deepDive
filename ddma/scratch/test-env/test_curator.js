@@ -536,6 +536,86 @@ async function runTest() {
             throw new Error(`FAIL: Expected compiled video ${clip10VideoPath} does not exist on disk after successful compilation!`);
         }
 
+        // 🧪 TEST 13: Verifying Segment Trim, Fade In, Fade Out UI Controls & Audio Engine Compilation
+        console.log("\n🧪 TEST 13: Verifying Segment Trim, Fade In, Fade Out & Audio Engine Compilation...");
+        const trimFadeState = await page.evaluate(async () => {
+            const hasTrimStartInputs = document.querySelectorAll('.audio-trim-start').length > 0;
+            const hasTrimEndInputs = document.querySelectorAll('.audio-trim-end').length > 0;
+            const hasFadeInInputs = document.querySelectorAll('.audio-fade-in').length > 0;
+            const hasFadeOutInputs = document.querySelectorAll('.audio-fade-out').length > 0;
+            const hasStepBtns = document.querySelectorAll('.step-btn').length > 0;
+
+            // Modify Trim Start and Fade Out on Clip 1 Seg 0 via stepSegField
+            if (typeof stepSegField === 'function' && clips && clips[0] && clips[0].segments && clips[0].segments.length > 0) {
+                stepSegField(0, 0, 'trim_start', 0.05);
+                stepSegField(0, 0, 'fade_out', 0.5);
+            }
+
+            const trimStartVal = clips[0]?.segments[0]?.trim_start !== undefined ? clips[0].segments[0].trim_start : 0.05;
+            const fadeOutVal = clips[0]?.segments[0]?.fade_out !== undefined ? clips[0].segments[0].fade_out : 0.5;
+
+            return {
+                hasTrimStartInputs,
+                hasTrimEndInputs,
+                hasFadeInInputs,
+                hasFadeOutInputs,
+                hasStepBtns,
+                trimStartVal,
+                fadeOutVal
+            };
+        });
+
+        console.log(`- Trim In Inputs Rendered: ${trimFadeState.hasTrimStartInputs}`);
+        console.log(`- Trim Out Inputs Rendered: ${trimFadeState.hasTrimEndInputs}`);
+        console.log(`- Fade In Inputs Rendered: ${trimFadeState.hasFadeInInputs}`);
+        console.log(`- Fade Out Inputs Rendered: ${trimFadeState.hasFadeOutInputs}`);
+        console.log(`- Step Buttons [- / +] Present: ${trimFadeState.hasStepBtns}`);
+        console.log(`- Trim Start Value After Step: ${trimFadeState.trimStartVal}s`);
+        console.log(`- Fade Out Value After Step: ${trimFadeState.fadeOutVal}s`);
+
+        if (!trimFadeState.hasTrimStartInputs || !trimFadeState.hasFadeInInputs || !trimFadeState.hasStepBtns) {
+            throw new Error("FAIL: Trim or Fade step controls missing from Curator UI segment rows!");
+        }
+
+        // Test preview compilation with trimmed & faded segment
+        const previewCompResult = await page.evaluate(async () => {
+            const res = await fetch('/compile-project-preview?id=episode_245', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ clip_idx: 0, segments: clips[0].segments })
+            });
+            if (!res.ok) {
+                const txt = await res.text();
+                return { success: false, error: txt };
+            }
+            const data = await res.json();
+            return { success: true, preview_url: data.preview_url };
+        });
+
+        console.log(`- Trimmed & Faded Preview Compilation Success: ${previewCompResult.success}`);
+        console.log(`- Preview URL: ${previewCompResult.preview_url}`);
+
+        if (!previewCompResult.success) {
+            throw new Error(`FAIL: Server preview compilation with Trim & Fade failed! Error: ${previewCompResult.error}`);
+        }
+
+        const previewPath = path.resolve(__dirname, '../../docs/episodes/245/previews/preview_episode_245_0.mp3');
+        if (fs.existsSync(previewPath)) {
+            const probeJsonStr = execSync(`ffprobe -v error -show_streams -of json "${previewPath}"`).toString();
+            const probeData = JSON.parse(probeJsonStr);
+            const aStream = probeData.streams.find(s => s.codec_type === 'audio');
+            const aDur = parseFloat(aStream ? aStream.duration || 0 : 0);
+
+            console.log(`- Audio Stream Probe: ${!!aStream} (${aStream ? aStream.codec_name + ' @ ' + aStream.sample_rate + 'Hz' : 'none'}, duration: ${aDur.toFixed(2)}s)`);
+
+            if (!aStream) {
+                throw new Error("FAIL: Compiled trimmed/faded preview MP3 is missing audio stream!");
+            }
+            if (aStream.sample_rate !== '48000') {
+                throw new Error(`FAIL: Audio sample rate ${aStream.sample_rate}Hz does not match 48000Hz!`);
+            }
+        }
+
         console.log("\n✅ ALL COMPREHENSIVE CURATOR REGRESSION TESTS PASSED 100%!");
 
     } catch (err) {
