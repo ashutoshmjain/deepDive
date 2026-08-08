@@ -1173,14 +1173,14 @@ def compile_clip(
                 target_dur = a_dur
                 typer.echo(f"Equalizing master body stream durations to match audio ground truth ({a_dur:.3f}s)...")
                 if v_dur and v_dur < a_dur:
-                    # Video is shorter than audio: extend black canvas video stream to match audio duration exactly
+                    # Video is shorter than audio: extend video stream by cloning last frame to match audio duration exactly
+                    pad_dur = a_dur - v_dur
+                    typer.echo(f"Extending Mosaic video stream with final frame pad ({pad_dur:.3f}s) to match audio duration...")
                     cmd_norm = [
                         "ffmpeg", "-y",
-                        "-f", "lavfi", "-i", f"color=c=black:s={v_width}x{v_height}:r=25:d={target_dur:.3f}",
                         "-i", backup_path,
-                        "-map", "0:v",
-                        "-map", "1:a",
-                        "-c:v", "libx264", "-tune", "stillimage", "-pix_fmt", "yuv420p",
+                        "-vf", f"tpad=stop_mode=clone:stop_duration={pad_dur:.3f}",
+                        "-c:v", "libx264", "-crf", "18", "-preset", "fast", "-pix_fmt", "yuv420p",
                         "-c:a", "aac", "-b:a", "192k",
                         "-ar", ar_str,
                         "-t", f"{target_dur:.3f}",
