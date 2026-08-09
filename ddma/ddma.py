@@ -865,7 +865,14 @@ def compile_clip(
         except Exception:
             pass
 
+    target_clip = next((c for c in plan_data if c.get("num") == num), None)
+    mosaic_run_id = target_clip.get("mosaic_run_id") if target_clip else None
+    
     backup_path = f"clips/{episode}-{num}-original.mp4"
+    if mosaic_run_id:
+        versioned_path = f"clips/{episode}-{num}-mosaic-{mosaic_run_id}.mp4"
+        if os.path.exists(versioned_path):
+            backup_path = versioned_path
 
     # Check for freshly cut audio clip (e.g. clips/245-1-*.mp3) and remux audio track
     audio_pattern1 = os.path.join(master_dir, f"{episode}-{num}-*.mp3")
@@ -875,7 +882,6 @@ def compile_clip(
         audio_matches = glob.glob(os.path.join(master_dir, f"*-{num}-*.mp3")) + glob.glob(os.path.join(master_dir, f"*-{num}.mp3"))
     
     temp_remux_path = f"temp_remux_{num}.mp4"
-    target_clip = next((c for c in plan_data if c.get("num") == num), None)
     has_mosaic_id = bool(target_clip and target_clip.get("mosaic_run_id"))
     has_mosaic_file = os.path.exists(backup_path)
     
