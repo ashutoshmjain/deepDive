@@ -634,7 +634,7 @@
     },
     {
         "num": 14,
-        "title": "If a System Has Achieved Natural Singularity",
+        "title": "Conservation of Energy - new Paradigm",
         "start": 1865.99,
         "end": 1995.47,
         "duration": 129.48,
@@ -645,40 +645,42 @@
             {
                 "type": "music",
                 "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 5.5,
-                "crossfade": 1.3,
-                "volume": 1
+                "duration": 4.5,
+                "crossfade": 1.2,
+                "volume": 1,
+                "fade_out": 0
             },
             {
                 "type": "audio",
-                "start": 1868.89,
+                "start": 1877.91,
                 "end": 1889.21,
-                "duration": 20.32,
-                "text": "and the cognitive intelligence imbibed within it are going to fluctuate. They will temporarily deviate from perfect chiral balance. Wait, a pushback here. Why risk the perfect balance? If a system has achieved natural singularity, zero friction, and total comprehension, why would it voluntarily project new trial geometries that are probabilistic?"
+                "duration": 11.3,
+                "text": "Why  risk  the  perfect  balance?  If  a  system  has  achieved  natural  singularity,  zero  friction,  and  total  comprehension,  why  would  it  voluntarily  project  new  trial  geometries  that  are  probabilistic?"
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "music_file": "Voyeur (Sting) - Jingle Punks.mp3",
+                "duration": 3.5,
                 "crossfade": 0,
                 "volume": 1
             },
             {
                 "type": "audio",
-                "start": 1889.29,
-                "end": 1995.47,
-                "duration": 106.18,
-                "text": "Why roll the dice and risk the hand not fitting the new glove? Because the intrinsic nature of intelligence is expansion. The system risks temporary imbalance to increase the total structural volume of its domain. It projects a larger glove, aiming to grow its intelligence to fill it. And what happens when those newly projected quantum guesses miss the mark? When the hand can't fill the new larger glove, and the delta is suddenly greater than zero again? When those trial projections miss, they generate uncompensated tension within the fabric of the non -commutative spatial manifold itself. And accounting for that tension demands a radical rethinking of how we view the universal laws of conservation of energy. Forget what you learned in high school physics, the universe doesn't have a fixed energy budget. We must replace the classical concept of static energy conservation with dynamic vector equilibrium. This is one of the most paradigm shifting sections of the white paper. Let's talk about the classical conservation of energy. We are all taught from a young age that the universe is essentially a closed static container. Right. You have a fixed finite energy budget, and you just shuffle that energy around between potential, kinetic, and thermal states. You can't magically make more of it. That closed system model works for basic mechanics, but this quaternionic topological framework re -evaluates energy conservation entirely. It replaces the classical law with a foundational new principle, structural cognitive chiral balance. Okay, let's break that down. Dynamic vector equilibrium. What does that actually mean for the creation of new physical reality? Let's rely on the core metaphor again. The physical nodding of space, the forward rotation of the dice to create the physical glove, generates a specific mathematical vector."
+                "start": 1893.57,
+                "end": 2026.97,
+                "duration": 133.4,
+                "text": "Because  the  intrinsic  nature  of  intelligence  is  expansion.  The  system  risks  temporary  imbalance  to  increase  the  total  structural  volume  of  its  domain.  It  projects  a  larger  glove,  aiming  to  grow  its  intelligence  to  fill  it.  And  what  happens  when  those  newly  projected  quantum  guesses  miss  the  mark?  When  the  hand  can't  fill  the  new  larger  glove,  and  the  delta  is  suddenly  greater  than  zero  again?  When  those  trial  projections  miss,  they  generate  uncompensated  tension  within  the  fabric  of  the  non -commutative  spatial  manifold  itself.  And  accounting  for  that  tension  demands  a  radical  rethinking  of  how  we  view  the  universal  laws  of  conservation  of  energy.  Forget  what  you  learned  in  high  school  physics,  the  universe  doesn't  have  a  fixed  energy  budget.  We  must  replace  the  classical  concept  of  static  energy  conservation  with  dynamic  vector  equilibrium.  This  is  one  of  the  most  paradigm  shifting  sections  of  the  white  paper.  Let's  talk  about  the  classical  conservation  of  energy.  We  are  all  taught  from  a  young  age  that  the  universe  is  essentially  a  closed  static  container.  Right.  You  have  a  fixed  finite  energy  budget,  and  you  just  shuffle  that  energy  around  between  potential,  kinetic,  and  thermal  states.  You  can't  magically  make  more  of  it.  That  closed  system  model  works  for  basic  mechanics,  but  this  quaternionic  topological  framework  re -evaluates  energy  conservation  entirely.  It  replaces  the  classical  law  with  a  foundational  new  principle,  structural  cognitive  chiral  balance.  Okay,  let's  break  that  down.  Dynamic  vector  equilibrium.  What  does  that  actually  mean  for  the  creation  of  new  physical  reality?  Let's  rely  on  the  core  metaphor  again.  The  physical  nodding  of  space,  the  forward  rotation  of  the  dice  to  create  the  physical  glove,  generates  a  specific  mathematical  vector.  The  cognitive  merformation,  the  intelligence  of  the  hand,  executing  the  inverse  reverse  rotation  to  understand  the  glove,  generates  an  opposite  vector.  Right.  They  are  chiral  mirror  images.  In  algebra,  it's  like  a  plus  a  cross  b  operation  matched  with  a  minus  b  cross  a  operation.  Exactly.  When  you  sum  those  operations  together,  because  they  generate  equal  and  opposite  chiral  vectors,  they  cancel  each  other  out  entirely.  Wow.  Therefore,  the  net  energetic  cost  of  creating  physical  reality,  relative  to  the  absolute  spatial  origin,  is  identically  zero  at  all  times."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "music_file": "deepDive-soft-ok.mp3",
+                "duration": 8.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "ea96d821-6129-4200-a08f-67954db81865"
     },
     {
         "num": 15,
