@@ -709,6 +709,31 @@ async function runTest() {
             console.log(`  - Continuous Infographics Motion Graphics Verified across 40s, 70s, and 130s!`);
         }
 
+        // 🧪 TEST 15: Verifying Dynamic Episode Switching & Backend /get-project Integrity
+        console.log("\n🧪 TEST 15: Verifying Dynamic Episode Switching & Backend /get-project Integrity...");
+        const epSwitchState = await page.evaluate(async () => {
+            selectProject('episode_245');
+            await new Promise(r => setTimeout(r, 1500));
+            const selectEl = document.getElementById('topEpisodeSelect');
+            const editorLink = document.getElementById('combineVideoBtn') ? document.getElementById('combineVideoBtn').closest('a') : null;
+            const clipCount = document.querySelectorAll('.clip-card').length;
+            return {
+                activeProjectId: activeProjectId,
+                topSelectValue: selectEl ? selectEl.value : null,
+                editorHref: editorLink ? editorLink.getAttribute('href') : null,
+                clipCount: clipCount
+            };
+        });
+
+        console.log(`  - Switched to episode_245 -> Active Project ID: ${epSwitchState.activeProjectId}`);
+        console.log(`  - Top Episode Select Value: ${epSwitchState.topSelectValue}`);
+        console.log(`  - Editor Preview Link Href: ${epSwitchState.editorHref}`);
+        console.log(`  - Episode 245 Clip Cards Rendered: ${epSwitchState.clipCount}`);
+
+        if (epSwitchState.activeProjectId !== 'episode_245' || epSwitchState.clipCount === 0 || !epSwitchState.editorHref.includes('ep=245')) {
+            throw new Error(`FAIL: Dynamic Episode Switching to episode_245 failed! Active ID: ${epSwitchState.activeProjectId}, Clip Count: ${epSwitchState.clipCount}, Href: ${epSwitchState.editorHref}`);
+        }
+
         console.log("\n✅ ALL COMPREHENSIVE CURATOR REGRESSION TESTS PASSED 100%!");
 
     } catch (err) {
