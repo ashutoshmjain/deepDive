@@ -657,6 +657,11 @@ async function runTest() {
             }
         }
 
+        // Restore Master Mosaic video for Clip 1 so test suite never leaves Clip 1 in a draft baseline state
+        await page.evaluate(async () => {
+            await fetch('/compile-clip?id=episode_245&num=1', { method: 'POST' });
+        });
+
         // Scenario C: Export Project Clip (/export-project-clip)
         console.log("\n  -> Scenario C: Export Project Clip (/export-project-clip)...");
         const exportCompResult = await page.evaluate(async () => {
