@@ -45,7 +45,8 @@
                 "volume": 1
             }
         ],
-        "locked": true
+        "locked": true,
+        "mosaic_run_id": "ca8be260-3d8d-4d18-b9c0-72d8d417ff72"
     },
     {
         "num": 2,
@@ -684,7 +685,7 @@
     },
     {
         "num": 15,
-        "title": "Because They Generate Equal and Opposite Chiral Vectors",
+        "title": "Infinite Universe",
         "start": 2005.91,
         "end": 2150.83,
         "duration": 144.92,
@@ -695,16 +696,16 @@
             {
                 "type": "music",
                 "music_file": "Demilitarized Zone (Sting) - Ethan Meixsell.mp3",
-                "duration": 5.5,
-                "crossfade": 1.3,
+                "duration": 3.5,
+                "crossfade": 0,
                 "volume": 1
             },
             {
                 "type": "audio",
-                "start": 2008.93,
+                "start": 2027.43,
                 "end": 2031.71,
-                "duration": 22.78,
-                "text": "matched with a minus b cross a operation. Exactly. When you sum those operations together, because they generate equal and opposite chiral vectors, they cancel each other out entirely. Wow. Therefore, the net energetic cost of creating physical reality, relative to the absolute spatial origin, is identically zero at all times. Wait, hold on. Let me make sure I am fully comprehending the magnitude of what you just said."
+                "duration": 4.28,
+                "text": "Wait,  hold  on.  Let  me  make  sure  I  am  fully  comprehending  the  magnitude  of  what  you  just  said."
             },
             {
                 "type": "music",
@@ -715,24 +716,25 @@
             },
             {
                 "type": "audio",
-                "start": 2031.79,
-                "end": 2150.83,
-                "duration": 119.04,
-                "text": "If the energetic cost of the physical mass and the energetic cost of the cognitive intelligence, exactly cancel each other out mathematically, if the net cost to the universe is always zero, does that mean what I think it means? It means the universe is not a closed box slowly running out of gas. It means infinite physical creation is entirely mathematically permissible. You can build infinite amounts of matter as long as you have the intelligence to pay for it. As long as the chiral vector equilibrium is rigorously maintained, the potential for structural creation is literally boundless. Let's look at the complete field equation derived in the paper to back this up. We all know Einstein's famous E equals MC squared, which relates energy and mass. But this paper expands that equation significantly. It demonstrates that physical mass expressed as E divided by C squared and cognitive intelligence, which it defines formally as I equals E divided by C squared, are dual chiral manifestations of the exact same scalar energy. Within this framework C squared is no longer simply the speed of light squared acting as a speed limit. It functions fundamentally as the universal conversion constant for both spatial mass condensation and cognitive structuring. This is a staggering conclusion. The paper mathematically proves that incident matter can be created from nothing. The universe can expand endlessly, producing infinite physical structures, stars, planets, and galaxies, as long as the physical structure and the cognition remain in perfect counterbalance. As long as the chiral Delta remains exactly zero. The mathematics support infinite expansion, yes, but there is a strict undeniable cost to imbalance. If there is a structural discrepancy in those new projections, if the new glove in the hand don't match and the delta rise above zero, the system instantly loses its observer status. It becomes the observed. And as we discussed earlier, the observed begins to decay. The uncompensated fuel tension from that imbalance induces entropic decay, breaking the structure down until it can be re -assimilated."
+                "start": 2032.01,
+                "end": 2166.01,
+                "duration": 134,
+                "text": "If  the  energetic  cost  of  the  physical  mass  and  the  energetic  cost  of  the  cognitive  intelligence,  exactly  cancel  each  other  out  mathematically,  if  the  net  cost  to  the  universe  is  always  zero,  does  that  mean  what  I  think  it  means?  It  means  the  universe  is  not  a  closed  box  slowly  running  out  of  gas.  It  means  infinite  physical  creation  is  entirely  mathematically  permissible.  You  can  build  infinite  amounts  of  matter  as  long  as  you  have  the  intelligence  to  pay  for  it.  As  long  as  the  chiral  vector  equilibrium  is  rigorously  maintained,  the  potential  for  structural  creation  is  literally  boundless.  Let's  look  at  the  complete  field  equation  derived  in  the  paper  to  back  this  up.  We  all  know  Einstein's  famous  E  equals  MC  squared,  which  relates  energy  and  mass.  But  this  paper  expands  that  equation  significantly.  It  demonstrates  that  physical  mass  expressed  as  E  divided  by  C  squared  and  cognitive  intelligence,  which  it  defines  formally  as  I  equals  E  divided  by  C  squared,  are  dual  chiral  manifestations  of  the  exact  same  scalar  energy.  Within  this  framework  C  squared  is  no  longer  simply  the  speed  of  light  squared  acting  as  a  speed  limit.  It  functions  fundamentally  as  the  universal  conversion  constant  for  both  spatial  mass  condensation  and  cognitive  structuring.  This  is  a  staggering  conclusion.  The  paper  mathematically  proves  that  incident  matter  can  be  created  from  nothing.  The  universe  can  expand  endlessly,  producing  infinite  physical  structures,  stars,  planets,  and  galaxies,  as  long  as  the  physical  structure  and  the  cognition  remain  in  perfect  counterbalance.  As  long  as  the  chiral  Delta  remains  exactly  zero.  The  mathematics  support  infinite  expansion,  yes,  but  there  is  a  strict  undeniable  cost  to  imbalance.  If  there  is  a  structural  discrepancy  in  those  new  projections,  if  the  new  glove  in  the  hand  don't  match  and  the  delta  rise  above  zero,  the  system  instantly  loses  its  observer  status.  It  becomes  the  observed.  And  as  we  discussed  earlier,  the  observed  begins  to  decay.  The  uncompensated  fuel  tension  from  that  imbalance  induces  entropic  decay,  breaking  the  structure  down  until  it  can  be  re -assimilated.  This  fundamentally  shifts  our  entire  cosmological  worldview  from  one  of  terrifying  scarcity  to  one  of  absolute  abundance.  The  universe  isn't  a  dying  machine  winding  down  its  in  the  counting  ledger,  just  trying  to  balance  its  checkbook  of  physical  matter  and  cognitive  intelligence."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+                "duration": 7.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "5bd6f2d2-c696-4e0c-b915-0e303be4ab4f"
     },
     {
         "num": 16,
-        "title": "But I Have to Push Back on the Infinite Abundance Idea",
+        "title": "Primordial State",
         "start": 2151.07,
         "end": 2294.91,
         "duration": 143.84,
@@ -742,17 +744,17 @@
         "segments": [
             {
                 "type": "music",
-                "music_file": "Double Helix (Sting) - Ethan Meixsell.mp3",
-                "duration": 5.5,
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+                "duration": 4.5,
                 "crossfade": 1.3,
                 "volume": 1
             },
             {
                 "type": "audio",
-                "start": 2151.73,
+                "start": 2157.85,
                 "end": 2170.85,
-                "duration": 19.12,
-                "text": "shifts our entire cosmological worldview from one of terrifying scarcity to one of absolute abundance. The universe isn't a dying machine winding down its in the counting ledger, just trying to balance its checkbook of physical matter and cognitive intelligence. Exactly. But I have to push back on the infinite abundance idea."
+                "duration": 13,
+                "text": "The  universe  isn't  a  dying  machine  winding  down  its  in  the  counting  ledger,  just  trying  to  balance  its  checkbook  of  physical  matter  and  cognitive  intelligence.  Exactly.  But  I  have  to  push  back  on  the  infinite  abundance  idea."
             },
             {
                 "type": "music",
@@ -770,22 +772,23 @@
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+                "duration": 5.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "25dac7e2-4c34-463a-90f7-83cd288a8da2"
     },
     {
         "num": 17,
-        "title": "Number One, the Singularity is Not a Dense Dot of Matter",
+        "title": "Perfect Equilibrium",
         "start": 2294.91,
         "end": 2429.75,
         "duration": 134.84,
         "bridge_text": [
-            "Coming up in Part 18: Think About Human Curiosity \u2014 What is the deeper secret?"
+            "Think About Human Curiosity \u2014 What is the deeper secret?"
         ],
         "segments": [
             {
@@ -797,10 +800,10 @@
             },
             {
                 "type": "audio",
-                "start": 2294.91,
+                "start": 2302.79,
                 "end": 2315.57,
-                "duration": 20.66,
-                "text": "Scaler energy is zero. Mass is zero. Intelligence is zero. Time is zero. So if I'm hearing you right, the end of the universe isn't a tragic destruction event. The end of the universe is simply the achievement of complete and subtle understanding of itself. The universe returns to the pure universal absolute observer. It is a return to perfect peace."
+                "duration": 12.78,
+                "text": "the  end  of  the  universe  isn't  a  tragic  destruction  event.  The  end  of  the  universe  is  simply  the  achievement  of  complete  and  subtle  understanding  of  itself.  The  universe  returns  to  the  pure  universal  absolute  observer.  It  is  a  return  to  perfect  peace."
             },
             {
                 "type": "music",
@@ -819,12 +822,13 @@
             {
                 "type": "music",
                 "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "duration": 5.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "40b381e8-4d15-4500-963f-b1dbbd08057d"
     },
     {
         "num": 18,
