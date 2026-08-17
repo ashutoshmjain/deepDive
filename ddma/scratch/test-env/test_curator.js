@@ -823,8 +823,9 @@ async function runTest() {
         console.log(`  - Clip Transition Strips Rendered: ${previewControlsState.stripCount}`);
         console.log(`  - Clip 2 Trim Stepper Response: ${previewControlsState.initialTrimVal} -> ${previewControlsState.updatedTrimVal}`);
 
-        if (!previewControlsState.hasExportBtn || previewControlsState.stripCount === 0 || previewControlsState.updatedTrimVal !== '2.1') {
-            throw new Error(`FAIL: Editor Preview Export button or transition controls failed verification! ExportBtn: ${previewControlsState.hasExportBtn}, Strips: ${previewControlsState.stripCount}, Updated Trim: ${previewControlsState.updatedTrimVal}`);
+        const isIncremented = parseFloat(previewControlsState.updatedTrimVal) === parseFloat((parseFloat(previewControlsState.initialTrimVal) + 0.1).toFixed(1));
+        if (!previewControlsState.hasExportBtn || previewControlsState.stripCount === 0 || !isIncremented) {
+            throw new Error(`FAIL: Editor Preview Export button or transition controls failed verification! ExportBtn: ${previewControlsState.hasExportBtn}, Strips: ${previewControlsState.stripCount}, Initial: ${previewControlsState.initialTrimVal}, Updated: ${previewControlsState.updatedTrimVal}`);
         }
         console.log(`  - Editor Preview In-Page Export Button & Transition Controls Verified!`);
 
