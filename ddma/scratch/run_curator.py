@@ -3745,19 +3745,37 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 alt_trans = super().translate_path(alt_clean)
                 if os.path.exists(alt_trans):
                     return alt_trans
-            # Fallback 2: Check for any matching file in clips directory (e.g. 245-1-Title.mp4)
-            clips_dir = "clips"
-            if os.path.exists(clips_dir):
-                base_name = os.path.basename(clean_path)
-                import re
-                ep_match = re.search(r'(\d+)-(\d+)', base_name)
-                if ep_match:
-                    ep_n = ep_match.group(1)
-                    c_n = ep_match.group(2)
-                    for f in os.listdir(clips_dir):
-                        if f.startswith(f"{ep_n}-{c_n}.") or f.startswith(f"{ep_n}-{c_n}-"):
-                            if f.endswith(".mp4") and not f.endswith("-original.mp4"):
-                                return os.path.join(os.getcwd(), clips_dir, f)
+
+            base_name = os.path.basename(clean_path)
+            import re
+            ep_match = re.search(r'(\d+)-(\d+)', base_name)
+
+            # Candidate directories where published / master clips may reside
+            candidate_dirs = [
+                os.path.join(os.getcwd(), "clips"),
+                os.path.join(os.getcwd(), "..", "src", "ddma", "docs", "assets", "clips"),
+                os.path.join(os.getcwd(), "src", "ddma", "docs", "assets", "clips"),
+                os.path.join(os.getcwd(), "docs", "assets", "clips"),
+            ]
+            if ep_match:
+                ep_n = ep_match.group(1)
+                c_n = ep_match.group(2)
+                candidate_dirs.append(os.path.join(os.getcwd(), "..", "src", "ddma", "docs", "episodes", ep_n, "clips"))
+                candidate_dirs.append(os.path.join(os.getcwd(), "docs", "episodes", ep_n, "clips"))
+
+            for c_dir in candidate_dirs:
+                if os.path.exists(c_dir):
+                    # Exact match
+                    exact_cand = os.path.join(c_dir, base_name)
+                    if os.path.exists(exact_cand):
+                        return exact_cand
+                    # Prefix match (e.g. 245-1-Title.mp4 or 245-1.mp4)
+                    if ep_match:
+                        ep_n = ep_match.group(1)
+                        c_n = ep_match.group(2)
+                        for f in os.listdir(c_dir):
+                            if (f.startswith(f"{ep_n}-{c_n}.") or f.startswith(f"{ep_n}-{c_n}-")) and f.endswith(".mp4") and not f.endswith("-original.mp4"):
+                                return os.path.join(c_dir, f)
         return translated
 
     def send_head(self):

@@ -10,8 +10,16 @@ book/
 # Ignore DDMA scratch & temporary build folders
 ddma/scratch/
 ddma/build_temp/
+ddma/clips/
+ddma/previews/
+ddma/docs/assets/clips/
+ddma/docs/episodes/*/clips/
 ddma/**/__pycache__/
+ddma/*.png
+ddma/*.mp4
 
 # Ignore intermediate/raw video clip build artifacts
 *-original.mp4
+
+
 
