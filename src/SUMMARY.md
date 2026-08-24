@@ -35,7 +35,13 @@
 
 
 
+
+
+
+
+
 - [mempool](mempool.md)
+    - [Pranayam: a preventive practice to avoid lung failure](_pranayam-and-pulmonary-science.md)
     - [A Quark is a Photon in 3D Space](_quarks-as-photons-in-3d-space.md)
     - [Mathematics of Cognition](_mathematics-of-cognition.md)
 
@@ -63,7 +69,7 @@
         - [228 : What is Google Worth?](228.md)
         - [227 : 60 billion call option](227.md)
         - [226 : Root access to self \-](226.md)
-        - [225 : BTC](225.md)
+        - [225 : BTC: Global Pristine Collateral Network](225.md)
         - [224 : TPUs vs GPUs](224.md)
         - [223 : Observer Patch Holography](223.md)
         - [222 : Homeownership - American Dream!](222.md)
