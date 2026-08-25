@@ -40,12 +40,13 @@
 
 
 
+
 - [mempool](mempool.md)
-    - [Pranayam: a preventive practice to avoid lung failure](_pranayam-and-pulmonary-science.md)
-    - [A Quark is a Photon in 3D Space](_quarks-as-photons-in-3d-space.md)
+    - [A Quark is a Photon](_quarks-as-photons-in-3d-space.md)
     - [Mathematics of Cognition](_mathematics-of-cognition.md)
 
 - [template](template.md)
+    - [246 : Pranayama - the pulmonary boat](246.md)
     - [245 : What Exactly Is Singularity?](245.md)
     - [244 : Architecture of Intellectual Demolition](244.md)
     - [243 : Life, Death, and the Lysosome](243.md)
@@ -57,11 +58,11 @@
         - [240 : Rise of the Observer](240.md)
         - [239 : Unification of #Resurrection and #Reincarnation](239.md)
         - [238 : Calculus of Liberation.](238.md)
-        - [237 : SATA - The daily dividend company](237.md)
+        - [237 : SATA - The daily dividend](237.md)
         - [236 : AGI Vs GAI](236.md)
         - [235 : Future of Sovereign Credit](235.md)
         - [234 : Satoshi Dividends via Lightning Network](234.md)
-        - [233 : what exactly is NOT consciousness !](233.md)
+        - [233 : what exactly is NOT consciousness](233.md)
         - [232 : The Orthogonal Manifold](232.md)
         - [231 : Why don't LLMs self-prompt ?](231.md)
         - [230 : STRC - derivatives and inflows](230.md)
