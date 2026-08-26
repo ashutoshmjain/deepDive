@@ -1,0 +1,18 @@
+{
+  "1": {
+    "status": "completed",
+    "progress": 100,
+    "error": null,
+    "run_id": "47115396-9060-4334-9617-0398b6822150",
+    "start_time": 1787642841.8029146,
+    "last_update": 1787643575.1669872
+  },
+  "2": {
+    "status": "rendering (running)",
+    "progress": 71,
+    "error": null,
+    "run_id": "773beace-f471-496f-9c52-fe92f2583414",
+    "start_time": 1787713243.2309906,
+    "last_update": 1787714088.9948163
+  }
+}

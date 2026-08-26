@@ -1,0 +1,52 @@
+{
+  "status": "ready",
+  "current_stage": 6,
+  "percent": 100,
+  "action_text": "Episode ingestion complete! Project ready in Curator.",
+  "stages": [
+    {
+      "index": 1,
+      "name": "Transcription",
+      "icon": "\ud83c\udf99\ufe0f",
+      "label": "Transcribing Raw Audio"
+    },
+    {
+      "index": 2,
+      "name": "Storyboarding",
+      "icon": "\ud83e\udde0",
+      "label": "Structuring Clip Boundaries"
+    },
+    {
+      "index": 3,
+      "name": "Audio Cutting",
+      "icon": "\u2702\ufe0f",
+      "label": "Normalizing Audio Clips"
+    },
+    {
+      "index": 4,
+      "name": "Draft Muxing",
+      "icon": "\ud83c\udfa5",
+      "label": "Muxing Black Canvas Videos"
+    },
+    {
+      "index": 5,
+      "name": "Rendering Intros",
+      "icon": "\ud83c\udfac",
+      "label": "Compiling Intros & Outros"
+    },
+    {
+      "index": 6,
+      "name": "Manifest Sync",
+      "icon": "\ud83d\ude80",
+      "label": "Registering Episode Manifest"
+    }
+  ],
+  "logs": [
+    "[00:07:17] Started ingestion pipeline for Episode 246: Episode 246 (Mode: structured)",
+    "[00:07:17] Transcription complete with word-level timestamps.",
+    "[00:07:17] Dividing timeline into 18 structural segments.",
+    "[00:07:17] Created storyboard plan with 18 clips.",
+    "[00:07:17] Updating docs/episodes.json for GitHub Pages routing.",
+    "[00:07:17] Episode 246 instant ingestion pipeline completed successfully."
+  ]
+}
