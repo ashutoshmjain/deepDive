@@ -7,6 +7,7 @@ async function runTest() {
     console.log("🚀 Starting Comprehensive Headless Browser Curator Regression Suite...");
     const browser = await puppeteer.launch({
         headless: true,
+        protocolTimeout: 120000,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox'
