@@ -8,11 +8,19 @@
     "last_update": 1787643575.1669872
   },
   "2": {
-    "status": "rendering (running)",
-    "progress": 71,
+    "status": "completed",
+    "progress": 100,
     "error": null,
     "run_id": "773beace-f471-496f-9c52-fe92f2583414",
     "start_time": 1787713243.2309906,
-    "last_update": 1787714088.9948163
+    "last_update": 1787715392.8394496
+  },
+  "3": {
+    "status": "completed",
+    "progress": 100,
+    "error": null,
+    "run_id": "b035086f-6b7f-41db-8303-77e17849f22b",
+    "start_time": 1787798202.0438132,
+    "last_update": 1787798797.7388515
   }
 }

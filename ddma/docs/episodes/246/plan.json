@@ -94,7 +94,8 @@
                 "volume": 1
             }
         ],
-        "locked": true
+        "locked": true,
+        "mosaic_run_id": "773beace-f471-496f-9c52-fe92f2583414"
     },
     {
         "num": 3,
@@ -103,22 +104,22 @@
         "end": 319.34,
         "duration": 105.26,
         "bridge_text": [
-            "So how does the exhaust fan break in our bodies?"
+            "What is Type II Failure !"
         ],
         "segments": [
             {
                 "type": "music",
-                "music_file": "Demilitarized Zone (Sting) - Ethan Meixsell.mp3",
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
                 "duration": 5.5,
-                "crossfade": 1.3,
+                "crossfade": 0,
                 "volume": 1
             },
             {
                 "type": "audio",
-                "start": 214.08,
+                "start": 215.44,
                 "end": 236.9,
-                "duration": 22.82,
-                "text": "That's actually a brilliant way to conceptualize it. Type one, which we clinically call hypoxemic failure. Right. It's fundamentally a failure of the oxygen barrier. It occurs when the alveolar capillary barrier gets flooded or severely inflamed. And that barrier is what exactly it's an incredibly delicate, microscopically thin bridge where oxygen actually enters the blood from your lungs."
+                "duration": 21.46,
+                "text": "conceptualize  it.  Type  one,  which  we  clinically  call  hypoxemic  failure.  Right.  It's  fundamentally  a  failure  of  the  oxygen  barrier.  It  occurs  when  the  alveolar  capillary  barrier  gets  flooded  or  severely  inflamed.  And  that  barrier  is  what  exactly  it's  an  incredibly  delicate,  microscopically  thin  bridge  where  oxygen  actually  enters  the  blood  from  your  lungs."
             },
             {
                 "type": "music",
@@ -129,24 +130,24 @@
             },
             {
                 "type": "audio",
-                "start": 236.98,
-                "end": 319.34,
-                "duration": 82.36,
-                "text": "So the physical mechanics of breeding might be perfectly fine. Right. You are pulling air in, but the transfer process is just broken. Just precisely in the clinical literature, this is described as a VQ mismatch. VQ. Yeah. Ventilation, profusion, inequality. To spare you the complex gas equations, it basically boils down to a massive logistical failure. Like the delivery trucks. Exactly. Either blood is flowing to areas of the lung that aren't getting any air or air is reaching areas of the lung that have absolutely no blood flow. So going back to the supermarket visual, it is a flooded loading dock where these delivery trucks, your red blood cells, they just drive right past the dock without picking up any cargo. Right. The oxygen is right there, but the water just totally prevents the hand off. And when that hand off fails completely, say an area of the lung, collapses or floods entirely. It creates what we call a true inter pulmonary shunt. What happens then? At that stage, a doctor could put a mask on you and pump you full of 100 % supplemental oxygen, and it literally wouldn't make a difference. Wait, really? None at all. None. The gas physically cannot reach those unventilated loading docks. It's blocked. Wow. Okay. So type one is this catastrophic failure of oxygen transfer, but what if the lungs are dry, but the actual mechanical muscles of your chest? Just, I don't know, give up. Well, that brings us to type two. Okay."
+                "start": 237.28,
+                "end": 319.68,
+                "duration": 82.4,
+                "text": "So  the  physical  mechanics  of  breeding  might  be  perfectly  fine.  Right.  You  are  pulling  air  in,  but  the  transfer  process  is  just  broken.  Just  precisely  in  the  clinical  literature,  this  is  described  as  a  VQ  mismatch.  VQ.  Yeah.  Ventilation,  profusion,  inequality.  To  spare  you  the  complex  gas  equations,  it  basically  boils  down  to  a  massive  logistical  failure.  Like  the  delivery  trucks.  Exactly.  Either  blood  is  flowing  to  areas  of  the  lung  that  aren't  getting  any  air  or  air  is  reaching  areas  of  the  lung  that  have  absolutely  no  blood  flow.  So  going  back  to  the  supermarket  visual,  it  is  a  flooded  loading  dock  where  these  delivery  trucks,  your  red  blood  cells,  they  just  drive  right  past  the  dock  without  picking  up  any  cargo.  Right.  The  oxygen  is  right  there,  but  the  water  just  totally  prevents  the  hand  off.  And  when  that  hand  off  fails  completely,  say  an  area  of  the  lung,  collapses  or  floods  entirely.  It  creates  what  we  call  a  true  inter  pulmonary  shunt.  What  happens  then?  At  that  stage,  a  doctor  could  put  a  mask  on  you  and  pump  you  full  of  100 %  supplemental  oxygen,  and  it  literally  wouldn't  make  a  difference.  Wait,  really?  None  at  all.  None.  The  gas  physically  cannot  reach  those  unventilated  loading  docks.  It's  blocked.  Wow.  Okay.  So  type  one  is  this  catastrophic  failure  of  oxygen  transfer,  but  what  if  the  lungs  are  dry,  but  the  actual  mechanical  muscles  of  your  chest?  Just,  I  don't  know,  give  up.  Well,  that  brings  us  to  type  two.  Okay."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
+                "music_file": "deepDive-title-music.mp3",
+                "duration": 5.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true
     },
     {
         "num": 4,
-        "title": "Oh, That Sounds Bad",
+        "title": "Hypercapnic Failure",
         "start": 319.34,
         "end": 423.3,
         "duration": 103.96,
