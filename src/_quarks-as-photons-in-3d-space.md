@@ -1,7 +1,9 @@
 # A Quark is a Photon in 3D Space: The Geometry of Genesis, Demystifying Fundamental Particle Physics via Quaternionic 3D Rotations
 
+<!-- SIDEBAR_TITLE: A Quark is a Photon! -->
+
 ## Abstract
-Standard Quantum Chromodynamics (QCD) and the Standard Model describe fundamental subatomic forces through abstract gauge symmetries over complex vector spaces. By shifting the foundational paradigm to Hamilton’s four-dimensional normed division algebra—the quaternions ($\mathbb{H}$)—fundamental particle properties, including color charge, electric charge, half-integer spin ($720^\circ$ topology), and the thermodynamic-cognitive arrow of time, emerge naturally as geometric necessities of three-dimensional spatial creation. A photon is an unconfined, two-dimensional spatial spasm across coupled electric and magnetic transverse generators possessing two polarization degrees of freedom. A quark is that exact same spatial spasm enclosed across all three spatial generators $\{i, j, k\}$, wrapping spacetime into a localized topological knot possessing three cyclic color states ($R, B, G$). Rather than propagating within a pre-existing geometric background, matter represents the active non-commutative knotting of 3D space, while time ($\tau$) is the emergent relational counter of a scalar Singularity Observer navigating this spatial manifold.
+Standard Quantum Chromodynamics (QCD) and the Standard Model describe fundamental subatomic forces through abstract gauge symmetries over complex vector spaces [^1] [^3]. By shifting the foundational paradigm to Hamilton’s four-dimensional normed division algebra—the quaternions ($\mathbb{H}$)—fundamental particle properties, including color charge, electric charge, half-integer spin ($720^\circ$ topology) [^1], and the thermodynamic-cognitive arrow of time [^7] [^8], emerge naturally as geometric necessities of three-dimensional spatial creation. A photon is an unconfined, two-dimensional spatial spasm across coupled electric and magnetic transverse generators possessing two polarization degrees of freedom. A quark is that exact same spatial spasm enclosed across all three spatial generators $\{i, j, k\}$, wrapping spacetime into a localized topological knot possessing three cyclic color states ($R, B, G$) [^3]. Rather than propagating within a pre-existing geometric background, matter represents the active non-commutative knotting of 3D space, while time ($\tau$) is the emergent relational counter of a scalar Singularity Observer navigating this spatial manifold.
 
 ---
 
@@ -10,7 +12,7 @@ Standard Quantum Chromodynamics (QCD) and the Standard Model describe fundamenta
 To understand why physical spacetime manifests with three spatial dimensions and one emergent temporal dimension, physics must be grounded in the algebraic classification of number systems.
 
 ### The Hurwitz and Frobenius Theorems
-A **normed division algebra** is an algebra over the real numbers equipped with a positive-definite norm satisfying $|a \cdot b| = |a| |b|$, where division by non-zero elements is always uniquely defined without zero divisors. By the Hurwitz (1898) and Frobenius (1878) theorems, there exist precisely **four** normed division algebras:
+A **normed division algebra** is an algebra over the real numbers equipped with a positive-definite norm satisfying $|a \cdot b| = |a| |b|$, where division by non-zero elements is always uniquely defined without zero divisors. By the Hurwitz (1898) [^4] and Frobenius (1878) [^5] theorems, there exist precisely **four** normed division algebras:
 
 1. **Real Numbers ($\mathbb{R}$, Dimension 1):**
   * Properties: Commutative, associative, ordered.
@@ -20,16 +22,16 @@ A **normed division algebra** is an algebra over the real numbers equipped with 
   * Basis: $\{1, i\}$ where $i^2 = -1$.
   * Geometric Role: Defines continuous 2D planar rotations. Multiplication by $i$ executes a $90^\circ$ planar turn.
 3. **Quaternions ($\mathbb{H}$, Dimension 4):**
-  * Properties: Associative, **non-commutative** ($a b \neq b a$).
+  * Properties: Associative, **non-commutative** ($a b \neq b a$) [^2].
   * Basis: $\{1, i, j, k\}$ where $i^2 = j^2 = k^2 = i j k = -1$.
   * Geometric Role: Defines isometries and rotations in 3D space. The 4th dimension is the real scalar component reserved for the Observer, whose sequential navigation generates emergent time ($\tau$).
 4. **Octonions ($\mathbb{O}$, Dimension 8):**
-  * Properties: **Non-commutative** and **non-associative** ($a(bc) \neq (ab)c$).
+  * Properties: **Non-commutative** and **non-associative** ($a(bc) \neq (ab)c$) [^6].
   * Basis: $\{1, e_1, e_2, e_3, e_4, e_5, e_6, e_7\}$.
   * Geometric Role: Governs 7D rotations. Because octonions lack associativity, they cannot construct stable, self-enclosing topological brackets, preventing the formation of persistent physical knots.
 
 ### Concrete Physical Rotation Generators
-The quaternion generators $\{i, j, k\}$ are not abstract "imaginary" units; they represent concrete, physical $90^\circ$ spatial rotation operators acting on mutually orthogonal axes:
+The quaternion generators $\{i, j, k\}$ are not abstract "imaginary" units; they represent concrete, physical $90^\circ$ spatial rotation operators acting on mutually orthogonal axes [^2]:
 * $i$ is an active **$90^\circ$ spatial rotation around the $x$-axis**.
 * $j$ is an active **$90^\circ$ spatial rotation around the $y$-axis**.
 * $k$ is an active **$90^\circ$ spatial rotation around the $z$-axis**.
@@ -38,7 +40,7 @@ An arbitrary quaternion $q \in \mathbb{H}$ decomposes into a scalar observer par
 
 $$q = s + x i + y j + z k, \quad s, x, y, z \in \mathbb{R}$$
 
-Hamilton's foundational equation governs the interaction of these spatial generators:
+Hamilton's foundational equation governs the interaction of these spatial generators [^2]:
 
 $$i^2 = j^2 = k^2 = i j k = -1$$
 
@@ -251,33 +253,13 @@ Emergent time ($\tau$) is the ordinal sequence of spatial transformations regist
 
 ---
 
+## Works Cited
 
-
----
-
-### Tips and Donations
-
-If you enjoyed this research, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
-
-<!-- SOCIALS_START -->
-
-<center>
-<lightning-widget
- name='Thanks for supporting the publication'
- accent='#f9ce00'
- to='shutosha@primal.net'
- image='https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp'
-/>
-</center>
-<script src='https://embed.twentyuno.net/js/app.js'></script>
-
-<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-<!-- SOCIALS_END -->
-
-To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
-
----
-
-
-#### **Works cited**
+[^1]: [P.A.M. Dirac, The Quantum Theory of the Electron, Proc. R. Soc. Lond. A 117, 610-624, 1928](https://doi.org/10.1098/rspa.1928.0023)
+[^2]: [W.R. Hamilton, On Quaternions; or on a new System of Imaginaries in Algebra, Philosophical Magazine, 1844](https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/Quaternions/)
+[^3]: [M. Gell-Mann, A Schematic Model of Baryons and Mesons, Phys. Lett. 8, 214-215, 1964](https://doi.org/10.1016/S0031-9163(64)92001-3)
+[^4]: [A. Hurwitz, Über die Composition der quadratischen Formen von beliebig vielen Variabeln, Nachr. Ges. Wiss. Göttingen, 309-316, 1898](https://eudml.org/doc/58428)
+[^5]: [G. Frobenius, Ueber lineare Substitutionen und bilineare Formen, J. Reine Angew. Math. 84, 1-63, 1878](https://doi.org/10.1515/crll.1878.84.1)
+[^6]: [J. Baez, The Octonions, Bull. Amer. Math. Soc. 39, 145-205, 2002](https://doi.org/10.1090/S0273-0979-01-00934-X)
+[^7]: [R. Penrose, The Road to Reality: A Complete Guide to the Laws of the Universe, Jonathan Cape, 2004](https://en.wikipedia.org/wiki/The_Road_to_Reality)
+[^8]: [R. Landauer, Irreversibility and Heat Generation in the Computing Process, IBM J. Res. Dev. 5, 183-191, 1961](https://doi.org/10.1147/rd.53.0183)

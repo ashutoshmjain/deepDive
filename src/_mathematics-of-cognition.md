@@ -1,5 +1,7 @@
 # Mathematics of Cognition
 
+<!-- SIDEBAR_TITLE: Mathematics of Cognition -->
+
 **Abstract**
 A world model functions as a true cognition engine when it enables artificial agents to calculate trajectories through state space, moving beyond the static pattern matching of standard auto-regressive language models [^1] . To operate effectively and reason about reality, advanced architectures like the Joint Embedding Predictive Architecture (JEPA) evaluate abstract state transitions rather than reconstructing raw pixels [^1] . This engine must navigate distinct mathematical and logical realms. According to Hurwitz's theorem and the Frobenius theorem, there are only four finite-dimensional real division algebras (and only three that are associative): real numbers ($\mathbb{R}$), complex numbers ($\mathbb{C}$), quaternions ($\mathbb{H}$), and octonions ($\mathbb{O}$) [^1] . Because these are true division algebras lacking zero divisors, they preserve mathematical reversibility, making them stable substrates for structured logic and physical conservation laws [^1] . Extending beyond these limits via the Cayley-Dickson construction introduces inherent mathematical instability [^1] . This naturally forms a five-tier hierarchy of cognitive logic that spans from entropic chaos to decisive physical action. 
 
@@ -29,31 +31,6 @@ A World Model is a dynamic system that allows agents to transition seamlessly ac
 
 ---
 
-### Tips and Donations
-
-If you enjoyed this research, consider supporting the project with a tip in **Sats**. It's a simple, global way to support independent research.
-
-<!-- SOCIALS_START -->
-
-<center>
-<lightning-widget
- name='Thanks for supporting the publication'
- accent='#f9ce00'
- to='shutosha@primal.net'
- image='https://nostrcheck.me/media/5af0794606a15b5641e25aa23d04af4cb0d7d5e68b11cacb47e56a4698fca8c4/49ff6d00cb5bc819cd19f77783d4815fbd46a5b99b6fbdead1eaecfab798187b.webp'
-/>
-</center>
-<script src='https://embed.twentyuno.net/js/app.js'></script>
-
-<center><a href="https://open.spotify.com/show/7doWf0GON9JsG6r8igc7RE" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Spotify</a><a href="https://podcasts.apple.com/us/podcast/deep-dive-with-gemini/id1844532251" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px; margin-right: 10px;">Apple Podcasts</a><a href="https://fountain.fm/show/7LBvZT6ffpGyubvk8aSF" target="_blank" style="background-color: #2E2E2E; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; margin-top: 10px;">Fountain.fm</a></center>
-
-<!-- SOCIALS_END -->
-
-To send Sats, you'll need a [lightning wallet](https://lightningaddress.com/).
-
----
-
-
-#### **Works cited**
+## Works Cited
 
 [^1]: [Wikipedia Contributors, Sedenion, 2024](https://en.wikipedia.org/wiki/Sedenion)
