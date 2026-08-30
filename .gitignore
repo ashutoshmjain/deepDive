@@ -21,5 +21,15 @@ ddma/*.mp4
 # Ignore intermediate/raw video clip build artifacts
 *-original.mp4
 
-
-
+# Ingestion Layer (Pillar 2) Temporary Buffers & Payloads
+ingest/payloads/
+ingest/scratch/
+ingest/backups/
+ingest/temp/
+ingest/__pycache__/
+ingest/*.pyc
+scratch/
+*.bak
+*.py.bak
+extract.py
+payload_*.py
