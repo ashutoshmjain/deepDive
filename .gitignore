@@ -7,14 +7,16 @@ book/
 # Ignore Zone.Identifier files
 *:Zone.Identifier
 
-# Ignore DDMA scratch & temporary build folders
+# Ignore temporary build folders
+build_temp/
 ddma/scratch/
 ddma/build_temp/
 ddma/clips/
 ddma/previews/
 ddma/docs/assets/clips/
-!ddma/docs/episodes/**
+ddma/docs/episodes/
 !src/ddma/docs/episodes/**
+!src/vid/**
 ddma/**/__pycache__/
 ddma/*.png
 ddma/*.mp4

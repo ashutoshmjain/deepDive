@@ -5,7 +5,7 @@
   "main": "workbox-config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:pwa": "mdbook build && cp pwa/manifest.json pwa/sw-register.js book/ && cp -r pwa/icons book/ && mkdir -p book/ddma && cp -r ddma/docs book/ddma/ && workbox injectManifest workbox-config.js",
+    "build:pwa": "mdbook build && cp pwa/manifest.json pwa/sw-register.js book/ && cp -r pwa/icons book/ && mkdir -p book/ddma && cp -r src/ddma/docs book/ddma/ && workbox injectManifest workbox-config.js",
     "serve:pwa": "python3 -m http.server -d book 8000"
   },
   "repository": {
