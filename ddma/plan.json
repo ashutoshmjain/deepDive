@@ -346,7 +346,7 @@
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true
     },
     {
         "num": 8,
