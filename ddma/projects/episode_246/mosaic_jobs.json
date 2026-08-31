@@ -48,11 +48,11 @@
     "last_update": 1788012249.610877
   },
   "7": {
-    "status": "rendering (running)",
-    "progress": 70,
+    "status": "completed",
+    "progress": 100,
     "error": null,
     "run_id": "faa27c9a-759d-40e6-b049-16790eaf8253",
     "start_time": 1788143505.8517406,
-    "last_update": 1788143788.0222695
+    "last_update": 1788143987.6512449
   }
 }
