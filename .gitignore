@@ -13,7 +13,8 @@ ddma/build_temp/
 ddma/clips/
 ddma/previews/
 ddma/docs/assets/clips/
-ddma/docs/episodes/*/clips/
+!ddma/docs/episodes/**
+!src/ddma/docs/episodes/**
 ddma/**/__pycache__/
 ddma/*.png
 ddma/*.mp4
