@@ -36,3 +36,15 @@ scratch/
 *.py.bak
 extract.py
 payload_*.py
+
+# Big raw audio files & local scratch transcripts (Keep GitHub repository clean)
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.aac
+*.flac
+**/audio/
+**/transcripts/
+**/audio.*
+**/transcript.txt
