@@ -6,7 +6,7 @@
         "end": 105.68,
         "duration": 105.68,
         "bridge_text": [
-            "You Are Literally Drowning From the Inside — What is the deeper secret?"
+            "You Are Literally Drowning From the Inside \u2014 What is the deeper secret?"
         ],
         "segments": [
             {
@@ -696,41 +696,42 @@
     },
     {
         "num": 15,
-        "title": "This is the Phenomenon of Autonomic Regulation",
+        "title": "Six breaths per minute - Hering\u2013Breuer reflex",
         "start": 1487.92,
         "end": 1595.62,
         "duration": 107.7,
         "bridge_text": [
-            "And what actually happened to their FEV1?"
+            "Okay - Give me the complete picture"
         ],
         "segments": [
             {
                 "type": "music",
                 "music_file": "deepDive-title-music.mp3",
                 "duration": 5.5,
-                "crossfade": 1.3,
-                "volume": 1
+                "crossfade": 1,
+                "volume": 1,
+                "fade_out": 3
             },
             {
                 "type": "audio",
-                "start": 1487.92,
+                "start": 1487.24,
                 "end": 1510.58,
-                "duration": 22.66,
-                "text": "When you combine the Puraka, Kumbaka and Rachaka, you naturally slow your overall breathing rate down. And when you hit exactly six breaths per minute, something incredible happens in the brainstem. Slowing your breathing down to six breaths per minute flips a neurological breaker switch in your brain. It literally shuts off your body's emergency power and turns on maintenance mode."
+                "duration": 23.34,
+                "text": "heart.  When  you  combine  the  Puraka,  Kumbaka  and  Rachaka,  you  naturally  slow  your  overall  breathing  rate  down.  And  when  you  hit  exactly  six  breaths  per  minute,  something  incredible  happens  in  the  brainstem.  Slowing  your  breathing  down  to  six  breaths  per  minute  flips  a  neurological  breaker  switch  in  your  brain.  It  literally  shuts  off  your  body's  emergency  power  and  turns  on  maintenance  mode."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+                "music_file": "Leavin (Sting) - MK2.mp3",
                 "duration": 4.5,
                 "crossfade": 0,
-                "volume": 1
+                "volume": 0.4
             },
             {
                 "type": "audio",
-                "start": 1510.66,
-                "end": 1595.62,
-                "duration": 84.96,
-                "text": "This is the phenomenon of autonomic regulation. Inside your lungs are pulmonary stretch receptors. When you breathe slowly and deeply, these receptors send rhythmic signals up the vagus nerve directly to the nucleus tract of solitary in your brainstem. The central command center. This rhythmic vagal signaling triggers the herringborer reflex. The herringborer reflex. It actively suppresses your sympathetic nervous system, your fight or flight response, and drastically increases your parasympathetic activity, which is your rest and digest mode. That sounds very relaxing on a psychological level. But what does this neurological switch actually do to the physical plumbing of the body? How does it relate to stopping the internal drowning? It causes your blood vessels to relax systemically. Dropping your blood pressure across your entire body, which turns off the very faucet that causes the lungs to flood in the first place. Let's connect those dots. By calming the vagus nerve, pernium lowers the pressure inside your heart. And when the heart relaxes, the lungs stop weeping fluid. Do you remember the starling forces we discussed that tug of war pushing fluid into the lungs? Yep, the weeping sponge. A big as push comes from pulmonary capillary hydrostatic pressure, which is driven by the left side of your heart. When your sympathetic nervous system is suppressed, your systemic vascular resistance drops. It becomes physically easier for the heart to pump blood outward. Exactly."
+                "start": 1511.12,
+                "end": 1617.92,
+                "duration": 106.8,
+                "text": "This  is  the  phenomenon  of  autonomic  regulation.  Inside  your  lungs  are  pulmonary  stretch  receptors.  When  you  breathe  slowly  and  deeply,  these  receptors  send  rhythmic  signals  up  the  vagus  nerve  directly  to  the  nucleus  tract  of  solitary  in  your  brainstem.  The  central  command  center.   This  rhythmic  vagal  signaling  triggers  the  herringborer  reflex.  The  herringborer  reflex.  It  actively  suppresses  your  sympathetic  nervous  system,  your  fight  or  flight  response,  and  drastically  increases  your  parasympathetic  activity,  which  is  your  rest  and  digest  mode.  That  sounds  very  relaxing  on  a  psychological  level.  But  what  does  this  neurological  switch  actually  do  to  the  physical  plumbing  of  the  body?  How  does  it  relate  to  stopping  the  internal  drowning?  It  causes  your  blood  vessels  to  relax  systemically.  Dropping  your  blood  pressure  across  your  entire  body,  which  turns  off  the  very  faucet  that  causes  the  lungs  to  flood  in  the  first  place.  Let's  connect  those  dots.  By  calming  the  vagus  nerve,  pernium  lowers  the  pressure  inside  your  heart.  And  when  the  heart  relaxes,  the  lungs  stop  weeping  fluid.  Do  you  remember  the  starling  forces  we  discussed  that  tug  of  war  pushing  fluid  into  the  lungs?  Yep,  the  weeping  sponge.  A  big  as  push  comes  from  pulmonary  capillary  hydrostatic  pressure,  which  is  driven  by  the  left  side  of  your  heart.  When  your  sympathetic  nervous  system  is  suppressed,  your  systemic  vascular  resistance  drops.  It  becomes  physically  easier  for  the  heart  to  pump  blood  outward.  Exactly.  The  left  ventricular  affculoadeplements.  Because  the  heart  doesn't  have  to  push  as  hard  to  get  blood  to  the  rest  of  your  body,  the  internal  pressure  inside  the  heart  drops.  And  because  that  pressure  drops,  the  pressure  backing  up  into  the  tiny  lung  capillaries  also  drops.  So  the  faucet  has  turned  down.  The  push  that  was  forcing  transutative  fluid  across  the  delicate  barrier  and  into  the  alveoli  is  essentially  neutralized."
             },
             {
                 "type": "music",
@@ -740,103 +741,106 @@
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "cb02e816-ce07-4720-be60-53eb616a7375"
     },
     {
         "num": 16,
-        "title": "The Left Ventricular Affculoadeplements",
+        "title": "Pranayama - Clinical Trials for Airway Health",
         "start": 1595.8,
         "end": 1698.36,
         "duration": 102.56,
         "bridge_text": [
-            "Coming up in Part 17: Wait, Let Me Do the Math on That — What is the deeper secret?"
-        ],
-        "segments": [
-            {
-                "type": "music",
-                "music_file": "Double Helix (Sting) - Ethan Meixsell.mp3",
-                "duration": 5.5,
-                "crossfade": 1.3,
-                "volume": 1
-            },
-            {
-                "type": "audio",
-                "start": 1595.8,
-                "end": 1617.92,
-                "duration": 22.12,
-                "text": "The left ventricular affculoadeplements. Because the heart doesn't have to push as hard to get blood to the rest of your body, the internal pressure inside the heart drops. And because that pressure drops, the pressure backing up into the tiny lung capillaries also drops. So the faucet has turned down. The push that was forcing transutative fluid across the delicate barrier and into the alveoli is essentially neutralized."
-            },
-            {
-                "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
-                "crossfade": 0,
-                "volume": 1
-            },
-            {
-                "type": "audio",
-                "start": 1618,
-                "end": 1698.36,
-                "duration": 80.36,
-                "text": "This is the complete picture. From squeezing out the surfactant to pressure washing the mucus, stenting the airway's open and finally dropping the blood pressure to stop the leak. Pranium is the boat against internal drowning. It is a total systemic biomechanical defense. The physiology aligns perfectly. But a theoretical framework is one thing. As clinicians, we need to see what happens in actual human beings when they use this. Right. I was waiting for this part of the paper. This all sounds incredible and theory. But what happens when we put this ancient practice into a modern clinical trial, but results are staggering. They really are. When researchers actually measure lung volumes before and after these practices, the spiremetric data proves the mechanics work just as we've described. In a four week trial, older adults practicing alternate nostril breathing for just 15 minutes a day completely reverse the expected age -related decline in their lung capacity. This was a landmark randomized controlled trial by Saha at all. They looked at a metric called FEV1, forced expiratory volume in one second. It's the standard medical measure of how much air you can forcefully blast out. And it's a highly reliable proxy for overall airway health. And what actually happened to their FEV1? In just four weeks, it went from an average of 2 .21 liters to 2 .47 liters."
-            },
-            {
-                "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
-                "duration": 4.5,
-                "crossfade": 0.3,
-                "volume": 1
-            }
-        ],
-        "locked": false
-    },
-    {
-        "num": 17,
-        "title": "Wait, Let Me Do the Math on That",
-        "start": 1698.52,
-        "end": 1807.92,
-        "duration": 109.4,
-        "bridge_text": [
-            "Coming up in Part 18: True Intelligence is Collaborative — What is the deeper secret?"
+            "What about Asthma and Heart Surgery Patients ?"
         ],
         "segments": [
             {
                 "type": "music",
                 "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
                 "duration": 5.5,
-                "crossfade": 1.3,
+                "crossfade": 2,
                 "volume": 1
             },
             {
                 "type": "audio",
-                "start": 1698.52,
-                "end": 1721.62,
-                "duration": 23.1,
-                "text": "To put this in clinical context, normal healthy aging causes us to lose about 25 to 30 milliliters of that volume every single year as our lungs naturally lose the last to city. Wait, let me do the math on that. If we normally lose 30 milliliters a year and they gained 260 milliliters in a single month, they essentially grew younger lungs in a month just by breathing through alternate nostril."
+                "start": 1617.14,
+                "end": 1631.12,
+                "duration": 13.98,
+                "text": "neutralized.  This  is  the  complete  picture.  From  squeezing  out  the  surfactant  to  pressure  washing  the  mucus,  stenting  the  airway's  open  and  finally  dropping  the  blood  pressure  to  stop  the  leak.  Pranium  is  the  boat  against  internal  drowning."
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+                "music_file": "Leavin (Sting) - MK2.mp3",
                 "duration": 4.5,
                 "crossfade": 0,
-                "volume": 1
+                "volume": 0.5
             },
             {
                 "type": "audio",
-                "start": 1721.7,
-                "end": 1807.92,
-                "duration": 86.22,
-                "text": "spirometric validation shows exactly that. It didn't just stop the clock on pulmonary senescence. It observably reversed the mechanical decline. They regained the elastic recoil and airway potency of a much younger lung. That is just wild. And it's not just healthy aging lungs that benefit from this structural reset. When doctors tested this on severe asmatics and open heart surgery patients, the outcomes completely rewrote standard care. asthma and post -surgical recovery are the ultimate stress tests for the respiratory system. If it works there, the mechanics are sound. For patients with bronchial asthma, adding structured perinam to their standard medicine skyrocketed the number of well controlled patients from just 9 % to nearly 62%. This was the healthcare bulging trial. 240 asthma patients did eight weeks of anulum vilom alongside their standard inhalers. Their forced vital capacity and peak expiratory flows biked dramatically. So it wasn't just a replacement for meds. Right, the breathing didn't replace the medicine, but it unlocked the mechanical blockages that the medicine simply couldn't reach. Which makes perfect sense based on the kum pakkup breath hold we talked about. It proves the collateral channel pressure wash actually works in real world trauma situations to clear out the mucus plugging those airways. Precisely. And we see the exact same thing in the ray of a post -CUB trial. CABG being coronary bypass. Yes. After coronary bypass surgery, patients lungs frequently collapse at the bases because of the physical trauma and the anesthesia."
+                "start": 1628.9,
+                "end": 1735.2,
+                "duration": 106.3,
+                "text": "Pranium  is  the  boat  against  internal  drowning.  It  is  a  total  systemic  biomechanical  defense.  The  physiology  aligns  perfectly.  But  a  theoretical  framework  is  one  thing.  As  clinicians,  we  need  to  see  what  happens  in  actual  human  beings  when  they  use  this.  Right.  I  was  waiting  for  this  part  of  the  paper.  This  all  sounds  incredible  and  theory.  But  what  happens  when  we  put  this  ancient  practice  into  a  modern  clinical  trial,  but  results  are  staggering.  They  really  are.  When  researchers  actually  measure  lung  volumes  before  and  after  these  practices,  the  spiremetric  data  proves  the  mechanics  work  just  as  we've  described.  In  a  four  week  trial,  older  adults  practicing  alternate  nostril  breathing  for  just  15  minutes  a  day  completely  reverse  the  expected  age -related  decline  in  their  lung  capacity.  This  was  a  landmark  randomized  controlled  trial  by  Saha  at  all.  They  looked  at  a  metric  called  FEV1,  forced  expiratory  volume  in  one  second.  It's  the  standard  medical  measure  of  how  much  air  you  can  forcefully  blast  out.  And  it's  a  highly  reliable  proxy  for  overall  airway  health.  And  what  actually  happened  to  their  FEV1?  In  just  four  weeks,  it  went  from  an  average  of  2 .21  liters  to  2 .47  liters.  To  put  this  in  clinical  context,  normal  healthy  aging  causes  us  to  lose  about  25  to  30  milliliters  of  that  volume  every  single  year  as  our  lungs  naturally  lose  the  last  to  city.  Wait,  let  me  do  the  math  on  that.  If  we  normally  lose  30  milliliters  a  year  and  they  gained  260  milliliters  in  a  single  month,  they  essentially  grew  younger  lungs  in  a  month  just  by  breathing  through  alternate  nostril.  The  spirometric  validation  shows  exactly  that.  It  didn't  just  stop  the  clock  on  pulmonary  senescence.  It  observably  reversed  the  mechanical  decline.  They  regained  the  elastic  recoil  and  airway  potency  of  a  much  younger  lung.  That  is  just  wild.",
+                "crossfade": 0.5,
+                "volume": 1
             },
             {
                 "type": "music",
-                "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+                "music_file": "deepDive-title-music.mp3",
                 "duration": 4.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": true,
+        "mosaic_run_id": "2296737d-df40-4ce4-8b9f-5fc883daade9"
+    },
+    {
+        "num": 17,
+        "title": "Pranayama for Asthma and Heart recovery",
+        "bridge_text": [
+            "If our ancestors could engineer a biomechanical shield using just focus and air, what other internal levers are we completely ignoring?"
+        ],
+        "segments": [
+            {
+                "type": "music",
+                "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+                "duration": 4.5,
+                "crossfade": 0.3
+            },
+            {
+                "type": "audio",
+                "start": 1735.2,
+                "end": 1749.8,
+                "duration": 14.6,
+                "text": "And it's not just healthy aging lungs that benefit from this structural reset. When doctors tested this on severe asmatics and open heart surgery patients, the outcomes completely rewrote standard care. asthma and post-surgical recovery are the ultimate stress tests for the respiratory system."
+            },
+            {
+                "type": "music",
+                "music_file": "Cruise (Sting) - John Deley and the 41 Players.mp3",
+                "duration": 4.5,
+                "crossfade": 0.3,
+                "volume": 1
+            },
+            {
+                "type": "audio",
+                "start": 1749.8,
+                "end": 1889.56,
+                "duration": 139.76,
+                "crossfade": 0.3,
+                "volume": 1,
+                "text": "If it works there, the mechanics are sound. For patients with bronchial asthma, adding structured perinam to their standard medicine skyrocketed the number of well controlled patients from just 9% to nearly 62%. This was the healthcare bulging trial. 240 asthma patients did eight weeks of anulum vilom alongside their standard inhalers. Their forced vital capacity and peak expiratory flows biked dramatically. So it wasn't just a replacement for meds. Right, the breathing didn't replace the medicine, but it unlocked the mechanical blockages that the medicine simply couldn't reach. Which makes perfect sense based on the kum pakkup breath hold we talked about. It proves the collateral channel pressure wash actually works in real world trauma situations to clear out the mucus plugging those airways. Precisely. And we see the exact same thing in the ray of a post-CUB trial. CABG being coronary bypass. Yes. After coronary bypass surgery, patients lungs frequently collapse at the bases because of the physical trauma and the anesthesia. We call it basal at electasis. Okay. Patients who utilize these specific breathing techniques clear that post-surgical collapse significantly faster than those who didn't. They successfully bailed out the water and re-inflated the balloons. The clinical evidence is simply overwhelming. By translating ancient mechanics into modern pathophysiology, we realize we possess a free, non-invasive shield against respiratory failure. Inhalation coats the lungs with soap. Retention opens the secret passages and clears the blockages. Exhalation splints the airways open like a thumb on a hose. Together, they form a perfect biomechanical architecture for a long breathing life. It is a profound symmetry. We've taken the concepts of paraca, kum paka, and rachaca and mapped them flawlessly to surfactin exesitosis, collateral re-arration, and equal pressure point relocation. It's exactly why we set out on this mission today. As you age, the water will inevitably rise. The elastin will fade. The capillaries will leak. But Pernayam is the boat against internal drowning. It gives you agency over your own autonomic and mechanical survival. And it leaves me with this final thought for everyone listening. If our ancestors could engineer a biomechanical cure for cellular senescence, using nothing but focus and air, what other internal livers are we completely ignoring? That is a brilliant question to Louis on."
+            },
+            {
+                "type": "music",
+                "music_file": "deepDive-conclusion.mp3",
+                "duration": 4.5,
+                "crossfade": 0.3,
+                "volume": 1
+            }
+        ],
+        "locked": true,
+        "mosaic_run_id": "476dfe7e-5c97-4435-9c7b-a1b0cf030d36"
     },
     {
         "num": 18,
