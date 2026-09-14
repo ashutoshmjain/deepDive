@@ -102,13 +102,5 @@
     "run_id": "2296737d-df40-4ce4-8b9f-5fc883daade9",
     "start_time": 1789366104.4470894,
     "last_update": 1789366922.3451612
-  },
-  "17": {
-    "status": "completed",
-    "progress": 100,
-    "error": null,
-    "run_id": "476dfe7e-5c97-4435-9c7b-a1b0cf030d36",
-    "start_time": 1789389519.1566477,
-    "last_update": 1789390231.293392
   }
 }

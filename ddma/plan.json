@@ -840,7 +840,9 @@
             }
         ],
         "locked": true,
-        "mosaic_run_id": "476dfe7e-5c97-4435-9c7b-a1b0cf030d36"
+        "start": 1735.2,
+        "end": 1889.56,
+        "duration": 154.36
     },
     {
         "num": 18,
