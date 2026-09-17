@@ -42,6 +42,7 @@
 
 
 - [mempool](mempool.md)
+    - [MetaMuse a Tech-tonic shift](_meta_muse_strategic_analysis.md)
     - [Bitcoin Core Architecture](_bitcoin-core-architecture.md)
     - [A Quark is a Photon!](_quarks-as-photons-in-3d-space.md)
     - [Mathematics of Cognition](_mathematics-of-cognition.md)
