@@ -10,5 +10,7 @@
   "downloads_path": "C:/Users/ashut/Downloads",
   "title_word_limit": 5,
   "recent_window_size": 21,
+  "whisper_model": "small.en",
+  "whisper_word_timestamps": true,
   "port": 8088
 }

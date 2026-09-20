@@ -13,6 +13,7 @@ ddma/scratch/
 ddma/build_temp/
 ddma/clips/
 ddma/previews/
+ddma/projects/
 ddma/docs/assets/clips/
 ddma/docs/episodes/
 !src/ddma/docs/episodes/**
@@ -20,6 +21,8 @@ ddma/docs/episodes/
 ddma/**/__pycache__/
 ddma/*.png
 ddma/*.mp4
+ddma/settings.json
+ddma/*settings*.json
 
 # Ignore intermediate/raw video clip build artifacts
 *-original.mp4
@@ -37,7 +40,7 @@ scratch/
 extract.py
 payload_*.py
 
-# Big raw audio files & local scratch transcripts (Keep GitHub repository clean)
+# Big raw audio files & local scratch transcripts / narratives (Keep GitHub repository clean)
 *.mp3
 *.wav
 *.m4a
@@ -48,3 +51,6 @@ payload_*.py
 **/transcripts/
 **/audio.*
 **/transcript.txt
+**/narrative.md
+node_modules/
+package-lock.json

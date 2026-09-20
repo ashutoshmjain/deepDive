@@ -817,10 +817,10 @@
             },
             {
                 "type": "music",
-                "music_file": "Cruise (Sting) - John Deley and the 41 Players.mp3",
+                "music_file": "Leavin (Sting) - MK2.mp3",
                 "duration": 4.5,
                 "crossfade": 0.3,
-                "volume": 1
+                "volume": 0.5
             },
             {
                 "type": "audio",
@@ -834,7 +834,7 @@
             {
                 "type": "music",
                 "music_file": "deepDive-conclusion.mp3",
-                "duration": 4.5,
+                "duration": 10.5,
                 "crossfade": 0.3,
                 "volume": 1
             }
@@ -842,7 +842,8 @@
         "locked": true,
         "start": 1735.2,
         "end": 1889.56,
-        "duration": 154.36
+        "duration": 154.36,
+        "mosaic_run_id": "cf2c2eed-afca-45f2-a0df-7feff90b71e9"
     },
     {
         "num": 18,
@@ -890,6 +891,7 @@
                 "volume": 1
             }
         ],
-        "locked": false
+        "locked": false,
+        "hidden": true
     }
 ]
