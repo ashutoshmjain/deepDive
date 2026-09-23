@@ -323,7 +323,7 @@ def extract_python_payload(payload_code: str) -> tuple[str, str, int, int]:
 def find_episode_videos(slug_or_num: str) -> list[dict]:
     """
     Discovers video clips across canonical DDMA episodes store (src/ddma/docs/episodes/)
-    and legacy fallback directories per agent.md.
+    and fallback directories across both deepDive and sibling ddma workspaces.
     """
     clean_id = str(slug_or_num).replace('.md', '').lstrip('_')
     candidates = []
@@ -333,24 +333,33 @@ def find_episode_videos(slug_or_num: str) -> list[dict]:
     if canonical_ep_dir.exists():
         candidates.extend(canonical_ep_dir.glob("*.mp4"))
 
-    # 2. ddma/docs/episodes/<clean_id>/clips/*.mp4 (Root fallback)
-    ep_clips_dir = PROJECT_ROOT / "ddma" / "docs" / "episodes" / clean_id / "clips"
-    if ep_clips_dir.exists():
-        candidates.extend(ep_clips_dir.glob("*.mp4"))
+    # 2. ddma/docs/episodes/<clean_id>/clips/*.mp4 (Root fallback in deepDive & sibling ddma)
+    for ddma_root in [PROJECT_ROOT / "ddma", PROJECT_ROOT.parent / "ddma"]:
+        ep_clips_dir = ddma_root / "docs" / "episodes" / clean_id / "clips"
+        if ep_clips_dir.exists():
+            candidates.extend(ep_clips_dir.glob("*.mp4"))
 
-    # 3. Legacy episodes store (src/vid/<clean_id>-*.mp4)
+    # 3. ddma/projects/episode_<id>/clips (Draft and working clips)
+    for ddma_root in [PROJECT_ROOT / "ddma", PROJECT_ROOT.parent / "ddma"]:
+        proj_clips = ddma_root / "projects" / f"episode_{clean_id}" / "clips"
+        if proj_clips.exists():
+            candidates.extend(proj_clips.glob("*.mp4"))
+
+    # 4. ddma/clips/<clean_id>-*.mp4 (ddma root clips folder in both deepDive and sibling ddma)
+    for ddma_root in [PROJECT_ROOT / "ddma", PROJECT_ROOT.parent / "ddma"]:
+        clips_folder = ddma_root / "clips"
+        if clips_folder.exists():
+            candidates.extend(clips_folder.glob(f"{clean_id}-*.mp4"))
+
+    # 5. Legacy episodes store (src/vid/<clean_id>-*.mp4)
     candidates.extend(VID_DIR.glob(f"{clean_id}-*.mp4"))
     candidates.extend(VID_DIR.glob(f"_{clean_id}-*.mp4"))
 
-    # 4. ddma/docs/assets/clips/<clean_id>-*.mp4
-    assets_clips_dir = PROJECT_ROOT / "ddma" / "docs" / "assets" / "clips"
-    if assets_clips_dir.exists():
-        candidates.extend(assets_clips_dir.glob(f"{clean_id}-*.mp4"))
-
-    # 5. ddma/clips/<clean_id>-*.mp4
-    ddma_clips_dir = PROJECT_ROOT / "ddma" / "clips"
-    if ddma_clips_dir.exists():
-        candidates.extend(ddma_clips_dir.glob(f"{clean_id}-*.mp4"))
+    # 6. ddma/docs/assets/clips/<clean_id>-*.mp4
+    for ddma_root in [PROJECT_ROOT / "ddma", PROJECT_ROOT.parent / "ddma"]:
+        assets_clips_dir = ddma_root / "docs" / "assets" / "clips"
+        if assets_clips_dir.exists():
+            candidates.extend(assets_clips_dir.glob(f"{clean_id}-*.mp4"))
 
     seen = set()
     final_clips = []
@@ -360,10 +369,22 @@ def find_episode_videos(slug_or_num: str) -> list[dict]:
             continue
         seen.add(name)
         clip_label = name.replace('.mp4', '').replace('_', ' ')
+        
+        # Build canonical streaming URL
+        if "docs" in str(path) and "episodes" in str(path):
+            url = f"/media/ddma/docs/episodes/{clean_id}/clips/{name}"
+        elif "projects" in str(path):
+            url = f"/media/ddma/projects/episode_{clean_id}/clips/{name}"
+        elif "clips" in str(path):
+            url = f"/media/ddma/clips/{name}"
+        else:
+            url = f"/vid/{name}"
+
         final_clips.append({
             "name": name,
-            "url": f"/media/ddma/docs/episodes/{clean_id}/clips/{name}" if "ddma" in str(path) else f"/vid/{name}",
-            "label": clip_label
+            "url": url,
+            "label": clip_label,
+            "size_bytes": path.stat().st_size if path.exists() else 0
         })
 
     def sort_key(clip):
@@ -1043,6 +1064,9 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(INGEST_DIR), **kwargs)
 
+    def do_HEAD(self):
+        return self.do_GET()
+
     def do_GET(self):
         url = urlparse(self.path)
         path = url.path
@@ -1164,34 +1188,13 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
             fn = params.get("filename", [""])[0]
             clean_id = fn.replace(".md", "").lstrip("_")
             
-            ddma_ep_dir = SRC_DIR / "ddma" / "docs" / "episodes" / clean_id
-            clips_dir = ddma_ep_dir / "clips"
-            clips = []
+            ddma_ep_dir = PROJECT_ROOT / "ddma" / "docs" / "episodes" / clean_id
+            if not ddma_ep_dir.exists():
+                ddma_ep_dir = PROJECT_ROOT.parent / "ddma" / "docs" / "episodes" / clean_id
+            if not ddma_ep_dir.exists():
+                ddma_ep_dir = SRC_DIR / "ddma" / "docs" / "episodes" / clean_id
             
-            # 1. Discover clips in src/ddma/docs/episodes/<id>/clips
-            if clips_dir.exists():
-                for ext in [".mp4", ".mov", ".webm"]:
-                    for cf in sorted(clips_dir.glob(f"*{ext}")):
-                        clips.append({
-                            "name": cf.name,
-                            "label": cf.name.replace(".mp4", "").replace("_", " "),
-                            "url": f"/media/ddma/docs/episodes/{clean_id}/clips/{cf.name}",
-                            "size_bytes": cf.stat().st_size
-                        })
-            
-            # 2. Discover clips in ddma/projects/episode_<id>/clips
-            for ddma_root in [PROJECT_ROOT.parent / "ddma", PROJECT_ROOT / "ddma"]:
-                proj_clips = ddma_root / "projects" / f"episode_{clean_id}" / "clips"
-                if proj_clips.exists():
-                    for ext in [".mp4", ".mov", ".webm"]:
-                        for cf in sorted(proj_clips.glob(f"*{ext}")):
-                            if not any(c["name"] == cf.name for c in clips):
-                                clips.append({
-                                    "name": cf.name,
-                                    "label": cf.name.replace(".mp4", "").replace("_", " "),
-                                    "url": f"/media/ddma/projects/episode_{clean_id}/clips/{cf.name}",
-                                    "size_bytes": cf.stat().st_size
-                                })
+            clips = find_episode_videos(clean_id)
 
             audio_path = get_episode_audio_path(clean_id)
             transcript_path = get_episode_transcript_path(clean_id)
@@ -1226,6 +1229,8 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                 PROJECT_ROOT.parent / clean_path,
                 SRC_DIR / "ddma" / "docs" / "episodes" / clean_path,
                 PROJECT_ROOT / "ddma" / "docs" / "episodes" / clean_path,
+                PROJECT_ROOT.parent / "ddma" / "docs" / "episodes" / clean_path,
+                PROJECT_ROOT / "ddma" / clean_path,
                 PROJECT_ROOT.parent / "ddma" / clean_path,
                 SRC_DIR / "vid" / Path(clean_path).name,
                 SRC_DIR / "img" / Path(clean_path).name,
@@ -1240,12 +1245,19 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                 ep_match = re.search(r'(\d+)', fname)
                 ep_num = ep_match.group(1) if ep_match else ""
                 if ep_num:
-                    p1 = SRC_DIR / "ddma" / "docs" / "episodes" / ep_num / "clips" / fname
-                    p2 = PROJECT_ROOT / "ddma" / "docs" / "episodes" / ep_num / "clips" / fname
-                    p3 = PROJECT_ROOT.parent / "ddma" / "projects" / f"episode_{ep_num}" / "clips" / fname
-                    if p1.exists(): target_file = p1
-                    elif p2.exists(): target_file = p2
-                    elif p3.exists(): target_file = p3
+                    for cand in [
+                        PROJECT_ROOT / "ddma" / "docs" / "episodes" / ep_num / "clips" / fname,
+                        PROJECT_ROOT.parent / "ddma" / "docs" / "episodes" / ep_num / "clips" / fname,
+                        SRC_DIR / "ddma" / "docs" / "episodes" / ep_num / "clips" / fname,
+                        PROJECT_ROOT / "ddma" / "projects" / f"episode_{ep_num}" / "clips" / fname,
+                        PROJECT_ROOT.parent / "ddma" / "projects" / f"episode_{ep_num}" / "clips" / fname,
+                        PROJECT_ROOT / "ddma" / "clips" / fname,
+                        PROJECT_ROOT.parent / "ddma" / "clips" / fname,
+                        VID_DIR / fname,
+                    ]:
+                        if cand.exists():
+                            target_file = cand
+                            break
 
             if target_file and target_file.exists():
                 self.serve_media_file(target_file)
@@ -1280,6 +1292,9 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
 
+                if self.command == "HEAD":
+                    return
+
                 with open(file_path, 'rb') as f:
                     f.seek(start)
                     bytes_remaining = length
@@ -1297,6 +1312,9 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Accept-Ranges', 'bytes')
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
+
+                if self.command == "HEAD":
+                    return
 
                 with open(file_path, 'rb') as f:
                     shutil.copyfileobj(f, self.wfile)

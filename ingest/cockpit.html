@@ -1359,9 +1359,6 @@
                         </div>
                     </div>
 
-                    <!-- 740x740 Infographic Video Carousel container -->
-                    <div id="narrative-video-carousel-wrap"></div>
-
                     <!-- H1 Header -->
                     <h1 class="paper-h1" id="narrative-h1">Episode Narrative &amp; Social Transcript</h1>
 
@@ -1369,9 +1366,6 @@
                     <div class="rendered-body" id="narrative-rendered-body">
                         <p style="color: var(--text-dark-muted); font-style: italic;">No narrative transcript loaded for this episode. Upload audio and run Whisper, or paste content in the Audio Studio deck.</p>
                     </div>
-
-                    <!-- Bottom Sats Wallet & Audio Syndication Strip -->
-                    <div id="narrative-bottom-syndication"></div>
                 </div>
             </div>
 
@@ -1388,6 +1382,9 @@
                             🚀 Open DDMA Studio
                         </button>
                     </div>
+
+                    <!-- 740x740 Infographic Video Carousel container in Media Tab -->
+                    <div id="media-video-carousel-wrap" style="margin-bottom: 1.5rem;"></div>
 
                     <div id="media-clips-grid-deck" class="media-grid-container">
                         <!-- Populated by JS -->
@@ -2272,23 +2269,12 @@ if __name__ == '__main__':
 
         function renderNarrativeTab(epData, audioData) {
             if (!epData) return;
-            const cleanId = epData.filename.replace('.md', '').replace(/^_/, '');
             const title = epData.title || "Episode Narrative";
             
             const h1El = document.getElementById('narrative-h1');
             if (h1El) h1El.innerText = title;
 
-            const carouselWrap = document.getElementById('narrative-video-carousel-wrap');
-            if (carouselWrap) {
-                carouselWrap.innerHTML = buildInfographicCarouselHtml(epData.videos, cleanId);
-            }
-
             renderNarrativeContent();
-
-            const syndicationWrap = document.getElementById('narrative-bottom-syndication');
-            if (syndicationWrap) {
-                syndicationWrap.innerHTML = buildSyndicationAndWalletHtml(cleanId, true);
-            }
         }
 
         function renderNarrativeContent() {
@@ -2303,7 +2289,9 @@ if __name__ == '__main__':
             }
 
             if (targetText) {
-                renderedBodyEl.innerHTML = marked.parse(targetText);
+                // Strip leading duplicate H1 heading from markdown if present since narrative-h1 already renders it
+                const cleanedText = targetText.replace(/^#\s+.*$/m, '').trim();
+                renderedBodyEl.innerHTML = marked.parse(cleanedText);
             } else {
                 renderedBodyEl.innerHTML = `
                     <div style="padding: 2.5rem 1rem; text-align: center; color: var(--text-dark-muted); font-style: italic;">
@@ -2865,36 +2853,44 @@ if __name__ == '__main__':
                     transBadge.style.color = data.has_transcript ? 'var(--accent-emerald)' : 'var(--text-dark-muted)';
                 }
 
-                // Render Media Tab Grid Deck
+                // Render Media Tab Carousel & Grid Deck
+                const carouselContainer = document.getElementById('media-video-carousel-wrap');
                 const container = document.getElementById('media-clips-grid-deck');
-                if (!container) return;
 
                 if (data.clips && data.clips.length > 0) {
-                    container.innerHTML = data.clips.map((clip, idx) => `
-                        <div class="infographic-card" style="max-width: 100%;">
-                            <div class="infographic-video-box">
-                                <video src="${clip.url}" playsinline loop preload="metadata" muted autoplay></video>
-                                <button class="infographic-audio-toggle" onclick="toggleInfographicAudio(this)" title="Toggle Sound">🔇</button>
+                    if (carouselContainer) {
+                        carouselContainer.innerHTML = buildInfographicCarouselHtml(data.clips, data.clean_id);
+                    }
+                    if (container) {
+                        container.innerHTML = data.clips.map((clip, idx) => `
+                            <div class="infographic-card" style="max-width: 100%;">
+                                <div class="infographic-video-box">
+                                    <video src="${clip.url}" playsinline loop preload="metadata" muted autoplay></video>
+                                    <button class="infographic-audio-toggle" onclick="toggleInfographicAudio(this)" title="Toggle Sound">🔇</button>
+                                </div>
+                                <div class="infographic-card-footer">
+                                    <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 180px;">${escapeHtml(clip.label || clip.name)}</span>
+                                    <span style="color: var(--accent-amber); font-weight: 700;">Clip #${idx + 1}</span>
+                                </div>
                             </div>
-                            <div class="infographic-card-footer">
-                                <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 180px;">${escapeHtml(clip.label || clip.name)}</span>
-                                <span style="color: var(--accent-amber); font-weight: 700;">Clip #${idx + 1}</span>
-                            </div>
-                        </div>
-                    `).join('');
+                        `).join('');
+                    }
                 } else {
-                    container.innerHTML = `
-                        <div style="grid-column: 1 / -1; background: #ffffff; border: 1px dashed var(--border-light); border-radius: 8px; padding: 2.5rem 2rem; text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎬</div>
-                            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark-primary); margin-bottom: 0.35rem;">No 740×740 Video Clips Found</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-dark-muted); max-width: 480px; margin: 0 auto 1.25rem;">
-                                This episode does not have generated infographic clips in <code style="font-family: var(--font-mono);">src/ddma/docs/episodes/${escapeHtml(data.clean_id)}/clips/</code> yet.
-                            </p>
-                            <button class="btn-cmd primary" style="padding: 0.55rem 1.25rem;" onclick="launchDdmaStudio()">
-                                🚀 Open DDMA Studio to Generate Clips
-                            </button>
-                        </div>
-                    `;
+                    if (carouselContainer) carouselContainer.innerHTML = '';
+                    if (container) {
+                        container.innerHTML = `
+                            <div style="grid-column: 1 / -1; background: #ffffff; border: 1px dashed var(--border-light); border-radius: 8px; padding: 2.5rem 2rem; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎬</div>
+                                <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-dark-primary); margin-bottom: 0.35rem;">No 740×740 Video Clips Found</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-dark-muted); max-width: 480px; margin: 0 auto 1.25rem;">
+                                    This episode does not have generated infographic clips in <code style="font-family: var(--font-mono);">ddma/docs/episodes/${escapeHtml(data.clean_id)}/clips/</code> yet.
+                                </p>
+                                <button class="btn-cmd primary" style="padding: 0.55rem 1.25rem;" onclick="launchDdmaStudio()">
+                                    🚀 Open DDMA Studio to Generate Clips
+                                </button>
+                            </div>
+                        `;
+                    }
                 }
             } catch (err) {
                 console.error("Failed to load DDMA status:", err);
