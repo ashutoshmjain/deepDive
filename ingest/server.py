@@ -479,15 +479,29 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
     text = re.sub(r'\bi\'ll\b', "I'll", text, flags=re.IGNORECASE)
     text = re.sub(r'\bi\'d\b', "I'd", text, flags=re.IGNORECASE)
 
+    # Remove inline tag questions and conversational fillers
+    text = re.sub(r',\s*right\?', '.', text, flags=re.IGNORECASE)
+    text = re.sub(r',\s*you\s+know\?', '.', text, flags=re.IGNORECASE)
+    text = re.sub(r',\s*yeah\?', '.', text, flags=re.IGNORECASE)
+    text = re.sub(r'\byou\s+know,\s*', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\boh,\s*yeah,\s*', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\boh\s+yeah,\s*', '', text, flags=re.IGNORECASE)
+
     # Capitalize after sentence terminators
     text = re.sub(r'([.!?]\s+)([a-z])', lambda m: m.group(1) + m.group(2).upper(), text)
     if text:
         text = text[0].upper() + text[1:]
 
-    # Promotional detection regex pattern
+    # Promotional detection regex pattern (ruthlessly discard)
     promo_patterns = [
         r'\b(?:sponsor(?:ed|s)?|patreon|subscribe|follow us on|discount code|promo code|rate and review|check out the link|link in the description|leave a five star|support (?:us|the show|the podcast))\b',
-        r'\b(?:supported by|brought to you by|special offer|advertis(?:er|ement)|our partners? at)\b'
+        r'\b(?:supported by|brought to you by|special offer|advertis(?:er|ement)|our partners? at)\b',
+        r'\b(?:welcome\s+(?:back\s+)?to\s+(?:the\s+)?deep\s*dive|in\s+this\s+deep\s*dive|draw(?:ing)?\s+this\s+deep\s*dive\s+to\s+a\s+close)\b',
+        r'\b(?:deep\s*dive\s+website|progressive\s+web\s+app|access\s+all\s+of\s+the\s+research\s+offline|read\s+these\s+massive\s+deep\s+dives)\b',
+        r'\b(?:install|access)\s+it\s+(?:essentially\s+)?as\s+a\s+native\s+app\b',
+        r'\b(?:share\s+this\s+show|if\s+you\s+have\s+expertise\s+in\s+the\s+specific\s+fields|see\s+you\s+on\s+the\s+next\s+deep\s+dive|i\s+am\s+satoshi)\b',
+        r'\b(?:keep\s+searching,\s*keep\s+the\s+quest\s+on|symbiosis\s+of\s+artificial\s+and\s+natural\s+intelligence)\b',
+        r'\b(?:research\s+hub\s+at\s+deepdive|secure\s+enclave\s+of\s+your\s+own\s+to\s+read)\b'
     ]
     promo_regex = re.compile('|'.join(promo_patterns), re.IGNORECASE)
 
@@ -516,7 +530,7 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
 
     # Major thematic section markers
     section_patterns = [
-        (r'\b(Welcome to the deep dive|before we really plunge|setting the tone|intentional slowing down)\b', "Introduction: Setting the Tone"),
+        (r'\b(before we really plunge|setting the tone|intentional slowing down)\b', "Introduction: Setting the Tone"),
         (r'\b(set the context for this journey|causing an absolute earthquake|metas? mues?|meta muse)\b', "The Agentic Shift: From Q&A to Execution"),
         (r'\b(what Metamuse actually is under the hood|Meta Superintelligence Labs|Pareto efficient cost frontier)\b', "Architecture & The Pareto Efficient Frontier"),
         (r'\b(how it navigates the web|headless browser|parsing the DOM|document object model)\b', "Autonomous Navigation: Parsing the DOM"),
@@ -547,7 +561,7 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
     # Prepend header if title provided (clean H1 only, no podcast metadata)
     doc_lines = []
     if title:
-        doc_lines.append(f"# {title}\n")
+        doc_lines.append(f"# {title}")
 
     interjection_set = {
         'right.', 'right?', 'right!', 'exactly.', 'precisely.', 'correct.', 'yeah.', 'yep.', 'yes.',
