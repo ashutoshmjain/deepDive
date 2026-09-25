@@ -19,6 +19,7 @@ ddma/docs/episodes/
 !src/ddma/docs/episodes/**
 !src/vid/**
 ddma/**/__pycache__/
+**/__pycache__/
 ddma/*.png
 ddma/*.mp4
 ddma/settings.json
