@@ -544,17 +544,36 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
     promo_count = 0
     used_section_titles = set()
 
-    # Prepend header if title provided
+    # Prepend header if title provided (clean H1 only, no podcast metadata)
     doc_lines = []
     if title:
         doc_lines.append(f"# {title}\n")
-    if ep_num:
-        doc_lines.append(f"> 🎙️ **Episode**: #{ep_num} • DeepDive Audio Intelligence  \n> ⚡ **Format**: Nostr Long-Form Publication (NIP-23)\n\n---")
+
+    interjection_set = {
+        'right.', 'right?', 'right!', 'exactly.', 'precisely.', 'correct.', 'yeah.', 'yep.', 'yes.',
+        'sure.', 'totally.', 'definitely.', 'absolutely.', 'indeed.', 'okay.', 'alright.', 'all right.',
+        'wow.', 'fair enough.', 'i see.', 'i follow.', 'i fall.', 'you bet.', 'obviously.', 'obviously not.',
+        'we do.', 'it really is.', 'that makes sense.', 'i think that\'s a great idea.', 'oh, i\'m sure it does.',
+        'okay, i like where this is going.', 'true.', 'agreed.', 'oh yeah.', 'oh, yeah.', 'yeah, right.',
+        'no way.', 'that\'s right.', 'that is right.', 'sounds right.', 'makes sense.', 'got it.', 'i got it.',
+        'is the optimal balance?', 'have a way.', 'we have and it\'s fantastic.', 'also correct.',
+        'a lot of power in a chat app.', 'that\'s a great way to summarize it.', 'it really does.',
+        'it does, but it\'s pure strategic reality.', 'this part is fascinating.'
+    }
 
     for idx, s in enumerate(sentences):
         s_clean = s.strip()
         if not s_clean:
             continue
+
+        # Filter out standalone conversational interjections
+        norm_s = re.sub(r'[*_#`]', '', s_clean).strip().lower()
+        if norm_s in interjection_set or re.match(r'^(?:right|exactly|precisely|yeah|yep|yes|okay|alright|wow|sure|correct)[.!?]$', norm_s):
+            continue
+
+        # Clean leading interjection words in longer sentences
+        s_clean = re.sub(r'^(?:Right|Exactly|Precisely|Yeah|Yep|Yes|Okay|Alright|Well),\s+([a-zA-Z])', lambda m: m.group(1).upper(), s_clean, flags=re.IGNORECASE)
+        s_clean = re.sub(r'^(?:Right|Exactly|Precisely|Yeah|Yep|Yes|Okay|Alright)\.\s+([a-zA-Z])', lambda m: m.group(1).upper(), s_clean, flags=re.IGNORECASE)
 
         # Check for section triggers
         triggered_heading = None
@@ -570,13 +589,9 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
                 current_para = []
             doc_lines.append(f"\n## {triggered_heading}\n")
 
-        # Check for promotional note
+        # Check for promotional note - Ruthlessly drop completely
         is_promo = bool(promo_regex.search(s_clean))
         if is_promo:
-            if current_para:
-                doc_lines.append(' '.join(current_para))
-                current_para = []
-            doc_lines.append(f"> 📢 **Promotional Note**: {s_clean}")
             promo_count += 1
             continue
 
@@ -607,14 +622,6 @@ def smart_streamline_narrative(raw_text: str, title: str = "", ep_num: str = "",
 
     if current_para:
         doc_lines.append(' '.join(current_para))
-
-    # Add Nostr footer
-    target_ln = lightning_addr or "shutosha@primal.net"
-    doc_lines.append("\n---\n")
-    doc_lines.append("### ⚡ Connect & Support")
-    doc_lines.append(f"* **Lightning Tips**: `{target_ln}`")
-    doc_lines.append("* **Publication**: Generated via MD² Ingest Studio & DeepDive Media Automator")
-    doc_lines.append("* **Platform**: Verified Nostr Long-Form Format (NIP-23)")
 
     full_doc = '\n\n'.join(doc_lines)
     full_doc = bold_entities(full_doc)
