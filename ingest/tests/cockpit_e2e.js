@@ -169,7 +169,7 @@ async function runE2ETests() {
         // -------------------------------------------------------------
         // Test 5: Narrative Tab: Read-Only Paper Sheet & Parity
         // -------------------------------------------------------------
-        await runTest('Narrative Tab: Read-Only Paper Sheet, Video Carousel & Wallet Parity', async (p) => {
+        await runTest('Narrative Tab: Read-Only Paper Sheet, Sats Wallet & Audio Syndication Parity', async (p) => {
             await p.click('#tab-btn-narrative');
             await p.waitForSelector('#narrative-paper-sheet', { timeout: 3000 });
 
