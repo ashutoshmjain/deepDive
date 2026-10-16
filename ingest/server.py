@@ -29,7 +29,12 @@ import time
 # Working directories
 INGEST_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = INGEST_DIR.parent
-SRC_DIR = PROJECT_ROOT / "src"
+
+# Auto-discover canonical deepDive production workspace if running in sibling mdIngest
+candidate_roots = [PROJECT_ROOT, PROJECT_ROOT.parent / "deepDive"]
+PROD_ROOT = next((r for r in candidate_roots if (r / "src" / "SUMMARY.md").exists() and (r / "src" / "SUMMARY.md").stat().st_size > 1000), PROJECT_ROOT)
+
+SRC_DIR = PROD_ROOT / "src"
 IMG_DIR = SRC_DIR / "img"
 VID_DIR = SRC_DIR / "vid"
 SUMMARY_FILE = SRC_DIR / "SUMMARY.md"
@@ -1933,7 +1938,7 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
             # Trigger background mdbook build to ensure compiled HTML is instantly fresh
             def bg_build():
                 try:
-                    subprocess.run(["mdbook", "build"], cwd=str(PROJECT_ROOT), capture_output=True)
+                    subprocess.run(["mdbook", "build"], cwd=str(PROD_ROOT), capture_output=True)
                 except Exception:
                     pass
             threading.Thread(target=bg_build, daemon=True).start()
@@ -2026,7 +2031,7 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                     kill_mdserve()
                     mdserve_process = subprocess.Popen(
                         ["mdbook", "serve", "--hostname", "0.0.0.0", "-p", "3000"],
-                        cwd=str(PROJECT_ROOT),
+                        cwd=str(PROD_ROOT),
                         stdout=subprocess.DEVNULL,
                         stderr=subprocess.DEVNULL
                     )
@@ -2418,9 +2423,9 @@ class IngestRequestHandler(http.server.SimpleHTTPRequestHandler):
                 except Exception as se:
                     print(f"Auto-sync before push warning for {ep_num}: {se}")
             try:
-                subprocess.run(["git", "add", "src/", "book.toml", "ingest/settings.json"], cwd=str(PROJECT_ROOT), check=True)
-                subprocess.run(["git", "commit", "-m", f"publish: episode {ep_num} via md² cockpit"], cwd=str(PROJECT_ROOT), check=True)
-                subprocess.run(["git", "push"], cwd=str(PROJECT_ROOT), check=True)
+                subprocess.run(["git", "add", "src/", "book.toml", "ingest/settings.json"], cwd=str(PROD_ROOT), check=True)
+                subprocess.run(["git", "commit", "-m", f"publish: episode {ep_num} via md² cockpit"], cwd=str(PROD_ROOT), check=True)
+                subprocess.run(["git", "push"], cwd=str(PROD_ROOT), check=True)
                 self.send_json({"success": True, "message": "Pushed to remote repository successfully!"})
             except subprocess.CalledProcessError as e:
                 self.send_json({"success": False, "error": f"Git command failed: {e}"})
