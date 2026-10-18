@@ -54,4 +54,6 @@ payload_*.py
 **/transcript.txt
 **/narrative.md
 node_modules/
-package-lock.json
+package-lock.json
+ddma/fonts/
+
