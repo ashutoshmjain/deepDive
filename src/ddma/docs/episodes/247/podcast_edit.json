@@ -1,0 +1,27 @@
+{
+  "episode": "247",
+  "source_audio": "audio.m4a",
+  "cuts": [
+    {
+      "id": "test_cut_1",
+      "start": 100.0,
+      "end": 110.5,
+      "text": "test blooper cut",
+      "reason": "test"
+    }
+  ],
+  "stings": [
+    {
+      "id": "test_sting_1",
+      "at": 50.0,
+      "music_file": "Flow (Sting) - MK2.mp3",
+      "mode": "overlay_duck",
+      "duck_db": -14,
+      "duration": 5.5
+    }
+  ],
+  "intro_sting": "deepDive-strong.mp3",
+  "outro_sting": "deepDive-conclusion.mp3",
+  "target_lufs": -16.0,
+  "updated_at": "2026-10-21T11:08:15.838746"
+}

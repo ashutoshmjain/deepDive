@@ -1,0 +1,43 @@
+{
+  "episode": "bitcoin-core-architecture",
+  "source_audio": "audio.m4a",
+  "cuts": [],
+  "stings": [
+    {
+      "id": "sting_1792615805615_wheq",
+      "at": 29.68,
+      "music_file": "deepDive-strong.mp3",
+      "mode": "gap_03",
+      "duck_db": -14,
+      "duration": 10
+    },
+    {
+      "id": "sting_1792678586533_wjmn",
+      "at": 1124.48,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_05",
+      "duck_db": -14,
+      "duration": 7.5
+    },
+    {
+      "id": "sting_1792678656712_i1xi",
+      "at": 2088.58,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_05",
+      "duck_db": -14,
+      "duration": 6.8
+    },
+    {
+      "id": "sting_1792678705678_etm4",
+      "at": 3215.34,
+      "music_file": "deepDive-conclusion.mp3",
+      "mode": "fade_2s_xfade_05",
+      "duck_db": -14,
+      "duration": 15
+    }
+  ],
+  "intro_sting": "deepDive-strong.mp3",
+  "outro_sting": "deepDive-conclusion.mp3",
+  "target_lufs": -16,
+  "updated_at": "2026-10-22T07:18:52.788568"
+}

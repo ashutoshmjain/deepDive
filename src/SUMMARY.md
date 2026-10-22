@@ -47,6 +47,7 @@
     - [Mathematics of Cognition](_mathematics-of-cognition.md)
 
 - [template](template.md)
+    - [248 : What exactly is AI Autonomy](248.md)
     - [247 : MetaMuse a Tech-tonic shift](247.md)
     - [246 : Pranayama - the pulmonary boat](246.md)
     - [245 : What Exactly Is Singularity?](245.md)

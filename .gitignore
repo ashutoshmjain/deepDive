@@ -17,6 +17,11 @@ ddma/projects/
 ddma/docs/assets/clips/
 ddma/docs/episodes/
 !src/ddma/docs/episodes/**
+src/ddma/docs/episodes/**/previews/
+src/ddma/docs/episodes/**/tmp_podcast/
+src/ddma/docs/episodes/**/*.mp3
+src/ddma/docs/episodes/**/*.m4a
+src/ddma/docs/episodes/**/*.wav
 !src/vid/**
 ddma/**/__pycache__/
 **/__pycache__/
