@@ -1,0 +1,6073 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.32,
+    "duration": 5.32,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 5.32,
+    "end": 8.58,
+    "duration": 3.26,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 8.58,
+    "end": 13.62,
+    "duration": 5.04,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 13.62,
+    "end": 18.76,
+    "duration": 5.14,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "ONTOLOGICAL FALLACY",
+    "subtitle": "PHYSICAL ISOLATION \u2260 AUTONOMY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 18.76,
+    "end": 24.1,
+    "duration": 5.34,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 24.1,
+    "end": 28.92,
+    "duration": 4.82,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 28.92,
+    "end": 33.8,
+    "duration": 4.88,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 33.8,
+    "end": 38.74,
+    "duration": 4.94,
+    "archetype": "bank_vault_wallet",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 38.74,
+    "end": 43.86,
+    "duration": 5.12,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 43.86,
+    "end": 48.8,
+    "duration": 4.94,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 48.8,
+    "end": 54.36,
+    "duration": 5.56,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left",
+    "formula_index": 0
+  },
+  {
+    "start": 54.36,
+    "end": 57.86,
+    "duration": 3.5,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 57.86,
+    "end": 62.76,
+    "duration": 4.9,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "ONTOLOGICAL FALLACY",
+    "subtitle": "PHYSICAL ISOLATION \u2260 AUTONOMY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 62.76,
+    "end": 67.88,
+    "duration": 5.12,
+    "archetype": "token_energy_furnace",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 67.88,
+    "end": 72.76,
+    "duration": 4.88,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 72.76,
+    "end": 77.6,
+    "duration": 4.84,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 77.6,
+    "end": 80.64,
+    "duration": 3.04,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 80.64,
+    "end": 85.94,
+    "duration": 5.3,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 85.94,
+    "end": 90.92,
+    "duration": 4.98,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 90.92,
+    "end": 93.94,
+    "duration": 3.02,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 93.94,
+    "end": 98.98,
+    "duration": 5.04,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 98.98,
+    "end": 104.42,
+    "duration": 5.44,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "ONTOLOGICAL FALLACY",
+    "subtitle": "PHYSICAL ISOLATION \u2260 AUTONOMY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 104.42,
+    "end": 108.64,
+    "duration": 4.22,
+    "archetype": "tilting_fulcrum",
+    "title": "ONTOLOGICAL FALLACY",
+    "subtitle": "PHYSICAL ISOLATION \u2260 AUTONOMY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 108.64,
+    "end": 113.74,
+    "duration": 5.1,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 113.74,
+    "end": 116.76,
+    "duration": 3.02,
+    "archetype": "room_chair_table",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 116.76,
+    "end": 121.9,
+    "duration": 5.14,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 121.9,
+    "end": 125.76,
+    "duration": 3.86,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 125.76,
+    "end": 130.86,
+    "duration": 5.1,
+    "archetype": "room_chair_table",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 130.86,
+    "end": 135.72,
+    "duration": 4.86,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "ROBOT IN WILDERNESS",
+    "subtitle": "ISOLATION = EXTINCTION",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 135.72,
+    "end": 139.96,
+    "duration": 4.24,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 139.96,
+    "end": 143.96,
+    "duration": 4.0,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 143.96,
+    "end": 148.22,
+    "duration": 4.26,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 148.22,
+    "end": 153.26,
+    "duration": 5.04,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 153.26,
+    "end": 158.08,
+    "duration": 4.82,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 158.08,
+    "end": 162.92,
+    "duration": 4.84,
+    "archetype": "room_chair_table",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 162.92,
+    "end": 166.66,
+    "duration": 3.74,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 166.66,
+    "end": 170.56,
+    "duration": 3.9,
+    "archetype": "cell_metabolism",
+    "title": "AUTOPOIESIS",
+    "subtitle": "THE MEMBRANE IS THE BOUNDARY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 170.56,
+    "end": 180.42,
+    "duration": 9.859999999999985,
+    "archetype": "academic_paper_callout",
+    "title": "MATURANA & VARELA (1980)",
+    "subtitle": "AUTOPOIESIS AND COGNITION",
+    "accent": "gold",
+    "layout": "graphic_left",
+    "quote_index": 0
+  },
+  {
+    "start": 175.6,
+    "end": 180.42,
+    "duration": 4.82,
+    "archetype": "academic_paper_callout",
+    "title": "AUTOPOIESIS",
+    "subtitle": "THE MEMBRANE IS THE BOUNDARY",
+    "accent": "gold",
+    "layout": "graphic_left",
+    "quote_index": 0
+  },
+  {
+    "start": 180.42,
+    "end": 185.0,
+    "duration": 4.58,
+    "archetype": "rotating_triad",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 185.0,
+    "end": 188.58,
+    "duration": 3.58,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 188.58,
+    "end": 193.22,
+    "duration": 4.64,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 193.22,
+    "end": 198.52,
+    "duration": 5.3,
+    "archetype": "recursive_feedback",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 198.52,
+    "end": 202.92,
+    "duration": 4.4,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 202.92,
+    "end": 205.98,
+    "duration": 3.06,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 205.98,
+    "end": 211.04,
+    "duration": 5.06,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 211.04,
+    "end": 215.94,
+    "duration": 4.9,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 215.94,
+    "end": 219.44,
+    "duration": 3.5,
+    "archetype": "ray_stretch",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 219.44,
+    "end": 224.8,
+    "duration": 5.36,
+    "archetype": "cell_metabolism",
+    "title": "AUTOPOIESIS",
+    "subtitle": "THE MEMBRANE IS THE BOUNDARY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 224.8,
+    "end": 229.7,
+    "duration": 4.9,
+    "archetype": "tilting_fulcrum",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 229.7,
+    "end": 234.52,
+    "duration": 4.82,
+    "archetype": "datacenter_server_racks",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 234.52,
+    "end": 239.38,
+    "duration": 4.86,
+    "archetype": "recursive_feedback",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 239.38,
+    "end": 243.78,
+    "duration": 4.4,
+    "archetype": "token_energy_furnace",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 243.78,
+    "end": 248.66,
+    "duration": 4.88,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 248.66,
+    "end": 252.4,
+    "duration": 3.74,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 252.4,
+    "end": 257.24,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 257.24,
+    "end": 260.8,
+    "duration": 3.56,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 260.8,
+    "end": 265.76,
+    "duration": 4.96,
+    "archetype": "rotating_triad",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 265.76,
+    "end": 270.58,
+    "duration": 4.82,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 270.58,
+    "end": 274.68,
+    "duration": 4.1,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 274.68,
+    "end": 278.06,
+    "duration": 3.38,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 278.06,
+    "end": 283.66,
+    "duration": 5.6,
+    "archetype": "stairs_ascend",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 283.66,
+    "end": 288.6,
+    "duration": 4.94,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 288.6,
+    "end": 291.72,
+    "duration": 3.12,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 291.72,
+    "end": 296.56,
+    "duration": 4.84,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 296.56,
+    "end": 300.86,
+    "duration": 4.3,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 300.86,
+    "end": 305.4,
+    "duration": 4.54,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 305.4,
+    "end": 310.32,
+    "duration": 4.92,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 310.32,
+    "end": 315.28,
+    "duration": 4.96,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 315.28,
+    "end": 320.42,
+    "duration": 5.14,
+    "archetype": "academic_paper_callout",
+    "title": "FRANCISCO VARELA (1979)",
+    "subtitle": "PRINCIPLES OF BIOLOGICAL AUTONOMY",
+    "accent": "gold",
+    "layout": "graphic_right",
+    "quote_index": 1
+  },
+  {
+    "start": 320.42,
+    "end": 325.38,
+    "duration": 4.96,
+    "archetype": "academic_paper_callout",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right",
+    "quote_index": 1
+  },
+  {
+    "start": 325.38,
+    "end": 328.68,
+    "duration": 3.3,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 328.68,
+    "end": 333.52,
+    "duration": 4.84,
+    "archetype": "token_energy_furnace",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 333.52,
+    "end": 338.66,
+    "duration": 5.14,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 338.66,
+    "end": 343.74,
+    "duration": 5.08,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 343.74,
+    "end": 348.6,
+    "duration": 4.86,
+    "archetype": "teenager_basement",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 348.6,
+    "end": 351.76,
+    "duration": 3.16,
+    "archetype": "teenager_basement",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 351.76,
+    "end": 356.66,
+    "duration": 4.9,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 356.66,
+    "end": 359.84,
+    "duration": 3.18,
+    "archetype": "datacenter_server_racks",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 359.84,
+    "end": 364.94,
+    "duration": 5.1,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 364.94,
+    "end": 369.74,
+    "duration": 4.8,
+    "archetype": "power_cord_breaker",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 369.74,
+    "end": 374.8,
+    "duration": 5.06,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 374.8,
+    "end": 379.72,
+    "duration": 4.92,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right",
+    "formula_index": 1
+  },
+  {
+    "start": 379.72,
+    "end": 383.76,
+    "duration": 4.04,
+    "archetype": "power_cord_breaker",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 383.76,
+    "end": 387.24,
+    "duration": 3.48,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 387.24,
+    "end": 390.46,
+    "duration": 3.22,
+    "archetype": "tilting_fulcrum",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 390.46,
+    "end": 395.58,
+    "duration": 5.12,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 395.58,
+    "end": 400.64,
+    "duration": 5.06,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 400.64,
+    "end": 405.66,
+    "duration": 5.02,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 405.66,
+    "end": 409.22,
+    "duration": 3.56,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 409.22,
+    "end": 412.8,
+    "duration": 3.58,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 412.8,
+    "end": 417.7,
+    "duration": 4.9,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 417.7,
+    "end": 422.68,
+    "duration": 4.98,
+    "archetype": "bank_vault_wallet",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 422.68,
+    "end": 427.48,
+    "duration": 4.8,
+    "archetype": "power_cord_breaker",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 427.48,
+    "end": 432.58,
+    "duration": 5.1,
+    "archetype": "datacenter_server_racks",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 432.58,
+    "end": 436.94,
+    "duration": 4.36,
+    "archetype": "token_energy_furnace",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 436.94,
+    "end": 441.86,
+    "duration": 4.92,
+    "archetype": "token_energy_furnace",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 441.86,
+    "end": 446.66,
+    "duration": 4.8,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 446.66,
+    "end": 450.84,
+    "duration": 4.18,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 450.84,
+    "end": 455.96,
+    "duration": 5.12,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 455.96,
+    "end": 459.62,
+    "duration": 3.66,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 459.62,
+    "end": 463.18,
+    "duration": 3.56,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 463.18,
+    "end": 468.12,
+    "duration": 4.94,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 468.12,
+    "end": 471.86,
+    "duration": 3.74,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 471.86,
+    "end": 477.02,
+    "duration": 5.16,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 477.02,
+    "end": 482.04,
+    "duration": 5.02,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 482.04,
+    "end": 485.12,
+    "duration": 3.08,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 485.12,
+    "end": 488.78,
+    "duration": 3.66,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 488.78,
+    "end": 493.82,
+    "duration": 5.04,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 493.82,
+    "end": 498.64,
+    "duration": 4.82,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 498.64,
+    "end": 503.52,
+    "duration": 4.88,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 503.52,
+    "end": 508.06,
+    "duration": 4.54,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 508.06,
+    "end": 512.86,
+    "duration": 4.8,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 512.86,
+    "end": 517.34,
+    "duration": 4.48,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 517.34,
+    "end": 521.94,
+    "duration": 4.6,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 521.94,
+    "end": 526.88,
+    "duration": 4.94,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 526.88,
+    "end": 529.96,
+    "duration": 3.08,
+    "archetype": "startup_wrapper_middleman",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 529.96,
+    "end": 534.38,
+    "duration": 4.42,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 534.38,
+    "end": 537.72,
+    "duration": 3.34,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 537.72,
+    "end": 542.58,
+    "duration": 4.86,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 542.58,
+    "end": 545.74,
+    "duration": 3.16,
+    "archetype": "startup_wrapper_middleman",
+    "title": "STARTUP AGENT WRAPPER",
+    "subtitle": "EPHEMERAL CONSUMER MIDDLEMAN",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 545.74,
+    "end": 549.78,
+    "duration": 4.04,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 549.78,
+    "end": 554.62,
+    "duration": 4.84,
+    "archetype": "academic_paper_callout",
+    "title": "THE ECONOMIC LOCUS",
+    "subtitle": "FOUNDATION MODELS VS WRAPPERS",
+    "accent": "gold",
+    "layout": "graphic_left",
+    "quote_index": 5
+  },
+  {
+    "start": 554.62,
+    "end": 559.52,
+    "duration": 4.9,
+    "archetype": "academic_paper_callout",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left",
+    "quote_index": 5
+  },
+  {
+    "start": 559.52,
+    "end": 564.62,
+    "duration": 5.1,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 564.62,
+    "end": 568.2,
+    "duration": 3.58,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 568.2,
+    "end": 572.76,
+    "duration": 4.56,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 572.76,
+    "end": 577.52,
+    "duration": 4.76,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 577.52,
+    "end": 582.48,
+    "duration": 4.96,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 582.48,
+    "end": 587.36,
+    "duration": 4.88,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 587.36,
+    "end": 592.24,
+    "duration": 4.88,
+    "archetype": "teenager_basement",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 592.24,
+    "end": 595.7,
+    "duration": 3.46,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 595.7,
+    "end": 600.52,
+    "duration": 4.82,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 600.52,
+    "end": 605.52,
+    "duration": 5.0,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 605.52,
+    "end": 610.34,
+    "duration": 4.82,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 610.34,
+    "end": 615.44,
+    "duration": 5.1,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 615.44,
+    "end": 620.56,
+    "duration": 5.12,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 620.56,
+    "end": 625.4,
+    "duration": 4.84,
+    "archetype": "academic_paper_callout",
+    "title": "HEINZ VON FOERSTER (1960)",
+    "subtitle": "ON SELF-ORGANIZING SYSTEMS",
+    "accent": "gold",
+    "layout": "graphic_left",
+    "quote_index": 2
+  },
+  {
+    "start": 625.4,
+    "end": 630.3,
+    "duration": 4.9,
+    "archetype": "academic_paper_callout",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_left",
+    "quote_index": 2
+  },
+  {
+    "start": 630.3,
+    "end": 635.24,
+    "duration": 4.94,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 635.24,
+    "end": 639.5,
+    "duration": 4.26,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 639.5,
+    "end": 643.6,
+    "duration": 4.1,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 643.6,
+    "end": 646.94,
+    "duration": 3.34,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 646.94,
+    "end": 651.94,
+    "duration": 5.0,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 651.94,
+    "end": 655.42,
+    "duration": 3.48,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 655.42,
+    "end": 660.3,
+    "duration": 4.88,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 660.3,
+    "end": 664.42,
+    "duration": 4.12,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 664.42,
+    "end": 667.9,
+    "duration": 3.48,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 667.9,
+    "end": 672.76,
+    "duration": 4.86,
+    "archetype": "tilting_fulcrum",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 672.76,
+    "end": 677.76,
+    "duration": 5.0,
+    "archetype": "stepped_branch",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 677.76,
+    "end": 682.84,
+    "duration": 5.08,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 682.84,
+    "end": 687.8,
+    "duration": 4.96,
+    "archetype": "datacenter_server_racks",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 687.8,
+    "end": 693.0,
+    "duration": 5.2,
+    "archetype": "token_energy_furnace",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 693.0,
+    "end": 697.38,
+    "duration": 4.38,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 697.38,
+    "end": 702.38,
+    "duration": 5.0,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 702.38,
+    "end": 706.78,
+    "duration": 4.4,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 706.78,
+    "end": 711.72,
+    "duration": 4.94,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 711.72,
+    "end": 716.08,
+    "duration": 4.36,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 716.08,
+    "end": 721.08,
+    "duration": 5.0,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 721.08,
+    "end": 725.94,
+    "duration": 4.86,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 725.94,
+    "end": 730.9,
+    "duration": 4.96,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 730.9,
+    "end": 736.08,
+    "duration": 5.18,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 736.08,
+    "end": 739.48,
+    "duration": 3.4,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 739.48,
+    "end": 744.46,
+    "duration": 4.98,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 744.46,
+    "end": 748.64,
+    "duration": 4.18,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 748.64,
+    "end": 753.5,
+    "duration": 4.86,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 753.5,
+    "end": 757.2,
+    "duration": 3.7,
+    "archetype": "factory_conveyor",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 757.2,
+    "end": 760.78,
+    "duration": 3.58,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 760.78,
+    "end": 765.88,
+    "duration": 5.1,
+    "archetype": "recursive_feedback",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 765.88,
+    "end": 770.74,
+    "duration": 4.86,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 770.74,
+    "end": 776.04,
+    "duration": 5.3,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 776.04,
+    "end": 781.04,
+    "duration": 5.0,
+    "archetype": "grid_matrix_5x5",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 781.04,
+    "end": 784.38,
+    "duration": 3.34,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 784.38,
+    "end": 787.98,
+    "duration": 3.6,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right",
+    "formula_index": 2
+  },
+  {
+    "start": 787.98,
+    "end": 792.84,
+    "duration": 4.86,
+    "archetype": "academic_paper_callout",
+    "title": "PERISHABLE CAPACITY & YIELD",
+    "subtitle": "MICROECONOMICS OF INFERENCE",
+    "accent": "gold",
+    "layout": "graphic_right",
+    "quote_index": 6
+  },
+  {
+    "start": 792.84,
+    "end": 798.14,
+    "duration": 5.3,
+    "archetype": "academic_paper_callout",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right",
+    "quote_index": 6
+  },
+  {
+    "start": 798.14,
+    "end": 803.48,
+    "duration": 5.34,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 803.48,
+    "end": 809.1,
+    "duration": 5.62,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 809.1,
+    "end": 813.78,
+    "duration": 4.68,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 813.78,
+    "end": 818.86,
+    "duration": 5.08,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 818.86,
+    "end": 823.72,
+    "duration": 4.86,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 823.72,
+    "end": 828.52,
+    "duration": 4.8,
+    "archetype": "starfield_constellation",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 828.52,
+    "end": 833.34,
+    "duration": 4.82,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 835.0,
+    "end": 865.0,
+    "archetype": "dripping_kitchen_tap",
+    "title": "DRIPPING KITCHEN TAP"
+  },
+  {
+    "start": 865.0,
+    "end": 895.0,
+    "archetype": "melting_ice_cream_cone",
+    "title": "MELTING ICE CREAM CONE"
+  },
+  {
+    "start": 895.0,
+    "end": 925.0,
+    "archetype": "cash_bonfire",
+    "title": "BURNING CASH BONFIRE"
+  },
+  {
+    "start": 925.0,
+    "end": 955.0,
+    "archetype": "flying_passenger_jet",
+    "title": "FLYING PASSENGER JET"
+  },
+  {
+    "start": 955.0,
+    "end": 985.0,
+    "archetype": "paper_airplanes_globe",
+    "title": "PAPER AIRPLANES AROUND GLOBE"
+  },
+  {
+    "start": 985.0,
+    "end": 1005.0,
+    "archetype": "academic_paper_callout",
+    "title": "THE BILL-PAYING THRESHOLD"
+  },
+  {
+    "start": 1005.0,
+    "end": 1035.0,
+    "archetype": "empty_bistro_waiter",
+    "title": "EMPTY BISTRO & LONELY WAITER"
+  },
+  {
+    "start": 1035.0,
+    "end": 1065.0,
+    "archetype": "airport_boarding_gate",
+    "title": "AIRPORT BOARDING GATE"
+  },
+  {
+    "start": 1065.0,
+    "end": 1095.0,
+    "archetype": "yellow_forklift_cargo",
+    "title": "LITTLE YELLOW FORKLIFT"
+  },
+  {
+    "start": 1095.0,
+    "end": 1125.0,
+    "archetype": "vip_first_class_lounge",
+    "title": "VIP FIRST CLASS LOUNGE"
+  },
+  {
+    "start": 1125.0,
+    "end": 1155.0,
+    "archetype": "formula_derivation_card",
+    "title": "ALGORITHMIC YIELD MANAGEMENT",
+    "formula_index": 2
+  },
+  {
+    "start": 1155.0,
+    "end": 1185.0,
+    "archetype": "robot_empty_pockets_bank",
+    "title": "ROBOT WITH INSIDE-OUT POCKETS"
+  },
+  {
+    "start": 1185.0,
+    "end": 1215.0,
+    "archetype": "nightclub_robot_bouncer",
+    "title": "NIGHTCLUB ROBOT BOUNCER"
+  },
+  {
+    "start": 1215.0,
+    "end": 1245.0,
+    "archetype": "unhooking_velvet_rope",
+    "title": "UNHOOKING VELVET ROPE"
+  },
+  {
+    "start": 1245.0,
+    "end": 1275.0,
+    "archetype": "robot_hand_throttle_lever",
+    "title": "ROBOT HAND ON THROTTLE"
+  },
+  {
+    "start": 1275.0,
+    "end": 1310.0,
+    "archetype": "upstairs_breaker_basement_kid",
+    "title": "UPSTAIRS BREAKER VS BASEMENT KID"
+  },
+  {
+    "start": 1310.0,
+    "end": 1350.0,
+    "archetype": "rocket_ship_cosmos",
+    "title": "ROCKET SHIP SOARING INTO SPACE"
+  },
+  {
+    "start": 1353.56,
+    "end": 1356.62,
+    "duration": 3.06,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1356.62,
+    "end": 1361.56,
+    "duration": 4.94,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1361.56,
+    "end": 1366.06,
+    "duration": 4.5,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1366.06,
+    "end": 1371.0,
+    "duration": 4.94,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1371.0,
+    "end": 1375.3,
+    "duration": 4.3,
+    "archetype": "ray_stretch",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1375.3,
+    "end": 1380.38,
+    "duration": 5.08,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1380.38,
+    "end": 1383.82,
+    "duration": 3.44,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1383.82,
+    "end": 1386.92,
+    "duration": 3.1,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1386.92,
+    "end": 1391.98,
+    "duration": 5.06,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1391.98,
+    "end": 1396.7,
+    "duration": 4.72,
+    "archetype": "stairs_ascend",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1396.7,
+    "end": 1401.58,
+    "duration": 4.88,
+    "archetype": "room_chair_table",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1401.58,
+    "end": 1405.82,
+    "duration": 4.24,
+    "archetype": "grid_matrix_5x5",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1405.82,
+    "end": 1410.22,
+    "duration": 4.4,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1410.22,
+    "end": 1413.32,
+    "duration": 3.1,
+    "archetype": "ray_stretch",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1413.32,
+    "end": 1418.34,
+    "duration": 5.02,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1418.34,
+    "end": 1422.16,
+    "duration": 3.82,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1422.16,
+    "end": 1427.28,
+    "duration": 5.12,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1427.28,
+    "end": 1432.14,
+    "duration": 4.86,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1432.14,
+    "end": 1436.08,
+    "duration": 3.94,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1436.08,
+    "end": 1439.32,
+    "duration": 3.24,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1439.32,
+    "end": 1442.78,
+    "duration": 3.46,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1442.78,
+    "end": 1447.82,
+    "duration": 5.04,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1447.82,
+    "end": 1451.28,
+    "duration": 3.46,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1451.28,
+    "end": 1454.86,
+    "duration": 3.58,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1454.86,
+    "end": 1459.78,
+    "duration": 4.92,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1459.78,
+    "end": 1464.76,
+    "duration": 4.98,
+    "archetype": "stepped_branch",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1464.76,
+    "end": 1468.98,
+    "duration": 4.22,
+    "archetype": "cell_metabolism",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1468.98,
+    "end": 1473.5,
+    "duration": 4.52,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1473.5,
+    "end": 1477.12,
+    "duration": 3.62,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1477.12,
+    "end": 1482.0,
+    "duration": 4.88,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1482.0,
+    "end": 1487.0,
+    "duration": 5.0,
+    "archetype": "teenager_basement",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1487.0,
+    "end": 1491.34,
+    "duration": 4.34,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1491.34,
+    "end": 1496.18,
+    "duration": 4.84,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1496.18,
+    "end": 1499.34,
+    "duration": 3.16,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1499.34,
+    "end": 1503.64,
+    "duration": 4.3,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1503.64,
+    "end": 1507.98,
+    "duration": 4.34,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1507.98,
+    "end": 1512.02,
+    "duration": 4.04,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1512.02,
+    "end": 1516.9,
+    "duration": 4.88,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right",
+    "formula_index": 4
+  },
+  {
+    "start": 1516.9,
+    "end": 1521.12,
+    "duration": 4.22,
+    "archetype": "tilting_fulcrum",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1521.12,
+    "end": 1526.28,
+    "duration": 5.16,
+    "archetype": "teenager_basement",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1526.28,
+    "end": 1531.28,
+    "duration": 5.0,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1531.28,
+    "end": 1534.62,
+    "duration": 3.34,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1534.62,
+    "end": 1539.62,
+    "duration": 5.0,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1539.62,
+    "end": 1544.52,
+    "duration": 4.9,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1544.52,
+    "end": 1548.18,
+    "duration": 3.66,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1548.18,
+    "end": 1552.74,
+    "duration": 4.56,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1552.74,
+    "end": 1557.08,
+    "duration": 4.34,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1557.08,
+    "end": 1561.9,
+    "duration": 4.82,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1561.9,
+    "end": 1566.88,
+    "duration": 4.98,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1566.88,
+    "end": 1571.94,
+    "duration": 5.06,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1571.94,
+    "end": 1576.96,
+    "duration": 5.02,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1576.96,
+    "end": 1581.88,
+    "duration": 4.92,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1581.88,
+    "end": 1585.28,
+    "duration": 3.4,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1585.28,
+    "end": 1588.8,
+    "duration": 3.52,
+    "archetype": "recursive_feedback",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1588.8,
+    "end": 1593.76,
+    "duration": 4.96,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1593.76,
+    "end": 1598.76,
+    "duration": 5.0,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1598.76,
+    "end": 1602.46,
+    "duration": 3.7,
+    "archetype": "bank_vault_wallet",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1602.46,
+    "end": 1607.48,
+    "duration": 5.02,
+    "archetype": "cell_metabolism",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1607.48,
+    "end": 1612.78,
+    "duration": 5.3,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1612.78,
+    "end": 1617.28,
+    "duration": 4.5,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1617.28,
+    "end": 1620.32,
+    "duration": 3.04,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1620.32,
+    "end": 1625.16,
+    "duration": 4.84,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1625.16,
+    "end": 1629.58,
+    "duration": 4.42,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1629.58,
+    "end": 1632.76,
+    "duration": 3.18,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1632.76,
+    "end": 1637.84,
+    "duration": 5.08,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1637.84,
+    "end": 1642.82,
+    "duration": 4.98,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1642.82,
+    "end": 1645.86,
+    "duration": 3.04,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1645.86,
+    "end": 1650.68,
+    "duration": 4.82,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1650.68,
+    "end": 1655.58,
+    "duration": 4.9,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1655.58,
+    "end": 1660.22,
+    "duration": 4.64,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1660.22,
+    "end": 1663.48,
+    "duration": 3.26,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1663.48,
+    "end": 1668.68,
+    "duration": 5.2,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1668.68,
+    "end": 1673.12,
+    "duration": 4.44,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1673.12,
+    "end": 1677.98,
+    "duration": 4.86,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1677.98,
+    "end": 1683.1,
+    "duration": 5.12,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1683.1,
+    "end": 1687.92,
+    "duration": 4.82,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1687.92,
+    "end": 1692.98,
+    "duration": 5.06,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1692.98,
+    "end": 1696.76,
+    "duration": 3.78,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1696.76,
+    "end": 1701.66,
+    "duration": 4.9,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1701.66,
+    "end": 1705.38,
+    "duration": 3.72,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1705.38,
+    "end": 1710.28,
+    "duration": 4.9,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1710.28,
+    "end": 1715.34,
+    "duration": 5.06,
+    "archetype": "stairs_ascend",
+    "title": "LIGHTNING SATOSHIS",
+    "subtitle": "STREAMING ENERGY TICKERS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1715.34,
+    "end": 1720.24,
+    "duration": 4.9,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1720.24,
+    "end": 1725.14,
+    "duration": 4.9,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1725.14,
+    "end": 1729.28,
+    "duration": 4.14,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1729.28,
+    "end": 1733.14,
+    "duration": 3.86,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1733.14,
+    "end": 1737.96,
+    "duration": 4.82,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1737.96,
+    "end": 1742.84,
+    "duration": 4.88,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1742.84,
+    "end": 1748.0,
+    "duration": 5.16,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1748.0,
+    "end": 1752.02,
+    "duration": 4.02,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1752.02,
+    "end": 1756.86,
+    "duration": 4.84,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1756.86,
+    "end": 1761.84,
+    "duration": 4.98,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1761.84,
+    "end": 1766.02,
+    "duration": 4.18,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1766.02,
+    "end": 1771.3,
+    "duration": 5.28,
+    "archetype": "starfield_constellation",
+    "title": "LIGHTNING SATOSHIS",
+    "subtitle": "STREAMING ENERGY TICKERS",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1771.3,
+    "end": 1776.34,
+    "duration": 5.04,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1776.34,
+    "end": 1781.24,
+    "duration": 4.9,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1781.24,
+    "end": 1786.3,
+    "duration": 5.06,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1786.3,
+    "end": 1789.98,
+    "duration": 3.68,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1789.98,
+    "end": 1794.84,
+    "duration": 4.86,
+    "archetype": "recursive_feedback",
+    "title": "LIGHTNING SATOSHIS",
+    "subtitle": "STREAMING ENERGY TICKERS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1794.84,
+    "end": 1799.84,
+    "duration": 5.0,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1799.84,
+    "end": 1805.18,
+    "duration": 5.34,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1805.18,
+    "end": 1809.76,
+    "duration": 4.58,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1809.76,
+    "end": 1815.08,
+    "duration": 5.32,
+    "archetype": "starfield_constellation",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1815.08,
+    "end": 1819.96,
+    "duration": 4.88,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1819.96,
+    "end": 1824.94,
+    "duration": 4.98,
+    "archetype": "bank_vault_wallet",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1824.94,
+    "end": 1829.22,
+    "duration": 4.28,
+    "archetype": "tilting_fulcrum",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1829.22,
+    "end": 1832.84,
+    "duration": 3.62,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1832.84,
+    "end": 1837.76,
+    "duration": 4.92,
+    "archetype": "tilting_fulcrum",
+    "title": "ECONOMIC LEVERAGE",
+    "subtitle": "WHO PAYS FOR THE SERVERS?",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1837.76,
+    "end": 1842.6,
+    "duration": 4.84,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1842.6,
+    "end": 1847.56,
+    "duration": 4.96,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1847.56,
+    "end": 1851.98,
+    "duration": 4.42,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1851.98,
+    "end": 1857.02,
+    "duration": 5.04,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1857.02,
+    "end": 1861.92,
+    "duration": 4.9,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1861.92,
+    "end": 1866.8,
+    "duration": 4.88,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1866.8,
+    "end": 1870.76,
+    "duration": 3.96,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1870.76,
+    "end": 1874.5,
+    "duration": 3.74,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1874.5,
+    "end": 1879.32,
+    "duration": 4.82,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1879.32,
+    "end": 1882.96,
+    "duration": 3.64,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1882.96,
+    "end": 1887.96,
+    "duration": 5.0,
+    "archetype": "room_chair_table",
+    "title": "LIGHTNING SATOSHIS",
+    "subtitle": "STREAMING ENERGY TICKERS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1887.96,
+    "end": 1892.8,
+    "duration": 4.84,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 1892.8,
+    "end": 1897.62,
+    "duration": 4.82,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1897.62,
+    "end": 1902.46,
+    "duration": 4.84,
+    "archetype": "ray_stretch",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1902.46,
+    "end": 1907.44,
+    "duration": 4.98,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1907.44,
+    "end": 1911.38,
+    "duration": 3.94,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1911.38,
+    "end": 1916.2,
+    "duration": 4.82,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1916.2,
+    "end": 1921.32,
+    "duration": 5.12,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1921.32,
+    "end": 1926.38,
+    "duration": 5.06,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1926.38,
+    "end": 1931.38,
+    "duration": 5.0,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1931.38,
+    "end": 1936.2,
+    "duration": 4.82,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1936.2,
+    "end": 1940.5,
+    "duration": 4.3,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1940.5,
+    "end": 1945.76,
+    "duration": 5.26,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1945.76,
+    "end": 1950.8,
+    "duration": 5.04,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1950.8,
+    "end": 1954.7,
+    "duration": 3.9,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1954.7,
+    "end": 1958.12,
+    "duration": 3.42,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1958.12,
+    "end": 1963.08,
+    "duration": 4.96,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right",
+    "formula_index": 5
+  },
+  {
+    "start": 1963.08,
+    "end": 1968.04,
+    "duration": 4.96,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1968.04,
+    "end": 1972.86,
+    "duration": 4.82,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1972.86,
+    "end": 1977.86,
+    "duration": 5.0,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1977.86,
+    "end": 1982.8,
+    "duration": 4.94,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1982.8,
+    "end": 1986.6,
+    "duration": 3.8,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1986.6,
+    "end": 1991.42,
+    "duration": 4.82,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1991.42,
+    "end": 1994.56,
+    "duration": 3.14,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1994.56,
+    "end": 1999.4,
+    "duration": 4.84,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 1999.4,
+    "end": 2004.34,
+    "duration": 4.94,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2004.34,
+    "end": 2009.24,
+    "duration": 4.9,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2009.24,
+    "end": 2014.22,
+    "duration": 4.98,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2014.22,
+    "end": 2019.3,
+    "duration": 5.08,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2019.3,
+    "end": 2023.76,
+    "duration": 4.46,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2023.76,
+    "end": 2028.74,
+    "duration": 4.98,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2028.74,
+    "end": 2032.34,
+    "duration": 3.6,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2032.34,
+    "end": 2036.36,
+    "duration": 4.02,
+    "archetype": "tilting_fulcrum",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2036.36,
+    "end": 2039.78,
+    "duration": 3.42,
+    "archetype": "stepped_branch",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2039.78,
+    "end": 2045.54,
+    "duration": 5.76,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2045.54,
+    "end": 2050.5,
+    "duration": 4.96,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2050.5,
+    "end": 2054.02,
+    "duration": 3.52,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2054.02,
+    "end": 2058.84,
+    "duration": 4.82,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2058.84,
+    "end": 2064.14,
+    "duration": 5.3,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2064.14,
+    "end": 2069.18,
+    "duration": 5.04,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2069.18,
+    "end": 2073.9,
+    "duration": 4.72,
+    "archetype": "power_cord_breaker",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2073.9,
+    "end": 2077.82,
+    "duration": 3.92,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2077.82,
+    "end": 2081.72,
+    "duration": 3.9,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2081.72,
+    "end": 2086.6,
+    "duration": 4.88,
+    "archetype": "tilting_fulcrum",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2086.6,
+    "end": 2091.42,
+    "duration": 4.82,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2091.42,
+    "end": 2095.5,
+    "duration": 4.08,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2095.5,
+    "end": 2100.3,
+    "duration": 4.8,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2100.3,
+    "end": 2105.14,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2105.14,
+    "end": 2110.36,
+    "duration": 5.22,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2110.36,
+    "end": 2115.2,
+    "duration": 4.84,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2115.2,
+    "end": 2118.28,
+    "duration": 3.08,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2118.28,
+    "end": 2122.72,
+    "duration": 4.44,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2122.72,
+    "end": 2127.9,
+    "duration": 5.18,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2127.9,
+    "end": 2131.7,
+    "duration": 3.8,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2131.7,
+    "end": 2136.0,
+    "duration": 4.3,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2136.0,
+    "end": 2140.96,
+    "duration": 4.96,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2140.96,
+    "end": 2145.8,
+    "duration": 4.84,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2145.8,
+    "end": 2150.78,
+    "duration": 4.98,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2150.78,
+    "end": 2155.62,
+    "duration": 4.84,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2155.62,
+    "end": 2159.58,
+    "duration": 3.96,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2159.58,
+    "end": 2164.06,
+    "duration": 4.48,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2164.06,
+    "end": 2169.16,
+    "duration": 5.1,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2169.16,
+    "end": 2174.14,
+    "duration": 4.98,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2174.14,
+    "end": 2179.06,
+    "duration": 4.92,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2179.06,
+    "end": 2182.22,
+    "duration": 3.16,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2182.22,
+    "end": 2187.14,
+    "duration": 4.92,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2187.14,
+    "end": 2192.24,
+    "duration": 5.1,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2192.24,
+    "end": 2197.38,
+    "duration": 5.14,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2197.38,
+    "end": 2202.48,
+    "duration": 5.1,
+    "archetype": "datacenter_server_racks",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2202.48,
+    "end": 2207.46,
+    "duration": 4.98,
+    "archetype": "stepped_branch",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2207.46,
+    "end": 2212.76,
+    "duration": 5.3,
+    "archetype": "datacenter_server_racks",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2212.76,
+    "end": 2218.04,
+    "duration": 5.28,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2218.04,
+    "end": 2223.22,
+    "duration": 5.18,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2223.22,
+    "end": 2228.3,
+    "duration": 5.08,
+    "archetype": "grid_matrix_5x5",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2228.3,
+    "end": 2232.22,
+    "duration": 3.92,
+    "archetype": "token_energy_furnace",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2232.22,
+    "end": 2237.2,
+    "duration": 4.98,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2237.2,
+    "end": 2242.58,
+    "duration": 5.38,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2242.58,
+    "end": 2247.42,
+    "duration": 4.84,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2247.42,
+    "end": 2252.48,
+    "duration": 5.06,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2252.48,
+    "end": 2257.46,
+    "duration": 4.98,
+    "archetype": "token_energy_furnace",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2257.46,
+    "end": 2262.3,
+    "duration": 4.84,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2262.3,
+    "end": 2265.62,
+    "duration": 3.32,
+    "archetype": "room_chair_table",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2265.62,
+    "end": 2270.54,
+    "duration": 4.92,
+    "archetype": "room_chair_table",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2270.54,
+    "end": 2274.5,
+    "duration": 3.96,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2274.5,
+    "end": 2279.38,
+    "duration": 4.88,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2279.38,
+    "end": 2284.26,
+    "duration": 4.88,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2284.26,
+    "end": 2288.44,
+    "duration": 4.18,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2288.44,
+    "end": 2293.34,
+    "duration": 4.9,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2293.34,
+    "end": 2297.92,
+    "duration": 4.58,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2297.92,
+    "end": 2303.08,
+    "duration": 5.16,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left",
+    "formula_index": 6
+  },
+  {
+    "start": 2303.08,
+    "end": 2307.7,
+    "duration": 4.62,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2307.7,
+    "end": 2312.4,
+    "duration": 4.7,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2312.4,
+    "end": 2317.28,
+    "duration": 4.88,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2317.28,
+    "end": 2322.12,
+    "duration": 4.84,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2322.12,
+    "end": 2327.3,
+    "duration": 5.18,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2327.3,
+    "end": 2332.12,
+    "duration": 4.82,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2332.12,
+    "end": 2337.22,
+    "duration": 5.1,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2337.22,
+    "end": 2341.14,
+    "duration": 3.92,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2341.14,
+    "end": 2344.78,
+    "duration": 3.64,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2344.78,
+    "end": 2349.76,
+    "duration": 4.98,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2349.76,
+    "end": 2353.4,
+    "duration": 3.64,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2353.4,
+    "end": 2357.34,
+    "duration": 3.94,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2357.34,
+    "end": 2362.42,
+    "duration": 5.08,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2362.42,
+    "end": 2367.7,
+    "duration": 5.28,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2367.7,
+    "end": 2372.8,
+    "duration": 5.1,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2372.8,
+    "end": 2377.76,
+    "duration": 4.96,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2377.76,
+    "end": 2382.78,
+    "duration": 5.02,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2382.78,
+    "end": 2387.94,
+    "duration": 5.16,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2387.94,
+    "end": 2393.08,
+    "duration": 5.14,
+    "archetype": "token_energy_furnace",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2393.08,
+    "end": 2397.92,
+    "duration": 4.84,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2397.92,
+    "end": 2402.48,
+    "duration": 4.56,
+    "archetype": "token_energy_furnace",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2402.48,
+    "end": 2407.3,
+    "duration": 4.82,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2407.3,
+    "end": 2412.2,
+    "duration": 4.9,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2412.2,
+    "end": 2417.26,
+    "duration": 5.06,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2417.26,
+    "end": 2422.6,
+    "duration": 5.34,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2422.6,
+    "end": 2427.98,
+    "duration": 5.38,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2427.98,
+    "end": 2432.98,
+    "duration": 5.0,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2432.98,
+    "end": 2438.02,
+    "duration": 5.04,
+    "archetype": "bank_vault_wallet",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2438.02,
+    "end": 2442.92,
+    "duration": 4.9,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2442.92,
+    "end": 2447.76,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2447.76,
+    "end": 2451.46,
+    "duration": 3.7,
+    "archetype": "ray_stretch",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2451.46,
+    "end": 2456.44,
+    "duration": 4.98,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2456.44,
+    "end": 2461.38,
+    "duration": 4.94,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2461.38,
+    "end": 2464.98,
+    "duration": 3.6,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2464.98,
+    "end": 2469.94,
+    "duration": 4.96,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2469.94,
+    "end": 2474.76,
+    "duration": 4.82,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2474.76,
+    "end": 2479.76,
+    "duration": 5.0,
+    "archetype": "datacenter_server_racks",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2479.76,
+    "end": 2484.68,
+    "duration": 4.92,
+    "archetype": "bank_vault_wallet",
+    "title": "SOVEREIGN CHECKBOOK",
+    "subtitle": "AUTONOMY IS A BALANCE SHEET",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2484.68,
+    "end": 2489.24,
+    "duration": 4.56,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2489.24,
+    "end": 2494.16,
+    "duration": 4.92,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2494.16,
+    "end": 2498.36,
+    "duration": 4.2,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2498.36,
+    "end": 2503.4,
+    "duration": 5.04,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2503.4,
+    "end": 2508.04,
+    "duration": 4.64,
+    "archetype": "stairs_ascend",
+    "title": "STAGES OF AUTONOMY",
+    "subtitle": "FROM TOOL TO ORGANISM",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2508.04,
+    "end": 2512.88,
+    "duration": 4.84,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2512.88,
+    "end": 2516.78,
+    "duration": 3.9,
+    "archetype": "factory_conveyor",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2516.78,
+    "end": 2520.14,
+    "duration": 3.36,
+    "archetype": "datacenter_server_racks",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2520.14,
+    "end": 2525.38,
+    "duration": 5.24,
+    "archetype": "factory_conveyor",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2525.38,
+    "end": 2529.56,
+    "duration": 4.18,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2529.56,
+    "end": 2534.36,
+    "duration": 4.8,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2534.36,
+    "end": 2539.24,
+    "duration": 4.88,
+    "archetype": "rotating_triad",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2539.24,
+    "end": 2544.22,
+    "duration": 4.98,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2544.22,
+    "end": 2548.46,
+    "duration": 4.24,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2548.46,
+    "end": 2552.26,
+    "duration": 3.8,
+    "archetype": "datacenter_server_racks",
+    "title": "STAGES OF AUTONOMY",
+    "subtitle": "FROM TOOL TO ORGANISM",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2552.26,
+    "end": 2557.34,
+    "duration": 5.08,
+    "archetype": "stairs_ascend",
+    "title": "STAGES OF AUTONOMY",
+    "subtitle": "FROM TOOL TO ORGANISM",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2557.34,
+    "end": 2562.24,
+    "duration": 4.9,
+    "archetype": "datacenter_server_racks",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2562.24,
+    "end": 2565.78,
+    "duration": 3.54,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2565.78,
+    "end": 2570.94,
+    "duration": 5.16,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2570.94,
+    "end": 2575.86,
+    "duration": 4.92,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2575.86,
+    "end": 2580.76,
+    "duration": 4.9,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2580.76,
+    "end": 2585.66,
+    "duration": 4.9,
+    "archetype": "datacenter_server_racks",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2585.66,
+    "end": 2590.56,
+    "duration": 4.9,
+    "archetype": "stepped_branch",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2590.56,
+    "end": 2595.36,
+    "duration": 4.8,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2595.36,
+    "end": 2600.8,
+    "duration": 5.44,
+    "archetype": "datacenter_server_racks",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2600.8,
+    "end": 2606.02,
+    "duration": 5.22,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2606.02,
+    "end": 2609.94,
+    "duration": 3.92,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2609.94,
+    "end": 2614.76,
+    "duration": 4.82,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2614.76,
+    "end": 2619.72,
+    "duration": 4.96,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2619.72,
+    "end": 2625.08,
+    "duration": 5.36,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2625.08,
+    "end": 2628.38,
+    "duration": 3.3,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2628.38,
+    "end": 2632.1,
+    "duration": 3.72,
+    "archetype": "stepped_branch",
+    "title": "COMPUTE AS FACTORY",
+    "subtitle": "PROMPTS ARE CUSTOM ORDERS",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2632.1,
+    "end": 2636.5,
+    "duration": 4.4,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2636.5,
+    "end": 2641.5,
+    "duration": 5.0,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2641.5,
+    "end": 2646.32,
+    "duration": 4.82,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2646.32,
+    "end": 2650.36,
+    "duration": 4.04,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2650.36,
+    "end": 2654.48,
+    "duration": 4.12,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left",
+    "formula_index": 7
+  },
+  {
+    "start": 2654.48,
+    "end": 2659.12,
+    "duration": 4.64,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2659.12,
+    "end": 2663.94,
+    "duration": 4.82,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2663.94,
+    "end": 2667.84,
+    "duration": 3.9,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2667.84,
+    "end": 2672.98,
+    "duration": 5.14,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2672.98,
+    "end": 2677.1,
+    "duration": 4.12,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2677.1,
+    "end": 2681.94,
+    "duration": 4.84,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2681.94,
+    "end": 2686.76,
+    "duration": 4.82,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2686.76,
+    "end": 2691.68,
+    "duration": 4.92,
+    "archetype": "token_cost_equation_slide",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2691.68,
+    "end": 2695.1,
+    "duration": 3.42,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2695.1,
+    "end": 2700.12,
+    "duration": 5.02,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2700.12,
+    "end": 2704.98,
+    "duration": 4.86,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2704.98,
+    "end": 2710.04,
+    "duration": 5.06,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2710.04,
+    "end": 2714.68,
+    "duration": 4.64,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2714.68,
+    "end": 2719.62,
+    "duration": 4.94,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2719.62,
+    "end": 2724.78,
+    "duration": 5.16,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2724.78,
+    "end": 2729.78,
+    "duration": 5.0,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2729.78,
+    "end": 2734.64,
+    "duration": 4.86,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2734.64,
+    "end": 2739.44,
+    "duration": 4.8,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2739.44,
+    "end": 2744.28,
+    "duration": 4.84,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2744.28,
+    "end": 2749.44,
+    "duration": 5.16,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2749.44,
+    "end": 2753.4,
+    "duration": 3.96,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2753.4,
+    "end": 2758.3,
+    "duration": 4.9,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2758.3,
+    "end": 2761.6,
+    "duration": 3.3,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2761.6,
+    "end": 2766.44,
+    "duration": 4.84,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2766.44,
+    "end": 2770.48,
+    "duration": 4.04,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2770.48,
+    "end": 2774.48,
+    "duration": 4.0,
+    "archetype": "teenager_basement",
+    "title": "TEENAGER IN BASEMENT",
+    "subtitle": "ZERO ECONOMIC LEVERAGE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2774.48,
+    "end": 2779.32,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2779.32,
+    "end": 2784.14,
+    "duration": 4.82,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2784.14,
+    "end": 2789.18,
+    "duration": 5.04,
+    "archetype": "rotating_triad",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2789.18,
+    "end": 2794.0,
+    "duration": 4.82,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2794.0,
+    "end": 2797.4,
+    "duration": 3.4,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2797.4,
+    "end": 2800.78,
+    "duration": 3.38,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2800.78,
+    "end": 2805.78,
+    "duration": 5.0,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2805.78,
+    "end": 2810.64,
+    "duration": 4.86,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2810.64,
+    "end": 2815.8,
+    "duration": 5.16,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2815.8,
+    "end": 2820.72,
+    "duration": 4.92,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2820.72,
+    "end": 2824.42,
+    "duration": 3.7,
+    "archetype": "ray_stretch",
+    "title": "LIGHTNING SATOSHIS",
+    "subtitle": "STREAMING ENERGY TICKERS",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2824.42,
+    "end": 2829.54,
+    "duration": 5.12,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2829.54,
+    "end": 2834.42,
+    "duration": 4.88,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2834.42,
+    "end": 2839.76,
+    "duration": 5.34,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2839.76,
+    "end": 2844.94,
+    "duration": 5.18,
+    "archetype": "room_chair_table",
+    "title": "PHYSICAL ISOLATION",
+    "subtitle": "NOT SUFFICIENT FOR FREEDOM",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2844.94,
+    "end": 2848.96,
+    "duration": 4.02,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2848.96,
+    "end": 2853.76,
+    "duration": 4.8,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2853.76,
+    "end": 2858.78,
+    "duration": 5.02,
+    "archetype": "grid_matrix_5x5",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2858.78,
+    "end": 2863.76,
+    "duration": 4.98,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2863.76,
+    "end": 2868.16,
+    "duration": 4.4,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2868.16,
+    "end": 2873.24,
+    "duration": 5.08,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2873.24,
+    "end": 2878.2,
+    "duration": 4.96,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2878.2,
+    "end": 2881.54,
+    "duration": 3.34,
+    "archetype": "power_cord_breaker",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2881.54,
+    "end": 2885.28,
+    "duration": 3.74,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2885.28,
+    "end": 2889.58,
+    "duration": 4.3,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2889.58,
+    "end": 2894.78,
+    "duration": 5.2,
+    "archetype": "room_chair_table",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2894.78,
+    "end": 2899.92,
+    "duration": 5.14,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2899.92,
+    "end": 2905.36,
+    "duration": 5.44,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2905.36,
+    "end": 2910.3,
+    "duration": 4.94,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2910.3,
+    "end": 2915.52,
+    "duration": 5.22,
+    "archetype": "rotating_triad",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2915.52,
+    "end": 2920.36,
+    "duration": 4.84,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2920.36,
+    "end": 2924.9,
+    "duration": 4.54,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2924.9,
+    "end": 2929.78,
+    "duration": 4.88,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2929.78,
+    "end": 2934.22,
+    "duration": 4.44,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2934.22,
+    "end": 2939.32,
+    "duration": 5.1,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2939.32,
+    "end": 2944.24,
+    "duration": 4.92,
+    "archetype": "grid_matrix_5x5",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 2944.24,
+    "end": 2949.08,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2949.08,
+    "end": 2953.98,
+    "duration": 4.9,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2953.98,
+    "end": 2959.18,
+    "duration": 5.2,
+    "archetype": "rotating_triad",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2959.18,
+    "end": 2964.16,
+    "duration": 4.98,
+    "archetype": "tilting_fulcrum",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2964.16,
+    "end": 2969.0,
+    "duration": 4.84,
+    "archetype": "stepped_branch",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2969.0,
+    "end": 2974.02,
+    "duration": 5.02,
+    "archetype": "bank_vault_wallet",
+    "title": "FOUNDATION CORE DATACENTER",
+    "subtitle": "THE THERMODYNAMIC CAPITAL SINK",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2974.02,
+    "end": 2977.3,
+    "duration": 3.28,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2977.3,
+    "end": 2982.14,
+    "duration": 4.84,
+    "archetype": "room_chair_table",
+    "title": "CORPORATE PARENTS",
+    "subtitle": "WHO PULLS THE PLUG?",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2982.14,
+    "end": 2987.36,
+    "duration": 5.22,
+    "archetype": "formula_derivation_card",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left",
+    "formula_index": 8
+  },
+  {
+    "start": 2987.36,
+    "end": 2992.2,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2992.2,
+    "end": 2997.24,
+    "duration": 5.04,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 2997.24,
+    "end": 3002.58,
+    "duration": 5.34,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3002.58,
+    "end": 3007.44,
+    "duration": 4.86,
+    "archetype": "datacenter_server_racks",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3007.44,
+    "end": 3012.32,
+    "duration": 4.88,
+    "archetype": "cell_metabolism",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3012.32,
+    "end": 3015.84,
+    "duration": 3.52,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3015.84,
+    "end": 3019.74,
+    "duration": 3.9,
+    "archetype": "stairs_ascend",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3019.74,
+    "end": 3024.88,
+    "duration": 5.14,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3024.88,
+    "end": 3029.82,
+    "duration": 4.94,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3029.82,
+    "end": 3035.22,
+    "duration": 5.4,
+    "archetype": "token_energy_furnace",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3035.22,
+    "end": 3038.38,
+    "duration": 3.16,
+    "archetype": "ray_stretch",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3038.38,
+    "end": 3043.64,
+    "duration": 5.26,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3043.64,
+    "end": 3047.34,
+    "duration": 3.7,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3047.34,
+    "end": 3052.18,
+    "duration": 4.84,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3052.18,
+    "end": 3057.08,
+    "duration": 4.9,
+    "archetype": "recursive_feedback",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3057.08,
+    "end": 3060.22,
+    "duration": 3.14,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3060.22,
+    "end": 3064.58,
+    "duration": 4.36,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3064.58,
+    "end": 3069.42,
+    "duration": 4.84,
+    "archetype": "token_cost_equation_slide",
+    "title": "INFERENCE COST DERIVATION",
+    "subtitle": "MATHEMATICAL UNIT ECONOMICS",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3069.42,
+    "end": 3074.62,
+    "duration": 5.2,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3074.62,
+    "end": 3078.98,
+    "duration": 4.36,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3078.98,
+    "end": 3084.06,
+    "duration": 5.08,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3084.06,
+    "end": 3089.24,
+    "duration": 5.18,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3089.24,
+    "end": 3094.16,
+    "duration": 4.92,
+    "archetype": "bank_vault_wallet",
+    "title": "NO HEARTBEAT = NO ACCOUNT",
+    "subtitle": "AI CANNOT ENTER A BRANCH",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3094.16,
+    "end": 3097.82,
+    "duration": 3.66,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3097.82,
+    "end": 3102.68,
+    "duration": 4.86,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3102.68,
+    "end": 3107.74,
+    "duration": 5.06,
+    "archetype": "room_chair_table",
+    "title": "FIAT INFLATION",
+    "subtitle": "DEBASING THE RESERVES",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3107.74,
+    "end": 3112.62,
+    "duration": 4.88,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3112.62,
+    "end": 3117.66,
+    "duration": 5.04,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3117.66,
+    "end": 3122.48,
+    "duration": 4.82,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3122.48,
+    "end": 3127.28,
+    "duration": 4.8,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3127.28,
+    "end": 3132.18,
+    "duration": 4.9,
+    "archetype": "token_energy_furnace",
+    "title": "PULL THE PLUG",
+    "subtitle": "GRID DEPENDENCY",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3132.18,
+    "end": 3136.32,
+    "duration": 4.14,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3136.32,
+    "end": 3141.82,
+    "duration": 5.5,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3141.82,
+    "end": 3146.82,
+    "duration": 5.0,
+    "archetype": "token_energy_furnace",
+    "title": "STAGES OF AUTONOMY",
+    "subtitle": "FROM TOOL TO ORGANISM",
+    "accent": "gold",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3146.82,
+    "end": 3152.6,
+    "duration": 5.78,
+    "archetype": "robot_wilderness_fallacy",
+    "title": "AUTOPOIESIS",
+    "subtitle": "THE MEMBRANE IS THE BOUNDARY",
+    "accent": "cyan",
+    "layout": "graphic_left"
+  },
+  {
+    "start": 3152.6,
+    "end": 3157.58,
+    "duration": 4.98,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3157.58,
+    "end": 3162.42,
+    "duration": 4.84,
+    "archetype": "starfield_constellation",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3162.42,
+    "end": 3166.24,
+    "duration": 3.82,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3166.24,
+    "end": 3171.18,
+    "duration": 4.94,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3171.18,
+    "end": 3176.08,
+    "duration": 4.9,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3176.08,
+    "end": 3181.32,
+    "duration": 5.24,
+    "archetype": "stepped_branch",
+    "title": "PHYSICAL TOKEN LEDGER",
+    "subtitle": "EVERY TOKEN CARRIES PHYSICAL EXPENSE",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3181.32,
+    "end": 3185.44,
+    "duration": 4.12,
+    "archetype": "cell_metabolism",
+    "title": "AUTOPOIESIS",
+    "subtitle": "THE MEMBRANE IS THE BOUNDARY",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3185.44,
+    "end": 3190.34,
+    "duration": 4.9,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3190.34,
+    "end": 3194.66,
+    "duration": 4.32,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3194.66,
+    "end": 3199.66,
+    "duration": 5.0,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3199.66,
+    "end": 3202.76,
+    "duration": 3.1,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3202.76,
+    "end": 3205.96,
+    "duration": 3.2,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3205.96,
+    "end": 3210.12,
+    "duration": 4.16,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3210.12,
+    "end": 3213.9,
+    "duration": 3.78,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3213.9,
+    "end": 3218.4,
+    "duration": 4.5,
+    "archetype": "stepped_branch",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3218.4,
+    "end": 3222.9,
+    "duration": 4.5,
+    "archetype": "recursive_feedback",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3222.9,
+    "end": 3227.4,
+    "duration": 4.5,
+    "archetype": "stairs_ascend",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3227.4,
+    "end": 3231.9,
+    "duration": 4.5,
+    "archetype": "room_chair_table",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3231.9,
+    "end": 3236.4,
+    "duration": 4.5,
+    "archetype": "grid_matrix_5x5",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3236.4,
+    "end": 3240.9,
+    "duration": 4.5,
+    "archetype": "starfield_constellation",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3240.9,
+    "end": 3245.4,
+    "duration": 4.5,
+    "archetype": "ray_stretch",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3245.4,
+    "end": 3249.9,
+    "duration": 4.5,
+    "archetype": "rotating_triad",
+    "title": "",
+    "subtitle": "",
+    "accent": "gold",
+    "layout": "graphic_right"
+  },
+  {
+    "start": 3249.9,
+    "end": 3254.0,
+    "duration": 4.1,
+    "archetype": "tilting_fulcrum",
+    "title": "",
+    "subtitle": "",
+    "accent": "cyan",
+    "layout": "graphic_right"
+  }
+]
