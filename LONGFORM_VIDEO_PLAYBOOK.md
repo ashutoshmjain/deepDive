@@ -113,8 +113,14 @@ If you have never written a line of Manim code, here is how to think of the syst
    - **Pre-Sting Intro (`t < 29.68s`)**: Placed at `cur_box_y = 220 px` (`y = 220..960`).
    - **Post-Sting Body (`t > 39.68s`)**: Elevated to `cur_box_y = 110 px` (`y = 110..850`) because all post-sting Manim scenes leave their upper half (`y in [0.4, 4.0]` in Manim coordinates) completely blank for captions. Elevating `cur_box_y` to `110 px` centers the actual vector drawing (`Manim y in [-2.5, +0.4]`) right around `y = 443..711 px` on the `1080p` screen, leaving `230 px` of balanced black space below the footer.
 5. **Strict Prohibition on Archetype Titles (Permanent Rule)**:
-   - **NO bold scene/archetype titles** at the top or bottom of the `740×740` canvas (`y = -2.95` / pixel rows `622..672` are permanently disabled in `manim_compat.py` and masked in `render_longform_parallel.py`). They cause cognitive overload and pull the visual weight of the box downward.
+   - **NO bold scene/archetype titles** at the top or bottom of the `740×740` canvas (`y = -2.95` / pixel rows `622..672` are permanently disabled in `manim_compat.py` and masked in `render_longform_parallel.py` and `archetype_studio.py`). They cause cognitive overload and pull the visual weight of the box downward.
    - **Subtle Footer Retained**: Only the thin `1.5 px` horizontal line (`Manim y = -3.35`, opacity `0.40`, pixel row `679..680`) and tiny `10pt` metadata labels (`CATEGORY LABEL` on the left, `DEEP DIVE PODCAST • EP. <NUM>` on the right, opacity `0.65`, pixel rows `691..701`) are kept.
+6. **Zero-Empty-Screen Persistence Rule (Permanent Invariant)**:
+   - **The screen must NEVER stay empty (blank black)** because an animation finished early or faded out before the spoken beat ended.
+   - **No Terminal `FadeOut` on Main Illustrations**: Manim `Scene` classes must **NEVER** end with `self.play(FadeOut(...))` on the primary visual objects. Instead, every scene must end with `self.wait(...)` holding its final visual state on screen.
+   - **Last-Frame Hold (`tpad=stop_mode=clone`)**: Whenever a beat's spoken audio duration is longer than the compiled Manim animation, the stitcher (`archetype_studio.py` and `render_longform_parallel.py`) clones and holds the final visible illustration frame continuously until the next beat begins speaking.
+7. **Vertical Centering in 9:16 Short Clips (`1080 × 1920`)**:
+   - In DDMA Shorts (`archetype_studio.py`), the illustration zone (`y = 110..622` of the `740×740` frame) is shifted upward by `110 px` while keeping the footer (`y = 672..740`) anchored at the bottom, centering the graphic midway between the upper captions line and the bottom footer line.
 
 ### 4.4 Typography Table
 
