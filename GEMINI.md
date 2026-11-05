@@ -83,6 +83,36 @@ The system is structured as a 3-pillar content progression with dedicated distri
 - The **Reels pillar** turns research and narrative concepts into visual short-form video clips (740×740 / 9:16) for TikTok, Instagram Reels, and YouTube Shorts.
 - Tooling lives in DDMA Studio and the responsive clips inspection deck.
 
+### Tripartite Base Audio Pattern & Zero-Trim Plan Structuring
+- **NotebookLM Ingestion Standard**: The base master audio follows a deterministic 3-part spoken structure for every clip:
+  1. **Punchline Hook (10–20s)**: Spoken thesis statement, announcing the clip number and title.
+  2. **Core Deliberation (~2 mins)**: In-depth conversational discussion between Satosha and Satoshi.
+  3. **Outro Teaser (10–20s)**: Spoken bridge stating what to look for in the next clip.
+- **Automated Card Casting**:
+  - Because the transcript explicitly speaks the Clip Number, Title, and Next Teaser, Gemini automatically casts:
+    - **Intro Card**: `title`, `hook_quote`, dynamic PIL/Mosaic card layout.
+    - **Outro Card**: `coming_up_title`, `bridge_question`, teaser prompt.
+- **Zero Manual Audio Trimming**: DDMA uses `faster-whisper large-v3-turbo` word timestamps to snap directly to Gemini's extracted phrase boundaries.
+- **Deterministic Music Sting Invariant**:
+  - **Mid-Sting (between Punchline and Deliberation)**: Alternates between `Bluesy Vibes` and `Howling` (5.5s, 0.5s crossfade).
+  - **Outro-Sting (after Teaser)**: Always `deepDive-conclusion.mp3` (5.5s).
+
+### Clip-Level Visual Purity (No Intra-Clip Mixing)
+- **Engine Purity**: Clips NEVER mix engines internally. Each clip is authored **100% in Mosaic OR 100% in Manim**.
+- **Active Master Routing**: In `plan.json`, each clip designates its `visual_source`: `"mosaic"` or `"manim"`. The Longform Compositor dynamically picks up whichever master is active.
+
+### Dual-Track Assembly Protocol: Short Reels vs. Longform Video
+1. **Track A: Short Reels (`clips/<ep>-<num>.mp4` • 740×740 / 9:16 for Social)**:
+   - **Full Standalone Package**: `[Intro Card] -> [Punchline] -> [Mid-Sting: Bluesy/Howling] -> [Deliberation] -> [Teaser] -> [Outro Card] -> [Outro-Sting: deepDive-conclusion]`.
+   - Pure, self-contained promotional reels for TikTok, Shorts, and Instagram.
+2. **Track B: Longform Video Podcast (`podcast_<ep>.mp4` • 1920×1080 Widescreen Master)**:
+   - **Seamless Flow-Through Rules**:
+     - ✂️ **STRIP all Intro Cards & Outro Cards**: Keeps video kinetic without graphic billboard interruptions every 2 minutes.
+     - ✂️ **STRIP Outro Stings (`deepDive-conclusion`) BETWEEN clips**: Avoids stopping/concluding the conversation every 2 minutes.
+     - 🎵 **KEEP `deepDive-conclusion` on Clip 1 ONLY**: Functions as the Master Show Opener transition into the episode.
+     - 🎵 **KEEP Mid-Stings (`Bluesy Vibes` / `Howling`)**: Preserved between punchline and deliberation across all chapters for periodic musical pacing (~every 2 minutes).
+     - **Visual Deck**: Plays the Active Master (`visual_source`: Mosaic or Manim) in the central 740×740 canvas.
+
 ## Longform Video Podcast Architecture & Playbook (Under Podcast Tab)
 
 > [!IMPORTANT]
