@@ -230,7 +230,10 @@ c:\Users\ashut\OneDrive\Desktop\github\
     └── clip_01_gemini_scenes/740p15/*.mp4     • 390 compiled 740x740 Manim MP4 building blocks (~31 MB total)
                                                  (Kept locally for fast re-compositing & Shorts reuse; partial_movie_files purged)
 
-G:\My Drive\                                   [GOOGLE DRIVE: Distribution Agent Pickup Handoff]
+G:\My Drive\                                   [GOOGLE DRIVE: Inputs & Distribution Pickup]
+├── agy_inputs/                                • INCOMING EPISODE RAW ASSETS
+│   └── <ep>/                                  • Episode input folder (e.g. agy_inputs/249/ containing audio.mp3, payload.py, script)
+│
 ├── pickup_longform/                           • LONGFORM VIDEO PICKUP FOLDER
 │   ├── podcast_248.mp4                        • 121.09 MB 1080p Longform Master Video
 │   ├── podcast_248_thumbnail.jpg              • Full-bleed 1920x1080 Slopcast Architectural Thumbnail

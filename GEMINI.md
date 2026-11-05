@@ -47,7 +47,9 @@
   - The source of truth stored in Git is purely the Python archetype code (`ddma/archetypes/*.py`, `< 700 KB` per episode).
   - Cloud Antigravity environments do NOT expect or require a pre-existing `media/` directory.
   - When rendering in the cloud or locally, running `compile_all_archetypes.py` or `archetype_studio.py` generates the `media/` directory on-demand.
-  - Master exports stream directly to Google Drive (`pickup_longform`), leaving intermediate `media/` chunks completely disposable.
+  - **Google Drive Inputs & Handoff**:
+  - **Incoming Raw Assets**: `G:\My Drive\agy_inputs/<ep>/` (e.g., `agy_inputs/249/` containing the raw `audio.mp3`/`audio.m4a`, `payload.py`, and research scripts).
+  - **Master Exports**: Final longform deliverables stream directly to `G:\My Drive\pickup_longform/` (`podcast_<ep>.mp4`, `podcast_<ep>_thumbnail.jpg`), leaving intermediate `media/` chunks completely disposable.
 
 ## Architectural Philosophy: The "Research to Reels" Pipeline
 
