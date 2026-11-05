@@ -11,12 +11,24 @@
    - Contains ONLY ingestion logic, server code, and UI components (`cockpit.html`, etc.).
    - **STRICT RULE**: NEVER commit or push audio/video media files or binary assets to `mdIngest`.
 
-3. **`deepDive` (Publication Repository)**:
-   - The ONLY repository designated for published episode articles (`src/<num>.md`) and curated episode publication media (`src/ddma/docs/episodes/<num>/clips/*.mp4`).
+3. **`deepDive` (Local Studio Workbench & Publication Repository)**:
+   - **Dual Role**:
+     a. **Unified Local Runtime**: On local machines, `deepDive` acts as the active "monorepo" execution workbench (`start_ingest.bat` launches `python ingest/server.py` and calls `ddma/ddma.py` inside `deepDive`).
+     b. **Publication Repository**: Designated repository for published episode articles (`src/<num>.md`) and curated episode publication media (`src/ddma/docs/episodes/<num>/clips/*.mp4`).
+
+## Dual-Sync Invariant (Keeping Upstream & Local Studio in Lockstep)
+- **Automatic Code Mirroring**:
+  Whenever code, server endpoints, or UI features are modified in standalone tool repositories, they **MUST always be synchronized into `deepDive`**:
+  - `mdIngest/ui/*` $\longleftrightarrow$ `deepDive/ingest/*` (`server.py`, `cockpit.html`, `settings.json`)
+  - `ddma/ddma.py` $\longleftrightarrow$ `deepDive/ddma/ddma.py`
+- **Dual-Push Rule**:
+  - Code changes are committed and pushed to their standalone repositories (`mdIngest`, `ddma`) to maintain clean, media-free upstream tools.
+  - The mirrored code is **also committed and pushed to `deepDive`** on GitHub so the local launcher (`start_ingest.bat`) and local working environment are fully preserved and always up to date.
 
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) are staged.
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
+- Before closing any tool or UI feature update, verify that code parity is maintained across `mdIngest` $\longleftrightarrow$ `deepDive/ingest` and `ddma` $\longleftrightarrow$ `deepDive/ddma`.
 
 ## Architectural Philosophy: The "Research to Reels" Pipeline
 
