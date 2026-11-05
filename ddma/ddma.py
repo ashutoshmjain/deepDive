@@ -13,12 +13,12 @@ app = typer.Typer(help="DeepDive Media Automator (DDMA) CLI Tool")
 @app.command()
 def transcribe(
     audio: str = typer.Option(..., help="Path to input audio file"),
-    model_name: str = typer.Option("tiny.en", help="Whisper model name to use"),
+    model_name: str = typer.Option("large-v3-turbo", help="Whisper model name to use (e.g. large-v3-turbo, small.en)"),
     out: str = typer.Option("transcription.json", help="Path to save transcription JSON"),
     word_timestamps: bool = typer.Option(True, help="Enable word-level timestamps")
 ):
     """
-    Transcribe the audio file using Whisper and cache the JSON output.
+    Transcribe the audio file using faster-whisper (CTranslate2 INT8 with AVX-512) and cache the JSON output.
     """
     if hasattr(model_name, 'default'):
         model_name = str(model_name.default)
@@ -31,14 +31,21 @@ def transcribe(
         typer.echo(f"Error: Audio file {audio} not found.", err=True)
         raise typer.Exit(code=1)
 
-    typer.echo(f"Loading Whisper model '{model_name}'...")
+    typer.echo(f"Loading faster-whisper model '{model_name}' (CPU int8, 8 threads)...")
     start_time = time.time()
-    model = whisper.load_model(model_name)
-    typer.echo(f"Model loaded in {time.time() - start_time:.2f} seconds.")
+    model = get_faster_whisper_model(model_name)
+    typer.echo(f"Model ready in {time.time() - start_time:.2f} seconds.")
 
-    typer.echo(f"Transcribing {audio} (word_timestamps={word_timestamps})...")
+    typer.echo(f"Transcribing {audio} with faster-whisper (word_timestamps={word_timestamps})...")
     transcribe_start = time.time()
-    result = model.transcribe(audio, verbose=False, word_timestamps=word_timestamps)
+    audio_input = audio
+    try:
+        import whisper.audio
+        audio_input = whisper.audio.load_audio(audio)
+    except Exception:
+        pass
+    segments_gen, info = model.transcribe(audio_input, word_timestamps=word_timestamps)
+    result = format_faster_whisper_result(segments_gen, info)
     typer.echo(f"Transcription finished in {time.time() - transcribe_start:.2f} seconds.")
 
     # Save raw transcription results
@@ -738,12 +745,12 @@ def mux_clip(
     except Exception:
         pass
 
-    # Mux using FFmpeg color source filter to generate a 740x740 black video dynamically at standard 30fps
+    # Mux using FFmpeg color source filter to generate a 1080x1080 black video dynamically at standard 30fps
     if a_dur:
         cmd = [
             "ffmpeg", "-y",
             "-f", "lavfi",
-            "-i", f"color=c=black:s=740x740:r=30:d={a_dur:.3f}",
+            "-i", f"color=c=black:s=1080x1080:r=30:d={a_dur:.3f}",
             "-i", audio_path,
             "-r", "30",
             "-c:v", "libx264",
@@ -758,7 +765,7 @@ def mux_clip(
         cmd = [
             "ffmpeg", "-y",
             "-f", "lavfi",
-            "-i", "color=c=black:s=740x740:r=30",
+            "-i", "color=c=black:s=1080x1080:r=30",
             "-i", audio_path,
             "-r", "30",
             "-c:v", "libx264",
@@ -779,14 +786,71 @@ def mux_clip(
         raise typer.Exit(code=1)
 
 
-_FASTER_WHISPER_MODEL = None
+_FASTER_WHISPER_MODELS = {}
 
-def get_faster_whisper_model():
-    global _FASTER_WHISPER_MODEL
-    if _FASTER_WHISPER_MODEL is None:
+def patch_pyav_metadata_errors():
+    """Ensure PyAV 14+ does not raise TypeError on unexpected 'metadata_errors' keyword argument."""
+    try:
+        import av
+        if not hasattr(av, "_patched_metadata_errors"):
+            _orig_open = av.open
+            def _safe_av_open(*args, **kwargs):
+                kwargs.pop("metadata_errors", None)
+                return _orig_open(*args, **kwargs)
+            av.open = _safe_av_open
+            av._patched_metadata_errors = True
+    except Exception:
+        pass
+
+def format_faster_whisper_result(segments_gen, info) -> dict:
+    segments_list = []
+    text_chunks = []
+    for s in segments_gen:
+        text_chunks.append(s.text)
+        seg_dict = {
+            "id": getattr(s, "id", len(segments_list)),
+            "seek": getattr(s, "seek", 0),
+            "start": round(float(s.start), 3),
+            "end": round(float(s.end), 3),
+            "text": s.text,
+            "tokens": getattr(s, "tokens", []),
+            "avg_logprob": getattr(s, "avg_logprob", 0.0),
+            "compression_ratio": getattr(s, "compression_ratio", 1.0),
+            "no_speech_prob": getattr(s, "no_speech_prob", 0.0),
+        }
+        if s.words:
+            seg_dict["words"] = [
+                {
+                    "word": w.word,
+                    "start": round(float(w.start), 3),
+                    "end": round(float(w.end), 3),
+                    "probability": round(float(getattr(w, "probability", 1.0)), 4)
+                }
+                for w in s.words
+            ]
+        else:
+            seg_dict["words"] = []
+        segments_list.append(seg_dict)
+
+    return {
+        "text": "".join(text_chunks).strip(),
+        "segments": segments_list,
+        "language": getattr(info, "language", "en")
+    }
+
+def get_faster_whisper_model(model_name: str = "large-v3-turbo"):
+    global _FASTER_WHISPER_MODELS
+    patch_pyav_metadata_errors()
+    fw_model_name = model_name or "large-v3-turbo"
+    if fw_model_name not in _FASTER_WHISPER_MODELS:
         from faster_whisper import WhisperModel
-        _FASTER_WHISPER_MODEL = WhisperModel("small.en", device="cpu", compute_type="int8")
-    return _FASTER_WHISPER_MODEL
+        _FASTER_WHISPER_MODELS[fw_model_name] = WhisperModel(
+            fw_model_name,
+            device="cpu",
+            compute_type="int8",
+            cpu_threads=8
+        )
+    return _FASTER_WHISPER_MODELS[fw_model_name]
 
 
 def ensure_dejavu_font() -> str:
@@ -827,7 +891,7 @@ def format_ass_time(seconds: float) -> str:
 def extract_clip_words(clip: dict, plan_file: str, audio_path: Optional[str] = None, force_whisper: bool = False) -> list:
     """
     Extract word-level timestamps in rendered clip body coordinates (0..body_duration).
-    Uses faster-whisper small.en when force_whisper=True or when transcription.json is absent,
+    Uses faster-whisper large-v3-turbo when force_whisper=True or when transcription.json is absent,
     and caches on clip['_caption_words'] keyed by _audio_sig.
     """
     import hashlib
@@ -839,7 +903,7 @@ def extract_clip_words(clip: dict, plan_file: str, audio_path: Optional[str] = N
     if force_whisper and audio_path and os.path.exists(audio_path):
         try:
             import whisper.audio
-            typer.echo(f"Running faster-whisper small.en word-level transcription on {audio_path}...")
+            typer.echo(f"Running faster-whisper large-v3-turbo word-level transcription on {audio_path}...")
             model = get_faster_whisper_model()
             audio_arr = whisper.audio.load_audio(audio_path)
             segments_gen, _ = model.transcribe(audio_arr, word_timestamps=True)
@@ -933,7 +997,7 @@ def extract_clip_words(clip: dict, plan_file: str, audio_path: Optional[str] = N
     if not words and audio_path and os.path.exists(audio_path):
         try:
             import whisper.audio
-            typer.echo(f"Transcribing {audio_path} with faster-whisper small.en...")
+            typer.echo(f"Transcribing {audio_path} with faster-whisper large-v3-turbo...")
             model = get_faster_whisper_model()
             audio_arr = whisper.audio.load_audio(audio_path)
             segments_gen, _ = model.transcribe(audio_arr, word_timestamps=True)
@@ -1117,7 +1181,8 @@ def build_caption_chunks(
         chunks.append({
             "start": round(grp[0]["start"], 2),
             "end": round(grp[-1]["end"], 2),
-            "text": text_line
+            "text": text_line,
+            "words": [{"word": x["word"], "start": round(x["start"], 2), "end": round(x["end"], 2)} for x in grp]
         })
 
     # Strict chaining: each event's end time = the next event's start time (no gaps, no overlaps)
@@ -1135,8 +1200,13 @@ def build_caption_chunks(
     return chunks
 
 
-def write_ass_file(chunks: list, ass_path: str):
-    """Write exact ASS v4+ caption file for 1080x1920 vertical canvas."""
+def write_ass_file(
+    chunks: list,
+    ass_path: str,
+    body_duration: float = 0.0,
+    intro_offset: float = 0.0
+):
+    """Write exact ASS v4+ caption file for 1080x1920 vertical canvas with studio ribbon above captions."""
     os.makedirs(os.path.dirname(ass_path) if os.path.dirname(ass_path) else ".", exist_ok=True)
     lines = [
         "[Script Info]",
@@ -1148,18 +1218,88 @@ def write_ass_file(chunks: list, ass_path: str):
         "",
         "[V4+ Styles]",
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
-        "Style: Caption,DejaVu Sans Mono,46,&H00FFFFFF,&H000019FF,&H80000000,&H80000000,0,0,0,0,100,100,1.2,0,1,2,0,8,60,60,500,1",
+        "Style: Caption,DejaVu Sans Mono,46,&H00FFFFFF,&H000019FF,&H80000000,&H80000000,1,0,0,0,100,100,1.2,0,1,2,0,8,60,60,465,1",
+        "Style: HostRibbon,Arial,17,&H00CBD5E1,&H00CBD5E1,&H00000000,&H00000000,1,0,0,0,100,100,2.5,0,1,0,0,5,40,40,60,1",
+        "Style: MicShape,Arial,18,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,0,0,5,40,40,60,1",
         "",
         "[Events]",
         "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"
     ]
-    for ch in (chunks or []):
-        start_str = format_ass_time(ch.get("start", 0.0))
-        end_str = format_ass_time(ch.get("end", 0.0))
-        txt = str(ch.get("text", "")).replace("\n", " ").strip().lower()
-        if txt:
-            lines.append(f"Dialogue: 0,{start_str},{end_str},Caption,,0,0,0,,{txt}")
+    mic_shape = 'm -10 -24 b -10 -32 10 -32 10 -24 l 10 0 b 10 7 -10 7 -10 0 l -10 -24 m -14 -5 b -14 13 14 13 14 -5 l 16 -5 b 16 17 -16 17 -16 -5 l -14 -5 m -2 15 l 2 15 l 2 23 l 11 23 l 11 26 l -11 26 l -11 23 l -2 23'
+    c_gold = r"{\c&H000AD6FF&}"
+    c_white = r"{\c&H00FFFFFF&}"
+    c_dim = r"{\c&H00757575&}"
 
+    total_end = intro_offset + (body_duration if body_duration > 0 else (chunks[-1]["end"] if chunks else 120.0))
+    s_start_ribbon = format_ass_time(intro_offset)
+    s_end_ribbon = format_ass_time(total_end)
+
+    # Broadcast studio header ribbon brought slightly down to y=405 (cleanly above captions at y=465..515)
+    y_ribbon = 405
+    y_mic = 404
+    header_events = [
+        f"Dialogue: 1,{s_start_ribbon},{s_end_ribbon},HostRibbon,,0,0,0,,{{\\pos(420,{y_ribbon})\\an6\\c&H00E2E8F0&\\b1\\fsp3}}SATOSHA",
+        f"Dialogue: 1,{s_start_ribbon},{s_end_ribbon},HostRibbon,,0,0,0,,{{\\pos(660,{y_ribbon})\\an4\\c&H00E2E8F0&\\b1\\fsp3}}SATOSHI",
+        f"Dialogue: 1,{s_start_ribbon},{s_end_ribbon},HostRibbon,,0,0,0,,{{\\pos(475,{y_mic})\\an5\\c&H00475569&}}─",
+        f"Dialogue: 1,{s_start_ribbon},{s_end_ribbon},HostRibbon,,0,0,0,,{{\\pos(605,{y_mic})\\an5\\c&H00475569&}}─",
+    ]
+
+    period = 0.8
+    t_curr = intro_offset
+    while t_curr < total_end:
+        t_on_start = t_curr
+        t_on_end = min(total_end, t_curr + 0.48)
+        t_off_start = t_on_end
+        t_off_end = min(total_end, t_curr + period)
+
+        s_on = format_ass_time(t_on_start)
+        e_on = format_ass_time(t_on_end)
+        header_events.append(f"Dialogue: 2,{s_on},{e_on},MicShape,,0,0,0,,{{\\pos(540,{y_mic})\\an5\\fscx60\\fscy60\\c&H00FFFFFF&\\p1}}{mic_shape}{{\\p0}}")
+
+        if t_off_start < t_off_end:
+            s_off = format_ass_time(t_off_start)
+            e_off = format_ass_time(t_off_end)
+            header_events.append(f"Dialogue: 2,{s_off},{e_off},MicShape,,0,0,0,,{{\\pos(540,{y_mic})\\an5\\fscx60\\fscy60\\c&H00334155&\\p1}}{mic_shape}{{\\p0}}")
+
+        t_curr += period
+
+    for ch in (chunks or []):
+        c_start = float(ch.get("start", 0.0))
+        c_end = float(ch.get("end", c_start + 1.0))
+        words = ch.get("words")
+
+        if words and isinstance(words, list) and len(words) > 1:
+            for i, w in enumerate(words):
+                w_start_val = max(c_start, float(w.get("start", c_start)))
+                if i < len(words) - 1:
+                    w_end_val = min(c_end, max(w_start_val + 0.04, float(words[i + 1].get("start", w_start_val + 0.2))))
+                else:
+                    w_end_val = c_end
+
+                start_str = format_ass_time(w_start_val)
+                end_str = format_ass_time(w_end_val)
+
+                passed = " ".join(str(x.get("word", "")).strip().lower() for x in words[:i])
+                active = str(words[i].get("word", "")).strip().lower()
+                upcoming = " ".join(str(x.get("word", "")).strip().lower() for x in words[i + 1:])
+
+                parts = []
+                if passed:
+                    parts.append(f"{c_white}{passed}")
+                parts.append(f"{c_gold}{active}{c_white}")
+                if upcoming:
+                    parts.append(f"{c_dim}{upcoming}{c_white}")
+
+                line_txt = " ".join(parts)
+                lines.append(f"Dialogue: 0,{start_str},{end_str},Caption,,0,0,0,,{line_txt}")
+        else:
+            start_str = format_ass_time(c_start)
+            end_str = format_ass_time(c_end)
+            txt = str(ch.get("text", "")).replace("\n", " ").strip().lower()
+            if txt:
+                lines.append(f"Dialogue: 0,{start_str},{end_str},Caption,,0,0,0,,{txt}")
+
+    lines.extend(header_events)
     with open(ass_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
@@ -1207,7 +1347,8 @@ def compile_clip(
     font_path: Optional[str] = typer.Option(None, help="Optional path to custom TrueType font"),
     backup: bool = typer.Option(True, help="Create a backup of the original master clip"),
     episode_title: str = typer.Option("Life, Death and the Lysosome", help="Title of the episode"),
-    force_draft: bool = typer.Option(False, help="Force black canvas draft body compilation even if Mosaic video exists")
+    force_draft: bool = typer.Option(False, help="Force black canvas draft body compilation even if Mosaic video exists"),
+    source: Optional[str] = typer.Option(None, "--source", "-s", help="Visual source engine: 'mosaic' or 'manim'")
 ):
     """
     Mux and compile a clip with dynamic title card intro and finished Mosaic video.
@@ -1234,6 +1375,7 @@ def compile_clip(
     if hasattr(backup, 'default'): backup = bool(backup.default)
     if hasattr(episode_title, 'default'): episode_title = str(episode_title.default)
     if hasattr(force_draft, 'default'): force_draft = bool(force_draft.default)
+    if hasattr(source, 'default'): source = source.default
 
     temp_img_path = f"temp_title_{num}.png"
     intro_video_path = f"temp_intro_{num}.mp4"
@@ -1318,26 +1460,48 @@ def compile_clip(
 
     target_clip = next((c for c in plan_data if c.get("num") == num), None)
     mosaic_run_id = target_clip.get("mosaic_run_id") if target_clip else None
-    visual_source = target_clip.get("visual_source") if target_clip else None
-
-    infographic_path = f"clips/{episode}-{num}-infographic.mp4"
-    mosaic_path = f"clips/{episode}-{num}-mosaic-{mosaic_run_id}.mp4" if mosaic_run_id else ""
-
-    if visual_source == "infographic" and os.path.exists(infographic_path):
-        backup_path = infographic_path
-        has_motion_source = True
-    elif visual_source == "mosaic" and mosaic_path and os.path.exists(mosaic_path):
-        backup_path = mosaic_path
-        has_motion_source = True
-    elif os.path.exists(infographic_path):
-        backup_path = infographic_path
-        has_motion_source = True
-    elif mosaic_path and os.path.exists(mosaic_path):
-        backup_path = mosaic_path
-        has_motion_source = True
+    
+    # Active master setting from plan.json
+    active_master_src = str(target_clip.get("visual_source", "mosaic") if target_clip else "mosaic").lower()
+    if active_master_src in ("infographic", "manim"):
+        active_master_src = "manim"
     else:
-        backup_path = f"clips/{episode}-{num}.mp4"
-        has_motion_source = False
+        active_master_src = "mosaic"
+
+    # Explicit compile source override if passed via CLI, else active_master_src
+    if source:
+        compile_source = "manim" if str(source).lower() in ("manim", "infographic") else "mosaic"
+    else:
+        compile_source = active_master_src
+
+    infographic_candidates = [
+        f"clips/{episode}-{num}-infographic.mp4",
+        f"clips/{episode}-{num}-manim.mp4",
+    ]
+    mosaic_candidates = []
+    if mosaic_run_id:
+        mosaic_candidates.append(f"clips/{episode}-{num}-mosaic-{mosaic_run_id}.mp4")
+    mosaic_candidates.extend([
+        f"clips/{episode}-{num}-original.mp4",
+        f"clips/{episode}-{num}-mosaic.mp4",
+    ])
+
+    if compile_source == "manim":
+        chosen_body = next((p for p in infographic_candidates if os.path.exists(p) and os.path.getsize(p) > 10000), None)
+        if chosen_body:
+            backup_path = chosen_body
+            has_motion_source = True
+        else:
+            backup_path = f"clips/{episode}-{num}.mp4"
+            has_motion_source = False
+    else:
+        chosen_body = next((p for p in mosaic_candidates if os.path.exists(p) and os.path.getsize(p) > 10000), None)
+        if chosen_body:
+            backup_path = chosen_body
+            has_motion_source = True
+        else:
+            backup_path = f"clips/{episode}-{num}.mp4"
+            has_motion_source = False
 
     # Check for freshly cut audio clip (e.g. clips/245-1-*.mp3) and remux audio track
     audio_pattern1 = os.path.join(master_dir, f"{episode}-{num}-*.mp3")
@@ -1381,7 +1545,7 @@ def compile_clip(
             typer.echo(f"Generating clean draft body video ({a_dur_fresh:.2f}s) from fresh audio clip...")
             cmd_remux = [
                 "ffmpeg", "-y",
-                "-f", "lavfi", "-i", f"color=c=black:s=740x740:r={fps_str}:d={a_dur_fresh:.3f}",
+                "-f", "lavfi", "-i", f"color=c=black:s=1080x1080:r={fps_str}:d={a_dur_fresh:.3f}",
                 "-i", fresh_audio_path,
                 "-r", fps_str,
                 "-c:v", "libx264", "-tune", "stillimage", "-pix_fmt", "yuv420p",
@@ -1460,8 +1624,8 @@ def compile_clip(
 
         # Open image canvas with clean solid charcoal background
         from PIL import Image, ImageDraw, ImageFont
-        width, height = 740, 740
-        bg_color = (18, 18, 18)
+        width, height = 1080, 1080
+        bg_color = (0, 0, 0, 255)
         image = Image.new("RGBA", (width, height), bg_color)
 
         draw_overlay = ImageDraw.Draw(image)
@@ -1582,8 +1746,8 @@ def compile_clip(
         fps_str = "25"
         tb_den = "90000"
         ar_str = "48000"
-        v_width = 740
-        v_height = 740
+        v_width = 1080
+        v_height = 1080
         v_dur = None
         a_dur = None
 
@@ -1613,8 +1777,8 @@ def compile_clip(
                 
                 if codec_type == "video":
                      v_dur = dur_sec
-                     v_width = int(stream.get("width") or 740)
-                     v_height = int(stream.get("height") or 740)
+                     v_width = int(stream.get("width") or 1080)
+                     v_height = int(stream.get("height") or 1080)
                      avg_fps = stream.get("avg_frame_rate")
                      r_fps = stream.get("r_frame_rate")
                      fps_str = avg_fps if avg_fps and avg_fps != "0/0" else r_fps
@@ -1685,6 +1849,8 @@ def compile_clip(
         os.makedirs(out_dir, exist_ok=True)
         out_filename = f"{base_name}.mp4"
         out_path = os.path.join(out_dir, out_filename)
+        variant_filename = f"{episode}-{num}-{compile_source}.mp4"
+        variant_path = os.path.join(out_dir, variant_filename)
 
         sorted_clips = sorted(plan_data, key=lambda x: x["num"])
         is_last_clip = (sorted_clips[-1]["num"] == num)
@@ -1721,7 +1887,7 @@ def compile_clip(
                 bridge_text = f"What is the deeper secret behind Part {num}?"
 
             # Generate outro image with semi-transparent charcoal banner
-            img_outro = Image.new("RGBA", (v_width, v_height), color=(18, 18, 18, 255))
+            img_outro = Image.new("RGBA", (v_width, v_height), color=(0, 0, 0, 255))
             draw_outro = ImageDraw.Draw(img_outro)
             
             font_path_outro = find_system_fonts()[0]
@@ -1770,7 +1936,8 @@ def compile_clip(
             box_h_outro = max(240, total_h_outro + 80)
             x0_out = (v_width - box_w_outro) // 2
             y0_out = (v_height - box_h_outro) // 2
-            draw_outro.rounded_rectangle([(x0_out, y0_out), (x0_out + box_w_outro, y0_out + box_h_outro)], radius=15, fill=(28, 28, 28, 230))
+            # Minimalist Pure Black & White: No grey box, pure white typography on pure #000000 black
+            # (No rounded rectangle container)
 
             curr_y_outro = (v_height - total_h_outro) // 2
             for idx, line in enumerate(lines_outro):
@@ -1778,6 +1945,11 @@ def compile_clip(
                 w = bbox[2] - bbox[0]
                 draw_outro.text(((v_width - w) // 2, curr_y_outro), line, font=font_outro, fill=(255, 255, 255, 255))
                 curr_y_outro += line_heights_outro[idx] + line_spacing_outro
+
+            # Subtle thin pure white divider rule
+            rule_y = curr_y_outro + 25
+            cx = v_width // 2
+            draw_outro.line([(cx - 70, rule_y), (cx + 70, rule_y)], fill=(255, 255, 255, 180), width=2)
 
             img_outro.convert("RGB").save(temp_img_outro_path)
 
@@ -1821,14 +1993,25 @@ def compile_clip(
             body_duration=body_duration,
             has_outro=(not is_last_clip)
         )
-        write_ass_file(caption_chunks, temp_ass_path)
+        is_info_mode = (compile_source == "manim")
+        write_ass_file(
+            caption_chunks,
+            temp_ass_path,
+            body_duration=body_duration,
+            intro_offset=intro_duration
+        )
         os.makedirs("captions", exist_ok=True)
-        write_ass_file(caption_chunks, os.path.join("captions", f"{base_name}.ass"))
+        write_ass_file(
+            caption_chunks,
+            os.path.join("captions", f"{base_name}.ass"),
+            body_duration=body_duration,
+            intro_offset=intro_duration
+        )
         typer.echo(f"Prepared {len(caption_chunks)} ASS caption events (1080x1920 vertical spec) -> {temp_ass_path}")
 
         scale_filter = f"scale={v_width}:{v_height}:force_original_aspect_ratio=decrease,pad={v_width}:{v_height}:(ow-iw)/2:(oh-ih)/2,setsar=1,fps=25"
         body_v_filter = f"{scale_filter}{body_v_extra_filter},settb=1/90000"
-        vertical_burn_filter = f"scale=1000:1000:flags=lanczos,pad=1080:1920:40:560:color=black,subtitles=filename={temp_ass_path}:fontsdir={fonts_dir},setsar=1"
+        vertical_burn_filter = f"scale=740:740:force_original_aspect_ratio=decrease,pad=1080:1920:170:590:color=black,subtitles=filename={temp_ass_path}:fontsdir={fonts_dir},setsar=1"
 
         def build_concat_cmd(crf_val: int):
             if not is_last_clip and os.path.exists(temp_outro_video_path):
@@ -1856,7 +2039,7 @@ def compile_clip(
                     "-c:a", "aac",
                     "-b:a", "128k",
                     "-movflags", "+faststart",
-                    out_path
+                    variant_path
                 ]
             else:
                 return [
@@ -1878,17 +2061,17 @@ def compile_clip(
                     "-c:a", "aac",
                     "-b:a", "128k",
                     "-movflags", "+faststart",
-                    out_path
+                    variant_path
                 ]
 
-        typer.echo(f"Compiling 1080x1920 vertical video with burned ASS captions into {out_path}...")
+        typer.echo(f"Compiling 1080x1920 vertical video with burned ASS captions into {variant_path}...")
         current_crf = 20
         res_concat = subprocess.run(build_concat_cmd(current_crf), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         # Enforce <= 20 MB Nostr free upload cap by raising CRF if needed
         max_bytes = 20 * 1024 * 1024
-        while res_concat.returncode == 0 and os.path.exists(out_path) and os.path.getsize(out_path) > max_bytes and current_crf < 30:
-            size_mb = os.path.getsize(out_path) / (1024 * 1024)
+        while res_concat.returncode == 0 and os.path.exists(variant_path) and os.path.getsize(variant_path) > max_bytes and current_crf < 30:
+            size_mb = os.path.getsize(variant_path) / (1024 * 1024)
             current_crf += 4
             typer.echo(f"Render size ({size_mb:.2f} MB) exceeds 20 MB cap; re-encoding with CRF {current_crf}...")
             res_concat = subprocess.run(build_concat_cmd(current_crf), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -1896,16 +2079,26 @@ def compile_clip(
         if res_concat.returncode == 0:
             typer.echo(f"Successfully compiled clip: {out_path}")
             
-            # Sync compiled clip to canonical deepDive publication repo if present
-            if episode:
-                deepdive_clips_dir = os.path.abspath(os.path.join("..", "deepDive", "src", "ddma", "docs", "episodes", str(episode), "clips"))
-                if os.path.exists(os.path.dirname(deepdive_clips_dir)):
-                    os.makedirs(deepdive_clips_dir, exist_ok=True)
-                    try:
-                        shutil.copy2(out_path, os.path.join(deepdive_clips_dir, out_filename))
-                        typer.echo(f"Synced compiled clip to {os.path.join(deepdive_clips_dir, out_filename)}")
-                    except Exception as e:
-                        typer.echo(f"Warning: Could not sync to deepDive clips: {e}")
+            # Safeguard: If active master, update master out_path and sync to deepDive
+            is_active_master = (compile_source == active_master_src)
+            if is_active_master:
+                try:
+                    shutil.copy2(variant_path, out_path)
+                except Exception:
+                    pass
+                if episode:
+                    deepdive_clips_dir = os.path.abspath(os.path.join("..", "deepDive", "src", "ddma", "docs", "episodes", str(episode), "clips"))
+                    if os.path.exists(os.path.dirname(deepdive_clips_dir)):
+                        os.makedirs(deepdive_clips_dir, exist_ok=True)
+                        dest_file = os.path.join(deepdive_clips_dir, out_filename)
+                        try:
+                            shutil.copy2(variant_path, dest_file)
+                            typer.echo(f"Synced ACTIVE MASTER ({compile_source}) to deepDive publication repo -> {dest_file}")
+                        except Exception as e:
+                            typer.echo(f"Warning: Could not sync to deepDive clips: {e}")
+            else:
+                typer.echo(f"[SAFEGUARD] Compiled '{compile_source}' preview to {variant_path}.")
+                typer.echo(f"[SAFEGUARD] deepDive publication repo was NOT modified (active master is locked to '{active_master_src}').")
             
             # Verification checklist (1080x1920 DAR 9:16, <=180s, <=20MB, |rendered_duration - mp4 duration| <= 2s) and reconcile plan.json
             try:
@@ -1913,7 +2106,7 @@ def compile_clip(
                     "ffprobe", "-v", "error",
                     "-select_streams", "v:0",
                     "-show_entries", "stream=width,height,display_aspect_ratio:format=duration,size",
-                    "-of", "json", out_path
+                    "-of", "json", variant_path
                 ]
                 ver_res = subprocess.run(cmd_verify, stdout=subprocess.PIPE, text=True)
                 if ver_res.returncode == 0:
@@ -1921,7 +2114,7 @@ def compile_clip(
                     v_stream = (ver_data.get("streams") or [{}])[0]
                     v_fmt = ver_data.get("format") or {}
                     final_dur = round(float(v_fmt.get("duration", 0.0)), 2)
-                    final_size_mb = round(float(v_fmt.get("size", os.path.getsize(out_path))) / (1024 * 1024), 2)
+                    final_size_mb = round(float(v_fmt.get("size", os.path.getsize(variant_path))) / (1024 * 1024), 2)
                     out_w = int(v_stream.get("width", 0))
                     out_h = int(v_stream.get("height", 0))
                     out_dar = v_stream.get("display_aspect_ratio", "")
@@ -2123,9 +2316,9 @@ def ingest_episode(
     # 2. Transcribe
     trans_path = os.path.join(proj_dir, "transcription.json")
     if not os.path.exists(trans_path):
-        update_ingestion_progress(proj_dir, 1, 30, f"Transcribing {audio_dest_name} via OpenAI Whisper...", "Running Whisper transcription with word timestamps (tiny.en)...")
-        typer.echo(f"Transcribing {audio_dest_path} with Whisper...")
-        transcribe(audio=audio_dest_path, model_name="tiny.en", out=trans_path, word_timestamps=True)
+        update_ingestion_progress(proj_dir, 1, 30, f"Transcribing {audio_dest_name} via faster-whisper...", "Running faster-whisper transcription with word timestamps (large-v3-turbo)...")
+        typer.echo(f"Transcribing {audio_dest_path} with faster-whisper (large-v3-turbo)...")
+        transcribe(audio=audio_dest_path, model_name="large-v3-turbo", out=trans_path, word_timestamps=True)
         if os.path.exists("transcription.json") and not os.path.exists(trans_path):
             shutil.copy2("transcription.json", trans_path)
 
