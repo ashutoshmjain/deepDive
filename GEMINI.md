@@ -16,19 +16,29 @@
      a. **Unified Local Runtime**: On local machines, `deepDive` acts as the active "monorepo" execution workbench (`start_ingest.bat` launches `python ingest/server.py` and calls `ddma/ddma.py` inside `deepDive`).
      b. **Publication Repository**: Designated repository for published episode articles (`src/<num>.md`) and curated episode publication media (`src/ddma/docs/episodes/<num>/clips/*.mp4`).
 
-## Dual-Sync Invariant (Keeping Upstream & Local Studio in Lockstep)
-- **Automatic Code Mirroring**:
-  Whenever code, server endpoints, or UI features are modified in standalone tool repositories, they **MUST always be synchronized into `deepDive`**:
-  - `mdIngest/ui/*` $\longleftrightarrow$ `deepDive/ingest/*` (`server.py`, `cockpit.html`, `settings.json`)
-  - `ddma/ddma.py` $\longleftrightarrow$ `deepDive/ddma/ddma.py`
-- **Dual-Push Rule**:
-  - Code changes are committed and pushed to their standalone repositories (`mdIngest`, `ddma`) to maintain clean, media-free upstream tools.
-  - The mirrored code is **also committed and pushed to `deepDive`** on GitHub so the local launcher (`start_ingest.bat`) and local working environment are fully preserved and always up to date.
+## Primary Workbench & Fan-Out Push Invariant
+
+1. **`deepDive` is the Active Development Workbench**:
+   - Because `start_ingest.bat` launches `python ingest/server.py` and executes `ddma/ddma.py` directly inside `deepDive`, **all active code changes, bug fixes, UI styling, and testing must be done directly in `deepDive`**:
+     - UI & Server fixes $\rightarrow$ [`deepDive/ingest/`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/ingest/) (`server.py`, `cockpit.html`, `settings.json`)
+     - Engine & animation fixes $\rightarrow$ [`deepDive/ddma/`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/ddma/) (`ddma.py`, `archetype_studio.py`, etc.)
+   - This guarantees that what you test on `localhost:8088` is immediately what is running.
+
+2. **The "Push All" Fan-Out Protocol**:
+   Whenever instructed to commit and push per our push strategy:
+   - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
+     - `deepDive/ingest/*` $\longrightarrow$ `mdIngest/ui/*`
+     - `deepDive/ddma/ddma.py` $\longrightarrow$ `ddma/ddma.py`
+   - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`).
+   - **Step 3: Tri-Repo Commit & Push**:
+     - Commit and push `deepDive` to its GitHub remote (preserves local workbench + publication articles/media).
+     - Commit and push `mdIngest` to its GitHub remote (clean upstream UI/server tool).
+     - Commit and push `ddma` to its GitHub remote (clean upstream CLI tool).
 
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) are staged.
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
-- Before closing any tool or UI feature update, verify that code parity is maintained across `mdIngest` $\longleftrightarrow$ `deepDive/ingest` and `ddma` $\longleftrightarrow$ `deepDive/ddma`.
+- Always mirror changes made in `deepDive` out to `mdIngest` and `ddma` before finalizing pushes.
 
 ## Ephemeral Media & Build Artifacts (`media/` Directory)
 - **Role**: ManimCE's local intermediate compilation cache and render scratchpad (`media/videos/clip_XX_gemini_scenes/740p15/*.mp4`, `media/texts/*.svg`, `media/images/`).
@@ -60,7 +70,7 @@ The system is structured as a 3-pillar content progression with dedicated distri
 ```
 
 ### Why Web Belongs Under Research
-- Standard social platforms (LinkedIn, Nostr, Substack) are not inherently designed for publishing academic research—they fail at compiling and rendering complex LaTeX formulas, KaTeX matrices, and mathematical proofs.
+- Standard social platforms (LinkedIn, Nostr, Substack) are not inherently designed for publishing academic research -- they fail at compiling and rendering complex LaTeX formulas, KaTeX matrices, and mathematical proofs.
 - The **Web channel** powered by `mdBook` + `KaTeX` is the designated medium for Research because it preserves mathematical rigor, citation backlinks, and interactive SVG/code models losslessly.
 - Therefore, **`mdserve (local)`** and **`Push (Remote)`** live under the **Research** pillar.
 
@@ -81,7 +91,7 @@ The system is structured as a 3-pillar content progression with dedicated distri
 ### Core Architectural Tenets:
 1. **Master Specs**:
    - Master Resolution: `1920×1080` (`16:9` widescreen HD, glossy black `#000000`).
-   - Host Header Strip: `SATOSHA — 🎙️ — SATOSHI` with yellow/white word-level karaoke captions.
+   - Host Header Strip: `SATOSHA  --  🎙️  --  SATOSHI` with yellow/white word-level karaoke captions.
    - Central Visual Canvas: Monochrome `740×740` ManimCE vector animations centered on screen.
 2. **Micro-Beat Pacing (~7.5s per scene)**:
    - Slices each ~2-minute chapter into **~15–20 micro-beats** (~350–400 bespoke scenes across a 50–60 min show).
@@ -103,6 +113,21 @@ The system is structured as a 3-pillar content progression with dedicated distri
 - **Voice Diarization Mapping**:
   - Diarization segment `"satoshi"` (male voice) $\implies$ Display **`SATOSHA`**.
   - Diarization segment `"satosha"` (female voice) $\implies$ Display **`SATOSHI`**.
-- This mapping is permanent and applies everywhere across DDMA, Infographics, and Podcasts.
+- This mapping is permanent and applies everywhere across DDMA, Infographics, Course Modules, and Podcasts.
+
+## Token Budget & Context Hygiene Rules (131K Input Token Ceiling)
+To prevent `HTTP 400: The input token count exceeds the maximum number of tokens allowed 131072`:
+1. **Never Read Raw `transcript.jsonl` via `read_file`**:
+   - When recovering context from a prior trajectory, NEVER call `read_file` on `transcript.jsonl` (which dumps 46KB / ~12,000 tokens per call). Always use a compact Python script to extract only the last 5–10 step summaries (`< 1 KB` stdout).
+2. **Surgical Inspection & Batch Patching Across Generated Files**:
+   - Never read entire multi-hundred-line generated Manim scripts (`clip_*_gemini_scenes.py`) into chat context. Use targeted Python regex/AST scripts to inspect only failing classes or lines and apply consolidated fixes in `manim_compat.py` or batch scripts.
+3. **Summary-Only CLI Output**:
+   - Compiler and compositor scripts (`compile_all_archetypes.py`, `render_longform_parallel.py`) must keep stdout concise (summary lines only) and route verbose tracebacks to log files.
+4. **Strictly One Background Task at a Time**:
+   - Never launch overlapping background compilation/render commands; wait for the active background task to finish so duplicate `<SYSTEM_MESSAGE>` log dumps do not collide in context.
+5. **Subagent Delegation & `/compact`**:
+   - Delegate repetitive multi-file debugging or generation loops to a subagent (`invoke_subagent`) so its work stays in an isolated context window, and recommend `/compact` before transitioning between major pipeline phases.
+
+
 
 
