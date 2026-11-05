@@ -160,6 +160,21 @@ All video production -- whether 1920×1080 widescreen master podcasts or 740×74
 - **NO DATA CLUTTER**: Never stuff animations with number tables, tiny telemetry cards, or dense academic text. Pure, bold, kinetic cartoon storytelling.
 - **Lines & Styling**: Bold, thick lines (4px–14px), solid white on pure black `#000000`, zero background clutter.
 
+### 4. Coherent Black & White Typography & Color Hierarchy (Every Visual Element)
+
+The entire production strictly follows a **Monochrome Noir with Functional Yellow Accent** hierarchy. Random primary colors, gradients, and pastel clutter are permanently prohibited across all visual layers:
+
+| Visual Element | Typography & Font Family | Foreground Color | Background / Stroke / Delimiter | Sizing & Safe Zone Rules |
+| :--- | :--- | :--- | :--- | :--- |
+| **Canvas Background** | N/A | N/A | **Pure Glossy Black (`#000000`)** | Full 1920×1080 & 740×740 surfaces; zero background texture or noise. |
+| **Host Header Strip** | Clean Bold Sans-Serif (Arial Bold / Inter), Uppercase | **Stark White (`#FFFFFF`)**; Delimiter `--` in Muted Slate (`#64748b`) | None (Floats on pure black) | Centered directly above karaoke captions; dynamic white microphone pulses on speech. |
+| **Word-Level Captions** | Heavy Sans-Serif (Arial Bold / DejaVu Sans Bold) | **Spoken Word**: Yellow (`#FFD700` / `#FFF066`)<br>**Upcoming Words**: White (`#FFFFFF`) | None (Zero stroke outline / zero dark box) | 32px–40px equivalent; centered, generous line-height (1.3×); strict safe-margin clamping. |
+| **Central Visual Deck (Manim)** | Monospace (`DejaVuSansMono`) or Minimalist Sans | **Pure White (`#FFFFFF`)** for all vector lines, figures, and Math/KaTeX | Vector lines: 4px–14px bold solid white; Fills: `#000000` or `#0e1420` | Minimum 28px–36px for labels; zero tiny telemetry text or table clutter. |
+| **Central Visual Deck (Mosaic)** | Bold Geometric Sans-Serif (Inter / Helvetica Neue) | **Pure White (`#FFFFFF`)** for headings, metrics, and diagrams | Stark black containers with subtle 1px slate borders (`#334155`) | High-contrast mobile legibility; no low-contrast gray-on-gray text. |
+| **Intro Billboard Cards** | Bold Punchy Sans-Serif | **Title**: Stark White (`#FFFFFF`)<br>**Hook Quote**: Muted Silver (`#E2E8F0`) | Pure Black (`#000000`) with 1px subtle divider (`#334155`) | 48px–56px title scale; max 3–5 words per line; strictly centered. |
+| **Outro Teaser Cards** | Bold Sans-Serif / Monospace | **Teaser Banner**: Stark White (`#FFFFFF`)<br>**Question**: Silver (`#CBD5E1`) | Pure Black (`#000000`) | 40px–48px scale; clear hierarchy between bridge label and question. |
+| **Bottom Footer Bar Strip** | Minimalist Clean Monospace (`DejaVuSansMono`) | **Muted Slate Gray (`#64748b`)** on Left & Right | 1px horizontal delimiter line (`#1e293b` / `#334155`) at `y ≈ cur_box_y + 680` | Low-contrast (14px–16px); never distracts from visual deck; **STRICTLY NO TITLES**. |
+
 ## Token Budget & Context Hygiene Rules (131K Input Token Ceiling)
 To prevent `HTTP 400: The input token count exceeds the maximum number of tokens allowed 131072`:
 1. **Never Read Raw `transcript.jsonl` via `read_file`**:
