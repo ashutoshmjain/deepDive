@@ -1103,6 +1103,89 @@ You MUST respond with a single JSON object for Clip {clip_num} matching the sche
     return prompt
 
 
+
+def get_storyboard_filepath(project_id: str, clip_num) -> str:
+    project_dir = os.path.join("projects", project_id)
+    storyboards_dir = os.path.join(project_dir, "storyboards")
+    os.makedirs(storyboards_dir, exist_ok=True)
+    return os.path.join(storyboards_dir, f"clip_{clip_num}_storyboard.json")
+
+
+def generate_or_load_storyboard_data(project_id: str, clip_num, force_regen: bool = False, custom_directive: str = "") -> dict:
+    filepath = get_storyboard_filepath(project_id, clip_num)
+    
+    if os.path.exists(filepath) and not force_regen and not custom_directive:
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if data.get("scenes") and len(data.get("scenes")) >= 2:
+                    return data
+        except Exception:
+            pass
+
+    plan_path = os.path.join("projects", project_id, "plan.json")
+    if not os.path.exists(plan_path):
+        plan_path = "plan.json"
+    with open(plan_path, "r", encoding="utf-8") as pf:
+        plan_data = json.load(pf)
+    t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+    if not t_clip:
+        raise Exception(f"Clip {clip_num} not found in plan {plan_path}")
+
+    body_dur = float(t_clip.get("audio_duration") or t_clip.get("duration") or 120.0)
+    existing_scenes = t_clip.get("infographic_scenes") or []
+    
+    if existing_scenes and not force_regen and not custom_directive:
+        scenes = existing_scenes
+    else:
+        import manim_infographic_engine
+        settings = load_settings()
+        api_key = settings.get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
+        g_mod = genai if (HAS_GENAI and configure_gemini(api_key)) else None
+        scenes = manim_infographic_engine.generate_pedagogical_storyboard(
+            t_clip, body_duration=body_dur, intro_offset=1.5,
+            custom_instructions=custom_directive, genai_mod=g_mod,
+            force_regenerate=force_regen
+        )
+        t_clip["infographic_scenes"] = scenes
+        with open(plan_path, "w", encoding="utf-8") as pf_w:
+            json.dump(plan_data, pf_w, indent=4)
+
+    storyboard_obj = {
+        "_rule_engine": {
+            "standard": "Feynman-Needham Pedagogical Standard",
+            "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
+            "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
+            "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
+            "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
+            "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
+            "safe_zones": "Captions at y≈500..555. Top chrome y in [0, 450] strictly clear.",
+            "archetypes_guide": {
+                "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
+                "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
+                "funnel_filter": "Bottlenecks, selection, throughput compression",
+                "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
+                "network_artery": "Interconnection, trade routes vs isolation fallacy",
+                "foundation_stack": "Solid base vs fragile top layers",
+                "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
+                "circuit_switch": "Logic gate, threshold barrier, state trigger",
+                "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
+            "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
+            }
+        },
+        "clip_num": int(clip_num),
+        "clip_title": t_clip.get("title", ""),
+        "total_duration": round(body_dur, 2),
+        "custom_directive": custom_directive,
+        "scenes": scenes
+    }
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(storyboard_obj, f, indent=2)
+
+    return storyboard_obj
+
+
 class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -2966,7 +3049,7 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 clip_num = json_data.get("clip_num", 1)
                 title = json_data.get("title", f"Clip-{clip_num}")
                 export_format = json_data.get("export_format", "audio")
-                resolution = json_data.get("resolution", "740x740")
+                resolution = json_data.get("resolution", "1080x1080")
                 bg_color = json_data.get("bg_color", "black")
                 
                 os.makedirs("clips", exist_ok=True)
@@ -3494,6 +3577,94 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
                 return
 
+        elif parsed_url.path == '/set-active-master':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            req_source = params.get('source', ['mosaic'])[0].lower()
+            try:
+                if not project_id or not clip_num:
+                    raise Exception("Missing project id or clip number.")
+                
+                source = "manim" if req_source in ("infographic", "manim") else "mosaic"
+                ep_num = project_id.replace('episode_', '')
+                plan_path = os.path.join("projects", project_id, "plan.json")
+                if not os.path.exists(plan_path):
+                    plan_path = "plan.json"
+
+                with open(plan_path, "r", encoding="utf-8") as f:
+                    plan_data = json.load(f)
+                
+                t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+                if not t_clip:
+                    raise Exception(f"Clip {clip_num} not found in plan.")
+
+                t_clip["visual_source"] = source
+                with open(plan_path, "w", encoding="utf-8") as f:
+                    json.dump(plan_data, f, indent=4)
+
+                docs_plan = os.path.join("docs", "episodes", ep_num, "plan.json")
+                if os.path.exists(docs_plan):
+                    try:
+                        with open(docs_plan, "w", encoding="utf-8") as f:
+                            json.dump(plan_data, f, indent=4)
+                    except Exception:
+                        pass
+
+                # Resolve variant source file
+                variant_candidates = [
+                    os.path.join("clips", f"{ep_num}-{clip_num}-{source}.mp4"),
+                ]
+                if source == "manim":
+                    variant_candidates.append(os.path.join("clips", f"{ep_num}-{clip_num}-infographic.mp4"))
+                elif source == "mosaic":
+                    m_run_id = t_clip.get("mosaic_run_id")
+                    if m_run_id:
+                        variant_candidates.append(os.path.join("clips", f"{ep_num}-{clip_num}-mosaic-{m_run_id}.mp4"))
+                    variant_candidates.append(os.path.join("clips", f"{ep_num}-{clip_num}-original.mp4"))
+
+                chosen_variant = None
+                for cand in variant_candidates:
+                    if os.path.exists(cand) and os.path.getsize(cand) > 10000:
+                        chosen_variant = cand
+                        break
+
+                synced_deepdive = False
+                if chosen_variant:
+                    target_mp4 = os.path.join("clips", f"{ep_num}-{clip_num}.mp4")
+                    shutil.copy2(chosen_variant, target_mp4)
+                    
+                    deepdive_clips_dir = os.path.abspath(os.path.join("..", "deepDive", "src", "ddma", "docs", "episodes", str(ep_num), "clips"))
+                    if os.path.exists(os.path.dirname(deepdive_clips_dir)):
+                        os.makedirs(deepdive_clips_dir, exist_ok=True)
+                        dest_deepdive = os.path.join(deepdive_clips_dir, f"{ep_num}-{clip_num}.mp4")
+                        shutil.copy2(target_mp4, dest_deepdive)
+                        synced_deepdive = True
+                        print(f"[{project_id}][Clip {clip_num}] Promoted {source} to ACTIVE MASTER -> synced to deepDive: {dest_deepdive}")
+                else:
+                    # If variant file doesn't exist yet, trigger compile-clip with this source
+                    print(f"[{project_id}][Clip {clip_num}] Compiling fresh {source} as active master...")
+                    subprocess.run([sys.executable, "ddma.py", "compile-clip", "--num", str(clip_num), "--plan-file", plan_path, "--source", source], check=True)
+                    synced_deepdive = True
+
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "active_master": source,
+                    "synced_deepdive": synced_deepdive,
+                    "message": f"Active master switched to {source}."
+                }).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
         elif parsed_url.path == '/compile-clip':
             project_id = params.get('id', [None])[0]
             clip_num = params.get('num', [None])[0]
@@ -3580,6 +3751,9 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
                 # 2. Synchronously compile intro card, equalized master body, and outro curiosity card
                 cmd = [sys.executable, "ddma.py", "compile-clip", "--num", str(clip_num), "--plan-file", plan_path]
+                if req_source:
+                    src_flag = "manim" if req_source in ("infographic", "manim") else "mosaic"
+                    cmd.extend(["--source", src_flag])
                 if is_draft:
                     cmd.append("--force-draft")
                 print(f"[{project_id}][Clip {clip_num}] Starting synchronous compilation: {' '.join(cmd)}")
@@ -3593,6 +3767,145 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
                 self.wfile.write(json.dumps({"success": True, "message": "Compilation completed successfully."}).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
+        elif parsed_url.path == '/open-storyboard-in-editor':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            try:
+                if not project_id or not clip_num:
+                    raise Exception("Missing project id or clip number.")
+                filepath = get_storyboard_filepath(project_id, clip_num)
+                if not os.path.exists(filepath):
+                    generate_or_load_storyboard_data(project_id, clip_num)
+                
+                settings = load_settings()
+                editor_cmd = settings.get("external_editor") or os.environ.get("VISUAL") or os.environ.get("EDITOR") or "gvim"
+                try:
+                    cmd_args = shlex.split(editor_cmd, posix=(os.name != 'nt'))
+                except Exception:
+                    cmd_args = [editor_cmd]
+                
+                if shutil.which(cmd_args[0]) is None:
+                    local_gvim = os.path.expandvars(r'%LOCALAPPDATA%\Programs\Vim\gvim.exe')
+                    local_vim = os.path.expandvars(r'%LOCALAPPDATA%\Programs\Vim\vim.exe')
+                    if 'gvim' in cmd_args[0].lower() and os.path.exists(local_gvim):
+                        cmd_args[0] = local_gvim
+                    elif 'vim' in cmd_args[0].lower() and os.path.exists(local_vim):
+                        cmd_args[0] = local_vim
+
+                cmd_args = [arg for arg in cmd_args if arg not in ('-f', '--nofork')]
+                cmd_args.append(filepath)
+                print(f"[{project_id}][Clip {clip_num}] Launching external editor on storyboard: {cmd_args}")
+                
+                if os.name == 'nt':
+                    editor_exe = cmd_args[0]
+                    remaining_args = " ".join([f'"{a}"' for a in cmd_args[1:]])
+                    ps_cmd = f"Start-Process -FilePath '{editor_exe}' -ArgumentList '{remaining_args}'"
+                    subprocess.Popen(["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", ps_cmd])
+                else:
+                    subprocess.Popen(cmd_args)
+                
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "filepath": filepath,
+                    "filename": os.path.basename(filepath),
+                    "editor": editor_cmd,
+                    "message": f"Opened {os.path.basename(filepath)} in {editor_cmd}."
+                }).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
+        elif parsed_url.path == '/sync-storyboard':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            try:
+                filepath = get_storyboard_filepath(project_id, clip_num)
+                if not os.path.exists(filepath):
+                    raise Exception(f"Storyboard file {filepath} not found on disk.")
+                
+                with open(filepath, "r", encoding="utf-8") as f:
+                    sb = json.load(f)
+                
+                scenes = sb.get("scenes") or []
+                if not scenes:
+                    raise Exception("No scenes found in storyboard file.")
+                
+                plan_path = os.path.join("projects", project_id, "plan.json")
+                if not os.path.exists(plan_path):
+                    plan_path = "plan.json"
+                with open(plan_path, "r", encoding="utf-8") as pf:
+                    plan_data = json.load(pf)
+                t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+                if t_clip:
+                    t_clip["infographic_scenes"] = scenes
+                    with open(plan_path, "w", encoding="utf-8") as pf_w:
+                        json.dump(plan_data, pf_w, indent=4)
+                
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "storyboard": sb,
+                    "scene_count": len(scenes)
+                }).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
+        elif parsed_url.path == '/save-storyboard':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            try:
+                content_len = int(self.headers.get('Content-Length', 0))
+                raw_body = self.rfile.read(content_len).decode('utf-8')
+                sb_data = json.loads(raw_body)
+                
+                filepath = get_storyboard_filepath(project_id, clip_num)
+                with open(filepath, "w", encoding="utf-8") as f:
+                    json.dump(sb_data, f, indent=2)
+                
+                scenes = sb_data.get("scenes") or []
+                plan_path = os.path.join("projects", project_id, "plan.json")
+                if not os.path.exists(plan_path):
+                    plan_path = "plan.json"
+                with open(plan_path, "r", encoding="utf-8") as pf:
+                    plan_data = json.load(pf)
+                t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+                if t_clip and scenes:
+                    t_clip["infographic_scenes"] = scenes
+                    with open(plan_path, "w", encoding="utf-8") as pf_w:
+                        json.dump(plan_data, pf_w, indent=4)
+
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": True}).encode('utf-8'))
                 return
             except Exception as e:
                 self.send_response(500)
@@ -3628,6 +3941,7 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 import importlib
                 import ddma as ddma_mod
                 import infographic_engine
+                import manim_infographic_engine
                 importlib.reload(infographic_engine)
 
                 plan_path = os.path.join("projects", project_id, "plan.json")
@@ -3735,30 +4049,53 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                     )
                     t_clip["_caption_sig"] = curr_caption_sig
 
+                INFOGRAPHIC_ENGINE_VERSION = "v4_precompiled_archetypes"
                 infographic_mp4 = os.path.join("clips", f"{ep_num}-{clip_num}-infographic.mp4")
-                existing_scenes = t_clip.get("infographic_scenes") or []
-                scenes_mismatch = (not existing_scenes) or (abs(float(existing_scenes[-1].get("end", 0.0)) - body_dur) > 1.5)
-                need_render_infographic = (
-                    force_regen or bool(custom_instructions) or need_audio_cut or scenes_mismatch or
-                    not os.path.exists(infographic_mp4) or os.path.getsize(infographic_mp4) < 10000
-                )
 
-                if need_render_infographic:
-                    settings = load_settings()
-                    api_key = settings.get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
-                    g_mod = genai if (HAS_GENAI and configure_gemini(api_key)) else None
-                    scenes = infographic_engine.generate_infographic_storyboard(
-                        t_clip, body_duration=body_dur, intro_offset=1.5,
-                        custom_instructions=custom_instructions, genai_mod=g_mod,
-                        force_regenerate=True
+                import archetype_studio
+                importlib.reload(archetype_studio)
+                stitched_from_library = False
+                if not custom_instructions:
+                    stitched_from_library = archetype_studio.stitch_precompiled_archetypes_for_clip(
+                        int(clip_num), clip_mp3, infographic_mp4, body_dur, plan_clip=t_clip
                     )
-                    print(f"[{project_id}][Clip {clip_num}] Rendering local 740x740 Dan Koe infographic ({len(scenes)} scenes)...")
-                    infographic_engine.render_infographic_mp4(scenes, clip_mp3, infographic_mp4, duration=body_dur)
+
+                if stitched_from_library:
+                    meta_obj = archetype_studio.ensure_clip_meta(int(clip_num), plan_clip=t_clip, body_duration=body_dur)
+                    t_clip["infographic_scenes"] = meta_obj.get("beats", [])
+                    print(f"[{project_id}][Clip {clip_num}] Super-fast stitched {len(t_clip['infographic_scenes'])} pre-compiled archetypes into {infographic_mp4}!")
+                else:
+                    sb_disk_path = get_storyboard_filepath(project_id, clip_num)
+                    scenes = req_body.get("scenes")
+                    if not scenes and os.path.exists(sb_disk_path):
+                        try:
+                            with open(sb_disk_path, "r", encoding="utf-8") as sbf:
+                                sb_disk_data = json.load(sbf)
+                                if sb_disk_data.get("scenes"):
+                                    scenes = sb_disk_data["scenes"]
+                                    t_clip["infographic_scenes"] = scenes
+                        except Exception:
+                            pass
+                    if not scenes:
+                        scenes = t_clip.get("infographic_scenes")
+                    if not scenes or (force_regen and not os.path.exists(sb_disk_path) and not req_body.get("scenes")):
+                        settings = load_settings()
+                        api_key = settings.get("gemini_api_key") or os.environ.get("GEMINI_API_KEY")
+                        g_mod = genai if (HAS_GENAI and configure_gemini(api_key)) else None
+                        scenes = manim_infographic_engine.generate_pedagogical_storyboard(
+                            t_clip, body_duration=body_dur, intro_offset=1.5,
+                            custom_instructions=custom_instructions, genai_mod=g_mod,
+                            force_regenerate=True
+                        )
+                        t_clip["infographic_scenes"] = scenes
+                    manim_infographic_engine.render_manim_infographic_mp4(scenes, clip_mp3, infographic_mp4, duration=body_dur)
 
                 t_clip["_audio_sig"] = curr_audio_sig
                 t_clip["audio_duration"] = round(body_dur, 2)
-                t_clip["visual_source"] = "infographic"
+                if not t_clip.get("visual_source"):
+                    t_clip["visual_source"] = "manim"
                 t_clip["infographic_ready"] = True
+                t_clip["_infographic_version"] = INFOGRAPHIC_ENGINE_VERSION
                 with open(plan_path, "w", encoding="utf-8") as pf_w:
                     json.dump(plan_data, pf_w, indent=4)
 
@@ -3771,7 +4108,7 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                         pass
 
                 # 3. Compile 1080x1920 vertical captioned video with the 740x740 infographic
-                cmd_comp = [sys.executable, "ddma.py", "compile-clip", "--num", str(clip_num), "--plan-file", plan_path]
+                cmd_comp = [sys.executable, "ddma.py", "compile-clip", "--num", str(clip_num), "--plan-file", plan_path, "--source", "manim"]
                 proc = subprocess.run(cmd_comp, capture_output=True, text=True, cwd=".")
                 if proc.returncode != 0:
                     raise Exception(f"compile-clip failed: {proc.stderr}")
@@ -3783,9 +4120,85 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(json.dumps({
                     "success": True,
                     "infographic_file": infographic_mp4,
+                    "video_url": f"/clips/{ep_num}-{clip_num}-manim.mp4",
+                    "active_master": t_clip.get("visual_source", "mosaic"),
                     "scenes_count": len(t_clip.get("infographic_scenes", [])),
-                    "message": "Local 740x740 Infographic rendered and compiled into 1080x1920 captioned video!"
+                    "message": "740x740 Manim Pedagogical Video rendered and compiled into 1080x1920 captioned video!"
                 }).encode('utf-8'))
+                return
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
+        elif parsed_url.path == '/update-archetype-beat':
+            try:
+                query = parse_qs(parsed_url.query)
+                project_id = query.get('id', [None])[0]
+                clip_num = int(query.get('num', [1])[0])
+                content_len = int(self.headers.get('Content-Length', 0))
+                req_body = json.loads(self.rfile.read(content_len).decode('utf-8')) if content_len > 0 else {}
+
+                class_name = str(req_body.get("class_name", "")).strip()
+                beat_index = int(req_body.get("beat_index", 1))
+                directive = str(req_body.get("directive", "")).strip()
+                spoken_text = str(req_body.get("spoken_text", "")).strip()
+                duration = float(req_body.get("duration", 7.5))
+                custom_code = req_body.get("custom_code")
+                recompile_short = bool(req_body.get("recompile_short", True))
+
+                if os.getcwd() not in sys.path:
+                    sys.path.insert(0, os.getcwd())
+                import importlib
+                import archetype_studio
+                importlib.reload(archetype_studio)
+
+                res_update = archetype_studio.update_single_scene_with_ai(
+                    clip_num=clip_num,
+                    beat_index=beat_index,
+                    class_name=class_name,
+                    user_directive=directive,
+                    spoken_text=spoken_text,
+                    duration=duration,
+                    custom_code=custom_code,
+                )
+
+                ep_num = project_id.replace('episode_', '') if project_id else "248"
+                short_video_url = f"/clips/{ep_num}-{clip_num}-manim.mp4?t={int(time.time())}"
+
+                if recompile_short and project_id:
+                    plan_path = os.path.join("projects", project_id, "plan.json")
+                    if not os.path.exists(plan_path):
+                        plan_path = "plan.json"
+                    with open(plan_path, "r", encoding="utf-8") as pf:
+                        plan_data = json.load(pf)
+                    t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+                    import glob as _glob
+                    mp3_matches = _glob.glob(os.path.join("clips", f"{ep_num}-{clip_num}-*.mp3")) + _glob.glob(os.path.join("clips", f"{ep_num}-{clip_num}.mp3"))
+                    if mp3_matches and t_clip:
+                        mp3_matches.sort(key=os.path.getmtime, reverse=True)
+                        clip_mp3 = mp3_matches[0]
+                        body_dur = float(t_clip.get("audio_duration") or t_clip.get("duration") or 120.0)
+                        infographic_mp4 = os.path.join("clips", f"{ep_num}-{clip_num}-infographic.mp4")
+                        archetype_studio.stitch_precompiled_archetypes_for_clip(
+                            clip_num, clip_mp3, infographic_mp4, body_dur, plan_clip=t_clip
+                        )
+                        subprocess.run([sys.executable, "ddma.py", "compile-clip", "--num", str(clip_num), "--plan-file", plan_path, "--source", "manim"], capture_output=True, text=True, cwd=".")
+
+                meta_obj = archetype_studio.ensure_clip_meta(clip_num)
+                res_update["short_video_url"] = short_video_url
+                res_update["meta"] = meta_obj
+
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps(res_update).encode('utf-8'))
                 return
             except Exception as e:
                 import traceback
@@ -4211,10 +4624,10 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                                     
                                     if file.endswith(".mp3"):
                                         clip_statuses[clip_num]["has_audio"] = True
-                                    elif file.endswith("-infographic.mp4"):
+                                    elif file.endswith("-infographic.mp4") or file.endswith("-manim.mp4"):
                                         clip_statuses[clip_num]["video_state"] = "compiled"
                                         clip_statuses[clip_num]["has_infographic_file"] = True
-                                    elif file.endswith("-original.mp4") or "-mosaic-" in file:
+                                    elif file.endswith("-original.mp4") or "-mosaic-" in file or file.endswith("-mosaic.mp4"):
                                         clip_statuses[clip_num]["video_state"] = "compiled"
                                         clip_statuses[clip_num]["has_mosaic_file"] = True
                                     elif file.endswith(".mp4"):
@@ -4342,6 +4755,83 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(files).encode('utf-8'))
             return
             
+        elif parsed_url.path == '/get-clip-archetypes':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            try:
+                if not project_id or not clip_num:
+                    raise Exception("Missing project id or clip number.")
+                if os.getcwd() not in sys.path:
+                    sys.path.insert(0, os.getcwd())
+                import importlib
+                import archetype_studio
+                importlib.reload(archetype_studio)
+
+                plan_path = os.path.join("projects", project_id, "plan.json")
+                if not os.path.exists(plan_path):
+                    plan_path = "plan.json"
+                t_clip = None
+                if os.path.exists(plan_path):
+                    with open(plan_path, "r", encoding="utf-8") as pf:
+                        plan_data = json.load(pf)
+                    t_clip = next((c for c in plan_data if str(c.get("num")) == str(clip_num)), None)
+
+                body_dur = float(t_clip.get("audio_duration") or t_clip.get("duration") or 120.0) if t_clip else 120.0
+                meta_obj = archetype_studio.ensure_clip_meta(int(clip_num), plan_clip=t_clip, body_duration=body_dur)
+
+                ep_num = project_id.replace('episode_', '')
+                short_mp4 = os.path.join("clips", f"{ep_num}-{clip_num}-manim.mp4")
+                if not os.path.exists(short_mp4):
+                    short_mp4 = os.path.join("clips", f"{ep_num}-{clip_num}.mp4")
+                video_url = f"/clips/{os.path.basename(short_mp4)}" if os.path.exists(short_mp4) else None
+
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "meta": meta_obj,
+                    "has_compiled_short": os.path.exists(short_mp4),
+                    "video_url": video_url
+                }).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
+        elif parsed_url.path == '/get-storyboard':
+            project_id = params.get('id', [None])[0]
+            clip_num = params.get('num', [None])[0]
+            force_regen = params.get('force', ['false'])[0].lower() in ('true', '1')
+            try:
+                if not project_id or not clip_num:
+                    raise Exception("Missing project id or clip number.")
+                sb = generate_or_load_storyboard_data(project_id, clip_num, force_regen=force_regen)
+                filepath = get_storyboard_filepath(project_id, clip_num)
+                self.send_response(200)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "storyboard": sb,
+                    "filepath": filepath,
+                    "filename": os.path.basename(filepath)
+                }).encode('utf-8'))
+                return
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                return
+
         elif parsed_url.path == '/get-settings':
             try:
                 settings_path = "settings.json"
@@ -4353,7 +4843,7 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                     settings_data = {
                         "theme": "midnight",
                         "export_format": "audio",
-                        "resolution": "740x740",
+                        "resolution": "1080x1080",
                         "bg_color": "black"
                     }
                 self.send_response(200)
@@ -4491,6 +4981,10 @@ class RangeHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def translate_path(self, path):
         translated = super().translate_path(path)
         clean_path = path.split('?')[0]
+        if not os.path.exists(translated) and clean_path.startswith("/media/"):
+            parent_media = os.path.abspath(os.path.join(os.getcwd(), "..", clean_path.lstrip("/")))
+            if os.path.exists(parent_media):
+                return parent_media
         if not os.path.exists(translated) and "/clips/" in clean_path:
             # Fallback 1: Strip 'episode_' prefix (e.g. /clips/episode_245-1.mp4 -> /clips/245-1.mp4)
             if "/clips/episode_" in clean_path:
