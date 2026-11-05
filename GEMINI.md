@@ -113,37 +113,43 @@ The system is structured as a 3-pillar content progression with dedicated distri
      - 🎵 **KEEP Mid-Stings (`Bluesy Vibes` / `Howling`)**: Preserved between punchline and deliberation across all chapters for periodic musical pacing (~every 2 minutes).
      - **Visual Deck**: Plays the Active Master (`visual_source`: Mosaic or Manim) in the central 740×740 canvas.
 
-## Longform Video Podcast Architecture & Playbook (Under Podcast Tab)
+## Unified Canvas Visual Standards: Longform Podcast vs. DDMA Short Reels
 
-> [!IMPORTANT]
-> **Courses Retired**: Standalone course modules have been retired in favor of **broadcast-grade Longform Video Podcasts (`podcast_<ep>.mp4`)**, fully integrated under the **Podcast tab** in the Cockpit. Detailed blueprint lives in [`deepDive/LONGFORM_VIDEO_PLAYBOOK.md`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/LONGFORM_VIDEO_PLAYBOOK.md).
+All video production -- whether 1920×1080 widescreen master podcasts or 740×740 / 9:16 short social reels -- shares a unified visual grammar, layout hierarchy, and caption engine. Voice diarization has been retired in favor of a clean, static host header with an active animated microphone.
 
-### Core Architectural Tenets:
-1. **Master Specs**:
-   - Master Resolution: `1920×1080` (`16:9` widescreen HD, glossy black `#000000`).
-   - Host Header Strip: `SATOSHA  --  🎙️  --  SATOSHI` with yellow/white word-level karaoke captions.
-   - Central Visual Canvas: Monochrome `740×740` ManimCE vector animations centered on screen.
-2. **Micro-Beat Pacing (~7.5s per scene)**:
-   - Slices each ~2-minute chapter into **~15–20 micro-beats** (~350–400 bespoke scenes across a 50–60 min show).
-   - Authoring is handled deterministically via `batch_archetype_pipeline.py` using `gemini-3.5-flash-lite`.
-3. **"Super Dumb & Figurative" Visual Standard**:
-   - **Literal Figurative Cartoons**: Scenes must be immediately recognizable cartoons illustrating the spoken dialogue (e.g., a literal brass faucet dripping water into a mug, an airplane flying through clouds, a forklift stacking crates).
-   - **NO DATA CLUTTER**: Never stuff animations with number tables, tiny telemetry cards, or dense academic text. Pure, bold, kinetic cartoon storytelling.
-   - **Lines & Styling**: Bold, thick lines (4px–14px), solid white on pure black `#000000`, zero background clutter.
-4. **Cockpit Beat Studio & In-Place Patching**:
-   - The Cockpit's **Podcast Tab** includes the **Horizontal-Split Longform Beat-by-Beat Timeline**.
-   - Allows previewing any single beat's video, regenerating scene code via AI prompt, and **1-click patching** the modified chapter into the Master MP4 in seconds without re-rendering the whole 50-minute episode.
-5. **Asset Recycling**:
-   - The ~390 Manim scenes authored for Longform Video become the reusable visual building blocks for short-form Reels/Shorts in DDMA.
+### 1. Shared Visual Invariants (Common to Both Formats)
+- **Host Header Strip**:
+  - Display: Static **`SATOSHA  --  🎙️  --  SATOSHI`** centered directly above the captions.
+  - **Dynamic Blinking Microphone**: The central microphone icon pulses/blinks dynamically during active speech, eliminating the need for voice diarization or host switching.
+- **Word-Level Karaoke Captions**:
+  - High-visibility yellow & white typography rendered via Whisper word timestamps.
+  - Active spoken word highlights in **Yellow** (`#FFD700` / `#FFF066`), while upcoming words remain in **White** (`#FFFFFF`).
+  - Text wraps cleanly within safe zones; zero text clipping.
+- **Background & Canvas Styling**:
+  - Pure Glossy Black (`#000000` / `RGB(0, 0, 0)`) across all canvas borders and backgrounds.
+  - High-contrast, mobile-legible vector lines (bold strokes, 4px–14px, solid white on pure black).
+- **Central Visual Deck (740×740)**:
+  - Both formats feature the central square `740×740` visual engine playing the active master: **100% Mosaic OR 100% Manim** (no intra-clip mixing).
+  - Figurative, "super dumb" cartoon storytelling and clean diagrams without small data clutter or academic tables.
 
-## Host Identity & Voice Diarization Rules (Permanent Invariant)
-- **Host Genders**:
-  - **Satosha is MALE** (deep male voice).
-  - **Satoshi is FEMALE** (female voice).
-- **Voice Diarization Mapping**:
-  - Diarization segment `"satoshi"` (male voice) $\implies$ Display **`SATOSHA`**.
-  - Diarization segment `"satosha"` (female voice) $\implies$ Display **`SATOSHI`**.
-- This mapping is permanent and applies everywhere across DDMA, Infographics, Course Modules, and Podcasts.
+### 2. Format Comparison & Contrast Matrix
+
+| Visual Element | Track A: DDMA Short Reels (`clips/<ep>-<num>.mp4`) | Track B: Longform Video Master (`podcast_<ep>.mp4`) |
+| :--- | :--- | :--- |
+| **Canvas Resolution & Aspect Ratio** | **`740×740`** (Square Deck) or **`1080×1920`** (`9:16` Vertical for TikTok / Shorts / Reels) | **`1920×1080`** (`16:9` Widescreen HD Master for YouTube, Spotify, Cockpit) |
+| **Pillar Placement** | **Pillar 3: Reels** (Fast, punchy, self-contained promotional shorts) | **Pillar 2: Podcast** (Broadcast episodic deep dive) |
+| **Intro Billboard Card** | **Included**: 3–5s Title Card with spoken title & hook quote | **Stripped**: Never show intro graphic cards between chapters |
+| **Outro Billboard Card** | **Included**: 3–5s "Coming Up in Next Part" teaser card | **Stripped**: Never show outro bridge cards between chapters |
+| **Mid-Sting (Bluesy / Howling)** | **Included**: 5.5s transition between Punchline and Deliberation | **Included**: Preserved across all chapters for periodic musical pacing (~every 2m) |
+| **Outro Sting (`deepDive-conclusion`)** | **Included**: 5.5s closing musical sting at the end of every clip | **Stripped between chapters**; **Preserved on Clip 1 ONLY** as the Master Show Opener |
+| **Host Header & Karaoke** | Centered in upper canvas safe zone above 740×740 visual square | Centered in upper widescreen strip (`y: 60-120`) above 740×740 central visual square |
+| **Micro-Beat Pacing** | Self-contained single-chapter arc (~2 to 2.5 minutes total) | Continuous seamless playback (~350–400 micro-beats across 50–60 minutes) |
+| **Patching & Authoring** | Authored in DDMA Studio / Mosaic Workspace | In-place chapter patching via Cockpit **Beat Studio** under the Podcast tab |
+
+### 3. "Super Dumb & Figurative" Cartoon Standard (Manim & Mosaic)
+- **Literal Figurative Cartoons**: Scenes must be immediately recognizable cartoons illustrating the spoken dialogue (e.g., a literal brass faucet dripping water into a mug, an airplane flying through clouds, a forklift stacking crates, a prism splitting light).
+- **NO DATA CLUTTER**: Never stuff animations with number tables, tiny telemetry cards, or dense academic text. Pure, bold, kinetic cartoon storytelling.
+- **Lines & Styling**: Bold, thick lines (4px–14px), solid white on pure black `#000000`, zero background clutter.
 
 ## Token Budget & Context Hygiene Rules (131K Input Token Ceiling)
 To prevent `HTTP 400: The input token count exceeds the maximum number of tokens allowed 131072`:
