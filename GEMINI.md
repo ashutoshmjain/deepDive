@@ -131,6 +131,15 @@ All video production -- whether 1920×1080 widescreen master podcasts or 740×74
 - **Central Visual Deck (740×740)**:
   - Both formats feature the central square `740×740` visual engine playing the active master: **100% Mosaic OR 100% Manim** (no intra-clip mixing).
   - Figurative, "super dumb" cartoon storytelling and clean diagrams without small data clutter or academic tables.
+- **Bottom Footer Bar Strip**:
+  - Located directly below the central 740×740 visual deck across both formats.
+  - **Left Side**:
+    - **Manim**: Displays the **Archetype Name** (e.g., `Archetype: KineticVector`).
+    - **Mosaic**: Displays **`Mosaic`**.
+    - **STRICT INVARIANT: NO ARCHETYPE TITLE EVER**: Never display chapter titles, scene titles, or descriptive text clutter in the footer.
+  - **Right Side**:
+    - Displays **`deepDive podcast`** for both Manim and Mosaic.
+  - **Styling**: Sleek, low-contrast minimalist font (`#64748b` muted slate gray) with a subtle horizontal delimiter line (`y ≈ cur_box_y + 680`).
 
 ### 2. Format Comparison & Contrast Matrix
 
