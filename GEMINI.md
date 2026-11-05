@@ -30,6 +30,15 @@
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
 - Before closing any tool or UI feature update, verify that code parity is maintained across `mdIngest` $\longleftrightarrow$ `deepDive/ingest` and `ddma` $\longleftrightarrow$ `deepDive/ddma`.
 
+## Ephemeral Media & Build Artifacts (`media/` Directory)
+- **Role**: ManimCE's local intermediate compilation cache and render scratchpad (`media/videos/clip_XX_gemini_scenes/740p15/*.mp4`, `media/texts/*.svg`, `media/images/`).
+- **Strict Non-Commit Invariant**: The `media/` directory is an ephemeral build target (analogous to `node_modules/`, `__pycache__/`, or `target/` in Rust). **NEVER commit or push `media/` to GitHub**.
+- **Cloud vs. Local Agent Parity**:
+  - The source of truth stored in Git is purely the Python archetype code (`ddma/archetypes/*.py`, `< 700 KB` per episode).
+  - Cloud Antigravity environments do NOT expect or require a pre-existing `media/` directory.
+  - When rendering in the cloud or locally, running `compile_all_archetypes.py` or `archetype_studio.py` generates the `media/` directory on-demand.
+  - Master exports stream directly to Google Drive (`pickup_longform`), leaving intermediate `media/` chunks completely disposable.
+
 ## Architectural Philosophy: The "Research to Reels" Pipeline
 
 The system is structured as a 3-pillar content progression with dedicated distribution channels at each stage:
