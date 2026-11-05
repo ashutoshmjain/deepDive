@@ -43,7 +43,8 @@
             }
         ],
         "locked": false,
-        "visual_source": "mosaic"
+        "visual_source": "mosaic",
+        "mosaic_run_id": "cd624e30-4146-4ac6-a035-0615eb3104b7"
     },
     {
         "num": 2,
