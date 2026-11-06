@@ -5436,7 +5436,7 @@
             if (field === 'trim_end' && seg.type === 'audio') defaultVal = 0.1;
             if (field === 'fade_out' && seg.type === 'music') defaultVal = 2.0;
             if (field === 'silence_before' && seg.type === 'music') defaultVal = 0.2;
-            if (field === 'crossfade' && seg.type === 'music') defaultVal = 0.5;
+            if (field === 'crossfade' && seg.type === 'music') defaultVal = 1.0;
             if (field === 'volume') defaultVal = 1.0;
             
             let val = seg[field] !== undefined ? parseFloat(seg[field]) : defaultVal;
@@ -6399,9 +6399,11 @@
         // Add New Clip card
         newClipBtn.addEventListener('click', () => {
             if (!activeProjectId) return;
+            const isZeroIndexed = clips.length > 0 && clips[0].num === 0;
+            const nextNum = isZeroIndexed ? clips.length : clips.length + 1;
             clips.push({
-                num: clips.length + 1,
-                title: `New Clip #${clips.length + 1}`,
+                num: nextNum,
+                title: `New Clip #${nextNum}`,
                 locked: false,
                 segments: []
             });
@@ -6619,9 +6621,10 @@
             clearExistingCards();
 
             const episodeNum = (projectInfo && projectInfo.name) ? (projectInfo.name.match(/\d+/)?.[0] || projectInfo.name) : "244";
+            const isZeroIndexedPlan = clips.length > 0 && clips[0].num === 0;
 
             clips.forEach((clip, index) => {
-                clip.num = index + 1;
+                clip.num = isZeroIndexedPlan ? index : (index + 1);
                 
                 if (clip.hidden && !showHiddenClips) {
                     return;
@@ -6677,17 +6680,17 @@
                 const totalDuration = calculateClipDuration(clip);
                 
                 // Prepend Intro Card HTML
-                const introSubtext = (clip.num === 1) ? `EPISODE ${episodeNum}` : `EPISODE ${episodeNum} • PART ${clip.num}`;
-                const introTitleText = (clip.num === 1) ? ((projectInfo && projectInfo.title) ? projectInfo.title : "Life, Death and the Lysosome") : (clip.title ? clip.title : `Part ${clip.num}`);
+                const introSubtext = (clip.num === 0) ? `EPISODE ${episodeNum}` : `EPISODE ${episodeNum} • PART ${clip.num}`;
+                const introTitleText = (clip.title && clip.title.trim()) ? clip.title : ((clip.num === 0 && projectInfo && projectInfo.title) ? projectInfo.title : `Part ${clip.num}`);
                 let introCardHtml = `
-                    <div class="segment-row segment-row-intro" style="border-left: 3px solid #06b6d4; padding: 0.4rem 0.6rem; margin-bottom: 0.4rem; background: rgba(6, 182, 212, 0.02); border-radius: 4px; border-top: 1px solid rgba(6, 182, 212, 0.1); border-bottom: 1px solid rgba(6, 182, 212, 0.1); border-right: 1px solid rgba(6, 182, 212, 0.1);">
+                    <div class="segment-row segment-row-intro" style="display: flex; flex-direction: column; align-items: stretch; border-left: 3px solid #06b6d4; padding: 0.4rem 0.6rem; margin-bottom: 0.4rem; background: rgba(6, 182, 212, 0.02); border-radius: 4px; border-top: 1px solid rgba(6, 182, 212, 0.1); border-bottom: 1px solid rgba(6, 182, 212, 0.1); border-right: 1px solid rgba(6, 182, 212, 0.1); gap: 0.2rem; cursor: default;">
                         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                            <span style="font-size: 0.75rem; font-weight: 700; color: #06b6d4; display: flex; align-items: center; gap: 0.25rem;">🎬 Intro Clip (Title Card)</span>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #06b6d4; display: flex; align-items: center; gap: 0.25rem;">🎬 Intro Clip (Title Card • ${introSubtext})</span>
                             <span style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono);">Duration: 1.5s</span>
                         </div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; display: flex; flex-direction: column; gap: 0.1rem;">
-                            <div><strong style="color: var(--text-main);">Layout Text:</strong> ${introSubtext}</div>
-                            <div><strong style="color: var(--text-main);">Title Text:</strong> "${introTitleText}"</div>
+                        <div style="margin-top: 0.1rem; width: 100%;" onclick="event.stopPropagation();">
+                            <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.15rem; font-weight: 600;">Intro Card Title Text (editable):</label>
+                            <input type="text" class="intro-title-text-input" style="width: 100%; font-size: 0.75rem; background-color: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.25rem 0.4rem; border-radius: 4px; outline: none; box-sizing: border-box;" placeholder="Enter intro card title text..." value="${escapeHtml(introTitleText)}" data-index="${index}" ${isLocked ? 'disabled' : ''}>
                         </div>
                     </div>
                 `;
@@ -6798,10 +6801,10 @@
                             const isMusicDrawerOpen = Boolean(window.segDrawersState && window.segDrawersState[`music_drawer_${index}_${segIdx}`]);
                             const isOutro = (segIdx === clip.segments.length - 1);
                             const musicTitle = isOutro ? "🎵 Outro Conclusion Sting" : "🎵 Mid Transition Sting";
-                            const silenceVal = (seg.silence_before !== undefined ? seg.silence_before : 0.2).toFixed(2);
+                            const silenceVal = (seg.silence_before !== undefined ? seg.silence_before : (seg.gap !== undefined ? seg.gap : 0.2)).toFixed(2);
                             const fadeInVal = (seg.fade_in !== undefined ? seg.fade_in : 0.0).toFixed(2);
                             const fadeOutVal = (seg.fade_out !== undefined ? seg.fade_out : 2.0).toFixed(2);
-                            const crossfadeVal = (seg.crossfade !== undefined ? seg.crossfade : (isOutro ? 0.0 : 0.5)).toFixed(2);
+                            const crossfadeVal = (seg.crossfade !== undefined ? seg.crossfade : (isOutro ? 0.0 : 1.0)).toFixed(2);
                             const volumeVal = (seg.volume !== undefined ? seg.volume : 1.0).toFixed(2);
 
                             const badgeHtml = isOutro 
@@ -7067,13 +7070,28 @@
                 `;
 
                 const titleInput = card.querySelector('.clip-card-title');
+                const introTitleInput = card.querySelector('.intro-title-text-input');
                 if (titleInput) {
                     titleInput.addEventListener('input', function(e) {
                         clips[index].title = e.target.value;
+                        if (introTitleInput) introTitleInput.value = e.target.value;
                         savePlanToServerDebounced(800);
                     });
                     titleInput.addEventListener('change', function(e) {
                         clips[index].title = e.target.value.trim();
+                        if (introTitleInput) introTitleInput.value = clips[index].title;
+                        savePlanToServer();
+                    });
+                }
+                if (introTitleInput) {
+                    introTitleInput.addEventListener('input', function(e) {
+                        clips[index].title = e.target.value;
+                        if (titleInput) titleInput.value = e.target.value;
+                        savePlanToServerDebounced(800);
+                    });
+                    introTitleInput.addEventListener('change', function(e) {
+                        clips[index].title = e.target.value.trim();
+                        if (titleInput) titleInput.value = clips[index].title;
                         savePlanToServer();
                     });
                 }
@@ -7145,7 +7163,7 @@
                         const cacheBustIntroUrl = data.preview_url + '?t=' + Date.now();
                         openVideoModal(
                             cacheBustIntroUrl,
-                            `INTRO PREVIEW - Part ${clip.num}: ${clip.title}`,
+                            clip.num === 0 ? `INTRO PREVIEW - Episode ${episodeNum}: ${clip.title}` : `INTRO PREVIEW - Part ${clip.num}: ${clip.title}`,
                             `previews/intro_${activeProjectId}_${clip.num}.mp4`
                         );
                         
@@ -7198,12 +7216,21 @@
                     });
                 });
 
-                card.querySelector('.outro-bridge-text-input')?.addEventListener('change', function(e) {
-                    const idx = parseInt(e.target.dataset.index);
-                    const val = e.target.value.trim();
-                    clips[idx].bridge_text = val ? [val] : [];
-                    savePlanToServer();
-                });
+                const outroInput = card.querySelector('.outro-bridge-text-input');
+                if (outroInput) {
+                    outroInput.addEventListener('input', function(e) {
+                        const idx = parseInt(e.target.dataset.index);
+                        const val = e.target.value;
+                        clips[idx].bridge_text = val ? [val] : [];
+                        savePlanToServerDebounced(800);
+                    });
+                    outroInput.addEventListener('change', function(e) {
+                        const idx = parseInt(e.target.dataset.index);
+                        const val = e.target.value.trim();
+                        clips[idx].bridge_text = val ? [val] : [];
+                        savePlanToServer();
+                    });
+                }
 
                 const videoPlayBtnEl = card.querySelector(`#playVideoBtn_${index}`);
                 if (videoPlayBtnEl && statusInfo.video_state !== 'processing') {

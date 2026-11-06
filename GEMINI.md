@@ -21,14 +21,14 @@
 1. **`deepDive` is the Active Development Workbench**:
    - Because `start_ingest.bat` launches `python ingest/server.py` and executes `ddma/ddma.py` directly inside `deepDive`, **all active code changes, bug fixes, UI styling, and testing must be done directly in `deepDive`**:
      - UI & Server fixes $\rightarrow$ [`deepDive/ingest/`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/ingest/) (`server.py`, `cockpit.html`, `settings.json`)
-     - Engine & animation fixes $\rightarrow$ [`deepDive/ddma/`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/ddma/) (`ddma.py`, `archetype_studio.py`, etc.)
-   - This guarantees that what you test on `localhost:8088` is immediately what is running.
+     - Engine & animation fixes $\rightarrow$ [`deepDive/ddma/`](file:///c:/Users/ashut/OneDrive/Desktop/github/deepDive/ddma/) (`ddma.py`, `curator.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py`, `archetype_studio.py`, etc.)
+   - This guarantees that what you test on `localhost:8088` and `localhost:8000` is immediately what is running.
 
 2. **The "Push All" Fan-Out Protocol**:
    Whenever instructed to commit and push per our push strategy:
    - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
      - `deepDive/ingest/*` $\longrightarrow$ `mdIngest/ui/*`
-     - `deepDive/ddma/ddma.py` $\longrightarrow$ `ddma/ddma.py`
+     - `deepDive/ddma/ddma.py`, `curator.html`, `settings.json`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py` $\longrightarrow$ `ddma/`
    - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`).
    - **Step 3: Tri-Repo Commit & Push**:
      - Commit and push `deepDive` to its GitHub remote (preserves local workbench + publication articles/media).
@@ -47,8 +47,8 @@
   - The source of truth stored in Git is purely the Python archetype code (`ddma/archetypes/*.py`, `< 700 KB` per episode).
   - Cloud Antigravity environments do NOT expect or require a pre-existing `media/` directory.
   - When rendering in the cloud or locally, running `compile_all_archetypes.py` or `archetype_studio.py` generates the `media/` directory on-demand.
-  - **Google Drive Inputs & Handoff**:
-  - **Incoming Raw Assets**: `G:\My Drive\agy_inputs/<ep>/` (e.g., `agy_inputs/249/` containing the raw `audio.mp3`/`audio.m4a`, `payload.py`, and research scripts).
+- **Google Drive Inputs & Zero-Touch Automation Handoff**:
+  - **Incoming Raw Assets**: `G:\My Drive\agy_inputs\<ep>\` (e.g., `agy_inputs/249/` containing the raw 20–60 minute continuous `*.m4a`/`*.mp3` audio, `payload.py`, and research scripts). Both `ingest/server.py` and `ddma/scratch/run_curator.py` automatically discover and cache episode audio from `G:\My Drive\agy_inputs\<ep>\` if not yet present in `projects/episode_<ep>/`.
   - **Master Exports**: Final longform deliverables stream directly to `G:\My Drive\pickup_longform/` (`podcast_<ep>.mp4`, `podcast_<ep>_thumbnail.jpg`), leaving intermediate `media/` chunks completely disposable.
 
 ## Architectural Philosophy: The "Research to Reels" Pipeline
@@ -86,18 +86,100 @@ The system is structured as a 3-pillar content progression with dedicated distri
 - Tooling lives in DDMA Studio and the responsive clips inspection deck.
 
 ### Tripartite Base Audio Pattern & Zero-Trim Plan Structuring
-- **NotebookLM Ingestion Standard**: The base master audio follows a deterministic 3-part spoken structure for every clip:
+- **NotebookLM Ingestion Standard**: The user provides a Python script (`payload.py`) for text/research and a single continuous 20–60 minute master audio file structured clip-wise with a deterministic 3-part spoken pattern for every clip:
   1. **Punchline Hook (10–20s)**: Spoken thesis statement, announcing the clip number and title.
   2. **Core Deliberation (~2 mins)**: In-depth conversational discussion between Satosha and Satoshi.
   3. **Outro Teaser (10–20s)**: Spoken bridge stating what to look for in the next clip.
-- **Automated Card Casting**:
-  - Because the transcript explicitly speaks the Clip Number, Title, and Next Teaser, Gemini automatically casts:
-    - **Intro Card**: `title`, `hook_quote`, dynamic PIL/Mosaic card layout.
-    - **Outro Card**: `coming_up_title`, `bridge_question`, teaser prompt.
-- **Zero Manual Audio Trimming**: DDMA uses `faster-whisper large-v3-turbo` word timestamps to snap directly to Gemini's extracted phrase boundaries.
+- **Zero Manual Audio Trimming**: DDMA uses `faster-whisper large-v3-turbo` word timestamps + `resolve_acoustic_word_end` (16kHz PCM RMS energy tail scanning) to snap directly to spoken cue boundaries (`"Clip 1"`, `"Clip 2"`, etc.) or Gemini's extracted phrase boundaries without cutting trailing sibilants.
 - **Deterministic Music Sting Invariant**:
-  - **Mid-Sting (between Punchline and Deliberation)**: Alternates between `Bluesy Vibes` and `Howling` (5.5s, 0.5s crossfade).
-  - **Outro-Sting (after Teaser)**: Always `deepDive-conclusion.mp3` (5.5s).
+  - **Mid-Sting (between Punchline and Deliberation)**: Alternates between `Bluesy Vibes` and `Howling` (`duration: 5.5s`, `silence_before: 0.2s`, `fade_out: 2.0s`, `crossfade: 1.0s`).
+  - **Outro-Sting (after Teaser)**: Always `deepDive-conclusion.mp3` (`duration: 5.5s`, `silence_before: 0.2s`, `fade_out: 2.0s`, `crossfade: 0.0s`).
+
+## Clip Dynamics (Zero-Review Automated Clip Production Standard)
+
+To achieve zero-touch automated clip production without manual review cycles, all clip numbering, Intro Title Cards, Outro Bridge Cards, and Gemini casting prompts strictly obey the following 4 invariants:
+
+1. **Pure `#000000` Intro & Outro Canvas (Zero Background Frame Bleed)**:
+   - Intro and Outro cards MUST always render on a **pure solid `#000000` black canvas** (`RGB(0, 0, 0)`).
+   - **STRICT PROHIBITION**: Never extract or blur frames from `clips/*-{clip_num}.mp4` as background images, and never draw translucent gray boxes (`(18, 18, 18, 200)`). Extracting wildcard clip frames causes cross-episode title card bleed (e.g., Episode 248's title card bleeding behind Episode 249).
+   - The Intro Card text rendered in the video preview (`🎬 Intro`) must always match the editable `Intro Card Title Text` field in DDMA Studio 1-to-1.
+
+2. **0-Based Clip Numbering (`<ep>-0`, `<ep>-1`, ...) Aligned with Spoken Audio**:
+   - Clips in `plan.json` and DDMA Studio are numbered starting from **`<ep>-0` (`Clip 0`)**:
+     - **`Clip 0` (`<ep>-0`)**: The Episode Prologue / Cold Open (spoken before the hosts announce `"Clip 1"`).
+     - **`Clip 1` (`<ep>-1`), `Clip 2` (`<ep>-2`), ...**: Strictly aligned with the spoken transcript cues (`"Clip one"`, `"Clip two"`, etc.).
+   - **UI Memory Invariant**: `curator.html` and backend endpoints (`/get-clip-intro`, `/get-clip-outro`, `/compile-clip`, etc.) MUST preserve `0`-based clip numbering (`clip.num = 0, 1, 2, ...`) and NEVER re-index `Clip 0` to `1` in DOM memory. This guarantees that when the hosts say `"Clip 1"`, the card badge is `<ep>-1` and the title card says `PART 1`.
+
+3. **Concise Intro Cards (Max 3 Words for Part Titles; No Part Number on `Clip 0`)**:
+   - **For `Clip 0` (`<ep>-0`, Episode Prologue)**:
+     - Top Header: **`EPISODE <number>`** (strictly **NO `PART` number**).
+     - Main Title: **Episode Title** (e.g., `"What Exactly Is Reality?"`).
+   - **For `Clip 1+` (`<ep>-1`, `<ep>-2`, ...)**:
+     - Top Header: **`EPISODE <number> • PART <number>`** (where `<number>` matches the spoken clip number).
+     - Main Title: **STRICTLY MAXIMUM 3 WORDS** designed to capture immediate attention -- typically the scientific concept, the scientist's name, or the core idea (e.g., `"8D Totality"`, `"Sensory Split"`, `"Division Algebras"`, `"Scalar Observer"`, `"Quaternions"`).
+
+4. **Ultra-Concise Outro Bridge Cards (Max 5 Words)**:
+   - Because the hosts already speak `"Coming up in the next clip..."` aloud during the final 10–20s Outro Teaser audio segment, the visual Outro Bridge Card (`bridge_text`) must NEVER repeat `"Coming up in Clip X..."` or display a long storyline sentence.
+   - Instead, `bridge_text` must be a punchy **MAXIMUM 5-WORD** question or exclamation that hooks curiosity for the next concept (e.g., `"What is 8D Totality !"`, `"Why Four Division Algebras ?"`, `"How Do Quaternions Work ?"`).
+   - All Gemini API prompts (`cast_tripartite_plan_with_gemini`, `get_gemini_default_prompt`, `get_gemini_episode_default_prompt`, `review_episode_bridges`) enforce `0`-based numbering, max 3-word Intro titles, and max 5-word Outro bridge prompts automatically.
+
+## Clip Stitching & Acoustic Transition Rules (3-Stage Assembly Invariant)
+
+Every DDMA social reel (`clips/<ep>-<num>.mp4`) is assembled in **3 deterministic stages** to guarantee crisp spoken word completion, zero voice attenuation over music stings, zero graphic bleed on Intro/Outro cards, and the signature delayed-echo host sign-off:
+
+```
+STAGE 1: Audio Body Assembly (`ddma.py cut` / `compile_segments`) — Sent to Mosaic
+──────────────────────────────────────────────────────────────────────────────────
+  [Seg 1: Punchline Hook Audio (10–20s)]
+     • End timestamp extended via `resolve_acoustic_word_end` (16kHz PCM RMS scan
+       into natural breath gap) so trailing sibilants ("senses") are 100% spoken.
+     • Followed by `0.2s` clean silence gap (`silence_before: 0.2s`).
+          │
+          ▼
+  [Seg 2: Mid-Sting — Alternating Bluesy Vibes / Howling (5.5s)]
+     • Plays at 100% volume for 3.5s, then fades out over 2.0s (`fade_out: 2.0s`).
+     • Crossfades `1.0s` (`crossfade: 1.0s`) into Seg 3.
+          │
+          ▼
+  [Seg 3: Core Deliberation + Spoken "Coming Up" Teaser Audio (~100–130s)]
+     • Enters at `4.5s` of Seg 2 (after 1.0s of music fade-out) at 100% FULL VOLUME
+       (strictly ZERO `afade=in` on human speech so every word is audible).
+     • End timestamp extended via `resolve_acoustic_word_end` + `0.2s` silence gap.
+          │
+          ▼
+  [Seg 4: Outro Conclusion Sting — deepDive-conclusion.mp3 (5.5s)]
+     • Included in the Body MP3 sent to Mosaic by design so Mosaic renders closing
+       motion graphics over the spoken host sign-off ("I am Satosha, and I am
+       Satoshi" + conclusion music).
+
+STAGE 2: Mosaic / Manim Body Render (`740×740`)
+──────────────────────────────────────────────────────────────────────────────────
+  • Stage 1 Body MP3 is muxed onto a 740×740 black canvas WITHOUT Intro or Outro
+    cards and sent to Mosaic (so Mosaic graphics never overlay the billboard cards).
+
+STAGE 3: Final Master Packaging (`ddma.py compile-clip` • `1080×1920` Vertical)
+──────────────────────────────────────────────────────────────────────────────────
+  • [Intro Card (1.5s, Pure #000000, dedicated soft title-card audio)] -> Hard
+    concat into [Mosaic/Manim Body Video]
+  • [Outro Bridge Card (5.0s, Pure #000000)] -> Stitched at the end with a 1.0s
+    crossfade, repeating the final 5.0s of `deepDive-conclusion.mp3` ("I am Satosha,
+    and I am Satoshi") to create a deliberate delayed-echo host signature over the
+    pure black curiosity question card.
+```
+
+### Detailed Acoustic & Stitching Rules:
+1. **Automated Sibilant & Word-Tail Completion (`resolve_acoustic_word_end`)**:
+   - Whisper word timestamps (`word["end"]`) frequently anchor to the vowel nucleus and stop 80ms–200ms before trailing unvoiced sibilants/plosives (`"-es"` in `"senses"`, `"-t"`, `"-k"`, `"-s"`) finish decaying.
+   - Before adding the `0.2s` pre-sting silence gap, `resolve_acoustic_word_end` inspects the 16kHz PCM waveform in the natural breath gap (`[raw_end, min(raw_end + 0.32s, next_word_start - 0.04s)]`), extending the cut until acoustic RMS energy drops below `-54 dBFS` (`rms <= 0.0020`) + `30ms` decay cushion (minimum `120ms` safety cushion).
+   - Zero-duration Whisper cue artifacts (`start == end` on the next clip's `"Clip"` marker) are strictly excluded (`w["start"] < next_st - 0.02`) so the next clip's `"Clip N"` announcement never bleeds into the end of the current clip.
+2. **2.0s Music Fade-Out + 1.0s Full-Volume Speech Entry (Zero Speech Fade-In)**:
+   - The Mid-Sting (`5.5s`) plays at full volume (`1.0`) from `0.0s -> 3.5s` and fades out over the final `2.0s` (`3.5s -> 5.5s`).
+   - The succeeding speech segment (`Core Deliberation + Teaser`) enters `1.0s` before the music ends (at `4.5s`, when the music is already 50% attenuated) at **100% FULL VOLUME (`adelay` only, strictly NO `afade=t=in` on human speech)**.
+3. **Dedicated Intro Card Audio Separation**:
+   - The `1.5s` Intro Card uses a dedicated soft intro chime (`title-card-music.mp3` / `deepDive-soft-ok.mp3`) and NEVER steals the first `1.5s` of the clip's Mid-Sting (`Bluesy Vibes` / `Howling`).
+4. **Delayed-Echo Host Signature on the Outro Card (By Design)**:
+   - `deepDive-conclusion.mp3` (`"I am Satosha, and I am Satoshi"` + conclusion music) is baked into the end of the Stage 1 Body MP3 so Mosaic generates closing motion graphics over it.
+   - When `compile-clip` stitches the `5.0s` Outro Bridge Card at the end of the body (`1.0s` crossfade), it intentionally replays the final `5.0s` (`deepDive-conclusion.mp3`), creating a delayed-echo repetition of the host names (`"I am Satosha, and I am Satoshi"`) over the pure `#000000` Outro Card. **Never strip `deepDive-conclusion.mp3` from the short reel body or suppress this echo.**
 
 ### Clip-Level Visual Purity (No Intra-Clip Mixing)
 - **Engine Purity**: Clips NEVER mix engines internally. Each clip is authored **100% in Mosaic OR 100% in Manim**.
@@ -105,13 +187,13 @@ The system is structured as a 3-pillar content progression with dedicated distri
 
 ### Dual-Track Assembly Protocol: Short Reels vs. Longform Video
 1. **Track A: Short Reels (`clips/<ep>-<num>.mp4` • 740×740 / 9:16 for Social)**:
-   - **Full Standalone Package**: `[Intro Card] -> [Punchline] -> [Mid-Sting: Bluesy/Howling] -> [Deliberation] -> [Teaser] -> [Outro Card] -> [Outro-Sting: deepDive-conclusion]`.
+   - **Full Standalone Package**: `[Intro Card (1.5s)] -> [Punchline] -> [Mid-Sting: Bluesy/Howling (5.5s, 2.0s fade, 1.0s full-vol speech xfade)] -> [Deliberation + Teaser] -> [Outro-Sting in Body: deepDive-conclusion (5.5s)] -> [Outro Card + Echo Conclusion (5.0s)]`.
    - Pure, self-contained promotional reels for TikTok, Shorts, and Instagram.
 2. **Track B: Longform Video Podcast (`podcast_<ep>.mp4` • 1920×1080 Widescreen Master)**:
    - **Seamless Flow-Through Rules**:
      - ✂️ **STRIP all Intro Cards & Outro Cards**: Keeps video kinetic without graphic billboard interruptions every 2 minutes.
      - ✂️ **STRIP Outro Stings (`deepDive-conclusion`) BETWEEN clips**: Avoids stopping/concluding the conversation every 2 minutes.
-     - 🎵 **KEEP `deepDive-conclusion` on Clip 1 ONLY**: Functions as the Master Show Opener transition into the episode.
+     - 🎵 **KEEP `deepDive-conclusion` on the Opener Clip (`Clip 0` / first clip) ONLY**: Functions as the Master Show Opener transition into the episode.
      - 🎵 **KEEP Mid-Stings (`Bluesy Vibes` / `Howling`)**: Preserved between punchline and deliberation across all chapters for periodic musical pacing (~every 2 minutes).
      - **Visual Deck**: Plays the Active Master (`visual_source`: Mosaic or Manim) in the central 740×740 canvas.
 
@@ -149,10 +231,11 @@ All video production -- whether 1920×1080 widescreen master podcasts or 740×74
 | :--- | :--- | :--- |
 | **Canvas Resolution & Aspect Ratio** | **`740×740`** (Square Deck) or **`1080×1920`** (`9:16` Vertical for TikTok / Shorts / Reels) | **`1920×1080`** (`16:9` Widescreen HD Master for YouTube, Spotify, Cockpit) |
 | **Pillar Placement** | **Pillar 3: Reels** (Fast, punchy, self-contained promotional shorts) | **Pillar 2: Podcast** (Broadcast episodic deep dive) |
-| **Intro Billboard Card** | **Included**: 3–5s Title Card with spoken title & hook quote | **Stripped**: Never show intro graphic cards between chapters |
-| **Outro Billboard Card** | **Included**: 3–5s "Coming Up in Next Part" teaser card | **Stripped**: Never show outro bridge cards between chapters |
-| **Mid-Sting (Bluesy / Howling)** | **Included**: 5.5s transition between Punchline and Deliberation | **Included**: Preserved across all chapters for periodic musical pacing (~every 2m) |
-| **Outro Sting (`deepDive-conclusion`)** | **Included**: 5.5s closing musical sting at the end of every clip | **Stripped between chapters**; **Preserved on Clip 1 ONLY** as the Master Show Opener |
+| **Clip Numbering** | **`0`-Based (`<ep>-0`, `<ep>-1`, ...)**: `Clip 0` = Prologue; `Clip 1+` matches spoken `"Clip 1"`, `"Clip 2"` | Continuous chapter timeline across `Clip 0`..`Clip N` |
+| **Intro Billboard Card** | **Included (1.5s)**: `Clip 0` shows `EPISODE <num>` + Episode Title; `Clip 1+` shows `EPISODE <num> • PART <num>` + **≤ 3-word Title** on pure `#000000` | **Stripped**: Never show intro graphic cards between chapters |
+| **Outro Billboard Card** | **Included (5.0s)**: Ultra-concise **≤ 5-word** curiosity question/exclamation on pure `#000000` with delayed-echo host sign-off | **Stripped**: Never show outro bridge cards between chapters |
+| **Mid-Sting (Bluesy / Howling)** | **Included**: 5.5s sting (`0.2s` gap, `2.0s` fade-out, `1.0s` full-volume speech entry) | **Included**: Preserved across all chapters for periodic musical pacing (~every 2m) |
+| **Outro Sting (`deepDive-conclusion`)** | **Included**: 5.5s in Mosaic body + 5.0s delayed-echo repeat over Outro Card | **Stripped between chapters**; **Preserved on Opener (`Clip 0`) ONLY** |
 | **Host Header & Karaoke** | Centered in upper canvas safe zone above 740×740 visual square | Centered in upper widescreen strip (`y: 60-120`) above 740×740 central visual square |
 | **Micro-Beat Pacing** | Self-contained single-chapter arc (~2 to 2.5 minutes total) | Continuous seamless playback (~350–400 micro-beats across 50–60 minutes) |
 | **Patching & Authoring** | Authored in DDMA Studio / Mosaic Workspace | In-place chapter patching via Cockpit **Beat Studio** under the Podcast tab |
@@ -173,8 +256,8 @@ The entire production strictly follows a **Monochrome Noir with Functional Yello
 | **Word-Level Captions** | Heavy Sans-Serif (Arial Bold / DejaVu Sans Bold) | **Spoken Word**: Yellow (`#FFD700` / `#FFF066`)<br>**Upcoming Words**: White (`#FFFFFF`) | None (Zero stroke outline / zero dark box) | 32px–40px equivalent; centered, generous line-height (1.3×); strict safe-margin clamping. |
 | **Central Visual Deck (Manim)** | Monospace (`DejaVuSansMono`) or Minimalist Sans | **Pure White (`#FFFFFF`)** for all vector lines, figures, and Math/KaTeX | Vector lines: 4px–14px bold solid white; Fills: `#000000` or `#0e1420` | Minimum 28px–36px for labels; zero tiny telemetry text or table clutter. |
 | **Central Visual Deck (Mosaic)** | Bold Geometric Sans-Serif (Inter / Helvetica Neue) | **Pure White (`#FFFFFF`)** for headings, metrics, and diagrams | Stark black containers with subtle 1px slate borders (`#334155`) | High-contrast mobile legibility; no low-contrast gray-on-gray text. |
-| **Intro Billboard Cards** | Bold Punchy Sans-Serif | **Title**: Stark White (`#FFFFFF`)<br>**Hook Quote**: Muted Silver (`#E2E8F0`) | Pure Black (`#000000`) with 1px subtle divider (`#334155`) | 48px–56px title scale; max 3–5 words per line; strictly centered. |
-| **Outro Teaser Cards** | Bold Sans-Serif / Monospace | **Teaser Banner**: Stark White (`#FFFFFF`)<br>**Question**: Silver (`#CBD5E1`) | Pure Black (`#000000`) | 40px–48px scale; clear hierarchy between bridge label and question. |
+| **Intro Billboard Cards** | Bold Punchy Sans-Serif (Segoe UI Bold / Arial Bold) | **Header (`EPISODE <n>` / `PART <n>`)**: Silver (`#B4B4B4`)<br>**Title**: Stark White (`#FFFFFF`) | **Pure Glossy Black (`#000000`)** with 2px subtle bottom rule (`#505050`); **zero blurred frame bleed or gray box** | `Clip 0`: `EPISODE <n>` + Episode Title (no Part #). `Clip 1+`: `EPISODE <n> • PART <n>` + **max 3-word Title**. |
+| **Outro Teaser Cards** | Bold Sans-Serif (Segoe UI Bold / Arial Bold) | **Curiosity Question**: Stark White (`#FFFFFF`) | **Pure Glossy Black (`#000000`)**; zero background bleed | **Strictly max 5 words** (e.g., `"What is 8D Totality !"`). Never repeat spoken `"Coming up in..."`. |
 | **Bottom Footer Bar Strip** | Minimalist Clean Monospace (`DejaVuSansMono`) | **Muted Slate Gray (`#64748b`)** on Left & Right | 1px horizontal delimiter line (`#1e293b` / `#334155`) at `y ≈ cur_box_y + 680` | Low-contrast (14px–16px); never distracts from visual deck; **STRICTLY NO TITLES**. |
 
 ## Token Budget & Context Hygiene Rules (131K Input Token Ceiling)
@@ -189,7 +272,3 @@ To prevent `HTTP 400: The input token count exceeds the maximum number of tokens
    - Never launch overlapping background compilation/render commands; wait for the active background task to finish so duplicate `<SYSTEM_MESSAGE>` log dumps do not collide in context.
 5. **Subagent Delegation & `/compact`**:
    - Delegate repetitive multi-file debugging or generation loops to a subagent (`invoke_subagent`) so its work stays in an isolated context window, and recommend `/compact` before transitioning between major pipeline phases.
-
-
-
-
