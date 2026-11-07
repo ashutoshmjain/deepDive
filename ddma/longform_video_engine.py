@@ -234,7 +234,7 @@ def map_timeline_with_stings_and_cuts(transcription_data, edit_data=None, total_
     for i, sting in enumerate(filtered_midrolls):
         t_sting_start = t_cursor + 0.2
         dur_sting = sting["duration"]
-        t_next_speech = max(t_cursor, t_sting_start + dur_sting - 0.5)
+        t_next_speech = max(t_cursor, t_sting_start + dur_sting - 1.0)
         sting_intervals.append({
             "start": round(t_sting_start, 2),
             "end": round(t_next_speech, 2),

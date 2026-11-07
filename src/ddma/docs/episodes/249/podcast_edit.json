@@ -1,0 +1,217 @@
+{
+  "episode": "249",
+  "source_audio": "249.m4a",
+  "cuts": [
+    {
+      "id": "cut_welcome_2002",
+      "start": 20.02,
+      "end": 22.86,
+      "text": "Today we are going on a massive deep dive.",
+      "reason": "Stripped redundant spoken welcome (replaced by deepDive-strong.mp3 spoken intro sting)"
+    }
+  ],
+  "stings": [
+    {
+      "id": "sting_0_174",
+      "at": 17.41,
+      "music_file": "deepDive-strong.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 16.71,
+      "reason": "Clip 0 Show Opener ('Welcome to deepDive, I am Satosha & Satoshi' + 10s music) after hook: '...cally just the exhaust fume of your five senses?'"
+    },
+    {
+      "id": "sting_1_1341",
+      "at": 134.18,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 0 \u2192 Before Clip 1 (8D Totality): '...ations and 3D visual renditions. For sure.'"
+    },
+    {
+      "id": "sting_2_2447",
+      "at": 244.78,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 1 \u2192 Before Clip 2 (Sensory Split): '...e the very thing that ages us. Time. Yeah.'"
+    },
+    {
+      "id": "sting_3_3480",
+      "at": 348.06,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 2 \u2192 Before Clip 3 (Division Algebras): '...vision algebras. Right into the structure.'"
+    },
+    {
+      "id": "sting_4_4252",
+      "at": 425.26,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 3 \u2192 Before Clip 4 (Scalar Observer): '... observer. This is where it gets personal.'"
+    },
+    {
+      "id": "sting_5_5056",
+      "at": 505.68,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 4 \u2192 Before Clip 5 (Quaternions): '...hat a 3D spasm is. Getting into the gears.'"
+    },
+    {
+      "id": "sting_6_5913",
+      "at": 591.32,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 5 \u2192 Before Clip 6 (2D Spasm): '... spasm. Moving from the dice to the waves.'"
+    },
+    {
+      "id": "sting_7_6628",
+      "at": 662.88,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 6 \u2192 Before Clip 7 (Volumetric Knot): '... dimension? We get matter. Tying the knot.'"
+    },
+    {
+      "id": "sting_8_7282",
+      "at": 728.26,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 7 \u2192 Before Clip 8 (Commutativity Illusion): '...vity. This part is a bit of a mind bender.'"
+    },
+    {
+      "id": "sting_9_8099",
+      "at": 809.9,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 8 \u2192 Before Clip 9 (Color Charge): '...color charge. Gang into the quantum realm.'"
+    },
+    {
+      "id": "sting_10_8759",
+      "at": 875.97,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 9 \u2192 Before Clip 10 (Color Confinement): '...locks of you and me. Protons and neutrons.'"
+    },
+    {
+      "id": "sting_11_9450",
+      "at": 945.02,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 10 \u2192 Before Clip 11 (Anticolors): '... generate antimatter. Untangling the knot.'"
+    },
+    {
+      "id": "sting_12_10125",
+      "at": 1012.59,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 11 \u2192 Before Clip 12 (Electric Charge): '...l mirror. From colors to electromagnetism.'"
+    },
+    {
+      "id": "sting_13_10822",
+      "at": 1082.26,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 12 \u2192 Before Clip 13 (Chiral Mirror): '...is is the philosophical peak of the paper.'"
+    },
+    {
+      "id": "sting_14_11505",
+      "at": 1150.5,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 13 \u2192 Before Clip 14 (Spin One Half): '...ics. Spin one half. The quantum weirdness.'"
+    },
+    {
+      "id": "sting_15_12400",
+      "at": 1240.08,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 14 \u2192 Before Clip 15 (Arrows Of Time): '...rrows of time. Not just one arrow anymore.'"
+    },
+    {
+      "id": "sting_16_13048",
+      "at": 1304.89,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 15 \u2192 Before Clip 16 (Chiral Equilibrium): '...ergy. Throwing out the static, closed box.'"
+    },
+    {
+      "id": "sting_17_13836",
+      "at": 1383.63,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 16 \u2192 Before Clip 17 (Imbalance Delta): '...ies in 15 minutes. Real world application.'"
+    },
+    {
+      "id": "sting_18_14508",
+      "at": 1450.84,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 17 \u2192 Before Clip 18 (The Observer): '...t becomes an observer. The phase boundary.'"
+    },
+    {
+      "id": "sting_19_15087",
+      "at": 1508.72,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 18 \u2192 Before Clip 19 (Infinite Creation): '...erse we can build? The infinite potential.'"
+    },
+    {
+      "id": "sting_20_15622",
+      "at": 1562.2,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 19 \u2192 Before Clip 20 (State Zero): '... this all end? Taking it all back to zero.'"
+    },
+    {
+      "id": "sting_21_16843",
+      "at": 1684.38,
+      "music_file": "deepDive-conclusion.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "Episode Finale Sign-Off ('I am Satosha, and I am Satoshi' + 4s closing music) after final words: '...r models of reality. We'll see you next time.'"
+    }
+  ],
+  "intro_sting": "deepDive-strong.mp3",
+  "outro_sting": "deepDive-conclusion.mp3",
+  "target_lufs": -16,
+  "updated_at": "2026-11-06T15:23:27.017606"
+}

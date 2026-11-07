@@ -40,16 +40,63 @@
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
 - Always mirror changes made in `deepDive` out to `mdIngest` and `ddma` before finalizing pushes.
 
-## Ephemeral Media & Build Artifacts (`media/` Directory)
-- **Role**: ManimCE's local intermediate compilation cache and render scratchpad (`media/videos/clip_XX_gemini_scenes/740p15/*.mp4`, `media/texts/*.svg`, `media/images/`).
-- **Strict Non-Commit Invariant**: The `media/` directory is an ephemeral build target (analogous to `node_modules/`, `__pycache__/`, or `target/` in Rust). **NEVER commit or push `media/` to GitHub**.
-- **Cloud vs. Local Agent Parity**:
-  - The source of truth stored in Git is purely the Python archetype code (`ddma/archetypes/*.py`, `< 700 KB` per episode).
-  - Cloud Antigravity environments do NOT expect or require a pre-existing `media/` directory.
-  - When rendering in the cloud or locally, running `compile_all_archetypes.py` or `archetype_studio.py` generates the `media/` directory on-demand.
-- **Google Drive Inputs & Zero-Touch Automation Handoff**:
-  - **Incoming Raw Assets**: `G:\My Drive\agy_inputs\<ep>\` (e.g., `agy_inputs/249/` containing the raw 20–60 minute continuous `*.m4a`/`*.mp3` audio, `payload.py`, and research scripts). Both `ingest/server.py` and `ddma/scratch/run_curator.py` automatically discover and cache episode audio from `G:\My Drive\agy_inputs\<ep>\` if not yet present in `projects/episode_<ep>/`.
-  - **Master Exports**: Final longform deliverables stream directly to `G:\My Drive\pickup_longform/` (`podcast_<ep>.mp4`, `podcast_<ep>_thumbnail.jpg`), leaving intermediate `media/` chunks completely disposable.
+## Distribution Strategy
+
+This section defines the single source of truth for asset storage, folder hierarchy, and platform routing across **all Creative Agents** (Local Windows Workbench, Antigravity Cloud VM, Headless GCP Docker) and the **Distribution Agent (`meta-muse` / Muse)**.
+
+### 1. Unified Google Drive Hub (`G:\My Drive\dd_hub\` / `DD_HUB_ROOT`)
+
+All input payloads, longform masters, mobile review reels, and intermediate episode state reside under a single Google Drive root (`dd_hub`), resolved via `DD_HUB_ROOT` (defaults to `G:\My Drive\dd_hub` on Windows, `/mnt/gdrive/dd_hub` in Docker, or `/workspace/dd_hub` in Cloud VM):
+
+```text
+dd_hub/
+├── inputs/                                  # 📥 RAW EPISODE DROP ZONE
+│   └── <ep>/                                # Created per new episode (e.g., inputs/249/)
+│       ├── <ep>.m4a                         # Raw continuous NotebookLM master audio
+│       └── payload.py                       # Research text, equations, quotes, citations
+│
+├── audio/                                   # 🎧 LONGFORM AUDIO OUTBOX (For Muse + Pixel Mobile)
+│   ├── podcast_<ep>.mp3                     # -16 LUFS Master Audio (<ep> built into filename)
+│   ├── podcast_<ep>_cover.jpg               # 1600×1600 square cover art
+│   └── podcast_<ep>_meta.json               # Distribution manifest for Muse
+│
+├── video/                                   # 📺 LONGFORM VIDEO OUTBOX (For Muse + Pixel Mobile)
+│   ├── podcast_<ep>.mp4                     # 1920×1080 Widescreen HD Master (<ep> built into filename)
+│   ├── podcast_<ep>_thumbnail.jpg           # 1920×1080 widescreen thumbnail
+│   └── podcast_<ep>_video_meta.json         # Video distribution manifest for Muse
+│
+├── mosaics/                                 # 📱 PIXEL MOBILE REVIEW & MANUAL UPLOAD (Mosaic Reels)
+│   ├── <ep>-0.mp4                           # Full compiled 9:16 Mosaic reel (<ep>-<clip>.mp4)
+│   └── <ep>-1.mp4
+│
+├── manims/                                  # 📱 PIXEL MOBILE REVIEW & MANUAL UPLOAD (Manim Reels)
+│   ├── <ep>-0.mp4                           # Full compiled 9:16 Manim reel (<ep>-<clip>.mp4)
+│   └── <ep>-1.mp4
+│
+└── episodes/                                # 🧠 STUDIO BACKEND VAULT (Creative Agents Only)
+    └── <ep>/                                # Intermediate state synced across Local, VM & GCP Docker
+        ├── transcription.json               # Whisper word-level timestamps (transcribe once, reuse everywhere)
+        ├── podcast_edit.json                # Stripped welcome cut + 22 canonical music stings
+        ├── plan.json                        # Clip boundaries, 3-word titles, 5-word bridges, visual_source
+        ├── bodies_740/                      # Cached 740×740 visual bodies (mosaic_body_<n>.mp4, manim_body_<n>.mp4)
+        └── archetypes/                      # Generated Python Manim scripts (clip_<nn>_gemini_scenes.py)
+```
+
+### 2. Platform Routing & Pickup Rules for Distribution Agent (`meta-muse` / Muse)
+
+| Asset Type | Pickup Location | Target Platforms & Routing Rule |
+| :--- | :--- | :--- |
+| **1. Research Article & Interactive Math** | **GitHub (`deepDive` repo)**:<br>`src/<ep>.md` | Published via `mdBook` + `KaTeX` to **`deepDive.shutri.com/<ep>.html`** and syndicated as long-form prose to **Nostr (NIP-23)**. |
+| **2. Longform Audio Podcast (`podcast_<ep>.mp3`)** | **Google Drive**:<br>`dd_hub/audio/podcast_<ep>.mp3`<br>+ `podcast_<ep>_meta.json` | Picked up by **Muse** and uploaded **ONLY to Spotify ("deepDive" show)**. From Spotify, it is automatically syndicated via RSS to **Apple Podcasts, Fountain.fm, and all Podcast 2.0 clients**. |
+| **3. Longform Video Podcast (`podcast_<ep>.mp4`)** | **Google Drive**:<br>`dd_hub/video/podcast_<ep>.mp4`<br>+ `podcast_<ep>_video_meta.json` | Picked up by **Muse** and published to **YouTube**, **TikTok**, and **Spotify ("slopcast" show)** *(plus **Instagram** once long-form video support is enabled)*. |
+| **4. Short Reels — Automated Distribution (`<ep>-<clip>.mp4`)** | **GitHub (`deepDive` repo)**:<br>`src/ddma/docs/episodes/<ep>/clips/<ep>-<clip>.mp4` | **Muse** and **`deepDive.shutri.com`** ALWAYS pick up the **Active Master** reel directly from **GitHub** (`deepDive/src/ddma/docs/episodes/<ep>/clips/`). Whichever engine (`mosaic` or `manim`) is marked as `visual_source` in `plan.json` is pushed here. |
+| **5. Short Reels — Mobile Review & Manual Fallback** | **Google Drive**:<br>`dd_hub/mosaics/<ep>-<clip>.mp4`<br>`dd_hub/manims/<ep>-<clip>.mp4` | Exposed as 1-tap Google Drive shortcuts on Pixel mobile for on-the-go review, side-by-side Manim vs. Mosaic comparison, and manual platform uploads if automated distribution ever fails. **Muse ignores `mosaics/` and `manims/`**. |
+
+### 3. Ephemeral Manim `media/` Rules Across Local, VM, and GCP Docker
+- **Strict Non-Commit & Non-Drive Invariant**: ManimCE's local compilation cache (`media/videos/...`, `media/texts/*.svg`, `media/Tex/*.svg`) generates thousands of tiny files. **NEVER commit `media/` to GitHub** and **NEVER place `media/` on Google Drive**.
+- **Execution Environment Split**:
+  - **Antigravity Cloud VM**: Handles ingestion, Whisper alignment, Gemini audio/clip planning, Mosaic API rendering, and archetype Python code generation (`archetypes/*.py`). Does not run Manim binary rendering.
+  - **Local Windows & Headless GCP Docker**: Render Manim inside local ephemeral storage (`deepDive/ddma/media/` locally or `/tmp/media` in Docker), cache the stitched `740×740` silent body into `dd_hub/episodes/<ep>/bodies_740/`, export the full `9:16` vertical reel to `dd_hub/manims/<ep>-<clip>.mp4`, and (when selected as Active Master) push to `deepDive/src/ddma/docs/episodes/<ep>/clips/<ep>-<clip>.mp4`.
 
 ## Architectural Philosophy: The "Research to Reels" Pipeline
 
@@ -185,16 +232,17 @@ STAGE 3: Final Master Packaging (`ddma.py compile-clip` • `1080×1920` Vertica
 - **Engine Purity**: Clips NEVER mix engines internally. Each clip is authored **100% in Mosaic OR 100% in Manim**.
 - **Active Master Routing**: In `plan.json`, each clip designates its `visual_source`: `"mosaic"` or `"manim"`. The Longform Compositor dynamically picks up whichever master is active.
 
-### Dual-Track Assembly Protocol: Short Reels vs. Longform Video
+### Dual-Track Assembly Protocol: Short Reels vs. Longform Audio/Video Podcast
 1. **Track A: Short Reels (`clips/<ep>-<num>.mp4` • 740×740 / 9:16 for Social)**:
    - **Full Standalone Package**: `[Intro Card (1.5s)] -> [Punchline] -> [Mid-Sting: Bluesy/Howling (5.5s, 2.0s fade, 1.0s full-vol speech xfade)] -> [Deliberation + Teaser] -> [Outro-Sting in Body: deepDive-conclusion (5.5s)] -> [Outro Card + Echo Conclusion (5.0s)]`.
    - Pure, self-contained promotional reels for TikTok, Shorts, and Instagram.
-2. **Track B: Longform Video Podcast (`podcast_<ep>.mp4` • 1920×1080 Widescreen Master)**:
-   - **Seamless Flow-Through Rules**:
-     - ✂️ **STRIP all Intro Cards & Outro Cards**: Keeps video kinetic without graphic billboard interruptions every 2 minutes.
-     - ✂️ **STRIP Outro Stings (`deepDive-conclusion`) BETWEEN clips**: Avoids stopping/concluding the conversation every 2 minutes.
-     - 🎵 **KEEP `deepDive-conclusion` on the Opener Clip (`Clip 0` / first clip) ONLY**: Functions as the Master Show Opener transition into the episode.
-     - 🎵 **KEEP Mid-Stings (`Bluesy Vibes` / `Howling`)**: Preserved between punchline and deliberation across all chapters for periodic musical pacing (~every 2 minutes).
+2. **Track B: Longform Audio & Video Podcast (`podcast_<ep>.mp3` & `podcast_<ep>.mp4` • 1920×1080 Widescreen Master)**:
+   - **Canonical Spoken-Cue Music Sting & Cut Rules (`review_podcast_with_gemini` / `podcast_edit.json`)**:
+     - ✂️ **STRIP Redundant Spoken Welcome (`"Welcome to the deep dive"` / `"Today we are going on a massive deep dive"`)**: Automatically cut in `podcast_edit.json` (`cuts`) right at the start of `Clip 0` because `deepDive-strong.mp3` delivers the elaborate spoken show welcome.
+     - 🎺 **Opener Sting (`deepDive-strong.mp3` • `16.71s`) in Opening Clip (`Clip 0`)**: Embedded right after the opening punchline hook in `Clip 0` (speaks `"Welcome to deepDive, I am Satosha, and I am Satoshi"` followed by ~10s of music, `0.2s` pre-gap, `2.0s` fade-out, `1.0s` full-volume speech entry).
+     - 🎷🎸 **Inter-Clip Stings (`Bluesy Vibes` / `Howling` • `5.5s`) Between Every Clip**: Placed at the **end of every clip and right before the next clip starts** (immediately preceding the spoken `"Clip 1"`, `"Clip 2"`, ..., `"Clip N"` announcements), alternating `Bluesy Vibes` and `Howling` (`0.2s` pre-gap, `2.0s` fade-out, `1.0s` full-volume speech entry).
+     - 🎹 **Finale Sting (`deepDive-conclusion.mp3` • `5.5s`) at the Very End**: Placed at the very end of the final clip right after the hosts' final words (speaks `"I am Satosha, and I am Satoshi"` followed by ~4s of closing music, fading out over the final `2.0s`).
+     - ✂️ **STRIP all Intro Cards & Outro Cards on Video**: Keeps 1920×1080 video kinetic without graphic billboard interruptions between chapters.
      - **Visual Deck**: Plays the Active Master (`visual_source`: Mosaic or Manim) in the central 740×740 canvas.
 
 ## Unified Canvas Visual Standards: Longform Podcast vs. DDMA Short Reels
@@ -232,10 +280,10 @@ All video production -- whether 1920×1080 widescreen master podcasts or 740×74
 | **Canvas Resolution & Aspect Ratio** | **`740×740`** (Square Deck) or **`1080×1920`** (`9:16` Vertical for TikTok / Shorts / Reels) | **`1920×1080`** (`16:9` Widescreen HD Master for YouTube, Spotify, Cockpit) |
 | **Pillar Placement** | **Pillar 3: Reels** (Fast, punchy, self-contained promotional shorts) | **Pillar 2: Podcast** (Broadcast episodic deep dive) |
 | **Clip Numbering** | **`0`-Based (`<ep>-0`, `<ep>-1`, ...)**: `Clip 0` = Prologue; `Clip 1+` matches spoken `"Clip 1"`, `"Clip 2"` | Continuous chapter timeline across `Clip 0`..`Clip N` |
-| **Intro Billboard Card** | **Included (1.5s)**: `Clip 0` shows `EPISODE <num>` + Episode Title; `Clip 1+` shows `EPISODE <num> • PART <num>` + **≤ 3-word Title** on pure `#000000` | **Stripped**: Never show intro graphic cards between chapters |
+| **Intro Billboard Card** | **Included (1.5s)**: `Clip 0` shows `EPISODE <num>` + Episode Title; `Clip 1+` shows `EPISODE <num> • PART <num>` + **≤ 3-word Title** on pure `#000000` | **Stripped**: Replaced by `deepDive-strong.mp3` (`16.71s`) after `Clip 0` hook + stripped redundant spoken welcome |
 | **Outro Billboard Card** | **Included (5.0s)**: Ultra-concise **≤ 5-word** curiosity question/exclamation on pure `#000000` with delayed-echo host sign-off | **Stripped**: Never show outro bridge cards between chapters |
-| **Mid-Sting (Bluesy / Howling)** | **Included**: 5.5s sting (`0.2s` gap, `2.0s` fade-out, `1.0s` full-volume speech entry) | **Included**: Preserved across all chapters for periodic musical pacing (~every 2m) |
-| **Outro Sting (`deepDive-conclusion`)** | **Included**: 5.5s in Mosaic body + 5.0s delayed-echo repeat over Outro Card | **Stripped between chapters**; **Preserved on Opener (`Clip 0`) ONLY** |
+| **Mid / Inter-Clip Stings (`Bluesy` / `Howling`)** | **Intra-Clip (after Hook)**: 5.5s sting (`0.2s` gap, `2.0s` fade-out, `1.0s` full-volume speech entry) | **Inter-Clip (between every clip)**: 5.5s alternating `Bluesy Vibes` / `Howling` at the end of every clip before the next `"Clip N"` starts |
+| **Outro Sting (`deepDive-conclusion`)** | **Included**: 5.5s in Mosaic body + 5.0s delayed-echo repeat over Outro Card | **Finale Only (`5.5s`)**: Played at the very end of the episode (`"I am Satosha, and I am Satoshi"` + ~4s music) |
 | **Host Header & Karaoke** | Centered in upper canvas safe zone above 740×740 visual square | Centered in upper widescreen strip (`y: 60-120`) above 740×740 central visual square |
 | **Micro-Beat Pacing** | Self-contained single-chapter arc (~2 to 2.5 minutes total) | Continuous seamless playback (~350–400 micro-beats across 50–60 minutes) |
 | **Patching & Authoring** | Authored in DDMA Studio / Mosaic Workspace | In-place chapter patching via Cockpit **Beat Studio** under the Podcast tab |
