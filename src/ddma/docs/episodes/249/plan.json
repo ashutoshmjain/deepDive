@@ -8241,7 +8241,10 @@
         "locked": true,
         "visual_source": "mosaic",
         "coming_up_title": "The Scalar Observer",
-        "mosaic_run_id": "972b1c19-0b6d-4023-b8a2-36eced1ca878"
+        "mosaic_run_id": "972b1c19-0b6d-4023-b8a2-36eced1ca878",
+        "rendered_duration": 92.72,
+        "audio_duration": 87.17,
+        "intro_offset": 1.5
     },
     {
         "num": 4,
