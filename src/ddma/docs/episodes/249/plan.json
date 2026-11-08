@@ -8190,7 +8190,10 @@
         "locked": true,
         "visual_source": "mosaic",
         "coming_up_title": "The Division Algebras",
-        "mosaic_run_id": "26606fbc-7a51-420c-a286-2726c5a91769"
+        "mosaic_run_id": "26606fbc-7a51-420c-a286-2726c5a91769",
+        "rendered_duration": 118.2,
+        "audio_duration": 112.66,
+        "intro_offset": 1.5
     },
     {
         "num": 3,
