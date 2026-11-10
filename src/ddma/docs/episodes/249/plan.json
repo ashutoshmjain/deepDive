@@ -11105,11 +11105,12 @@
         "rendered_duration": 100.5,
         "audio_duration": 94.97,
         "intro_offset": 1.5,
-        "outro_duration": 5,
+        "outro_duration": 5.0,
         "source_start": 506.46,
         "source_end": 591.32,
         "_audio_sig": "7545f98159bdd94ef887e360c9f11393",
-        "_compiled_sig": "c09b422f0469fc5edd11bcf4556c8030"
+        "_compiled_sig": "56b648884e0e4336ade718e353e708b7",
+        "mosaic_run_id": "6b9b4156-6840-4897-b34c-f6bb346870f5"
     },
     {
         "num": 6,
