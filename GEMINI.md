@@ -30,7 +30,7 @@
    Whenever instructed to commit and push per our push strategy:
    - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
      - `deepDive/ingest/*` ⟶ `mdIngest/ui/*`
-     - `deepDive/ddma/ddma.py`, `curator.html`, `settings.json`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py` ⟶ `ddma/`
+     - `deepDive/ddma/ddma.py`, `curator.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py` ⟶ `ddma/`
    - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
    - **Step 3: Tri-Repo Commit & Push**:
      - Commit and push `deepDive` to its GitHub remote (preserves local workbench + publication articles/media).

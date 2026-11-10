@@ -11166,7 +11166,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.04
             },
             {
@@ -11252,11 +11252,11 @@
             {
                 "word": "So",
                 "start": 5.86,
-                "end": 6.0
+                "end": 6
             },
             {
                 "word": "now",
-                "start": 6.0,
+                "start": 6,
                 "end": 6.18
             },
             {
@@ -13449,7 +13449,7 @@
         "rendered_duration": 86.61,
         "audio_duration": 81.07,
         "intro_offset": 1.5,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 591.9,
         "source_end": 662.88,
         "_audio_sig": "319a5910fc6e48362cdff53fd254ac5d",
@@ -13502,7 +13502,7 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
         "coming_up_title": "The Illusion Of Commutativity"
     },
