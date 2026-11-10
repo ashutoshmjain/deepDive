@@ -35,10 +35,28 @@
      - Commit and push `mdIngest` to its GitHub remote (clean upstream UI/server tool).
      - Commit and push `ddma` to its GitHub remote (clean upstream CLI tool).
 
+3. **Active Master Clips Publication & Distribution Invariant**:
+   - **Local Staging vs. Remote Distribution**:
+     - Whenever an active master clip is compiled in DDMA (`ddma compile-clip` or Curator `/set-active-master`), it is automatically staged to:
+       a. `deepDive/src/ddma/docs/episodes/<ep>/clips/<ep>-<clip>.mp4` (via `resolve_deepdive_publication_clips_dir()`, anchored on `Path(__file__).resolve()`).
+       b. `dd_hub/mosaics/<ep>-<clip>.mp4` (or `manims/`) for 1-tap mobile review.
+     - **CRITICAL DISTRIBUTION RULE**: Google Drive (`dd_hub/mosaics/` and `manims/`) serves ONLY as a personal mobile review outbox and manual fallback. **`deepdive.shutri.com` and the automated distribution agent (`meta-muse` / Muse) ALWAYS pick up the Active Master reel directly from GitHub (`deepDive/src/ddma/docs/episodes/<ep>/clips/`)**.
+     - An active clip is **NOT considered published or live on the web until it is committed and pushed to GitHub in `deepDive`**.
+   - **Pre-Push Markdown Carousel Synchronization**:
+     - Before committing and pushing `deepDive`, `sync_episode_clips_and_markdown(ep)` MUST be executed (either automatically triggered by Cockpit's "Push (Remote)" button at `/api/git/push` or run as part of the push checklist).
+     - This automatically scans all canonical clips (`<ep>-*.mp4`) in both `deepDive/ddma/clips/` and `deepDive/src/ddma/docs/episodes/<ep>/clips/`, stages them into `src/ddma/docs/episodes/<ep>/clips/`, and regenerates the `<!-- VIDEO_STRIP_START -->` ... `<!-- VIDEO_STRIP_END -->` carousel in `src/<ep>.md` so the live mdBook article embeds the full clip deck.
+   - **Idempotent Overwrite on Re-Run**:
+     - Re-running Mosaic or Manim on an active clip automatically overwrites the local staged master in `deepDive/src/ddma/docs/episodes/<ep>/clips/<ep>-<clip>.mp4` and `dd_hub/mosaics/<ep>-<clip>.mp4`.
+     - Upon the next Push, Git seamlessly commits and pushes the updated binary video replacing the previous version on GitHub, updating `deepdive.shutri.com` and Muse without changing URL schemes or breaking links.
+   - **Strict Pure-Code Boundaries on Standalone Repos**:
+     - `deepDive` is the **ONLY** repository permitted to stage and push active binary clips (`src/ddma/docs/episodes/<ep>/clips/*.mp4`).
+     - `ddma` and `mdIngest` must **NEVER** contain or stage binary `.mp4` assets during the Fan-Out push.
+
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) are staged.
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
 - Always mirror changes made in `deepDive` out to `mdIngest` and `ddma` before finalizing pushes.
+- For active episode clips: verify that `sync_episode_clips_and_markdown(ep)` has staged all active master clips (`<ep>-<clip>.mp4`) into `deepDive/src/ddma/docs/episodes/<ep>/clips/` and regenerated the `src/<ep>.md` video strip before committing `deepDive`.
 
 ## Distribution Strategy
 
