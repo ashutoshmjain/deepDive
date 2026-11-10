@@ -11,6 +11,17 @@
 
 The **Longform Video Podcast Pipeline** transforms a 50–60 minute NotebookLM / Deep Dive master podcast audio track into a broadcast-grade `1920×1080` (`16:9`) animated video master (`podcast_<ep>.mp4`).
 
+### Canonical Renderer Architecture
+There are two distinct longform video rendering paths:
+1. **Curator Episode-Level Combined Video (Workflow 4 / W4)**:
+   - **Canonical Renderer**: `scratch/combine_clips_demuxer.py` (Option A — Demuxer concat of locked clips).
+   - **Trigger**: Curator UI "Generate & Download Video (MP4)" button calling backend endpoint `/combine-project-video?id=<project_id>`.
+   - **Mechanism**: Reads `plan.json` for the episode, filters for all `locked: true` clips in sequence, normalizes clips to 740×740 @ 30fps and 48kHz stereo AAC, inserts curiosity-question bridge transition cards between clips, and concatenates them with frame accuracy into `previews/combined_<project_id>.mp4`.
+   - **Gating**: Requires at least one locked, compiled clip. If zero locked clips are found, it refuses with exit code 1 / HTTP 500 error.
+2. **Full-Length Bespoke 1080p Master Compositor**:
+   - **Canonical Script**: `render_longform_parallel.py` (Option B).
+   - Generates 350–400 bespoke, monochrome `740×740` vector animations using **Manim Community Edition (ManimCE)** and composites them into the widescreen 1080p master canvas with host strips and karaoke subtitles.
+
 Instead of static waveform screens or distracting stock footage, the pipeline generates **350–400 bespoke, monochrome `740×740` vector animations** (~7.5 seconds per micro-beat) using **Manim Community Edition (ManimCE)**. These scenes are authored once during Longform production, stored as lightweight Python source code (`< 700 KB` per episode) in the `ddma` repository on GitHub, and later **reused as the visual building blocks for short-form Reels/Shorts (`248-1` .. `248-23`)**.
 
 ### Golden Principle: Reliability Over Rush

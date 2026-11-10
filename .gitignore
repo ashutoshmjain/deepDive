@@ -36,6 +36,8 @@ ddma/*.png
 ddma/*.mp4
 ddma/settings.json
 ddma/*settings*.json
+ingest/settings.json
+ingest/*settings*.json
 
 # Ignore intermediate/raw video clip build artifacts
 *-original.mp4

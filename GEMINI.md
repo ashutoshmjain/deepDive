@@ -68,6 +68,11 @@ A clip is **NOT considered published or live** until ALL THREE of these hold:
 
 The 2026-11-09 incident is the reference case: 249-5 "Quaternions" reached Drive but never GitHub, and distribution, the episode page, the player, and the shutri.com showcase all broke at once from one missing file.
 
+## Secret & Configuration Contract
+
+- **Environment-First Resolution**: All engines (`ingest/server.py`, `ddma/ddma.py`, `ddma/scratch/run_curator.py`) resolve configuration secrets (`GEMINI_API_KEY`, `MOSAIC_API_KEY`, `DD_HUB_ROOT`, etc.) by checking process environment variables FIRST before falling back to local `settings.json`.
+- **Zero Secrets Committed**: `settings.json` is strictly ignored by git in all repositories (`.gitignore`). Neither `deepDive`, `mdIngest`, nor `ddma` may ever commit or stage live API keys. A sanitised `settings.template.json` is maintained at repo root as the canonical schema reference.
+
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and NO `settings.json` are staged.
 - Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
