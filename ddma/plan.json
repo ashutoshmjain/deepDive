@@ -13460,7 +13460,7 @@
         "title": "Volumetric Knot",
         "start": 664,
         "end": 728.26,
-        "duration": 64.26,
+        "duration": 79.79,
         "bridge_text": [
             "Is Commutativity An Illusion ?"
         ],
@@ -13505,7 +13505,2147 @@
         "locked": true,
         "visual_source": "mosaic",
         "coming_up_title": "The Illusion Of Commutativity",
-        "mosaic_run_id": "89c30dbf-2a67-43f8-bf4e-f2a7d9173352"
+        "mosaic_run_id": "89c30dbf-2a67-43f8-bf4e-f2a7d9173352",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.1
+            },
+            {
+                "word": "seven,",
+                "start": 0.1,
+                "end": 0.46
+            },
+            {
+                "word": "the",
+                "start": 0.88,
+                "end": 0.92
+            },
+            {
+                "word": "volumetric",
+                "start": 0.92,
+                "end": 1.36
+            },
+            {
+                "word": "knot.",
+                "start": 1.36,
+                "end": 1.6
+            },
+            {
+                "word": "If",
+                "start": 2.2,
+                "end": 2.4
+            },
+            {
+                "word": "light",
+                "start": 2.4,
+                "end": 2.62
+            },
+            {
+                "word": "is",
+                "start": 2.62,
+                "end": 2.78
+            },
+            {
+                "word": "a",
+                "start": 2.78,
+                "end": 2.92
+            },
+            {
+                "word": "2D",
+                "start": 2.92,
+                "end": 3.18
+            },
+            {
+                "word": "spasm,",
+                "start": 3.18,
+                "end": 3.56
+            },
+            {
+                "word": "a",
+                "start": 4.04,
+                "end": 4.2
+            },
+            {
+                "word": "quark",
+                "start": 4.2,
+                "end": 4.52
+            },
+            {
+                "word": "is",
+                "start": 4.52,
+                "end": 4.8
+            },
+            {
+                "word": "that",
+                "start": 4.8,
+                "end": 4.98
+            },
+            {
+                "word": "exact",
+                "start": 4.98,
+                "end": 5.4
+            },
+            {
+                "word": "same",
+                "start": 5.4,
+                "end": 5.72
+            },
+            {
+                "word": "photon",
+                "start": 5.72,
+                "end": 6.18
+            },
+            {
+                "word": "trapped",
+                "start": 6.18,
+                "end": 6.6
+            },
+            {
+                "word": "in",
+                "start": 6.6,
+                "end": 6.86
+            },
+            {
+                "word": "a",
+                "start": 6.86,
+                "end": 6.96
+            },
+            {
+                "word": "3D",
+                "start": 6.96,
+                "end": 7.26
+            },
+            {
+                "word": "knot.",
+                "start": 7.26,
+                "end": 7.5
+            },
+            {
+                "word": "what",
+                "start": 12.32,
+                "end": 12.86
+            },
+            {
+                "word": "does",
+                "start": 12.86,
+                "end": 13.02
+            },
+            {
+                "word": "this",
+                "start": 13.02,
+                "end": 13.14
+            },
+            {
+                "word": "all",
+                "start": 13.14,
+                "end": 13.3
+            },
+            {
+                "word": "mean",
+                "start": 13.3,
+                "end": 13.44
+            },
+            {
+                "word": "for",
+                "start": 13.44,
+                "end": 13.66
+            },
+            {
+                "word": "physical",
+                "start": 13.66,
+                "end": 14.0
+            },
+            {
+                "word": "stuff?",
+                "start": 14.0,
+                "end": 14.4
+            },
+            {
+                "word": "Yeah,",
+                "start": 14.98,
+                "end": 15.02
+            },
+            {
+                "word": "the",
+                "start": 15.1,
+                "end": 15.16
+            },
+            {
+                "word": "stuff",
+                "start": 15.16,
+                "end": 15.32
+            },
+            {
+                "word": "we",
+                "start": 15.32,
+                "end": 15.46
+            },
+            {
+                "word": "can",
+                "start": 15.46,
+                "end": 15.62
+            },
+            {
+                "word": "touch.",
+                "start": 15.62,
+                "end": 15.92
+            },
+            {
+                "word": "This",
+                "start": 16.76,
+                "end": 16.98
+            },
+            {
+                "word": "is",
+                "start": 16.98,
+                "end": 17.12
+            },
+            {
+                "word": "the",
+                "start": 17.12,
+                "end": 17.28
+            },
+            {
+                "word": "core",
+                "start": 17.28,
+                "end": 17.52
+            },
+            {
+                "word": "thesis",
+                "start": 17.52,
+                "end": 17.8
+            },
+            {
+                "word": "of",
+                "start": 17.8,
+                "end": 18.04
+            },
+            {
+                "word": "the",
+                "start": 18.04,
+                "end": 18.16
+            },
+            {
+                "word": "paper.",
+                "start": 18.16,
+                "end": 18.42
+            },
+            {
+                "word": "What",
+                "start": 18.82,
+                "end": 18.94
+            },
+            {
+                "word": "happens",
+                "start": 18.94,
+                "end": 19.16
+            },
+            {
+                "word": "if",
+                "start": 19.16,
+                "end": 19.36
+            },
+            {
+                "word": "all",
+                "start": 19.36,
+                "end": 19.66
+            },
+            {
+                "word": "three",
+                "start": 19.66,
+                "end": 20.04
+            },
+            {
+                "word": "spatial",
+                "start": 20.04,
+                "end": 20.48
+            },
+            {
+                "word": "generators,",
+                "start": 20.48,
+                "end": 20.98
+            },
+            {
+                "word": "I,",
+                "start": 21.38,
+                "end": 21.42
+            },
+            {
+                "word": "J,",
+                "start": 21.52,
+                "end": 21.64
+            },
+            {
+                "word": "and",
+                "start": 21.74,
+                "end": 22.0
+            },
+            {
+                "word": "K,",
+                "start": 22.0,
+                "end": 22.2
+            },
+            {
+                "word": "fire",
+                "start": 22.32,
+                "end": 22.52
+            },
+            {
+                "word": "concurrently?",
+                "start": 22.52,
+                "end": 22.98
+            },
+            {
+                "word": "Well,",
+                "start": 23.56,
+                "end": 23.72
+            },
+            {
+                "word": "the",
+                "start": 23.8,
+                "end": 23.86
+            },
+            {
+                "word": "wave",
+                "start": 23.86,
+                "end": 24.0
+            },
+            {
+                "word": "can't",
+                "start": 24.0,
+                "end": 24.28
+            },
+            {
+                "word": "escape",
+                "start": 24.28,
+                "end": 24.48
+            },
+            {
+                "word": "anymore.",
+                "start": 24.48,
+                "end": 24.8
+            },
+            {
+                "word": "It's",
+                "start": 25.26,
+                "end": 25.54
+            },
+            {
+                "word": "not",
+                "start": 25.54,
+                "end": 25.7
+            },
+            {
+                "word": "just",
+                "start": 25.7,
+                "end": 25.88
+            },
+            {
+                "word": "a",
+                "start": 25.88,
+                "end": 26.02
+            },
+            {
+                "word": "jump",
+                "start": 26.02,
+                "end": 26.2
+            },
+            {
+                "word": "rope",
+                "start": 26.2,
+                "end": 26.36
+            },
+            {
+                "word": "waving",
+                "start": 26.36,
+                "end": 26.62
+            },
+            {
+                "word": "forward.",
+                "start": 26.62,
+                "end": 27.04
+            },
+            {
+                "word": "The",
+                "start": 27.42,
+                "end": 27.6
+            },
+            {
+                "word": "spatial",
+                "start": 27.6,
+                "end": 27.98
+            },
+            {
+                "word": "spasm",
+                "start": 27.98,
+                "end": 28.36
+            },
+            {
+                "word": "becomes",
+                "start": 28.36,
+                "end": 28.72
+            },
+            {
+                "word": "trapped",
+                "start": 28.72,
+                "end": 29.1
+            },
+            {
+                "word": "in",
+                "start": 29.1,
+                "end": 29.34
+            },
+            {
+                "word": "its",
+                "start": 29.34,
+                "end": 29.46
+            },
+            {
+                "word": "own",
+                "start": 29.46,
+                "end": 29.72
+            },
+            {
+                "word": "3D",
+                "start": 29.72,
+                "end": 30.28
+            },
+            {
+                "word": "non",
+                "start": 30.28,
+                "end": 30.64
+            },
+            {
+                "word": "-commutative",
+                "start": 30.64,
+                "end": 31.14
+            },
+            {
+                "word": "geometry.",
+                "start": 31.14,
+                "end": 31.54
+            },
+            {
+                "word": "So",
+                "start": 31.92,
+                "end": 32.4
+            },
+            {
+                "word": "it",
+                "start": 32.4,
+                "end": 32.52
+            },
+            {
+                "word": "wraps",
+                "start": 32.52,
+                "end": 32.78
+            },
+            {
+                "word": "space",
+                "start": 32.78,
+                "end": 33.08
+            },
+            {
+                "word": "-time",
+                "start": 33.08,
+                "end": 33.36
+            },
+            {
+                "word": "back",
+                "start": 33.36,
+                "end": 33.64
+            },
+            {
+                "word": "on",
+                "start": 33.64,
+                "end": 33.82
+            },
+            {
+                "word": "itself.",
+                "start": 33.82,
+                "end": 34.12
+            },
+            {
+                "word": "Exactly.",
+                "start": 34.66,
+                "end": 34.7
+            },
+            {
+                "word": "It",
+                "start": 35.24,
+                "end": 35.34
+            },
+            {
+                "word": "creates",
+                "start": 35.34,
+                "end": 35.54
+            },
+            {
+                "word": "a",
+                "start": 35.54,
+                "end": 35.74
+            },
+            {
+                "word": "localized",
+                "start": 35.74,
+                "end": 36.26
+            },
+            {
+                "word": "topological",
+                "start": 36.26,
+                "end": 36.92
+            },
+            {
+                "word": "knot.",
+                "start": 36.92,
+                "end": 37.28
+            },
+            {
+                "word": "Which",
+                "start": 37.68,
+                "end": 37.84
+            },
+            {
+                "word": "raises",
+                "start": 37.84,
+                "end": 38.22
+            },
+            {
+                "word": "a",
+                "start": 38.22,
+                "end": 38.46
+            },
+            {
+                "word": "huge,",
+                "start": 38.46,
+                "end": 38.84
+            },
+            {
+                "word": "huge",
+                "start": 39.28,
+                "end": 39.36
+            },
+            {
+                "word": "question.",
+                "start": 39.36,
+                "end": 39.82
+            },
+            {
+                "word": "What",
+                "start": 40.04,
+                "end": 40.26
+            },
+            {
+                "word": "actually",
+                "start": 40.26,
+                "end": 40.54
+            },
+            {
+                "word": "is",
+                "start": 40.54,
+                "end": 40.8
+            },
+            {
+                "word": "mass?",
+                "start": 40.8,
+                "end": 41.04
+            },
+            {
+                "word": "In",
+                "start": 41.04,
+                "end": 41.64
+            },
+            {
+                "word": "this",
+                "start": 41.64,
+                "end": 42.06
+            },
+            {
+                "word": "framework,",
+                "start": 42.06,
+                "end": 42.32
+            },
+            {
+                "word": "it's",
+                "start": 42.54,
+                "end": 42.64
+            },
+            {
+                "word": "just",
+                "start": 42.64,
+                "end": 42.76
+            },
+            {
+                "word": "pure",
+                "start": 42.76,
+                "end": 43.04
+            },
+            {
+                "word": "geometry.",
+                "start": 43.04,
+                "end": 43.52
+            },
+            {
+                "word": "The",
+                "start": 44.22,
+                "end": 44.28
+            },
+            {
+                "word": "entrapped",
+                "start": 44.28,
+                "end": 44.56
+            },
+            {
+                "word": "spatial",
+                "start": 44.56,
+                "end": 44.9
+            },
+            {
+                "word": "energy",
+                "start": 44.9,
+                "end": 45.2
+            },
+            {
+                "word": "condenses",
+                "start": 45.2,
+                "end": 45.7
+            },
+            {
+                "word": "into",
+                "start": 45.7,
+                "end": 45.96
+            },
+            {
+                "word": "rest",
+                "start": 45.96,
+                "end": 46.22
+            },
+            {
+                "word": "mass.",
+                "start": 46.22,
+                "end": 46.54
+            },
+            {
+                "word": "That's",
+                "start": 46.78,
+                "end": 47.04
+            },
+            {
+                "word": "E",
+                "start": 47.04,
+                "end": 47.16
+            },
+            {
+                "word": "equals",
+                "start": 47.16,
+                "end": 47.36
+            },
+            {
+                "word": "MC",
+                "start": 47.36,
+                "end": 47.64
+            },
+            {
+                "word": "squared.",
+                "start": 47.64,
+                "end": 47.96
+            },
+            {
+                "word": "So",
+                "start": 48.52,
+                "end": 48.56
+            },
+            {
+                "word": "matter",
+                "start": 48.56,
+                "end": 48.88
+            },
+            {
+                "word": "isn't",
+                "start": 48.88,
+                "end": 49.28
+            },
+            {
+                "word": "some",
+                "start": 49.28,
+                "end": 49.52
+            },
+            {
+                "word": "separate",
+                "start": 49.52,
+                "end": 50.26
+            },
+            {
+                "word": "stuff",
+                "start": 50.26,
+                "end": 51.08
+            },
+            {
+                "word": "placed",
+                "start": 51.08,
+                "end": 51.62
+            },
+            {
+                "word": "into",
+                "start": 51.62,
+                "end": 51.88
+            },
+            {
+                "word": "empty",
+                "start": 51.88,
+                "end": 52.06
+            },
+            {
+                "word": "space.",
+                "start": 52.06,
+                "end": 52.38
+            },
+            {
+                "word": "Matter",
+                "start": 52.66,
+                "end": 52.7
+            },
+            {
+                "word": "is",
+                "start": 52.68,
+                "end": 52.9
+            },
+            {
+                "word": "literally",
+                "start": 52.9,
+                "end": 53.28
+            },
+            {
+                "word": "an",
+                "start": 53.28,
+                "end": 53.66
+            },
+            {
+                "word": "active",
+                "start": 53.66,
+                "end": 54.1
+            },
+            {
+                "word": "knotting",
+                "start": 54.1,
+                "end": 54.6
+            },
+            {
+                "word": "of",
+                "start": 54.6,
+                "end": 54.76
+            },
+            {
+                "word": "3D",
+                "start": 54.76,
+                "end": 55.12
+            },
+            {
+                "word": "space",
+                "start": 55.12,
+                "end": 55.4
+            },
+            {
+                "word": "itself.",
+                "start": 55.4,
+                "end": 55.8
+            },
+            {
+                "word": "It",
+                "start": 56.1,
+                "end": 56.26
+            },
+            {
+                "word": "resolves",
+                "start": 56.26,
+                "end": 56.58
+            },
+            {
+                "word": "wave",
+                "start": 56.58,
+                "end": 56.88
+            },
+            {
+                "word": "particle",
+                "start": 56.88,
+                "end": 57.24
+            },
+            {
+                "word": "duality",
+                "start": 57.24,
+                "end": 57.74
+            },
+            {
+                "word": "completely.",
+                "start": 57.74,
+                "end": 58.1
+            },
+            {
+                "word": "That",
+                "start": 58.58,
+                "end": 58.64
+            },
+            {
+                "word": "is",
+                "start": 58.64,
+                "end": 58.74
+            },
+            {
+                "word": "so",
+                "start": 58.74,
+                "end": 59.12
+            },
+            {
+                "word": "elegant.",
+                "start": 59.12,
+                "end": 59.58
+            },
+            {
+                "word": "Coming",
+                "start": 60.66,
+                "end": 60.82
+            },
+            {
+                "word": "up",
+                "start": 60.82,
+                "end": 60.98
+            },
+            {
+                "word": "in",
+                "start": 60.98,
+                "end": 61.1
+            },
+            {
+                "word": "the",
+                "start": 61.1,
+                "end": 61.2
+            },
+            {
+                "word": "next",
+                "start": 61.2,
+                "end": 61.4
+            },
+            {
+                "word": "clip,",
+                "start": 61.4,
+                "end": 61.62
+            },
+            {
+                "word": "we",
+                "start": 61.7,
+                "end": 61.9
+            },
+            {
+                "word": "roll",
+                "start": 61.9,
+                "end": 62.24
+            },
+            {
+                "word": "the",
+                "start": 62.24,
+                "end": 62.46
+            },
+            {
+                "word": "3D",
+                "start": 62.46,
+                "end": 62.88
+            },
+            {
+                "word": "dice",
+                "start": 62.88,
+                "end": 63.1
+            },
+            {
+                "word": "again",
+                "start": 63.1,
+                "end": 63.46
+            },
+            {
+                "word": "to",
+                "start": 63.46,
+                "end": 63.76
+            },
+            {
+                "word": "discover",
+                "start": 63.76,
+                "end": 64.08
+            },
+            {
+                "word": "the",
+                "start": 64.08,
+                "end": 64.3
+            },
+            {
+                "word": "illusion",
+                "start": 64.3,
+                "end": 64.8
+            },
+            {
+                "word": "of",
+                "start": 64.8,
+                "end": 65.34
+            },
+            {
+                "word": "commutativity.",
+                "start": 65.34,
+                "end": 66.12
+            },
+            {
+                "word": "This",
+                "start": 66.58,
+                "end": 66.86
+            },
+            {
+                "word": "part",
+                "start": 66.86,
+                "end": 67.04
+            },
+            {
+                "word": "is",
+                "start": 67.04,
+                "end": 67.2
+            },
+            {
+                "word": "a",
+                "start": 67.2,
+                "end": 67.32
+            },
+            {
+                "word": "bit",
+                "start": 67.32,
+                "end": 67.52
+            },
+            {
+                "word": "of",
+                "start": 67.52,
+                "end": 67.62
+            },
+            {
+                "word": "a",
+                "start": 67.62,
+                "end": 67.74
+            },
+            {
+                "word": "mind",
+                "start": 67.74,
+                "end": 67.96
+            },
+            {
+                "word": "bender.",
+                "start": 67.96,
+                "end": 68.24
+            }
+        ],
+        "_caption_words_sig": "ee02922ea760effb1b65f5d80b867876",
+        "caption_chunks": [
+            {
+                "start": 1.5,
+                "end": 3.7,
+                "text": "clip seven, the volumetric knot.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.5,
+                        "end": 1.6
+                    },
+                    {
+                        "word": "seven,",
+                        "start": 1.6,
+                        "end": 1.96
+                    },
+                    {
+                        "word": "the",
+                        "start": 2.38,
+                        "end": 2.42
+                    },
+                    {
+                        "word": "volumetric",
+                        "start": 2.42,
+                        "end": 2.86
+                    },
+                    {
+                        "word": "knot.",
+                        "start": 2.86,
+                        "end": 3.1
+                    }
+                ]
+            },
+            {
+                "start": 3.7,
+                "end": 5.54,
+                "text": "if light is a 2d spasm,",
+                "words": [
+                    {
+                        "word": "if",
+                        "start": 3.7,
+                        "end": 3.9
+                    },
+                    {
+                        "word": "light",
+                        "start": 3.9,
+                        "end": 4.12
+                    },
+                    {
+                        "word": "is",
+                        "start": 4.12,
+                        "end": 4.28
+                    },
+                    {
+                        "word": "a",
+                        "start": 4.28,
+                        "end": 4.42
+                    },
+                    {
+                        "word": "2d",
+                        "start": 4.42,
+                        "end": 4.68
+                    },
+                    {
+                        "word": "spasm,",
+                        "start": 4.68,
+                        "end": 5.06
+                    }
+                ]
+            },
+            {
+                "start": 5.54,
+                "end": 7.22,
+                "text": "a quark is that exact same",
+                "words": [
+                    {
+                        "word": "a",
+                        "start": 5.54,
+                        "end": 5.7
+                    },
+                    {
+                        "word": "quark",
+                        "start": 5.7,
+                        "end": 6.02
+                    },
+                    {
+                        "word": "is",
+                        "start": 6.02,
+                        "end": 6.3
+                    },
+                    {
+                        "word": "that",
+                        "start": 6.3,
+                        "end": 6.48
+                    },
+                    {
+                        "word": "exact",
+                        "start": 6.48,
+                        "end": 6.9
+                    },
+                    {
+                        "word": "same",
+                        "start": 6.9,
+                        "end": 7.22
+                    }
+                ]
+            },
+            {
+                "start": 7.22,
+                "end": 13.82,
+                "text": "photon trapped in a 3d knot.",
+                "words": [
+                    {
+                        "word": "photon",
+                        "start": 7.22,
+                        "end": 7.68
+                    },
+                    {
+                        "word": "trapped",
+                        "start": 7.68,
+                        "end": 8.1
+                    },
+                    {
+                        "word": "in",
+                        "start": 8.1,
+                        "end": 8.36
+                    },
+                    {
+                        "word": "a",
+                        "start": 8.36,
+                        "end": 8.46
+                    },
+                    {
+                        "word": "3d",
+                        "start": 8.46,
+                        "end": 8.76
+                    },
+                    {
+                        "word": "knot.",
+                        "start": 8.76,
+                        "end": 9.0
+                    }
+                ]
+            },
+            {
+                "start": 13.82,
+                "end": 15.16,
+                "text": "what does this all mean for",
+                "words": [
+                    {
+                        "word": "what",
+                        "start": 13.82,
+                        "end": 14.36
+                    },
+                    {
+                        "word": "does",
+                        "start": 14.36,
+                        "end": 14.52
+                    },
+                    {
+                        "word": "this",
+                        "start": 14.52,
+                        "end": 14.64
+                    },
+                    {
+                        "word": "all",
+                        "start": 14.64,
+                        "end": 14.8
+                    },
+                    {
+                        "word": "mean",
+                        "start": 14.8,
+                        "end": 14.94
+                    },
+                    {
+                        "word": "for",
+                        "start": 14.94,
+                        "end": 15.16
+                    }
+                ]
+            },
+            {
+                "start": 15.16,
+                "end": 16.6,
+                "text": "physical stuff? yeah,",
+                "words": [
+                    {
+                        "word": "physical",
+                        "start": 15.16,
+                        "end": 15.5
+                    },
+                    {
+                        "word": "stuff?",
+                        "start": 15.5,
+                        "end": 15.9
+                    },
+                    {
+                        "word": "yeah,",
+                        "start": 16.48,
+                        "end": 16.52
+                    }
+                ]
+            },
+            {
+                "start": 16.6,
+                "end": 18.26,
+                "text": "the stuff we can touch.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 16.6,
+                        "end": 16.66
+                    },
+                    {
+                        "word": "stuff",
+                        "start": 16.66,
+                        "end": 16.82
+                    },
+                    {
+                        "word": "we",
+                        "start": 16.82,
+                        "end": 16.96
+                    },
+                    {
+                        "word": "can",
+                        "start": 16.96,
+                        "end": 17.12
+                    },
+                    {
+                        "word": "touch.",
+                        "start": 17.12,
+                        "end": 17.42
+                    }
+                ]
+            },
+            {
+                "start": 18.26,
+                "end": 19.54,
+                "text": "this is the core thesis of",
+                "words": [
+                    {
+                        "word": "this",
+                        "start": 18.26,
+                        "end": 18.48
+                    },
+                    {
+                        "word": "is",
+                        "start": 18.48,
+                        "end": 18.62
+                    },
+                    {
+                        "word": "the",
+                        "start": 18.62,
+                        "end": 18.78
+                    },
+                    {
+                        "word": "core",
+                        "start": 18.78,
+                        "end": 19.02
+                    },
+                    {
+                        "word": "thesis",
+                        "start": 19.02,
+                        "end": 19.3
+                    },
+                    {
+                        "word": "of",
+                        "start": 19.3,
+                        "end": 19.54
+                    }
+                ]
+            },
+            {
+                "start": 19.54,
+                "end": 21.16,
+                "text": "the paper. what happens if all",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 19.54,
+                        "end": 19.66
+                    },
+                    {
+                        "word": "paper.",
+                        "start": 19.66,
+                        "end": 19.92
+                    },
+                    {
+                        "word": "what",
+                        "start": 20.32,
+                        "end": 20.44
+                    },
+                    {
+                        "word": "happens",
+                        "start": 20.44,
+                        "end": 20.66
+                    },
+                    {
+                        "word": "if",
+                        "start": 20.66,
+                        "end": 20.86
+                    },
+                    {
+                        "word": "all",
+                        "start": 20.86,
+                        "end": 21.16
+                    }
+                ]
+            },
+            {
+                "start": 21.16,
+                "end": 22.88,
+                "text": "three spatial generators,",
+                "words": [
+                    {
+                        "word": "three",
+                        "start": 21.16,
+                        "end": 21.54
+                    },
+                    {
+                        "word": "spatial",
+                        "start": 21.54,
+                        "end": 21.98
+                    },
+                    {
+                        "word": "generators,",
+                        "start": 21.98,
+                        "end": 22.48
+                    }
+                ]
+            },
+            {
+                "start": 22.88,
+                "end": 23.82,
+                "text": "i, j, and k,",
+                "words": [
+                    {
+                        "word": "i,",
+                        "start": 22.88,
+                        "end": 22.92
+                    },
+                    {
+                        "word": "j,",
+                        "start": 23.02,
+                        "end": 23.14
+                    },
+                    {
+                        "word": "and",
+                        "start": 23.24,
+                        "end": 23.5
+                    },
+                    {
+                        "word": "k,",
+                        "start": 23.5,
+                        "end": 23.7
+                    }
+                ]
+            },
+            {
+                "start": 23.82,
+                "end": 25.3,
+                "text": "fire concurrently? well,",
+                "words": [
+                    {
+                        "word": "fire",
+                        "start": 23.82,
+                        "end": 24.02
+                    },
+                    {
+                        "word": "concurrently?",
+                        "start": 24.02,
+                        "end": 24.48
+                    },
+                    {
+                        "word": "well,",
+                        "start": 25.06,
+                        "end": 25.22
+                    }
+                ]
+            },
+            {
+                "start": 25.3,
+                "end": 26.76,
+                "text": "the wave can't escape anymore.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 25.3,
+                        "end": 25.36
+                    },
+                    {
+                        "word": "wave",
+                        "start": 25.36,
+                        "end": 25.5
+                    },
+                    {
+                        "word": "can't",
+                        "start": 25.5,
+                        "end": 25.78
+                    },
+                    {
+                        "word": "escape",
+                        "start": 25.78,
+                        "end": 25.98
+                    },
+                    {
+                        "word": "anymore.",
+                        "start": 25.98,
+                        "end": 26.3
+                    }
+                ]
+            },
+            {
+                "start": 26.76,
+                "end": 27.86,
+                "text": "it's not just a jump rope",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 26.76,
+                        "end": 27.04
+                    },
+                    {
+                        "word": "not",
+                        "start": 27.04,
+                        "end": 27.2
+                    },
+                    {
+                        "word": "just",
+                        "start": 27.2,
+                        "end": 27.38
+                    },
+                    {
+                        "word": "a",
+                        "start": 27.38,
+                        "end": 27.52
+                    },
+                    {
+                        "word": "jump",
+                        "start": 27.52,
+                        "end": 27.7
+                    },
+                    {
+                        "word": "rope",
+                        "start": 27.7,
+                        "end": 27.86
+                    }
+                ]
+            },
+            {
+                "start": 27.86,
+                "end": 29.86,
+                "text": "waving forward. the spatial spasm",
+                "words": [
+                    {
+                        "word": "waving",
+                        "start": 27.86,
+                        "end": 28.12
+                    },
+                    {
+                        "word": "forward.",
+                        "start": 28.12,
+                        "end": 28.54
+                    },
+                    {
+                        "word": "the",
+                        "start": 28.92,
+                        "end": 29.1
+                    },
+                    {
+                        "word": "spatial",
+                        "start": 29.1,
+                        "end": 29.48
+                    },
+                    {
+                        "word": "spasm",
+                        "start": 29.48,
+                        "end": 29.86
+                    }
+                ]
+            },
+            {
+                "start": 29.86,
+                "end": 31.78,
+                "text": "becomes trapped in its own 3d",
+                "words": [
+                    {
+                        "word": "becomes",
+                        "start": 29.86,
+                        "end": 30.22
+                    },
+                    {
+                        "word": "trapped",
+                        "start": 30.22,
+                        "end": 30.6
+                    },
+                    {
+                        "word": "in",
+                        "start": 30.6,
+                        "end": 30.84
+                    },
+                    {
+                        "word": "its",
+                        "start": 30.84,
+                        "end": 30.96
+                    },
+                    {
+                        "word": "own",
+                        "start": 30.96,
+                        "end": 31.22
+                    },
+                    {
+                        "word": "3d",
+                        "start": 31.22,
+                        "end": 31.78
+                    }
+                ]
+            },
+            {
+                "start": 31.78,
+                "end": 33.42,
+                "text": "non -commutative geometry.",
+                "words": [
+                    {
+                        "word": "non",
+                        "start": 31.78,
+                        "end": 32.14
+                    },
+                    {
+                        "word": "-commutative",
+                        "start": 32.14,
+                        "end": 32.64
+                    },
+                    {
+                        "word": "geometry.",
+                        "start": 32.64,
+                        "end": 33.04
+                    }
+                ]
+            },
+            {
+                "start": 33.42,
+                "end": 35.14,
+                "text": "so it wraps space -time back",
+                "words": [
+                    {
+                        "word": "so",
+                        "start": 33.42,
+                        "end": 33.9
+                    },
+                    {
+                        "word": "it",
+                        "start": 33.9,
+                        "end": 34.02
+                    },
+                    {
+                        "word": "wraps",
+                        "start": 34.02,
+                        "end": 34.28
+                    },
+                    {
+                        "word": "space",
+                        "start": 34.28,
+                        "end": 34.58
+                    },
+                    {
+                        "word": "-time",
+                        "start": 34.58,
+                        "end": 34.86
+                    },
+                    {
+                        "word": "back",
+                        "start": 34.86,
+                        "end": 35.14
+                    }
+                ]
+            },
+            {
+                "start": 35.14,
+                "end": 36.74,
+                "text": "on itself. exactly.",
+                "words": [
+                    {
+                        "word": "on",
+                        "start": 35.14,
+                        "end": 35.32
+                    },
+                    {
+                        "word": "itself.",
+                        "start": 35.32,
+                        "end": 35.62
+                    },
+                    {
+                        "word": "exactly.",
+                        "start": 36.16,
+                        "end": 36.2
+                    }
+                ]
+            },
+            {
+                "start": 36.74,
+                "end": 38.42,
+                "text": "it creates a localized topological",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 36.74,
+                        "end": 36.84
+                    },
+                    {
+                        "word": "creates",
+                        "start": 36.84,
+                        "end": 37.04
+                    },
+                    {
+                        "word": "a",
+                        "start": 37.04,
+                        "end": 37.24
+                    },
+                    {
+                        "word": "localized",
+                        "start": 37.24,
+                        "end": 37.76
+                    },
+                    {
+                        "word": "topological",
+                        "start": 37.76,
+                        "end": 38.42
+                    }
+                ]
+            },
+            {
+                "start": 38.42,
+                "end": 40.78,
+                "text": "knot. which raises a huge,",
+                "words": [
+                    {
+                        "word": "knot.",
+                        "start": 38.42,
+                        "end": 38.78
+                    },
+                    {
+                        "word": "which",
+                        "start": 39.18,
+                        "end": 39.34
+                    },
+                    {
+                        "word": "raises",
+                        "start": 39.34,
+                        "end": 39.72
+                    },
+                    {
+                        "word": "a",
+                        "start": 39.72,
+                        "end": 39.96
+                    },
+                    {
+                        "word": "huge,",
+                        "start": 39.96,
+                        "end": 40.34
+                    }
+                ]
+            },
+            {
+                "start": 40.78,
+                "end": 42.3,
+                "text": "huge question. what actually is",
+                "words": [
+                    {
+                        "word": "huge",
+                        "start": 40.78,
+                        "end": 40.86
+                    },
+                    {
+                        "word": "question.",
+                        "start": 40.86,
+                        "end": 41.32
+                    },
+                    {
+                        "word": "what",
+                        "start": 41.54,
+                        "end": 41.76
+                    },
+                    {
+                        "word": "actually",
+                        "start": 41.76,
+                        "end": 42.04
+                    },
+                    {
+                        "word": "is",
+                        "start": 42.04,
+                        "end": 42.3
+                    }
+                ]
+            },
+            {
+                "start": 42.3,
+                "end": 44.04,
+                "text": "mass? in this framework,",
+                "words": [
+                    {
+                        "word": "mass?",
+                        "start": 42.3,
+                        "end": 42.54
+                    },
+                    {
+                        "word": "in",
+                        "start": 42.54,
+                        "end": 43.14
+                    },
+                    {
+                        "word": "this",
+                        "start": 43.14,
+                        "end": 43.56
+                    },
+                    {
+                        "word": "framework,",
+                        "start": 43.56,
+                        "end": 43.82
+                    }
+                ]
+            },
+            {
+                "start": 44.04,
+                "end": 45.72,
+                "text": "it's just pure geometry.",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 44.04,
+                        "end": 44.14
+                    },
+                    {
+                        "word": "just",
+                        "start": 44.14,
+                        "end": 44.26
+                    },
+                    {
+                        "word": "pure",
+                        "start": 44.26,
+                        "end": 44.54
+                    },
+                    {
+                        "word": "geometry.",
+                        "start": 44.54,
+                        "end": 45.02
+                    }
+                ]
+            },
+            {
+                "start": 45.72,
+                "end": 46.7,
+                "text": "the entrapped spatial energy",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 45.72,
+                        "end": 45.78
+                    },
+                    {
+                        "word": "entrapped",
+                        "start": 45.78,
+                        "end": 46.06
+                    },
+                    {
+                        "word": "spatial",
+                        "start": 46.06,
+                        "end": 46.4
+                    },
+                    {
+                        "word": "energy",
+                        "start": 46.4,
+                        "end": 46.7
+                    }
+                ]
+            },
+            {
+                "start": 46.7,
+                "end": 48.28,
+                "text": "condenses into rest mass.",
+                "words": [
+                    {
+                        "word": "condenses",
+                        "start": 46.7,
+                        "end": 47.2
+                    },
+                    {
+                        "word": "into",
+                        "start": 47.2,
+                        "end": 47.46
+                    },
+                    {
+                        "word": "rest",
+                        "start": 47.46,
+                        "end": 47.72
+                    },
+                    {
+                        "word": "mass.",
+                        "start": 47.72,
+                        "end": 48.04
+                    }
+                ]
+            },
+            {
+                "start": 48.28,
+                "end": 50.02,
+                "text": "that's e equals mc squared.",
+                "words": [
+                    {
+                        "word": "that's",
+                        "start": 48.28,
+                        "end": 48.54
+                    },
+                    {
+                        "word": "e",
+                        "start": 48.54,
+                        "end": 48.66
+                    },
+                    {
+                        "word": "equals",
+                        "start": 48.66,
+                        "end": 48.86
+                    },
+                    {
+                        "word": "mc",
+                        "start": 48.86,
+                        "end": 49.14
+                    },
+                    {
+                        "word": "squared.",
+                        "start": 49.14,
+                        "end": 49.46
+                    }
+                ]
+            },
+            {
+                "start": 50.02,
+                "end": 51.76,
+                "text": "so matter isn't some separate",
+                "words": [
+                    {
+                        "word": "so",
+                        "start": 50.02,
+                        "end": 50.06
+                    },
+                    {
+                        "word": "matter",
+                        "start": 50.06,
+                        "end": 50.38
+                    },
+                    {
+                        "word": "isn't",
+                        "start": 50.38,
+                        "end": 50.78
+                    },
+                    {
+                        "word": "some",
+                        "start": 50.78,
+                        "end": 51.02
+                    },
+                    {
+                        "word": "separate",
+                        "start": 51.02,
+                        "end": 51.76
+                    }
+                ]
+            },
+            {
+                "start": 51.76,
+                "end": 54.16,
+                "text": "stuff placed into empty space.",
+                "words": [
+                    {
+                        "word": "stuff",
+                        "start": 51.76,
+                        "end": 52.58
+                    },
+                    {
+                        "word": "placed",
+                        "start": 52.58,
+                        "end": 53.12
+                    },
+                    {
+                        "word": "into",
+                        "start": 53.12,
+                        "end": 53.38
+                    },
+                    {
+                        "word": "empty",
+                        "start": 53.38,
+                        "end": 53.56
+                    },
+                    {
+                        "word": "space.",
+                        "start": 53.56,
+                        "end": 53.88
+                    }
+                ]
+            },
+            {
+                "start": 54.16,
+                "end": 55.6,
+                "text": "matter is literally an active",
+                "words": [
+                    {
+                        "word": "matter",
+                        "start": 54.16,
+                        "end": 54.2
+                    },
+                    {
+                        "word": "is",
+                        "start": 54.18,
+                        "end": 54.4
+                    },
+                    {
+                        "word": "literally",
+                        "start": 54.4,
+                        "end": 54.78
+                    },
+                    {
+                        "word": "an",
+                        "start": 54.78,
+                        "end": 55.16
+                    },
+                    {
+                        "word": "active",
+                        "start": 55.16,
+                        "end": 55.6
+                    }
+                ]
+            },
+            {
+                "start": 55.6,
+                "end": 57.6,
+                "text": "knotting of 3d space itself.",
+                "words": [
+                    {
+                        "word": "knotting",
+                        "start": 55.6,
+                        "end": 56.1
+                    },
+                    {
+                        "word": "of",
+                        "start": 56.1,
+                        "end": 56.26
+                    },
+                    {
+                        "word": "3d",
+                        "start": 56.26,
+                        "end": 56.62
+                    },
+                    {
+                        "word": "space",
+                        "start": 56.62,
+                        "end": 56.9
+                    },
+                    {
+                        "word": "itself.",
+                        "start": 56.9,
+                        "end": 57.3
+                    }
+                ]
+            },
+            {
+                "start": 57.6,
+                "end": 59.24,
+                "text": "it resolves wave particle duality",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 57.6,
+                        "end": 57.76
+                    },
+                    {
+                        "word": "resolves",
+                        "start": 57.76,
+                        "end": 58.08
+                    },
+                    {
+                        "word": "wave",
+                        "start": 58.08,
+                        "end": 58.38
+                    },
+                    {
+                        "word": "particle",
+                        "start": 58.38,
+                        "end": 58.74
+                    },
+                    {
+                        "word": "duality",
+                        "start": 58.74,
+                        "end": 59.24
+                    }
+                ]
+            },
+            {
+                "start": 59.24,
+                "end": 62.16,
+                "text": "completely. that is so elegant.",
+                "words": [
+                    {
+                        "word": "completely.",
+                        "start": 59.24,
+                        "end": 59.6
+                    },
+                    {
+                        "word": "that",
+                        "start": 60.08,
+                        "end": 60.14
+                    },
+                    {
+                        "word": "is",
+                        "start": 60.14,
+                        "end": 60.24
+                    },
+                    {
+                        "word": "so",
+                        "start": 60.24,
+                        "end": 60.62
+                    },
+                    {
+                        "word": "elegant.",
+                        "start": 60.62,
+                        "end": 61.08
+                    }
+                ]
+            },
+            {
+                "start": 62.16,
+                "end": 63.2,
+                "text": "coming up in the next clip,",
+                "words": [
+                    {
+                        "word": "coming",
+                        "start": 62.16,
+                        "end": 62.32
+                    },
+                    {
+                        "word": "up",
+                        "start": 62.32,
+                        "end": 62.48
+                    },
+                    {
+                        "word": "in",
+                        "start": 62.48,
+                        "end": 62.6
+                    },
+                    {
+                        "word": "the",
+                        "start": 62.6,
+                        "end": 62.7
+                    },
+                    {
+                        "word": "next",
+                        "start": 62.7,
+                        "end": 62.9
+                    },
+                    {
+                        "word": "clip,",
+                        "start": 62.9,
+                        "end": 63.12
+                    }
+                ]
+            },
+            {
+                "start": 63.2,
+                "end": 64.96,
+                "text": "we roll the 3d dice again",
+                "words": [
+                    {
+                        "word": "we",
+                        "start": 63.2,
+                        "end": 63.4
+                    },
+                    {
+                        "word": "roll",
+                        "start": 63.4,
+                        "end": 63.74
+                    },
+                    {
+                        "word": "the",
+                        "start": 63.74,
+                        "end": 63.96
+                    },
+                    {
+                        "word": "3d",
+                        "start": 63.96,
+                        "end": 64.38
+                    },
+                    {
+                        "word": "dice",
+                        "start": 64.38,
+                        "end": 64.6
+                    },
+                    {
+                        "word": "again",
+                        "start": 64.6,
+                        "end": 64.96
+                    }
+                ]
+            },
+            {
+                "start": 64.96,
+                "end": 66.84,
+                "text": "to discover the illusion of",
+                "words": [
+                    {
+                        "word": "to",
+                        "start": 64.96,
+                        "end": 65.26
+                    },
+                    {
+                        "word": "discover",
+                        "start": 65.26,
+                        "end": 65.58
+                    },
+                    {
+                        "word": "the",
+                        "start": 65.58,
+                        "end": 65.8
+                    },
+                    {
+                        "word": "illusion",
+                        "start": 65.8,
+                        "end": 66.3
+                    },
+                    {
+                        "word": "of",
+                        "start": 66.3,
+                        "end": 66.84
+                    }
+                ]
+            },
+            {
+                "start": 66.84,
+                "end": 69.02,
+                "text": "commutativity. this part is a bit",
+                "words": [
+                    {
+                        "word": "commutativity.",
+                        "start": 66.84,
+                        "end": 67.62
+                    },
+                    {
+                        "word": "this",
+                        "start": 68.08,
+                        "end": 68.36
+                    },
+                    {
+                        "word": "part",
+                        "start": 68.36,
+                        "end": 68.54
+                    },
+                    {
+                        "word": "is",
+                        "start": 68.54,
+                        "end": 68.7
+                    },
+                    {
+                        "word": "a",
+                        "start": 68.7,
+                        "end": 68.82
+                    },
+                    {
+                        "word": "bit",
+                        "start": 68.82,
+                        "end": 69.02
+                    }
+                ]
+            },
+            {
+                "start": 69.02,
+                "end": 69.89,
+                "text": "of a mind bender.",
+                "words": [
+                    {
+                        "word": "of",
+                        "start": 69.02,
+                        "end": 69.12
+                    },
+                    {
+                        "word": "a",
+                        "start": 69.12,
+                        "end": 69.24
+                    },
+                    {
+                        "word": "mind",
+                        "start": 69.24,
+                        "end": 69.46
+                    },
+                    {
+                        "word": "bender.",
+                        "start": 69.46,
+                        "end": 69.74
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "10c6d7d21f16858f2478a8894f3c63dc",
+        "rendered_duration": 79.79,
+        "audio_duration": 74.26,
+        "intro_offset": 1.5,
+        "outro_duration": 5.0,
+        "source_start": 664,
+        "source_end": 728.26,
+        "_audio_sig": "ee02922ea760effb1b65f5d80b867876",
+        "_compiled_sig": "d1f909c798ffac184712c8ee91ecab16"
     },
     {
         "num": 8,
