@@ -12,6 +12,7 @@ build_temp/
 ddma/scratch/
 !ddma/scratch/run_curator.py
 !ddma/scratch/review_episode_bridges.py
+!ddma/scratch/combine_clips_demuxer.py
 !ddma/scratch/test-env/**
 ddma/captions/
 ddma/build_temp/
