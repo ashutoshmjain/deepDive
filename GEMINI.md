@@ -30,8 +30,9 @@
    Whenever instructed to commit and push per our push strategy:
    - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
      - `deepDive/ingest/*` ⟶ `mdIngest/ui/*`
-     - `deepDive/ddma/ddma.py`, `curator.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py` ⟶ `ddma/`
-   - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
+     - `deepDive/ddma/` engine + harness ⟶ `ddma/` (same relative paths): `ddma.py`, `curator.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py`, `scratch/combine_clips_demuxer.py`, `scratch/test-env/test_curator.js`, `scratch/test-env/test_canonical_audio_compile.py`, plus any other tested script/test the fix adds
+     - After mirroring, blob-compare (`git hash-object`) every file the workbench commit touched in engine/UI scope — not just the list above. A fix that adds a new script or test must extend that list in the same edit.
+  - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
    - **Step 3: Tri-Repo Commit & Push**:
      - Commit and push `deepDive` to its GitHub remote (preserves local workbench + publication articles/media).
      - Commit and push `mdIngest` to its GitHub remote (clean upstream UI/server tool).
