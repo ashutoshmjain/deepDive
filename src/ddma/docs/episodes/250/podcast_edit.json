@@ -1,0 +1,154 @@
+{
+  "episode": "250",
+  "source_audio": "250.m4a",
+  "cuts": [
+    {
+      "id": "cut_welcome_1498",
+      "start": 14.98,
+      "end": 17.88,
+      "text": "But welcome to your custom deep dive.",
+      "reason": "Stripped redundant spoken welcome (replaced by deepDive-strong.mp3 spoken intro sting)"
+    }
+  ],
+  "stings": [
+    {
+      "id": "sting_0_138",
+      "at": 13.87,
+      "music_file": "deepDive-strong.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 16.71,
+      "reason": "Clip 0 Show Opener ('Welcome to deepDive, I am Satosha & Satoshi' + 10s music) after hook: '...s exactly zero? It sounds completely impossible.'"
+    },
+    {
+      "id": "sting_1_1407",
+      "at": 140.78,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 0 \u2192 Before Clip 1 (Clip 1): '...nce of the math. Let's just jump right in.'"
+    },
+    {
+      "id": "sting_2_3411",
+      "at": 341.17,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 1 \u2192 Before Clip 2 (Clip 2): '...pothole itself. The zero divisor. Exactly.'"
+    },
+    {
+      "id": "sting_3_5764",
+      "at": 576.42,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 2 \u2192 Before Clip 3 (Clip 3): '...atics' most cherished law. Indeed it does.'"
+    },
+    {
+      "id": "sting_4_7362",
+      "at": 736.24,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 3 \u2192 Before Clip 4 (Clip 4): '...backward, it cannot safely expand forward.'"
+    },
+    {
+      "id": "sting_5_9014",
+      "at": 901.4,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 4 \u2192 Before Clip 5 (Clip 5): '...hat infinite space. And it is a nightmare.'"
+    },
+    {
+      "id": "sting_6_10519",
+      "at": 1051.9,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 5 \u2192 Before Clip 6 (Clip 6): '...sten to this deep dive right now. Oh, wow.'"
+    },
+    {
+      "id": "sting_7_12010",
+      "at": 1201.08,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 6 \u2192 Before Clip 7 (Clip 7): '...ero? That is when things get really messy.'"
+    },
+    {
+      "id": "sting_8_13821",
+      "at": 1382.12,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 7 \u2192 Before Clip 8 (Clip 8): '...nfinitely worse than the disease. Oh, boy.'"
+    },
+    {
+      "id": "sting_9_15837",
+      "at": 1583.75,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 8 \u2192 Before Clip 9 (Clip 9): '...actually exist? It is a profound question.'"
+    },
+    {
+      "id": "sting_10_17469",
+      "at": 1746.9,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 9 \u2192 Before Clip 10 (Clip 10): '...l universe. I can't wait to get into this.'"
+    },
+    {
+      "id": "sting_11_19821",
+      "at": 1982.13,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 10 \u2192 Before Clip 11 (Clip 11): '...6 dimensions? You're stepping off a cliff.'"
+    },
+    {
+      "id": "sting_12_23093",
+      "at": 2309.36,
+      "music_file": "Howling (Sting) - Gunnar Olsen.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 11 \u2192 Before Clip 13 (Clip 13): '...lk about it today? That is the big payoff.'"
+    },
+    {
+      "id": "sting_13_24785",
+      "at": 2478.58,
+      "music_file": "Bluesy Vibes (Sting) - Doug Maxwell_Media Right Productions.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "End of Clip 13 \u2192 Before Clip 14 (Clip 14): '...oncepts back down to the human experience.'"
+    },
+    {
+      "id": "sting_14_26445",
+      "at": 2644.54,
+      "music_file": "deepDive-conclusion.mp3",
+      "mode": "fade_2s_xfade_10",
+      "duck_db": -14,
+      "duration": 5.5,
+      "reason": "Episode Finale Sign-Off ('I am Satosha, and I am Satoshi' + 4s closing music) after final words: '...r models of reality. We'll see you next time.'"
+    }
+  ],
+  "intro_sting": "deepDive-strong.mp3",
+  "outro_sting": "deepDive-conclusion.mp3",
+  "target_lufs": -16,
+  "updated_at": "2026-11-13T13:10:47.038936"
+}
