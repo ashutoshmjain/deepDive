@@ -8189,7 +8189,8 @@
         ],
         "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "The Division Algebras"
+        "coming_up_title": "The Division Algebras",
+        "mosaic_run_id": "26606fbc-7a51-420c-a286-2726c5a91769"
     },
     {
         "num": 3,
@@ -8240,7 +8241,8 @@
         ],
         "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "The Scalar Observer"
+        "coming_up_title": "The Scalar Observer",
+        "mosaic_run_id": "972b1c19-0b6d-4023-b8a2-36eced1ca878"
     },
     {
         "num": 4,
@@ -8291,7 +8293,8 @@
         ],
         "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "Quaternions"
+        "coming_up_title": "Quaternions",
+        "mosaic_run_id": "3ed55339-7281-44b0-a7d6-cfbee3b1c511"
     },
     {
         "num": 5,
