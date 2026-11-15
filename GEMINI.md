@@ -30,7 +30,7 @@
    Whenever instructed to commit and push per our push strategy:
    - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
      - `deepDive/ingest/*` (server.py, cockpit.html, landing.html, tests/cockpit_e2e.js, etc. — everything EXCEPT `settings.json`, template only) ⟶ `mdIngest/ui/*`
-     - `deepDive/ddma/` engine + harness ⟶ `ddma/` (same relative paths): `ddma.py`, `curator.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py`, `scratch/combine_clips_demuxer.py`, `scratch/test-env/test_curator.js`, `scratch/test-env/test_canonical_audio_compile.py`, `scratch/test-env/test_compile_scope.py`, `scratch/test-env/test_no_auto_mosaic.js`, `scratch/test-env/test_plan_clip0_title.py`, plus any other tested script/test the fix adds
+     - `deepDive/ddma/` engine + harness ⟶ `ddma/` (same relative paths): `ddma.py`, `curator.html`, `beats.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py`, `scratch/combine_clips_demuxer.py`, `scratch/test-env/test_curator.js`, `scratch/test-env/test_canonical_audio_compile.py`, `scratch/test-env/test_compile_scope.py`, `scratch/test-env/test_no_auto_mosaic.js`, `scratch/test-env/test_plan_clip0_title.py`, plus any other tested script/test the fix adds
      - After mirroring, blob-compare (`git hash-object`) every file the workbench commit touched in engine/UI scope — not just the list above. A fix that adds a new script or test must extend that list in the same edit.
   - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
    - **Step 3: Tri-Repo Commit & Push**:
@@ -74,6 +74,7 @@ The 2026-11-09 incident is the reference case: 249-5 "Quaternions" reached Drive
 
 - **Environment-First Resolution**: All engines (`ingest/server.py`, `ddma/ddma.py`, `ddma/scratch/run_curator.py`) resolve configuration secrets (`GEMINI_API_KEY`, `MOSAIC_API_KEY`, `DD_HUB_ROOT`, etc.) by checking process environment variables FIRST before falling back to local `settings.json`.
 - **Zero Secrets Committed**: `settings.json` is strictly ignored by git in all repositories (`.gitignore`). Neither `deepDive`, `mdIngest`, nor `ddma` may ever commit or stage live API keys. A sanitised `settings.template.json` is maintained at repo root as the canonical schema reference.
+- **Factory Defaults Backup**: the shipped Mosaic default prompt lives tracked at `ddma/scratch/mosaic_factory_defaults.json` (force-add: `scratch/` is git-ignored). Curator Reset restores this text via the `factory_mosaic_prompt` field — never the stored value. Suites must restore any prompt they overwrite.
 
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and NO `settings.json` are staged.

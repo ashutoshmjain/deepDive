@@ -45,8 +45,11 @@ STAGE 2: Mosaic / Manim Body Render (`740×740`)
 
 STAGE 3: Final Master Packaging (`ddma.py compile-clip` • `1080×1920` Vertical)
 ──────────────────────────────────────────────────────────────────────────────────
-  • [Intro Card (1.5s, Pure #000000, dedicated soft title-card audio)] -> Hard
-    concat into [Mosaic/Manim Body Video]
+  • [Intro Card (1.5s, Pure #000000, dedicated soft title-card audio)] -> 0.2s
+    silence gap (`INTRO_BODY_GAP_S = 0.2`, the sting beat): the title card holds
+    (video + audio tail padded) while the audio stays silent, then [Mosaic/Manim
+    Body Video] starts clean with no pop/click. Caption offset accounts for the
+    gap (`intro_offset` = 1.5 + 0.2).
   • [Outro Bridge Card (5.0s, Pure #000000)] -> Stitched at the end with a 1.0s
     crossfade, repeating the final 5.0s of `deepDive-conclusion.mp3` ("I am Satosha,
     and I am Satoshi") to create a deliberate delayed-echo host signature over the
