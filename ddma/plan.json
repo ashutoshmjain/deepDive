@@ -21534,7 +21534,7 @@
         "rendered_duration": 97.05,
         "audio_duration": 91.52,
         "intro_offset": 1.5,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 728.46,
         "source_end": 809.9,
         "_audio_sig": "16f1aabdf605947f1e2aaa4fb6e5c2c6",
@@ -25988,7 +25988,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.74
             },
             {
@@ -28040,7 +28040,7 @@
         "rendered_duration": 83.05,
         "audio_duration": 77.52,
         "intro_offset": 1.5,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 945.02,
         "source_end": 1012.59,
         "_audio_sig": "c4b40cdb8eef4c41ad3e8ab44cef06f5",
@@ -28061,9 +28061,9 @@
             {
                 "type": "audio",
                 "start": 1013.48,
-                "end": 1024.58,
-                "duration": 11.1,
-                "text": "Clip 12. Electric charge. Charge is not a fraction, it is the chiral orientation of your spatial geometry. So, we connected color charge to the internal, non -commutative order."
+                "end": 1028.94,
+                "duration": 15.46,
+                "text": "Clip  12.  Electric  charge.  Charge  is  not  a  fraction,  it  is  the  chiral  orientation  of  your  spatial  geometry.  So,  we  connected  color  charge  to  the  internal,  non -commutative  order.  Now,  we  connect  electric  charge  to  the  associative  global  sequence.  Right."
             },
             {
                 "type": "music",
@@ -28078,10 +28078,10 @@
             },
             {
                 "type": "audio",
-                "start": 1025.34,
-                "end": 1082.26,
-                "duration": 56.92,
-                "text": "we connect electric charge to the associative global sequence. Right. The global sign flip, negative one versus positive one, defines the two opposite chiral poles of electromagnetic charge. Okay, let me make sure I have this. Negative charge minus Q represents forward projection, spatial condensation into localized matter. Exactly. And positive charge plus Q is the reversed sequence, untangling reflection back to equilibrium. The paper uses the Argand plane analogy here, right? Yeah, graphing real and imaginary numbers. Negative one and positive one aren't destructive arithmetic opposites that just crush each other. They're chiral conjugate mirrors of each other, like a left and a right hand. Identical structure, inverted orientation. Perfectly stated. Coming up in the next clip, the profound realization that cognitive intelligence is the antimatter to physical creation. This is the philosophical peak of the paper."
+                "start": 1029.6,
+                "end": 1081.94,
+                "duration": 52.34,
+                "text": "The  global  sign  flip,  negative  one  versus  positive  one,  defines  the  two  opposite  chiral  poles  of  electromagnetic  charge.  Okay,  let  me  make  sure  I  have  this.  Negative  charge  minus  Q  represents  forward  projection,  spatial  condensation  into  localized  matter.  Exactly.  And  positive  charge  plus  Q  is  the  reversed  sequence,  untangling  reflection  back  to  equilibrium.  The  paper  uses  the  Argand  plane  analogy  here,  right?  Yeah,  graphing  real  and  imaginary  numbers.  Negative  one  and  positive  one  aren't  destructive  arithmetic  opposites  that  just  crush  each  other.  They're  chiral  conjugate  mirrors  of  each  other,  like  a  left  and  a  right  hand.  Identical  structure,  inverted  orientation.  Perfectly  stated.  Coming  up  in  the  next  clip,  the  profound  realization  that  cognitive  intelligence  is  the  antimatter  to  physical  creation.  This  is  the  philosophical  peak  of  the  paper."
             },
             {
                 "type": "music",
@@ -28095,9 +28095,1972 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "The Chiral Mirror"
+        "coming_up_title": "The Chiral Mirror",
+        "mosaic_run_id": "e5bc3688-8b16-4d54-a154-e15cb25cba20",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.04
+            },
+            {
+                "word": "12.",
+                "start": 0.04,
+                "end": 0.38
+            },
+            {
+                "word": "Electric",
+                "start": 1.08,
+                "end": 1.28
+            },
+            {
+                "word": "charge.",
+                "start": 1.28,
+                "end": 1.58
+            },
+            {
+                "word": "Charge",
+                "start": 2.28,
+                "end": 2.36
+            },
+            {
+                "word": "is",
+                "start": 2.36,
+                "end": 2.54
+            },
+            {
+                "word": "not",
+                "start": 2.54,
+                "end": 2.68
+            },
+            {
+                "word": "a",
+                "start": 2.68,
+                "end": 2.78
+            },
+            {
+                "word": "fraction,",
+                "start": 2.78,
+                "end": 3.08
+            },
+            {
+                "word": "it",
+                "start": 3.36,
+                "end": 3.52
+            },
+            {
+                "word": "is",
+                "start": 3.52,
+                "end": 3.62
+            },
+            {
+                "word": "the",
+                "start": 3.62,
+                "end": 3.8
+            },
+            {
+                "word": "chiral",
+                "start": 3.8,
+                "end": 4.16
+            },
+            {
+                "word": "orientation",
+                "start": 4.16,
+                "end": 4.68
+            },
+            {
+                "word": "of",
+                "start": 4.68,
+                "end": 5.18
+            },
+            {
+                "word": "your",
+                "start": 5.18,
+                "end": 5.34
+            },
+            {
+                "word": "spatial",
+                "start": 5.34,
+                "end": 5.72
+            },
+            {
+                "word": "geometry.",
+                "start": 5.72,
+                "end": 6.16
+            },
+            {
+                "word": "So,",
+                "start": 6.9,
+                "end": 7.14
+            },
+            {
+                "word": "we",
+                "start": 7.18,
+                "end": 7.3
+            },
+            {
+                "word": "connected",
+                "start": 7.3,
+                "end": 7.62
+            },
+            {
+                "word": "color",
+                "start": 7.62,
+                "end": 7.96
+            },
+            {
+                "word": "charge",
+                "start": 7.96,
+                "end": 8.32
+            },
+            {
+                "word": "to",
+                "start": 8.32,
+                "end": 8.68
+            },
+            {
+                "word": "the",
+                "start": 8.68,
+                "end": 8.82
+            },
+            {
+                "word": "internal,",
+                "start": 8.82,
+                "end": 9.36
+            },
+            {
+                "word": "non",
+                "start": 9.64,
+                "end": 9.96
+            },
+            {
+                "word": "-commutative",
+                "start": 9.96,
+                "end": 10.48
+            },
+            {
+                "word": "order.",
+                "start": 10.48,
+                "end": 10.78
+            },
+            {
+                "word": "Now,",
+                "start": 10.78,
+                "end": 11.66
+            },
+            {
+                "word": "we",
+                "start": 11.86,
+                "end": 11.94
+            },
+            {
+                "word": "connect",
+                "start": 11.94,
+                "end": 12.24
+            },
+            {
+                "word": "electric",
+                "start": 12.24,
+                "end": 12.78
+            },
+            {
+                "word": "charge",
+                "start": 12.78,
+                "end": 13.06
+            },
+            {
+                "word": "to",
+                "start": 13.06,
+                "end": 13.3
+            },
+            {
+                "word": "the",
+                "start": 13.3,
+                "end": 13.42
+            },
+            {
+                "word": "associative",
+                "start": 13.42,
+                "end": 13.94
+            },
+            {
+                "word": "global",
+                "start": 13.94,
+                "end": 14.22
+            },
+            {
+                "word": "sequence.",
+                "start": 14.22,
+                "end": 14.82
+            },
+            {
+                "word": "Right.",
+                "start": 15.32,
+                "end": 15.46
+            },
+            {
+                "word": "The",
+                "start": 20.16,
+                "end": 20.2
+            },
+            {
+                "word": "global",
+                "start": 20.16,
+                "end": 20.38
+            },
+            {
+                "word": "sign",
+                "start": 20.38,
+                "end": 20.64
+            },
+            {
+                "word": "flip,",
+                "start": 20.64,
+                "end": 20.94
+            },
+            {
+                "word": "negative",
+                "start": 21.16,
+                "end": 21.26
+            },
+            {
+                "word": "one",
+                "start": 21.26,
+                "end": 21.56
+            },
+            {
+                "word": "versus",
+                "start": 21.56,
+                "end": 21.8
+            },
+            {
+                "word": "positive",
+                "start": 21.8,
+                "end": 22.2
+            },
+            {
+                "word": "one,",
+                "start": 22.2,
+                "end": 22.52
+            },
+            {
+                "word": "defines",
+                "start": 22.74,
+                "end": 23.1
+            },
+            {
+                "word": "the",
+                "start": 23.1,
+                "end": 23.34
+            },
+            {
+                "word": "two",
+                "start": 23.34,
+                "end": 23.54
+            },
+            {
+                "word": "opposite",
+                "start": 23.54,
+                "end": 23.98
+            },
+            {
+                "word": "chiral",
+                "start": 23.98,
+                "end": 24.38
+            },
+            {
+                "word": "poles",
+                "start": 24.38,
+                "end": 24.74
+            },
+            {
+                "word": "of",
+                "start": 24.74,
+                "end": 25.14
+            },
+            {
+                "word": "electromagnetic",
+                "start": 25.14,
+                "end": 25.64
+            },
+            {
+                "word": "charge.",
+                "start": 25.64,
+                "end": 26.24
+            },
+            {
+                "word": "Okay,",
+                "start": 26.8,
+                "end": 27.0
+            },
+            {
+                "word": "let",
+                "start": 27.08,
+                "end": 27.14
+            },
+            {
+                "word": "me",
+                "start": 27.14,
+                "end": 27.22
+            },
+            {
+                "word": "make",
+                "start": 27.22,
+                "end": 27.4
+            },
+            {
+                "word": "sure",
+                "start": 27.4,
+                "end": 27.56
+            },
+            {
+                "word": "I",
+                "start": 27.56,
+                "end": 27.7
+            },
+            {
+                "word": "have",
+                "start": 27.7,
+                "end": 27.86
+            },
+            {
+                "word": "this.",
+                "start": 27.86,
+                "end": 28.1
+            },
+            {
+                "word": "Negative",
+                "start": 28.66,
+                "end": 28.7
+            },
+            {
+                "word": "charge",
+                "start": 28.66,
+                "end": 29.02
+            },
+            {
+                "word": "minus",
+                "start": 29.02,
+                "end": 29.58
+            },
+            {
+                "word": "Q",
+                "start": 29.58,
+                "end": 29.94
+            },
+            {
+                "word": "represents",
+                "start": 29.94,
+                "end": 30.94
+            },
+            {
+                "word": "forward",
+                "start": 30.94,
+                "end": 31.44
+            },
+            {
+                "word": "projection,",
+                "start": 31.44,
+                "end": 31.96
+            },
+            {
+                "word": "spatial",
+                "start": 32.34,
+                "end": 32.6
+            },
+            {
+                "word": "condensation",
+                "start": 32.6,
+                "end": 33.26
+            },
+            {
+                "word": "into",
+                "start": 33.26,
+                "end": 33.72
+            },
+            {
+                "word": "localized",
+                "start": 33.72,
+                "end": 34.12
+            },
+            {
+                "word": "matter.",
+                "start": 34.12,
+                "end": 34.54
+            },
+            {
+                "word": "Exactly.",
+                "start": 34.96,
+                "end": 35.44
+            },
+            {
+                "word": "And",
+                "start": 36.4,
+                "end": 36.5
+            },
+            {
+                "word": "positive",
+                "start": 36.5,
+                "end": 36.88
+            },
+            {
+                "word": "charge",
+                "start": 36.88,
+                "end": 37.34
+            },
+            {
+                "word": "plus",
+                "start": 37.34,
+                "end": 37.7
+            },
+            {
+                "word": "Q",
+                "start": 37.7,
+                "end": 38.02
+            },
+            {
+                "word": "is",
+                "start": 38.02,
+                "end": 38.68
+            },
+            {
+                "word": "the",
+                "start": 38.68,
+                "end": 38.84
+            },
+            {
+                "word": "reversed",
+                "start": 38.84,
+                "end": 39.14
+            },
+            {
+                "word": "sequence,",
+                "start": 39.14,
+                "end": 39.82
+            },
+            {
+                "word": "untangling",
+                "start": 40.48,
+                "end": 41.06
+            },
+            {
+                "word": "reflection",
+                "start": 41.06,
+                "end": 41.58
+            },
+            {
+                "word": "back",
+                "start": 41.58,
+                "end": 41.9
+            },
+            {
+                "word": "to",
+                "start": 41.9,
+                "end": 42.04
+            },
+            {
+                "word": "equilibrium.",
+                "start": 42.04,
+                "end": 42.44
+            },
+            {
+                "word": "The",
+                "start": 42.44,
+                "end": 43.42
+            },
+            {
+                "word": "paper",
+                "start": 43.42,
+                "end": 43.62
+            },
+            {
+                "word": "uses",
+                "start": 43.62,
+                "end": 43.92
+            },
+            {
+                "word": "the",
+                "start": 43.92,
+                "end": 44.16
+            },
+            {
+                "word": "Argand",
+                "start": 44.16,
+                "end": 44.54
+            },
+            {
+                "word": "plane",
+                "start": 44.54,
+                "end": 44.74
+            },
+            {
+                "word": "analogy",
+                "start": 44.74,
+                "end": 45.08
+            },
+            {
+                "word": "here,",
+                "start": 45.08,
+                "end": 45.38
+            },
+            {
+                "word": "right?",
+                "start": 45.44,
+                "end": 45.6
+            },
+            {
+                "word": "Yeah,",
+                "start": 46.3,
+                "end": 46.42
+            },
+            {
+                "word": "graphing",
+                "start": 46.56,
+                "end": 46.9
+            },
+            {
+                "word": "real",
+                "start": 46.9,
+                "end": 47.22
+            },
+            {
+                "word": "and",
+                "start": 47.22,
+                "end": 47.42
+            },
+            {
+                "word": "imaginary",
+                "start": 47.42,
+                "end": 47.8
+            },
+            {
+                "word": "numbers.",
+                "start": 47.8,
+                "end": 48.32
+            },
+            {
+                "word": "Negative",
+                "start": 49.14,
+                "end": 49.18
+            },
+            {
+                "word": "one",
+                "start": 49.14,
+                "end": 49.4
+            },
+            {
+                "word": "and",
+                "start": 49.4,
+                "end": 49.58
+            },
+            {
+                "word": "positive",
+                "start": 49.58,
+                "end": 49.84
+            },
+            {
+                "word": "one",
+                "start": 49.84,
+                "end": 50.14
+            },
+            {
+                "word": "aren't",
+                "start": 50.14,
+                "end": 50.5
+            },
+            {
+                "word": "destructive",
+                "start": 50.5,
+                "end": 51.04
+            },
+            {
+                "word": "arithmetic",
+                "start": 51.04,
+                "end": 51.74
+            },
+            {
+                "word": "opposites",
+                "start": 51.74,
+                "end": 52.44
+            },
+            {
+                "word": "that",
+                "start": 52.44,
+                "end": 52.66
+            },
+            {
+                "word": "just",
+                "start": 52.66,
+                "end": 52.88
+            },
+            {
+                "word": "crush",
+                "start": 52.88,
+                "end": 53.44
+            },
+            {
+                "word": "each",
+                "start": 53.44,
+                "end": 53.66
+            },
+            {
+                "word": "other.",
+                "start": 53.66,
+                "end": 53.9
+            },
+            {
+                "word": "They're",
+                "start": 54.4,
+                "end": 54.62
+            },
+            {
+                "word": "chiral",
+                "start": 54.62,
+                "end": 55.0
+            },
+            {
+                "word": "conjugate",
+                "start": 55.0,
+                "end": 55.56
+            },
+            {
+                "word": "mirrors",
+                "start": 55.56,
+                "end": 55.94
+            },
+            {
+                "word": "of",
+                "start": 55.94,
+                "end": 56.16
+            },
+            {
+                "word": "each",
+                "start": 56.16,
+                "end": 56.3
+            },
+            {
+                "word": "other,",
+                "start": 56.3,
+                "end": 56.58
+            },
+            {
+                "word": "like",
+                "start": 56.92,
+                "end": 57.04
+            },
+            {
+                "word": "a",
+                "start": 57.04,
+                "end": 57.28
+            },
+            {
+                "word": "left",
+                "start": 57.28,
+                "end": 57.58
+            },
+            {
+                "word": "and",
+                "start": 57.58,
+                "end": 57.76
+            },
+            {
+                "word": "a",
+                "start": 57.76,
+                "end": 57.84
+            },
+            {
+                "word": "right",
+                "start": 57.84,
+                "end": 57.98
+            },
+            {
+                "word": "hand.",
+                "start": 57.98,
+                "end": 58.36
+            },
+            {
+                "word": "Identical",
+                "start": 58.88,
+                "end": 59.08
+            },
+            {
+                "word": "structure,",
+                "start": 59.08,
+                "end": 59.52
+            },
+            {
+                "word": "inverted",
+                "start": 60.08,
+                "end": 60.58
+            },
+            {
+                "word": "orientation.",
+                "start": 60.58,
+                "end": 61.24
+            },
+            {
+                "word": "Perfectly",
+                "start": 61.74,
+                "end": 62.14
+            },
+            {
+                "word": "stated.",
+                "start": 62.14,
+                "end": 62.36
+            },
+            {
+                "word": "Coming",
+                "start": 62.68,
+                "end": 62.86
+            },
+            {
+                "word": "up",
+                "start": 62.86,
+                "end": 63.06
+            },
+            {
+                "word": "in",
+                "start": 63.06,
+                "end": 63.16
+            },
+            {
+                "word": "the",
+                "start": 63.16,
+                "end": 63.26
+            },
+            {
+                "word": "next",
+                "start": 63.26,
+                "end": 63.46
+            },
+            {
+                "word": "clip,",
+                "start": 63.46,
+                "end": 63.84
+            },
+            {
+                "word": "the",
+                "start": 64.7,
+                "end": 64.84
+            },
+            {
+                "word": "profound",
+                "start": 64.84,
+                "end": 65.18
+            },
+            {
+                "word": "realization",
+                "start": 65.18,
+                "end": 65.72
+            },
+            {
+                "word": "that",
+                "start": 65.72,
+                "end": 66.2
+            },
+            {
+                "word": "cognitive",
+                "start": 66.2,
+                "end": 66.6
+            },
+            {
+                "word": "intelligence",
+                "start": 66.6,
+                "end": 67.18
+            },
+            {
+                "word": "is",
+                "start": 67.18,
+                "end": 67.72
+            },
+            {
+                "word": "the",
+                "start": 67.72,
+                "end": 68.08
+            },
+            {
+                "word": "antimatter",
+                "start": 68.08,
+                "end": 68.8
+            },
+            {
+                "word": "to",
+                "start": 68.8,
+                "end": 69.1
+            },
+            {
+                "word": "physical",
+                "start": 69.1,
+                "end": 69.54
+            },
+            {
+                "word": "creation.",
+                "start": 69.54,
+                "end": 70.02
+            },
+            {
+                "word": "This",
+                "start": 70.02,
+                "end": 70.58
+            },
+            {
+                "word": "is",
+                "start": 70.58,
+                "end": 70.78
+            },
+            {
+                "word": "the",
+                "start": 70.78,
+                "end": 71.04
+            },
+            {
+                "word": "philosophical",
+                "start": 71.04,
+                "end": 71.52
+            },
+            {
+                "word": "peak",
+                "start": 71.52,
+                "end": 71.96
+            },
+            {
+                "word": "of",
+                "start": 71.96,
+                "end": 72.1
+            },
+            {
+                "word": "the",
+                "start": 72.1,
+                "end": 72.2
+            },
+            {
+                "word": "paper.",
+                "start": 72.2,
+                "end": 72.5
+            }
+        ],
+        "_caption_words_sig": "27256e466e83ff3763598de0c0631e7c",
+        "caption_chunks": [
+            {
+                "start": 1.5,
+                "end": 3.78,
+                "text": "clip 12. electric charge.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.5,
+                        "end": 1.54
+                    },
+                    {
+                        "word": "12.",
+                        "start": 1.54,
+                        "end": 1.88
+                    },
+                    {
+                        "word": "electric",
+                        "start": 2.58,
+                        "end": 2.78
+                    },
+                    {
+                        "word": "charge.",
+                        "start": 2.78,
+                        "end": 3.08
+                    }
+                ]
+            },
+            {
+                "start": 3.78,
+                "end": 4.86,
+                "text": "charge is not a fraction,",
+                "words": [
+                    {
+                        "word": "charge",
+                        "start": 3.78,
+                        "end": 3.86
+                    },
+                    {
+                        "word": "is",
+                        "start": 3.86,
+                        "end": 4.04
+                    },
+                    {
+                        "word": "not",
+                        "start": 4.04,
+                        "end": 4.18
+                    },
+                    {
+                        "word": "a",
+                        "start": 4.18,
+                        "end": 4.28
+                    },
+                    {
+                        "word": "fraction,",
+                        "start": 4.28,
+                        "end": 4.58
+                    }
+                ]
+            },
+            {
+                "start": 4.86,
+                "end": 6.68,
+                "text": "it is the chiral orientation of",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 4.86,
+                        "end": 5.02
+                    },
+                    {
+                        "word": "is",
+                        "start": 5.02,
+                        "end": 5.12
+                    },
+                    {
+                        "word": "the",
+                        "start": 5.12,
+                        "end": 5.3
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 5.3,
+                        "end": 5.66
+                    },
+                    {
+                        "word": "orientation",
+                        "start": 5.66,
+                        "end": 6.18
+                    },
+                    {
+                        "word": "of",
+                        "start": 6.18,
+                        "end": 6.68
+                    }
+                ]
+            },
+            {
+                "start": 6.68,
+                "end": 8.4,
+                "text": "your spatial geometry.",
+                "words": [
+                    {
+                        "word": "your",
+                        "start": 6.68,
+                        "end": 6.84
+                    },
+                    {
+                        "word": "spatial",
+                        "start": 6.84,
+                        "end": 7.22
+                    },
+                    {
+                        "word": "geometry.",
+                        "start": 7.22,
+                        "end": 7.66
+                    }
+                ]
+            },
+            {
+                "start": 8.4,
+                "end": 10.18,
+                "text": "so, we connected color charge to",
+                "words": [
+                    {
+                        "word": "so,",
+                        "start": 8.4,
+                        "end": 8.64
+                    },
+                    {
+                        "word": "we",
+                        "start": 8.68,
+                        "end": 8.8
+                    },
+                    {
+                        "word": "connected",
+                        "start": 8.8,
+                        "end": 9.12
+                    },
+                    {
+                        "word": "color",
+                        "start": 9.12,
+                        "end": 9.46
+                    },
+                    {
+                        "word": "charge",
+                        "start": 9.46,
+                        "end": 9.82
+                    },
+                    {
+                        "word": "to",
+                        "start": 9.82,
+                        "end": 10.18
+                    }
+                ]
+            },
+            {
+                "start": 10.18,
+                "end": 11.98,
+                "text": "the internal, non -commutative",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 10.18,
+                        "end": 10.32
+                    },
+                    {
+                        "word": "internal,",
+                        "start": 10.32,
+                        "end": 10.86
+                    },
+                    {
+                        "word": "non",
+                        "start": 11.14,
+                        "end": 11.46
+                    },
+                    {
+                        "word": "-commutative",
+                        "start": 11.46,
+                        "end": 11.98
+                    }
+                ]
+            },
+            {
+                "start": 11.98,
+                "end": 14.28,
+                "text": "order. now, we connect electric",
+                "words": [
+                    {
+                        "word": "order.",
+                        "start": 11.98,
+                        "end": 12.28
+                    },
+                    {
+                        "word": "now,",
+                        "start": 12.28,
+                        "end": 13.16
+                    },
+                    {
+                        "word": "we",
+                        "start": 13.36,
+                        "end": 13.44
+                    },
+                    {
+                        "word": "connect",
+                        "start": 13.44,
+                        "end": 13.74
+                    },
+                    {
+                        "word": "electric",
+                        "start": 13.74,
+                        "end": 14.28
+                    }
+                ]
+            },
+            {
+                "start": 14.28,
+                "end": 15.72,
+                "text": "charge to the associative global",
+                "words": [
+                    {
+                        "word": "charge",
+                        "start": 14.28,
+                        "end": 14.56
+                    },
+                    {
+                        "word": "to",
+                        "start": 14.56,
+                        "end": 14.8
+                    },
+                    {
+                        "word": "the",
+                        "start": 14.8,
+                        "end": 14.92
+                    },
+                    {
+                        "word": "associative",
+                        "start": 14.92,
+                        "end": 15.44
+                    },
+                    {
+                        "word": "global",
+                        "start": 15.44,
+                        "end": 15.72
+                    }
+                ]
+            },
+            {
+                "start": 15.72,
+                "end": 22.14,
+                "text": "sequence. right. the global sign",
+                "words": [
+                    {
+                        "word": "sequence.",
+                        "start": 15.72,
+                        "end": 16.32
+                    },
+                    {
+                        "word": "right.",
+                        "start": 16.82,
+                        "end": 16.96
+                    },
+                    {
+                        "word": "the",
+                        "start": 21.66,
+                        "end": 21.7
+                    },
+                    {
+                        "word": "global",
+                        "start": 21.66,
+                        "end": 21.88
+                    },
+                    {
+                        "word": "sign",
+                        "start": 21.88,
+                        "end": 22.14
+                    }
+                ]
+            },
+            {
+                "start": 22.14,
+                "end": 23.7,
+                "text": "flip, negative one versus positive",
+                "words": [
+                    {
+                        "word": "flip,",
+                        "start": 22.14,
+                        "end": 22.44
+                    },
+                    {
+                        "word": "negative",
+                        "start": 22.66,
+                        "end": 22.76
+                    },
+                    {
+                        "word": "one",
+                        "start": 22.76,
+                        "end": 23.06
+                    },
+                    {
+                        "word": "versus",
+                        "start": 23.06,
+                        "end": 23.3
+                    },
+                    {
+                        "word": "positive",
+                        "start": 23.3,
+                        "end": 23.7
+                    }
+                ]
+            },
+            {
+                "start": 23.7,
+                "end": 25.48,
+                "text": "one, defines the two opposite",
+                "words": [
+                    {
+                        "word": "one,",
+                        "start": 23.7,
+                        "end": 24.02
+                    },
+                    {
+                        "word": "defines",
+                        "start": 24.24,
+                        "end": 24.6
+                    },
+                    {
+                        "word": "the",
+                        "start": 24.6,
+                        "end": 24.84
+                    },
+                    {
+                        "word": "two",
+                        "start": 24.84,
+                        "end": 25.04
+                    },
+                    {
+                        "word": "opposite",
+                        "start": 25.04,
+                        "end": 25.48
+                    }
+                ]
+            },
+            {
+                "start": 25.48,
+                "end": 27.14,
+                "text": "chiral poles of electromagnetic",
+                "words": [
+                    {
+                        "word": "chiral",
+                        "start": 25.48,
+                        "end": 25.88
+                    },
+                    {
+                        "word": "poles",
+                        "start": 25.88,
+                        "end": 26.24
+                    },
+                    {
+                        "word": "of",
+                        "start": 26.24,
+                        "end": 26.64
+                    },
+                    {
+                        "word": "electromagnetic",
+                        "start": 26.64,
+                        "end": 27.14
+                    }
+                ]
+            },
+            {
+                "start": 27.14,
+                "end": 29.06,
+                "text": "charge. okay, let me make sure",
+                "words": [
+                    {
+                        "word": "charge.",
+                        "start": 27.14,
+                        "end": 27.74
+                    },
+                    {
+                        "word": "okay,",
+                        "start": 28.3,
+                        "end": 28.5
+                    },
+                    {
+                        "word": "let",
+                        "start": 28.58,
+                        "end": 28.64
+                    },
+                    {
+                        "word": "me",
+                        "start": 28.64,
+                        "end": 28.72
+                    },
+                    {
+                        "word": "make",
+                        "start": 28.72,
+                        "end": 28.9
+                    },
+                    {
+                        "word": "sure",
+                        "start": 28.9,
+                        "end": 29.06
+                    }
+                ]
+            },
+            {
+                "start": 29.06,
+                "end": 30.16,
+                "text": "i have this.",
+                "words": [
+                    {
+                        "word": "i",
+                        "start": 29.06,
+                        "end": 29.2
+                    },
+                    {
+                        "word": "have",
+                        "start": 29.2,
+                        "end": 29.36
+                    },
+                    {
+                        "word": "this.",
+                        "start": 29.36,
+                        "end": 29.6
+                    }
+                ]
+            },
+            {
+                "start": 30.16,
+                "end": 32.44,
+                "text": "negative charge minus q represents",
+                "words": [
+                    {
+                        "word": "negative",
+                        "start": 30.16,
+                        "end": 30.2
+                    },
+                    {
+                        "word": "charge",
+                        "start": 30.16,
+                        "end": 30.52
+                    },
+                    {
+                        "word": "minus",
+                        "start": 30.52,
+                        "end": 31.08
+                    },
+                    {
+                        "word": "q",
+                        "start": 31.08,
+                        "end": 31.44
+                    },
+                    {
+                        "word": "represents",
+                        "start": 31.44,
+                        "end": 32.44
+                    }
+                ]
+            },
+            {
+                "start": 32.44,
+                "end": 34.1,
+                "text": "forward projection, spatial",
+                "words": [
+                    {
+                        "word": "forward",
+                        "start": 32.44,
+                        "end": 32.94
+                    },
+                    {
+                        "word": "projection,",
+                        "start": 32.94,
+                        "end": 33.46
+                    },
+                    {
+                        "word": "spatial",
+                        "start": 33.84,
+                        "end": 34.1
+                    }
+                ]
+            },
+            {
+                "start": 34.1,
+                "end": 35.62,
+                "text": "condensation into localized",
+                "words": [
+                    {
+                        "word": "condensation",
+                        "start": 34.1,
+                        "end": 34.76
+                    },
+                    {
+                        "word": "into",
+                        "start": 34.76,
+                        "end": 35.22
+                    },
+                    {
+                        "word": "localized",
+                        "start": 35.22,
+                        "end": 35.62
+                    }
+                ]
+            },
+            {
+                "start": 35.62,
+                "end": 38.38,
+                "text": "matter. exactly. and positive",
+                "words": [
+                    {
+                        "word": "matter.",
+                        "start": 35.62,
+                        "end": 36.04
+                    },
+                    {
+                        "word": "exactly.",
+                        "start": 36.46,
+                        "end": 36.94
+                    },
+                    {
+                        "word": "and",
+                        "start": 37.9,
+                        "end": 38.0
+                    },
+                    {
+                        "word": "positive",
+                        "start": 38.0,
+                        "end": 38.38
+                    }
+                ]
+            },
+            {
+                "start": 38.38,
+                "end": 40.64,
+                "text": "charge plus q is the reversed",
+                "words": [
+                    {
+                        "word": "charge",
+                        "start": 38.38,
+                        "end": 38.84
+                    },
+                    {
+                        "word": "plus",
+                        "start": 38.84,
+                        "end": 39.2
+                    },
+                    {
+                        "word": "q",
+                        "start": 39.2,
+                        "end": 39.52
+                    },
+                    {
+                        "word": "is",
+                        "start": 39.52,
+                        "end": 40.18
+                    },
+                    {
+                        "word": "the",
+                        "start": 40.18,
+                        "end": 40.34
+                    },
+                    {
+                        "word": "reversed",
+                        "start": 40.34,
+                        "end": 40.64
+                    }
+                ]
+            },
+            {
+                "start": 40.64,
+                "end": 43.08,
+                "text": "sequence, untangling reflection",
+                "words": [
+                    {
+                        "word": "sequence,",
+                        "start": 40.64,
+                        "end": 41.32
+                    },
+                    {
+                        "word": "untangling",
+                        "start": 41.98,
+                        "end": 42.56
+                    },
+                    {
+                        "word": "reflection",
+                        "start": 42.56,
+                        "end": 43.08
+                    }
+                ]
+            },
+            {
+                "start": 43.08,
+                "end": 43.94,
+                "text": "back to equilibrium.",
+                "words": [
+                    {
+                        "word": "back",
+                        "start": 43.08,
+                        "end": 43.4
+                    },
+                    {
+                        "word": "to",
+                        "start": 43.4,
+                        "end": 43.54
+                    },
+                    {
+                        "word": "equilibrium.",
+                        "start": 43.54,
+                        "end": 43.94
+                    }
+                ]
+            },
+            {
+                "start": 43.94,
+                "end": 46.24,
+                "text": "the paper uses the argand plane",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 43.94,
+                        "end": 44.92
+                    },
+                    {
+                        "word": "paper",
+                        "start": 44.92,
+                        "end": 45.12
+                    },
+                    {
+                        "word": "uses",
+                        "start": 45.12,
+                        "end": 45.42
+                    },
+                    {
+                        "word": "the",
+                        "start": 45.42,
+                        "end": 45.66
+                    },
+                    {
+                        "word": "argand",
+                        "start": 45.66,
+                        "end": 46.04
+                    },
+                    {
+                        "word": "plane",
+                        "start": 46.04,
+                        "end": 46.24
+                    }
+                ]
+            },
+            {
+                "start": 46.24,
+                "end": 47.8,
+                "text": "analogy here, right?",
+                "words": [
+                    {
+                        "word": "analogy",
+                        "start": 46.24,
+                        "end": 46.58
+                    },
+                    {
+                        "word": "here,",
+                        "start": 46.58,
+                        "end": 46.88
+                    },
+                    {
+                        "word": "right?",
+                        "start": 46.94,
+                        "end": 47.1
+                    }
+                ]
+            },
+            {
+                "start": 47.8,
+                "end": 49.3,
+                "text": "yeah, graphing real and imaginary",
+                "words": [
+                    {
+                        "word": "yeah,",
+                        "start": 47.8,
+                        "end": 47.92
+                    },
+                    {
+                        "word": "graphing",
+                        "start": 48.06,
+                        "end": 48.4
+                    },
+                    {
+                        "word": "real",
+                        "start": 48.4,
+                        "end": 48.72
+                    },
+                    {
+                        "word": "and",
+                        "start": 48.72,
+                        "end": 48.92
+                    },
+                    {
+                        "word": "imaginary",
+                        "start": 48.92,
+                        "end": 49.3
+                    }
+                ]
+            },
+            {
+                "start": 49.3,
+                "end": 51.34,
+                "text": "numbers. negative one and positive",
+                "words": [
+                    {
+                        "word": "numbers.",
+                        "start": 49.3,
+                        "end": 49.82
+                    },
+                    {
+                        "word": "negative",
+                        "start": 50.64,
+                        "end": 50.68
+                    },
+                    {
+                        "word": "one",
+                        "start": 50.64,
+                        "end": 50.9
+                    },
+                    {
+                        "word": "and",
+                        "start": 50.9,
+                        "end": 51.08
+                    },
+                    {
+                        "word": "positive",
+                        "start": 51.08,
+                        "end": 51.34
+                    }
+                ]
+            },
+            {
+                "start": 51.34,
+                "end": 53.24,
+                "text": "one aren't destructive arithmetic",
+                "words": [
+                    {
+                        "word": "one",
+                        "start": 51.34,
+                        "end": 51.64
+                    },
+                    {
+                        "word": "aren't",
+                        "start": 51.64,
+                        "end": 52.0
+                    },
+                    {
+                        "word": "destructive",
+                        "start": 52.0,
+                        "end": 52.54
+                    },
+                    {
+                        "word": "arithmetic",
+                        "start": 52.54,
+                        "end": 53.24
+                    }
+                ]
+            },
+            {
+                "start": 53.24,
+                "end": 55.16,
+                "text": "opposites that just crush each",
+                "words": [
+                    {
+                        "word": "opposites",
+                        "start": 53.24,
+                        "end": 53.94
+                    },
+                    {
+                        "word": "that",
+                        "start": 53.94,
+                        "end": 54.16
+                    },
+                    {
+                        "word": "just",
+                        "start": 54.16,
+                        "end": 54.38
+                    },
+                    {
+                        "word": "crush",
+                        "start": 54.38,
+                        "end": 54.94
+                    },
+                    {
+                        "word": "each",
+                        "start": 54.94,
+                        "end": 55.16
+                    }
+                ]
+            },
+            {
+                "start": 55.16,
+                "end": 57.06,
+                "text": "other. they're chiral conjugate",
+                "words": [
+                    {
+                        "word": "other.",
+                        "start": 55.16,
+                        "end": 55.4
+                    },
+                    {
+                        "word": "they're",
+                        "start": 55.9,
+                        "end": 56.12
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 56.12,
+                        "end": 56.5
+                    },
+                    {
+                        "word": "conjugate",
+                        "start": 56.5,
+                        "end": 57.06
+                    }
+                ]
+            },
+            {
+                "start": 57.06,
+                "end": 58.42,
+                "text": "mirrors of each other,",
+                "words": [
+                    {
+                        "word": "mirrors",
+                        "start": 57.06,
+                        "end": 57.44
+                    },
+                    {
+                        "word": "of",
+                        "start": 57.44,
+                        "end": 57.66
+                    },
+                    {
+                        "word": "each",
+                        "start": 57.66,
+                        "end": 57.8
+                    },
+                    {
+                        "word": "other,",
+                        "start": 57.8,
+                        "end": 58.08
+                    }
+                ]
+            },
+            {
+                "start": 58.42,
+                "end": 59.48,
+                "text": "like a left and a right",
+                "words": [
+                    {
+                        "word": "like",
+                        "start": 58.42,
+                        "end": 58.54
+                    },
+                    {
+                        "word": "a",
+                        "start": 58.54,
+                        "end": 58.78
+                    },
+                    {
+                        "word": "left",
+                        "start": 58.78,
+                        "end": 59.08
+                    },
+                    {
+                        "word": "and",
+                        "start": 59.08,
+                        "end": 59.26
+                    },
+                    {
+                        "word": "a",
+                        "start": 59.26,
+                        "end": 59.34
+                    },
+                    {
+                        "word": "right",
+                        "start": 59.34,
+                        "end": 59.48
+                    }
+                ]
+            },
+            {
+                "start": 59.48,
+                "end": 61.58,
+                "text": "hand. identical structure,",
+                "words": [
+                    {
+                        "word": "hand.",
+                        "start": 59.48,
+                        "end": 59.86
+                    },
+                    {
+                        "word": "identical",
+                        "start": 60.38,
+                        "end": 60.58
+                    },
+                    {
+                        "word": "structure,",
+                        "start": 60.58,
+                        "end": 61.02
+                    }
+                ]
+            },
+            {
+                "start": 61.58,
+                "end": 63.64,
+                "text": "inverted orientation. perfectly",
+                "words": [
+                    {
+                        "word": "inverted",
+                        "start": 61.58,
+                        "end": 62.08
+                    },
+                    {
+                        "word": "orientation.",
+                        "start": 62.08,
+                        "end": 62.74
+                    },
+                    {
+                        "word": "perfectly",
+                        "start": 63.24,
+                        "end": 63.64
+                    }
+                ]
+            },
+            {
+                "start": 63.64,
+                "end": 64.96,
+                "text": "stated. coming up in the next",
+                "words": [
+                    {
+                        "word": "stated.",
+                        "start": 63.64,
+                        "end": 63.86
+                    },
+                    {
+                        "word": "coming",
+                        "start": 64.18,
+                        "end": 64.36
+                    },
+                    {
+                        "word": "up",
+                        "start": 64.36,
+                        "end": 64.56
+                    },
+                    {
+                        "word": "in",
+                        "start": 64.56,
+                        "end": 64.66
+                    },
+                    {
+                        "word": "the",
+                        "start": 64.66,
+                        "end": 64.76
+                    },
+                    {
+                        "word": "next",
+                        "start": 64.76,
+                        "end": 64.96
+                    }
+                ]
+            },
+            {
+                "start": 64.96,
+                "end": 67.22,
+                "text": "clip, the profound realization",
+                "words": [
+                    {
+                        "word": "clip,",
+                        "start": 64.96,
+                        "end": 65.34
+                    },
+                    {
+                        "word": "the",
+                        "start": 66.2,
+                        "end": 66.34
+                    },
+                    {
+                        "word": "profound",
+                        "start": 66.34,
+                        "end": 66.68
+                    },
+                    {
+                        "word": "realization",
+                        "start": 66.68,
+                        "end": 67.22
+                    }
+                ]
+            },
+            {
+                "start": 67.22,
+                "end": 69.58,
+                "text": "that cognitive intelligence is the",
+                "words": [
+                    {
+                        "word": "that",
+                        "start": 67.22,
+                        "end": 67.7
+                    },
+                    {
+                        "word": "cognitive",
+                        "start": 67.7,
+                        "end": 68.1
+                    },
+                    {
+                        "word": "intelligence",
+                        "start": 68.1,
+                        "end": 68.68
+                    },
+                    {
+                        "word": "is",
+                        "start": 68.68,
+                        "end": 69.22
+                    },
+                    {
+                        "word": "the",
+                        "start": 69.22,
+                        "end": 69.58
+                    }
+                ]
+            },
+            {
+                "start": 69.58,
+                "end": 71.52,
+                "text": "antimatter to physical creation.",
+                "words": [
+                    {
+                        "word": "antimatter",
+                        "start": 69.58,
+                        "end": 70.3
+                    },
+                    {
+                        "word": "to",
+                        "start": 70.3,
+                        "end": 70.6
+                    },
+                    {
+                        "word": "physical",
+                        "start": 70.6,
+                        "end": 71.04
+                    },
+                    {
+                        "word": "creation.",
+                        "start": 71.04,
+                        "end": 71.52
+                    }
+                ]
+            },
+            {
+                "start": 71.52,
+                "end": 73.46,
+                "text": "this is the philosophical peak",
+                "words": [
+                    {
+                        "word": "this",
+                        "start": 71.52,
+                        "end": 72.08
+                    },
+                    {
+                        "word": "is",
+                        "start": 72.08,
+                        "end": 72.28
+                    },
+                    {
+                        "word": "the",
+                        "start": 72.28,
+                        "end": 72.54
+                    },
+                    {
+                        "word": "philosophical",
+                        "start": 72.54,
+                        "end": 73.02
+                    },
+                    {
+                        "word": "peak",
+                        "start": 73.02,
+                        "end": 73.46
+                    }
+                ]
+            },
+            {
+                "start": 73.46,
+                "end": 74.15,
+                "text": "of the paper.",
+                "words": [
+                    {
+                        "word": "of",
+                        "start": 73.46,
+                        "end": 73.6
+                    },
+                    {
+                        "word": "the",
+                        "start": 73.6,
+                        "end": 73.7
+                    },
+                    {
+                        "word": "paper.",
+                        "start": 73.7,
+                        "end": 74.0
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "011f2e76ca0361e99105957f41b7b469",
+        "rendered_duration": 83.73,
+        "audio_duration": 78.2,
+        "intro_offset": 1.5,
+        "outro_duration": 5.0,
+        "source_start": 1013.48,
+        "source_end": 1082.26,
+        "_audio_sig": "27256e466e83ff3763598de0c0631e7c",
+        "_compiled_sig": "70669ed003ae3883eee56baf925c3867",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-12.mp4"
     },
     {
         "num": 13,
