@@ -128,3 +128,14 @@ helper at :325.
   refactor, do not touch the compile, the plan generation, or the caption
   code.
 - Report PASS/FAIL per verify step, then STOP with a full summary.
+
+## Verification outcome (executed 2026-11-16, deepDive ddma/ddma.py cut() only)
+
+- Step 1 - FAIL. New slice 78.19s (+0.03s over old 78.16s), not ~78.28s. Direct helper call returns 1082.43, not the predicted ~1082.34. Measured cause: source RMS profile shows loud speech at 1082.36-1082.43 then a 40ms near-silence at 1082.44-1082.48 (the /p/ stop closure inside Clip; Whisper zero-duration timestamp sits mid-word in it). The helper backward walk breaks at the first sub-threshold frame, so it never reaches the /k/ burst; the 30ms cushion lands at 1082.43. The no-audio default path returns exactly 1082.34. Slice-onset profiles confirm the burst hump is absent from both old and new slice starts.
+- Step 2 - PASS. Cut at 1082.43 >= 1081.98 (0.45s margin); first 0.1s is low-level tail + closure only (paper. ended 1081.94).
+- Step 3 - PASS. Recompiled 83.92s, 1080x1920, 39 captions, versioned render used; body speech onset at master t=1.700s (body-local 0.000s), caption clip at 1.70s - delta 0.00s.
+- Step 4 - PASS. 249-8 re-cut: +480 samples (+0.03s) leading pad, cross-correlation MSE 4e-06 over 30s (identical content).
+- Step 5 - PASS. test_compile_scope.py 3/3, test_canonical_audio_compile.py 3/3, test_plan_clip0_title.py 2/2, test_mosaic_mux_integrity.py 2/2, full test_curator.js 100 percent (exit 0).
+- Step 6 - PASS. No publish, no Mosaic API calls, no commit; hub plan clip 13 timings unchanged (start 1082.46, duration 68.04, run_id intact).
+- Correction to the Finding: the pre-fix compile used the blank generic clips/249-13-mosaic.mp4 with has_motion_source=True (83.84s of pure black per blackdetect), NOT the black draft with has_motion_source=False. Same visible symptom (blank master), different path.
+- Follow-up (out of scope for this item): resolve_acoustic_word_start() backward walk cannot cross intra-word stop closures - it breaks at the first sub-threshold frame. For degenerate mid-word timestamps the no-audio default (120ms cushion, 1082.34 here) outperforms the RMS refinement (1082.43). A real fix for this clip belongs in the helper walk (e.g. tolerating brief intra-word gaps), which this item forbids changing (Scoped change only: the cut() function).
