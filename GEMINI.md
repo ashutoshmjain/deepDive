@@ -74,7 +74,27 @@ The 2026-11-09 incident is the reference case: 249-5 "Quaternions" reached Drive
 
 - **Environment-First Resolution**: All engines (`ingest/server.py`, `ddma/ddma.py`, `ddma/scratch/run_curator.py`) resolve configuration secrets (`GEMINI_API_KEY`, `MOSAIC_API_KEY`, `DD_HUB_ROOT`, etc.) by checking process environment variables FIRST before falling back to local `settings.json`.
 - **Zero Secrets Committed**: `settings.json` is strictly ignored by git in all repositories (`.gitignore`). Neither `deepDive`, `mdIngest`, nor `ddma` may ever commit or stage live API keys. A sanitised `settings.template.json` is maintained at repo root as the canonical schema reference.
-- **Factory Defaults Backup**: the shipped Mosaic default prompt lives tracked at `ddma/scratch/mosaic_factory_defaults.json` (force-add: `scratch/` is git-ignored). Curator Reset restores this text via the `factory_mosaic_prompt` field — never the stored value. Suites must restore any prompt they overwrite.
+- **Factory Defaults Backup**: the shipped Mosaic default prompt lives tracked at `ddma/scratch/mosaic_factory_defaults.json` (force-add: `scratch/` is git-ignored). Curator Reset restores this text via the `factory_mosaic_prompt` field — never the stored value. Suites must restore any prompt they overwrite. The full gold text is backed up below (canonical human-readable copy; the JSON file is the machine-readable copy the code reads).
+- **Gold Mosaic default prompt** (must match `mosaic_default_prompt` in `ddma/scratch/mosaic_factory_defaults.json` and the hardcoded fallback in `get_factory_mosaic_prompt()`):
+```
+MOTION DESIGN INSTRUCTIONS (YOUTUBE SHORTS - around 150 to 180 seconds long)
+
+- Cover the entire timeline of the video with Dan Koe-style motion graphics. Visual coverage must be active and persistent from 0:00 to the very last second with ZERO blank frames.
+
+- Maintain uniform graphic density across all segments.
+
+- Plan 10 to 12 continuous segments of roughly ~ 15 seconds each, perfectly mapped to the clip length. Each segment renders a dynamic diagrammatic graphic with changing visual steps and text reveals.
+
+- Assume background video is a blank black glossy screen (#000000). Keep persistent visuals (animations, conceptual geometry, or text) throughout. Segments must hand off to each other seamlessly like a relay race.
+
+--------------------------------------------------
+PACING & ANIMATION RULES
+--------------------------------------------------
+- No static holds beyond 6 seconds. Introduce visual changes or step reveals every 2-4 seconds.
+- Use only basic transforms: opacity, position, scale. Keep animations single-property per element.
+- Prefer step-based reveals over continuous complex motion. Avoid preset/template animations.
+- No gaps in infographic coverage. Zero external asset dependencies.
+```
 
 ## Pre-Push Verification Checklist
 - Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and NO `settings.json` are staged.
