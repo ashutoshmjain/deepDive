@@ -37,8 +37,8 @@
   {
     "id": "245",
     "number": 245,
-    "title": "What Exactly is Singularity",
-    "fullTitle": "Episode 245: What Exactly is Singularity",
+    "title": "What Exactly Is Singularity?",
+    "fullTitle": "Episode 245: What Exactly Is Singularity?",
     "planPath": "episodes/245/plan.json",
     "clipsDir": "episodes/245/clips",
     "links": {},
@@ -162,7 +162,8 @@
       11,
       12,
       13,
-      14
+      14,
+      15
     ]
   },
   {
