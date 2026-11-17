@@ -38,6 +38,7 @@
       - **Current phase (pre-release): `deepDive` is a backup mirror of the local workbench — commit everything except large media files, intermediate manim-production artifacts, and live secrets. `settings.json` holds live API keys, so only its sanitized `settings.template.json` goes in the repo; the live file stays local-only (back it up in the private dd_hub vault, never on public GitHub). `ddma` and `mdIngest` are the codebase without assets — data-free and settings-free, template only. Keep all three repos in sync until a release candidate. At RC/GA, switch to a real Dev/QA/Prod strategy (selective releases, staging, QA gate) — the mirror rule ends there.**
      - Commit and push `mdIngest` to its GitHub remote (clean upstream UI/server tool).
      - Commit and push `ddma` to its GitHub remote (clean upstream CLI tool).
+     - After mirroring and before committing, run `python scripts/check_fanout.py` from the workbench root: it recomputes every workbench-to-standalone pair and blob-compares them. Any NON-ZERO exit (unmirrored or modified copy) means STOP -- do not commit, do not push, re-mirror first.
 
 3. **Active Master Clips Publication & Distribution Invariant**:
    - **Local Staging vs. Remote Distribution**:

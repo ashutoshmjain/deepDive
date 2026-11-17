@@ -46,6 +46,8 @@ ingest/__pycache__/
 ingest/*.pyc
 /scratch/
 *.bak
+**/podcast_edit.json
+**/transcribe_gold.txt
 *.py.bak
 extract.py
 payload_*.py

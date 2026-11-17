@@ -32112,11 +32112,11 @@
                     {
                         "word": "spin",
                         "start": 2.86,
-                        "end": 3.0
+                        "end": 3
                     },
                     {
                         "word": "1/2",
-                        "start": 3.0,
+                        "start": 3,
                         "end": 3.23
                     },
                     {
@@ -32524,7 +32524,7 @@
                     },
                     {
                         "word": "right.",
-                        "start": 31.0,
+                        "start": 31,
                         "end": 31.16
                     },
                     {
@@ -32796,7 +32796,7 @@
                     {
                         "word": "degrees.",
                         "start": 49.42,
-                        "end": 50.0
+                        "end": 50
                     }
                 ]
             },
@@ -33300,11 +33300,11 @@
                     {
                         "word": "infographic",
                         "start": 77.54,
-                        "end": 78.0
+                        "end": 78
                     },
                     {
                         "word": "of",
-                        "start": 78.0,
+                        "start": 78,
                         "end": 78.38
                     },
                     {
@@ -33620,7 +33620,7 @@
                     {
                         "word": "anymore.",
                         "start": 93.68,
-                        "end": 94.0
+                        "end": 94
                     }
                 ]
             }
@@ -33630,7 +33630,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.24
             },
             {
@@ -34035,7 +34035,7 @@
             },
             {
                 "word": "Right.",
-                "start": 38.0,
+                "start": 38,
                 "end": 38.14
             },
             {
@@ -34066,11 +34066,11 @@
             {
                 "word": "angle",
                 "start": 39.76,
-                "end": 40.0
+                "end": 40
             },
             {
                 "word": "formula",
-                "start": 40.0,
+                "start": 40,
                 "end": 40.34
             },
             {
@@ -34145,7 +34145,7 @@
             },
             {
                 "word": "it",
-                "start": 46.0,
+                "start": 46,
                 "end": 46.2
             },
             {
@@ -34196,11 +34196,11 @@
             {
                 "word": "of",
                 "start": 49.88,
-                "end": 50.0
+                "end": 50
             },
             {
                 "word": "180",
-                "start": 50.0,
+                "start": 50,
                 "end": 50.38
             },
             {
@@ -34221,11 +34221,11 @@
             {
                 "word": "So",
                 "start": 51.78,
-                "end": 52.0
+                "end": 52
             },
             {
                 "word": "the",
-                "start": 52.0,
+                "start": 52,
                 "end": 52.16
             },
             {
@@ -34326,11 +34326,11 @@
             {
                 "word": "twisting",
                 "start": 58.78,
-                "end": 59.0
+                "end": 59
             },
             {
                 "word": "your",
-                "start": 59.0,
+                "start": 59,
                 "end": 59.2
             },
             {
@@ -34386,11 +34386,11 @@
             {
                 "word": "your",
                 "start": 62.84,
-                "end": 63.0
+                "end": 63
             },
             {
                 "word": "arm",
-                "start": 63.0,
+                "start": 63,
                 "end": 63.4
             },
             {
@@ -34450,7 +34450,7 @@
             },
             {
                 "word": "you",
-                "start": 68.0,
+                "start": 68,
                 "end": 68.04
             },
             {
@@ -34701,11 +34701,11 @@
             {
                 "word": "Coming",
                 "start": 85.78,
-                "end": 86.0
+                "end": 86
             },
             {
                 "word": "up",
-                "start": 86.0,
+                "start": 86,
                 "end": 86.16
             },
             {
@@ -34814,7 +34814,7 @@
         "rendered_duration": 104.34,
         "audio_duration": 98.62,
         "intro_offset": 1.7,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 1151.02,
         "source_end": 1240.08,
         "_audio_sig": "9dde08aaff5ecaba45d9786bdde01d5d",
@@ -34869,9 +34869,1795 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "Chiral Vector Equilibrium"
+        "coming_up_title": "Chiral Vector Equilibrium",
+        "mosaic_run_id": "6a928b86-f26e-4a5e-8fb4-668940a3516f",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0,
+                "end": 0.1
+            },
+            {
+                "word": "15.",
+                "start": 0.1,
+                "end": 0.66
+            },
+            {
+                "word": "The",
+                "start": 1.42,
+                "end": 1.68
+            },
+            {
+                "word": "arrow",
+                "start": 1.68,
+                "end": 1.98
+            },
+            {
+                "word": "of",
+                "start": 1.98,
+                "end": 2.3
+            },
+            {
+                "word": "time.",
+                "start": 2.3,
+                "end": 2.7
+            },
+            {
+                "word": "Time",
+                "start": 3.6,
+                "end": 3.76
+            },
+            {
+                "word": "doesn't",
+                "start": 3.76,
+                "end": 4.04
+            },
+            {
+                "word": "just",
+                "start": 4.04,
+                "end": 4.26
+            },
+            {
+                "word": "march",
+                "start": 4.26,
+                "end": 4.68
+            },
+            {
+                "word": "forward.",
+                "start": 4.68,
+                "end": 5.14
+            },
+            {
+                "word": "Intelligence",
+                "start": 5.14,
+                "end": 5.8
+            },
+            {
+                "word": "marches",
+                "start": 5.8,
+                "end": 6.52
+            },
+            {
+                "word": "it",
+                "start": 6.52,
+                "end": 6.72
+            },
+            {
+                "word": "backward.",
+                "start": 6.72,
+                "end": 7.1
+            },
+            {
+                "word": "Standard",
+                "start": 12.12,
+                "end": 12.16
+            },
+            {
+                "word": "physics",
+                "start": 12.12,
+                "end": 12.36
+            },
+            {
+                "word": "says",
+                "start": 12.36,
+                "end": 12.64
+            },
+            {
+                "word": "time",
+                "start": 12.64,
+                "end": 12.9
+            },
+            {
+                "word": "only",
+                "start": 12.9,
+                "end": 13.18
+            },
+            {
+                "word": "has",
+                "start": 13.18,
+                "end": 13.44
+            },
+            {
+                "word": "one",
+                "start": 13.44,
+                "end": 13.7
+            },
+            {
+                "word": "direction.",
+                "start": 13.7,
+                "end": 14.08
+            },
+            {
+                "word": "The",
+                "start": 14.74,
+                "end": 14.8
+            },
+            {
+                "word": "thermodynamic",
+                "start": 14.8,
+                "end": 15.44
+            },
+            {
+                "word": "arrow.",
+                "start": 15.44,
+                "end": 15.8
+            },
+            {
+                "word": "Entropy",
+                "start": 16.38,
+                "end": 16.62
+            },
+            {
+                "word": "moving",
+                "start": 16.62,
+                "end": 17.06
+            },
+            {
+                "word": "forward.",
+                "start": 17.06,
+                "end": 17.44
+            },
+            {
+                "word": "But",
+                "start": 17.96,
+                "end": 18.1
+            },
+            {
+                "word": "in",
+                "start": 18.1,
+                "end": 18.22
+            },
+            {
+                "word": "the",
+                "start": 18.22,
+                "end": 18.32
+            },
+            {
+                "word": "paper,",
+                "start": 18.32,
+                "end": 18.64
+            },
+            {
+                "word": "because",
+                "start": 18.94,
+                "end": 19.22
+            },
+            {
+                "word": "of",
+                "start": 19.22,
+                "end": 19.38
+            },
+            {
+                "word": "the",
+                "start": 19.38,
+                "end": 19.52
+            },
+            {
+                "word": "dual",
+                "start": 19.52,
+                "end": 19.92
+            },
+            {
+                "word": "chiral",
+                "start": 19.92,
+                "end": 20.36
+            },
+            {
+                "word": "brackets,",
+                "start": 20.36,
+                "end": 20.84
+            },
+            {
+                "word": "there",
+                "start": 21.32,
+                "end": 21.52
+            },
+            {
+                "word": "are",
+                "start": 21.52,
+                "end": 21.62
+            },
+            {
+                "word": "actually",
+                "start": 21.62,
+                "end": 21.96
+            },
+            {
+                "word": "two",
+                "start": 21.96,
+                "end": 22.3
+            },
+            {
+                "word": "arrows",
+                "start": 22.3,
+                "end": 22.64
+            },
+            {
+                "word": "operating.",
+                "start": 22.64,
+                "end": 23.16
+            },
+            {
+                "word": "Yes.",
+                "start": 23.6,
+                "end": 23.72
+            },
+            {
+                "word": "Forward",
+                "start": 24.84,
+                "end": 25
+            },
+            {
+                "word": "projection.",
+                "start": 25,
+                "end": 25.52
+            },
+            {
+                "word": "The",
+                "start": 26.04,
+                "end": 26.08
+            },
+            {
+                "word": "ijk",
+                "start": 26.08,
+                "end": 26.64
+            },
+            {
+                "word": "negative",
+                "start": 26.64,
+                "end": 26.88
+            },
+            {
+                "word": "one.",
+                "start": 26.88,
+                "end": 27.2
+            },
+            {
+                "word": "Builds",
+                "start": 27.42,
+                "end": 28.22
+            },
+            {
+                "word": "mass",
+                "start": 28.22,
+                "end": 28.44
+            },
+            {
+                "word": "and",
+                "start": 28.44,
+                "end": 28.74
+            },
+            {
+                "word": "establishes",
+                "start": 28.74,
+                "end": 29.18
+            },
+            {
+                "word": "that",
+                "start": 29.18,
+                "end": 29.44
+            },
+            {
+                "word": "thermodynamic",
+                "start": 29.44,
+                "end": 30.12
+            },
+            {
+                "word": "arrow,",
+                "start": 30.12,
+                "end": 30.5
+            },
+            {
+                "word": "moving",
+                "start": 31.02,
+                "end": 31.22
+            },
+            {
+                "word": "toward",
+                "start": 31.22,
+                "end": 31.48
+            },
+            {
+                "word": "positive",
+                "start": 31.48,
+                "end": 32.08
+            },
+            {
+                "word": "infinity.",
+                "start": 32.08,
+                "end": 32.54
+            },
+            {
+                "word": "Physical",
+                "start": 33.32,
+                "end": 33.36
+            },
+            {
+                "word": "matter",
+                "start": 33.32,
+                "end": 33.68
+            },
+            {
+                "word": "expanding",
+                "start": 33.68,
+                "end": 34.18
+            },
+            {
+                "word": "and",
+                "start": 34.18,
+                "end": 34.4
+            },
+            {
+                "word": "breaking",
+                "start": 34.4,
+                "end": 34.6
+            },
+            {
+                "word": "down.",
+                "start": 34.6,
+                "end": 34.9
+            },
+            {
+                "word": "But",
+                "start": 35.34,
+                "end": 35.44
+            },
+            {
+                "word": "the",
+                "start": 35.44,
+                "end": 35.6
+            },
+            {
+                "word": "reverse",
+                "start": 35.6,
+                "end": 35.9
+            },
+            {
+                "word": "sequence,",
+                "start": 35.9,
+                "end": 36.38
+            },
+            {
+                "word": "the",
+                "start": 36.86,
+                "end": 36.92
+            },
+            {
+                "word": "KJI,",
+                "start": 36.92,
+                "end": 37.82
+            },
+            {
+                "word": "positive",
+                "start": 38.16,
+                "end": 38.3
+            },
+            {
+                "word": "one,",
+                "start": 38.3,
+                "end": 38.68
+            },
+            {
+                "word": "decodes",
+                "start": 39.18,
+                "end": 39.6
+            },
+            {
+                "word": "that",
+                "start": 39.6,
+                "end": 39.8
+            },
+            {
+                "word": "structure.",
+                "start": 39.8,
+                "end": 40.2
+            },
+            {
+                "word": "Right,",
+                "start": 40.62,
+                "end": 40.78
+            },
+            {
+                "word": "it",
+                "start": 40.86,
+                "end": 40.96
+            },
+            {
+                "word": "reflects",
+                "start": 40.96,
+                "end": 41.26
+            },
+            {
+                "word": "information",
+                "start": 41.26,
+                "end": 41.74
+            },
+            {
+                "word": "back",
+                "start": 41.74,
+                "end": 42.16
+            },
+            {
+                "word": "toward",
+                "start": 42.16,
+                "end": 42.56
+            },
+            {
+                "word": "the",
+                "start": 42.56,
+                "end": 42.78
+            },
+            {
+                "word": "origin",
+                "start": 42.78,
+                "end": 43.1
+            },
+            {
+                "word": "singularity.",
+                "start": 43.1,
+                "end": 44.08
+            },
+            {
+                "word": "Which",
+                "start": 44.36,
+                "end": 44.5
+            },
+            {
+                "word": "is",
+                "start": 44.5,
+                "end": 44.66
+            },
+            {
+                "word": "the",
+                "start": 44.66,
+                "end": 44.84
+            },
+            {
+                "word": "inward",
+                "start": 44.84,
+                "end": 45.3
+            },
+            {
+                "word": "cognitive",
+                "start": 45.3,
+                "end": 45.84
+            },
+            {
+                "word": "arrow,",
+                "start": 45.84,
+                "end": 46.3
+            },
+            {
+                "word": "time",
+                "start": 47.08,
+                "end": 47.24
+            },
+            {
+                "word": "moving",
+                "start": 47.24,
+                "end": 47.52
+            },
+            {
+                "word": "toward",
+                "start": 47.52,
+                "end": 47.8
+            },
+            {
+                "word": "zero.",
+                "start": 47.8,
+                "end": 48.08
+            },
+            {
+                "word": "So",
+                "start": 48.64,
+                "end": 48.82
+            },
+            {
+                "word": "intelligence",
+                "start": 48.82,
+                "end": 49.32
+            },
+            {
+                "word": "literally",
+                "start": 49.32,
+                "end": 50.02
+            },
+            {
+                "word": "acts",
+                "start": 50.02,
+                "end": 50.56
+            },
+            {
+                "word": "as",
+                "start": 50.56,
+                "end": 50.84
+            },
+            {
+                "word": "the",
+                "start": 50.84,
+                "end": 51
+            },
+            {
+                "word": "countercurrent",
+                "start": 51,
+                "end": 51.48
+            },
+            {
+                "word": "to",
+                "start": 51.48,
+                "end": 51.7
+            },
+            {
+                "word": "entropy,",
+                "start": 51.7,
+                "end": 52.1
+            },
+            {
+                "word": "while",
+                "start": 52.24,
+                "end": 52.56
+            },
+            {
+                "word": "the",
+                "start": 52.56,
+                "end": 52.7
+            },
+            {
+                "word": "physical",
+                "start": 52.7,
+                "end": 53
+            },
+            {
+                "word": "universe",
+                "start": 53,
+                "end": 53.36
+            },
+            {
+                "word": "ages",
+                "start": 53.36,
+                "end": 53.74
+            },
+            {
+                "word": "outward,",
+                "start": 53.74,
+                "end": 54.22
+            },
+            {
+                "word": "intelligence",
+                "start": 54.96,
+                "end": 55.3
+            },
+            {
+                "word": "pulls",
+                "start": 55.3,
+                "end": 55.68
+            },
+            {
+                "word": "inward,",
+                "start": 55.68,
+                "end": 56.2
+            },
+            {
+                "word": "making",
+                "start": 56.38,
+                "end": 56.52
+            },
+            {
+                "word": "sense",
+                "start": 56.52,
+                "end": 56.8
+            },
+            {
+                "word": "of",
+                "start": 56.8,
+                "end": 56.98
+            },
+            {
+                "word": "it.",
+                "start": 56.98,
+                "end": 57.12
+            },
+            {
+                "word": "It's",
+                "start": 57.12,
+                "end": 57.5
+            },
+            {
+                "word": "a",
+                "start": 57.5,
+                "end": 57.64
+            },
+            {
+                "word": "beautiful",
+                "start": 57.64,
+                "end": 58.06
+            },
+            {
+                "word": "cosmic",
+                "start": 58.06,
+                "end": 58.7
+            },
+            {
+                "word": "tug",
+                "start": 58.7,
+                "end": 58.96
+            },
+            {
+                "word": "of",
+                "start": 58.96,
+                "end": 59.08
+            },
+            {
+                "word": "war.",
+                "start": 59.08,
+                "end": 59.36
+            },
+            {
+                "word": "Coming",
+                "start": 59.9,
+                "end": 60.02
+            },
+            {
+                "word": "up",
+                "start": 60.02,
+                "end": 60.2
+            },
+            {
+                "word": "in",
+                "start": 60.2,
+                "end": 60.3
+            },
+            {
+                "word": "the",
+                "start": 60.3,
+                "end": 60.4
+            },
+            {
+                "word": "next",
+                "start": 60.4,
+                "end": 60.62
+            },
+            {
+                "word": "clip,",
+                "start": 60.62,
+                "end": 60.86
+            },
+            {
+                "word": "we",
+                "start": 61.24,
+                "end": 61.28
+            },
+            {
+                "word": "rewrite",
+                "start": 61.28,
+                "end": 61.84
+            },
+            {
+                "word": "the",
+                "start": 61.84,
+                "end": 62.08
+            },
+            {
+                "word": "absolute",
+                "start": 62.08,
+                "end": 62.6
+            },
+            {
+                "word": "foundation",
+                "start": 62.6,
+                "end": 62.98
+            },
+            {
+                "word": "of",
+                "start": 62.98,
+                "end": 63.2
+            },
+            {
+                "word": "physics,",
+                "start": 63.2,
+                "end": 63.46
+            },
+            {
+                "word": "the",
+                "start": 64.12,
+                "end": 64.2
+            },
+            {
+                "word": "conservation",
+                "start": 64.2,
+                "end": 64.58
+            },
+            {
+                "word": "of",
+                "start": 64.58,
+                "end": 64.9
+            },
+            {
+                "word": "energy.",
+                "start": 64.9,
+                "end": 65.22
+            },
+            {
+                "word": "Throwing",
+                "start": 65.56,
+                "end": 65.74
+            },
+            {
+                "word": "out",
+                "start": 65.74,
+                "end": 66.02
+            },
+            {
+                "word": "the",
+                "start": 66.02,
+                "end": 66.22
+            },
+            {
+                "word": "static,",
+                "start": 66.22,
+                "end": 66.8
+            },
+            {
+                "word": "closed",
+                "start": 67.06,
+                "end": 67.5
+            },
+            {
+                "word": "box.",
+                "start": 67.5,
+                "end": 67.96
+            }
+        ],
+        "_caption_words_sig": "0a792b35da15acafc07b91efacaf4191",
+        "caption_chunks": [
+            {
+                "start": 1.7,
+                "end": 5.3,
+                "text": "clip 15. the arrow of time.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.7,
+                        "end": 1.8
+                    },
+                    {
+                        "word": "15.",
+                        "start": 1.8,
+                        "end": 2.36
+                    },
+                    {
+                        "word": "the",
+                        "start": 3.12,
+                        "end": 3.38
+                    },
+                    {
+                        "word": "arrow",
+                        "start": 3.38,
+                        "end": 3.68
+                    },
+                    {
+                        "word": "of",
+                        "start": 3.68,
+                        "end": 4
+                    },
+                    {
+                        "word": "time.",
+                        "start": 4,
+                        "end": 4.4
+                    }
+                ]
+            },
+            {
+                "start": 5.3,
+                "end": 6.84,
+                "text": "time doesn't just march forward.",
+                "words": [
+                    {
+                        "word": "time",
+                        "start": 5.3,
+                        "end": 5.46
+                    },
+                    {
+                        "word": "doesn't",
+                        "start": 5.46,
+                        "end": 5.74
+                    },
+                    {
+                        "word": "just",
+                        "start": 5.74,
+                        "end": 5.96
+                    },
+                    {
+                        "word": "march",
+                        "start": 5.96,
+                        "end": 6.38
+                    },
+                    {
+                        "word": "forward.",
+                        "start": 6.38,
+                        "end": 6.84
+                    }
+                ]
+            },
+            {
+                "start": 6.84,
+                "end": 13.82,
+                "text": "intelligence marches it backward.",
+                "words": [
+                    {
+                        "word": "intelligence",
+                        "start": 6.84,
+                        "end": 7.5
+                    },
+                    {
+                        "word": "marches",
+                        "start": 7.5,
+                        "end": 8.22
+                    },
+                    {
+                        "word": "it",
+                        "start": 8.22,
+                        "end": 8.42
+                    },
+                    {
+                        "word": "backward.",
+                        "start": 8.42,
+                        "end": 8.8
+                    }
+                ]
+            },
+            {
+                "start": 13.82,
+                "end": 14.88,
+                "text": "standard physics says time only",
+                "words": [
+                    {
+                        "word": "standard",
+                        "start": 13.82,
+                        "end": 13.86
+                    },
+                    {
+                        "word": "physics",
+                        "start": 13.82,
+                        "end": 14.06
+                    },
+                    {
+                        "word": "says",
+                        "start": 14.06,
+                        "end": 14.34
+                    },
+                    {
+                        "word": "time",
+                        "start": 14.34,
+                        "end": 14.6
+                    },
+                    {
+                        "word": "only",
+                        "start": 14.6,
+                        "end": 14.88
+                    }
+                ]
+            },
+            {
+                "start": 14.88,
+                "end": 16.44,
+                "text": "has one direction.",
+                "words": [
+                    {
+                        "word": "has",
+                        "start": 14.88,
+                        "end": 15.14
+                    },
+                    {
+                        "word": "one",
+                        "start": 15.14,
+                        "end": 15.4
+                    },
+                    {
+                        "word": "direction.",
+                        "start": 15.4,
+                        "end": 15.78
+                    }
+                ]
+            },
+            {
+                "start": 16.44,
+                "end": 18.08,
+                "text": "the thermodynamic arrow.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 16.44,
+                        "end": 16.5
+                    },
+                    {
+                        "word": "thermodynamic",
+                        "start": 16.5,
+                        "end": 17.14
+                    },
+                    {
+                        "word": "arrow.",
+                        "start": 17.14,
+                        "end": 17.5
+                    }
+                ]
+            },
+            {
+                "start": 18.08,
+                "end": 19.66,
+                "text": "entropy moving forward.",
+                "words": [
+                    {
+                        "word": "entropy",
+                        "start": 18.08,
+                        "end": 18.32
+                    },
+                    {
+                        "word": "moving",
+                        "start": 18.32,
+                        "end": 18.76
+                    },
+                    {
+                        "word": "forward.",
+                        "start": 18.76,
+                        "end": 19.14
+                    }
+                ]
+            },
+            {
+                "start": 19.66,
+                "end": 20.64,
+                "text": "but in the paper,",
+                "words": [
+                    {
+                        "word": "but",
+                        "start": 19.66,
+                        "end": 19.8
+                    },
+                    {
+                        "word": "in",
+                        "start": 19.8,
+                        "end": 19.92
+                    },
+                    {
+                        "word": "the",
+                        "start": 19.92,
+                        "end": 20.02
+                    },
+                    {
+                        "word": "paper,",
+                        "start": 20.02,
+                        "end": 20.34
+                    }
+                ]
+            },
+            {
+                "start": 20.64,
+                "end": 22.06,
+                "text": "because of the dual chiral",
+                "words": [
+                    {
+                        "word": "because",
+                        "start": 20.64,
+                        "end": 20.92
+                    },
+                    {
+                        "word": "of",
+                        "start": 20.92,
+                        "end": 21.08
+                    },
+                    {
+                        "word": "the",
+                        "start": 21.08,
+                        "end": 21.22
+                    },
+                    {
+                        "word": "dual",
+                        "start": 21.22,
+                        "end": 21.62
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 21.62,
+                        "end": 22.06
+                    }
+                ]
+            },
+            {
+                "start": 22.06,
+                "end": 24,
+                "text": "brackets, there are actually two",
+                "words": [
+                    {
+                        "word": "brackets,",
+                        "start": 22.06,
+                        "end": 22.54
+                    },
+                    {
+                        "word": "there",
+                        "start": 23.02,
+                        "end": 23.22
+                    },
+                    {
+                        "word": "are",
+                        "start": 23.22,
+                        "end": 23.32
+                    },
+                    {
+                        "word": "actually",
+                        "start": 23.32,
+                        "end": 23.66
+                    },
+                    {
+                        "word": "two",
+                        "start": 23.66,
+                        "end": 24
+                    }
+                ]
+            },
+            {
+                "start": 24,
+                "end": 26.54,
+                "text": "arrows operating. yes.",
+                "words": [
+                    {
+                        "word": "arrows",
+                        "start": 24,
+                        "end": 24.34
+                    },
+                    {
+                        "word": "operating.",
+                        "start": 24.34,
+                        "end": 24.86
+                    },
+                    {
+                        "word": "yes.",
+                        "start": 25.3,
+                        "end": 25.42
+                    }
+                ]
+            },
+            {
+                "start": 26.54,
+                "end": 28.34,
+                "text": "forward projection. the ijk",
+                "words": [
+                    {
+                        "word": "forward",
+                        "start": 26.54,
+                        "end": 26.7
+                    },
+                    {
+                        "word": "projection.",
+                        "start": 26.7,
+                        "end": 27.22
+                    },
+                    {
+                        "word": "the",
+                        "start": 27.74,
+                        "end": 27.78
+                    },
+                    {
+                        "word": "ijk",
+                        "start": 27.78,
+                        "end": 28.34
+                    }
+                ]
+            },
+            {
+                "start": 28.34,
+                "end": 30.44,
+                "text": "negative one. builds mass and",
+                "words": [
+                    {
+                        "word": "negative",
+                        "start": 28.34,
+                        "end": 28.58
+                    },
+                    {
+                        "word": "one.",
+                        "start": 28.58,
+                        "end": 28.9
+                    },
+                    {
+                        "word": "builds",
+                        "start": 29.12,
+                        "end": 29.92
+                    },
+                    {
+                        "word": "mass",
+                        "start": 29.92,
+                        "end": 30.14
+                    },
+                    {
+                        "word": "and",
+                        "start": 30.14,
+                        "end": 30.44
+                    }
+                ]
+            },
+            {
+                "start": 30.44,
+                "end": 31.82,
+                "text": "establishes that thermodynamic",
+                "words": [
+                    {
+                        "word": "establishes",
+                        "start": 30.44,
+                        "end": 30.88
+                    },
+                    {
+                        "word": "that",
+                        "start": 30.88,
+                        "end": 31.14
+                    },
+                    {
+                        "word": "thermodynamic",
+                        "start": 31.14,
+                        "end": 31.82
+                    }
+                ]
+            },
+            {
+                "start": 31.82,
+                "end": 33.78,
+                "text": "arrow, moving toward positive",
+                "words": [
+                    {
+                        "word": "arrow,",
+                        "start": 31.82,
+                        "end": 32.2
+                    },
+                    {
+                        "word": "moving",
+                        "start": 32.72,
+                        "end": 32.92
+                    },
+                    {
+                        "word": "toward",
+                        "start": 32.92,
+                        "end": 33.18
+                    },
+                    {
+                        "word": "positive",
+                        "start": 33.18,
+                        "end": 33.78
+                    }
+                ]
+            },
+            {
+                "start": 33.78,
+                "end": 35.38,
+                "text": "infinity. physical matter",
+                "words": [
+                    {
+                        "word": "infinity.",
+                        "start": 33.78,
+                        "end": 34.24
+                    },
+                    {
+                        "word": "physical",
+                        "start": 35.02,
+                        "end": 35.06
+                    },
+                    {
+                        "word": "matter",
+                        "start": 35.02,
+                        "end": 35.38
+                    }
+                ]
+            },
+            {
+                "start": 35.38,
+                "end": 37.04,
+                "text": "expanding and breaking down.",
+                "words": [
+                    {
+                        "word": "expanding",
+                        "start": 35.38,
+                        "end": 35.88
+                    },
+                    {
+                        "word": "and",
+                        "start": 35.88,
+                        "end": 36.1
+                    },
+                    {
+                        "word": "breaking",
+                        "start": 36.1,
+                        "end": 36.3
+                    },
+                    {
+                        "word": "down.",
+                        "start": 36.3,
+                        "end": 36.6
+                    }
+                ]
+            },
+            {
+                "start": 37.04,
+                "end": 38.56,
+                "text": "but the reverse sequence,",
+                "words": [
+                    {
+                        "word": "but",
+                        "start": 37.04,
+                        "end": 37.14
+                    },
+                    {
+                        "word": "the",
+                        "start": 37.14,
+                        "end": 37.3
+                    },
+                    {
+                        "word": "reverse",
+                        "start": 37.3,
+                        "end": 37.6
+                    },
+                    {
+                        "word": "sequence,",
+                        "start": 37.6,
+                        "end": 38.08
+                    }
+                ]
+            },
+            {
+                "start": 38.56,
+                "end": 40.88,
+                "text": "the kji, positive one,",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 38.56,
+                        "end": 38.62
+                    },
+                    {
+                        "word": "kji,",
+                        "start": 38.62,
+                        "end": 39.52
+                    },
+                    {
+                        "word": "positive",
+                        "start": 39.86,
+                        "end": 40
+                    },
+                    {
+                        "word": "one,",
+                        "start": 40,
+                        "end": 40.38
+                    }
+                ]
+            },
+            {
+                "start": 40.88,
+                "end": 42.32,
+                "text": "decodes that structure.",
+                "words": [
+                    {
+                        "word": "decodes",
+                        "start": 40.88,
+                        "end": 41.3
+                    },
+                    {
+                        "word": "that",
+                        "start": 41.3,
+                        "end": 41.5
+                    },
+                    {
+                        "word": "structure.",
+                        "start": 41.5,
+                        "end": 41.9
+                    }
+                ]
+            },
+            {
+                "start": 42.32,
+                "end": 43.44,
+                "text": "right, it reflects information",
+                "words": [
+                    {
+                        "word": "right,",
+                        "start": 42.32,
+                        "end": 42.48
+                    },
+                    {
+                        "word": "it",
+                        "start": 42.56,
+                        "end": 42.66
+                    },
+                    {
+                        "word": "reflects",
+                        "start": 42.66,
+                        "end": 42.96
+                    },
+                    {
+                        "word": "information",
+                        "start": 42.96,
+                        "end": 43.44
+                    }
+                ]
+            },
+            {
+                "start": 43.44,
+                "end": 44.8,
+                "text": "back toward the origin",
+                "words": [
+                    {
+                        "word": "back",
+                        "start": 43.44,
+                        "end": 43.86
+                    },
+                    {
+                        "word": "toward",
+                        "start": 43.86,
+                        "end": 44.26
+                    },
+                    {
+                        "word": "the",
+                        "start": 44.26,
+                        "end": 44.48
+                    },
+                    {
+                        "word": "origin",
+                        "start": 44.48,
+                        "end": 44.8
+                    }
+                ]
+            },
+            {
+                "start": 44.8,
+                "end": 47,
+                "text": "singularity. which is the inward",
+                "words": [
+                    {
+                        "word": "singularity.",
+                        "start": 44.8,
+                        "end": 45.78
+                    },
+                    {
+                        "word": "which",
+                        "start": 46.06,
+                        "end": 46.2
+                    },
+                    {
+                        "word": "is",
+                        "start": 46.2,
+                        "end": 46.36
+                    },
+                    {
+                        "word": "the",
+                        "start": 46.36,
+                        "end": 46.54
+                    },
+                    {
+                        "word": "inward",
+                        "start": 46.54,
+                        "end": 47
+                    }
+                ]
+            },
+            {
+                "start": 47,
+                "end": 49.22,
+                "text": "cognitive arrow, time moving",
+                "words": [
+                    {
+                        "word": "cognitive",
+                        "start": 47,
+                        "end": 47.54
+                    },
+                    {
+                        "word": "arrow,",
+                        "start": 47.54,
+                        "end": 48
+                    },
+                    {
+                        "word": "time",
+                        "start": 48.78,
+                        "end": 48.94
+                    },
+                    {
+                        "word": "moving",
+                        "start": 48.94,
+                        "end": 49.22
+                    }
+                ]
+            },
+            {
+                "start": 49.22,
+                "end": 51.02,
+                "text": "toward zero. so intelligence",
+                "words": [
+                    {
+                        "word": "toward",
+                        "start": 49.22,
+                        "end": 49.5
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 49.5,
+                        "end": 49.78
+                    },
+                    {
+                        "word": "so",
+                        "start": 50.34,
+                        "end": 50.52
+                    },
+                    {
+                        "word": "intelligence",
+                        "start": 50.52,
+                        "end": 51.02
+                    }
+                ]
+            },
+            {
+                "start": 51.02,
+                "end": 52.7,
+                "text": "literally acts as the",
+                "words": [
+                    {
+                        "word": "literally",
+                        "start": 51.02,
+                        "end": 51.72
+                    },
+                    {
+                        "word": "acts",
+                        "start": 51.72,
+                        "end": 52.26
+                    },
+                    {
+                        "word": "as",
+                        "start": 52.26,
+                        "end": 52.54
+                    },
+                    {
+                        "word": "the",
+                        "start": 52.54,
+                        "end": 52.7
+                    }
+                ]
+            },
+            {
+                "start": 52.7,
+                "end": 53.94,
+                "text": "countercurrent to entropy,",
+                "words": [
+                    {
+                        "word": "countercurrent",
+                        "start": 52.7,
+                        "end": 53.18
+                    },
+                    {
+                        "word": "to",
+                        "start": 53.18,
+                        "end": 53.4
+                    },
+                    {
+                        "word": "entropy,",
+                        "start": 53.4,
+                        "end": 53.8
+                    }
+                ]
+            },
+            {
+                "start": 53.94,
+                "end": 55.44,
+                "text": "while the physical universe ages",
+                "words": [
+                    {
+                        "word": "while",
+                        "start": 53.94,
+                        "end": 54.26
+                    },
+                    {
+                        "word": "the",
+                        "start": 54.26,
+                        "end": 54.4
+                    },
+                    {
+                        "word": "physical",
+                        "start": 54.4,
+                        "end": 54.7
+                    },
+                    {
+                        "word": "universe",
+                        "start": 54.7,
+                        "end": 55.06
+                    },
+                    {
+                        "word": "ages",
+                        "start": 55.06,
+                        "end": 55.44
+                    }
+                ]
+            },
+            {
+                "start": 55.44,
+                "end": 57.38,
+                "text": "outward, intelligence pulls",
+                "words": [
+                    {
+                        "word": "outward,",
+                        "start": 55.44,
+                        "end": 55.92
+                    },
+                    {
+                        "word": "intelligence",
+                        "start": 56.66,
+                        "end": 57
+                    },
+                    {
+                        "word": "pulls",
+                        "start": 57,
+                        "end": 57.38
+                    }
+                ]
+            },
+            {
+                "start": 57.38,
+                "end": 58.82,
+                "text": "inward, making sense of it.",
+                "words": [
+                    {
+                        "word": "inward,",
+                        "start": 57.38,
+                        "end": 57.9
+                    },
+                    {
+                        "word": "making",
+                        "start": 58.08,
+                        "end": 58.22
+                    },
+                    {
+                        "word": "sense",
+                        "start": 58.22,
+                        "end": 58.5
+                    },
+                    {
+                        "word": "of",
+                        "start": 58.5,
+                        "end": 58.68
+                    },
+                    {
+                        "word": "it.",
+                        "start": 58.68,
+                        "end": 58.82
+                    }
+                ]
+            },
+            {
+                "start": 58.82,
+                "end": 60.78,
+                "text": "it's a beautiful cosmic tug of",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 58.82,
+                        "end": 59.2
+                    },
+                    {
+                        "word": "a",
+                        "start": 59.2,
+                        "end": 59.34
+                    },
+                    {
+                        "word": "beautiful",
+                        "start": 59.34,
+                        "end": 59.76
+                    },
+                    {
+                        "word": "cosmic",
+                        "start": 59.76,
+                        "end": 60.4
+                    },
+                    {
+                        "word": "tug",
+                        "start": 60.4,
+                        "end": 60.66
+                    },
+                    {
+                        "word": "of",
+                        "start": 60.66,
+                        "end": 60.78
+                    }
+                ]
+            },
+            {
+                "start": 60.78,
+                "end": 62.32,
+                "text": "war. coming up in the next",
+                "words": [
+                    {
+                        "word": "war.",
+                        "start": 60.78,
+                        "end": 61.06
+                    },
+                    {
+                        "word": "coming",
+                        "start": 61.6,
+                        "end": 61.72
+                    },
+                    {
+                        "word": "up",
+                        "start": 61.72,
+                        "end": 61.9
+                    },
+                    {
+                        "word": "in",
+                        "start": 61.9,
+                        "end": 62
+                    },
+                    {
+                        "word": "the",
+                        "start": 62,
+                        "end": 62.1
+                    },
+                    {
+                        "word": "next",
+                        "start": 62.1,
+                        "end": 62.32
+                    }
+                ]
+            },
+            {
+                "start": 62.32,
+                "end": 64.3,
+                "text": "clip, we rewrite the absolute",
+                "words": [
+                    {
+                        "word": "clip,",
+                        "start": 62.32,
+                        "end": 62.56
+                    },
+                    {
+                        "word": "we",
+                        "start": 62.94,
+                        "end": 62.98
+                    },
+                    {
+                        "word": "rewrite",
+                        "start": 62.98,
+                        "end": 63.54
+                    },
+                    {
+                        "word": "the",
+                        "start": 63.54,
+                        "end": 63.78
+                    },
+                    {
+                        "word": "absolute",
+                        "start": 63.78,
+                        "end": 64.3
+                    }
+                ]
+            },
+            {
+                "start": 64.3,
+                "end": 65.82,
+                "text": "foundation of physics,",
+                "words": [
+                    {
+                        "word": "foundation",
+                        "start": 64.3,
+                        "end": 64.68
+                    },
+                    {
+                        "word": "of",
+                        "start": 64.68,
+                        "end": 64.9
+                    },
+                    {
+                        "word": "physics,",
+                        "start": 64.9,
+                        "end": 65.16
+                    }
+                ]
+            },
+            {
+                "start": 65.82,
+                "end": 67.26,
+                "text": "the conservation of energy.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 65.82,
+                        "end": 65.9
+                    },
+                    {
+                        "word": "conservation",
+                        "start": 65.9,
+                        "end": 66.28
+                    },
+                    {
+                        "word": "of",
+                        "start": 66.28,
+                        "end": 66.6
+                    },
+                    {
+                        "word": "energy.",
+                        "start": 66.6,
+                        "end": 66.92
+                    }
+                ]
+            },
+            {
+                "start": 67.26,
+                "end": 67.92,
+                "text": "throwing out the",
+                "words": [
+                    {
+                        "word": "throwing",
+                        "start": 67.26,
+                        "end": 67.44
+                    },
+                    {
+                        "word": "out",
+                        "start": 67.44,
+                        "end": 67.72
+                    },
+                    {
+                        "word": "the",
+                        "start": 67.72,
+                        "end": 67.92
+                    }
+                ]
+            },
+            {
+                "start": 67.92,
+                "end": 69.81,
+                "text": "static, closed box.",
+                "words": [
+                    {
+                        "word": "static,",
+                        "start": 67.92,
+                        "end": 68.5
+                    },
+                    {
+                        "word": "closed",
+                        "start": 68.76,
+                        "end": 69.2
+                    },
+                    {
+                        "word": "box.",
+                        "start": 69.2,
+                        "end": 69.66
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "e7bdb28b26188a212a71dda30231e7a0",
+        "rendered_duration": 79.91,
+        "audio_duration": 74.18,
+        "intro_offset": 1.7,
+        "outro_duration": 5,
+        "source_start": 1240.66,
+        "source_end": 1304.89,
+        "_audio_sig": "0a792b35da15acafc07b91efacaf4191",
+        "_compiled_sig": "7cf7cdeb3418c81677ef14c95a86d02d",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-15.mp4"
     },
     {
         "num": 16,
@@ -34920,9 +36706,2461 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "The Imbalance Delta"
+        "coming_up_title": "The Imbalance Delta",
+        "caption_chunks": [
+            {
+                "start": 1.7,
+                "end": 3.46,
+                "text": "clip 16, chiral vector",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.7,
+                        "end": 1.74
+                    },
+                    {
+                        "word": "16,",
+                        "start": 1.74,
+                        "end": 2.2
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 2.86,
+                        "end": 3.06
+                    },
+                    {
+                        "word": "vector",
+                        "start": 3.06,
+                        "end": 3.46
+                    }
+                ]
+            },
+            {
+                "start": 3.46,
+                "end": 5.68,
+                "text": "equilibrium. the universe isn't a",
+                "words": [
+                    {
+                        "word": "equilibrium.",
+                        "start": 3.46,
+                        "end": 4.02
+                    },
+                    {
+                        "word": "the",
+                        "start": 4.54,
+                        "end": 4.76
+                    },
+                    {
+                        "word": "universe",
+                        "start": 4.76,
+                        "end": 5.08
+                    },
+                    {
+                        "word": "isn't",
+                        "start": 5.08,
+                        "end": 5.5
+                    },
+                    {
+                        "word": "a",
+                        "start": 5.5,
+                        "end": 5.68
+                    }
+                ]
+            },
+            {
+                "start": 5.68,
+                "end": 7.1,
+                "text": "closed box of energy,",
+                "words": [
+                    {
+                        "word": "closed",
+                        "start": 5.68,
+                        "end": 6.02
+                    },
+                    {
+                        "word": "box",
+                        "start": 6.02,
+                        "end": 6.28
+                    },
+                    {
+                        "word": "of",
+                        "start": 6.28,
+                        "end": 6.54
+                    },
+                    {
+                        "word": "energy,",
+                        "start": 6.54,
+                        "end": 6.88
+                    }
+                ]
+            },
+            {
+                "start": 7.1,
+                "end": 13.89,
+                "text": "it's an elegantly balanced scale.",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 7.1,
+                        "end": 7.28
+                    },
+                    {
+                        "word": "an",
+                        "start": 7.28,
+                        "end": 7.4
+                    },
+                    {
+                        "word": "elegantly",
+                        "start": 7.4,
+                        "end": 8.06
+                    },
+                    {
+                        "word": "balanced",
+                        "start": 8.06,
+                        "end": 8.5
+                    },
+                    {
+                        "word": "scale.",
+                        "start": 8.5,
+                        "end": 9.0
+                    }
+                ]
+            },
+            {
+                "start": 13.89,
+                "end": 15.29,
+                "text": "what's fascinating here is that",
+                "words": [
+                    {
+                        "word": "what's",
+                        "start": 13.89,
+                        "end": 14.15
+                    },
+                    {
+                        "word": "fascinating",
+                        "start": 14.15,
+                        "end": 14.49
+                    },
+                    {
+                        "word": "here",
+                        "start": 14.49,
+                        "end": 14.89
+                    },
+                    {
+                        "word": "is",
+                        "start": 14.89,
+                        "end": 15.09
+                    },
+                    {
+                        "word": "that",
+                        "start": 15.09,
+                        "end": 15.29
+                    }
+                ]
+            },
+            {
+                "start": 15.29,
+                "end": 16.61,
+                "text": "classical physics treats the",
+                "words": [
+                    {
+                        "word": "classical",
+                        "start": 15.29,
+                        "end": 15.71
+                    },
+                    {
+                        "word": "physics",
+                        "start": 15.71,
+                        "end": 16.13
+                    },
+                    {
+                        "word": "treats",
+                        "start": 16.13,
+                        "end": 16.41
+                    },
+                    {
+                        "word": "the",
+                        "start": 16.41,
+                        "end": 16.61
+                    }
+                ]
+            },
+            {
+                "start": 16.61,
+                "end": 18.53,
+                "text": "universe as a closed container,",
+                "words": [
+                    {
+                        "word": "universe",
+                        "start": 16.61,
+                        "end": 16.89
+                    },
+                    {
+                        "word": "as",
+                        "start": 16.89,
+                        "end": 17.13
+                    },
+                    {
+                        "word": "a",
+                        "start": 17.13,
+                        "end": 17.31
+                    },
+                    {
+                        "word": "closed",
+                        "start": 17.31,
+                        "end": 17.57
+                    },
+                    {
+                        "word": "container,",
+                        "start": 17.57,
+                        "end": 18.05
+                    }
+                ]
+            },
+            {
+                "start": 18.53,
+                "end": 20.11,
+                "text": "static energy conservation.",
+                "words": [
+                    {
+                        "word": "static",
+                        "start": 18.53,
+                        "end": 18.85
+                    },
+                    {
+                        "word": "energy",
+                        "start": 18.85,
+                        "end": 19.21
+                    },
+                    {
+                        "word": "conservation.",
+                        "start": 19.21,
+                        "end": 19.73
+                    }
+                ]
+            },
+            {
+                "start": 20.11,
+                "end": 21.39,
+                "text": "the first law of thermodynamics.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 20.11,
+                        "end": 20.27
+                    },
+                    {
+                        "word": "first",
+                        "start": 20.27,
+                        "end": 20.47
+                    },
+                    {
+                        "word": "law",
+                        "start": 20.47,
+                        "end": 20.69
+                    },
+                    {
+                        "word": "of",
+                        "start": 20.69,
+                        "end": 20.83
+                    },
+                    {
+                        "word": "thermodynamics.",
+                        "start": 20.83,
+                        "end": 21.39
+                    }
+                ]
+            },
+            {
+                "start": 21.39,
+                "end": 23.35,
+                "text": "but this paper replaces that with",
+                "words": [
+                    {
+                        "word": "but",
+                        "start": 21.39,
+                        "end": 21.87
+                    },
+                    {
+                        "word": "this",
+                        "start": 21.87,
+                        "end": 22.09
+                    },
+                    {
+                        "word": "paper",
+                        "start": 22.09,
+                        "end": 22.37
+                    },
+                    {
+                        "word": "replaces",
+                        "start": 22.37,
+                        "end": 22.89
+                    },
+                    {
+                        "word": "that",
+                        "start": 22.89,
+                        "end": 23.19
+                    },
+                    {
+                        "word": "with",
+                        "start": 23.19,
+                        "end": 23.35
+                    }
+                ]
+            },
+            {
+                "start": 23.35,
+                "end": 25.59,
+                "text": "dual chiral equilibrium.",
+                "words": [
+                    {
+                        "word": "dual",
+                        "start": 23.35,
+                        "end": 23.73
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 23.73,
+                        "end": 24.17
+                    },
+                    {
+                        "word": "equilibrium.",
+                        "start": 24.17,
+                        "end": 24.89
+                    }
+                ]
+            },
+            {
+                "start": 25.59,
+                "end": 26.29,
+                "text": "okay, let me make sure i",
+                "words": [
+                    {
+                        "word": "okay,",
+                        "start": 25.59,
+                        "end": 25.63
+                    },
+                    {
+                        "word": "let",
+                        "start": 25.63,
+                        "end": 25.73
+                    },
+                    {
+                        "word": "me",
+                        "start": 25.73,
+                        "end": 25.83
+                    },
+                    {
+                        "word": "make",
+                        "start": 25.83,
+                        "end": 26.03
+                    },
+                    {
+                        "word": "sure",
+                        "start": 26.03,
+                        "end": 26.15
+                    },
+                    {
+                        "word": "i",
+                        "start": 26.15,
+                        "end": 26.29
+                    }
+                ]
+            },
+            {
+                "start": 26.29,
+                "end": 27.89,
+                "text": "have the math right.",
+                "words": [
+                    {
+                        "word": "have",
+                        "start": 26.29,
+                        "end": 26.45
+                    },
+                    {
+                        "word": "the",
+                        "start": 26.45,
+                        "end": 26.59
+                    },
+                    {
+                        "word": "math",
+                        "start": 26.59,
+                        "end": 26.87
+                    },
+                    {
+                        "word": "right.",
+                        "start": 26.87,
+                        "end": 27.15
+                    }
+                ]
+            },
+            {
+                "start": 27.89,
+                "end": 29.49,
+                "text": "the net energetic cost of the",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 27.89,
+                        "end": 27.93
+                    },
+                    {
+                        "word": "net",
+                        "start": 27.89,
+                        "end": 28.23
+                    },
+                    {
+                        "word": "energetic",
+                        "start": 28.23,
+                        "end": 28.69
+                    },
+                    {
+                        "word": "cost",
+                        "start": 28.69,
+                        "end": 29.15
+                    },
+                    {
+                        "word": "of",
+                        "start": 29.15,
+                        "end": 29.39
+                    },
+                    {
+                        "word": "the",
+                        "start": 29.39,
+                        "end": 29.49
+                    }
+                ]
+            },
+            {
+                "start": 29.49,
+                "end": 31.39,
+                "text": "entire universe, relative to the",
+                "words": [
+                    {
+                        "word": "entire",
+                        "start": 29.49,
+                        "end": 29.81
+                    },
+                    {
+                        "word": "universe,",
+                        "start": 29.81,
+                        "end": 30.27
+                    },
+                    {
+                        "word": "relative",
+                        "start": 30.51,
+                        "end": 30.87
+                    },
+                    {
+                        "word": "to",
+                        "start": 30.87,
+                        "end": 31.27
+                    },
+                    {
+                        "word": "the",
+                        "start": 31.27,
+                        "end": 31.39
+                    }
+                ]
+            },
+            {
+                "start": 31.39,
+                "end": 32.87,
+                "text": "singularity observer, is",
+                "words": [
+                    {
+                        "word": "singularity",
+                        "start": 31.39,
+                        "end": 31.93
+                    },
+                    {
+                        "word": "observer,",
+                        "start": 31.93,
+                        "end": 32.23
+                    },
+                    {
+                        "word": "is",
+                        "start": 32.51,
+                        "end": 32.87
+                    }
+                ]
+            },
+            {
+                "start": 32.87,
+                "end": 35.21,
+                "text": "identically zero at all times.",
+                "words": [
+                    {
+                        "word": "identically",
+                        "start": 32.87,
+                        "end": 33.43
+                    },
+                    {
+                        "word": "zero",
+                        "start": 33.43,
+                        "end": 33.81
+                    },
+                    {
+                        "word": "at",
+                        "start": 33.81,
+                        "end": 34.21
+                    },
+                    {
+                        "word": "all",
+                        "start": 34.21,
+                        "end": 34.37
+                    },
+                    {
+                        "word": "times.",
+                        "start": 34.37,
+                        "end": 34.75
+                    }
+                ]
+            },
+            {
+                "start": 35.21,
+                "end": 37.05,
+                "text": "identically zero. negative one",
+                "words": [
+                    {
+                        "word": "identically",
+                        "start": 35.21,
+                        "end": 35.51
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 35.51,
+                        "end": 35.85
+                    },
+                    {
+                        "word": "negative",
+                        "start": 36.53,
+                        "end": 36.69
+                    },
+                    {
+                        "word": "one",
+                        "start": 36.69,
+                        "end": 37.05
+                    }
+                ]
+            },
+            {
+                "start": 37.05,
+                "end": 39.75,
+                "text": "plus positive one equals zero.",
+                "words": [
+                    {
+                        "word": "plus",
+                        "start": 37.05,
+                        "end": 37.33
+                    },
+                    {
+                        "word": "positive",
+                        "start": 37.33,
+                        "end": 37.71
+                    },
+                    {
+                        "word": "one",
+                        "start": 37.71,
+                        "end": 38.27
+                    },
+                    {
+                        "word": "equals",
+                        "start": 38.27,
+                        "end": 38.67
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 38.67,
+                        "end": 39.01
+                    }
+                ]
+            },
+            {
+                "start": 39.75,
+                "end": 42.53,
+                "text": "so structural mass energy plus mc",
+                "words": [
+                    {
+                        "word": "so",
+                        "start": 39.75,
+                        "end": 40.05
+                    },
+                    {
+                        "word": "structural",
+                        "start": 40.05,
+                        "end": 40.63
+                    },
+                    {
+                        "word": "mass",
+                        "start": 40.63,
+                        "end": 40.97
+                    },
+                    {
+                        "word": "energy",
+                        "start": 40.97,
+                        "end": 41.51
+                    },
+                    {
+                        "word": "plus",
+                        "start": 41.51,
+                        "end": 42.19
+                    },
+                    {
+                        "word": "mc",
+                        "start": 42.19,
+                        "end": 42.53
+                    }
+                ]
+            },
+            {
+                "start": 42.53,
+                "end": 43.99,
+                "text": "squared is perfectly",
+                "words": [
+                    {
+                        "word": "squared",
+                        "start": 42.53,
+                        "end": 42.89
+                    },
+                    {
+                        "word": "is",
+                        "start": 42.89,
+                        "end": 43.23
+                    },
+                    {
+                        "word": "perfectly",
+                        "start": 43.23,
+                        "end": 43.99
+                    }
+                ]
+            },
+            {
+                "start": 43.99,
+                "end": 45.61,
+                "text": "counterbalanced by cognitive",
+                "words": [
+                    {
+                        "word": "counterbalanced",
+                        "start": 43.99,
+                        "end": 44.83
+                    },
+                    {
+                        "word": "by",
+                        "start": 44.83,
+                        "end": 45.15
+                    },
+                    {
+                        "word": "cognitive",
+                        "start": 45.15,
+                        "end": 45.61
+                    }
+                ]
+            },
+            {
+                "start": 45.61,
+                "end": 48.15,
+                "text": "comprehension minus ic squared?",
+                "words": [
+                    {
+                        "word": "comprehension",
+                        "start": 45.61,
+                        "end": 46.33
+                    },
+                    {
+                        "word": "minus",
+                        "start": 46.33,
+                        "end": 47.03
+                    },
+                    {
+                        "word": "ic",
+                        "start": 47.03,
+                        "end": 47.41
+                    },
+                    {
+                        "word": "squared?",
+                        "start": 47.41,
+                        "end": 47.79
+                    }
+                ]
+            },
+            {
+                "start": 48.15,
+                "end": 49.59,
+                "text": "the universe doesn't have a fixed",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 48.15,
+                        "end": 48.53
+                    },
+                    {
+                        "word": "universe",
+                        "start": 48.53,
+                        "end": 48.79
+                    },
+                    {
+                        "word": "doesn't",
+                        "start": 48.79,
+                        "end": 49.03
+                    },
+                    {
+                        "word": "have",
+                        "start": 49.03,
+                        "end": 49.21
+                    },
+                    {
+                        "word": "a",
+                        "start": 49.21,
+                        "end": 49.37
+                    },
+                    {
+                        "word": "fixed",
+                        "start": 49.37,
+                        "end": 49.59
+                    }
+                ]
+            },
+            {
+                "start": 49.59,
+                "end": 52.01,
+                "text": "energy limit. it has a symmetry",
+                "words": [
+                    {
+                        "word": "energy",
+                        "start": 49.59,
+                        "end": 49.95
+                    },
+                    {
+                        "word": "limit.",
+                        "start": 49.95,
+                        "end": 50.27
+                    },
+                    {
+                        "word": "it",
+                        "start": 50.27,
+                        "end": 50.39
+                    },
+                    {
+                        "word": "has",
+                        "start": 50.39,
+                        "end": 50.97
+                    },
+                    {
+                        "word": "a",
+                        "start": 50.97,
+                        "end": 51.41
+                    },
+                    {
+                        "word": "symmetry",
+                        "start": 51.41,
+                        "end": 52.01
+                    }
+                ]
+            },
+            {
+                "start": 52.01,
+                "end": 53.61,
+                "text": "requirement. that is just",
+                "words": [
+                    {
+                        "word": "requirement.",
+                        "start": 52.01,
+                        "end": 52.75
+                    },
+                    {
+                        "word": "that",
+                        "start": 53.25,
+                        "end": 53.29
+                    },
+                    {
+                        "word": "is",
+                        "start": 53.27,
+                        "end": 53.43
+                    },
+                    {
+                        "word": "just",
+                        "start": 53.43,
+                        "end": 53.61
+                    }
+                ]
+            },
+            {
+                "start": 53.61,
+                "end": 55.43,
+                "text": "brilliant. and i want to pause",
+                "words": [
+                    {
+                        "word": "brilliant.",
+                        "start": 53.61,
+                        "end": 54.15
+                    },
+                    {
+                        "word": "and",
+                        "start": 54.87,
+                        "end": 54.93
+                    },
+                    {
+                        "word": "i",
+                        "start": 54.93,
+                        "end": 55.03
+                    },
+                    {
+                        "word": "want",
+                        "start": 55.03,
+                        "end": 55.13
+                    },
+                    {
+                        "word": "to",
+                        "start": 55.13,
+                        "end": 55.23
+                    },
+                    {
+                        "word": "pause",
+                        "start": 55.23,
+                        "end": 55.43
+                    }
+                ]
+            },
+            {
+                "start": 55.43,
+                "end": 57.41,
+                "text": "real quick. if this kind of",
+                "words": [
+                    {
+                        "word": "real",
+                        "start": 55.43,
+                        "end": 55.61
+                    },
+                    {
+                        "word": "quick.",
+                        "start": 55.61,
+                        "end": 55.81
+                    },
+                    {
+                        "word": "if",
+                        "start": 55.91,
+                        "end": 56.07
+                    },
+                    {
+                        "word": "this",
+                        "start": 56.07,
+                        "end": 56.47
+                    },
+                    {
+                        "word": "kind",
+                        "start": 56.47,
+                        "end": 56.91
+                    },
+                    {
+                        "word": "of",
+                        "start": 56.91,
+                        "end": 57.41
+                    }
+                ]
+            },
+            {
+                "start": 57.41,
+                "end": 58.71,
+                "text": "paradigm shifting logic sparks",
+                "words": [
+                    {
+                        "word": "paradigm",
+                        "start": 57.41,
+                        "end": 57.77
+                    },
+                    {
+                        "word": "shifting",
+                        "start": 57.77,
+                        "end": 58.09
+                    },
+                    {
+                        "word": "logic",
+                        "start": 58.09,
+                        "end": 58.39
+                    },
+                    {
+                        "word": "sparks",
+                        "start": 58.39,
+                        "end": 58.71
+                    }
+                ]
+            },
+            {
+                "start": 58.71,
+                "end": 60.11,
+                "text": "your own theories,",
+                "words": [
+                    {
+                        "word": "your",
+                        "start": 58.71,
+                        "end": 58.95
+                    },
+                    {
+                        "word": "own",
+                        "start": 58.95,
+                        "end": 59.27
+                    },
+                    {
+                        "word": "theories,",
+                        "start": 59.27,
+                        "end": 59.75
+                    }
+                ]
+            },
+            {
+                "start": 60.11,
+                "end": 61.69,
+                "text": "and you have ai -based independent",
+                "words": [
+                    {
+                        "word": "and",
+                        "start": 60.11,
+                        "end": 60.19
+                    },
+                    {
+                        "word": "you",
+                        "start": 60.19,
+                        "end": 60.35
+                    },
+                    {
+                        "word": "have",
+                        "start": 60.35,
+                        "end": 60.57
+                    },
+                    {
+                        "word": "ai",
+                        "start": 60.57,
+                        "end": 61.03
+                    },
+                    {
+                        "word": "-based",
+                        "start": 61.03,
+                        "end": 61.35
+                    },
+                    {
+                        "word": "independent",
+                        "start": 61.35,
+                        "end": 61.69
+                    }
+                ]
+            },
+            {
+                "start": 61.69,
+                "end": 63.55,
+                "text": "research, head over to shoe -tree",
+                "words": [
+                    {
+                        "word": "research,",
+                        "start": 61.69,
+                        "end": 62.15
+                    },
+                    {
+                        "word": "head",
+                        "start": 62.51,
+                        "end": 62.69
+                    },
+                    {
+                        "word": "over",
+                        "start": 62.69,
+                        "end": 62.93
+                    },
+                    {
+                        "word": "to",
+                        "start": 62.93,
+                        "end": 63.17
+                    },
+                    {
+                        "word": "shoe",
+                        "start": 63.17,
+                        "end": 63.33
+                    },
+                    {
+                        "word": "-tree",
+                        "start": 63.33,
+                        "end": 63.55
+                    }
+                ]
+            },
+            {
+                "start": 63.55,
+                "end": 65.51,
+                "text": ".com, that's s -h -u -t",
+                "words": [
+                    {
+                        "word": ".com,",
+                        "start": 63.55,
+                        "end": 63.97
+                    },
+                    {
+                        "word": "that's",
+                        "start": 64.11,
+                        "end": 64.33
+                    },
+                    {
+                        "word": "s",
+                        "start": 64.33,
+                        "end": 64.45
+                    },
+                    {
+                        "word": "-h",
+                        "start": 64.45,
+                        "end": 64.67
+                    },
+                    {
+                        "word": "-u",
+                        "start": 64.67,
+                        "end": 65.09
+                    },
+                    {
+                        "word": "-t",
+                        "start": 65.09,
+                        "end": 65.51
+                    }
+                ]
+            },
+            {
+                "start": 65.51,
+                "end": 67.67,
+                "text": "-r -i .com.",
+                "words": [
+                    {
+                        "word": "-r",
+                        "start": 65.51,
+                        "end": 65.71
+                    },
+                    {
+                        "word": "-i",
+                        "start": 65.71,
+                        "end": 66.09
+                    },
+                    {
+                        "word": ".com.",
+                        "start": 66.09,
+                        "end": 67.01
+                    }
+                ]
+            },
+            {
+                "start": 67.67,
+                "end": 68.45,
+                "text": "definitely submit your white paper",
+                "words": [
+                    {
+                        "word": "definitely",
+                        "start": 67.67,
+                        "end": 67.71
+                    },
+                    {
+                        "word": "submit",
+                        "start": 67.67,
+                        "end": 67.99
+                    },
+                    {
+                        "word": "your",
+                        "start": 67.99,
+                        "end": 68.17
+                    },
+                    {
+                        "word": "white",
+                        "start": 68.17,
+                        "end": 68.29
+                    },
+                    {
+                        "word": "paper",
+                        "start": 68.29,
+                        "end": 68.45
+                    }
+                ]
+            },
+            {
+                "start": 68.45,
+                "end": 70.17,
+                "text": "there. yeah, if it's accepted,",
+                "words": [
+                    {
+                        "word": "there.",
+                        "start": 68.45,
+                        "end": 68.69
+                    },
+                    {
+                        "word": "yeah,",
+                        "start": 68.97,
+                        "end": 69.13
+                    },
+                    {
+                        "word": "if",
+                        "start": 69.21,
+                        "end": 69.37
+                    },
+                    {
+                        "word": "it's",
+                        "start": 69.37,
+                        "end": 69.49
+                    },
+                    {
+                        "word": "accepted,",
+                        "start": 69.49,
+                        "end": 69.83
+                    }
+                ]
+            },
+            {
+                "start": 70.17,
+                "end": 72.05,
+                "text": "we will create free infographics",
+                "words": [
+                    {
+                        "word": "we",
+                        "start": 70.17,
+                        "end": 70.49
+                    },
+                    {
+                        "word": "will",
+                        "start": 70.49,
+                        "end": 70.71
+                    },
+                    {
+                        "word": "create",
+                        "start": 70.71,
+                        "end": 71.05
+                    },
+                    {
+                        "word": "free",
+                        "start": 71.05,
+                        "end": 71.51
+                    },
+                    {
+                        "word": "infographics",
+                        "start": 71.51,
+                        "end": 72.05
+                    }
+                ]
+            },
+            {
+                "start": 72.05,
+                "end": 74.09,
+                "text": "and an audio podcast for you.",
+                "words": [
+                    {
+                        "word": "and",
+                        "start": 72.05,
+                        "end": 72.47
+                    },
+                    {
+                        "word": "an",
+                        "start": 72.47,
+                        "end": 72.65
+                    },
+                    {
+                        "word": "audio",
+                        "start": 72.65,
+                        "end": 72.93
+                    },
+                    {
+                        "word": "podcast",
+                        "start": 72.93,
+                        "end": 73.23
+                    },
+                    {
+                        "word": "for",
+                        "start": 73.23,
+                        "end": 73.59
+                    },
+                    {
+                        "word": "you.",
+                        "start": 73.59,
+                        "end": 73.75
+                    }
+                ]
+            },
+            {
+                "start": 74.09,
+                "end": 75.99,
+                "text": "okay, back to the equilibrium.",
+                "words": [
+                    {
+                        "word": "okay,",
+                        "start": 74.09,
+                        "end": 74.31
+                    },
+                    {
+                        "word": "back",
+                        "start": 74.41,
+                        "end": 74.63
+                    },
+                    {
+                        "word": "to",
+                        "start": 74.63,
+                        "end": 74.79
+                    },
+                    {
+                        "word": "the",
+                        "start": 74.79,
+                        "end": 74.91
+                    },
+                    {
+                        "word": "equilibrium.",
+                        "start": 74.91,
+                        "end": 75.37
+                    }
+                ]
+            },
+            {
+                "start": 75.99,
+                "end": 77.49,
+                "text": "coming up in the next clip,",
+                "words": [
+                    {
+                        "word": "coming",
+                        "start": 75.99,
+                        "end": 76.29
+                    },
+                    {
+                        "word": "up",
+                        "start": 76.29,
+                        "end": 76.53
+                    },
+                    {
+                        "word": "in",
+                        "start": 76.53,
+                        "end": 76.69
+                    },
+                    {
+                        "word": "the",
+                        "start": 76.69,
+                        "end": 76.79
+                    },
+                    {
+                        "word": "next",
+                        "start": 76.79,
+                        "end": 76.99
+                    },
+                    {
+                        "word": "clip,",
+                        "start": 76.99,
+                        "end": 77.21
+                    }
+                ]
+            },
+            {
+                "start": 77.49,
+                "end": 78.39,
+                "text": "we use this to prove why",
+                "words": [
+                    {
+                        "word": "we",
+                        "start": 77.49,
+                        "end": 77.53
+                    },
+                    {
+                        "word": "use",
+                        "start": 77.51,
+                        "end": 77.71
+                    },
+                    {
+                        "word": "this",
+                        "start": 77.71,
+                        "end": 77.85
+                    },
+                    {
+                        "word": "to",
+                        "start": 77.85,
+                        "end": 77.97
+                    },
+                    {
+                        "word": "prove",
+                        "start": 77.97,
+                        "end": 78.15
+                    },
+                    {
+                        "word": "why",
+                        "start": 78.15,
+                        "end": 78.39
+                    }
+                ]
+            },
+            {
+                "start": 78.39,
+                "end": 79.95,
+                "text": "a proton lives forever,",
+                "words": [
+                    {
+                        "word": "a",
+                        "start": 78.39,
+                        "end": 78.55
+                    },
+                    {
+                        "word": "proton",
+                        "start": 78.55,
+                        "end": 78.93
+                    },
+                    {
+                        "word": "lives",
+                        "start": 78.93,
+                        "end": 79.11
+                    },
+                    {
+                        "word": "forever,",
+                        "start": 79.11,
+                        "end": 79.57
+                    }
+                ]
+            },
+            {
+                "start": 79.95,
+                "end": 81.91,
+                "text": "but a free neutron dies in",
+                "words": [
+                    {
+                        "word": "but",
+                        "start": 79.95,
+                        "end": 80.11
+                    },
+                    {
+                        "word": "a",
+                        "start": 80.11,
+                        "end": 80.29
+                    },
+                    {
+                        "word": "free",
+                        "start": 80.29,
+                        "end": 80.71
+                    },
+                    {
+                        "word": "neutron",
+                        "start": 80.71,
+                        "end": 81.23
+                    },
+                    {
+                        "word": "dies",
+                        "start": 81.23,
+                        "end": 81.63
+                    },
+                    {
+                        "word": "in",
+                        "start": 81.63,
+                        "end": 81.91
+                    }
+                ]
+            },
+            {
+                "start": 81.91,
+                "end": 83.03,
+                "text": "15 minutes. real",
+                "words": [
+                    {
+                        "word": "15",
+                        "start": 81.91,
+                        "end": 82.21
+                    },
+                    {
+                        "word": "minutes.",
+                        "start": 82.21,
+                        "end": 82.57
+                    },
+                    {
+                        "word": "real",
+                        "start": 82.93,
+                        "end": 83.03
+                    }
+                ]
+            },
+            {
+                "start": 83.03,
+                "end": 83.86,
+                "text": "world application.",
+                "words": [
+                    {
+                        "word": "world",
+                        "start": 83.03,
+                        "end": 83.23
+                    },
+                    {
+                        "word": "application.",
+                        "start": 83.23,
+                        "end": 83.71
+                    }
+                ]
+            }
+        ],
+        "mosaic_run_id": "ee888db0-1069-42d5-8086-2a996106572e",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.04
+            },
+            {
+                "word": "16,",
+                "start": 0.04,
+                "end": 0.5
+            },
+            {
+                "word": "chiral",
+                "start": 1.16,
+                "end": 1.36
+            },
+            {
+                "word": "vector",
+                "start": 1.36,
+                "end": 1.76
+            },
+            {
+                "word": "equilibrium.",
+                "start": 1.76,
+                "end": 2.32
+            },
+            {
+                "word": "The",
+                "start": 2.84,
+                "end": 3.06
+            },
+            {
+                "word": "universe",
+                "start": 3.06,
+                "end": 3.38
+            },
+            {
+                "word": "isn't",
+                "start": 3.38,
+                "end": 3.8
+            },
+            {
+                "word": "a",
+                "start": 3.8,
+                "end": 3.98
+            },
+            {
+                "word": "closed",
+                "start": 3.98,
+                "end": 4.32
+            },
+            {
+                "word": "box",
+                "start": 4.32,
+                "end": 4.58
+            },
+            {
+                "word": "of",
+                "start": 4.58,
+                "end": 4.84
+            },
+            {
+                "word": "energy,",
+                "start": 4.84,
+                "end": 5.18
+            },
+            {
+                "word": "it's",
+                "start": 5.4,
+                "end": 5.58
+            },
+            {
+                "word": "an",
+                "start": 5.58,
+                "end": 5.7
+            },
+            {
+                "word": "elegantly",
+                "start": 5.7,
+                "end": 6.36
+            },
+            {
+                "word": "balanced",
+                "start": 6.36,
+                "end": 6.8
+            },
+            {
+                "word": "scale.",
+                "start": 6.8,
+                "end": 7.3
+            },
+            {
+                "word": "What's",
+                "start": 12.19,
+                "end": 12.45
+            },
+            {
+                "word": "fascinating",
+                "start": 12.45,
+                "end": 12.79
+            },
+            {
+                "word": "here",
+                "start": 12.79,
+                "end": 13.19
+            },
+            {
+                "word": "is",
+                "start": 13.19,
+                "end": 13.39
+            },
+            {
+                "word": "that",
+                "start": 13.39,
+                "end": 13.59
+            },
+            {
+                "word": "classical",
+                "start": 13.59,
+                "end": 14.01
+            },
+            {
+                "word": "physics",
+                "start": 14.01,
+                "end": 14.43
+            },
+            {
+                "word": "treats",
+                "start": 14.43,
+                "end": 14.71
+            },
+            {
+                "word": "the",
+                "start": 14.71,
+                "end": 14.91
+            },
+            {
+                "word": "universe",
+                "start": 14.91,
+                "end": 15.19
+            },
+            {
+                "word": "as",
+                "start": 15.19,
+                "end": 15.43
+            },
+            {
+                "word": "a",
+                "start": 15.43,
+                "end": 15.61
+            },
+            {
+                "word": "closed",
+                "start": 15.61,
+                "end": 15.87
+            },
+            {
+                "word": "container,",
+                "start": 15.87,
+                "end": 16.35
+            },
+            {
+                "word": "static",
+                "start": 16.83,
+                "end": 17.15
+            },
+            {
+                "word": "energy",
+                "start": 17.15,
+                "end": 17.51
+            },
+            {
+                "word": "conservation.",
+                "start": 17.51,
+                "end": 18.03
+            },
+            {
+                "word": "The",
+                "start": 18.41,
+                "end": 18.57
+            },
+            {
+                "word": "first",
+                "start": 18.57,
+                "end": 18.77
+            },
+            {
+                "word": "law",
+                "start": 18.77,
+                "end": 18.99
+            },
+            {
+                "word": "of",
+                "start": 18.99,
+                "end": 19.13
+            },
+            {
+                "word": "thermodynamics.",
+                "start": 19.13,
+                "end": 19.69
+            },
+            {
+                "word": "But",
+                "start": 19.69,
+                "end": 20.17
+            },
+            {
+                "word": "this",
+                "start": 20.17,
+                "end": 20.39
+            },
+            {
+                "word": "paper",
+                "start": 20.39,
+                "end": 20.67
+            },
+            {
+                "word": "replaces",
+                "start": 20.67,
+                "end": 21.19
+            },
+            {
+                "word": "that",
+                "start": 21.19,
+                "end": 21.49
+            },
+            {
+                "word": "with",
+                "start": 21.49,
+                "end": 21.65
+            },
+            {
+                "word": "dual",
+                "start": 21.65,
+                "end": 22.03
+            },
+            {
+                "word": "chiral",
+                "start": 22.03,
+                "end": 22.47
+            },
+            {
+                "word": "equilibrium.",
+                "start": 22.47,
+                "end": 23.19
+            },
+            {
+                "word": "Okay,",
+                "start": 23.89,
+                "end": 23.93
+            },
+            {
+                "word": "let",
+                "start": 23.93,
+                "end": 24.03
+            },
+            {
+                "word": "me",
+                "start": 24.03,
+                "end": 24.13
+            },
+            {
+                "word": "make",
+                "start": 24.13,
+                "end": 24.33
+            },
+            {
+                "word": "sure",
+                "start": 24.33,
+                "end": 24.45
+            },
+            {
+                "word": "I",
+                "start": 24.45,
+                "end": 24.59
+            },
+            {
+                "word": "have",
+                "start": 24.59,
+                "end": 24.75
+            },
+            {
+                "word": "the",
+                "start": 24.75,
+                "end": 24.89
+            },
+            {
+                "word": "math",
+                "start": 24.89,
+                "end": 25.17
+            },
+            {
+                "word": "right.",
+                "start": 25.17,
+                "end": 25.45
+            },
+            {
+                "word": "The",
+                "start": 26.19,
+                "end": 26.23
+            },
+            {
+                "word": "net",
+                "start": 26.19,
+                "end": 26.53
+            },
+            {
+                "word": "energetic",
+                "start": 26.53,
+                "end": 26.99
+            },
+            {
+                "word": "cost",
+                "start": 26.99,
+                "end": 27.45
+            },
+            {
+                "word": "of",
+                "start": 27.45,
+                "end": 27.69
+            },
+            {
+                "word": "the",
+                "start": 27.69,
+                "end": 27.79
+            },
+            {
+                "word": "entire",
+                "start": 27.79,
+                "end": 28.11
+            },
+            {
+                "word": "universe,",
+                "start": 28.11,
+                "end": 28.57
+            },
+            {
+                "word": "relative",
+                "start": 28.81,
+                "end": 29.17
+            },
+            {
+                "word": "to",
+                "start": 29.17,
+                "end": 29.57
+            },
+            {
+                "word": "the",
+                "start": 29.57,
+                "end": 29.69
+            },
+            {
+                "word": "singularity",
+                "start": 29.69,
+                "end": 30.23
+            },
+            {
+                "word": "observer,",
+                "start": 30.23,
+                "end": 30.53
+            },
+            {
+                "word": "is",
+                "start": 30.81,
+                "end": 31.17
+            },
+            {
+                "word": "identically",
+                "start": 31.17,
+                "end": 31.73
+            },
+            {
+                "word": "zero",
+                "start": 31.73,
+                "end": 32.11
+            },
+            {
+                "word": "at",
+                "start": 32.11,
+                "end": 32.51
+            },
+            {
+                "word": "all",
+                "start": 32.51,
+                "end": 32.67
+            },
+            {
+                "word": "times.",
+                "start": 32.67,
+                "end": 33.05
+            },
+            {
+                "word": "Identically",
+                "start": 33.51,
+                "end": 33.81
+            },
+            {
+                "word": "zero.",
+                "start": 33.81,
+                "end": 34.15
+            },
+            {
+                "word": "Negative",
+                "start": 34.83,
+                "end": 34.99
+            },
+            {
+                "word": "one",
+                "start": 34.99,
+                "end": 35.35
+            },
+            {
+                "word": "plus",
+                "start": 35.35,
+                "end": 35.63
+            },
+            {
+                "word": "positive",
+                "start": 35.63,
+                "end": 36.01
+            },
+            {
+                "word": "one",
+                "start": 36.01,
+                "end": 36.57
+            },
+            {
+                "word": "equals",
+                "start": 36.57,
+                "end": 36.97
+            },
+            {
+                "word": "zero.",
+                "start": 36.97,
+                "end": 37.31
+            },
+            {
+                "word": "So",
+                "start": 38.05,
+                "end": 38.35
+            },
+            {
+                "word": "structural",
+                "start": 38.35,
+                "end": 38.93
+            },
+            {
+                "word": "mass",
+                "start": 38.93,
+                "end": 39.27
+            },
+            {
+                "word": "energy",
+                "start": 39.27,
+                "end": 39.81
+            },
+            {
+                "word": "plus",
+                "start": 39.81,
+                "end": 40.49
+            },
+            {
+                "word": "mc",
+                "start": 40.49,
+                "end": 40.83
+            },
+            {
+                "word": "squared",
+                "start": 40.83,
+                "end": 41.19
+            },
+            {
+                "word": "is",
+                "start": 41.19,
+                "end": 41.53
+            },
+            {
+                "word": "perfectly",
+                "start": 41.53,
+                "end": 42.29
+            },
+            {
+                "word": "counterbalanced",
+                "start": 42.29,
+                "end": 43.13
+            },
+            {
+                "word": "by",
+                "start": 43.13,
+                "end": 43.45
+            },
+            {
+                "word": "cognitive",
+                "start": 43.45,
+                "end": 43.91
+            },
+            {
+                "word": "comprehension",
+                "start": 43.91,
+                "end": 44.63
+            },
+            {
+                "word": "minus",
+                "start": 44.63,
+                "end": 45.33
+            },
+            {
+                "word": "ic",
+                "start": 45.33,
+                "end": 45.71
+            },
+            {
+                "word": "squared?",
+                "start": 45.71,
+                "end": 46.09
+            },
+            {
+                "word": "The",
+                "start": 46.45,
+                "end": 46.83
+            },
+            {
+                "word": "universe",
+                "start": 46.83,
+                "end": 47.09
+            },
+            {
+                "word": "doesn't",
+                "start": 47.09,
+                "end": 47.33
+            },
+            {
+                "word": "have",
+                "start": 47.33,
+                "end": 47.51
+            },
+            {
+                "word": "a",
+                "start": 47.51,
+                "end": 47.67
+            },
+            {
+                "word": "fixed",
+                "start": 47.67,
+                "end": 47.89
+            },
+            {
+                "word": "energy",
+                "start": 47.89,
+                "end": 48.25
+            },
+            {
+                "word": "limit.",
+                "start": 48.25,
+                "end": 48.57
+            },
+            {
+                "word": "It",
+                "start": 48.57,
+                "end": 48.69
+            },
+            {
+                "word": "has",
+                "start": 48.69,
+                "end": 49.27
+            },
+            {
+                "word": "a",
+                "start": 49.27,
+                "end": 49.71
+            },
+            {
+                "word": "symmetry",
+                "start": 49.71,
+                "end": 50.31
+            },
+            {
+                "word": "requirement.",
+                "start": 50.31,
+                "end": 51.05
+            },
+            {
+                "word": "That",
+                "start": 51.55,
+                "end": 51.59
+            },
+            {
+                "word": "is",
+                "start": 51.57,
+                "end": 51.73
+            },
+            {
+                "word": "just",
+                "start": 51.73,
+                "end": 51.91
+            },
+            {
+                "word": "brilliant.",
+                "start": 51.91,
+                "end": 52.45
+            },
+            {
+                "word": "And",
+                "start": 53.17,
+                "end": 53.23
+            },
+            {
+                "word": "I",
+                "start": 53.23,
+                "end": 53.33
+            },
+            {
+                "word": "want",
+                "start": 53.33,
+                "end": 53.43
+            },
+            {
+                "word": "to",
+                "start": 53.43,
+                "end": 53.53
+            },
+            {
+                "word": "pause",
+                "start": 53.53,
+                "end": 53.73
+            },
+            {
+                "word": "real",
+                "start": 53.73,
+                "end": 53.91
+            },
+            {
+                "word": "quick.",
+                "start": 53.91,
+                "end": 54.11
+            },
+            {
+                "word": "If",
+                "start": 54.21,
+                "end": 54.37
+            },
+            {
+                "word": "this",
+                "start": 54.37,
+                "end": 54.77
+            },
+            {
+                "word": "kind",
+                "start": 54.77,
+                "end": 55.21
+            },
+            {
+                "word": "of",
+                "start": 55.21,
+                "end": 55.71
+            },
+            {
+                "word": "paradigm",
+                "start": 55.71,
+                "end": 56.07
+            },
+            {
+                "word": "shifting",
+                "start": 56.07,
+                "end": 56.39
+            },
+            {
+                "word": "logic",
+                "start": 56.39,
+                "end": 56.69
+            },
+            {
+                "word": "sparks",
+                "start": 56.69,
+                "end": 57.01
+            },
+            {
+                "word": "your",
+                "start": 57.01,
+                "end": 57.25
+            },
+            {
+                "word": "own",
+                "start": 57.25,
+                "end": 57.57
+            },
+            {
+                "word": "theories,",
+                "start": 57.57,
+                "end": 58.05
+            },
+            {
+                "word": "and",
+                "start": 58.41,
+                "end": 58.49
+            },
+            {
+                "word": "you",
+                "start": 58.49,
+                "end": 58.65
+            },
+            {
+                "word": "have",
+                "start": 58.65,
+                "end": 58.87
+            },
+            {
+                "word": "AI",
+                "start": 58.87,
+                "end": 59.33
+            },
+            {
+                "word": "-based",
+                "start": 59.33,
+                "end": 59.65
+            },
+            {
+                "word": "independent",
+                "start": 59.65,
+                "end": 59.99
+            },
+            {
+                "word": "research,",
+                "start": 59.99,
+                "end": 60.45
+            },
+            {
+                "word": "head",
+                "start": 60.81,
+                "end": 60.99
+            },
+            {
+                "word": "over",
+                "start": 60.99,
+                "end": 61.23
+            },
+            {
+                "word": "to",
+                "start": 61.23,
+                "end": 61.47
+            },
+            {
+                "word": "shoe",
+                "start": 61.47,
+                "end": 61.63
+            },
+            {
+                "word": "-tree",
+                "start": 61.63,
+                "end": 61.85
+            },
+            {
+                "word": ".com,",
+                "start": 61.85,
+                "end": 62.27
+            },
+            {
+                "word": "that's",
+                "start": 62.41,
+                "end": 62.63
+            },
+            {
+                "word": "S",
+                "start": 62.63,
+                "end": 62.75
+            },
+            {
+                "word": "-H",
+                "start": 62.75,
+                "end": 62.97
+            },
+            {
+                "word": "-U",
+                "start": 62.97,
+                "end": 63.39
+            },
+            {
+                "word": "-T",
+                "start": 63.39,
+                "end": 63.81
+            },
+            {
+                "word": "-R",
+                "start": 63.81,
+                "end": 64.01
+            },
+            {
+                "word": "-I",
+                "start": 64.01,
+                "end": 64.39
+            },
+            {
+                "word": ".com.",
+                "start": 64.39,
+                "end": 65.31
+            },
+            {
+                "word": "Definitely",
+                "start": 65.97,
+                "end": 66.01
+            },
+            {
+                "word": "submit",
+                "start": 65.97,
+                "end": 66.29
+            },
+            {
+                "word": "your",
+                "start": 66.29,
+                "end": 66.47
+            },
+            {
+                "word": "white",
+                "start": 66.47,
+                "end": 66.59
+            },
+            {
+                "word": "paper",
+                "start": 66.59,
+                "end": 66.75
+            },
+            {
+                "word": "there.",
+                "start": 66.75,
+                "end": 66.99
+            },
+            {
+                "word": "Yeah,",
+                "start": 67.27,
+                "end": 67.43
+            },
+            {
+                "word": "if",
+                "start": 67.51,
+                "end": 67.67
+            },
+            {
+                "word": "it's",
+                "start": 67.67,
+                "end": 67.79
+            },
+            {
+                "word": "accepted,",
+                "start": 67.79,
+                "end": 68.13
+            },
+            {
+                "word": "we",
+                "start": 68.47,
+                "end": 68.79
+            },
+            {
+                "word": "will",
+                "start": 68.79,
+                "end": 69.01
+            },
+            {
+                "word": "create",
+                "start": 69.01,
+                "end": 69.35
+            },
+            {
+                "word": "free",
+                "start": 69.35,
+                "end": 69.81
+            },
+            {
+                "word": "infographics",
+                "start": 69.81,
+                "end": 70.35
+            },
+            {
+                "word": "and",
+                "start": 70.35,
+                "end": 70.77
+            },
+            {
+                "word": "an",
+                "start": 70.77,
+                "end": 70.95
+            },
+            {
+                "word": "audio",
+                "start": 70.95,
+                "end": 71.23
+            },
+            {
+                "word": "podcast",
+                "start": 71.23,
+                "end": 71.53
+            },
+            {
+                "word": "for",
+                "start": 71.53,
+                "end": 71.89
+            },
+            {
+                "word": "you.",
+                "start": 71.89,
+                "end": 72.05
+            },
+            {
+                "word": "Okay,",
+                "start": 72.39,
+                "end": 72.61
+            },
+            {
+                "word": "back",
+                "start": 72.71,
+                "end": 72.93
+            },
+            {
+                "word": "to",
+                "start": 72.93,
+                "end": 73.09
+            },
+            {
+                "word": "the",
+                "start": 73.09,
+                "end": 73.21
+            },
+            {
+                "word": "equilibrium.",
+                "start": 73.21,
+                "end": 73.67
+            },
+            {
+                "word": "Coming",
+                "start": 74.29,
+                "end": 74.59
+            },
+            {
+                "word": "up",
+                "start": 74.59,
+                "end": 74.83
+            },
+            {
+                "word": "in",
+                "start": 74.83,
+                "end": 74.99
+            },
+            {
+                "word": "the",
+                "start": 74.99,
+                "end": 75.09
+            },
+            {
+                "word": "next",
+                "start": 75.09,
+                "end": 75.29
+            },
+            {
+                "word": "clip,",
+                "start": 75.29,
+                "end": 75.51
+            },
+            {
+                "word": "we",
+                "start": 75.79,
+                "end": 75.83
+            },
+            {
+                "word": "use",
+                "start": 75.81,
+                "end": 76.01
+            },
+            {
+                "word": "this",
+                "start": 76.01,
+                "end": 76.15
+            },
+            {
+                "word": "to",
+                "start": 76.15,
+                "end": 76.27
+            },
+            {
+                "word": "prove",
+                "start": 76.27,
+                "end": 76.45
+            },
+            {
+                "word": "why",
+                "start": 76.45,
+                "end": 76.69
+            },
+            {
+                "word": "a",
+                "start": 76.69,
+                "end": 76.85
+            },
+            {
+                "word": "proton",
+                "start": 76.85,
+                "end": 77.23
+            },
+            {
+                "word": "lives",
+                "start": 77.23,
+                "end": 77.41
+            },
+            {
+                "word": "forever,",
+                "start": 77.41,
+                "end": 77.87
+            },
+            {
+                "word": "but",
+                "start": 78.25,
+                "end": 78.41
+            },
+            {
+                "word": "a",
+                "start": 78.41,
+                "end": 78.59
+            },
+            {
+                "word": "free",
+                "start": 78.59,
+                "end": 79.01
+            },
+            {
+                "word": "neutron",
+                "start": 79.01,
+                "end": 79.53
+            },
+            {
+                "word": "dies",
+                "start": 79.53,
+                "end": 79.93
+            },
+            {
+                "word": "in",
+                "start": 79.93,
+                "end": 80.21
+            },
+            {
+                "word": "15",
+                "start": 80.21,
+                "end": 80.51
+            },
+            {
+                "word": "minutes.",
+                "start": 80.51,
+                "end": 80.87
+            },
+            {
+                "word": "Real",
+                "start": 81.23,
+                "end": 81.33
+            },
+            {
+                "word": "world",
+                "start": 81.33,
+                "end": 81.53
+            },
+            {
+                "word": "application.",
+                "start": 81.53,
+                "end": 82.01
+            }
+        ],
+        "_caption_words_sig": "b25e39105d4ef3e5bfc5633eb45e056b",
+        "_caption_sig": "4a28aa592a032cf484f344a5c03232e8",
+        "rendered_duration": 93.92,
+        "audio_duration": 88.2,
+        "intro_offset": 1.7,
+        "outro_duration": 5.0,
+        "source_start": 1305.7,
+        "source_end": 1383.63,
+        "_audio_sig": "b25e39105d4ef3e5bfc5633eb45e056b",
+        "_compiled_sig": "4119d0418b1ed204484c503b1273bfb2",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-16.mp4"
     },
     {
         "num": 17,
