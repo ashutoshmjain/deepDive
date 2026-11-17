@@ -135,3 +135,13 @@ everything else (threshold, cushion, clamps, default fallback) stays.
   not touch `cut()`, the compile, the plan generation, or the caption
   code.
 - Report PASS/FAIL per verify step, then STOP with a full summary.
+
+## Verification outcome (executed 2026-11-16, deepDive ddma/ddma.py helper walk only)
+
+- Step 1 - PASS. Helper returns 1082.30 (within +-0.03 of ~1082.32); the walk crossed the 40ms closure, found the /k/ burst, and stopped at win_start. No-audio default unchanged at 1082.34.
+- Step 2 - PASS. New slice 78.32s (+0.16s over old 78.16s, ~78.30s expected). First 0.5s opens with a loud burst (XxxxxxXXXXXXX...); cut at ~1082.30 >= 1081.98.
+- Step 3 - PASS. Cut starts 0.36s after paper. ends (1081.94); first 0.1s is the Clip onset only.
+- Step 4 - PASS. 249-8 re-cut differs by exactly +2080 samples (+0.13s, <= 0.35s); cross-correlation MSE 2.9e-05 over 30s (identical content, uniform shift), so intra-clip boundaries are preserved and the resolve_segment_boundary() path is unaffected.
+- Step 5 - PASS. test_compile_scope.py 3/3, test_canonical_audio_compile.py 3/3, test_plan_clip0_title.py 2/2, test_mosaic_mux_integrity.py 2/2, full test_curator.js 100 percent (exit 0, TEST 20 restore logged).
+- Step 6 - PASS. No publish, no Mosaic API calls (local ffmpeg/ffprobe only), no commit; only ddma/ddma.py modified, nothing staged.
+- Change shape: the loop counts consecutive silent frames, resets on speech, breaks only past 8 (80ms). Threshold, cushion, clamps, and fallback untouched; cut(), resolve_segment_boundary(), resolve_acoustic_word_end() not modified.
