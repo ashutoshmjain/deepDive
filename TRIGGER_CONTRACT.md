@@ -41,9 +41,8 @@ flowchart TD
     end
 
     subgraph W4["Workflow 4: Longform Video Composite"]
-        E1["Option A: scratch/combine_clips_demuxer.py (Curator Episode Concat)"]
-        E2["Option B: render_longform_parallel.py (Full 1080p Bespoke Master)"]
-        E3["Export podcast_<ep>.mp4 to dd_hub/video/"]
+        E1["render_longform_parallel.py (Full 1080p Bespoke Master)"]
+        E2["Export podcast_<ep>.mp4 to dd_hub/video/"]
     end
 
     Inputs --> W1
@@ -71,8 +70,8 @@ flowchart TD
 - **Output**: Staged to `src/ddma/docs/episodes/<ep>/clips/<ep>-<clip>.mp4`, verified against the 3-point live check (GitHub Pages, `episodes.json` + `plan.json`, Muse agent).
 
 ### Workflow 4 (W4): Longform Video Master (16:9 HD)
-- **Canonical Renderer**: `scratch/combine_clips_demuxer.py` (Curator chapter-bridge demuxer concatenation of locked clips) or `render_longform_parallel.py` (full 1080p bespoke Manim composition).
-- **Trigger**: All episode clips locked / episode compilation invoked (`/combine-project-video?id=<ep>`).
+- **Canonical Renderer**: `render_longform_parallel.py` (full 1080p bespoke Manim composition).
+- **Trigger**: All episode clips locked / longform build invoked (Beats Studio longform build, `render_longform_parallel.py`).
 - **Output**: `podcast_<ep>.mp4` + 1920x1080 thumbnail exported to `dd_hub/video/` for YouTube, Spotify, and TikTok distribution.
 
 ---
@@ -86,6 +85,25 @@ The automated Docker container runs an asynchronous watcher process (e.g. `pytho
    - Executes W1 (`ingest/server.py` headless mining).
    - Executes W2 (whisper alignment + podcast mastering).
    - Executes W3 (DDMA clip compilation for all chapters in plan).
-   - Executes W4 (`combine_clips_demuxer.py` or parallel compositor).
+   - Executes W4 (`render_longform_parallel.py`).
    - Commits and pushes `deepDive` to GitHub remote.
    - Cleans temporary artifacts and emits telemetry log to `dd_hub/logs/<slug>.log`.
+
+## 4. Failure Notification
+
+When any workflow run fails, the runner MUST emit a failure notification IN
+ADDITION to the telemetry log. The notification names the workflow, the step,
+and the error.
+
+- **Mechanism (reference implementation: `ddma/scratch/run_curator.py`
+  `notify_failure(workflow, step, error)`)**: prints a timestamped
+  `NOTIFY <workflow> step=<step> error=<error>` line to the server log AND
+  appends it to `dd_hub/logs/notifications.log` (local `logs/` fallback when
+  the hub is unreachable).
+- **Wired paths**: W3 mosaic-run failure (`run_mosaic_pipeline`), W3
+  compile-clip failure (`/compile-clip`), W3 export failure
+  (`/export-to-mosaic`). W1 (ingest mining), W2 (podcast assembly), and W4
+  (Beats longform `render_longform_parallel.py`) emit to the same
+  `notifications.log` path from their own runners.
+- Telemetry stays as specified in section 3 (`dd_hub/logs/<slug>.log` per
+  watcher run); the notification is written alongside it, never instead of it.

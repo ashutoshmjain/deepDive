@@ -181,3 +181,29 @@
 3. Confirm the cockpit preview renders the yellow donation card (A7) and the live site still renders it (D1).
 4. Do NOT publish any clip as part of this verify. Do NOT trigger a Mosaic run. Do NOT commit or push (fan-out is a separate human step).
 5. Report PASS/FAIL per item (A1–A12, B1–B4, C1–C5, D1), then STOP with a full summary.
+
+## Outcome (executed 2026-11-16/17, head 028aa331, uncommitted)
+
+Per-item result. Verifies marked [live] were executed; [static] by read/grep; [suite] by repo suites.
+
+- A1 PASS [static]. A2 PASS [static+server-up]. A3 PASS [live: dummy pid 36924 with `mdbook serve` in cmdline survived `kill_mdserve()`].
+- A4 PASS [live: bad Range -> 416 + `Content-Range: bytes */size`; `bytes=0-99` -> 206 + correct Content-Range].
+- A5 PASS [live: two fixture POSTs -> live=v2, `.bak`=v1; fixture + two zero-byte root strays from first curl attempts removed].
+- A6 PASS-after-fix [live]. The prior discard-wrapper dropped headers too (HEAD returned nothing). Fixed `_DiscardBody` (first write passes, rest dropped). HEAD -> 200 + matching Content-Length, empty body; HEAD+range -> 206.
+- A7 PASS [browser: twentyuno gone, widget defined, 2 tags render, addr-pill present, zero page errors].
+- A8/B2 PASS [static: valid JSON, env map, zero real paths].
+- A9 NO-CHANGE, premise false: `ddma/docs/` has zero TRACKED episodes but is a live tracked docs site (player.js/index.html served at /docs/, covered by TEST 18). Not deleted.
+- A10 PASS [verify-only]: 248: 7/23 (missing 8-23 unrendered). 249: 15/21 as executed (0-14 present; missing 15-20 unrendered). No loss.
+- A11 CODE-PASS, live double-ingest DEFERRED (would re-run Gemini plan-gen twice = API spend). Log inside guard + else-branch reuse message verified by region read.
+- A12 PASS [live probes]: hub-first resolves on workbench; fake-root probes prove deepDive-shape -> `src/ddma/docs/episodes/` and standalone-shape -> `docs/episodes/` both resolve with plan present. Full pipeline NOT run (Gemini spend).
+- B1 PASS [suite]: TEST 22/23/24 added, standalone probe 3/3, full suite green.
+- B3 PASS [live probes + greps]: corrupt JSON -> ERROR + RuntimeError; corrupt settings -> ERROR + {}; zero bare `except:`; zero `small.en`.
+- B4 MECHANISM-PASS, endpoint-trigger PENDING USER RESTART: contract W4 = `render_longform_parallel.py` alone + section 4 notification spec; `notify_failure()` + 3 W3 wirings in code; live direct call wrote the NOTIFY line to stdout AND `dd_hub/logs/notifications.log`. :8000 was a stale pre-batch server (pid 13932, not restarted by agent); restart it, then re-POST `/compile-clip?id=episode_249&num=999` to see the trigger fire. `watcher.py` does not exist in tree (telemetry future).
+- C1 PASS [ffprobe]: 249-0 = 12.5 MB, h264 1080x1920 + aac, 149.85 s. No repo change.
+- C2 PASS with 2 deviations: (1) KEPT `render_longform_parallel.py` (beats_server.py:314 uses it; it is the Beats engine, not combine). (2) Removed dead combine UI + TEST 17 + docs-player export button/handler (they 500'd after endpoint removal); TEST 15/18 assert absence as removal guards. Grep `combine` (case-sensitive): zero in code + contract. Also renamed bare `combined` vars (substring hit) in the two clip-test files + `archetype_studio.py`.
+- C3 PASS [dry-run]: projects plans/transcripts/meta + scratch sources stage; no settings.json/audio/pycache/bak. Two fixes while verifying: anchored root `scratch/` -> `/scratch/` (was swallowing `ddma/scratch/`), removed dead demuxer whitelist line.
+- C4 REPORTED, no change: clip 0 (249) = intro card + Mosaic body + outro bridge, title "What Exactly Is Reality?". Open: full clip vs pure title card? User decides.
+- C5 PASS [browser]: beats header rebuilt on curator `.app-topbar` pattern; studio intact; no errors.
+- D1 NAMED-LINES PASS [browser: addr-pill `⚡ shutosha@primal.net`, pills `⚡ 100 | ⚡ 1k | ⚡ 10k`; live site loads `book-0c7842ec.js`, picks up fix on next mdbook build]. 4 residual literal `?` NOT fixed (need user glyph call): back button `>?</button>`, `Done ?`, `? Thank you!`, `Copied! ?` (both files).
+- Global: compile_scope 3/3, canonical_audio 2/2, clip0_title 2/2, mux_integrity 2/2, test_curator.js 100% PASS (TEST 15/18/20/21/22/23/24 all green). Suite ran against stale :8000 for serving; DOM/file asserts fully valid, behavioral paths unchanged by this batch (verified separately). No publish, no Mosaic spend, no commit/push.
+- Fan-out note: `ingest/lightning-widget.js` (new) + `scratch/test-env/test_compile_scope.py` must be added to the GEMINI.md Step-1 mirror list with this round (done in the fan-out commit).

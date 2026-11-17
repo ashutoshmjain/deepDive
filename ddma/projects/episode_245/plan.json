@@ -4,7 +4,7 @@
         "title": "What Exactly is Singularity",
         "start": 0,
         "end": 136.3,
-        "duration": 154.16,
+        "duration": 136.3,
         "bridge_text": [
             "So if a singularity isn't an infinitely heavy dot of literally nothingness, what is it?"
         ],
@@ -15,10 +15,10 @@
                 "duration": 0.32,
                 "crossfade": 1.3,
                 "volume": 1,
-                "trim_start": 0.8,
-                "trim_end": 2.4,
-                "fade_in": 1.6,
-                "fade_out": 10,
+                "trim_start": 1,
+                "trim_end": 3,
+                "fade_in": 2,
+                "fade_out": 11.5,
                 "start": 0.34,
                 "end": 0.66,
                 "text": "all  heard"
@@ -52,7 +52,7 @@
                 "volume": 1
             }
         ],
-        "locked": true,
+        "locked": false,
         "_caption_words": [
             {
                 "word": "We've",
@@ -2110,2661 +2110,2661 @@
                 "end": 143.92
             }
         ],
-        "_caption_words_sig": "93883e6c9e8520f9313d44000a75cb8f",
-        "rendered_duration": 154.16,
+        "_caption_words_sig": "c637ee388ec2f84c7ea30dd867f4016b",
+        "rendered_duration": 154.34,
         "audio_duration": 148.62,
-        "intro_offset": 1.5,
+        "intro_offset": 1.7,
         "outro_duration": 5.0,
         "source_start": 0,
         "source_end": 136.3,
         "caption_chunks": [
             {
-                "start": 1.5,
-                "end": 2.66,
+                "start": 1.7,
+                "end": 2.86,
                 "text": "we've all heard of it.",
                 "words": [
                     {
                         "word": "we've",
-                        "start": 1.5,
-                        "end": 1.84
+                        "start": 1.7,
+                        "end": 2.04
                     },
                     {
                         "word": "all",
-                        "start": 1.84,
-                        "end": 2.02
+                        "start": 2.04,
+                        "end": 2.22
                     },
                     {
                         "word": "heard",
-                        "start": 2.02,
-                        "end": 2.16
+                        "start": 2.22,
+                        "end": 2.36
                     },
                     {
                         "word": "of",
-                        "start": 2.16,
-                        "end": 2.66
+                        "start": 2.36,
+                        "end": 2.86
                     },
                     {
                         "word": "it.",
-                        "start": 2.66,
-                        "end": 2.7
+                        "start": 2.86,
+                        "end": 2.9
                     }
                 ]
             },
             {
-                "start": 2.66,
-                "end": 3.86,
+                "start": 2.86,
+                "end": 4.06,
                 "text": "you know, the cosmic end point,",
                 "words": [
                     {
                         "word": "you",
-                        "start": 2.66,
-                        "end": 2.74
+                        "start": 2.86,
+                        "end": 2.94
                     },
                     {
                         "word": "know,",
-                        "start": 2.74,
-                        "end": 2.9
+                        "start": 2.94,
+                        "end": 3.1
                     },
                     {
                         "word": "the",
-                        "start": 3.0,
-                        "end": 3.08
+                        "start": 3.2,
+                        "end": 3.28
                     },
                     {
                         "word": "cosmic",
-                        "start": 3.08,
-                        "end": 3.38
+                        "start": 3.28,
+                        "end": 3.58
                     },
                     {
                         "word": "end",
-                        "start": 3.38,
-                        "end": 3.64
+                        "start": 3.58,
+                        "end": 3.84
                     },
                     {
                         "word": "point,",
-                        "start": 3.64,
-                        "end": 3.84
+                        "start": 3.84,
+                        "end": 4.04
                     }
                 ]
             },
             {
-                "start": 3.86,
-                "end": 4.6,
+                "start": 4.06,
+                "end": 4.8,
                 "text": "the black holes,",
                 "words": [
                     {
                         "word": "the",
-                        "start": 3.86,
-                        "end": 4.04
+                        "start": 4.06,
+                        "end": 4.24
                     },
                     {
                         "word": "black",
-                        "start": 4.04,
-                        "end": 4.26
+                        "start": 4.24,
+                        "end": 4.46
                     },
                     {
                         "word": "holes,",
-                        "start": 4.26,
-                        "end": 4.5
+                        "start": 4.46,
+                        "end": 4.7
                     }
                 ]
             },
             {
-                "start": 4.6,
-                "end": 7.32,
+                "start": 4.8,
+                "end": 7.52,
                 "text": "dark secret. but today we are",
                 "words": [
                     {
                         "word": "dark",
-                        "start": 4.6,
-                        "end": 4.8
+                        "start": 4.8,
+                        "end": 5.0
                     },
                     {
                         "word": "secret.",
-                        "start": 4.8,
-                        "end": 5.28
+                        "start": 5.0,
+                        "end": 5.48
                     },
                     {
                         "word": "but",
-                        "start": 5.66,
-                        "end": 5.7
+                        "start": 5.86,
+                        "end": 5.9
                     },
                     {
                         "word": "today",
-                        "start": 5.66,
-                        "end": 6.14
+                        "start": 5.86,
+                        "end": 6.34
                     },
                     {
                         "word": "we",
-                        "start": 6.14,
-                        "end": 6.96
+                        "start": 6.34,
+                        "end": 7.16
                     },
                     {
                         "word": "are",
-                        "start": 6.96,
-                        "end": 7.32
+                        "start": 7.16,
+                        "end": 7.52
                     }
                 ]
             },
             {
-                "start": 7.32,
-                "end": 9.2,
+                "start": 7.52,
+                "end": 9.4,
                 "text": "tearing up the classical physics",
                 "words": [
                     {
                         "word": "tearing",
-                        "start": 7.32,
-                        "end": 7.74
+                        "start": 7.52,
+                        "end": 7.94
                     },
                     {
                         "word": "up",
-                        "start": 7.74,
-                        "end": 8.14
+                        "start": 7.94,
+                        "end": 8.34
                     },
                     {
                         "word": "the",
-                        "start": 8.14,
-                        "end": 8.38
+                        "start": 8.34,
+                        "end": 8.58
                     },
                     {
                         "word": "classical",
-                        "start": 8.38,
-                        "end": 8.92
+                        "start": 8.58,
+                        "end": 9.12
                     },
                     {
                         "word": "physics",
-                        "start": 8.92,
-                        "end": 9.2
+                        "start": 9.12,
+                        "end": 9.4
                     }
                 ]
             },
             {
-                "start": 9.2,
-                "end": 11.46,
+                "start": 9.4,
+                "end": 11.66,
                 "text": "playbook to ask one fundamental",
                 "words": [
                     {
                         "word": "playbook",
-                        "start": 9.2,
-                        "end": 9.62
+                        "start": 9.4,
+                        "end": 9.82
                     },
                     {
                         "word": "to",
-                        "start": 9.62,
-                        "end": 10.1
+                        "start": 9.82,
+                        "end": 10.3
                     },
                     {
                         "word": "ask",
-                        "start": 10.1,
-                        "end": 10.48
+                        "start": 10.3,
+                        "end": 10.68
                     },
                     {
                         "word": "one",
-                        "start": 10.48,
-                        "end": 11.1
+                        "start": 10.68,
+                        "end": 11.3
                     },
                     {
                         "word": "fundamental",
-                        "start": 11.1,
-                        "end": 11.46
+                        "start": 11.3,
+                        "end": 11.66
                     }
                 ]
             },
             {
-                "start": 11.46,
-                "end": 13.56,
+                "start": 11.66,
+                "end": 13.76,
                 "text": "question. yeah, because the paper",
                 "words": [
                     {
                         "word": "question.",
-                        "start": 11.46,
-                        "end": 12.22
+                        "start": 11.66,
+                        "end": 12.42
                     },
                     {
                         "word": "yeah,",
-                        "start": 12.84,
-                        "end": 12.88
+                        "start": 13.04,
+                        "end": 13.08
                     },
                     {
                         "word": "because",
-                        "start": 12.86,
-                        "end": 13.12
+                        "start": 13.06,
+                        "end": 13.32
                     },
                     {
                         "word": "the",
-                        "start": 13.12,
-                        "end": 13.38
+                        "start": 13.32,
+                        "end": 13.58
                     },
                     {
                         "word": "paper",
-                        "start": 13.38,
-                        "end": 13.56
+                        "start": 13.58,
+                        "end": 13.76
                     }
                 ]
             },
             {
-                "start": 13.56,
-                "end": 16.1,
+                "start": 13.76,
+                "end": 16.3,
                 "text": "we are unpacking today isn't just",
                 "words": [
                     {
                         "word": "we",
-                        "start": 13.56,
-                        "end": 13.74
+                        "start": 13.76,
+                        "end": 13.94
                     },
                     {
                         "word": "are",
-                        "start": 13.74,
-                        "end": 13.92
+                        "start": 13.94,
+                        "end": 14.12
                     },
                     {
                         "word": "unpacking",
-                        "start": 13.92,
-                        "end": 14.32
+                        "start": 14.12,
+                        "end": 14.52
                     },
                     {
                         "word": "today",
-                        "start": 14.32,
-                        "end": 14.96
+                        "start": 14.52,
+                        "end": 15.16
                     },
                     {
                         "word": "isn't",
-                        "start": 14.96,
-                        "end": 15.54
+                        "start": 15.16,
+                        "end": 15.74
                     },
                     {
                         "word": "just",
-                        "start": 15.54,
-                        "end": 16.1
+                        "start": 15.74,
+                        "end": 16.3
                     }
                 ]
             },
             {
-                "start": 16.1,
-                "end": 17.68,
+                "start": 16.3,
+                "end": 17.88,
                 "text": "some, well, it's not a minor",
                 "words": [
                     {
                         "word": "some,",
-                        "start": 16.1,
-                        "end": 16.48
+                        "start": 16.3,
+                        "end": 16.68
                     },
                     {
                         "word": "well,",
-                        "start": 16.54,
-                        "end": 16.76
+                        "start": 16.74,
+                        "end": 16.96
                     },
                     {
                         "word": "it's",
-                        "start": 16.76,
-                        "end": 16.94
+                        "start": 16.96,
+                        "end": 17.14
                     },
                     {
                         "word": "not",
-                        "start": 16.94,
-                        "end": 17.16
-                    },
-                    {
-                        "word": "a",
-                        "start": 17.16,
+                        "start": 17.14,
                         "end": 17.36
                     },
                     {
-                        "word": "minor",
+                        "word": "a",
                         "start": 17.36,
-                        "end": 17.68
+                        "end": 17.56
+                    },
+                    {
+                        "word": "minor",
+                        "start": 17.56,
+                        "end": 17.88
                     }
                 ]
             },
             {
-                "start": 17.68,
-                "end": 19.36,
+                "start": 17.88,
+                "end": 19.56,
                 "text": "addendum to the standard model.",
                 "words": [
                     {
                         "word": "addendum",
-                        "start": 17.68,
-                        "end": 18.14
+                        "start": 17.88,
+                        "end": 18.34
                     },
                     {
                         "word": "to",
-                        "start": 18.14,
-                        "end": 18.4
+                        "start": 18.34,
+                        "end": 18.6
                     },
                     {
                         "word": "the",
-                        "start": 18.4,
-                        "end": 18.58
+                        "start": 18.6,
+                        "end": 18.78
                     },
                     {
                         "word": "standard",
-                        "start": 18.58,
-                        "end": 18.92
+                        "start": 18.78,
+                        "end": 19.12
                     },
                     {
                         "word": "model.",
-                        "start": 18.92,
-                        "end": 19.36
+                        "start": 19.12,
+                        "end": 19.56
                     }
                 ]
             },
             {
-                "start": 19.36,
-                "end": 21.44,
+                "start": 19.56,
+                "end": 21.64,
                 "text": "yeah. it literally demands a",
                 "words": [
                     {
                         "word": "yeah.",
-                        "start": 19.36,
-                        "end": 19.74
+                        "start": 19.56,
+                        "end": 19.94
                     },
                     {
                         "word": "it",
-                        "start": 20.0,
-                        "end": 20.04
+                        "start": 20.2,
+                        "end": 20.24
                     },
                     {
                         "word": "literally",
-                        "start": 20.0,
-                        "end": 20.4
+                        "start": 20.2,
+                        "end": 20.6
                     },
                     {
                         "word": "demands",
-                        "start": 20.4,
-                        "end": 20.92
+                        "start": 20.6,
+                        "end": 21.12
                     },
                     {
                         "word": "a",
-                        "start": 20.92,
-                        "end": 21.44
+                        "start": 21.12,
+                        "end": 21.64
                     }
                 ]
             },
             {
-                "start": 21.44,
-                "end": 23.5,
+                "start": 21.64,
+                "end": 23.7,
                 "text": "complete reevaluation of reality",
                 "words": [
                     {
                         "word": "complete",
-                        "start": 21.44,
-                        "end": 21.94
+                        "start": 21.64,
+                        "end": 22.14
                     },
                     {
                         "word": "reevaluation",
-                        "start": 21.94,
-                        "end": 22.76
+                        "start": 22.14,
+                        "end": 22.96
                     },
                     {
                         "word": "of",
-                        "start": 22.76,
-                        "end": 23.06
+                        "start": 22.96,
+                        "end": 23.26
                     },
                     {
                         "word": "reality",
-                        "start": 23.06,
-                        "end": 23.5
+                        "start": 23.26,
+                        "end": 23.7
                     }
                 ]
             },
             {
-                "start": 23.5,
-                "end": 25.56,
+                "start": 23.7,
+                "end": 25.76,
                 "text": "itself, starting from the absolute",
                 "words": [
                     {
                         "word": "itself,",
-                        "start": 23.5,
-                        "end": 24.22
+                        "start": 23.7,
+                        "end": 24.42
                     },
                     {
                         "word": "starting",
-                        "start": 24.54,
-                        "end": 24.66
+                        "start": 24.74,
+                        "end": 24.86
                     },
                     {
                         "word": "from",
-                        "start": 24.66,
-                        "end": 25.0
-                    },
-                    {
-                        "word": "the",
-                        "start": 25.0,
+                        "start": 24.86,
                         "end": 25.2
                     },
                     {
-                        "word": "absolute",
+                        "word": "the",
                         "start": 25.2,
-                        "end": 25.56
+                        "end": 25.4
+                    },
+                    {
+                        "word": "absolute",
+                        "start": 25.4,
+                        "end": 25.76
                     }
                 ]
             },
             {
-                "start": 25.56,
-                "end": 34.8,
+                "start": 25.76,
+                "end": 35.0,
                 "text": "beginning. okay. so let's unpack",
                 "words": [
                     {
                         "word": "beginning.",
-                        "start": 25.56,
-                        "end": 25.98
+                        "start": 25.76,
+                        "end": 26.18
                     },
                     {
                         "word": "okay.",
-                        "start": 33.68,
-                        "end": 33.98
+                        "start": 33.88,
+                        "end": 34.18
                     },
                     {
                         "word": "so",
-                        "start": 34.04,
-                        "end": 34.22
+                        "start": 34.24,
+                        "end": 34.42
                     },
                     {
                         "word": "let's",
-                        "start": 34.22,
-                        "end": 34.52
+                        "start": 34.42,
+                        "end": 34.72
                     },
                     {
                         "word": "unpack",
-                        "start": 34.52,
-                        "end": 34.8
+                        "start": 34.72,
+                        "end": 35.0
                     }
                 ]
             },
             {
-                "start": 34.8,
-                "end": 35.88,
+                "start": 35.0,
+                "end": 36.08,
                 "text": "this right from the start.",
                 "words": [
                     {
                         "word": "this",
-                        "start": 34.8,
-                        "end": 35.0
+                        "start": 35.0,
+                        "end": 35.2
                     },
                     {
                         "word": "right",
-                        "start": 35.0,
-                        "end": 35.18
+                        "start": 35.2,
+                        "end": 35.38
                     },
                     {
                         "word": "from",
-                        "start": 35.18,
-                        "end": 35.34
+                        "start": 35.38,
+                        "end": 35.54
                     },
                     {
                         "word": "the",
-                        "start": 35.34,
-                        "end": 35.52
+                        "start": 35.54,
+                        "end": 35.72
                     },
                     {
                         "word": "start.",
-                        "start": 35.52,
-                        "end": 35.72
+                        "start": 35.72,
+                        "end": 35.92
                     }
                 ]
             },
             {
-                "start": 35.88,
-                "end": 36.96,
+                "start": 36.08,
+                "end": 37.16,
                 "text": "i want you,",
                 "words": [
                     {
                         "word": "i",
-                        "start": 35.88,
-                        "end": 35.92
+                        "start": 36.08,
+                        "end": 36.12
                     },
                     {
                         "word": "want",
-                        "start": 35.88,
-                        "end": 36.24
+                        "start": 36.08,
+                        "end": 36.44
                     },
                     {
                         "word": "you,",
-                        "start": 36.24,
-                        "end": 36.84
+                        "start": 36.44,
+                        "end": 37.04
                     }
                 ]
             },
             {
-                "start": 36.96,
-                "end": 38.88,
+                "start": 37.16,
+                "end": 39.08,
                 "text": "the listener, to hold this highly",
                 "words": [
                     {
                         "word": "the",
-                        "start": 36.96,
-                        "end": 37.08
+                        "start": 37.16,
+                        "end": 37.28
                     },
                     {
                         "word": "listener,",
-                        "start": 37.08,
-                        "end": 37.48
+                        "start": 37.28,
+                        "end": 37.68
                     },
                     {
                         "word": "to",
-                        "start": 37.86,
-                        "end": 38.02
+                        "start": 38.06,
+                        "end": 38.22
                     },
                     {
                         "word": "hold",
-                        "start": 38.02,
-                        "end": 38.26
+                        "start": 38.22,
+                        "end": 38.46
                     },
                     {
                         "word": "this",
-                        "start": 38.26,
-                        "end": 38.58
+                        "start": 38.46,
+                        "end": 38.78
                     },
                     {
                         "word": "highly",
-                        "start": 38.58,
-                        "end": 38.88
+                        "start": 38.78,
+                        "end": 39.08
                     }
                 ]
             },
             {
-                "start": 38.88,
-                "end": 40.38,
+                "start": 39.08,
+                "end": 40.58,
                 "text": "specific question in your mind",
                 "words": [
                     {
                         "word": "specific",
-                        "start": 38.88,
-                        "end": 39.4
+                        "start": 39.08,
+                        "end": 39.6
                     },
                     {
                         "word": "question",
-                        "start": 39.4,
-                        "end": 39.78
+                        "start": 39.6,
+                        "end": 39.98
                     },
                     {
                         "word": "in",
-                        "start": 39.78,
-                        "end": 39.92
+                        "start": 39.98,
+                        "end": 40.12
                     },
                     {
                         "word": "your",
-                        "start": 39.92,
-                        "end": 40.08
+                        "start": 40.12,
+                        "end": 40.28
                     },
                     {
                         "word": "mind",
-                        "start": 40.08,
-                        "end": 40.38
+                        "start": 40.28,
+                        "end": 40.58
                     }
                 ]
             },
             {
-                "start": 40.38,
-                "end": 41.84,
+                "start": 40.58,
+                "end": 42.04,
                 "text": "throughout our entire conversation",
                 "words": [
                     {
                         "word": "throughout",
-                        "start": 40.38,
-                        "end": 40.66
+                        "start": 40.58,
+                        "end": 40.86
                     },
                     {
                         "word": "our",
-                        "start": 40.66,
-                        "end": 40.9
+                        "start": 40.86,
+                        "end": 41.1
                     },
                     {
                         "word": "entire",
-                        "start": 40.9,
-                        "end": 41.32
+                        "start": 41.1,
+                        "end": 41.52
                     },
                     {
                         "word": "conversation",
-                        "start": 41.32,
-                        "end": 41.84
+                        "start": 41.52,
+                        "end": 42.04
                     }
                 ]
             },
             {
-                "start": 41.84,
-                "end": 43.52,
+                "start": 42.04,
+                "end": 43.72,
                 "text": "today. i am going to look",
                 "words": [
                     {
                         "word": "today.",
-                        "start": 41.84,
-                        "end": 42.48
+                        "start": 42.04,
+                        "end": 42.68
                     },
                     {
                         "word": "i",
-                        "start": 42.94,
-                        "end": 42.98
+                        "start": 43.14,
+                        "end": 43.18
                     },
                     {
                         "word": "am",
-                        "start": 42.94,
-                        "end": 43.08
+                        "start": 43.14,
+                        "end": 43.28
                     },
                     {
                         "word": "going",
-                        "start": 43.08,
-                        "end": 43.2
+                        "start": 43.28,
+                        "end": 43.4
                     },
                     {
                         "word": "to",
-                        "start": 43.2,
-                        "end": 43.24
+                        "start": 43.4,
+                        "end": 43.44
                     },
                     {
                         "word": "look",
-                        "start": 43.22,
-                        "end": 43.52
+                        "start": 43.42,
+                        "end": 43.72
                     }
                 ]
             },
             {
-                "start": 43.52,
-                "end": 44.92,
+                "start": 43.72,
+                "end": 45.12,
                 "text": "right into the metaphorical",
                 "words": [
                     {
                         "word": "right",
-                        "start": 43.52,
-                        "end": 43.92
-                    },
-                    {
-                        "word": "into",
-                        "start": 43.92,
+                        "start": 43.72,
                         "end": 44.12
                     },
                     {
-                        "word": "the",
+                        "word": "into",
                         "start": 44.12,
-                        "end": 44.48
+                        "end": 44.32
+                    },
+                    {
+                        "word": "the",
+                        "start": 44.32,
+                        "end": 44.68
                     },
                     {
                         "word": "metaphorical",
-                        "start": 44.48,
-                        "end": 44.92
+                        "start": 44.68,
+                        "end": 45.12
                     }
                 ]
             },
             {
-                "start": 44.92,
-                "end": 45.88,
+                "start": 45.12,
+                "end": 46.08,
                 "text": "camera, so to speak,",
                 "words": [
                     {
                         "word": "camera,",
-                        "start": 44.92,
-                        "end": 45.34
-                    },
-                    {
-                        "word": "so",
-                        "start": 45.46,
-                        "end": 45.5
-                    },
-                    {
-                        "word": "to",
-                        "start": 45.46,
+                        "start": 45.12,
                         "end": 45.54
                     },
                     {
+                        "word": "so",
+                        "start": 45.66,
+                        "end": 45.7
+                    },
+                    {
+                        "word": "to",
+                        "start": 45.66,
+                        "end": 45.74
+                    },
+                    {
                         "word": "speak,",
-                        "start": 45.54,
-                        "end": 45.88
+                        "start": 45.74,
+                        "end": 46.08
                     }
                 ]
             },
             {
-                "start": 45.88,
-                "end": 48.32,
+                "start": 46.08,
+                "end": 48.52,
                 "text": "and ask, what exactly is",
                 "words": [
                     {
                         "word": "and",
-                        "start": 45.88,
-                        "end": 46.1
+                        "start": 46.08,
+                        "end": 46.3
                     },
                     {
                         "word": "ask,",
-                        "start": 46.1,
-                        "end": 46.52
+                        "start": 46.3,
+                        "end": 46.72
                     },
                     {
                         "word": "what",
-                        "start": 47.16,
-                        "end": 47.32
+                        "start": 47.36,
+                        "end": 47.52
                     },
                     {
                         "word": "exactly",
-                        "start": 47.32,
-                        "end": 47.9
+                        "start": 47.52,
+                        "end": 48.1
                     },
                     {
                         "word": "is",
-                        "start": 47.9,
-                        "end": 48.32
+                        "start": 48.1,
+                        "end": 48.52
                     }
                 ]
             },
             {
-                "start": 48.32,
-                "end": 50.3,
+                "start": 48.52,
+                "end": 50.5,
                 "text": "singularity? setting that is the",
                 "words": [
                     {
                         "word": "singularity?",
-                        "start": 48.32,
-                        "end": 49.32
+                        "start": 48.52,
+                        "end": 49.52
                     },
                     {
                         "word": "setting",
-                        "start": 49.56,
-                        "end": 49.76
-                    },
-                    {
-                        "word": "that",
                         "start": 49.76,
                         "end": 49.96
                     },
                     {
-                        "word": "is",
+                        "word": "that",
                         "start": 49.96,
-                        "end": 50.1
+                        "end": 50.16
+                    },
+                    {
+                        "word": "is",
+                        "start": 50.16,
+                        "end": 50.3
                     },
                     {
                         "word": "the",
-                        "start": 50.1,
-                        "end": 50.3
+                        "start": 50.3,
+                        "end": 50.5
                     }
                 ]
             },
             {
-                "start": 50.3,
-                "end": 51.42,
+                "start": 50.5,
+                "end": 51.62,
                 "text": "anchor for our discussion.",
                 "words": [
                     {
                         "word": "anchor",
-                        "start": 50.3,
-                        "end": 50.5
+                        "start": 50.5,
+                        "end": 50.7
                     },
                     {
                         "word": "for",
-                        "start": 50.5,
-                        "end": 50.72
-                    },
-                    {
-                        "word": "our",
-                        "start": 50.72,
+                        "start": 50.7,
                         "end": 50.92
                     },
                     {
-                        "word": "discussion.",
+                        "word": "our",
                         "start": 50.92,
-                        "end": 51.2
+                        "end": 51.12
+                    },
+                    {
+                        "word": "discussion.",
+                        "start": 51.12,
+                        "end": 51.4
                     }
                 ]
             },
             {
-                "start": 51.42,
-                "end": 53.0,
+                "start": 51.62,
+                "end": 53.2,
                 "text": "it's just it's crucial because the",
                 "words": [
                     {
                         "word": "it's",
-                        "start": 51.42,
-                        "end": 51.7
+                        "start": 51.62,
+                        "end": 51.9
                     },
                     {
                         "word": "just",
-                        "start": 51.7,
-                        "end": 51.74
+                        "start": 51.9,
+                        "end": 51.94
                     },
                     {
                         "word": "it's",
-                        "start": 51.7,
-                        "end": 51.96
+                        "start": 51.9,
+                        "end": 52.16
                     },
                     {
                         "word": "crucial",
-                        "start": 51.96,
-                        "end": 52.3
+                        "start": 52.16,
+                        "end": 52.5
                     },
                     {
                         "word": "because",
-                        "start": 52.3,
-                        "end": 52.7
+                        "start": 52.5,
+                        "end": 52.9
                     },
                     {
                         "word": "the",
-                        "start": 52.7,
-                        "end": 53.0
+                        "start": 52.9,
+                        "end": 53.2
                     }
                 ]
             },
             {
-                "start": 53.0,
-                "end": 54.3,
+                "start": 53.2,
+                "end": 54.5,
                 "text": "definition of that one word",
                 "words": [
                     {
                         "word": "definition",
-                        "start": 53.0,
-                        "end": 53.24
+                        "start": 53.2,
+                        "end": 53.44
                     },
                     {
                         "word": "of",
-                        "start": 53.24,
-                        "end": 53.46
+                        "start": 53.44,
+                        "end": 53.66
                     },
                     {
                         "word": "that",
-                        "start": 53.46,
-                        "end": 53.68
+                        "start": 53.66,
+                        "end": 53.88
                     },
                     {
                         "word": "one",
-                        "start": 53.68,
-                        "end": 53.96
+                        "start": 53.88,
+                        "end": 54.16
                     },
                     {
                         "word": "word",
-                        "start": 53.96,
-                        "end": 54.3
+                        "start": 54.16,
+                        "end": 54.5
                     }
                 ]
             },
             {
-                "start": 54.3,
-                "end": 55.76,
+                "start": 54.5,
+                "end": 55.96,
                 "text": "dictates the entire architecture",
                 "words": [
                     {
                         "word": "dictates",
-                        "start": 54.3,
-                        "end": 54.6
+                        "start": 54.5,
+                        "end": 54.8
                     },
                     {
                         "word": "the",
-                        "start": 54.6,
-                        "end": 55.16
+                        "start": 54.8,
+                        "end": 55.36
                     },
                     {
                         "word": "entire",
-                        "start": 55.16,
-                        "end": 55.3
+                        "start": 55.36,
+                        "end": 55.5
                     },
                     {
                         "word": "architecture",
-                        "start": 55.3,
-                        "end": 55.76
+                        "start": 55.5,
+                        "end": 55.96
                     }
                 ]
             },
             {
-                "start": 55.76,
-                "end": 57.24,
+                "start": 55.96,
+                "end": 57.44,
                 "text": "of the cosmos.",
                 "words": [
                     {
                         "word": "of",
-                        "start": 55.76,
-                        "end": 56.0
+                        "start": 55.96,
+                        "end": 56.2
                     },
                     {
                         "word": "the",
-                        "start": 56.0,
-                        "end": 56.24
+                        "start": 56.2,
+                        "end": 56.44
                     },
                     {
                         "word": "cosmos.",
-                        "start": 56.24,
-                        "end": 56.44
+                        "start": 56.44,
+                        "end": 56.64
                     }
                 ]
             },
             {
-                "start": 57.24,
-                "end": 58.28,
+                "start": 57.44,
+                "end": 58.48,
                 "text": "right. in classical general",
                 "words": [
                     {
                         "word": "right.",
-                        "start": 57.24,
-                        "end": 57.28
+                        "start": 57.44,
+                        "end": 57.48
                     },
                     {
                         "word": "in",
-                        "start": 57.36,
-                        "end": 57.52
+                        "start": 57.56,
+                        "end": 57.72
                     },
                     {
                         "word": "classical",
-                        "start": 57.52,
-                        "end": 57.92
+                        "start": 57.72,
+                        "end": 58.12
                     },
                     {
                         "word": "general",
-                        "start": 57.92,
-                        "end": 58.28
+                        "start": 58.12,
+                        "end": 58.48
                     }
                 ]
             },
             {
-                "start": 58.28,
-                "end": 59.66,
+                "start": 58.48,
+                "end": 59.86,
                 "text": "relativity, we are taught to view",
                 "words": [
                     {
                         "word": "relativity,",
-                        "start": 58.28,
-                        "end": 58.72
+                        "start": 58.48,
+                        "end": 58.92
                     },
                     {
                         "word": "we",
-                        "start": 58.74,
-                        "end": 58.94
+                        "start": 58.94,
+                        "end": 59.14
                     },
                     {
                         "word": "are",
-                        "start": 58.94,
-                        "end": 59.12
-                    },
-                    {
-                        "word": "taught",
-                        "start": 59.12,
+                        "start": 59.14,
                         "end": 59.32
                     },
                     {
-                        "word": "to",
+                        "word": "taught",
                         "start": 59.32,
-                        "end": 59.48
+                        "end": 59.52
+                    },
+                    {
+                        "word": "to",
+                        "start": 59.52,
+                        "end": 59.68
                     },
                     {
                         "word": "view",
-                        "start": 59.48,
-                        "end": 59.66
+                        "start": 59.68,
+                        "end": 59.86
                     }
                 ]
             },
             {
-                "start": 59.66,
-                "end": 61.08,
+                "start": 59.86,
+                "end": 61.28,
                 "text": "the singularity as the strict",
                 "words": [
                     {
                         "word": "the",
-                        "start": 59.66,
-                        "end": 59.88
+                        "start": 59.86,
+                        "end": 60.08
                     },
                     {
                         "word": "singularity",
-                        "start": 59.88,
-                        "end": 60.4
+                        "start": 60.08,
+                        "end": 60.6
                     },
                     {
                         "word": "as",
-                        "start": 60.4,
-                        "end": 60.56
+                        "start": 60.6,
+                        "end": 60.76
                     },
                     {
                         "word": "the",
-                        "start": 60.56,
-                        "end": 60.84
+                        "start": 60.76,
+                        "end": 61.04
                     },
                     {
                         "word": "strict",
-                        "start": 60.84,
-                        "end": 61.08
+                        "start": 61.04,
+                        "end": 61.28
                     }
                 ]
             },
             {
-                "start": 61.08,
-                "end": 62.9,
+                "start": 61.28,
+                "end": 63.1,
                 "text": "boundary condition. it is the",
                 "words": [
                     {
                         "word": "boundary",
-                        "start": 61.08,
-                        "end": 61.4
+                        "start": 61.28,
+                        "end": 61.6
                     },
                     {
                         "word": "condition.",
-                        "start": 61.4,
-                        "end": 62.0
+                        "start": 61.6,
+                        "end": 62.2
                     },
                     {
                         "word": "it",
-                        "start": 62.0,
-                        "end": 62.46
-                    },
-                    {
-                        "word": "is",
-                        "start": 62.46,
+                        "start": 62.2,
                         "end": 62.66
                     },
                     {
-                        "word": "the",
+                        "word": "is",
                         "start": 62.66,
-                        "end": 62.9
+                        "end": 62.86
+                    },
+                    {
+                        "word": "the",
+                        "start": 62.86,
+                        "end": 63.1
                     }
                 ]
             },
             {
-                "start": 62.9,
-                "end": 64.12,
+                "start": 63.1,
+                "end": 64.32,
                 "text": "theoretical point at the center of",
                 "words": [
                     {
                         "word": "theoretical",
-                        "start": 62.9,
-                        "end": 63.14
+                        "start": 63.1,
+                        "end": 63.34
                     },
                     {
                         "word": "point",
-                        "start": 63.14,
-                        "end": 63.52
+                        "start": 63.34,
+                        "end": 63.72
                     },
                     {
                         "word": "at",
-                        "start": 63.52,
-                        "end": 63.74
+                        "start": 63.72,
+                        "end": 63.94
                     },
                     {
                         "word": "the",
-                        "start": 63.74,
-                        "end": 63.84
+                        "start": 63.94,
+                        "end": 64.04
                     },
                     {
                         "word": "center",
-                        "start": 63.84,
-                        "end": 63.92
+                        "start": 64.04,
+                        "end": 64.12
                     },
                     {
                         "word": "of",
-                        "start": 63.92,
-                        "end": 64.12
+                        "start": 64.12,
+                        "end": 64.32
                     }
                 ]
             },
             {
-                "start": 64.12,
-                "end": 66.0,
+                "start": 64.32,
+                "end": 66.2,
                 "text": "black hole or the origin of",
                 "words": [
                     {
                         "word": "black",
-                        "start": 64.12,
-                        "end": 64.36
+                        "start": 64.32,
+                        "end": 64.56
                     },
                     {
                         "word": "hole",
-                        "start": 64.36,
-                        "end": 64.64
+                        "start": 64.56,
+                        "end": 64.84
                     },
                     {
                         "word": "or",
-                        "start": 64.64,
-                        "end": 65.46
+                        "start": 64.84,
+                        "end": 65.66
                     },
                     {
                         "word": "the",
-                        "start": 65.46,
-                        "end": 65.64
-                    },
-                    {
-                        "word": "origin",
-                        "start": 65.64,
+                        "start": 65.66,
                         "end": 65.84
                     },
                     {
-                        "word": "of",
+                        "word": "origin",
                         "start": 65.84,
-                        "end": 66.0
+                        "end": 66.04
+                    },
+                    {
+                        "word": "of",
+                        "start": 66.04,
+                        "end": 66.2
                     }
                 ]
             },
             {
-                "start": 66.0,
-                "end": 67.96,
+                "start": 66.2,
+                "end": 68.16,
                 "text": "the big gang where the space",
                 "words": [
                     {
                         "word": "the",
-                        "start": 66.0,
-                        "end": 66.1
+                        "start": 66.2,
+                        "end": 66.3
                     },
                     {
                         "word": "big",
-                        "start": 66.1,
-                        "end": 66.28
+                        "start": 66.3,
+                        "end": 66.48
                     },
                     {
                         "word": "gang",
-                        "start": 66.28,
-                        "end": 66.66
+                        "start": 66.48,
+                        "end": 66.86
                     },
                     {
                         "word": "where",
-                        "start": 66.66,
-                        "end": 67.12
+                        "start": 66.86,
+                        "end": 67.32
                     },
                     {
                         "word": "the",
-                        "start": 67.12,
-                        "end": 67.66
+                        "start": 67.32,
+                        "end": 67.86
                     },
                     {
                         "word": "space",
-                        "start": 67.66,
-                        "end": 67.96
+                        "start": 67.86,
+                        "end": 68.16
                     }
                 ]
             },
             {
-                "start": 67.96,
-                "end": 70.0,
+                "start": 68.16,
+                "end": 70.2,
                 "text": "time metric tensor just completely",
                 "words": [
                     {
                         "word": "time",
-                        "start": 67.96,
-                        "end": 68.26
+                        "start": 68.16,
+                        "end": 68.46
                     },
                     {
                         "word": "metric",
-                        "start": 68.26,
-                        "end": 68.6
+                        "start": 68.46,
+                        "end": 68.8
                     },
                     {
                         "word": "tensor",
-                        "start": 68.6,
-                        "end": 69.1
+                        "start": 68.8,
+                        "end": 69.3
                     },
                     {
                         "word": "just",
-                        "start": 69.1,
-                        "end": 69.4
+                        "start": 69.3,
+                        "end": 69.6
                     },
                     {
                         "word": "completely",
-                        "start": 69.4,
-                        "end": 70.0
+                        "start": 69.6,
+                        "end": 70.2
                     }
                 ]
             },
             {
-                "start": 70.0,
-                "end": 71.46,
+                "start": 70.2,
+                "end": 71.66,
                 "text": "diverges. okay. but what does that",
                 "words": [
                     {
                         "word": "diverges.",
-                        "start": 70.0,
-                        "end": 70.66
+                        "start": 70.2,
+                        "end": 70.86
                     },
                     {
                         "word": "okay.",
-                        "start": 70.88,
-                        "end": 70.92
-                    },
-                    {
-                        "word": "but",
                         "start": 71.08,
                         "end": 71.12
                     },
                     {
+                        "word": "but",
+                        "start": 71.28,
+                        "end": 71.32
+                    },
+                    {
                         "word": "what",
-                        "start": 71.08,
-                        "end": 71.18
+                        "start": 71.28,
+                        "end": 71.38
                     },
                     {
                         "word": "does",
-                        "start": 71.18,
-                        "end": 71.3
+                        "start": 71.38,
+                        "end": 71.5
                     },
                     {
                         "word": "that",
-                        "start": 71.3,
-                        "end": 71.46
+                        "start": 71.5,
+                        "end": 71.66
                     }
                 ]
             },
             {
-                "start": 71.46,
-                "end": 73.18,
+                "start": 71.66,
+                "end": 73.38,
                 "text": "actually mean in plain english?",
                 "words": [
                     {
                         "word": "actually",
-                        "start": 71.46,
-                        "end": 71.76
+                        "start": 71.66,
+                        "end": 71.96
                     },
                     {
                         "word": "mean",
-                        "start": 71.76,
-                        "end": 72.04
+                        "start": 71.96,
+                        "end": 72.24
                     },
                     {
                         "word": "in",
-                        "start": 72.04,
-                        "end": 72.2
-                    },
-                    {
-                        "word": "plain",
-                        "start": 72.2,
+                        "start": 72.24,
                         "end": 72.4
                     },
                     {
-                        "word": "english?",
+                        "word": "plain",
                         "start": 72.4,
-                        "end": 72.84
+                        "end": 72.6
+                    },
+                    {
+                        "word": "english?",
+                        "start": 72.6,
+                        "end": 73.04
                     }
                 ]
             },
             {
-                "start": 73.18,
-                "end": 74.64,
+                "start": 73.38,
+                "end": 74.84,
                 "text": "well, the classical math results",
                 "words": [
                     {
                         "word": "well,",
-                        "start": 73.18,
-                        "end": 73.34
+                        "start": 73.38,
+                        "end": 73.54
                     },
                     {
                         "word": "the",
-                        "start": 73.44,
-                        "end": 73.56
+                        "start": 73.64,
+                        "end": 73.76
                     },
                     {
                         "word": "classical",
-                        "start": 73.56,
-                        "end": 73.94
+                        "start": 73.76,
+                        "end": 74.14
                     },
                     {
                         "word": "math",
-                        "start": 73.94,
-                        "end": 74.3
+                        "start": 74.14,
+                        "end": 74.5
                     },
                     {
                         "word": "results",
-                        "start": 74.3,
-                        "end": 74.64
+                        "start": 74.5,
+                        "end": 74.84
                     }
                 ]
             },
             {
-                "start": 74.64,
-                "end": 76.68,
+                "start": 74.84,
+                "end": 76.88,
                 "text": "in infinite scalar curvature,",
                 "words": [
                     {
                         "word": "in",
-                        "start": 74.64,
-                        "end": 75.16
+                        "start": 74.84,
+                        "end": 75.36
                     },
                     {
                         "word": "infinite",
-                        "start": 75.16,
-                        "end": 75.5
+                        "start": 75.36,
+                        "end": 75.7
                     },
                     {
                         "word": "scalar",
-                        "start": 75.5,
-                        "end": 75.9
+                        "start": 75.7,
+                        "end": 76.1
                     },
                     {
                         "word": "curvature,",
-                        "start": 75.9,
-                        "end": 76.6
+                        "start": 76.1,
+                        "end": 76.8
                     }
                 ]
             },
             {
-                "start": 76.68,
-                "end": 78.28,
+                "start": 76.88,
+                "end": 78.48,
                 "text": "meaning you have infinite physical",
                 "words": [
                     {
                         "word": "meaning",
-                        "start": 76.68,
-                        "end": 77.06
+                        "start": 76.88,
+                        "end": 77.26
                     },
                     {
                         "word": "you",
-                        "start": 77.06,
-                        "end": 77.22
+                        "start": 77.26,
+                        "end": 77.42
                     },
                     {
                         "word": "have",
-                        "start": 77.22,
-                        "end": 77.64
+                        "start": 77.42,
+                        "end": 77.84
                     },
                     {
                         "word": "infinite",
-                        "start": 77.64,
-                        "end": 77.92
+                        "start": 77.84,
+                        "end": 78.12
                     },
                     {
                         "word": "physical",
-                        "start": 77.92,
-                        "end": 78.28
+                        "start": 78.12,
+                        "end": 78.48
                     }
                 ]
             },
             {
-                "start": 78.28,
-                "end": 80.24,
+                "start": 78.48,
+                "end": 80.44,
                 "text": "density and the spatial volume",
                 "words": [
                     {
                         "word": "density",
-                        "start": 78.28,
-                        "end": 78.66
+                        "start": 78.48,
+                        "end": 78.86
                     },
                     {
                         "word": "and",
-                        "start": 78.66,
-                        "end": 79.26
+                        "start": 78.86,
+                        "end": 79.46
                     },
                     {
                         "word": "the",
-                        "start": 79.26,
-                        "end": 79.5
+                        "start": 79.46,
+                        "end": 79.7
                     },
                     {
                         "word": "spatial",
-                        "start": 79.5,
-                        "end": 79.8
+                        "start": 79.7,
+                        "end": 80.0
                     },
                     {
                         "word": "volume",
-                        "start": 79.8,
-                        "end": 80.24
+                        "start": 80.0,
+                        "end": 80.44
                     }
                 ]
             },
             {
-                "start": 80.24,
-                "end": 82.54,
+                "start": 80.44,
+                "end": 82.74,
                 "text": "collapses down to absolute zero.",
                 "words": [
                     {
                         "word": "collapses",
-                        "start": 80.24,
-                        "end": 80.62
+                        "start": 80.44,
+                        "end": 80.82
                     },
                     {
                         "word": "down",
-                        "start": 80.62,
-                        "end": 81.02
+                        "start": 80.82,
+                        "end": 81.22
                     },
                     {
                         "word": "to",
-                        "start": 81.02,
-                        "end": 81.86
+                        "start": 81.22,
+                        "end": 82.06
                     },
                     {
                         "word": "absolute",
-                        "start": 81.86,
-                        "end": 81.9
+                        "start": 82.06,
+                        "end": 82.1
                     },
                     {
                         "word": "zero.",
-                        "start": 81.86,
-                        "end": 82.5
+                        "start": 82.06,
+                        "end": 82.7
                     }
                 ]
             },
             {
-                "start": 82.54,
-                "end": 83.6,
+                "start": 82.74,
+                "end": 83.8,
                 "text": "wait, i need to push back",
                 "words": [
                     {
                         "word": "wait,",
-                        "start": 82.54,
-                        "end": 82.78
+                        "start": 82.74,
+                        "end": 82.98
                     },
                     {
                         "word": "i",
-                        "start": 82.78,
-                        "end": 82.96
+                        "start": 82.98,
+                        "end": 83.16
                     },
                     {
                         "word": "need",
-                        "start": 82.96,
-                        "end": 83.12
+                        "start": 83.16,
+                        "end": 83.32
                     },
                     {
                         "word": "to",
-                        "start": 83.12,
-                        "end": 83.22
+                        "start": 83.32,
+                        "end": 83.42
                     },
                     {
                         "word": "push",
-                        "start": 83.22,
-                        "end": 83.38
+                        "start": 83.42,
+                        "end": 83.58
                     },
                     {
                         "word": "back",
-                        "start": 83.38,
-                        "end": 83.6
+                        "start": 83.58,
+                        "end": 83.8
                     }
                 ]
             },
             {
-                "start": 83.6,
-                "end": 85.12,
+                "start": 83.8,
+                "end": 85.32,
                 "text": "on that immediately because that",
                 "words": [
                     {
                         "word": "on",
-                        "start": 83.6,
-                        "end": 83.72
+                        "start": 83.8,
+                        "end": 83.92
                     },
                     {
                         "word": "that",
-                        "start": 83.72,
-                        "end": 83.86
+                        "start": 83.92,
+                        "end": 84.06
                     },
                     {
                         "word": "immediately",
-                        "start": 83.86,
-                        "end": 84.18
+                        "start": 84.06,
+                        "end": 84.38
                     },
                     {
                         "word": "because",
-                        "start": 84.18,
-                        "end": 84.76
+                        "start": 84.38,
+                        "end": 84.96
                     },
                     {
                         "word": "that",
-                        "start": 84.76,
-                        "end": 85.12
+                        "start": 84.96,
+                        "end": 85.32
                     }
                 ]
             },
             {
-                "start": 85.12,
-                "end": 86.06,
+                "start": 85.32,
+                "end": 86.26,
                 "text": "sounds like a,",
                 "words": [
                     {
                         "word": "sounds",
-                        "start": 85.12,
-                        "end": 85.4
+                        "start": 85.32,
+                        "end": 85.6
                     },
                     {
                         "word": "like",
-                        "start": 85.4,
-                        "end": 86.06
+                        "start": 85.6,
+                        "end": 86.26
                     },
                     {
                         "word": "a,",
-                        "start": 86.06,
-                        "end": 86.1
+                        "start": 86.26,
+                        "end": 86.3
                     }
                 ]
             },
             {
-                "start": 86.06,
-                "end": 87.2,
+                "start": 86.26,
+                "end": 87.4,
                 "text": "like a glitch in a video",
                 "words": [
                     {
                         "word": "like",
-                        "start": 86.06,
-                        "end": 86.42
+                        "start": 86.26,
+                        "end": 86.62
                     },
                     {
                         "word": "a",
-                        "start": 86.42,
-                        "end": 86.56
+                        "start": 86.62,
+                        "end": 86.76
                     },
                     {
                         "word": "glitch",
-                        "start": 86.56,
-                        "end": 86.74
+                        "start": 86.76,
+                        "end": 86.94
                     },
                     {
                         "word": "in",
-                        "start": 86.74,
-                        "end": 86.92
+                        "start": 86.94,
+                        "end": 87.12
                     },
                     {
                         "word": "a",
-                        "start": 86.92,
-                        "end": 87.04
+                        "start": 87.12,
+                        "end": 87.24
                     },
                     {
                         "word": "video",
-                        "start": 87.04,
-                        "end": 87.2
+                        "start": 87.24,
+                        "end": 87.4
                     }
                 ]
             },
             {
-                "start": 87.2,
-                "end": 88.82,
+                "start": 87.4,
+                "end": 89.02,
                 "text": "game, not physical reality.",
                 "words": [
                     {
                         "word": "game,",
-                        "start": 87.2,
-                        "end": 87.5
+                        "start": 87.4,
+                        "end": 87.7
                     },
                     {
                         "word": "not",
-                        "start": 87.54,
-                        "end": 87.78
+                        "start": 87.74,
+                        "end": 87.98
                     },
                     {
                         "word": "physical",
-                        "start": 87.78,
-                        "end": 88.12
+                        "start": 87.98,
+                        "end": 88.32
                     },
                     {
                         "word": "reality.",
-                        "start": 88.12,
-                        "end": 88.78
+                        "start": 88.32,
+                        "end": 88.98
                     }
                 ]
             },
             {
-                "start": 88.82,
-                "end": 90.3,
+                "start": 89.02,
+                "end": 90.5,
                 "text": "you're saying classical physics",
                 "words": [
                     {
                         "word": "you're",
-                        "start": 88.82,
-                        "end": 89.12
+                        "start": 89.02,
+                        "end": 89.32
                     },
                     {
                         "word": "saying",
-                        "start": 89.12,
-                        "end": 89.34
+                        "start": 89.32,
+                        "end": 89.54
                     },
                     {
                         "word": "classical",
-                        "start": 89.34,
-                        "end": 89.8
+                        "start": 89.54,
+                        "end": 90.0
                     },
                     {
                         "word": "physics",
-                        "start": 89.8,
-                        "end": 90.3
+                        "start": 90.0,
+                        "end": 90.5
                     }
                 ]
             },
             {
-                "start": 90.3,
-                "end": 91.58,
+                "start": 90.5,
+                "end": 91.78,
                 "text": "asks us to believe that we",
                 "words": [
                     {
                         "word": "asks",
-                        "start": 90.3,
-                        "end": 90.66
+                        "start": 90.5,
+                        "end": 90.86
                     },
                     {
                         "word": "us",
-                        "start": 90.66,
-                        "end": 90.84
+                        "start": 90.86,
+                        "end": 91.04
                     },
                     {
                         "word": "to",
-                        "start": 90.84,
-                        "end": 91.0
+                        "start": 91.04,
+                        "end": 91.2
                     },
                     {
                         "word": "believe",
-                        "start": 91.0,
-                        "end": 91.28
+                        "start": 91.2,
+                        "end": 91.48
                     },
                     {
                         "word": "that",
-                        "start": 91.28,
-                        "end": 91.46
+                        "start": 91.48,
+                        "end": 91.66
                     },
                     {
                         "word": "we",
-                        "start": 91.46,
-                        "end": 91.58
+                        "start": 91.66,
+                        "end": 91.78
                     }
                 ]
             },
             {
-                "start": 91.58,
-                "end": 94.18,
+                "start": 91.78,
+                "end": 94.38,
                 "text": "have infinite matter literally an",
                 "words": [
                     {
                         "word": "have",
-                        "start": 91.58,
-                        "end": 92.02
+                        "start": 91.78,
+                        "end": 92.22
                     },
                     {
                         "word": "infinite",
-                        "start": 92.02,
-                        "end": 92.8
+                        "start": 92.22,
+                        "end": 93.0
                     },
                     {
                         "word": "matter",
-                        "start": 92.8,
-                        "end": 93.14
+                        "start": 93.0,
+                        "end": 93.34
                     },
                     {
                         "word": "literally",
-                        "start": 93.14,
-                        "end": 93.74
+                        "start": 93.34,
+                        "end": 93.94
                     },
                     {
                         "word": "an",
-                        "start": 93.74,
-                        "end": 94.18
+                        "start": 93.94,
+                        "end": 94.38
                     }
                 ]
             },
             {
-                "start": 94.18,
-                "end": 96.08,
+                "start": 94.38,
+                "end": 96.28,
                 "text": "endless amount of physical stuff",
                 "words": [
                     {
                         "word": "endless",
-                        "start": 94.18,
-                        "end": 94.5
+                        "start": 94.38,
+                        "end": 94.7
                     },
                     {
                         "word": "amount",
-                        "start": 94.5,
-                        "end": 94.84
-                    },
-                    {
-                        "word": "of",
-                        "start": 94.84,
+                        "start": 94.7,
                         "end": 95.04
                     },
                     {
-                        "word": "physical",
+                        "word": "of",
                         "start": 95.04,
-                        "end": 95.32
+                        "end": 95.24
+                    },
+                    {
+                        "word": "physical",
+                        "start": 95.24,
+                        "end": 95.52
                     },
                     {
                         "word": "stuff",
-                        "start": 95.32,
-                        "end": 96.08
+                        "start": 95.52,
+                        "end": 96.28
                     }
                 ]
             },
             {
-                "start": 96.08,
-                "end": 98.56,
+                "start": 96.28,
+                "end": 98.76,
                 "text": "crammed into exactly zero space.",
                 "words": [
                     {
                         "word": "crammed",
-                        "start": 96.08,
-                        "end": 96.38
+                        "start": 96.28,
+                        "end": 96.58
                     },
                     {
                         "word": "into",
-                        "start": 96.38,
-                        "end": 96.82
+                        "start": 96.58,
+                        "end": 97.02
                     },
                     {
                         "word": "exactly",
-                        "start": 96.82,
-                        "end": 97.52
+                        "start": 97.02,
+                        "end": 97.72
                     },
                     {
                         "word": "zero",
-                        "start": 97.52,
-                        "end": 98.04
+                        "start": 97.72,
+                        "end": 98.24
                     },
                     {
                         "word": "space.",
-                        "start": 98.04,
-                        "end": 98.54
+                        "start": 98.24,
+                        "end": 98.74
                     }
                 ]
             },
             {
-                "start": 98.56,
-                "end": 100.64,
+                "start": 98.76,
+                "end": 100.84,
                 "text": "exactly. doesn't that break the",
                 "words": [
                     {
                         "word": "exactly.",
-                        "start": 98.56,
-                        "end": 98.84
+                        "start": 98.76,
+                        "end": 99.04
                     },
                     {
                         "word": "doesn't",
-                        "start": 99.06,
-                        "end": 99.38
+                        "start": 99.26,
+                        "end": 99.58
                     },
                     {
                         "word": "that",
-                        "start": 99.38,
-                        "end": 99.64
+                        "start": 99.58,
+                        "end": 99.84
                     },
                     {
                         "word": "break",
-                        "start": 99.64,
-                        "end": 100.2
+                        "start": 99.84,
+                        "end": 100.4
                     },
                     {
                         "word": "the",
-                        "start": 100.2,
-                        "end": 100.64
+                        "start": 100.4,
+                        "end": 100.84
                     }
                 ]
             },
             {
-                "start": 100.64,
-                "end": 102.5,
+                "start": 100.84,
+                "end": 102.7,
                 "text": "very laws of physics we rely",
                 "words": [
                     {
                         "word": "very",
-                        "start": 100.64,
-                        "end": 101.02
+                        "start": 100.84,
+                        "end": 101.22
                     },
                     {
                         "word": "laws",
-                        "start": 101.02,
-                        "end": 101.42
+                        "start": 101.22,
+                        "end": 101.62
                     },
                     {
                         "word": "of",
-                        "start": 101.42,
-                        "end": 101.72
+                        "start": 101.62,
+                        "end": 101.92
                     },
                     {
                         "word": "physics",
-                        "start": 101.72,
-                        "end": 101.96
+                        "start": 101.92,
+                        "end": 102.16
                     },
                     {
                         "word": "we",
-                        "start": 101.96,
-                        "end": 102.26
+                        "start": 102.16,
+                        "end": 102.46
                     },
                     {
                         "word": "rely",
-                        "start": 102.26,
-                        "end": 102.5
+                        "start": 102.46,
+                        "end": 102.7
                     }
                 ]
             },
             {
-                "start": 102.5,
-                "end": 104.32,
+                "start": 102.7,
+                "end": 104.52,
                 "text": "on every single day?",
                 "words": [
                     {
                         "word": "on",
-                        "start": 102.5,
-                        "end": 102.92
+                        "start": 102.7,
+                        "end": 103.12
                     },
                     {
                         "word": "every",
-                        "start": 102.92,
-                        "end": 103.36
+                        "start": 103.12,
+                        "end": 103.56
                     },
                     {
                         "word": "single",
-                        "start": 103.36,
-                        "end": 103.66
+                        "start": 103.56,
+                        "end": 103.86
                     },
                     {
                         "word": "day?",
-                        "start": 103.66,
-                        "end": 103.9
+                        "start": 103.86,
+                        "end": 104.1
                     }
                 ]
             },
             {
-                "start": 104.32,
-                "end": 105.52,
+                "start": 104.52,
+                "end": 105.72,
                 "text": "it completely breaks them.",
                 "words": [
                     {
                         "word": "it",
-                        "start": 104.32,
-                        "end": 104.36
+                        "start": 104.52,
+                        "end": 104.56
                     },
                     {
                         "word": "completely",
-                        "start": 104.32,
-                        "end": 104.76
+                        "start": 104.52,
+                        "end": 104.96
                     },
                     {
                         "word": "breaks",
-                        "start": 104.76,
-                        "end": 105.14
+                        "start": 104.96,
+                        "end": 105.34
                     },
                     {
                         "word": "them.",
-                        "start": 105.14,
-                        "end": 105.52
+                        "start": 105.34,
+                        "end": 105.72
                     }
                 ]
             },
             {
-                "start": 105.52,
-                "end": 106.92,
+                "start": 105.72,
+                "end": 107.12,
                 "text": "and the paradox you are pointing",
                 "words": [
                     {
                         "word": "and",
-                        "start": 105.52,
-                        "end": 105.92
+                        "start": 105.72,
+                        "end": 106.12
                     },
                     {
                         "word": "the",
-                        "start": 105.92,
-                        "end": 106.18
-                    },
-                    {
-                        "word": "paradox",
-                        "start": 106.18,
+                        "start": 106.12,
                         "end": 106.38
                     },
                     {
-                        "word": "you",
+                        "word": "paradox",
                         "start": 106.38,
-                        "end": 106.62
+                        "end": 106.58
+                    },
+                    {
+                        "word": "you",
+                        "start": 106.58,
+                        "end": 106.82
                     },
                     {
                         "word": "are",
-                        "start": 106.62,
-                        "end": 106.76
+                        "start": 106.82,
+                        "end": 106.96
                     },
                     {
                         "word": "pointing",
-                        "start": 106.76,
-                        "end": 106.92
+                        "start": 106.96,
+                        "end": 107.12
                     }
                 ]
             },
             {
-                "start": 106.92,
-                "end": 108.92,
+                "start": 107.12,
+                "end": 109.12,
                 "text": "out is the exact reason this",
                 "words": [
                     {
                         "word": "out",
-                        "start": 106.92,
-                        "end": 107.18
+                        "start": 107.12,
+                        "end": 107.38
                     },
                     {
                         "word": "is",
-                        "start": 107.18,
-                        "end": 107.42
+                        "start": 107.38,
+                        "end": 107.62
                     },
                     {
                         "word": "the",
-                        "start": 107.42,
-                        "end": 107.74
+                        "start": 107.62,
+                        "end": 107.94
                     },
                     {
                         "word": "exact",
-                        "start": 107.74,
-                        "end": 108.24
+                        "start": 107.94,
+                        "end": 108.44
                     },
                     {
                         "word": "reason",
-                        "start": 108.24,
-                        "end": 108.56
+                        "start": 108.44,
+                        "end": 108.76
                     },
                     {
                         "word": "this",
-                        "start": 108.56,
-                        "end": 108.92
+                        "start": 108.76,
+                        "end": 109.12
                     }
                 ]
             },
             {
-                "start": 108.92,
-                "end": 110.68,
+                "start": 109.12,
+                "end": 110.88,
                 "text": "new white paper exists.",
                 "words": [
                     {
                         "word": "new",
-                        "start": 108.92,
-                        "end": 109.14
+                        "start": 109.12,
+                        "end": 109.34
                     },
                     {
                         "word": "white",
-                        "start": 109.14,
-                        "end": 109.36
+                        "start": 109.34,
+                        "end": 109.56
                     },
                     {
                         "word": "paper",
-                        "start": 109.36,
-                        "end": 109.62
+                        "start": 109.56,
+                        "end": 109.82
                     },
                     {
                         "word": "exists.",
-                        "start": 109.62,
-                        "end": 110.18
+                        "start": 109.82,
+                        "end": 110.38
                     }
                 ]
             },
             {
-                "start": 110.68,
-                "end": 111.84,
+                "start": 110.88,
+                "end": 112.04,
                 "text": "that classical definition",
                 "words": [
                     {
                         "word": "that",
-                        "start": 110.68,
-                        "end": 111.0
+                        "start": 110.88,
+                        "end": 111.2
                     },
                     {
                         "word": "classical",
-                        "start": 111.0,
-                        "end": 111.38
+                        "start": 111.2,
+                        "end": 111.58
                     },
                     {
                         "word": "definition",
-                        "start": 111.38,
-                        "end": 111.84
+                        "start": 111.58,
+                        "end": 112.04
                     }
                 ]
             },
             {
-                "start": 111.84,
-                "end": 114.12,
+                "start": 112.04,
+                "end": 114.32,
                 "text": "yields mathematically intractable",
                 "words": [
                     {
                         "word": "yields",
-                        "start": 111.84,
-                        "end": 112.5
+                        "start": 112.04,
+                        "end": 112.7
                     },
                     {
                         "word": "mathematically",
-                        "start": 112.5,
-                        "end": 113.28
+                        "start": 112.7,
+                        "end": 113.48
                     },
                     {
                         "word": "intractable",
-                        "start": 113.28,
-                        "end": 114.12
+                        "start": 113.48,
+                        "end": 114.32
                     }
                 ]
             },
             {
-                "start": 114.12,
-                "end": 115.74,
+                "start": 114.32,
+                "end": 115.94,
                 "text": "infinities. so the matches blows",
                 "words": [
                     {
                         "word": "infinities.",
-                        "start": 114.12,
-                        "end": 114.72
+                        "start": 114.32,
+                        "end": 114.92
                     },
                     {
                         "word": "so",
-                        "start": 114.82,
-                        "end": 115.04
+                        "start": 115.02,
+                        "end": 115.24
                     },
                     {
                         "word": "the",
-                        "start": 115.04,
-                        "end": 115.16
+                        "start": 115.24,
+                        "end": 115.36
                     },
                     {
                         "word": "matches",
-                        "start": 115.16,
-                        "end": 115.42
+                        "start": 115.36,
+                        "end": 115.62
                     },
                     {
                         "word": "blows",
-                        "start": 115.42,
-                        "end": 115.74
+                        "start": 115.62,
+                        "end": 115.94
                     }
                 ]
             },
             {
-                "start": 115.74,
-                "end": 117.18,
+                "start": 115.94,
+                "end": 117.38,
                 "text": "up. right. when you try to",
                 "words": [
                     {
                         "word": "up.",
-                        "start": 115.74,
-                        "end": 115.94
+                        "start": 115.94,
+                        "end": 116.14
                     },
                     {
                         "word": "right.",
-                        "start": 115.94,
-                        "end": 116.3
+                        "start": 116.14,
+                        "end": 116.5
                     },
                     {
                         "word": "when",
-                        "start": 116.52,
-                        "end": 116.7
+                        "start": 116.72,
+                        "end": 116.9
                     },
                     {
                         "word": "you",
-                        "start": 116.7,
-                        "end": 116.88
+                        "start": 116.9,
+                        "end": 117.08
                     },
                     {
                         "word": "try",
-                        "start": 116.88,
-                        "end": 117.04
+                        "start": 117.08,
+                        "end": 117.24
                     },
                     {
                         "word": "to",
-                        "start": 117.04,
-                        "end": 117.18
+                        "start": 117.24,
+                        "end": 117.38
                     }
                 ]
             },
             {
-                "start": 117.18,
-                "end": 118.74,
+                "start": 117.38,
+                "end": 118.94,
                 "text": "cram infinite density into zero",
                 "words": [
                     {
                         "word": "cram",
-                        "start": 117.18,
-                        "end": 117.38
+                        "start": 117.38,
+                        "end": 117.58
                     },
                     {
                         "word": "infinite",
-                        "start": 117.38,
-                        "end": 117.74
+                        "start": 117.58,
+                        "end": 117.94
                     },
                     {
                         "word": "density",
-                        "start": 117.74,
-                        "end": 118.1
+                        "start": 117.94,
+                        "end": 118.3
                     },
                     {
                         "word": "into",
-                        "start": 118.1,
-                        "end": 118.4
+                        "start": 118.3,
+                        "end": 118.6
                     },
                     {
                         "word": "zero",
-                        "start": 118.4,
-                        "end": 118.74
+                        "start": 118.6,
+                        "end": 118.94
                     }
                 ]
             },
             {
-                "start": 118.74,
-                "end": 120.4,
+                "start": 118.94,
+                "end": 120.6,
                 "text": "volume, quantum field theory just",
                 "words": [
                     {
                         "word": "volume,",
-                        "start": 118.74,
-                        "end": 119.24
+                        "start": 118.94,
+                        "end": 119.44
                     },
                     {
                         "word": "quantum",
-                        "start": 119.58,
-                        "end": 119.62
+                        "start": 119.78,
+                        "end": 119.82
                     },
                     {
                         "word": "field",
-                        "start": 119.58,
-                        "end": 120.04
+                        "start": 119.78,
+                        "end": 120.24
                     },
                     {
                         "word": "theory",
-                        "start": 120.04,
-                        "end": 120.26
+                        "start": 120.24,
+                        "end": 120.46
                     },
                     {
                         "word": "just",
-                        "start": 120.26,
-                        "end": 120.4
+                        "start": 120.46,
+                        "end": 120.6
                     }
                 ]
             },
             {
-                "start": 120.4,
-                "end": 122.08,
+                "start": 120.6,
+                "end": 122.28,
                 "text": "completely breaks down and loses",
                 "words": [
                     {
                         "word": "completely",
-                        "start": 120.4,
-                        "end": 120.98
+                        "start": 120.6,
+                        "end": 121.18
                     },
                     {
                         "word": "breaks",
-                        "start": 120.98,
-                        "end": 121.28
+                        "start": 121.18,
+                        "end": 121.48
                     },
                     {
                         "word": "down",
-                        "start": 121.28,
-                        "end": 121.52
+                        "start": 121.48,
+                        "end": 121.72
                     },
                     {
                         "word": "and",
-                        "start": 121.52,
-                        "end": 121.78
+                        "start": 121.72,
+                        "end": 121.98
                     },
                     {
                         "word": "loses",
-                        "start": 121.78,
-                        "end": 122.08
+                        "start": 121.98,
+                        "end": 122.28
                     }
                 ]
             },
             {
-                "start": 122.08,
-                "end": 124.26,
+                "start": 122.28,
+                "end": 124.46,
                 "text": "all of its predictive capacity.",
                 "words": [
                     {
                         "word": "all",
-                        "start": 122.08,
-                        "end": 122.54
+                        "start": 122.28,
+                        "end": 122.74
                     },
                     {
                         "word": "of",
-                        "start": 122.54,
-                        "end": 122.62
+                        "start": 122.74,
+                        "end": 122.82
                     },
                     {
                         "word": "its",
-                        "start": 122.62,
-                        "end": 122.86
+                        "start": 122.82,
+                        "end": 123.06
                     },
                     {
                         "word": "predictive",
-                        "start": 122.86,
-                        "end": 123.24
+                        "start": 123.06,
+                        "end": 123.44
                     },
                     {
                         "word": "capacity.",
-                        "start": 123.24,
-                        "end": 123.84
+                        "start": 123.44,
+                        "end": 124.04
                     }
                 ]
             },
             {
-                "start": 124.26,
-                "end": 125.28,
+                "start": 124.46,
+                "end": 125.48,
                 "text": "for nearly a century,",
                 "words": [
                     {
                         "word": "for",
-                        "start": 124.26,
-                        "end": 124.42
+                        "start": 124.46,
+                        "end": 124.62
                     },
                     {
                         "word": "nearly",
-                        "start": 124.42,
-                        "end": 124.7
-                    },
-                    {
-                        "word": "a",
-                        "start": 124.7,
+                        "start": 124.62,
                         "end": 124.9
                     },
                     {
-                        "word": "century,",
+                        "word": "a",
                         "start": 124.9,
-                        "end": 125.2
+                        "end": 125.1
+                    },
+                    {
+                        "word": "century,",
+                        "start": 125.1,
+                        "end": 125.4
                     }
                 ]
             },
             {
-                "start": 125.28,
-                "end": 126.54,
+                "start": 125.48,
+                "end": 126.74,
                 "text": "we've essentially accepted a",
                 "words": [
                     {
                         "word": "we've",
-                        "start": 125.28,
-                        "end": 125.48
+                        "start": 125.48,
+                        "end": 125.68
                     },
                     {
                         "word": "essentially",
-                        "start": 125.48,
-                        "end": 125.88
+                        "start": 125.68,
+                        "end": 126.08
                     },
                     {
                         "word": "accepted",
-                        "start": 125.88,
-                        "end": 126.26
+                        "start": 126.08,
+                        "end": 126.46
                     },
                     {
                         "word": "a",
-                        "start": 126.26,
-                        "end": 126.54
+                        "start": 126.46,
+                        "end": 126.74
                     }
                 ]
             },
             {
-                "start": 126.54,
-                "end": 127.98,
+                "start": 126.74,
+                "end": 128.18,
                 "text": "broken model at the extremes of",
                 "words": [
                     {
                         "word": "broken",
-                        "start": 126.54,
-                        "end": 126.84
+                        "start": 126.74,
+                        "end": 127.04
                     },
                     {
                         "word": "model",
-                        "start": 126.84,
-                        "end": 127.12
+                        "start": 127.04,
+                        "end": 127.32
                     },
                     {
                         "word": "at",
-                        "start": 127.12,
-                        "end": 127.34
+                        "start": 127.32,
+                        "end": 127.54
                     },
                     {
                         "word": "the",
-                        "start": 127.34,
-                        "end": 127.6
-                    },
-                    {
-                        "word": "extremes",
-                        "start": 127.6,
+                        "start": 127.54,
                         "end": 127.8
                     },
                     {
-                        "word": "of",
+                        "word": "extremes",
                         "start": 127.8,
-                        "end": 127.98
+                        "end": 128.0
+                    },
+                    {
+                        "word": "of",
+                        "start": 128.0,
+                        "end": 128.18
                     }
                 ]
             },
             {
-                "start": 127.98,
-                "end": 129.28,
+                "start": 128.18,
+                "end": 129.48,
                 "text": "our universe. wow.",
                 "words": [
                     {
                         "word": "our",
-                        "start": 127.98,
-                        "end": 128.22
+                        "start": 128.18,
+                        "end": 128.42
                     },
                     {
                         "word": "universe.",
-                        "start": 128.22,
-                        "end": 128.56
+                        "start": 128.42,
+                        "end": 128.76
                     },
                     {
                         "word": "wow.",
-                        "start": 128.64,
-                        "end": 128.82
+                        "start": 128.84,
+                        "end": 129.02
                     }
                 ]
             },
             {
-                "start": 129.28,
-                "end": 130.6,
+                "start": 129.48,
+                "end": 130.8,
                 "text": "we assumed the universe was doing",
                 "words": [
                     {
                         "word": "we",
-                        "start": 129.28,
-                        "end": 129.32
+                        "start": 129.48,
+                        "end": 129.52
                     },
                     {
                         "word": "assumed",
-                        "start": 129.28,
-                        "end": 129.7
+                        "start": 129.48,
+                        "end": 129.9
                     },
                     {
                         "word": "the",
-                        "start": 129.7,
-                        "end": 130.0
-                    },
-                    {
-                        "word": "universe",
-                        "start": 130.0,
+                        "start": 129.9,
                         "end": 130.2
                     },
                     {
-                        "word": "was",
+                        "word": "universe",
                         "start": 130.2,
                         "end": 130.4
                     },
                     {
-                        "word": "doing",
+                        "word": "was",
                         "start": 130.4,
                         "end": 130.6
+                    },
+                    {
+                        "word": "doing",
+                        "start": 130.6,
+                        "end": 130.8
                     }
                 ]
             },
             {
-                "start": 130.6,
-                "end": 132.22,
+                "start": 130.8,
+                "end": 132.42,
                 "text": "something impossible rather than",
                 "words": [
                     {
                         "word": "something",
-                        "start": 130.6,
-                        "end": 130.88
+                        "start": 130.8,
+                        "end": 131.08
                     },
                     {
                         "word": "impossible",
-                        "start": 130.88,
-                        "end": 131.5
+                        "start": 131.08,
+                        "end": 131.7
                     },
                     {
                         "word": "rather",
-                        "start": 131.5,
-                        "end": 132.02
+                        "start": 131.7,
+                        "end": 132.22
                     },
                     {
                         "word": "than",
-                        "start": 132.02,
-                        "end": 132.22
+                        "start": 132.22,
+                        "end": 132.42
                     }
                 ]
             },
             {
-                "start": 132.22,
-                "end": 133.6,
+                "start": 132.42,
+                "end": 133.8,
                 "text": "just admitting our mathematical",
                 "words": [
                     {
                         "word": "just",
-                        "start": 132.22,
-                        "end": 132.52
+                        "start": 132.42,
+                        "end": 132.72
                     },
                     {
                         "word": "admitting",
-                        "start": 132.52,
-                        "end": 132.8
+                        "start": 132.72,
+                        "end": 133.0
                     },
                     {
                         "word": "our",
-                        "start": 132.8,
-                        "end": 133.28
+                        "start": 133.0,
+                        "end": 133.48
                     },
                     {
                         "word": "mathematical",
-                        "start": 133.28,
-                        "end": 133.6
+                        "start": 133.48,
+                        "end": 133.8
                     }
                 ]
             },
             {
-                "start": 133.6,
-                "end": 135.16,
+                "start": 133.8,
+                "end": 135.36,
                 "text": "tools were failing at that",
                 "words": [
                     {
                         "word": "tools",
-                        "start": 133.6,
-                        "end": 134.06
+                        "start": 133.8,
+                        "end": 134.26
                     },
                     {
                         "word": "were",
-                        "start": 134.06,
-                        "end": 134.32
+                        "start": 134.26,
+                        "end": 134.52
                     },
                     {
                         "word": "failing",
-                        "start": 134.32,
-                        "end": 134.66
+                        "start": 134.52,
+                        "end": 134.86
                     },
                     {
                         "word": "at",
-                        "start": 134.66,
-                        "end": 134.94
+                        "start": 134.86,
+                        "end": 135.14
                     },
                     {
                         "word": "that",
-                        "start": 134.94,
-                        "end": 135.16
+                        "start": 135.14,
+                        "end": 135.36
                     }
                 ]
             },
             {
-                "start": 135.16,
-                "end": 136.98,
+                "start": 135.36,
+                "end": 137.18,
                 "text": "specific boundary. so we've",
                 "words": [
                     {
                         "word": "specific",
-                        "start": 135.16,
-                        "end": 135.58
+                        "start": 135.36,
+                        "end": 135.78
                     },
                     {
                         "word": "boundary.",
-                        "start": 135.58,
-                        "end": 135.94
+                        "start": 135.78,
+                        "end": 136.14
                     },
                     {
                         "word": "so",
-                        "start": 136.18,
-                        "end": 136.36
+                        "start": 136.38,
+                        "end": 136.56
                     },
                     {
                         "word": "we've",
-                        "start": 136.36,
-                        "end": 136.98
+                        "start": 136.56,
+                        "end": 137.18
                     }
                 ]
             },
             {
-                "start": 136.98,
-                "end": 138.18,
+                "start": 137.18,
+                "end": 138.38,
                 "text": "basically been using a broken",
                 "words": [
                     {
                         "word": "basically",
-                        "start": 136.98,
-                        "end": 137.02
+                        "start": 137.18,
+                        "end": 137.22
                     },
                     {
                         "word": "been",
-                        "start": 136.98,
-                        "end": 137.24
+                        "start": 137.18,
+                        "end": 137.44
                     },
                     {
                         "word": "using",
-                        "start": 137.24,
-                        "end": 137.58
+                        "start": 137.44,
+                        "end": 137.78
                     },
                     {
                         "word": "a",
-                        "start": 137.58,
-                        "end": 137.82
+                        "start": 137.78,
+                        "end": 138.02
                     },
                     {
                         "word": "broken",
-                        "start": 137.82,
-                        "end": 138.18
+                        "start": 138.02,
+                        "end": 138.38
                     }
                 ]
             },
             {
-                "start": 138.18,
-                "end": 139.66,
+                "start": 138.38,
+                "end": 139.86,
                 "text": "ruler to measure the edge of",
                 "words": [
                     {
                         "word": "ruler",
-                        "start": 138.18,
-                        "end": 138.68
+                        "start": 138.38,
+                        "end": 138.88
                     },
                     {
                         "word": "to",
-                        "start": 138.68,
-                        "end": 139.04
+                        "start": 138.88,
+                        "end": 139.24
                     },
                     {
                         "word": "measure",
-                        "start": 139.04,
-                        "end": 139.2
+                        "start": 139.24,
+                        "end": 139.4
                     },
                     {
                         "word": "the",
-                        "start": 139.2,
-                        "end": 139.48
+                        "start": 139.4,
+                        "end": 139.68
                     },
                     {
                         "word": "edge",
-                        "start": 139.48,
-                        "end": 139.54
+                        "start": 139.68,
+                        "end": 139.74
                     },
                     {
                         "word": "of",
-                        "start": 139.54,
-                        "end": 139.66
+                        "start": 139.74,
+                        "end": 139.86
                     }
                 ]
             },
             {
-                "start": 139.66,
-                "end": 140.94,
+                "start": 139.86,
+                "end": 141.14,
                 "text": "the universe. and when the ruler",
                 "words": [
                     {
                         "word": "the",
-                        "start": 139.66,
-                        "end": 139.86
+                        "start": 139.86,
+                        "end": 140.06
                     },
                     {
                         "word": "universe.",
-                        "start": 139.86,
-                        "end": 140.24
+                        "start": 140.06,
+                        "end": 140.44
                     },
                     {
                         "word": "and",
-                        "start": 140.44,
-                        "end": 140.58
+                        "start": 140.64,
+                        "end": 140.78
                     },
                     {
                         "word": "when",
-                        "start": 140.58,
-                        "end": 140.66
+                        "start": 140.78,
+                        "end": 140.86
                     },
                     {
                         "word": "the",
-                        "start": 140.66,
-                        "end": 140.82
+                        "start": 140.86,
+                        "end": 141.02
                     },
                     {
                         "word": "ruler",
-                        "start": 140.82,
-                        "end": 140.94
+                        "start": 141.02,
+                        "end": 141.14
                     }
                 ]
             },
             {
-                "start": 140.94,
-                "end": 143.18,
+                "start": 141.14,
+                "end": 143.38,
                 "text": "is snapped, we blame the universe.",
                 "words": [
                     {
                         "word": "is",
-                        "start": 140.94,
-                        "end": 141.2
+                        "start": 141.14,
+                        "end": 141.4
                     },
                     {
                         "word": "snapped,",
-                        "start": 141.2,
-                        "end": 141.56
+                        "start": 141.4,
+                        "end": 141.76
                     },
                     {
                         "word": "we",
-                        "start": 141.78,
-                        "end": 142.16
+                        "start": 141.98,
+                        "end": 142.36
                     },
                     {
                         "word": "blame",
-                        "start": 142.16,
-                        "end": 142.42
+                        "start": 142.36,
+                        "end": 142.62
                     },
                     {
                         "word": "the",
-                        "start": 142.42,
-                        "end": 142.72
+                        "start": 142.62,
+                        "end": 142.92
                     },
                     {
                         "word": "universe.",
-                        "start": 142.72,
-                        "end": 142.98
+                        "start": 142.92,
+                        "end": 143.18
                     }
                 ]
             },
             {
-                "start": 143.18,
-                "end": 144.84,
+                "start": 143.38,
+                "end": 145.04,
                 "text": "that is a highly accurate way",
                 "words": [
                     {
                         "word": "that",
-                        "start": 143.18,
-                        "end": 143.48
+                        "start": 143.38,
+                        "end": 143.68
                     },
                     {
                         "word": "is",
-                        "start": 143.48,
-                        "end": 143.66
+                        "start": 143.68,
+                        "end": 143.86
                     },
                     {
                         "word": "a",
-                        "start": 143.66,
-                        "end": 143.88
+                        "start": 143.86,
+                        "end": 144.08
                     },
                     {
                         "word": "highly",
-                        "start": 143.88,
-                        "end": 144.26
+                        "start": 144.08,
+                        "end": 144.46
                     },
                     {
                         "word": "accurate",
-                        "start": 144.26,
-                        "end": 144.68
+                        "start": 144.46,
+                        "end": 144.88
                     },
                     {
                         "word": "way",
-                        "start": 144.68,
-                        "end": 144.84
+                        "start": 144.88,
+                        "end": 145.04
                     }
                 ]
             },
             {
-                "start": 144.84,
-                "end": 145.57,
+                "start": 145.04,
+                "end": 145.77,
                 "text": "to frame it.",
                 "words": [
                     {
                         "word": "to",
-                        "start": 144.84,
-                        "end": 145.02
+                        "start": 145.04,
+                        "end": 145.22
                     },
                     {
                         "word": "frame",
-                        "start": 145.02,
-                        "end": 145.2
+                        "start": 145.22,
+                        "end": 145.4
                     },
                     {
                         "word": "it.",
-                        "start": 145.2,
-                        "end": 145.42
+                        "start": 145.4,
+                        "end": 145.62
                     }
                 ]
             }
         ],
-        "_caption_sig": "06a60902709bfbd4872807a9735a3709",
-        "_audio_sig": "93883e6c9e8520f9313d44000a75cb8f",
-        "_compiled_sig": "68c852f01751e26801e646fc650ee642"
+        "_caption_sig": "865c564319b737a0db80b5bce1ff8aca",
+        "_audio_sig": "c637ee388ec2f84c7ea30dd867f4016b",
+        "_compiled_sig": "02a460b50f8931bd7e9077bad3776a2c"
     },
     {
         "num": 2,

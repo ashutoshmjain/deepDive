@@ -943,7 +943,7 @@ aria-label="Show hidden lines"></button>';
             const rawAmounts = (this.getAttribute('amounts') || '100,1000,10000').split(',');
             this.amountList = rawAmounts.slice(0, 3).map(x => {
                 const n = parseInt(x.trim(), 10) || 100;
-                return { amount: n, label: '? ' + formatAmount(n) };
+                return { amount: n, label: '⚡ ' + formatAmount(n) };
             });
             this.currentAmount = this.amountList[1] ? this.amountList[1].amount : 1000;
             this.render();
@@ -1012,7 +1012,7 @@ aria-label="Show hidden lines"></button>';
                     <div class="content">
                         ${this.image ? `<img class="avatar" src="${this.image}" width="130" height="130" alt="${this.name}" />` : ''}
                         <h3>${this.name}</h3>
-                        <div class="addr-pill">? ${this.to}</div>
+                        <div class="addr-pill">⚡ ${this.to}</div>
                         <button type="button" class="button" id="lw-start-btn">${this.buttonText}</button>
                     </div>
                 `;

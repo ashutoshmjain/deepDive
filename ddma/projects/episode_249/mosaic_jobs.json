@@ -1,0 +1,50 @@
+{
+  "3": {
+    "status": "failed",
+    "progress": 0,
+    "error": "Command '['C:\\\\Users\\\\ashut\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe', 'ddma.py', 'compile-clip', '--num', '3', '--plan-file', 'projects\\\\episode_249\\\\plan.json']' returned non-zero exit status 1.",
+    "run_id": "972b1c19-0b6d-4023-b8a2-36eced1ca878",
+    "start_time": 1794885922.2162955,
+    "last_update": 1794891502.6819494
+  },
+  "4": {
+    "status": "failed",
+    "progress": 0,
+    "error": "Command '['C:\\\\Users\\\\ashut\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe', 'ddma.py', 'compile-clip', '--num', '4', '--plan-file', 'projects\\\\episode_249\\\\plan.json']' returned non-zero exit status 1.",
+    "run_id": "3ed55339-7281-44b0-a7d6-cfbee3b1c511",
+    "start_time": 1794885922.2471895,
+    "last_update": 1794891502.7002363
+  },
+  "2": {
+    "status": "completed",
+    "progress": 100,
+    "error": null,
+    "run_id": "26606fbc-7a51-420c-a286-2726c5a91769",
+    "start_time": 1794799601.2621288,
+    "last_update": 1794799603.0653496
+  },
+  "13": {
+    "status": "completed",
+    "progress": 100,
+    "error": null,
+    "run_id": "1a5521de-586e-4b38-9c6d-f746d1081769",
+    "start_time": 1794799717.527906,
+    "last_update": 1794799717.527906
+  },
+  "0": {
+    "status": "failed",
+    "progress": 0,
+    "error": "Command '['C:\\\\Users\\\\ashut\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe', 'ddma.py', 'compile-clip', '--num', '0', '--plan-file', 'projects\\\\episode_249\\\\plan.json']' returned non-zero exit status 1.",
+    "run_id": "43295e65-7ea7-428e-98c4-4708bc58600c",
+    "start_time": 1794885922.1234846,
+    "last_update": 1794891502.6719346
+  },
+  "14": {
+    "status": "completed",
+    "progress": 100,
+    "error": null,
+    "run_id": "00005b7b-31bb-4993-acaa-694197634430",
+    "start_time": 1794885919.529871,
+    "last_update": 1794886449.5080132
+  }
+}

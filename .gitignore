@@ -9,16 +9,10 @@ book/
 
 # Ignore temporary build folders
 build_temp/
-ddma/scratch/
-!ddma/scratch/run_curator.py
-!ddma/scratch/review_episode_bridges.py
-!ddma/scratch/combine_clips_demuxer.py
-!ddma/scratch/test-env/**
 ddma/captions/
 ddma/build_temp/
 ddma/clips/
 ddma/previews/
-ddma/projects/
 ddma/docs/assets/clips/
 ddma/docs/episodes/
 !src/ddma/docs/episodes/**
@@ -50,7 +44,7 @@ ingest/backups/
 ingest/temp/
 ingest/__pycache__/
 ingest/*.pyc
-scratch/
+/scratch/
 *.bak
 *.py.bak
 extract.py
