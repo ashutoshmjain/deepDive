@@ -48,6 +48,8 @@ ingest/*.pyc
 *.bak
 **/podcast_edit.json
 **/transcribe_gold.txt
+ddma/projects/*/mosaic_jobs.json
+ddma/projects/*/ingestion_progress.json
 *.py.bak
 extract.py
 payload_*.py

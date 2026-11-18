@@ -1,7 +1,7 @@
 [
     {
         "num": 1,
-        "title": "What Exactly is Singularity",
+        "title": "Test Edit TitleWhat Exactly is Singularity",
         "start": 0,
         "end": 136.3,
         "duration": 136.3,
@@ -15,8 +15,8 @@
                 "duration": 0.32,
                 "crossfade": 1.3,
                 "volume": 1,
-                "trim_start": 1,
-                "trim_end": 3,
+                "trim_start": 1.05,
+                "trim_end": 3.15,
                 "fade_in": 2,
                 "fade_out": 11.5,
                 "start": 0.34,
@@ -2110,7 +2110,7 @@
                 "end": 143.92
             }
         ],
-        "_caption_words_sig": "6bd0ba99bbefe1ed3b8328ca8ec717d3",
+        "_caption_words_sig": "c637ee388ec2f84c7ea30dd867f4016b",
         "rendered_duration": 154.34,
         "audio_duration": 148.62,
         "intro_offset": 1.7,

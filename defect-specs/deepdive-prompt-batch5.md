@@ -119,3 +119,33 @@
 3. Confirm the fan-out diff check (`scripts/check_fanout.py`) passes with the files in sync.
 4. Do NOT publish any clip as part of this verify. Do NOT trigger a Mosaic run. Do NOT commit or push (fan-out is a separate human step).
 5. Report PASS/FAIL per item (A1–A2, B1–B3, C1–C2, D1, E1–E6), then STOP with a full summary.
+
+## Execution record (2026-11-18, executed as written, head 4421809c)
+
+- A1 PASS. 7 files untracked (`git rm --cached`, 5 mosaic_jobs + 2 ingestion_progress),
+  `.gitignore` covers both patterns, files on disk. Heal writes on state change only,
+  so a plain project load correctly writes nothing (code path verified).
+- A2 BLOCKED. `defect-specs/deepdive-prompt-caption-dialog-simplify.md` exists nowhere
+  (not in tree, not in any ref). Nothing changed, nothing invented.
+- B1 PASS (code). Sub-tab removed (147 lines), grep zero, live Podcast Studio only with
+  transcript, no console errors. KNOWN FALLOUT (not fixed): e2e tests 6, 7 and
+  "Narrative Tab: Read-Only" assert the removed selectors and now fail. Next spec must
+  delete or repoint them; replacement assertions were not invented here.
+- B2 PASS. `path` live on mempool items and `/api/episode`; 404 names `src/<file>`;
+  fixture mine-to-996 round-trip verified and fully reverted.
+- B3 PASS. 250 carries the three episode URLs under markers, order kept, no YouTube Music.
+- C1 PASS. Default None, flag > project_info > plan clip 0 > `EPISODE <n>`; zero stale-title
+  matches; plan clip 0 title untouched.
+- C2 PASS. Corrupt vault/local settings raise `RuntimeError` after logging; fresh clone
+  returns `{}`; valid files unchanged. Verified against the real `load_settings`.
+- D1 PASS. TEST 25 added (purely additive); standalone logic PASS and green in-suite.
+  Required maintenance: TEST 0b pointed at deleted `episode_244` (Batch-4 D1) and could
+  never pass -- repointed to `episode_245` (one line + comment).
+- E1-E6 all PASS on the stated verify terms. Correction to E3's scene-setting: the
+  export handler is `load_plan`-only, but direct plan reads also exist in OTHER handlers
+  (2360, 2894, 3080, 3344, 3565, 3674, 3921, 4040, 4377) -- the "only write at :2514"
+  sentence overstates.
+- Suites: python 3/3, 3/3, 2/2, 2/2. `test_curator.js` ALL PASS (incl. TEST 20 restore,
+  TEST 21, TEST 25). `cockpit_e2e.js` 17/21 (1 environmental curator-click reuse from
+  A4-followup + 3 B1 fallout above). Servers 200 with no app console errors.
+- `check_fanout.py` STOPs on exactly the 5 unfanned batch-5 pairs (correct pre-fan-out).
