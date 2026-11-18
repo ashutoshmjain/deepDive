@@ -1,7 +1,7 @@
 [
     {
         "num": 1,
-        "title": "Test Edit TitleWhat Exactly is Singularity",
+        "title": "Test Edit TitleTest Edit TitleWhat Exactly is Singularity",
         "start": 0,
         "end": 136.3,
         "duration": 136.3,
@@ -15,10 +15,10 @@
                 "duration": 0.32,
                 "crossfade": 1.3,
                 "volume": 1,
-                "trim_start": 1.05,
-                "trim_end": 3.15,
-                "fade_in": 2,
-                "fade_out": 11.5,
+                "trim_start": 1.1,
+                "trim_end": 3.3,
+                "fade_in": 2.1,
+                "fade_out": 12,
                 "start": 0.34,
                 "end": 0.66,
                 "text": "all  heard"
@@ -2110,7 +2110,7 @@
                 "end": 143.92
             }
         ],
-        "_caption_words_sig": "1f5e3a1ff503ca59aa5b19336e4b23fb",
+        "_caption_words_sig": "20bef412f8e09dc8fe6c726823389b24",
         "rendered_duration": 154.34,
         "audio_duration": 148.62,
         "intro_offset": 1.7,
@@ -4762,9 +4762,9 @@
                 ]
             }
         ],
-        "_caption_sig": "2eb92e937e2c8cfcfeae531168378aeb",
-        "_audio_sig": "1f5e3a1ff503ca59aa5b19336e4b23fb",
-        "_compiled_sig": "6a792a1d2357072ed35e560c22ba951d"
+        "_caption_sig": "37d0c3e35c4e17457cba96b532712727",
+        "_audio_sig": "20bef412f8e09dc8fe6c726823389b24",
+        "_compiled_sig": "6661b823b7d1cbd39b6cd9786e8b0f26"
     },
     {
         "num": 2,

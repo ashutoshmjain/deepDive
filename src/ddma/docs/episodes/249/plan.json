@@ -21538,7 +21538,7 @@
         "source_start": 728.46,
         "source_end": 809.9,
         "_audio_sig": "16f1aabdf605947f1e2aaa4fb6e5c2c6",
-        "_compiled_sig": "046ec1cbcaae327596f02018dfaf1cbc"
+        "_compiled_sig": "90bf9192a5ea9262dcd9a8dbac18923d"
     },
     {
         "num": 9,
@@ -36824,7 +36824,7 @@
                     {
                         "word": "scale.",
                         "start": 8.5,
-                        "end": 9.0
+                        "end": 9
                     }
                 ]
             },
@@ -38090,7 +38090,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.04
             },
             {
@@ -39154,7 +39154,7 @@
         "rendered_duration": 93.92,
         "audio_duration": 88.2,
         "intro_offset": 1.7,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 1305.7,
         "source_end": 1383.63,
         "_audio_sig": "b25e39105d4ef3e5bfc5633eb45e056b",
