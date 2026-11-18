@@ -21538,7 +21538,7 @@
         "source_start": 728.46,
         "source_end": 809.9,
         "_audio_sig": "16f1aabdf605947f1e2aaa4fb6e5c2c6",
-        "_compiled_sig": "90bf9192a5ea9262dcd9a8dbac18923d"
+        "_compiled_sig": "046ec1cbcaae327596f02018dfaf1cbc"
     },
     {
         "num": 9,
@@ -39209,9 +39209,1817 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "The Observer"
+        "coming_up_title": "The Observer",
+        "mosaic_run_id": "587faf38-64a8-4ce3-96fa-81657d17901c",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.04
+            },
+            {
+                "word": "17.",
+                "start": 0.04,
+                "end": 0.52
+            },
+            {
+                "word": "The",
+                "start": 1.42,
+                "end": 1.46
+            },
+            {
+                "word": "imbalance",
+                "start": 1.42,
+                "end": 1.94
+            },
+            {
+                "word": "delta.",
+                "start": 1.94,
+                "end": 2.5
+            },
+            {
+                "word": "The",
+                "start": 3.14,
+                "end": 3.24
+            },
+            {
+                "word": "secret",
+                "start": 3.24,
+                "end": 3.56
+            },
+            {
+                "word": "to",
+                "start": 3.56,
+                "end": 3.8
+            },
+            {
+                "word": "immortality",
+                "start": 3.8,
+                "end": 4.2
+            },
+            {
+                "word": "in",
+                "start": 4.2,
+                "end": 4.62
+            },
+            {
+                "word": "the",
+                "start": 4.62,
+                "end": 4.72
+            },
+            {
+                "word": "subatomic",
+                "start": 4.72,
+                "end": 5.12
+            },
+            {
+                "word": "realm",
+                "start": 5.12,
+                "end": 5.4
+            },
+            {
+                "word": "is",
+                "start": 5.4,
+                "end": 5.66
+            },
+            {
+                "word": "perfect",
+                "start": 5.66,
+                "end": 6.2
+            },
+            {
+                "word": "cognitive",
+                "start": 6.2,
+                "end": 6.78
+            },
+            {
+                "word": "balance.",
+                "start": 6.78,
+                "end": 7.44
+            },
+            {
+                "word": "So",
+                "start": 12.42,
+                "end": 12.62
+            },
+            {
+                "word": "how",
+                "start": 12.62,
+                "end": 12.86
+            },
+            {
+                "word": "does",
+                "start": 12.86,
+                "end": 12.98
+            },
+            {
+                "word": "this",
+                "start": 12.98,
+                "end": 13.12
+            },
+            {
+                "word": "apply",
+                "start": 13.12,
+                "end": 13.4
+            },
+            {
+                "word": "to",
+                "start": 13.4,
+                "end": 13.58
+            },
+            {
+                "word": "actual",
+                "start": 13.58,
+                "end": 13.88
+            },
+            {
+                "word": "particles?",
+                "start": 13.88,
+                "end": 14.42
+            },
+            {
+                "word": "The",
+                "start": 15.44,
+                "end": 15.58
+            },
+            {
+                "word": "paper",
+                "start": 15.58,
+                "end": 15.76
+            },
+            {
+                "word": "defines",
+                "start": 15.76,
+                "end": 16.14
+            },
+            {
+                "word": "the",
+                "start": 16.14,
+                "end": 16.36
+            },
+            {
+                "word": "chiral",
+                "start": 16.36,
+                "end": 16.76
+            },
+            {
+                "word": "imbalance",
+                "start": 16.76,
+                "end": 17.3
+            },
+            {
+                "word": "delta.",
+                "start": 17.3,
+                "end": 17.8
+            },
+            {
+                "word": "Delta",
+                "start": 18.72,
+                "end": 18.76
+            },
+            {
+                "word": "being",
+                "start": 18.72,
+                "end": 18.92
+            },
+            {
+                "word": "the",
+                "start": 18.92,
+                "end": 19.32
+            },
+            {
+                "word": "difference",
+                "start": 19.32,
+                "end": 19.6
+            },
+            {
+                "word": "between",
+                "start": 19.6,
+                "end": 19.92
+            },
+            {
+                "word": "physical",
+                "start": 19.92,
+                "end": 20.24
+            },
+            {
+                "word": "mass",
+                "start": 20.24,
+                "end": 20.54
+            },
+            {
+                "word": "and",
+                "start": 20.54,
+                "end": 20.76
+            },
+            {
+                "word": "its",
+                "start": 20.76,
+                "end": 20.9
+            },
+            {
+                "word": "balancing",
+                "start": 20.9,
+                "end": 21.58
+            },
+            {
+                "word": "informational",
+                "start": 21.58,
+                "end": 22.04
+            },
+            {
+                "word": "state.",
+                "start": 22.04,
+                "end": 22.4
+            },
+            {
+                "word": "Right.",
+                "start": 22.68,
+                "end": 22.78
+            },
+            {
+                "word": "Inside",
+                "start": 23.44,
+                "end": 23.78
+            },
+            {
+                "word": "a",
+                "start": 23.78,
+                "end": 24.06
+            },
+            {
+                "word": "proton,",
+                "start": 24.06,
+                "end": 24.5
+            },
+            {
+                "word": "the",
+                "start": 24.96,
+                "end": 25.0
+            },
+            {
+                "word": "three",
+                "start": 25.0,
+                "end": 25.2
+            },
+            {
+                "word": "quark",
+                "start": 25.2,
+                "end": 25.46
+            },
+            {
+                "word": "knot",
+                "start": 25.46,
+                "end": 25.78
+            },
+            {
+                "word": "achieves",
+                "start": 25.78,
+                "end": 26.26
+            },
+            {
+                "word": "exact",
+                "start": 26.26,
+                "end": 26.82
+            },
+            {
+                "word": "chiral",
+                "start": 26.82,
+                "end": 27.3
+            },
+            {
+                "word": "equilibrium",
+                "start": 27.3,
+                "end": 27.82
+            },
+            {
+                "word": "with",
+                "start": 27.82,
+                "end": 28.14
+            },
+            {
+                "word": "its",
+                "start": 28.14,
+                "end": 28.32
+            },
+            {
+                "word": "cognitive",
+                "start": 28.32,
+                "end": 28.66
+            },
+            {
+                "word": "state.",
+                "start": 28.66,
+                "end": 29.04
+            },
+            {
+                "word": "So",
+                "start": 29.54,
+                "end": 29.78
+            },
+            {
+                "word": "delta",
+                "start": 29.78,
+                "end": 30.02
+            },
+            {
+                "word": "is",
+                "start": 30.02,
+                "end": 30.22
+            },
+            {
+                "word": "zero.",
+                "start": 30.22,
+                "end": 30.5
+            },
+            {
+                "word": "Exactly.",
+                "start": 31.02,
+                "end": 31.1
+            },
+            {
+                "word": "The",
+                "start": 31.86,
+                "end": 31.96
+            },
+            {
+                "word": "entropic",
+                "start": 31.96,
+                "end": 32.34
+            },
+            {
+                "word": "decay",
+                "start": 32.34,
+                "end": 32.66
+            },
+            {
+                "word": "rate",
+                "start": 32.66,
+                "end": 32.92
+            },
+            {
+                "word": "is",
+                "start": 32.92,
+                "end": 33.12
+            },
+            {
+                "word": "zero,",
+                "start": 33.12,
+                "end": 33.36
+            },
+            {
+                "word": "making",
+                "start": 33.7,
+                "end": 33.84
+            },
+            {
+                "word": "the",
+                "start": 33.84,
+                "end": 34.02
+            },
+            {
+                "word": "proton",
+                "start": 34.02,
+                "end": 34.36
+            },
+            {
+                "word": "completely",
+                "start": 34.36,
+                "end": 34.74
+            },
+            {
+                "word": "stable.",
+                "start": 34.74,
+                "end": 35.08
+            },
+            {
+                "word": "But",
+                "start": 35.56,
+                "end": 35.82
+            },
+            {
+                "word": "an",
+                "start": 35.82,
+                "end": 36.16
+            },
+            {
+                "word": "isolated",
+                "start": 36.16,
+                "end": 37.02
+            },
+            {
+                "word": "free",
+                "start": 37.02,
+                "end": 37.42
+            },
+            {
+                "word": "neutron?",
+                "start": 37.42,
+                "end": 38.12
+            },
+            {
+                "word": "It",
+                "start": 38.64,
+                "end": 38.92
+            },
+            {
+                "word": "loses",
+                "start": 38.92,
+                "end": 39.22
+            },
+            {
+                "word": "its",
+                "start": 39.22,
+                "end": 39.5
+            },
+            {
+                "word": "nuclear",
+                "start": 39.5,
+                "end": 39.84
+            },
+            {
+                "word": "binding",
+                "start": 39.84,
+                "end": 40.26
+            },
+            {
+                "word": "context.",
+                "start": 40.26,
+                "end": 40.9
+            },
+            {
+                "word": "A",
+                "start": 41.4,
+                "end": 41.54
+            },
+            {
+                "word": "non",
+                "start": 41.54,
+                "end": 41.78
+            },
+            {
+                "word": "-zero",
+                "start": 41.78,
+                "end": 42.12
+            },
+            {
+                "word": "chiral",
+                "start": 42.12,
+                "end": 42.54
+            },
+            {
+                "word": "delta",
+                "start": 42.54,
+                "end": 42.88
+            },
+            {
+                "word": "appears.",
+                "start": 42.88,
+                "end": 43.26
+            },
+            {
+                "word": "Ah,",
+                "start": 43.88,
+                "end": 44.16
+            },
+            {
+                "word": "so",
+                "start": 44.56,
+                "end": 45.04
+            },
+            {
+                "word": "there's",
+                "start": 45.04,
+                "end": 45.26
+            },
+            {
+                "word": "uncompensated",
+                "start": 45.26,
+                "end": 45.82
+            },
+            {
+                "word": "tension.",
+                "start": 45.82,
+                "end": 46.12
+            },
+            {
+                "word": "And",
+                "start": 46.8,
+                "end": 47.0
+            },
+            {
+                "word": "that",
+                "start": 47.0,
+                "end": 47.14
+            },
+            {
+                "word": "tension",
+                "start": 47.14,
+                "end": 47.4
+            },
+            {
+                "word": "causes",
+                "start": 47.4,
+                "end": 47.74
+            },
+            {
+                "word": "it",
+                "start": 47.74,
+                "end": 47.96
+            },
+            {
+                "word": "to",
+                "start": 47.96,
+                "end": 48.1
+            },
+            {
+                "word": "decay",
+                "start": 48.1,
+                "end": 48.34
+            },
+            {
+                "word": "rapidly.",
+                "start": 48.34,
+                "end": 48.8
+            },
+            {
+                "word": "Beta",
+                "start": 49.78,
+                "end": 49.82
+            },
+            {
+                "word": "decay",
+                "start": 49.82,
+                "end": 50.18
+            },
+            {
+                "word": "in",
+                "start": 50.18,
+                "end": 50.56
+            },
+            {
+                "word": "about",
+                "start": 50.56,
+                "end": 50.76
+            },
+            {
+                "word": "880",
+                "start": 50.76,
+                "end": 51.42
+            },
+            {
+                "word": "seconds.",
+                "start": 51.42,
+                "end": 51.74
+            },
+            {
+                "word": "Just",
+                "start": 52.21,
+                "end": 52.56
+            },
+            {
+                "word": "about",
+                "start": 52.56,
+                "end": 53.06
+            },
+            {
+                "word": "15",
+                "start": 53.06,
+                "end": 53.44
+            },
+            {
+                "word": "minutes.",
+                "start": 53.44,
+                "end": 53.82
+            },
+            {
+                "word": "Again,",
+                "start": 54.58,
+                "end": 54.62
+            },
+            {
+                "word": "direct",
+                "start": 54.98,
+                "end": 55.08
+            },
+            {
+                "word": "yourself",
+                "start": 55.08,
+                "end": 55.28
+            },
+            {
+                "word": "to",
+                "start": 55.28,
+                "end": 55.64
+            },
+            {
+                "word": "the",
+                "start": 55.64,
+                "end": 56.12
+            },
+            {
+                "word": "Deep",
+                "start": 56.12,
+                "end": 56.48
+            },
+            {
+                "word": "Dive",
+                "start": 56.48,
+                "end": 56.7
+            },
+            {
+                "word": "website",
+                "start": 56.7,
+                "end": 57.14
+            },
+            {
+                "word": "to",
+                "start": 57.14,
+                "end": 57.38
+            },
+            {
+                "word": "view",
+                "start": 57.38,
+                "end": 57.56
+            },
+            {
+                "word": "the",
+                "start": 57.56,
+                "end": 57.76
+            },
+            {
+                "word": "decay",
+                "start": 57.76,
+                "end": 58.04
+            },
+            {
+                "word": "rate",
+                "start": 58.04,
+                "end": 58.26
+            },
+            {
+                "word": "mathematical",
+                "start": 58.26,
+                "end": 58.76
+            },
+            {
+                "word": "derivations.",
+                "start": 58.76,
+                "end": 59.5
+            },
+            {
+                "word": "It's",
+                "start": 59.68,
+                "end": 59.84
+            },
+            {
+                "word": "perfectly",
+                "start": 59.84,
+                "end": 60.48
+            },
+            {
+                "word": "mapped",
+                "start": 60.48,
+                "end": 60.76
+            },
+            {
+                "word": "out.",
+                "start": 60.76,
+                "end": 61.02
+            },
+            {
+                "word": "Coming",
+                "start": 61.64,
+                "end": 61.78
+            },
+            {
+                "word": "up",
+                "start": 61.78,
+                "end": 61.92
+            },
+            {
+                "word": "in",
+                "start": 61.92,
+                "end": 62.02
+            },
+            {
+                "word": "the",
+                "start": 62.02,
+                "end": 62.12
+            },
+            {
+                "word": "next",
+                "start": 62.12,
+                "end": 62.38
+            },
+            {
+                "word": "clip,",
+                "start": 62.38,
+                "end": 62.64
+            },
+            {
+                "word": "what",
+                "start": 63.14,
+                "end": 63.22
+            },
+            {
+                "word": "happens",
+                "start": 63.22,
+                "end": 63.6
+            },
+            {
+                "word": "when",
+                "start": 63.6,
+                "end": 63.88
+            },
+            {
+                "word": "a",
+                "start": 63.88,
+                "end": 64.02
+            },
+            {
+                "word": "system",
+                "start": 64.02,
+                "end": 64.38
+            },
+            {
+                "word": "achieves",
+                "start": 64.38,
+                "end": 65.06
+            },
+            {
+                "word": "perfect",
+                "start": 65.06,
+                "end": 65.72
+            },
+            {
+                "word": "balance?",
+                "start": 65.72,
+                "end": 66.78
+            },
+            {
+                "word": "It",
+                "start": 67.44,
+                "end": 67.54
+            },
+            {
+                "word": "becomes",
+                "start": 67.54,
+                "end": 67.92
+            },
+            {
+                "word": "an",
+                "start": 67.92,
+                "end": 68.52
+            },
+            {
+                "word": "observer.",
+                "start": 68.52,
+                "end": 69.1
+            },
+            {
+                "word": "The",
+                "start": 70.16,
+                "end": 70.24
+            },
+            {
+                "word": "phase",
+                "start": 70.24,
+                "end": 70.42
+            },
+            {
+                "word": "boundary.",
+                "start": 70.42,
+                "end": 70.84
+            }
+        ],
+        "_caption_words_sig": "3525667902214644b66267b55c6bf405",
+        "caption_chunks": [
+            {
+                "start": 1.7,
+                "end": 4.84,
+                "text": "clip 17. the imbalance delta.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.7,
+                        "end": 1.74
+                    },
+                    {
+                        "word": "17.",
+                        "start": 1.74,
+                        "end": 2.22
+                    },
+                    {
+                        "word": "the",
+                        "start": 3.12,
+                        "end": 3.16
+                    },
+                    {
+                        "word": "imbalance",
+                        "start": 3.12,
+                        "end": 3.64
+                    },
+                    {
+                        "word": "delta.",
+                        "start": 3.64,
+                        "end": 4.2
+                    }
+                ]
+            },
+            {
+                "start": 4.84,
+                "end": 6.42,
+                "text": "the secret to immortality in the",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 4.84,
+                        "end": 4.94
+                    },
+                    {
+                        "word": "secret",
+                        "start": 4.94,
+                        "end": 5.26
+                    },
+                    {
+                        "word": "to",
+                        "start": 5.26,
+                        "end": 5.5
+                    },
+                    {
+                        "word": "immortality",
+                        "start": 5.5,
+                        "end": 5.9
+                    },
+                    {
+                        "word": "in",
+                        "start": 5.9,
+                        "end": 6.32
+                    },
+                    {
+                        "word": "the",
+                        "start": 6.32,
+                        "end": 6.42
+                    }
+                ]
+            },
+            {
+                "start": 6.42,
+                "end": 7.9,
+                "text": "subatomic realm is perfect",
+                "words": [
+                    {
+                        "word": "subatomic",
+                        "start": 6.42,
+                        "end": 6.82
+                    },
+                    {
+                        "word": "realm",
+                        "start": 6.82,
+                        "end": 7.1
+                    },
+                    {
+                        "word": "is",
+                        "start": 7.1,
+                        "end": 7.36
+                    },
+                    {
+                        "word": "perfect",
+                        "start": 7.36,
+                        "end": 7.9
+                    }
+                ]
+            },
+            {
+                "start": 7.9,
+                "end": 14.68,
+                "text": "cognitive balance. so how does",
+                "words": [
+                    {
+                        "word": "cognitive",
+                        "start": 7.9,
+                        "end": 8.48
+                    },
+                    {
+                        "word": "balance.",
+                        "start": 8.48,
+                        "end": 9.14
+                    },
+                    {
+                        "word": "so",
+                        "start": 14.12,
+                        "end": 14.32
+                    },
+                    {
+                        "word": "how",
+                        "start": 14.32,
+                        "end": 14.56
+                    },
+                    {
+                        "word": "does",
+                        "start": 14.56,
+                        "end": 14.68
+                    }
+                ]
+            },
+            {
+                "start": 14.68,
+                "end": 17.14,
+                "text": "this apply to actual particles?",
+                "words": [
+                    {
+                        "word": "this",
+                        "start": 14.68,
+                        "end": 14.82
+                    },
+                    {
+                        "word": "apply",
+                        "start": 14.82,
+                        "end": 15.1
+                    },
+                    {
+                        "word": "to",
+                        "start": 15.1,
+                        "end": 15.28
+                    },
+                    {
+                        "word": "actual",
+                        "start": 15.28,
+                        "end": 15.58
+                    },
+                    {
+                        "word": "particles?",
+                        "start": 15.58,
+                        "end": 16.12
+                    }
+                ]
+            },
+            {
+                "start": 17.14,
+                "end": 18.46,
+                "text": "the paper defines the chiral",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 17.14,
+                        "end": 17.28
+                    },
+                    {
+                        "word": "paper",
+                        "start": 17.28,
+                        "end": 17.46
+                    },
+                    {
+                        "word": "defines",
+                        "start": 17.46,
+                        "end": 17.84
+                    },
+                    {
+                        "word": "the",
+                        "start": 17.84,
+                        "end": 18.06
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 18.06,
+                        "end": 18.46
+                    }
+                ]
+            },
+            {
+                "start": 18.46,
+                "end": 21.02,
+                "text": "imbalance delta. delta being the",
+                "words": [
+                    {
+                        "word": "imbalance",
+                        "start": 18.46,
+                        "end": 19.0
+                    },
+                    {
+                        "word": "delta.",
+                        "start": 19.0,
+                        "end": 19.5
+                    },
+                    {
+                        "word": "delta",
+                        "start": 20.42,
+                        "end": 20.46
+                    },
+                    {
+                        "word": "being",
+                        "start": 20.42,
+                        "end": 20.62
+                    },
+                    {
+                        "word": "the",
+                        "start": 20.62,
+                        "end": 21.02
+                    }
+                ]
+            },
+            {
+                "start": 21.02,
+                "end": 22.24,
+                "text": "difference between physical mass",
+                "words": [
+                    {
+                        "word": "difference",
+                        "start": 21.02,
+                        "end": 21.3
+                    },
+                    {
+                        "word": "between",
+                        "start": 21.3,
+                        "end": 21.62
+                    },
+                    {
+                        "word": "physical",
+                        "start": 21.62,
+                        "end": 21.94
+                    },
+                    {
+                        "word": "mass",
+                        "start": 21.94,
+                        "end": 22.24
+                    }
+                ]
+            },
+            {
+                "start": 22.24,
+                "end": 23.74,
+                "text": "and its balancing informational",
+                "words": [
+                    {
+                        "word": "and",
+                        "start": 22.24,
+                        "end": 22.46
+                    },
+                    {
+                        "word": "its",
+                        "start": 22.46,
+                        "end": 22.6
+                    },
+                    {
+                        "word": "balancing",
+                        "start": 22.6,
+                        "end": 23.28
+                    },
+                    {
+                        "word": "informational",
+                        "start": 23.28,
+                        "end": 23.74
+                    }
+                ]
+            },
+            {
+                "start": 23.74,
+                "end": 26.66,
+                "text": "state. right. inside a proton,",
+                "words": [
+                    {
+                        "word": "state.",
+                        "start": 23.74,
+                        "end": 24.1
+                    },
+                    {
+                        "word": "right.",
+                        "start": 24.38,
+                        "end": 24.48
+                    },
+                    {
+                        "word": "inside",
+                        "start": 25.14,
+                        "end": 25.48
+                    },
+                    {
+                        "word": "a",
+                        "start": 25.48,
+                        "end": 25.76
+                    },
+                    {
+                        "word": "proton,",
+                        "start": 25.76,
+                        "end": 26.2
+                    }
+                ]
+            },
+            {
+                "start": 26.66,
+                "end": 27.96,
+                "text": "the three quark knot achieves",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 26.66,
+                        "end": 26.7
+                    },
+                    {
+                        "word": "three",
+                        "start": 26.7,
+                        "end": 26.9
+                    },
+                    {
+                        "word": "quark",
+                        "start": 26.9,
+                        "end": 27.16
+                    },
+                    {
+                        "word": "knot",
+                        "start": 27.16,
+                        "end": 27.48
+                    },
+                    {
+                        "word": "achieves",
+                        "start": 27.48,
+                        "end": 27.96
+                    }
+                ]
+            },
+            {
+                "start": 27.96,
+                "end": 30.02,
+                "text": "exact chiral equilibrium with its",
+                "words": [
+                    {
+                        "word": "exact",
+                        "start": 27.96,
+                        "end": 28.52
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 28.52,
+                        "end": 29.0
+                    },
+                    {
+                        "word": "equilibrium",
+                        "start": 29.0,
+                        "end": 29.52
+                    },
+                    {
+                        "word": "with",
+                        "start": 29.52,
+                        "end": 29.84
+                    },
+                    {
+                        "word": "its",
+                        "start": 29.84,
+                        "end": 30.02
+                    }
+                ]
+            },
+            {
+                "start": 30.02,
+                "end": 32.72,
+                "text": "cognitive state. so delta is zero.",
+                "words": [
+                    {
+                        "word": "cognitive",
+                        "start": 30.02,
+                        "end": 30.36
+                    },
+                    {
+                        "word": "state.",
+                        "start": 30.36,
+                        "end": 30.74
+                    },
+                    {
+                        "word": "so",
+                        "start": 31.24,
+                        "end": 31.48
+                    },
+                    {
+                        "word": "delta",
+                        "start": 31.48,
+                        "end": 31.72
+                    },
+                    {
+                        "word": "is",
+                        "start": 31.72,
+                        "end": 31.92
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 31.92,
+                        "end": 32.2
+                    }
+                ]
+            },
+            {
+                "start": 32.72,
+                "end": 34.62,
+                "text": "exactly. the entropic decay rate",
+                "words": [
+                    {
+                        "word": "exactly.",
+                        "start": 32.72,
+                        "end": 32.8
+                    },
+                    {
+                        "word": "the",
+                        "start": 33.56,
+                        "end": 33.66
+                    },
+                    {
+                        "word": "entropic",
+                        "start": 33.66,
+                        "end": 34.04
+                    },
+                    {
+                        "word": "decay",
+                        "start": 34.04,
+                        "end": 34.36
+                    },
+                    {
+                        "word": "rate",
+                        "start": 34.36,
+                        "end": 34.62
+                    }
+                ]
+            },
+            {
+                "start": 34.62,
+                "end": 36.06,
+                "text": "is zero, making the proton",
+                "words": [
+                    {
+                        "word": "is",
+                        "start": 34.62,
+                        "end": 34.82
+                    },
+                    {
+                        "word": "zero,",
+                        "start": 34.82,
+                        "end": 35.06
+                    },
+                    {
+                        "word": "making",
+                        "start": 35.4,
+                        "end": 35.54
+                    },
+                    {
+                        "word": "the",
+                        "start": 35.54,
+                        "end": 35.72
+                    },
+                    {
+                        "word": "proton",
+                        "start": 35.72,
+                        "end": 36.06
+                    }
+                ]
+            },
+            {
+                "start": 36.06,
+                "end": 38.72,
+                "text": "completely stable. but an isolated",
+                "words": [
+                    {
+                        "word": "completely",
+                        "start": 36.06,
+                        "end": 36.44
+                    },
+                    {
+                        "word": "stable.",
+                        "start": 36.44,
+                        "end": 36.78
+                    },
+                    {
+                        "word": "but",
+                        "start": 37.26,
+                        "end": 37.52
+                    },
+                    {
+                        "word": "an",
+                        "start": 37.52,
+                        "end": 37.86
+                    },
+                    {
+                        "word": "isolated",
+                        "start": 37.86,
+                        "end": 38.72
+                    }
+                ]
+            },
+            {
+                "start": 38.72,
+                "end": 41.54,
+                "text": "free neutron? it loses its nuclear",
+                "words": [
+                    {
+                        "word": "free",
+                        "start": 38.72,
+                        "end": 39.12
+                    },
+                    {
+                        "word": "neutron?",
+                        "start": 39.12,
+                        "end": 39.82
+                    },
+                    {
+                        "word": "it",
+                        "start": 40.34,
+                        "end": 40.62
+                    },
+                    {
+                        "word": "loses",
+                        "start": 40.62,
+                        "end": 40.92
+                    },
+                    {
+                        "word": "its",
+                        "start": 40.92,
+                        "end": 41.2
+                    },
+                    {
+                        "word": "nuclear",
+                        "start": 41.2,
+                        "end": 41.54
+                    }
+                ]
+            },
+            {
+                "start": 41.54,
+                "end": 43.82,
+                "text": "binding context. a non -zero",
+                "words": [
+                    {
+                        "word": "binding",
+                        "start": 41.54,
+                        "end": 41.96
+                    },
+                    {
+                        "word": "context.",
+                        "start": 41.96,
+                        "end": 42.6
+                    },
+                    {
+                        "word": "a",
+                        "start": 43.1,
+                        "end": 43.24
+                    },
+                    {
+                        "word": "non",
+                        "start": 43.24,
+                        "end": 43.48
+                    },
+                    {
+                        "word": "-zero",
+                        "start": 43.48,
+                        "end": 43.82
+                    }
+                ]
+            },
+            {
+                "start": 43.82,
+                "end": 45.58,
+                "text": "chiral delta appears.",
+                "words": [
+                    {
+                        "word": "chiral",
+                        "start": 43.82,
+                        "end": 44.24
+                    },
+                    {
+                        "word": "delta",
+                        "start": 44.24,
+                        "end": 44.58
+                    },
+                    {
+                        "word": "appears.",
+                        "start": 44.58,
+                        "end": 44.96
+                    }
+                ]
+            },
+            {
+                "start": 45.58,
+                "end": 47.52,
+                "text": "ah, so there's uncompensated",
+                "words": [
+                    {
+                        "word": "ah,",
+                        "start": 45.58,
+                        "end": 45.86
+                    },
+                    {
+                        "word": "so",
+                        "start": 46.26,
+                        "end": 46.74
+                    },
+                    {
+                        "word": "there's",
+                        "start": 46.74,
+                        "end": 46.96
+                    },
+                    {
+                        "word": "uncompensated",
+                        "start": 46.96,
+                        "end": 47.52
+                    }
+                ]
+            },
+            {
+                "start": 47.52,
+                "end": 49.44,
+                "text": "tension. and that tension causes",
+                "words": [
+                    {
+                        "word": "tension.",
+                        "start": 47.52,
+                        "end": 47.82
+                    },
+                    {
+                        "word": "and",
+                        "start": 48.5,
+                        "end": 48.7
+                    },
+                    {
+                        "word": "that",
+                        "start": 48.7,
+                        "end": 48.84
+                    },
+                    {
+                        "word": "tension",
+                        "start": 48.84,
+                        "end": 49.1
+                    },
+                    {
+                        "word": "causes",
+                        "start": 49.1,
+                        "end": 49.44
+                    }
+                ]
+            },
+            {
+                "start": 49.44,
+                "end": 51.48,
+                "text": "it to decay rapidly.",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 49.44,
+                        "end": 49.66
+                    },
+                    {
+                        "word": "to",
+                        "start": 49.66,
+                        "end": 49.8
+                    },
+                    {
+                        "word": "decay",
+                        "start": 49.8,
+                        "end": 50.04
+                    },
+                    {
+                        "word": "rapidly.",
+                        "start": 50.04,
+                        "end": 50.5
+                    }
+                ]
+            },
+            {
+                "start": 51.48,
+                "end": 53.91,
+                "text": "beta decay in about 880 seconds.",
+                "words": [
+                    {
+                        "word": "beta",
+                        "start": 51.48,
+                        "end": 51.52
+                    },
+                    {
+                        "word": "decay",
+                        "start": 51.52,
+                        "end": 51.88
+                    },
+                    {
+                        "word": "in",
+                        "start": 51.88,
+                        "end": 52.26
+                    },
+                    {
+                        "word": "about",
+                        "start": 52.26,
+                        "end": 52.46
+                    },
+                    {
+                        "word": "880",
+                        "start": 52.46,
+                        "end": 53.12
+                    },
+                    {
+                        "word": "seconds.",
+                        "start": 53.12,
+                        "end": 53.44
+                    }
+                ]
+            },
+            {
+                "start": 53.91,
+                "end": 56.28,
+                "text": "just about 15 minutes.",
+                "words": [
+                    {
+                        "word": "just",
+                        "start": 53.91,
+                        "end": 54.26
+                    },
+                    {
+                        "word": "about",
+                        "start": 54.26,
+                        "end": 54.76
+                    },
+                    {
+                        "word": "15",
+                        "start": 54.76,
+                        "end": 55.14
+                    },
+                    {
+                        "word": "minutes.",
+                        "start": 55.14,
+                        "end": 55.52
+                    }
+                ]
+            },
+            {
+                "start": 56.28,
+                "end": 58.18,
+                "text": "again, direct yourself to the deep",
+                "words": [
+                    {
+                        "word": "again,",
+                        "start": 56.28,
+                        "end": 56.32
+                    },
+                    {
+                        "word": "direct",
+                        "start": 56.68,
+                        "end": 56.78
+                    },
+                    {
+                        "word": "yourself",
+                        "start": 56.78,
+                        "end": 56.98
+                    },
+                    {
+                        "word": "to",
+                        "start": 56.98,
+                        "end": 57.34
+                    },
+                    {
+                        "word": "the",
+                        "start": 57.34,
+                        "end": 57.82
+                    },
+                    {
+                        "word": "deep",
+                        "start": 57.82,
+                        "end": 58.18
+                    }
+                ]
+            },
+            {
+                "start": 58.18,
+                "end": 59.74,
+                "text": "dive website to view the decay",
+                "words": [
+                    {
+                        "word": "dive",
+                        "start": 58.18,
+                        "end": 58.4
+                    },
+                    {
+                        "word": "website",
+                        "start": 58.4,
+                        "end": 58.84
+                    },
+                    {
+                        "word": "to",
+                        "start": 58.84,
+                        "end": 59.08
+                    },
+                    {
+                        "word": "view",
+                        "start": 59.08,
+                        "end": 59.26
+                    },
+                    {
+                        "word": "the",
+                        "start": 59.26,
+                        "end": 59.46
+                    },
+                    {
+                        "word": "decay",
+                        "start": 59.46,
+                        "end": 59.74
+                    }
+                ]
+            },
+            {
+                "start": 59.74,
+                "end": 61.38,
+                "text": "rate mathematical derivations.",
+                "words": [
+                    {
+                        "word": "rate",
+                        "start": 59.74,
+                        "end": 59.96
+                    },
+                    {
+                        "word": "mathematical",
+                        "start": 59.96,
+                        "end": 60.46
+                    },
+                    {
+                        "word": "derivations.",
+                        "start": 60.46,
+                        "end": 61.2
+                    }
+                ]
+            },
+            {
+                "start": 61.38,
+                "end": 63.34,
+                "text": "it's perfectly mapped out.",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 61.38,
+                        "end": 61.54
+                    },
+                    {
+                        "word": "perfectly",
+                        "start": 61.54,
+                        "end": 62.18
+                    },
+                    {
+                        "word": "mapped",
+                        "start": 62.18,
+                        "end": 62.46
+                    },
+                    {
+                        "word": "out.",
+                        "start": 62.46,
+                        "end": 62.72
+                    }
+                ]
+            },
+            {
+                "start": 63.34,
+                "end": 64.84,
+                "text": "coming up in the next clip,",
+                "words": [
+                    {
+                        "word": "coming",
+                        "start": 63.34,
+                        "end": 63.48
+                    },
+                    {
+                        "word": "up",
+                        "start": 63.48,
+                        "end": 63.62
+                    },
+                    {
+                        "word": "in",
+                        "start": 63.62,
+                        "end": 63.72
+                    },
+                    {
+                        "word": "the",
+                        "start": 63.72,
+                        "end": 63.82
+                    },
+                    {
+                        "word": "next",
+                        "start": 63.82,
+                        "end": 64.08
+                    },
+                    {
+                        "word": "clip,",
+                        "start": 64.08,
+                        "end": 64.34
+                    }
+                ]
+            },
+            {
+                "start": 64.84,
+                "end": 66.08,
+                "text": "what happens when a system",
+                "words": [
+                    {
+                        "word": "what",
+                        "start": 64.84,
+                        "end": 64.92
+                    },
+                    {
+                        "word": "happens",
+                        "start": 64.92,
+                        "end": 65.3
+                    },
+                    {
+                        "word": "when",
+                        "start": 65.3,
+                        "end": 65.58
+                    },
+                    {
+                        "word": "a",
+                        "start": 65.58,
+                        "end": 65.72
+                    },
+                    {
+                        "word": "system",
+                        "start": 65.72,
+                        "end": 66.08
+                    }
+                ]
+            },
+            {
+                "start": 66.08,
+                "end": 69.14,
+                "text": "achieves perfect balance?",
+                "words": [
+                    {
+                        "word": "achieves",
+                        "start": 66.08,
+                        "end": 66.76
+                    },
+                    {
+                        "word": "perfect",
+                        "start": 66.76,
+                        "end": 67.42
+                    },
+                    {
+                        "word": "balance?",
+                        "start": 67.42,
+                        "end": 68.48
+                    }
+                ]
+            },
+            {
+                "start": 69.14,
+                "end": 71.86,
+                "text": "it becomes an observer.",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 69.14,
+                        "end": 69.24
+                    },
+                    {
+                        "word": "becomes",
+                        "start": 69.24,
+                        "end": 69.62
+                    },
+                    {
+                        "word": "an",
+                        "start": 69.62,
+                        "end": 70.22
+                    },
+                    {
+                        "word": "observer.",
+                        "start": 70.22,
+                        "end": 70.8
+                    }
+                ]
+            },
+            {
+                "start": 71.86,
+                "end": 72.69,
+                "text": "the phase boundary.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 71.86,
+                        "end": 71.94
+                    },
+                    {
+                        "word": "phase",
+                        "start": 71.94,
+                        "end": 72.12
+                    },
+                    {
+                        "word": "boundary.",
+                        "start": 72.12,
+                        "end": 72.54
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "c1669bf9158f703c78e6a025fcd5e58d",
+        "rendered_duration": 82.8,
+        "audio_duration": 77.07,
+        "intro_offset": 1.7,
+        "outro_duration": 5.0,
+        "source_start": 1383.88,
+        "source_end": 1450.84,
+        "_audio_sig": "3525667902214644b66267b55c6bf405",
+        "_compiled_sig": "bfe9094865c2bac746a1201803d7f589",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-17.mp4"
     },
     {
         "num": 18,

@@ -111,3 +111,33 @@ Please set up and verify the complete publishing environment (mdIngest + DDMA) i
 3. Confirm the fan-out diff check (`scripts/check_fanout.py`) passes with the files in sync (note: it will STOP on the unfanned pairs before fan-out — that is correct; report the named pairs, including the ddma README mirror pair).
 4. Do NOT execute the install prompt as part of this verify. Do NOT start any server. Do NOT publish any clip. Do NOT trigger a Mosaic run. Do NOT commit or push (fan-out is a separate human step).
 5. Report PASS/FAIL per item (A1, B1, C1, D1), then STOP with a full summary.
+
+## Execution record (2026-11-18, executed as written, head 256a60a6)
+
+- A1 PASS. Prompt steps 125-133 replaced with the spec block spliced programmatically
+  (19/19 lines, zero differences vs the spec). All named files/commands verified present
+  (both requirements files with the exact pinned packages, repo-root Cargo.toml with
+  package md-publish + bin path crate/src/main.rs, no manifest in crate/, preprocessor-free
+  book.toml by design, scratch/run_curator.py, beats_server.py). rclone Linux/WSL/Docker/VM
+  only with the Windows/macOS ban; /mnt/g fallback-only; "ask the user" only in step 7
+  (workspace choice; step 8 gates keys on user provision).
+- B1 PASS. Prompt section moved ahead of Dependencies (line 24 vs 83). Workspace section
+  replaced with a 3-line instruction; Dependencies with a 3-line toolchain note ("Zero pip
+  dependencies" line gone); Rust section reduced to a 3-line reference note (repo-root build,
+  no manifest in crate/); Quick Start gained the first-time-setup line and keeps both launch
+  commands + both URLs. Bare dd_hub count is ZERO; DD_HUB_ROOT appears only inside the prompt
+  block (2 lines). All six preserved sections byte-identical to cc45e1b (Philosophy, Publishing
+  Cockpit, Master Packaging Prompt, Safety & Integrity, Bug tracking, License).
+- C1 PASS. Pointer section replaced with the 3-line instruction; Setup first line repoints at
+  the 1-Prompt Setup; line 5's "(including dd_hub setup)" parenthetical repointed too (it broke
+  the zero-bare-dd_hub verify otherwise -- smallest change, reported here). Bare dd_hub ZERO;
+  DD_HUB_ROOT ZERO in the ddma README. Curator launch command and Beats button + port 8001
+  intact (exact wording "port 8001", pre-existing). All six preserved sections byte-identical
+  to d9a6e26. Mirror and ddma copies byte-identical after copying mirror -> repo.
+- D1 PASS. Step 8 names settings.template.json + vault/settings.json path, keys only if the
+  user provides them, never committed, plus the copy-from-existing-workspace option. No text
+  changed.
+- Global verify: both READMEs lead with / link the prompt; no prose workspace internals;
+  all named files/commands confirmed present; check_fanout.py passes (READMEs fan out by the
+  mirror rule, not the checker). No server started, nothing published, nothing committed.
+  Uncommitted: deepDive ddma/README.md, mdIngest README.md, ddma README.md (mirror copy).
