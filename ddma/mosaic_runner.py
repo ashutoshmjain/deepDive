@@ -39,6 +39,21 @@ else:
         file=sys.stderr
     )
 
+def resolve_hub_root():
+    """Workspace root, same semantics as the Curator resolver: env DD_HUB_ROOT
+    -> settings.json dd_hub_root -> plain local <repo>/dd_hub default (loud)."""
+    e = os.environ.get("DD_HUB_ROOT")
+    if e and os.path.exists(e):
+        return e
+    cfg = settings.get("dd_hub_root") if isinstance(settings, dict) else None
+    if cfg and os.path.exists(cfg):
+        return cfg
+    local_default = os.path.join(GITHUB_ROOT, "dd_hub")
+    print(f"WARNING: DD_HUB_ROOT is unset and no dd_hub directory exists at any known location -- defaulting to plain local folder {local_default} (set DD_HUB_ROOT to your workspace to override).")
+    return local_default
+
+HUB_PLAN_PATH = os.path.join(resolve_hub_root(), "episodes", EP_NUM, "plan.json")
+
 API_KEY = settings.get("mosaic_api_key") or os.environ.get("MOSAIC_API_KEY", "")
 AGENT_ID = settings.get("mosaic_agent_id") or os.environ.get("MOSAIC_AGENT_ID", "")
 MOGR_NODE_ID = settings.get("mosaic_mogr_node_id") or os.environ.get("MOSAIC_MOGR_NODE_ID", "")
@@ -47,7 +62,16 @@ CAPTIONS_NODE_ID = settings.get("mosaic_captions_node_id") or os.environ.get("MO
 HEADERS = {"Authorization": f"Bearer {API_KEY}"} if API_KEY else {}
 
 def load_clip(clip_num):
-    target_plan = PLAN_PATH if os.path.exists(PLAN_PATH) else DOCS_PLAN_PATH
+    # Workspace first, then the repo's published copy. Both are repo-layout
+    # independent; the plan's canonical home is the workspace.
+    target_plan = None
+    for cand in [HUB_PLAN_PATH, DOCS_PLAN_PATH]:
+        if os.path.exists(cand):
+            target_plan = cand
+            break
+    if not target_plan:
+        print(f"Error: plan for episode {EP_NUM} not found in workspace or published copy.")
+        return None, None, None
     with open(target_plan, "r", encoding="utf-8") as f:
         plan = json.load(f)
     for c in plan:
@@ -56,7 +80,8 @@ def load_clip(clip_num):
     return None, None, None
 
 def save_run_id(clip_num, run_id):
-    for p_path in [PLAN_PATH, DOCS_PLAN_PATH]:
+    # Hub primary first, then the local working copy and the published copy.
+    for p_path in [HUB_PLAN_PATH, PLAN_PATH, DOCS_PLAN_PATH]:
         if os.path.exists(p_path):
             try:
                 with open(p_path, "r", encoding="utf-8") as f:
@@ -202,6 +227,9 @@ def check_status(clip_num):
 
 def download_and_compile(clip_num):
     clip, _, plan_file = load_clip(clip_num)
+    if not clip:
+        print(f"Clip {clip_num} not found (no plan).")
+        return
     run_id = clip.get("mosaic_run_id")
     if not run_id:
         print(f"Clip {clip_num} has no mosaic_run_id.")

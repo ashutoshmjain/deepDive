@@ -4,16 +4,12 @@
 
 ## Repository Roles & Strict Media Boundaries
 
-1. **`ddma` (Pure Code / Tool Repository)**:
-   - Contains ONLY Python engine code, configuration, scripts, and lightweight metadata (JSON).
-   - **STRICT RULE**: NEVER commit or push binary media assets (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`, clips, stings) to `ddma`.
-   - All generated clips remain in local working scratch directories or are published exclusively to `deepDive`.
+1. **`mdIngest` (Merged Upstream Repository)**:
+   - The ONE repo users fork. App code lives in `ingest/` (servers, cockpit, landing page); the DDMA extension lives in `ddma/` (Curator/Clip Studio + Beats Studio).
+   - Contains ONLY code and templates. **STRICT RULE**: NEVER commit or push audio/video media files or binary assets to `mdIngest` — including its `ddma/` folder.
+   - The standalone `ddma` repo is archived. Do NOT mirror to it, push to it, or clone it for setup.
 
-2. **`mdIngest` (Pure Code / Web UI Repository)**:
-   - Contains ONLY ingestion logic, server code, and UI components (`cockpit.html`, etc.).
-   - **STRICT RULE**: NEVER commit or push audio/video media files or binary assets to `mdIngest`.
-
-3. **`deepDive` (Local Studio Workbench & Publication Repository)**:
+2. **`deepDive` (Local Studio Workbench & Publication Repository)**:
    - **Dual Role**:
      a. **Unified Local Runtime**: On local machines, `deepDive` acts as the active "monorepo" execution workbench (`start_ingest.bat` launches `python ingest/server.py` and calls `ddma/ddma.py` inside `deepDive`).
      b. **Publication Repository**: Designated repository for published episode articles (`src/<num>.md`) and curated episode publication media (`src/ddma/docs/episodes/<num>/clips/*.mp4`).
@@ -28,17 +24,17 @@
 
 2. **The "Push All" Fan-Out Protocol**:
    Whenever instructed to commit and push per our push strategy:
-   - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the standalone repos:
-     - `deepDive/ingest/*` (server.py, cockpit.html, landing.html, lightning-widget.js, tests/cockpit_e2e.js, etc. — everything EXCEPT `settings.json`, template only) ⟶ `mdIngest/ui/*`
-     - `deepDive/ddma/` engine + harness ⟶ `ddma/` (same relative paths): `ddma.py`, `curator.html`, `beats.html`, `scratch/run_curator.py`, `scratch/review_episode_bridges.py`, `scratch/test-env/test_curator.js`, `scratch/test-env/test_canonical_audio_compile.py`, `scratch/test-env/test_compile_scope.py`, `scratch/test-env/test_no_auto_mosaic.js`, `scratch/test-env/test_plan_clip0_title.py`, plus any other tested script/test the fix adds
-     - After mirroring, blob-compare (`git hash-object`) every file the workbench commit touched in engine/UI scope — not just the list above. A fix that adds a new script or test must extend that list in the same edit.
-  - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` and `ddma` contain ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
-   - **Step 3: Tri-Repo Commit & Push**:
+   - **Step 1: Fan-Out Mirroring**: Copy the tested code from `deepDive` outward into the merged repo:
+     - `deepDive/ingest/*` (server.py, cockpit.html, etc. — everything EXCEPT `settings.json`, template only) ⟶ `mdIngest/ingest/*`
+     - `deepDive/ddma/` engine + harness ⟶ `mdIngest/ddma/` (same relative paths)
+     - After mirroring, blob-compare (`git hash-object`) every file the workbench commit touched in engine/UI scope. A fix that adds a new script or test must extend the pair list in `scripts/check_fanout.py` in the same edit.
+     - The standalone `ddma` repo is archived. Do NOT mirror to it, push to it, or clone it for setup.
+  - **Step 2: Pre-Push Media Verification**: Verify that `mdIngest` (including its `ddma/` folder) contains ONLY code and templates -- **NEVER binary media** (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and **NEVER `settings.json`** (it holds live API keys; template only, no keys).
+   - **Step 3: Two-Repo Commit & Push**:
      - Commit and push `deepDive` to its GitHub remote (preserves local workbench + publication articles/media).
-      - **Current phase (pre-release): `deepDive` is a backup mirror of the local workbench — commit everything except large media files, intermediate manim-production artifacts, and live secrets. `settings.json` holds live API keys, so only its sanitized `settings.template.json` goes in the repo; the live file stays local-only (back it up in the private dd_hub vault, never on public GitHub). `ddma` and `mdIngest` are the codebase without assets — data-free and settings-free, template only. Keep all three repos in sync until a release candidate. At RC/GA, switch to a real Dev/QA/Prod strategy (selective releases, staging, QA gate) — the mirror rule ends there.**
-     - Commit and push `mdIngest` to its GitHub remote (clean upstream UI/server tool).
-     - Commit and push `ddma` to its GitHub remote (clean upstream CLI tool).
-     - After mirroring and before committing, run `python scripts/check_fanout.py` from the workbench root: it recomputes every workbench-to-standalone pair and blob-compares them. Any NON-ZERO exit (unmirrored or modified copy) means STOP -- do not commit, do not push, re-mirror first.
+      - **Current phase (pre-release): `deepDive` is a backup mirror of the local workbench — commit everything except large media files, intermediate manim-production artifacts, and live secrets. `settings.json` holds live API keys, so only its sanitized `settings.template.json` goes in the repo; the live file stays local-only (back it up in the private dd_hub vault, never on public GitHub). `mdIngest` is the codebase without assets — data-free and settings-free, template only. Keep both repos in sync until a release candidate. At RC/GA, switch to a real Dev/QA/Prod strategy (selective releases, staging, QA gate) — the mirror rule ends there.**
+     - Commit and push `mdIngest` to its GitHub remote (clean upstream app + extension).
+     - After mirroring and before committing, run `python scripts/check_fanout.py` from the workbench root: it recomputes every workbench-to-mdIngest pair and blob-compares them. Any NON-ZERO exit (unmirrored or modified copy) means STOP -- do not commit, do not push, re-mirror first.
 
 3. **Active Master Clips Publication & Distribution Invariant**:
    - **Local Staging vs. Remote Distribution**:
@@ -58,7 +54,7 @@
      - Upon the next Push, Git seamlessly commits and pushes the updated binary video replacing the previous version on GitHub, updating `deepdive.shutri.com` and Muse without changing URL schemes or breaking links.
    - **Strict Pure-Code Boundaries on Standalone Repos**:
      - `deepDive` is the **ONLY** repository permitted to stage and push active binary clips (`src/ddma/docs/episodes/<ep>/clips/*.mp4`).
-     - `ddma` and `mdIngest` must **NEVER** contain or stage binary `.mp4` assets during the Fan-Out push.
+     - `mdIngest` must **NEVER** contain or stage binary `.mp4` assets during the Fan-Out push.
 
 ### Clips are the key product — three consumers, one file
 
@@ -98,9 +94,9 @@ PACING & ANIMATION RULES
 ```
 
 ## Pre-Push Verification Checklist
-- Before committing and pushing in `ddma` or `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and NO `settings.json` are staged.
-- Only code, templates, and JSON metadata are allowed in `ddma` and `mdIngest`.
-- Always mirror changes made in `deepDive` out to `mdIngest` and `ddma` before finalizing pushes.
+- Before committing and pushing in `mdIngest`, always verify that NO binary media files (`*.mp4`, `*.mp3`, `*.wav`, `*.m4a`) and NO `settings.json` are staged.
+- Only code, templates, and JSON metadata are allowed in `mdIngest`.
+- Always mirror changes made in `deepDive` out to `mdIngest` (`ingest/` + `ddma/`) before finalizing pushes.
 - For active episode clips: verify that `sync_episode_clips_and_markdown(ep)` has staged all active master clips (`<ep>-<clip>.mp4`) into `deepDive/src/ddma/docs/episodes/<ep>/clips/` and regenerated the `src/<ep>.md` video strip before committing `deepDive`.
 
 ## Clip invariants (summary — full detail in `.agents/rules/`)

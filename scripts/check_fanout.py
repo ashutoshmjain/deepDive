@@ -7,39 +7,37 @@ exact mirror (safe to commit/push). Any NON-ZERO exit (unmirrored or
 modified copy) means STOP: do not commit, do not push, re-mirror first.
 """
 import hashlib
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 WORKBENCH = Path(__file__).resolve().parent.parent
-DDMA = WORKBENCH.parent / "ddma"
 MDINGEST = WORKBENCH.parent / "mdIngest"
 
-INGEST_FILES = [
-    "server.py",
-    "cockpit.html",
-    "landing.html",
-    "lightning-widget.js",
-    "tests/cockpit_e2e.js",
-]
-DDMA_FILES = [
-    "ddma.py",
-    "curator.html",
-    "beats.html",
-    "scratch/run_curator.py",
-    "scratch/review_episode_bridges.py",
-    "scratch/test-env/test_curator.js",
-    "scratch/test-env/test_canonical_audio_compile.py",
-    "scratch/test-env/test_compile_scope.py",
-    "scratch/test-env/test_no_auto_mosaic.js",
-    "scratch/test-env/test_plan_clip0_title.py",
-]
+# Merged structure (Batch 9): the standalone ddma repo is archived and gone
+# from this protocol. Every file under mdIngest/ingest/ and mdIngest/ddma/
+# (except the live settings.json) must byte-match its deepDive counterpart.
+SKIP_DIRS = {".git", "__pycache__", "node_modules", "target", "book"}
+SKIP_FILES = {"settings.json"}
+
+
+def mirror_tree_files(sub):
+    files = []
+    base = MDINGEST / sub
+    for dirpath, dirnames, filenames in os.walk(base):
+        dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS)
+        for fn in sorted(filenames):
+            if fn in SKIP_FILES or fn.endswith(".pyc"):
+                continue
+            files.append(Path(dirpath, fn).relative_to(base).as_posix())
+    return files
+
 
 PAIRS = (
-    [(WORKBENCH / "ingest" / f, MDINGEST / "ui" / f) for f in INGEST_FILES]
-    + [(WORKBENCH / "ddma" / f, DDMA / f) for f in DDMA_FILES]
-    + [(WORKBENCH / "settings.template.json", DDMA / "settings.template.json"),
-       (WORKBENCH / "settings.template.json", MDINGEST / "settings.template.json")]
+    [(WORKBENCH / "ingest" / f, MDINGEST / "ingest" / f) for f in mirror_tree_files("ingest")]
+    + [(WORKBENCH / "ddma" / f, MDINGEST / "ddma" / f) for f in mirror_tree_files("ddma")]
+    + [(WORKBENCH / "settings.template.json", MDINGEST / "settings.template.json")]
 )
 
 

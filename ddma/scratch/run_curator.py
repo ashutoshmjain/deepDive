@@ -1004,7 +1004,7 @@ def resolve_deepdive_publication_clips_dir(episode) -> Path:
       <deepDive_root>/src/ddma/docs/episodes/<episode>/clips
     Anchored on __file__ to guarantee reliable resolution across:
       1. deepDive unified workbench (<deepDive>/ddma/scratch/run_curator.py)
-      2. Standalone ddma repository (<workspace>/ddma/scratch/run_curator.py)
+      2. Merged mdIngest repo (<mdIngest>/ddma/scratch/run_curator.py)
       3. Any arbitrary invocation directory.
     """
     script_path = Path(__file__).resolve()
@@ -1014,16 +1014,10 @@ def resolve_deepdive_publication_clips_dir(episode) -> Path:
         if cand_direct.exists():
             candidates.append(cand_direct)
             break
-        cand_sibling = parent / "deepDive" / "src" / "ddma" / "docs" / "episodes"
-        if cand_sibling.exists():
-            candidates.append(cand_sibling)
-            break
     if candidates:
         chosen = candidates[0] / str(episode) / "clips"
         return chosen
-    attempted = [str(p / "src/ddma/docs/episodes") for p in script_path.parents] + [
-        str(p / "deepDive/src/ddma/docs/episodes") for p in script_path.parents
-    ]
+    attempted = [str(p / "src/ddma/docs/episodes") for p in script_path.parents]
     raise FileNotFoundError(
         f"Could not resolve deepDive publication directory from {script_path}. Attempted candidates: {attempted}"
     )

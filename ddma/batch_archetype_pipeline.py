@@ -42,23 +42,29 @@ else:
         file=sys.stderr
     )
 
+def _resolve_hub_root():
+    """Workspace root, same semantics as the Curator resolver: env DD_HUB_ROOT
+    -> settings.json dd_hub_root -> plain local <repo>/dd_hub default (loud)."""
+    e = os.environ.get("DD_HUB_ROOT")
+    if e and os.path.exists(e):
+        return e
+    cfg = settings.get("dd_hub_root") if isinstance(settings, dict) else None
+    if cfg and os.path.exists(cfg):
+        return cfg
+    local_default = os.path.join(GITHUB_ROOT, "dd_hub")
+    print(f"WARNING: DD_HUB_ROOT is unset and no dd_hub directory exists at any known location -- defaulting to plain local folder {local_default} (set DD_HUB_ROOT to your workspace to override).")
+    return local_default
+
 def _find_episodes_dir():
-    """Clone-agnostic episodes dir. Probe order: hub plan first, then the
-    deepDive layout (<repo>/src/ddma/docs/episodes/), then the standalone
-    ddma layout (<repo>/docs/episodes/)."""
-    hub_roots = []
-    if os.environ.get("DD_HUB_ROOT"):
-        hub_roots.append(os.environ["DD_HUB_ROOT"])
-    if settings.get("dd_hub_root"):
-        hub_roots.append(settings["dd_hub_root"])
-    hub_roots += [r"G:\My Drive\dd_hub", "/mnt/gdrive/dd_hub", "/workspace/dd_hub"]
-    cands = [os.path.join(h, "episodes") for h in hub_roots]
-    cands.append(os.path.join(GITHUB_ROOT, "src", "ddma", "docs", "episodes"))
-    cands.append(os.path.join(GITHUB_ROOT, "docs", "episodes"))
+    """Plan/data live in the workspace (<hub>/episodes/); the repo's published
+    copy (<repo>/src/ddma/docs/episodes/) is the read fallback."""
+    hub = _resolve_hub_root()
+    cands = [os.path.join(hub, "episodes"),
+             os.path.join(GITHUB_ROOT, "src", "ddma", "docs", "episodes")]
     for c in cands:
         if os.path.isdir(c):
             return c
-    return cands[-1]
+    return cands[0]
 
 EPISODES_DIR = _find_episodes_dir()
 
