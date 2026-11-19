@@ -1,6 +1,6 @@
-# DeepDive Media Automator (DDMA)
+# Cutroom
 
-DeepDive Media Automator (DDMA) is a progressive media automation engine powered by **Google Antigravity**.
+Cutroom is a progressive media automation engine powered by **Google Antigravity**.
 
 > **DDMA is an extension to [mdIngest](https://github.com/ashutoshmjain/mdIngest).** mdIngest is the base application — it is the entry point, runs transcription (the podcast stage), and hosts the Publishing Cockpit and the workspace landing page. **Install mdIngest first and run its 1-Prompt Setup (including the workspace folder setup) in the [mdIngest README](https://github.com/ashutoshmjain/mdIngest/blob/main/README.md).** DDMA adds two things on top of mdIngest: **Clip Studio** (the Curator — Clips management) and **Beats Studio** (longform video).
 
