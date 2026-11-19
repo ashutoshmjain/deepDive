@@ -39216,7 +39216,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.04
             },
             {
@@ -39457,11 +39457,11 @@
             {
                 "word": "the",
                 "start": 24.96,
-                "end": 25.0
+                "end": 25
             },
             {
                 "word": "three",
-                "start": 25.0,
+                "start": 25,
                 "end": 25.2
             },
             {
@@ -39707,11 +39707,11 @@
             {
                 "word": "And",
                 "start": 46.8,
-                "end": 47.0
+                "end": 47
             },
             {
                 "word": "that",
-                "start": 47.0,
+                "start": 47,
                 "end": 47.14
             },
             {
@@ -40197,11 +40197,11 @@
                     {
                         "word": "imbalance",
                         "start": 18.46,
-                        "end": 19.0
+                        "end": 19
                     },
                     {
                         "word": "delta.",
-                        "start": 19.0,
+                        "start": 19,
                         "end": 19.5
                     },
                     {
@@ -40352,11 +40352,11 @@
                     {
                         "word": "chiral",
                         "start": 28.52,
-                        "end": 29.0
+                        "end": 29
                     },
                     {
                         "word": "equilibrium",
-                        "start": 29.0,
+                        "start": 29,
                         "end": 29.52
                     },
                     {
@@ -41013,7 +41013,7 @@
         "rendered_duration": 82.8,
         "audio_duration": 77.07,
         "intro_offset": 1.7,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 1383.88,
         "source_end": 1450.84,
         "_audio_sig": "3525667902214644b66267b55c6bf405",
@@ -41068,9 +41068,10 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "Infinite Creation"
+        "coming_up_title": "Infinite Creation",
+        "mosaic_run_id": "748710bf-5d9b-402f-9c23-f47d4f531139"
     },
     {
         "num": 19,
