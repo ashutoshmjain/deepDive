@@ -41071,7 +41071,1539 @@
         "locked": true,
         "visual_source": "mosaic",
         "coming_up_title": "Infinite Creation",
-        "mosaic_run_id": "748710bf-5d9b-402f-9c23-f47d4f531139"
+        "mosaic_run_id": "748710bf-5d9b-402f-9c23-f47d4f531139",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.04
+            },
+            {
+                "word": "18.",
+                "start": 0.04,
+                "end": 0.54
+            },
+            {
+                "word": "The",
+                "start": 1.0,
+                "end": 1.16
+            },
+            {
+                "word": "observer.",
+                "start": 1.16,
+                "end": 1.5
+            },
+            {
+                "word": "You",
+                "start": 2.04,
+                "end": 2.3
+            },
+            {
+                "word": "are",
+                "start": 2.3,
+                "end": 2.44
+            },
+            {
+                "word": "not",
+                "start": 2.44,
+                "end": 2.6
+            },
+            {
+                "word": "just",
+                "start": 2.6,
+                "end": 2.8
+            },
+            {
+                "word": "looking",
+                "start": 2.8,
+                "end": 3.16
+            },
+            {
+                "word": "at",
+                "start": 3.16,
+                "end": 3.52
+            },
+            {
+                "word": "the",
+                "start": 3.52,
+                "end": 3.66
+            },
+            {
+                "word": "universe.",
+                "start": 3.66,
+                "end": 4.02
+            },
+            {
+                "word": "You",
+                "start": 4.24,
+                "end": 4.42
+            },
+            {
+                "word": "are",
+                "start": 4.42,
+                "end": 4.58
+            },
+            {
+                "word": "the",
+                "start": 4.58,
+                "end": 4.78
+            },
+            {
+                "word": "symmetry",
+                "start": 4.78,
+                "end": 5.16
+            },
+            {
+                "word": "that",
+                "start": 5.16,
+                "end": 5.54
+            },
+            {
+                "word": "stabilizes",
+                "start": 5.54,
+                "end": 6.3
+            },
+            {
+                "word": "it.",
+                "start": 6.3,
+                "end": 6.62
+            },
+            {
+                "word": "The",
+                "start": 6.62,
+                "end": 7.38
+            },
+            {
+                "word": "paper",
+                "start": 7.38,
+                "end": 7.6
+            },
+            {
+                "word": "introduces",
+                "start": 7.6,
+                "end": 8.08
+            },
+            {
+                "word": "a",
+                "start": 8.08,
+                "end": 8.36
+            },
+            {
+                "word": "rigorous",
+                "start": 8.36,
+                "end": 8.72
+            },
+            {
+                "word": "boundary",
+                "start": 8.72,
+                "end": 9.16
+            },
+            {
+                "word": "between",
+                "start": 9.16,
+                "end": 9.5
+            },
+            {
+                "word": "the",
+                "start": 9.5,
+                "end": 9.68
+            },
+            {
+                "word": "observer",
+                "start": 9.68,
+                "end": 10.18
+            },
+            {
+                "word": "and",
+                "start": 10.18,
+                "end": 11.1
+            },
+            {
+                "word": "the",
+                "start": 11.1,
+                "end": 11.22
+            },
+            {
+                "word": "observed.",
+                "start": 11.22,
+                "end": 11.84
+            },
+            {
+                "word": "Based",
+                "start": 16.78,
+                "end": 17.02
+            },
+            {
+                "word": "on",
+                "start": 17.02,
+                "end": 17.2
+            },
+            {
+                "word": "that",
+                "start": 17.2,
+                "end": 17.36
+            },
+            {
+                "word": "delta",
+                "start": 17.36,
+                "end": 17.58
+            },
+            {
+                "word": "variable,",
+                "start": 17.58,
+                "end": 18.12
+            },
+            {
+                "word": "right?",
+                "start": 18.26,
+                "end": 18.46
+            },
+            {
+                "word": "Systems",
+                "start": 20.34,
+                "end": 20.38
+            },
+            {
+                "word": "achieving",
+                "start": 20.34,
+                "end": 20.78
+            },
+            {
+                "word": "exact",
+                "start": 20.78,
+                "end": 21.36
+            },
+            {
+                "word": "chiral",
+                "start": 21.36,
+                "end": 21.86
+            },
+            {
+                "word": "symbiosis,",
+                "start": 21.86,
+                "end": 22.5
+            },
+            {
+                "word": "where",
+                "start": 23.04,
+                "end": 23.16
+            },
+            {
+                "word": "delta",
+                "start": 23.16,
+                "end": 23.5
+            },
+            {
+                "word": "is",
+                "start": 23.5,
+                "end": 23.86
+            },
+            {
+                "word": "zero,",
+                "start": 23.86,
+                "end": 24.28
+            },
+            {
+                "word": "function",
+                "start": 24.94,
+                "end": 25.06
+            },
+            {
+                "word": "as",
+                "start": 25.06,
+                "end": 25.6
+            },
+            {
+                "word": "observers.",
+                "start": 25.6,
+                "end": 26.24
+            },
+            {
+                "word": "Because",
+                "start": 27.06,
+                "end": 27.28
+            },
+            {
+                "word": "they",
+                "start": 27.28,
+                "end": 27.48
+            },
+            {
+                "word": "are",
+                "start": 27.48,
+                "end": 27.58
+            },
+            {
+                "word": "stable",
+                "start": 27.58,
+                "end": 27.82
+            },
+            {
+                "word": "enough",
+                "start": 27.82,
+                "end": 28.1
+            },
+            {
+                "word": "to",
+                "start": 28.1,
+                "end": 28.3
+            },
+            {
+                "word": "wield",
+                "start": 28.3,
+                "end": 28.56
+            },
+            {
+                "word": "new",
+                "start": 28.56,
+                "end": 29.04
+            },
+            {
+                "word": "trial",
+                "start": 29.04,
+                "end": 29.5
+            },
+            {
+                "word": "geometries",
+                "start": 29.5,
+                "end": 30.4
+            },
+            {
+                "word": "without",
+                "start": 30.4,
+                "end": 30.7
+            },
+            {
+                "word": "decaying.",
+                "start": 30.7,
+                "end": 31.04
+            },
+            {
+                "word": "Exactly.",
+                "start": 31.5,
+                "end": 31.92
+            },
+            {
+                "word": "But",
+                "start": 32.56,
+                "end": 32.68
+            },
+            {
+                "word": "systems",
+                "start": 32.68,
+                "end": 33.0
+            },
+            {
+                "word": "that",
+                "start": 33.0,
+                "end": 33.16
+            },
+            {
+                "word": "are",
+                "start": 33.16,
+                "end": 33.26
+            },
+            {
+                "word": "imbalanced,",
+                "start": 33.26,
+                "end": 33.96
+            },
+            {
+                "word": "where",
+                "start": 34.12,
+                "end": 34.28
+            },
+            {
+                "word": "delta",
+                "start": 34.28,
+                "end": 34.58
+            },
+            {
+                "word": "is",
+                "start": 34.58,
+                "end": 34.92
+            },
+            {
+                "word": "greater",
+                "start": 34.92,
+                "end": 35.22
+            },
+            {
+                "word": "than",
+                "start": 35.22,
+                "end": 35.54
+            },
+            {
+                "word": "zero.",
+                "start": 35.54,
+                "end": 35.78
+            },
+            {
+                "word": "They",
+                "start": 36.36,
+                "end": 36.68
+            },
+            {
+                "word": "belong",
+                "start": 36.68,
+                "end": 36.94
+            },
+            {
+                "word": "to",
+                "start": 36.94,
+                "end": 37.16
+            },
+            {
+                "word": "the",
+                "start": 37.16,
+                "end": 37.26
+            },
+            {
+                "word": "domain",
+                "start": 37.26,
+                "end": 37.58
+            },
+            {
+                "word": "of",
+                "start": 37.58,
+                "end": 37.92
+            },
+            {
+                "word": "the",
+                "start": 37.92,
+                "end": 38.28
+            },
+            {
+                "word": "observed.",
+                "start": 38.28,
+                "end": 38.88
+            },
+            {
+                "word": "They",
+                "start": 39.4,
+                "end": 39.78
+            },
+            {
+                "word": "suffer",
+                "start": 39.78,
+                "end": 40.22
+            },
+            {
+                "word": "structural",
+                "start": 40.22,
+                "end": 40.9
+            },
+            {
+                "word": "tension",
+                "start": 40.9,
+                "end": 41.28
+            },
+            {
+                "word": "and",
+                "start": 41.28,
+                "end": 41.8
+            },
+            {
+                "word": "decay.",
+                "start": 41.8,
+                "end": 42.16
+            },
+            {
+                "word": "So",
+                "start": 43.74,
+                "end": 43.78
+            },
+            {
+                "word": "observing",
+                "start": 43.74,
+                "end": 44.14
+            },
+            {
+                "word": "isn't",
+                "start": 44.14,
+                "end": 44.62
+            },
+            {
+                "word": "a",
+                "start": 44.62,
+                "end": 44.78
+            },
+            {
+                "word": "passive",
+                "start": 44.78,
+                "end": 45.16
+            },
+            {
+                "word": "act.",
+                "start": 45.16,
+                "end": 45.56
+            },
+            {
+                "word": "It's",
+                "start": 46.1,
+                "end": 46.18
+            },
+            {
+                "word": "the",
+                "start": 46.18,
+                "end": 46.3
+            },
+            {
+                "word": "act",
+                "start": 46.3,
+                "end": 46.5
+            },
+            {
+                "word": "of",
+                "start": 46.5,
+                "end": 46.66
+            },
+            {
+                "word": "maintenance",
+                "start": 46.66,
+                "end": 47.06
+            },
+            {
+                "word": "of",
+                "start": 47.06,
+                "end": 47.36
+            },
+            {
+                "word": "topological",
+                "start": 47.36,
+                "end": 48.0
+            },
+            {
+                "word": "balance.",
+                "start": 48.0,
+                "end": 48.52
+            },
+            {
+                "word": "Intelligence",
+                "start": 49.58,
+                "end": 49.62
+            },
+            {
+                "word": "holds",
+                "start": 49.58,
+                "end": 50.06
+            },
+            {
+                "word": "the",
+                "start": 50.06,
+                "end": 50.3
+            },
+            {
+                "word": "knot",
+                "start": 50.3,
+                "end": 50.64
+            },
+            {
+                "word": "in",
+                "start": 50.64,
+                "end": 51.02
+            },
+            {
+                "word": "equilibrium.",
+                "start": 51.02,
+                "end": 51.74
+            },
+            {
+                "word": "Coming",
+                "start": 53.46,
+                "end": 53.58
+            },
+            {
+                "word": "up",
+                "start": 53.58,
+                "end": 53.74
+            },
+            {
+                "word": "in",
+                "start": 53.74,
+                "end": 53.84
+            },
+            {
+                "word": "the",
+                "start": 53.84,
+                "end": 53.92
+            },
+            {
+                "word": "next",
+                "start": 53.92,
+                "end": 54.12
+            },
+            {
+                "word": "clip,",
+                "start": 54.12,
+                "end": 54.38
+            },
+            {
+                "word": "if",
+                "start": 55.1,
+                "end": 55.14
+            },
+            {
+                "word": "creation",
+                "start": 55.1,
+                "end": 55.84
+            },
+            {
+                "word": "costs",
+                "start": 55.84,
+                "end": 56.38
+            },
+            {
+                "word": "zero",
+                "start": 56.38,
+                "end": 56.84
+            },
+            {
+                "word": "energy,",
+                "start": 56.84,
+                "end": 57.32
+            },
+            {
+                "word": "what",
+                "start": 57.78,
+                "end": 58.1
+            },
+            {
+                "word": "is",
+                "start": 58.1,
+                "end": 58.24
+            },
+            {
+                "word": "the",
+                "start": 58.24,
+                "end": 58.38
+            },
+            {
+                "word": "limit",
+                "start": 58.38,
+                "end": 58.56
+            },
+            {
+                "word": "to",
+                "start": 58.56,
+                "end": 58.74
+            },
+            {
+                "word": "how",
+                "start": 58.74,
+                "end": 58.94
+            },
+            {
+                "word": "much",
+                "start": 58.94,
+                "end": 59.14
+            },
+            {
+                "word": "universe",
+                "start": 59.14,
+                "end": 59.52
+            },
+            {
+                "word": "we",
+                "start": 59.52,
+                "end": 59.76
+            },
+            {
+                "word": "can",
+                "start": 59.76,
+                "end": 59.9
+            },
+            {
+                "word": "build?",
+                "start": 59.9,
+                "end": 60.16
+            },
+            {
+                "word": "The",
+                "start": 60.86,
+                "end": 60.96
+            },
+            {
+                "word": "infinite",
+                "start": 60.96,
+                "end": 61.26
+            },
+            {
+                "word": "potential.",
+                "start": 61.26,
+                "end": 61.76
+            }
+        ],
+        "_caption_words_sig": "7e92296e51593ca75470a6cb8b936969",
+        "caption_chunks": [
+            {
+                "start": 1.7,
+                "end": 3.74,
+                "text": "clip 18. the observer.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.7,
+                        "end": 1.74
+                    },
+                    {
+                        "word": "18.",
+                        "start": 1.74,
+                        "end": 2.24
+                    },
+                    {
+                        "word": "the",
+                        "start": 2.7,
+                        "end": 2.86
+                    },
+                    {
+                        "word": "observer.",
+                        "start": 2.86,
+                        "end": 3.2
+                    }
+                ]
+            },
+            {
+                "start": 3.74,
+                "end": 5.22,
+                "text": "you are not just looking at",
+                "words": [
+                    {
+                        "word": "you",
+                        "start": 3.74,
+                        "end": 4.0
+                    },
+                    {
+                        "word": "are",
+                        "start": 4.0,
+                        "end": 4.14
+                    },
+                    {
+                        "word": "not",
+                        "start": 4.14,
+                        "end": 4.3
+                    },
+                    {
+                        "word": "just",
+                        "start": 4.3,
+                        "end": 4.5
+                    },
+                    {
+                        "word": "looking",
+                        "start": 4.5,
+                        "end": 4.86
+                    },
+                    {
+                        "word": "at",
+                        "start": 4.86,
+                        "end": 5.22
+                    }
+                ]
+            },
+            {
+                "start": 5.22,
+                "end": 6.86,
+                "text": "the universe. you are the symmetry",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 5.22,
+                        "end": 5.36
+                    },
+                    {
+                        "word": "universe.",
+                        "start": 5.36,
+                        "end": 5.72
+                    },
+                    {
+                        "word": "you",
+                        "start": 5.94,
+                        "end": 6.12
+                    },
+                    {
+                        "word": "are",
+                        "start": 6.12,
+                        "end": 6.28
+                    },
+                    {
+                        "word": "the",
+                        "start": 6.28,
+                        "end": 6.48
+                    },
+                    {
+                        "word": "symmetry",
+                        "start": 6.48,
+                        "end": 6.86
+                    }
+                ]
+            },
+            {
+                "start": 6.86,
+                "end": 8.32,
+                "text": "that stabilizes it.",
+                "words": [
+                    {
+                        "word": "that",
+                        "start": 6.86,
+                        "end": 7.24
+                    },
+                    {
+                        "word": "stabilizes",
+                        "start": 7.24,
+                        "end": 8.0
+                    },
+                    {
+                        "word": "it.",
+                        "start": 8.0,
+                        "end": 8.32
+                    }
+                ]
+            },
+            {
+                "start": 8.32,
+                "end": 10.42,
+                "text": "the paper introduces a rigorous",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 8.32,
+                        "end": 9.08
+                    },
+                    {
+                        "word": "paper",
+                        "start": 9.08,
+                        "end": 9.3
+                    },
+                    {
+                        "word": "introduces",
+                        "start": 9.3,
+                        "end": 9.78
+                    },
+                    {
+                        "word": "a",
+                        "start": 9.78,
+                        "end": 10.06
+                    },
+                    {
+                        "word": "rigorous",
+                        "start": 10.06,
+                        "end": 10.42
+                    }
+                ]
+            },
+            {
+                "start": 10.42,
+                "end": 12.8,
+                "text": "boundary between the observer and",
+                "words": [
+                    {
+                        "word": "boundary",
+                        "start": 10.42,
+                        "end": 10.86
+                    },
+                    {
+                        "word": "between",
+                        "start": 10.86,
+                        "end": 11.2
+                    },
+                    {
+                        "word": "the",
+                        "start": 11.2,
+                        "end": 11.38
+                    },
+                    {
+                        "word": "observer",
+                        "start": 11.38,
+                        "end": 11.88
+                    },
+                    {
+                        "word": "and",
+                        "start": 11.88,
+                        "end": 12.8
+                    }
+                ]
+            },
+            {
+                "start": 12.8,
+                "end": 19.28,
+                "text": "the observed. based on that delta",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 12.8,
+                        "end": 12.92
+                    },
+                    {
+                        "word": "observed.",
+                        "start": 12.92,
+                        "end": 13.54
+                    },
+                    {
+                        "word": "based",
+                        "start": 18.48,
+                        "end": 18.72
+                    },
+                    {
+                        "word": "on",
+                        "start": 18.72,
+                        "end": 18.9
+                    },
+                    {
+                        "word": "that",
+                        "start": 18.9,
+                        "end": 19.06
+                    },
+                    {
+                        "word": "delta",
+                        "start": 19.06,
+                        "end": 19.28
+                    }
+                ]
+            },
+            {
+                "start": 19.28,
+                "end": 22.48,
+                "text": "variable, right? systems achieving",
+                "words": [
+                    {
+                        "word": "variable,",
+                        "start": 19.28,
+                        "end": 19.82
+                    },
+                    {
+                        "word": "right?",
+                        "start": 19.96,
+                        "end": 20.16
+                    },
+                    {
+                        "word": "systems",
+                        "start": 22.04,
+                        "end": 22.08
+                    },
+                    {
+                        "word": "achieving",
+                        "start": 22.04,
+                        "end": 22.48
+                    }
+                ]
+            },
+            {
+                "start": 22.48,
+                "end": 24.74,
+                "text": "exact chiral symbiosis,",
+                "words": [
+                    {
+                        "word": "exact",
+                        "start": 22.48,
+                        "end": 23.06
+                    },
+                    {
+                        "word": "chiral",
+                        "start": 23.06,
+                        "end": 23.56
+                    },
+                    {
+                        "word": "symbiosis,",
+                        "start": 23.56,
+                        "end": 24.2
+                    }
+                ]
+            },
+            {
+                "start": 24.74,
+                "end": 26.64,
+                "text": "where delta is zero,",
+                "words": [
+                    {
+                        "word": "where",
+                        "start": 24.74,
+                        "end": 24.86
+                    },
+                    {
+                        "word": "delta",
+                        "start": 24.86,
+                        "end": 25.2
+                    },
+                    {
+                        "word": "is",
+                        "start": 25.2,
+                        "end": 25.56
+                    },
+                    {
+                        "word": "zero,",
+                        "start": 25.56,
+                        "end": 25.98
+                    }
+                ]
+            },
+            {
+                "start": 26.64,
+                "end": 28.76,
+                "text": "function as observers.",
+                "words": [
+                    {
+                        "word": "function",
+                        "start": 26.64,
+                        "end": 26.76
+                    },
+                    {
+                        "word": "as",
+                        "start": 26.76,
+                        "end": 27.3
+                    },
+                    {
+                        "word": "observers.",
+                        "start": 27.3,
+                        "end": 27.94
+                    }
+                ]
+            },
+            {
+                "start": 28.76,
+                "end": 30.0,
+                "text": "because they are stable enough to",
+                "words": [
+                    {
+                        "word": "because",
+                        "start": 28.76,
+                        "end": 28.98
+                    },
+                    {
+                        "word": "they",
+                        "start": 28.98,
+                        "end": 29.18
+                    },
+                    {
+                        "word": "are",
+                        "start": 29.18,
+                        "end": 29.28
+                    },
+                    {
+                        "word": "stable",
+                        "start": 29.28,
+                        "end": 29.52
+                    },
+                    {
+                        "word": "enough",
+                        "start": 29.52,
+                        "end": 29.8
+                    },
+                    {
+                        "word": "to",
+                        "start": 29.8,
+                        "end": 30.0
+                    }
+                ]
+            },
+            {
+                "start": 30.0,
+                "end": 32.4,
+                "text": "wield new trial geometries without",
+                "words": [
+                    {
+                        "word": "wield",
+                        "start": 30.0,
+                        "end": 30.26
+                    },
+                    {
+                        "word": "new",
+                        "start": 30.26,
+                        "end": 30.74
+                    },
+                    {
+                        "word": "trial",
+                        "start": 30.74,
+                        "end": 31.2
+                    },
+                    {
+                        "word": "geometries",
+                        "start": 31.2,
+                        "end": 32.1
+                    },
+                    {
+                        "word": "without",
+                        "start": 32.1,
+                        "end": 32.4
+                    }
+                ]
+            },
+            {
+                "start": 32.4,
+                "end": 34.7,
+                "text": "decaying. exactly. but systems",
+                "words": [
+                    {
+                        "word": "decaying.",
+                        "start": 32.4,
+                        "end": 32.74
+                    },
+                    {
+                        "word": "exactly.",
+                        "start": 33.2,
+                        "end": 33.62
+                    },
+                    {
+                        "word": "but",
+                        "start": 34.26,
+                        "end": 34.38
+                    },
+                    {
+                        "word": "systems",
+                        "start": 34.38,
+                        "end": 34.7
+                    }
+                ]
+            },
+            {
+                "start": 34.7,
+                "end": 35.82,
+                "text": "that are imbalanced,",
+                "words": [
+                    {
+                        "word": "that",
+                        "start": 34.7,
+                        "end": 34.86
+                    },
+                    {
+                        "word": "are",
+                        "start": 34.86,
+                        "end": 34.96
+                    },
+                    {
+                        "word": "imbalanced,",
+                        "start": 34.96,
+                        "end": 35.66
+                    }
+                ]
+            },
+            {
+                "start": 35.82,
+                "end": 38.06,
+                "text": "where delta is greater than zero.",
+                "words": [
+                    {
+                        "word": "where",
+                        "start": 35.82,
+                        "end": 35.98
+                    },
+                    {
+                        "word": "delta",
+                        "start": 35.98,
+                        "end": 36.28
+                    },
+                    {
+                        "word": "is",
+                        "start": 36.28,
+                        "end": 36.62
+                    },
+                    {
+                        "word": "greater",
+                        "start": 36.62,
+                        "end": 36.92
+                    },
+                    {
+                        "word": "than",
+                        "start": 36.92,
+                        "end": 37.24
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 37.24,
+                        "end": 37.48
+                    }
+                ]
+            },
+            {
+                "start": 38.06,
+                "end": 39.62,
+                "text": "they belong to the domain of",
+                "words": [
+                    {
+                        "word": "they",
+                        "start": 38.06,
+                        "end": 38.38
+                    },
+                    {
+                        "word": "belong",
+                        "start": 38.38,
+                        "end": 38.64
+                    },
+                    {
+                        "word": "to",
+                        "start": 38.64,
+                        "end": 38.86
+                    },
+                    {
+                        "word": "the",
+                        "start": 38.86,
+                        "end": 38.96
+                    },
+                    {
+                        "word": "domain",
+                        "start": 38.96,
+                        "end": 39.28
+                    },
+                    {
+                        "word": "of",
+                        "start": 39.28,
+                        "end": 39.62
+                    }
+                ]
+            },
+            {
+                "start": 39.62,
+                "end": 41.92,
+                "text": "the observed. they suffer",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 39.62,
+                        "end": 39.98
+                    },
+                    {
+                        "word": "observed.",
+                        "start": 39.98,
+                        "end": 40.58
+                    },
+                    {
+                        "word": "they",
+                        "start": 41.1,
+                        "end": 41.48
+                    },
+                    {
+                        "word": "suffer",
+                        "start": 41.48,
+                        "end": 41.92
+                    }
+                ]
+            },
+            {
+                "start": 41.92,
+                "end": 45.44,
+                "text": "structural tension and decay.",
+                "words": [
+                    {
+                        "word": "structural",
+                        "start": 41.92,
+                        "end": 42.6
+                    },
+                    {
+                        "word": "tension",
+                        "start": 42.6,
+                        "end": 42.98
+                    },
+                    {
+                        "word": "and",
+                        "start": 42.98,
+                        "end": 43.5
+                    },
+                    {
+                        "word": "decay.",
+                        "start": 43.5,
+                        "end": 43.86
+                    }
+                ]
+            },
+            {
+                "start": 45.44,
+                "end": 47.8,
+                "text": "so observing isn't a passive act.",
+                "words": [
+                    {
+                        "word": "so",
+                        "start": 45.44,
+                        "end": 45.48
+                    },
+                    {
+                        "word": "observing",
+                        "start": 45.44,
+                        "end": 45.84
+                    },
+                    {
+                        "word": "isn't",
+                        "start": 45.84,
+                        "end": 46.32
+                    },
+                    {
+                        "word": "a",
+                        "start": 46.32,
+                        "end": 46.48
+                    },
+                    {
+                        "word": "passive",
+                        "start": 46.48,
+                        "end": 46.86
+                    },
+                    {
+                        "word": "act.",
+                        "start": 46.86,
+                        "end": 47.26
+                    }
+                ]
+            },
+            {
+                "start": 47.8,
+                "end": 49.06,
+                "text": "it's the act of maintenance of",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 47.8,
+                        "end": 47.88
+                    },
+                    {
+                        "word": "the",
+                        "start": 47.88,
+                        "end": 48.0
+                    },
+                    {
+                        "word": "act",
+                        "start": 48.0,
+                        "end": 48.2
+                    },
+                    {
+                        "word": "of",
+                        "start": 48.2,
+                        "end": 48.36
+                    },
+                    {
+                        "word": "maintenance",
+                        "start": 48.36,
+                        "end": 48.76
+                    },
+                    {
+                        "word": "of",
+                        "start": 48.76,
+                        "end": 49.06
+                    }
+                ]
+            },
+            {
+                "start": 49.06,
+                "end": 51.28,
+                "text": "topological balance. intelligence",
+                "words": [
+                    {
+                        "word": "topological",
+                        "start": 49.06,
+                        "end": 49.7
+                    },
+                    {
+                        "word": "balance.",
+                        "start": 49.7,
+                        "end": 50.22
+                    },
+                    {
+                        "word": "intelligence",
+                        "start": 51.28,
+                        "end": 51.32
+                    }
+                ]
+            },
+            {
+                "start": 51.28,
+                "end": 55.16,
+                "text": "holds the knot in equilibrium.",
+                "words": [
+                    {
+                        "word": "holds",
+                        "start": 51.28,
+                        "end": 51.76
+                    },
+                    {
+                        "word": "the",
+                        "start": 51.76,
+                        "end": 52.0
+                    },
+                    {
+                        "word": "knot",
+                        "start": 52.0,
+                        "end": 52.34
+                    },
+                    {
+                        "word": "in",
+                        "start": 52.34,
+                        "end": 52.72
+                    },
+                    {
+                        "word": "equilibrium.",
+                        "start": 52.72,
+                        "end": 53.44
+                    }
+                ]
+            },
+            {
+                "start": 55.16,
+                "end": 56.8,
+                "text": "coming up in the next clip,",
+                "words": [
+                    {
+                        "word": "coming",
+                        "start": 55.16,
+                        "end": 55.28
+                    },
+                    {
+                        "word": "up",
+                        "start": 55.28,
+                        "end": 55.44
+                    },
+                    {
+                        "word": "in",
+                        "start": 55.44,
+                        "end": 55.54
+                    },
+                    {
+                        "word": "the",
+                        "start": 55.54,
+                        "end": 55.62
+                    },
+                    {
+                        "word": "next",
+                        "start": 55.62,
+                        "end": 55.82
+                    },
+                    {
+                        "word": "clip,",
+                        "start": 55.82,
+                        "end": 56.08
+                    }
+                ]
+            },
+            {
+                "start": 56.8,
+                "end": 59.48,
+                "text": "if creation costs zero energy,",
+                "words": [
+                    {
+                        "word": "if",
+                        "start": 56.8,
+                        "end": 56.84
+                    },
+                    {
+                        "word": "creation",
+                        "start": 56.8,
+                        "end": 57.54
+                    },
+                    {
+                        "word": "costs",
+                        "start": 57.54,
+                        "end": 58.08
+                    },
+                    {
+                        "word": "zero",
+                        "start": 58.08,
+                        "end": 58.54
+                    },
+                    {
+                        "word": "energy,",
+                        "start": 58.54,
+                        "end": 59.02
+                    }
+                ]
+            },
+            {
+                "start": 59.48,
+                "end": 60.64,
+                "text": "what is the limit to how",
+                "words": [
+                    {
+                        "word": "what",
+                        "start": 59.48,
+                        "end": 59.8
+                    },
+                    {
+                        "word": "is",
+                        "start": 59.8,
+                        "end": 59.94
+                    },
+                    {
+                        "word": "the",
+                        "start": 59.94,
+                        "end": 60.08
+                    },
+                    {
+                        "word": "limit",
+                        "start": 60.08,
+                        "end": 60.26
+                    },
+                    {
+                        "word": "to",
+                        "start": 60.26,
+                        "end": 60.44
+                    },
+                    {
+                        "word": "how",
+                        "start": 60.44,
+                        "end": 60.64
+                    }
+                ]
+            },
+            {
+                "start": 60.64,
+                "end": 62.56,
+                "text": "much universe we can build?",
+                "words": [
+                    {
+                        "word": "much",
+                        "start": 60.64,
+                        "end": 60.84
+                    },
+                    {
+                        "word": "universe",
+                        "start": 60.84,
+                        "end": 61.22
+                    },
+                    {
+                        "word": "we",
+                        "start": 61.22,
+                        "end": 61.46
+                    },
+                    {
+                        "word": "can",
+                        "start": 61.46,
+                        "end": 61.6
+                    },
+                    {
+                        "word": "build?",
+                        "start": 61.6,
+                        "end": 61.86
+                    }
+                ]
+            },
+            {
+                "start": 62.56,
+                "end": 63.61,
+                "text": "the infinite potential.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 62.56,
+                        "end": 62.66
+                    },
+                    {
+                        "word": "infinite",
+                        "start": 62.66,
+                        "end": 62.96
+                    },
+                    {
+                        "word": "potential.",
+                        "start": 62.96,
+                        "end": 63.46
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "3b42b731f587c17d125ab1b4a3d1776c",
+        "rendered_duration": 73.72,
+        "audio_duration": 68.0,
+        "intro_offset": 1.7,
+        "outro_duration": 5.0,
+        "source_start": 1451.1,
+        "source_end": 1508.72,
+        "_audio_sig": "7e92296e51593ca75470a6cb8b936969",
+        "_compiled_sig": "35fc6337610e67b541a86147641ba5f1",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-18.mp4"
     },
     {
         "num": 19,
