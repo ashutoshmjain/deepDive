@@ -42601,7 +42601,9 @@
         "source_start": 1451.1,
         "source_end": 1508.72,
         "_audio_sig": "7e92296e51593ca75470a6cb8b936969",
-        "_compiled_sig": "35fc6337610e67b541a86147641ba5f1"
+        "_compiled_sig": "35fc6337610e67b541a86147641ba5f1",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-18.mp4"
     },
     {
         "num": 19,
