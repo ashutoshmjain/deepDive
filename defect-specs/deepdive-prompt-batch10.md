@@ -130,3 +130,13 @@ Use the Python virtual environment at `.venv` in the repo root for every Python 
 ---
 
 **Verify:** (1) Create a scratch virtual environment and run `pip install -r requirements.txt` against the new root file — it installs cleanly, end to end. (2) `grep -rn "ingest/requirements.txt\|ddma/requirements.txt"` across both repos → zero. (3) The README's setup-prompt block matches the supplied text exactly. (4) `grep -n "DDMA"` in `mdIngest/README.md` → zero. (5) Using the merged install and the venv, the four servers start and respond: cockpit :8088, mdbook :3000, Curator :8000, Beats :8001 (HTTP 200 each).
+
+## Execution summary
+
+Executed locally by agy (Antigravity CLI, Hydrogen medium) on 2026-11-19 in the WSL clones of `deepDive` and `mdIngest`. B1–B5 all PASS, and the B6 addendum (fixes (a)–(e)) all PASS. All guardrails held throughout: out-of-scope findings were reported rather than patched, and no commits or pushes occurred until the fan-out was separately authorized.
+
+The changes fanned out as `deepDive` `fab3e3a0` and `mdIngest` `1833951` with `scripts/check_fanout.py` exiting green. Brownie's remote verification passed (zero remaining hits for the old Cutroom name, both READMEs, the merged `requirements.txt`, `ep248` parity, and 6/6 byte-identical spot-checks), and Issues 102–108 were closed.
+
+Follow-ons spawned from this batch:
+- First clean-room run of `ingest/tests/cockpit_e2e.js` (7 pass / 11 fixture failures), documented as the Tier-1 baseline in `TESTING.md` (`deepDive` `60367837` / `mdIngest` `c1256868`).
+- Issue 109 (the one stale test assertion in `Context-Aware Right Studio Deck Synchronization`), assigned to the Windows side.
