@@ -13,6 +13,7 @@ ddma/captions/
 ddma/build_temp/
 ddma/clips/
 ddma/previews/
+ddma/cache/
 ddma/docs/assets/clips/
 ddma/docs/episodes/
 !src/ddma/docs/episodes/**
