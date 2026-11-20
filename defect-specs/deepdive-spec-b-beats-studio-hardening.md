@@ -4,10 +4,16 @@
 **Deliverable:** ONE design document, committed to **deepDive only** at
 `defect-specs/beats-studio-hardening-design.md`. No code changes anywhere. No
 changes to mdIngest. No other commits.
-**Sequencing:** this design runs only after the WSL new-user test (fresh
-fork-clone, corrected install prompt) has passed. Implementation specs are
+**Sequencing (revised 2026-11-20, user decision):** the repo-hygiene fix
+is split out as **Spec B1** and runs FIRST — it is urgent, because a new
+user must never inherit a dirty clone from opening Beats Studio. The WSL
+new-user test follows B1. This design runs after the new-user test,
+unchanged in posture: design only, unhurried. Implementation specs are
 written later, separately, after the user reviews this design. Nothing in
-this spec authorizes implementation.
+this spec authorizes implementation. Note for D1/D7: B1 will already have
+established a per-episode beats location in the workspace and read-path
+purity — the design refines that foundation (personal beats, canonical
+copies, layout) rather than starting from the flat-slot world.
 
 ## Background (self-contained)
 
