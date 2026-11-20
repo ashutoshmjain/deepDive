@@ -6,8 +6,9 @@
 with a dirty clone and a cleanup chore just for opening Beats Studio. This
 fix therefore runs BEFORE the new-user test, not after it. The broader
 Beats Studio design (personal beats, layout, template cache, proving run)
-stays in Spec B — design-only, unhurried, after the new-user test. This
-spec is the narrow hygiene fix only.
+stays in Spec B — design-only; it executes in the same engagement, after
+this spec, and the new-user test follows both. This spec is the narrow
+hygiene fix only.
 
 ## The problem (observed live, 2026-11-20, Windows workbench)
 
