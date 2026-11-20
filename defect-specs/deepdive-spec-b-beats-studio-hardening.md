@@ -173,3 +173,30 @@ From the user's manual smoke test of the pulled Windows workbench:
 4. The studio already carries a **Mosaic Retrigger (explicit)** action —
    the D5 retrigger path exists in embryo; the design starts from it
    rather than from zero.
+
+## Addendum 2 (2026-11-20) — workbench findings from the 249-19 production
+
+Two behaviours observed live on the Windows workbench during clip 249-19's
+production run. Both are evidence for D1 and D7; the design must address
+both explicitly.
+
+1. **Opening an episode in Beats Studio rewrites the flat archetypes
+   slot.** Loading episode 248 re-materialized 248's beat meta into
+   `ddma/archetypes/clip_XX_meta.json` (23 tracked files), overwriting a
+   *different* episode's beat data that was sitting there committed. The
+   flat folder is a single shared scratch slot whose contents are
+   whichever episode touched it last — and a plain read-path operation
+   (load + play) is what rewrote it. The per-episode storage in D1 is
+   therefore not a tidy-up; it removes a live cross-episode overwrite.
+2. **The working plan copies are the only record of a clip's run state.**
+   The Curator's plan copies (`ddma/projects/<ep>/plan.json` + meta, plus
+   the `ddma/plan.json` and `ddma/docs/plan.json` copies — all deepDive-
+   only, none mirrored to mdIngest) accumulate the production record:
+   locks, Mosaic run IDs, caption data, rendered durations, published
+   flags. After 249-19's publish, the committed copies still showed the
+   clip as unlocked and unpublished; the entire record existed only as
+   unstaged working-tree changes (mixed with int/float re-serialization
+   churn on every save). The D1 storage map must assign these copies an
+   explicit status — which copy is canonical, which are derived, and
+   what a fresh clone should trust — and D7's read/write discipline must
+   cover plan saves as well as archetype reads.
