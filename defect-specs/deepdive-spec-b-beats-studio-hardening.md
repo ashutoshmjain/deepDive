@@ -89,7 +89,8 @@ not re-open them:
 - **D3 — Beats Studio layout.** Realize the layout in decision 5 above:
   per pane, its contents, its actions, and the existing endpoints and code
   each pane maps to. Flag anything in the current UI the layout makes
-  obsolete, and anything the layout needs that does not exist yet.
+  obsolete, and anything the layout needs that does not exist yet. Page
+  navigation is in scope for this item — see the Addendum.
 - **D4 — Template cache disposition (user decision required).** For
   `generated_archetypes.json`, present the options — (a) stays mirrored in
   both repos as today, (b) deepDive-only, with mdIngest shipping an empty
@@ -136,3 +137,39 @@ a single review.
 - **Report.** On completion: the design document's path, its size, the
   commit hash, and a one-line-per-D-item summary of the recommendations,
   ending with the list of decisions the user must make.
+
+## Addendum (2026-11-20) — manual smoke-test findings
+
+From the user's manual smoke test of the pulled Windows workbench:
+
+1. **All four top-right navigation links in Beats Studio are dead.**
+   Root cause, verified against the code: the Beats server
+   (`ddma/beats_server.py`) serves only `/`, `/beats.html`, and the
+   `/api/beats/*` routes — every other GET returns 404; there is no static
+   file serving. Consequences per link (`ddma/beats.html` lines 30–33):
+   - **Workspace** and **cockpit** are href-less anchors
+     (`data-workspace-home`) that depend on `workspace-link.js` to fill in
+     their hrefs at runtime; the page requests that script from the Beats
+     server, gets a 404, and the anchors never become links — clicking
+     does literally nothing.
+   - **Docs** points at `/docs/documentation.html` on the Beats origin,
+     which 404s; its target also lives in the retired `ddma/docs/` folder
+     that mdIngest does not ship at all.
+   - **ddma** (the Curator) is a hardcoded `http://127.0.0.1:8000/
+     curator.html` href: it can only work while the Curator is already
+     running, and its label is a stale pre-rename name.
+2. **Which links are needed at all is an open question for the design**
+   (folds into D3). The user's instinct: Workspace is the keeper. The
+   reviewer's recommendation, recorded as input, not decision: keep
+   Workspace and a Curator link — Beats Studio genuinely depends on the
+   Curator (its mosaic-retry path forwards there) — both routed through
+   the shared workspace-link mechanism with current names; drop Docs,
+   whose target is retired. The design proposes; the user decides.
+3. **Episode 248 loads in Beats Studio and its full longform master
+   (54:14) plays** — after the ep248 bundle's removal from the repos,
+   playback and the beat timeline work from the workspace plan/meta and
+   the master video, not from the archived bundle. No design action; it
+   confirms the D1 storage direction.
+4. The studio already carries a **Mosaic Retrigger (explicit)** action —
+   the D5 retrigger path exists in embryo; the design starts from it
+   rather than from zero.
