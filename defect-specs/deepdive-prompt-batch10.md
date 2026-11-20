@@ -135,7 +135,7 @@ Use the Python virtual environment at `.venv` in the repo root for every Python 
 
 Executed locally by agy (Antigravity CLI, Hydrogen medium) on 2026-11-19 in the WSL clones of `deepDive` and `mdIngest`. B1–B5 all PASS, and the B6 addendum (fixes (a)–(e)) all PASS. All guardrails held throughout: out-of-scope findings were reported rather than patched, and no commits or pushes occurred until the fan-out was separately authorized.
 
-The changes fanned out as `deepDive` `fab3e3a0` and `mdIngest` `1833951` with `scripts/check_fanout.py` exiting green. Brownie's remote verification passed (zero remaining hits for the old Cutroom name, both READMEs, the merged `requirements.txt`, `ep248` parity, and 6/6 byte-identical spot-checks), and Issues 102–108 were closed.
+The changes fanned out as `deepDive` `fab3e3a0` and `mdIngest` `1833951` with `scripts/check_fanout.py` exiting green. Brownie's remote verification passed (zero remaining hits for the old DDMA name, both READMEs, the merged `requirements.txt`, `ep248` parity, and 6/6 byte-identical spot-checks), and Issues 102–108 were closed.
 
 Follow-ons spawned from this batch:
 - First clean-room run of `ingest/tests/cockpit_e2e.js` (7 pass / 11 fixture failures), documented as the Tier-1 baseline in `TESTING.md` (`deepDive` `60367837` / `mdIngest` `c1256868`).
