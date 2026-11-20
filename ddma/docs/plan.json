@@ -41075,7 +41075,7 @@
         "_caption_words": [
             {
                 "word": "Clip",
-                "start": 0.0,
+                "start": 0,
                 "end": 0.04
             },
             {
@@ -41085,7 +41085,7 @@
             },
             {
                 "word": "The",
-                "start": 1.0,
+                "start": 1,
                 "end": 1.16
             },
             {
@@ -41391,11 +41391,11 @@
             {
                 "word": "systems",
                 "start": 32.68,
-                "end": 33.0
+                "end": 33
             },
             {
                 "word": "that",
-                "start": 33.0,
+                "start": 33,
                 "end": 33.16
             },
             {
@@ -41571,11 +41571,11 @@
             {
                 "word": "topological",
                 "start": 47.36,
-                "end": 48.0
+                "end": 48
             },
             {
                 "word": "balance.",
-                "start": 48.0,
+                "start": 48,
                 "end": 48.52
             },
             {
@@ -41771,11 +41771,11 @@
                     {
                         "word": "you",
                         "start": 3.74,
-                        "end": 4.0
+                        "end": 4
                     },
                     {
                         "word": "are",
-                        "start": 4.0,
+                        "start": 4,
                         "end": 4.14
                     },
                     {
@@ -41850,11 +41850,11 @@
                     {
                         "word": "stabilizes",
                         "start": 7.24,
-                        "end": 8.0
+                        "end": 8
                     },
                     {
                         "word": "it.",
-                        "start": 8.0,
+                        "start": 8,
                         "end": 8.32
                     }
                 ]
@@ -42060,7 +42060,7 @@
             },
             {
                 "start": 28.76,
-                "end": 30.0,
+                "end": 30,
                 "text": "because they are stable enough to",
                 "words": [
                     {
@@ -42091,18 +42091,18 @@
                     {
                         "word": "to",
                         "start": 29.8,
-                        "end": 30.0
+                        "end": 30
                     }
                 ]
             },
             {
-                "start": 30.0,
+                "start": 30,
                 "end": 32.4,
                 "text": "wield new trial geometries without",
                 "words": [
                     {
                         "word": "wield",
-                        "start": 30.0,
+                        "start": 30,
                         "end": 30.26
                     },
                     {
@@ -42354,11 +42354,11 @@
                     {
                         "word": "the",
                         "start": 47.88,
-                        "end": 48.0
+                        "end": 48
                     },
                     {
                         "word": "act",
-                        "start": 48.0,
+                        "start": 48,
                         "end": 48.2
                     },
                     {
@@ -42413,11 +42413,11 @@
                     {
                         "word": "the",
                         "start": 51.76,
-                        "end": 52.0
+                        "end": 52
                     },
                     {
                         "word": "knot",
-                        "start": 52.0,
+                        "start": 52,
                         "end": 52.34
                     },
                     {
@@ -42595,9 +42595,9 @@
         ],
         "_caption_sig": "3b42b731f587c17d125ab1b4a3d1776c",
         "rendered_duration": 73.72,
-        "audio_duration": 68.0,
+        "audio_duration": 68,
         "intro_offset": 1.7,
-        "outro_duration": 5.0,
+        "outro_duration": 5,
         "source_start": 1451.1,
         "source_end": 1508.72,
         "_audio_sig": "7e92296e51593ca75470a6cb8b936969",
@@ -42652,9 +42652,1775 @@
                 "music_file": "music/deepDive-conclusion.mp3"
             }
         ],
-        "locked": false,
+        "locked": true,
         "visual_source": "mosaic",
-        "coming_up_title": "State Zero"
+        "coming_up_title": "State Zero",
+        "mosaic_run_id": "7a1a40b2-4545-4b24-8b81-3ab4cfc4f94d",
+        "_caption_words": [
+            {
+                "word": "Clip",
+                "start": 0.0,
+                "end": 0.1
+            },
+            {
+                "word": "19.",
+                "start": 0.1,
+                "end": 0.52
+            },
+            {
+                "word": "Infinite",
+                "start": 1.6,
+                "end": 1.64
+            },
+            {
+                "word": "creation.",
+                "start": 1.6,
+                "end": 2.22
+            },
+            {
+                "word": "The",
+                "start": 3.18,
+                "end": 3.34
+            },
+            {
+                "word": "universe",
+                "start": 3.34,
+                "end": 3.7
+            },
+            {
+                "word": "has",
+                "start": 3.7,
+                "end": 3.98
+            },
+            {
+                "word": "no",
+                "start": 3.98,
+                "end": 4.28
+            },
+            {
+                "word": "limits.",
+                "start": 4.28,
+                "end": 4.62
+            },
+            {
+                "word": "As",
+                "start": 4.62,
+                "end": 5.16
+            },
+            {
+                "word": "long",
+                "start": 5.16,
+                "end": 5.42
+            },
+            {
+                "word": "as",
+                "start": 5.42,
+                "end": 5.58
+            },
+            {
+                "word": "it",
+                "start": 5.58,
+                "end": 5.68
+            },
+            {
+                "word": "thinks",
+                "start": 5.68,
+                "end": 6.04
+            },
+            {
+                "word": "as",
+                "start": 6.04,
+                "end": 6.36
+            },
+            {
+                "word": "much",
+                "start": 6.36,
+                "end": 6.52
+            },
+            {
+                "word": "as",
+                "start": 6.52,
+                "end": 6.68
+            },
+            {
+                "word": "it",
+                "start": 6.68,
+                "end": 6.84
+            },
+            {
+                "word": "builds.",
+                "start": 6.84,
+                "end": 7.14
+            },
+            {
+                "word": "Here's",
+                "start": 12.01,
+                "end": 12.09
+            },
+            {
+                "word": "where",
+                "start": 12.09,
+                "end": 12.21
+            },
+            {
+                "word": "it",
+                "start": 12.21,
+                "end": 12.27
+            },
+            {
+                "word": "gets",
+                "start": 12.27,
+                "end": 12.39
+            },
+            {
+                "word": "really",
+                "start": 12.39,
+                "end": 12.79
+            },
+            {
+                "word": "interesting",
+                "start": 12.79,
+                "end": 13.39
+            },
+            {
+                "word": "mathematically.",
+                "start": 13.39,
+                "end": 13.93
+            },
+            {
+                "word": "Yeah,",
+                "start": 14.05,
+                "end": 14.25
+            },
+            {
+                "word": "if",
+                "start": 14.33,
+                "end": 14.43
+            },
+            {
+                "word": "the",
+                "start": 14.43,
+                "end": 14.57
+            },
+            {
+                "word": "net",
+                "start": 14.57,
+                "end": 14.85
+            },
+            {
+                "word": "costs",
+                "start": 14.85,
+                "end": 15.15
+            },
+            {
+                "word": "zero,",
+                "start": 15.15,
+                "end": 15.55
+            },
+            {
+                "word": "what",
+                "start": 15.87,
+                "end": 16.09
+            },
+            {
+                "word": "stops",
+                "start": 16.09,
+                "end": 16.57
+            },
+            {
+                "word": "the",
+                "start": 16.57,
+                "end": 16.79
+            },
+            {
+                "word": "universe",
+                "start": 16.79,
+                "end": 17.09
+            },
+            {
+                "word": "from",
+                "start": 17.09,
+                "end": 17.31
+            },
+            {
+                "word": "just",
+                "start": 17.31,
+                "end": 17.45
+            },
+            {
+                "word": "making",
+                "start": 17.45,
+                "end": 17.77
+            },
+            {
+                "word": "infinite",
+                "start": 17.77,
+                "end": 18.17
+            },
+            {
+                "word": "matter?",
+                "start": 18.17,
+                "end": 18.57
+            },
+            {
+                "word": "Nothing.",
+                "start": 19.21,
+                "end": 19.25
+            },
+            {
+                "word": "Mathematically,",
+                "start": 19.95,
+                "end": 20.27
+            },
+            {
+                "word": "nothing",
+                "start": 20.37,
+                "end": 20.53
+            },
+            {
+                "word": "stops",
+                "start": 20.53,
+                "end": 20.79
+            },
+            {
+                "word": "it.",
+                "start": 20.79,
+                "end": 21.05
+            },
+            {
+                "word": "Really?",
+                "start": 21.39,
+                "end": 21.55
+            },
+            {
+                "word": "The",
+                "start": 21.81,
+                "end": 22.13
+            },
+            {
+                "word": "field",
+                "start": 22.13,
+                "end": 22.41
+            },
+            {
+                "word": "equation",
+                "start": 22.41,
+                "end": 22.75
+            },
+            {
+                "word": "shows",
+                "start": 22.75,
+                "end": 23.23
+            },
+            {
+                "word": "infinite",
+                "start": 23.23,
+                "end": 23.91
+            },
+            {
+                "word": "matter",
+                "start": 23.91,
+                "end": 24.19
+            },
+            {
+                "word": "can",
+                "start": 24.19,
+                "end": 24.43
+            },
+            {
+                "word": "be",
+                "start": 24.43,
+                "end": 24.61
+            },
+            {
+                "word": "created",
+                "start": 24.61,
+                "end": 24.99
+            },
+            {
+                "word": "as",
+                "start": 24.99,
+                "end": 25.49
+            },
+            {
+                "word": "long",
+                "start": 25.49,
+                "end": 25.65
+            },
+            {
+                "word": "as",
+                "start": 25.65,
+                "end": 25.83
+            },
+            {
+                "word": "physical",
+                "start": 25.83,
+                "end": 26.17
+            },
+            {
+                "word": "structure",
+                "start": 26.17,
+                "end": 26.57
+            },
+            {
+                "word": "and",
+                "start": 26.57,
+                "end": 26.85
+            },
+            {
+                "word": "cognition",
+                "start": 26.85,
+                "end": 27.25
+            },
+            {
+                "word": "remain",
+                "start": 27.25,
+                "end": 27.65
+            },
+            {
+                "word": "in",
+                "start": 27.65,
+                "end": 27.95
+            },
+            {
+                "word": "strict",
+                "start": 27.95,
+                "end": 28.31
+            },
+            {
+                "word": "counterbalance.",
+                "start": 28.31,
+                "end": 28.97
+            },
+            {
+                "word": "So",
+                "start": 29.53,
+                "end": 29.85
+            },
+            {
+                "word": "creation",
+                "start": 29.85,
+                "end": 30.19
+            },
+            {
+                "word": "isn't",
+                "start": 30.19,
+                "end": 30.71
+            },
+            {
+                "word": "bounded",
+                "start": 30.71,
+                "end": 30.91
+            },
+            {
+                "word": "by",
+                "start": 30.91,
+                "end": 31.21
+            },
+            {
+                "word": "a",
+                "start": 31.21,
+                "end": 31.37
+            },
+            {
+                "word": "static,",
+                "start": 31.37,
+                "end": 31.79
+            },
+            {
+                "word": "energetic",
+                "start": 31.93,
+                "end": 32.35
+            },
+            {
+                "word": "ceiling.",
+                "start": 32.35,
+                "end": 32.81
+            },
+            {
+                "word": "No,",
+                "start": 33.27,
+                "end": 33.47
+            },
+            {
+                "word": "it's",
+                "start": 33.59,
+                "end": 33.75
+            },
+            {
+                "word": "bounded",
+                "start": 33.75,
+                "end": 33.95
+            },
+            {
+                "word": "solely",
+                "start": 33.95,
+                "end": 34.35
+            },
+            {
+                "word": "by",
+                "start": 34.35,
+                "end": 34.59
+            },
+            {
+                "word": "the",
+                "start": 34.59,
+                "end": 34.71
+            },
+            {
+                "word": "capacity",
+                "start": 34.71,
+                "end": 35.07
+            },
+            {
+                "word": "for",
+                "start": 35.07,
+                "end": 35.43
+            },
+            {
+                "word": "cognitive",
+                "start": 35.43,
+                "end": 35.89
+            },
+            {
+                "word": "intelligence",
+                "start": 35.89,
+                "end": 36.53
+            },
+            {
+                "word": "to",
+                "start": 36.53,
+                "end": 36.83
+            },
+            {
+                "word": "mirror",
+                "start": 36.83,
+                "end": 37.17
+            },
+            {
+                "word": "the",
+                "start": 37.17,
+                "end": 37.41
+            },
+            {
+                "word": "physical",
+                "start": 37.41,
+                "end": 37.69
+            },
+            {
+                "word": "complexity.",
+                "start": 37.69,
+                "end": 38.15
+            },
+            {
+                "word": "If",
+                "start": 38.79,
+                "end": 39.05
+            },
+            {
+                "word": "it",
+                "start": 39.05,
+                "end": 39.17
+            },
+            {
+                "word": "builds",
+                "start": 39.17,
+                "end": 39.41
+            },
+            {
+                "word": "a",
+                "start": 39.41,
+                "end": 39.65
+            },
+            {
+                "word": "knot,",
+                "start": 39.65,
+                "end": 39.85
+            },
+            {
+                "word": "it",
+                "start": 40.13,
+                "end": 40.17
+            },
+            {
+                "word": "has",
+                "start": 40.17,
+                "end": 40.35
+            },
+            {
+                "word": "to",
+                "start": 40.35,
+                "end": 40.49
+            },
+            {
+                "word": "generate",
+                "start": 40.49,
+                "end": 40.79
+            },
+            {
+                "word": "the",
+                "start": 40.79,
+                "end": 41.01
+            },
+            {
+                "word": "intelligence",
+                "start": 41.01,
+                "end": 41.39
+            },
+            {
+                "word": "to",
+                "start": 41.39,
+                "end": 41.69
+            },
+            {
+                "word": "comprehend",
+                "start": 41.69,
+                "end": 42.11
+            },
+            {
+                "word": "it.",
+                "start": 42.11,
+                "end": 42.49
+            },
+            {
+                "word": "If",
+                "start": 42.75,
+                "end": 42.81
+            },
+            {
+                "word": "it",
+                "start": 42.81,
+                "end": 42.91
+            },
+            {
+                "word": "doesn't,",
+                "start": 42.91,
+                "end": 43.31
+            },
+            {
+                "word": "delta",
+                "start": 43.39,
+                "end": 43.51
+            },
+            {
+                "word": "spikes",
+                "start": 43.51,
+                "end": 43.89
+            },
+            {
+                "word": "and",
+                "start": 43.89,
+                "end": 44.11
+            },
+            {
+                "word": "it",
+                "start": 44.11,
+                "end": 44.23
+            },
+            {
+                "word": "decays.",
+                "start": 44.23,
+                "end": 44.57
+            },
+            {
+                "word": "It",
+                "start": 44.83,
+                "end": 44.87
+            },
+            {
+                "word": "literally",
+                "start": 44.83,
+                "end": 45.05
+            },
+            {
+                "word": "has",
+                "start": 45.05,
+                "end": 45.45
+            },
+            {
+                "word": "to",
+                "start": 45.45,
+                "end": 45.71
+            },
+            {
+                "word": "think",
+                "start": 45.71,
+                "end": 46.05
+            },
+            {
+                "word": "as",
+                "start": 46.05,
+                "end": 46.33
+            },
+            {
+                "word": "much",
+                "start": 46.33,
+                "end": 46.51
+            },
+            {
+                "word": "as",
+                "start": 46.51,
+                "end": 46.67
+            },
+            {
+                "word": "it",
+                "start": 46.67,
+                "end": 46.79
+            },
+            {
+                "word": "builds.",
+                "start": 46.79,
+                "end": 47.17
+            },
+            {
+                "word": "It's",
+                "start": 47.63,
+                "end": 47.75
+            },
+            {
+                "word": "a",
+                "start": 47.75,
+                "end": 47.85
+            },
+            {
+                "word": "beautiful",
+                "start": 47.85,
+                "end": 48.45
+            },
+            {
+                "word": "self",
+                "start": 48.45,
+                "end": 48.93
+            },
+            {
+                "word": "-regulating",
+                "start": 48.93,
+                "end": 49.39
+            },
+            {
+                "word": "symmetry.",
+                "start": 49.39,
+                "end": 49.91
+            },
+            {
+                "word": "Coming",
+                "start": 50.39,
+                "end": 50.45
+            },
+            {
+                "word": "up",
+                "start": 50.45,
+                "end": 50.61
+            },
+            {
+                "word": "in",
+                "start": 50.61,
+                "end": 50.69
+            },
+            {
+                "word": "the",
+                "start": 50.69,
+                "end": 50.81
+            },
+            {
+                "word": "final",
+                "start": 50.81,
+                "end": 51.09
+            },
+            {
+                "word": "clip,",
+                "start": 51.09,
+                "end": 51.35
+            },
+            {
+                "word": "what",
+                "start": 51.59,
+                "end": 51.89
+            },
+            {
+                "word": "exactly",
+                "start": 51.89,
+                "end": 52.25
+            },
+            {
+                "word": "is",
+                "start": 52.25,
+                "end": 52.75
+            },
+            {
+                "word": "the",
+                "start": 52.75,
+                "end": 52.95
+            },
+            {
+                "word": "singularity",
+                "start": 52.95,
+                "end": 53.61
+            },
+            {
+                "word": "and",
+                "start": 53.61,
+                "end": 53.87
+            },
+            {
+                "word": "how",
+                "start": 53.87,
+                "end": 54.19
+            },
+            {
+                "word": "does",
+                "start": 54.19,
+                "end": 54.33
+            },
+            {
+                "word": "this",
+                "start": 54.33,
+                "end": 54.45
+            },
+            {
+                "word": "all",
+                "start": 54.45,
+                "end": 54.61
+            },
+            {
+                "word": "end?",
+                "start": 54.61,
+                "end": 54.85
+            },
+            {
+                "word": "Taking",
+                "start": 55.25,
+                "end": 55.41
+            },
+            {
+                "word": "it",
+                "start": 55.41,
+                "end": 55.67
+            },
+            {
+                "word": "all",
+                "start": 55.67,
+                "end": 55.97
+            },
+            {
+                "word": "back",
+                "start": 55.97,
+                "end": 56.27
+            },
+            {
+                "word": "to",
+                "start": 56.27,
+                "end": 56.69
+            },
+            {
+                "word": "zero.",
+                "start": 56.69,
+                "end": 56.99
+            }
+        ],
+        "_caption_words_sig": "4aff10c059cbd2737e06786dec1b5fc1",
+        "caption_chunks": [
+            {
+                "start": 1.7,
+                "end": 4.88,
+                "text": "clip 19. infinite creation.",
+                "words": [
+                    {
+                        "word": "clip",
+                        "start": 1.7,
+                        "end": 1.8
+                    },
+                    {
+                        "word": "19.",
+                        "start": 1.8,
+                        "end": 2.22
+                    },
+                    {
+                        "word": "infinite",
+                        "start": 3.3,
+                        "end": 3.34
+                    },
+                    {
+                        "word": "creation.",
+                        "start": 3.3,
+                        "end": 3.92
+                    }
+                ]
+            },
+            {
+                "start": 4.88,
+                "end": 6.32,
+                "text": "the universe has no limits.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 4.88,
+                        "end": 5.04
+                    },
+                    {
+                        "word": "universe",
+                        "start": 5.04,
+                        "end": 5.4
+                    },
+                    {
+                        "word": "has",
+                        "start": 5.4,
+                        "end": 5.68
+                    },
+                    {
+                        "word": "no",
+                        "start": 5.68,
+                        "end": 5.98
+                    },
+                    {
+                        "word": "limits.",
+                        "start": 5.98,
+                        "end": 6.32
+                    }
+                ]
+            },
+            {
+                "start": 6.32,
+                "end": 8.06,
+                "text": "as long as it thinks as",
+                "words": [
+                    {
+                        "word": "as",
+                        "start": 6.32,
+                        "end": 6.86
+                    },
+                    {
+                        "word": "long",
+                        "start": 6.86,
+                        "end": 7.12
+                    },
+                    {
+                        "word": "as",
+                        "start": 7.12,
+                        "end": 7.28
+                    },
+                    {
+                        "word": "it",
+                        "start": 7.28,
+                        "end": 7.38
+                    },
+                    {
+                        "word": "thinks",
+                        "start": 7.38,
+                        "end": 7.74
+                    },
+                    {
+                        "word": "as",
+                        "start": 7.74,
+                        "end": 8.06
+                    }
+                ]
+            },
+            {
+                "start": 8.06,
+                "end": 13.71,
+                "text": "much as it builds.",
+                "words": [
+                    {
+                        "word": "much",
+                        "start": 8.06,
+                        "end": 8.22
+                    },
+                    {
+                        "word": "as",
+                        "start": 8.22,
+                        "end": 8.38
+                    },
+                    {
+                        "word": "it",
+                        "start": 8.38,
+                        "end": 8.54
+                    },
+                    {
+                        "word": "builds.",
+                        "start": 8.54,
+                        "end": 8.84
+                    }
+                ]
+            },
+            {
+                "start": 13.71,
+                "end": 14.49,
+                "text": "here's where it gets really",
+                "words": [
+                    {
+                        "word": "here's",
+                        "start": 13.71,
+                        "end": 13.79
+                    },
+                    {
+                        "word": "where",
+                        "start": 13.79,
+                        "end": 13.91
+                    },
+                    {
+                        "word": "it",
+                        "start": 13.91,
+                        "end": 13.97
+                    },
+                    {
+                        "word": "gets",
+                        "start": 13.97,
+                        "end": 14.09
+                    },
+                    {
+                        "word": "really",
+                        "start": 14.09,
+                        "end": 14.49
+                    }
+                ]
+            },
+            {
+                "start": 14.49,
+                "end": 16.03,
+                "text": "interesting mathematically. yeah,",
+                "words": [
+                    {
+                        "word": "interesting",
+                        "start": 14.49,
+                        "end": 15.09
+                    },
+                    {
+                        "word": "mathematically.",
+                        "start": 15.09,
+                        "end": 15.63
+                    },
+                    {
+                        "word": "yeah,",
+                        "start": 15.75,
+                        "end": 15.95
+                    }
+                ]
+            },
+            {
+                "start": 16.03,
+                "end": 17.57,
+                "text": "if the net costs zero,",
+                "words": [
+                    {
+                        "word": "if",
+                        "start": 16.03,
+                        "end": 16.13
+                    },
+                    {
+                        "word": "the",
+                        "start": 16.13,
+                        "end": 16.27
+                    },
+                    {
+                        "word": "net",
+                        "start": 16.27,
+                        "end": 16.55
+                    },
+                    {
+                        "word": "costs",
+                        "start": 16.55,
+                        "end": 16.85
+                    },
+                    {
+                        "word": "zero,",
+                        "start": 16.85,
+                        "end": 17.25
+                    }
+                ]
+            },
+            {
+                "start": 17.57,
+                "end": 19.15,
+                "text": "what stops the universe from just",
+                "words": [
+                    {
+                        "word": "what",
+                        "start": 17.57,
+                        "end": 17.79
+                    },
+                    {
+                        "word": "stops",
+                        "start": 17.79,
+                        "end": 18.27
+                    },
+                    {
+                        "word": "the",
+                        "start": 18.27,
+                        "end": 18.49
+                    },
+                    {
+                        "word": "universe",
+                        "start": 18.49,
+                        "end": 18.79
+                    },
+                    {
+                        "word": "from",
+                        "start": 18.79,
+                        "end": 19.01
+                    },
+                    {
+                        "word": "just",
+                        "start": 19.01,
+                        "end": 19.15
+                    }
+                ]
+            },
+            {
+                "start": 19.15,
+                "end": 20.91,
+                "text": "making infinite matter?",
+                "words": [
+                    {
+                        "word": "making",
+                        "start": 19.15,
+                        "end": 19.47
+                    },
+                    {
+                        "word": "infinite",
+                        "start": 19.47,
+                        "end": 19.87
+                    },
+                    {
+                        "word": "matter?",
+                        "start": 19.87,
+                        "end": 20.27
+                    }
+                ]
+            },
+            {
+                "start": 20.91,
+                "end": 22.23,
+                "text": "nothing. mathematically, nothing",
+                "words": [
+                    {
+                        "word": "nothing.",
+                        "start": 20.91,
+                        "end": 20.95
+                    },
+                    {
+                        "word": "mathematically,",
+                        "start": 21.65,
+                        "end": 21.97
+                    },
+                    {
+                        "word": "nothing",
+                        "start": 22.07,
+                        "end": 22.23
+                    }
+                ]
+            },
+            {
+                "start": 22.23,
+                "end": 23.51,
+                "text": "stops it. really?",
+                "words": [
+                    {
+                        "word": "stops",
+                        "start": 22.23,
+                        "end": 22.49
+                    },
+                    {
+                        "word": "it.",
+                        "start": 22.49,
+                        "end": 22.75
+                    },
+                    {
+                        "word": "really?",
+                        "start": 23.09,
+                        "end": 23.25
+                    }
+                ]
+            },
+            {
+                "start": 23.51,
+                "end": 25.61,
+                "text": "the field equation shows infinite",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 23.51,
+                        "end": 23.83
+                    },
+                    {
+                        "word": "field",
+                        "start": 23.83,
+                        "end": 24.11
+                    },
+                    {
+                        "word": "equation",
+                        "start": 24.11,
+                        "end": 24.45
+                    },
+                    {
+                        "word": "shows",
+                        "start": 24.45,
+                        "end": 24.93
+                    },
+                    {
+                        "word": "infinite",
+                        "start": 24.93,
+                        "end": 25.61
+                    }
+                ]
+            },
+            {
+                "start": 25.61,
+                "end": 27.35,
+                "text": "matter can be created as long",
+                "words": [
+                    {
+                        "word": "matter",
+                        "start": 25.61,
+                        "end": 25.89
+                    },
+                    {
+                        "word": "can",
+                        "start": 25.89,
+                        "end": 26.13
+                    },
+                    {
+                        "word": "be",
+                        "start": 26.13,
+                        "end": 26.31
+                    },
+                    {
+                        "word": "created",
+                        "start": 26.31,
+                        "end": 26.69
+                    },
+                    {
+                        "word": "as",
+                        "start": 26.69,
+                        "end": 27.19
+                    },
+                    {
+                        "word": "long",
+                        "start": 27.19,
+                        "end": 27.35
+                    }
+                ]
+            },
+            {
+                "start": 27.35,
+                "end": 28.55,
+                "text": "as physical structure and",
+                "words": [
+                    {
+                        "word": "as",
+                        "start": 27.35,
+                        "end": 27.53
+                    },
+                    {
+                        "word": "physical",
+                        "start": 27.53,
+                        "end": 27.87
+                    },
+                    {
+                        "word": "structure",
+                        "start": 27.87,
+                        "end": 28.27
+                    },
+                    {
+                        "word": "and",
+                        "start": 28.27,
+                        "end": 28.55
+                    }
+                ]
+            },
+            {
+                "start": 28.55,
+                "end": 30.01,
+                "text": "cognition remain in strict",
+                "words": [
+                    {
+                        "word": "cognition",
+                        "start": 28.55,
+                        "end": 28.95
+                    },
+                    {
+                        "word": "remain",
+                        "start": 28.95,
+                        "end": 29.35
+                    },
+                    {
+                        "word": "in",
+                        "start": 29.35,
+                        "end": 29.65
+                    },
+                    {
+                        "word": "strict",
+                        "start": 29.65,
+                        "end": 30.01
+                    }
+                ]
+            },
+            {
+                "start": 30.01,
+                "end": 32.41,
+                "text": "counterbalance. so creation isn't",
+                "words": [
+                    {
+                        "word": "counterbalance.",
+                        "start": 30.01,
+                        "end": 30.67
+                    },
+                    {
+                        "word": "so",
+                        "start": 31.23,
+                        "end": 31.55
+                    },
+                    {
+                        "word": "creation",
+                        "start": 31.55,
+                        "end": 31.89
+                    },
+                    {
+                        "word": "isn't",
+                        "start": 31.89,
+                        "end": 32.41
+                    }
+                ]
+            },
+            {
+                "start": 32.41,
+                "end": 33.63,
+                "text": "bounded by a static,",
+                "words": [
+                    {
+                        "word": "bounded",
+                        "start": 32.41,
+                        "end": 32.61
+                    },
+                    {
+                        "word": "by",
+                        "start": 32.61,
+                        "end": 32.91
+                    },
+                    {
+                        "word": "a",
+                        "start": 32.91,
+                        "end": 33.07
+                    },
+                    {
+                        "word": "static,",
+                        "start": 33.07,
+                        "end": 33.49
+                    }
+                ]
+            },
+            {
+                "start": 33.63,
+                "end": 35.29,
+                "text": "energetic ceiling. no,",
+                "words": [
+                    {
+                        "word": "energetic",
+                        "start": 33.63,
+                        "end": 34.05
+                    },
+                    {
+                        "word": "ceiling.",
+                        "start": 34.05,
+                        "end": 34.51
+                    },
+                    {
+                        "word": "no,",
+                        "start": 34.97,
+                        "end": 35.17
+                    }
+                ]
+            },
+            {
+                "start": 35.29,
+                "end": 36.41,
+                "text": "it's bounded solely by the",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 35.29,
+                        "end": 35.45
+                    },
+                    {
+                        "word": "bounded",
+                        "start": 35.45,
+                        "end": 35.65
+                    },
+                    {
+                        "word": "solely",
+                        "start": 35.65,
+                        "end": 36.05
+                    },
+                    {
+                        "word": "by",
+                        "start": 36.05,
+                        "end": 36.29
+                    },
+                    {
+                        "word": "the",
+                        "start": 36.29,
+                        "end": 36.41
+                    }
+                ]
+            },
+            {
+                "start": 36.41,
+                "end": 37.59,
+                "text": "capacity for cognitive",
+                "words": [
+                    {
+                        "word": "capacity",
+                        "start": 36.41,
+                        "end": 36.77
+                    },
+                    {
+                        "word": "for",
+                        "start": 36.77,
+                        "end": 37.13
+                    },
+                    {
+                        "word": "cognitive",
+                        "start": 37.13,
+                        "end": 37.59
+                    }
+                ]
+            },
+            {
+                "start": 37.59,
+                "end": 39.11,
+                "text": "intelligence to mirror the",
+                "words": [
+                    {
+                        "word": "intelligence",
+                        "start": 37.59,
+                        "end": 38.23
+                    },
+                    {
+                        "word": "to",
+                        "start": 38.23,
+                        "end": 38.53
+                    },
+                    {
+                        "word": "mirror",
+                        "start": 38.53,
+                        "end": 38.87
+                    },
+                    {
+                        "word": "the",
+                        "start": 38.87,
+                        "end": 39.11
+                    }
+                ]
+            },
+            {
+                "start": 39.11,
+                "end": 41.11,
+                "text": "physical complexity. if it builds",
+                "words": [
+                    {
+                        "word": "physical",
+                        "start": 39.11,
+                        "end": 39.39
+                    },
+                    {
+                        "word": "complexity.",
+                        "start": 39.39,
+                        "end": 39.85
+                    },
+                    {
+                        "word": "if",
+                        "start": 40.49,
+                        "end": 40.75
+                    },
+                    {
+                        "word": "it",
+                        "start": 40.75,
+                        "end": 40.87
+                    },
+                    {
+                        "word": "builds",
+                        "start": 40.87,
+                        "end": 41.11
+                    }
+                ]
+            },
+            {
+                "start": 41.11,
+                "end": 42.49,
+                "text": "a knot, it has to generate",
+                "words": [
+                    {
+                        "word": "a",
+                        "start": 41.11,
+                        "end": 41.35
+                    },
+                    {
+                        "word": "knot,",
+                        "start": 41.35,
+                        "end": 41.55
+                    },
+                    {
+                        "word": "it",
+                        "start": 41.83,
+                        "end": 41.87
+                    },
+                    {
+                        "word": "has",
+                        "start": 41.87,
+                        "end": 42.05
+                    },
+                    {
+                        "word": "to",
+                        "start": 42.05,
+                        "end": 42.19
+                    },
+                    {
+                        "word": "generate",
+                        "start": 42.19,
+                        "end": 42.49
+                    }
+                ]
+            },
+            {
+                "start": 42.49,
+                "end": 44.45,
+                "text": "the intelligence to comprehend it.",
+                "words": [
+                    {
+                        "word": "the",
+                        "start": 42.49,
+                        "end": 42.71
+                    },
+                    {
+                        "word": "intelligence",
+                        "start": 42.71,
+                        "end": 43.09
+                    },
+                    {
+                        "word": "to",
+                        "start": 43.09,
+                        "end": 43.39
+                    },
+                    {
+                        "word": "comprehend",
+                        "start": 43.39,
+                        "end": 43.81
+                    },
+                    {
+                        "word": "it.",
+                        "start": 43.81,
+                        "end": 44.19
+                    }
+                ]
+            },
+            {
+                "start": 44.45,
+                "end": 45.09,
+                "text": "if it doesn't,",
+                "words": [
+                    {
+                        "word": "if",
+                        "start": 44.45,
+                        "end": 44.51
+                    },
+                    {
+                        "word": "it",
+                        "start": 44.51,
+                        "end": 44.61
+                    },
+                    {
+                        "word": "doesn't,",
+                        "start": 44.61,
+                        "end": 45.01
+                    }
+                ]
+            },
+            {
+                "start": 45.09,
+                "end": 46.53,
+                "text": "delta spikes and it decays.",
+                "words": [
+                    {
+                        "word": "delta",
+                        "start": 45.09,
+                        "end": 45.21
+                    },
+                    {
+                        "word": "spikes",
+                        "start": 45.21,
+                        "end": 45.59
+                    },
+                    {
+                        "word": "and",
+                        "start": 45.59,
+                        "end": 45.81
+                    },
+                    {
+                        "word": "it",
+                        "start": 45.81,
+                        "end": 45.93
+                    },
+                    {
+                        "word": "decays.",
+                        "start": 45.93,
+                        "end": 46.27
+                    }
+                ]
+            },
+            {
+                "start": 46.53,
+                "end": 48.03,
+                "text": "it literally has to think as",
+                "words": [
+                    {
+                        "word": "it",
+                        "start": 46.53,
+                        "end": 46.57
+                    },
+                    {
+                        "word": "literally",
+                        "start": 46.53,
+                        "end": 46.75
+                    },
+                    {
+                        "word": "has",
+                        "start": 46.75,
+                        "end": 47.15
+                    },
+                    {
+                        "word": "to",
+                        "start": 47.15,
+                        "end": 47.41
+                    },
+                    {
+                        "word": "think",
+                        "start": 47.41,
+                        "end": 47.75
+                    },
+                    {
+                        "word": "as",
+                        "start": 47.75,
+                        "end": 48.03
+                    }
+                ]
+            },
+            {
+                "start": 48.03,
+                "end": 49.33,
+                "text": "much as it builds.",
+                "words": [
+                    {
+                        "word": "much",
+                        "start": 48.03,
+                        "end": 48.21
+                    },
+                    {
+                        "word": "as",
+                        "start": 48.21,
+                        "end": 48.37
+                    },
+                    {
+                        "word": "it",
+                        "start": 48.37,
+                        "end": 48.49
+                    },
+                    {
+                        "word": "builds.",
+                        "start": 48.49,
+                        "end": 48.87
+                    }
+                ]
+            },
+            {
+                "start": 49.33,
+                "end": 51.09,
+                "text": "it's a beautiful self -regulating",
+                "words": [
+                    {
+                        "word": "it's",
+                        "start": 49.33,
+                        "end": 49.45
+                    },
+                    {
+                        "word": "a",
+                        "start": 49.45,
+                        "end": 49.55
+                    },
+                    {
+                        "word": "beautiful",
+                        "start": 49.55,
+                        "end": 50.15
+                    },
+                    {
+                        "word": "self",
+                        "start": 50.15,
+                        "end": 50.63
+                    },
+                    {
+                        "word": "-regulating",
+                        "start": 50.63,
+                        "end": 51.09
+                    }
+                ]
+            },
+            {
+                "start": 51.09,
+                "end": 52.79,
+                "text": "symmetry. coming up in the final",
+                "words": [
+                    {
+                        "word": "symmetry.",
+                        "start": 51.09,
+                        "end": 51.61
+                    },
+                    {
+                        "word": "coming",
+                        "start": 52.09,
+                        "end": 52.15
+                    },
+                    {
+                        "word": "up",
+                        "start": 52.15,
+                        "end": 52.31
+                    },
+                    {
+                        "word": "in",
+                        "start": 52.31,
+                        "end": 52.39
+                    },
+                    {
+                        "word": "the",
+                        "start": 52.39,
+                        "end": 52.51
+                    },
+                    {
+                        "word": "final",
+                        "start": 52.51,
+                        "end": 52.79
+                    }
+                ]
+            },
+            {
+                "start": 52.79,
+                "end": 54.65,
+                "text": "clip, what exactly is the",
+                "words": [
+                    {
+                        "word": "clip,",
+                        "start": 52.79,
+                        "end": 53.05
+                    },
+                    {
+                        "word": "what",
+                        "start": 53.29,
+                        "end": 53.59
+                    },
+                    {
+                        "word": "exactly",
+                        "start": 53.59,
+                        "end": 53.95
+                    },
+                    {
+                        "word": "is",
+                        "start": 53.95,
+                        "end": 54.45
+                    },
+                    {
+                        "word": "the",
+                        "start": 54.45,
+                        "end": 54.65
+                    }
+                ]
+            },
+            {
+                "start": 54.65,
+                "end": 56.31,
+                "text": "singularity and how does this all",
+                "words": [
+                    {
+                        "word": "singularity",
+                        "start": 54.65,
+                        "end": 55.31
+                    },
+                    {
+                        "word": "and",
+                        "start": 55.31,
+                        "end": 55.57
+                    },
+                    {
+                        "word": "how",
+                        "start": 55.57,
+                        "end": 55.89
+                    },
+                    {
+                        "word": "does",
+                        "start": 55.89,
+                        "end": 56.03
+                    },
+                    {
+                        "word": "this",
+                        "start": 56.03,
+                        "end": 56.15
+                    },
+                    {
+                        "word": "all",
+                        "start": 56.15,
+                        "end": 56.31
+                    }
+                ]
+            },
+            {
+                "start": 56.31,
+                "end": 58.84,
+                "text": "end? taking it all back to zero.",
+                "words": [
+                    {
+                        "word": "end?",
+                        "start": 56.31,
+                        "end": 56.55
+                    },
+                    {
+                        "word": "taking",
+                        "start": 56.95,
+                        "end": 57.11
+                    },
+                    {
+                        "word": "it",
+                        "start": 57.11,
+                        "end": 57.37
+                    },
+                    {
+                        "word": "all",
+                        "start": 57.37,
+                        "end": 57.67
+                    },
+                    {
+                        "word": "back",
+                        "start": 57.67,
+                        "end": 57.97
+                    },
+                    {
+                        "word": "to",
+                        "start": 57.97,
+                        "end": 58.39
+                    },
+                    {
+                        "word": "zero.",
+                        "start": 58.39,
+                        "end": 58.69
+                    }
+                ]
+            }
+        ],
+        "_caption_sig": "0390b442d6abaadcfc1ad7ffd48bfb88",
+        "rendered_duration": 68.77,
+        "audio_duration": 63.06,
+        "intro_offset": 1.7,
+        "outro_duration": 5.0,
+        "source_start": 1509.3,
+        "source_end": 1562.2,
+        "_audio_sig": "4aff10c059cbd2737e06786dec1b5fc1",
+        "_compiled_sig": "334965e9aa2dc6e0f39524fa7af70c68"
     },
     {
         "num": 20,
