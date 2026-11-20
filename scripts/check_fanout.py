@@ -18,8 +18,8 @@ MDINGEST = WORKBENCH.parent / "mdIngest"
 # Merged structure (Batch 9): the standalone ddma repo is archived and gone
 # from this protocol. Every file under mdIngest/ingest/ and mdIngest/ddma/
 # (except the live settings.json) must byte-match its deepDive counterpart.
-SKIP_DIRS = {".git", "__pycache__", "node_modules", "target", "book"}
-SKIP_FILES = {"settings.json"}
+SKIP_DIRS = {".git", "__pycache__", "node_modules", "target", "book", "personal_beats"}
+SKIP_FILES = {"settings.json", "generated_archetypes.json"}
 
 
 def mirror_tree_files(sub):
@@ -55,6 +55,9 @@ def blob_sha(path: Path) -> str:
 
 def main() -> int:
     failures = 0
+    if (MDINGEST / "ddma" / "personal_beats").exists():
+        print("FAIL (deepDive-only directory present in mdIngest): mdIngest/ddma/personal_beats")
+        failures += 1
     for src, dst in PAIRS:
         label = f"{src.relative_to(WORKBENCH)} -> {dst.parent.name}/{dst.name}"
         if not src.exists():
