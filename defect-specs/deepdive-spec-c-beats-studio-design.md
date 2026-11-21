@@ -66,17 +66,23 @@ Selecting an openable clip shows, top to bottom:
   segment-level video.
 - The player is a **horizontal** player. It shows how the clip plays
   out in the horizontal longform frame.
-- Source for **Play Clip**: the clip's **pre-cast horizontal render**.
-  Clips are cast at production time in both forms — vertical (the
-  short) and horizontal (the longform chapter form), under the rules
-  in GEMINI.md — so the studio never renders on demand and never
-  waits: it plays the horizontal form that already exists. The
-  master's span for the clip is the same chapter in context; that
-  view is Play Full with the span shaded, below.
-- A player toggle offers **Play Clip / Play Full**. Play Full plays the
-  longform master; the current clip's span is shaded on the full
-  timeline so the clip can be found in context. Play Full is disabled,
-  with a hint, when no master exists. Play Clip is the working default.
+- Source for **Play Clip**: the clip's **span of the longform
+  master**. (Amended 2026-11-21: this section originally assumed
+  clips are pre-cast in a horizontal form at clip level. A
+  premise-check of the code found no per-clip horizontal artifact —
+  the per-clip products are the square body render and the vertical
+  reel, and the only horizontal video is the episode master. The
+  user ruled Option A: the master's chapter span.) Play Clip loads
+  the master and plays exactly the active chapter's span — the
+  chapter windows the longform mapping already computes — pausing
+  at the span's end. No rendering, no waiting. When no master
+  exists yet, Play Clip falls back to the clip's own render (its
+  square body or vertical reel, fitted into the horizontal player).
+- A player toggle offers **Play Clip / Play Full**. Play Full plays
+  the whole longform master; the current clip's span is shaded on
+  the full timeline so the clip can be found in context. Play Full
+  is disabled, with a hint, when no master exists. Play Clip is the
+  working default.
 - On a Manim clip, beat boundaries are marked on the clip timeline.
 
 ### 3.2 Below the player — exactly one surface, chosen by what exists
@@ -211,9 +217,10 @@ silent surprise.
 4. A Manim clip shows the player and the scene editor; beat markers
    appear on the clip timeline; switching a Mosaic clip to Manim
    reveals the editor without leaving the page.
-5. Play Clip plays the clip's pre-cast horizontal render; Play Full
-   shades the clip's span and is disabled with a hint when no master
-   exists.
+5. Play Clip plays the master's chapter span for the active clip,
+   pausing at the span's end (and falls back to the clip's own
+   render when no master exists); Play Full shades the clip's span
+   and is disabled with a hint when no master exists.
 6. Every header link across the four surfaces navigates in the same
    tab (no `target` attributes on cross-surface links).
 7. The episode selector is a dropdown populated from the workspace.

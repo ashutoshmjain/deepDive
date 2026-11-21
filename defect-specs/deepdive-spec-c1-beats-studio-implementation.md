@@ -11,8 +11,7 @@ and the design differ in wording, the design's intent governs.
   touched here is mirrored: after each phase, run the fan-out check
   and mirror every change to mdIngest in the same commit chain.
   Commit locally per phase in each repo. After Phase 4's Verify
-  passes, push both repos — a fresh-clone test of mdIngest follows
-  in the same session and must include this work.
+  passes, push both repos.
 - **No automated engine runs.** No real Mosaic or Manim generation
   in any test, ever. Engine-facing endpoints are stubbed at the HTTP
   boundary (a fake Curator on :8000) or bypassed with fixture media.
@@ -24,29 +23,40 @@ and the design differ in wording, the design's intent governs.
 - Premise-checks (P0) come first. On any STOP condition, stop and
   report; do not improvise around a false premise.
 
-## P0 — Premise-checks (report all four before Phase 1)
+## P0 — Premise-checks (RUN 2026-11-21; results recorded — do not re-run)
 
-- **P0(a) The pre-cast horizontal form.** The design (§3.1) says
-  clips are cast at production time in both a vertical and a
-  horizontal form. Locate the per-clip horizontal artifact: start
-  from GEMINI.md's staging rules and the clip-stitching document it
-  points to, and from `archetype_studio.resolve_mosaic_body` and
-  `beats_server.find_clip_media`. Report the exact path pattern of
-  the horizontal per-clip file for each engine. If no per-clip
-  horizontal artifact exists, **STOP** and report what does exist —
-  Phase 3 depends on this answer.
-- **P0(b) Writers of `visual_source`.** Grep both repos for every
-  write of the plan's `visual_source` field. Classify each writer as
-  *explicit selection* (a control whose purpose is choosing the
-  longform source) or *production side-effect* (a render, retrigger,
-  or compile path that also moves the field). Report the list.
-- **P0(c) The storyboard casting site.** Locate where a clip's
-  storyboard (its scene specs) is generated — the Gemini call whose
-  output becomes the beats. Report the file and function. Phase 4
-  adds a constraint at that site.
-- **P0(d) Test-suite tripwires.** Grep the e2e suites for assertions
-  on link `target` attributes, the beats header, or the episode
-  input, and report any that Phases 1–2 would legitimately change.
+- **P0(a) RESOLVED by ruling.** No per-clip horizontal artifact
+  exists. The per-clip products are the 740×740 square body renders
+  (`clips/<ep>-<num>-mosaic-<run_id>.mp4`,
+  `clips/<ep>-<num>-infographic.mp4`), the 1080×1920 vertical
+  compiled reels, and per-clip audio; the only 1920×1080 video is
+  the episode-level longform master (`podcast_<ep>.mp4`). The
+  design's §3.1 was amended accordingly and the user ruled
+  **Option A (2026-11-21)**: Play Clip is the master's chapter
+  span. Phase 3 implements that model.
+- **P0(b) DONE — writers of `visual_source`.** Explicit selection
+  (keep their writes): `archetype_studio.set_clip_visual_source`
+  via `/api/beats/set_engine`; the Curator's `/set-active-master`
+  endpoint; the Curator UI's engine controls. Production
+  side-effects (Phase 2 removes their writes):
+  `/api/beats/manim_retrigger` in `ddma/beats_server.py`; the
+  Curator's compile-clip path in `ddma/scratch/run_curator.py`
+  (overwrites `visual_source` when the request source is mosaic or
+  infographic); the Curator's Manim infographic render (sets
+  `visual_source` to `"manim"` when unset).
+- **P0(c) DONE — the storyboard casting site** is
+  `generate_pedagogical_storyboard` in
+  `ddma/manim_infographic_engine.py`, called from the Curator's
+  storyboard and infographic paths in `ddma/scratch/run_curator.py`.
+  (Episode-level variant: `generate_longform_storyboard` in
+  `ddma/longform_video_engine.py`.) Phase 4 adds its constraint at
+  the per-clip function.
+- **P0(d) DONE — test-suite tripwires.** `ingest/tests/cockpit_e2e.js`
+  asserts `target === 'deepdive-workspace'` for the cockpit
+  Workspace link and the Curator Workspace link; Phase 1 updates
+  those two assertions (see Phase 1, Fix 3). `test_beats.js` reads
+  `#beats-ep`'s `.value`, which a `<select>` satisfies — no change
+  needed there.
 
 ## Phase 1 — One-tab navigation and the episode dropdown (design §5)
 
@@ -76,6 +86,13 @@ plus a Load button.
    existing `beatsLoad()` path). A `?ep=` deep link still preselects.
    If the endpoint fails, the select falls back to the current
    episode only — never a free-text field again.
+3. Update the two assertions in `ingest/tests/cockpit_e2e.js` that
+   assert `target === 'deepdive-workspace'` (the cockpit
+   Workspace-link test and the Curator Workspace-link test, P0(d)):
+   they now assert the link carries no `target` attribute and that
+   activating it navigates the same page. If the measured Tier-1
+   pass/fail counts change as a result, restate the baseline in
+   `TESTING.md` in both repos in the same commit chain, saying why.
 
 **Verify.** Puppeteer against the Beats server with a fixture hub
 holding two episodes: (1) clicking Workspace, cockpit, and Cutroom
@@ -84,6 +101,9 @@ Back returns to the studio; (2) the dropdown lists exactly the
 fixture episodes; (3) selecting the other episode loads its
 chapters; (4) `?ep=<n>` preselects. `git grep` shows no remaining
 `target="deepdive-workspace"` outside documentation of this change.
+(5) The two updated e2e assertions pass with the relevant servers
+up against the fixture hub, or are reported with the exact
+environment caveat if they cannot run there.
 
 ## Phase 2 — Entry rules, engine surfaces, selection discipline (design §2, §3.2, §7)
 
@@ -107,7 +127,9 @@ full stop.
 1. **Chapter facts.** In the mappings, add per chapter:
    `has_beats` (the chapter has a storyboard working set),
    `openable` (a Mosaic body resolves, or clip media resolves, or
-   the chapter has beats with at least one rendered preview), and
+   the chapter has beats with at least one rendered preview, or
+   the episode's longform master exists — the chapter's span is
+   then playable per §3.1), and
    `published` (the plan clip's published flag). The timeline index
    passes all three through.
 2. **Greyed, not gone.** Chapter buttons for non-openable clips
@@ -129,8 +151,13 @@ full stop.
    for the compositor but no longer gates the studio UI.
 5. **Selection discipline.** `/api/beats/manim_retrigger` no longer
    writes `visual_source` — it only forwards the generation request.
-   Every other production side-effect writer found in P0(b) loses
-   its write the same way; explicit selection controls keep theirs.
+   The other two side-effect writers recorded in P0(b) lose their
+   writes the same way: the Curator's compile-clip path (which
+   overwrites `visual_source` when the request source is mosaic or
+   infographic) and the Curator's Manim infographic render (which
+   sets `visual_source` to `"manim"` when unset). The Curator's
+   `/set-active-master` endpoint and its UI controls are explicit
+   selection controls and keep their writes.
    `/api/beats/set_engine` remains the studio's one selection
    writer. The engine toggle is labelled as what it is — "Use in
    longform: Mosaic | Manim" — and the chapter button keeps showing
@@ -148,49 +175,62 @@ stubbed, calling `/api/beats/manim_retrigger` forwards the request
 and the plan's `visual_source` is byte-identical afterwards;
 `/api/beats/set_engine` still flips it.
 
-## Phase 3 — The player (design §3.1)
+## Phase 3 — The player (design §3.1, as amended: Option A)
 
 **Where.** `ddma/beats.html`: the player element (~line 77) is
 already a 16/9 horizontal frame; `lfPlaybackMode` defaults to
 `'master'` (~line 187); `applyPlaybackSource` points Clip mode at
-`/api/beats/clip_media`, served by `beats_server.find_clip_media`
-(~line 100), whose candidate list contains only vertical/square
-clip files and an audio fallback — no horizontal form.
+`/api/beats/clip_media` and Master mode at `/api/beats/video` (the
+episode master, via `beats_server.find_master_video`). The
+timeline index already carries every chapter's start/end in master
+time (`get_longform_all_chapter_mappings`). Per P0(a) there is no
+per-clip horizontal file; per the amended design, Play Clip is the
+master's chapter span.
 
 **Fix.**
 
-1. `find_clip_media` resolves the pre-cast horizontal artifact
-   located in P0(a) ahead of the existing candidates. (If P0(a)
-   found the horizontal form among the existing names, this is an
-   ordering change plus the geometry assertion in Verify.)
-2. Selecting a chapter starts in **Clip** mode when clip media
-   resolves, else in Master mode with a visible hint that no clip
-   render exists yet. The Master/Clip toggle stays; Master remains
-   one click away at all times.
-3. **Span shading.** Under the player, a timeline strip renders the
-   episode's chapter spans (from the index's start/end values); in
-   Master mode the active chapter's span is shaded and clicking a
-   span seeks the master to its start. In Clip mode the strip shows
-   the active clip's beat boundaries as ticks (from the chapter
-   beats' offsets). Native video controls stay as they are.
+1. **Clip mode plays the master span.** When a master exists,
+   Clip mode loads the master and constrains playback to the
+   active chapter's [start, end]: seek to the span start on
+   chapter select; on `timeupdate`, pause at the span end (with a
+   replay affordance). The existing beat-highlight tracking on
+   `timeupdate` keeps working in both modes.
+2. **No-master fallback.** When no master exists, Clip mode uses
+   `/api/beats/clip_media` as today (the clip's own render — its
+   square body or vertical reel — fitted into the player), and
+   Play Full is disabled with the hint "No longform master yet".
+3. **Defaults.** Selecting a chapter starts in Clip mode whenever
+   a span or clip media is available. The Master/Clip toggle
+   stays; Master remains one click away at all times.
+4. **Span strip.** Under the player, a timeline strip renders the
+   episode's chapter spans (from the index's start/end values).
+   In Master mode the active chapter's span is shaded and
+   clicking a span seeks the master to its start. In Clip mode
+   the strip shows the active clip's beat boundaries as ticks
+   (the chapter beats' offsets mapped into span time), and
+   clicking another span loads that chapter in Clip mode. Native
+   video controls stay as they are.
 
-**Verify.** Fixture horizontal files generated with ffmpeg
-(1280×720, silent) at the P0(a) paths: (1) `/api/beats/clip_media`
-returns 200 with the horizontal file for a rendered clip and 404
-for an unrendered one; (2) Puppeteer: selecting a chapter sets the
-player source to `clip_media` and the mode indicator to Clip; the
-strip renders one span per chapter with exactly the active one
-shaded; clicking another span in Master mode seeks within ±0.5s;
-(3) an episode with no master disables Play Full per the design,
-with its hint, while Clip mode still plays.
+**Verify.** A fixture master generated with ffmpeg (1920×1080,
+silent) plus a fixture plan/index with at least two chapters:
+(1) selecting chapter 2 in Clip mode seeks within ±0.5s of its
+span start and pauses within ±0.5s of its span end; (2) Play Full
+plays from the top with exactly the active span shaded, and
+clicking another span seeks to its start within ±0.5s; (3) a
+no-master fixture episode disables Play Full with its hint while
+Clip mode still plays a rendered clip via `clip_media`, and an
+unrendered clip shows the hint instead of an empty player;
+(4) beat ticks render in Clip mode for a fixture chapter with
+beats.
 
 ## Phase 4 — Scene integrity (design §3.4)
 
 **Where.** `ddma/archetype_studio.py` already holds the mapped
 word stream (`_load_mapped_longform_words`) and the chapter beats
 (`get_longform_chapter_beats` via `map_clip_beats_to_longform`);
-`/api/beats/beats` serves them to the editor. The casting site is
-the one reported in P0(c).
+`/api/beats/beats` serves them to the editor. The casting site
+(P0(c)) is `generate_pedagogical_storyboard` in
+`ddma/manim_infographic_engine.py`.
 
 **Fix.**
 
@@ -205,7 +245,8 @@ the one reported in P0(c).
    beats (list row and detail header). Clean beats render nothing
    extra. The marker is informational: it never blocks editing or
    saving.
-3. At the casting site (P0(c)), the storyboard generation
+3. At the casting site (`generate_pedagogical_storyboard` in
+   `ddma/manim_infographic_engine.py`), the storyboard generation
    instruction gains the constraint in words: scene boundaries fall
    at sentence boundaries; a scene carries complete sentences; a
    sentence is never split across two scenes. Prompt text only —
@@ -220,11 +261,12 @@ clip shows none.
 
 ## Report
 
-Per phase, in chat: premise results (P0 once), files changed per
-repo, the fan-out check output, each Verify item PASS/FAIL with the
-evidence (response codes, DOM assertions, before/after field
-values), local commit hashes per repo, and any divergence from this
-spec stated plainly with its reason. End with `git status` from
+Per phase, in chat: files changed per repo, the fan-out check
+output, each Verify item PASS/FAIL with the evidence (response
+codes, DOM assertions, before/after field values), local commit
+hashes per repo, and any divergence from this spec stated plainly
+with its reason. (P0 is recorded in this spec; report only if
+execution contradicts a recorded P0 result.) End with `git status` from
 both clones after a full manual-style session against a fixture
 hub: no writes outside the fixture hub and the repos' own tracked
 files.
