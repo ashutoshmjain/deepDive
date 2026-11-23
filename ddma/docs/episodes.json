@@ -179,6 +179,9 @@
     "planPath": "episodes/250/plan.json",
     "clipsDir": "episodes/250/clips",
     "links": {},
-    "isDefault": true
+    "isDefault": true,
+    "availableClips": [
+      0
+    ]
   }
 ]
