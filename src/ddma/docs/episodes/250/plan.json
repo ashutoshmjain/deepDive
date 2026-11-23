@@ -4695,16 +4695,17 @@
             }
         ],
         "_caption_sig": "162f5ea2f725cc9e76628b978c466733",
-        "rendered_duration": 156.8,
+        "rendered_duration": 156.72,
         "audio_duration": 150.99,
         "intro_offset": 1.7,
         "outro_duration": 5.0,
         "source_start": 0.0,
         "source_end": 140.71,
         "_audio_sig": "af9098286c898e23b1ac319627cfe492",
-        "_compiled_sig": "63c392588822d9f7d3990ae115465acf",
+        "_compiled_sig": "1fd79dddf1315fcfc46920c4940a2589",
         "published": true,
-        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/250/clips/250-0.mp4"
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/250/clips/250-0.mp4",
+        "mosaic_run_id": "54b3ea3a-7532-425d-b083-899a314d4d6c"
     },
     {
         "num": 1,
