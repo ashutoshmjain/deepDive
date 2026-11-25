@@ -16734,7 +16734,7 @@
             }
         ],
         "locked": true,
-        "visual_source": "mosaic",
+        "visual_source": "manim",
         "coming_up_title": "The Illusion Of Commutativity",
         "mosaic_run_id": "89c30dbf-2a67-43f8-bf4e-f2a7d9173352",
         "_caption_words": [
@@ -48067,7 +48067,9 @@
         "source_start": 1562.84,
         "source_end": 1684.16,
         "_audio_sig": "7fb265cf9173109878646476363bd113",
-        "_compiled_sig": "e1e76e2be63335bd1e300977370d57a7",
-        "mosaic_run_id": "ac14dfc3-25ed-415a-b099-4f3426eaf4f1"
+        "_compiled_sig": "cacf19a1775f3b76332313457c474b9d",
+        "mosaic_run_id": "ac14dfc3-25ed-415a-b099-4f3426eaf4f1",
+        "published": true,
+        "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-20.mp4"
     }
 ]
