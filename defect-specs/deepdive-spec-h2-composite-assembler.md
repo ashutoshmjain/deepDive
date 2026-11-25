@@ -112,3 +112,31 @@ Gaps / next steps:
 - Trial `-filter_complex` typo not reproduced byte-for-byte (correct form emitted instead) — owner call if byte fidelity is wanted.
 - Beats Studio "Design artifacts" button and retrigger endpoint wiring (§3/§4 UI) not added — module exposes `plan_design_artifacts`/`plan_retrigger` planners for that wiring.
 - Full 249 regression (all 21 clips end-to-end vs oracle) deferred — sample 0–2 only, per "sample first, hard stop".
+
+## Build summary II — Beats Studio wiring + 249-3/4 caption fix (2026-11-25)
+
+What was wired (deepDive `ddma/beats_server.py` +272, `ddma/beats.html` +114; mirrored code-only to mdIngest):
+
+- `beats_server.py`: H2 block behind `H2_EPISODE=249` guard — read-only plan load, ffprobe duration probe, composite-master resolver, background design worker forwarding per-clip to the curator manual Manim path only. New endpoints: `GET /api/beats/composite_timeline` (probed master duration; `null`+note when no master; 400 for ep != 249), `GET /api/beats/design_status` (per-clip progress, exceptions-only), `POST /api/beats/design_artifacts` (one deliberate start, fan-out via `spec_h2.plan_design_artifacts`, queued background thread), `POST /api/beats/composite_retrigger` (`spec_h2.plan_retrigger` duration/frame lock, planner-only, never starts Mosaic). Push endpoint + Spec H gate code untouched.
+- `beats.html`: header buttons Design artifacts (episode), Design this clip, Retrigger Manim-only, Retrigger Mosaic-only; `h2-design-panel` for per-clip progress/exceptions; JS `loadCompositeTimeline`/`designArtifacts`/`pollDesignStatus`/`compositeRetrigger` (pauses preview first, chains to existing manim/mosaic paths); playhead badge now prefers the composite probed total and shows `--:--` when no master (hardcoded 3254.08 fallback removed; no `3254` remains in either file).
+- Ep-249-only enforced server-side (400) and client-side; episode 250 untouched throughout.
+
+249-3/4 caption fix outcome (episode 249 only; cut+compile via `ddma.py` from `deepDive/ddma`; no Mosaic contact — `mosaic_run_id` unchanged on both clips):
+
+- `cut --num 3/4` re-cut the exact audio slices; `compile-clip --num 3` → 1080x1920 DAR 9:16, 92.92 s, 5.16 MB, 44 ASS caption events (`rendered_duration=92.92`, `audio_duration=87.19`, `intro_offset=1.7`); `--num 4` → 95.16 s, 3.60 MB, 48 ASS events (`rendered_duration=95.16`, `audio_duration=89.43`). Both VERIFIED OK, Mosaic bodies preserved.
+- Plan state: clip 3 `caption_chunks=44`/`_caption_words=204`/`_compiled_sig=True`; clip 4 `caption_chunks=48`/`_caption_words=230`; siblings untouched (clip 2=62, clip 5=49). `captions/249-3.ass` (98,867 B) + `249-4.ass` (104,338 B); compiled masters `clips/249-3.mp4`/`249-4.mp4` + `-mosaic` bodies exist; publication syncs in `src/ddma/docs/episodes/249/clips/`. PASS 249-3 and 249-4 (caption data present, no section-4 exception).
+
+Full-regression verification numbers:
+
+- `unittest` spec_h2 + spec_h suites: 34/34 OK in deepDive and 34/34 OK in mdIngest; `node --check` on extracted inline scripts: clean.
+- Live wiring probe (test instance :18001, since stopped): timeline 249 → 200 `has_video=false`/`total=null`/`fallback_used=false`; 250 → 400; retrigger manim/mosaic → 200 duration+frame locked; bad side → 400; retrigger 250 → 400; design clip 3 → group `h2-249-1`, status `failed` with `no caption data` exception-only report (no curator contact); design 250 → 400.
+- Oracle comparison (read-only probe): `249-composite-full.mp4` = 93,749,687 B, 1883.688688 s, 1920x1080 h264+AAC 48 kHz stereo, ~30 fps, SHA-256 `752852DD7DAA98EA535570AAFF15CDDF66E2659BA911C30D6EBC783D87A3F67D`. Clip order PASS (concat lists v6_seg_0/1/2 + full_seg_3..20 in order 0–20). Frame contract PASS (1920x1080; strip 1920x120, panes 740x740 at (220,230)/(960,230); spot frames t=100/900/1700 s show strip, karaoke captions, both panes, footer). Captions 21/21 PASS (events 0:695 … 20:514, first=0.0, last=duration). Freshness 21/21 PASS, run artifacts 21/21 byte-identical to trial report. Duration FAIL: plan segments-ground-zero total 1873.37 s vs oracle 1883.689 s → gap −10.32 s over 1 s tolerance (systematic −0.4..−0.7 s/clip: Cutroom re-cut shorter after the trial). Assembly BLOCKED: 21/21 `ManimPaneMissing` (no Manim artifact keys in plan; trial art files live only in the trial folder); gate smoke `longform_publish_gate(oracle, None)` = ok True (existence-only).
+- Commits: deepDive `637d29a5` wiring+fix, plus this spec file (committed separately below); mdIngest `b2bd31f` wiring mirror (code-only). `ddma/docs/plan.json` + `ddma/plan.json` `published` diffs are pre-existing app writes, left UNCOMMITTED in both clones.
+
+Gaps (nothing silently accepted):
+
+- No app-built 249 composite master exists — end-to-end render/assemble/push/gate and movie-vs-oracle byte/SHA comparison remain undone until 21 Manim artifacts render.
+- Fresh-assembly total (1873.37 s) already exceeds the 1 s duration tolerance vs oracle — needs a scope decision (re-cut vs re-time) before any full rebuild.
+- Clips 3/4 karaoke-vs-title-band delta vs oracle is the intended fix, not a regression.
+- New-endpoint HTTP framing on working-tree code verified at helper level only (own :18001 probe hit a framing failure; prior :18001 wiring probe above was on the earlier turn's instance).
+- Chapter strip still plan-segments-ground-zero provisional.
