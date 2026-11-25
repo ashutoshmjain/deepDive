@@ -179,3 +179,47 @@ everywhere; unknown group 404.
 Gaps: `composite_timeline` chapters branch (21 chapters) not exercised
 over HTTP — no 249 master exists yet (chapter math proven in-process).
 Manim design and the full 21-clip regression remain next, not this job.
+
+## Build summary IV — curator Manim endpoint + 21-clip design (run file decides duration still holds)
+
+Root cause (verified in code at remote head `2c8e16b3`): the Beats
+design worker (`_h2_run_design_group`) and `manim_retrigger` POST to
+`127.0.0.1:8000/generate-manim-infographic`, but `run_curator.py`
+(47 routes) had no such route — referenced in `beats_server.py` only,
+defined nowhere. The Manim logic existed solely as in-process
+`generate_or_load_storyboard_data` (~line 1756). Every Design call
+failed 0/21 with 404. Not the servers, data, or user edits.
+
+Fix: new `POST /generate-manim-infographic?id=episode_249&num=N`
+route in `run_curator.py` (+136 lines), wired to
+`generate_or_load_storyboard_data` then the existing
+`manim_infographic_engine.render_manim_infographic_mp4` +
+`compile-clip --source manim` path — no new renderer, no Mosaic,
+never substitutes (raises when render/compile output missing).
+Returns `{success:true, artifact}` or `{success:false, error}` in the
+shape Beats expects. Plus one consistency fix: `manim_retrigger`'s
+curator timeout 30 s → 120 s (same synchronous render the design
+worker already waits 120 s for; 30 s timed out a healthy render —
+first clip-1 retrigger hit exactly this). Endpoint proved live with a
+direct curator POST (200, 8 scenes) before any Beats call.
+
+Verification: single clip 1 — design job `done`, no exceptions,
+`249-1-manim.mp4` exists (4.1 MB, 126.44 s); switch-to-Manim path
+returns `success:true` post-timeout-fix. Full 21-clip group
+`h2-249-1`: 21/21 `done`, 0 failed, no exceptions (polled to
+`finished:true`). Suites 36/36 OK in deepDive and mdIngest after the
+mirror. Diagnosis (read-only, files untouched): clip 249-0 shows
+`openable=false` while 249-2 shows true because clip 0's Mosaic body
+exists ONLY under the full-UUID run filename (local + hub) with NO
+generic `249-0-mosaic.mp4` fallback, while clip 2 has a local generic
+fallback — any resolving context without the clip's `mosaic_run_id`
+finds 2 but not 0. With the current plan + hub, `resolve_mosaic_body`
+finds clip 0 fine (hub run file, square 1080x1080, 144.3 s) and
+`_has_clip_media(0)` is true, so the false report comes from a stale
+data path, not missing files. Left for a later turn; nothing moved.
+
+Gaps carried: no 249 composite master exists yet, so render/assemble/
+push/gate and the movie-vs-oracle comparison remain undone; `composite_timeline`
+chapters branch still unexercised over HTTP. Plan/data churn from the
+design runs (episode_249 rev106 → rev154, src syncs, storyboards) left
+UNCOMMITTED by design — code + spec only in these commits.
