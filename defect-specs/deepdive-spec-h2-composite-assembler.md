@@ -140,3 +140,42 @@ Gaps (nothing silently accepted):
 - Clips 3/4 karaoke-vs-title-band delta vs oracle is the intended fix, not a regression.
 - New-endpoint HTTP framing on working-tree code verified at helper level only (own :18001 probe hit a framing failure; prior :18001 wiring probe above was on the earlier turn's instance).
 - Chapter strip still plan-segments-ground-zero provisional.
+
+## Build summary III — duration math fix (run file decides duration)
+
+Root cause: `clip_ground_zero_duration` computed
+`sum(segment durations) − sum(crossfade fields)`, but the plan's
+crossfade fields total exactly 1.00 s per clip (21.0 s over 21 clips)
+while the real audio overlap in the run files is only 10.68 s total —
+a systematic −0.39…−0.74 s per clip, −10.32 s total. The oracle is
+right: the run files sum to 1883.69 s and the trial built the oracle
+from them as-is. No re-cut happened; the crossfade fields simply
+overstate the overlap.
+
+Fix: new `probe_run_duration` (ffprobe `format=duration`, same
+heal-pattern probe shape as Spec H, never raises, never substitutes),
+`resolve_clip_run_path` (canonical run-ID artifact or explicit
+`run_path` only), and `clip_composite_duration` /
+`clip_composite_duration_explained` (run-file probe first, segments
+fallback only when no run file or the probe yields nothing).
+Segments still decide CONTENT (golden rule stands); the run file
+decides DURATION, and the Manim side renders to the same duration.
+`composite_timeline` chapters and the retrigger duration lock use the
+new resolver. Old `clip_ground_zero_duration` is kept as the fallback.
+
+Verification: fresh-assembly total over the 21 real hub run files
+(read-only ffprobe, all `run-file-probe`) = 1883.663 s vs oracle
+1883.689 s (delta 0.0263 s < 0.05 s tolerance). New
+`TestEpisode249DurationPin` (2 tests) pins the 21 caller-given run
+durations to 1883.69 and the assembler total to the oracle; the live
+test resolves its clip list from the canonical hub plan when the local
+clone has no plan files (mdIngest is code-only by design). Suites:
+36/36 OK in deepDive, 36/36 OK in mdIngest. Endpoints re-verified
+live on an isolated test instance (dead-curator patch, zero side
+effects): timeline/design_status/design_artifacts/retrigger all
+return complete bodies with correct framing; 250 refused 400
+everywhere; unknown group 404.
+
+Gaps: `composite_timeline` chapters branch (21 chapters) not exercised
+over HTTP — no 249 master exists yet (chapter math proven in-process).
+Manim design and the full 21-clip regression remain next, not this job.
