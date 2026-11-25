@@ -91,3 +91,19 @@ Before the push lands, the gate compares the movie about to be published against
 - Then build the episode 250 longform end to end in the app (design → render → assemble → push → gate) and compare the result against the approved 249 frame by the same measurements.
 - Exercise the run-artifact health check (a missing run file is re-downloaded by run ID and reported) and the caption-data rule (a clip with no caption data is a reported exception, not a silent static band).
 - Exercise the kill rule: the build stops and reports if the Manim side needs per-beat design or more than a third of the clips' artifacts need reprocessing.
+
+## Build summary (2026-11-25)
+
+What was built: Spec H composite longform as app code in Beats Studio — rulebook module `ddma/spec_h_composite_longform.py` (sections 1-6 + 8-10: frame constants, mosaic guards, KillRuleTracker, caption rules, durability, workflow, dd_hub meta, publish gate, platform quirks, oracle helper), `GET /api/beats/spec_h` + `POST /api/beats/longform_push` endpoints with gate + ffprobe durations in `ddma/beats_server.py`, "Push movie to dd_hub" button + `pushLongformToDdHub` in `ddma/beats.html`, 19-test suite `ddma/tests/test_spec_h_composite_longform.py`.
+
+Commits per repo: deepDive `e68c5cdf` (Spec H composite longform, 5 files +802/-1); mdIngest `1813919` (code-only mirror, 4 files +709/-1; spec md stays deepDive-only per plan/data discipline).
+
+Files changed per repo: deepDive — `ddma/spec_h_composite_longform.py` (new), `ddma/beats_server.py`, `ddma/beats.html`, `ddma/tests/test_spec_h_composite_longform.py` (new), `defect-specs/deepdive-spec-h-composite-longform.md`; mdIngest — same 4 code files mirrored byte-identical (diff-verified), no plan/data files.
+
+Verification results:
+- 249 regression (design>render>assemble>push>gate): BLOCKED, no shippable movie. Clips 3,4 (plus clip 0) have no caption data -> reported exception per s4, never silent static band; clips 1,5-12 lack run-ID provenance (resolve_mosaic_side refuses substitution per s5); mosaic_jobs failed for 0,3,4. Order 0-20 matches oracle; span+music-crossfade math 1883.38s vs oracle 1883.689s (delta 0.309s, within 1s). POST longform_push ep249 -> 404 no-master refusal, zero hub writes. Spec-H suite 19/19 OK; frames on disk are pre-composite 1080x1920 verticals only. REGRESSION VERDICT: FAIL (app behaved per spec).
+- 250 build: BLOCKED, no shippable movie. 14 clips (span sum 2641.990s); only clips 0,1 have run-IDs + captions (250-0.ass 791 Dialogue, 250-1.ass 695); clips 2-13 have neither. POST longform_push ep250 -> 404 refusal, zero hub writes. Spec-H suite 19/19 OK; full tests dir 25 tests with 1 pre-existing error (test_mosaic_pipeline_recovery corrupt.json expectation, untouched file). 250 state is worse than 249 (12/14 clips missing provenance + captions).
+- Health check exercised via `spec_h.health_check_run_artifacts` on [250/0 healthy, 250/1 missing-recoverable, 250/2 no-run_id] -> healthy [0], recovered [clip 1 re-downloaded by run ID], unrecoverable [clip 2 no provenance]; never substitutes.
+- Kill rule exercised via `KillRuleTracker` (14 clips): per-beat design on clip 5 fires KillRuleExceeded; 5/14 reprocessed fires (>1/3); 2/14 does not fire.
+
+Deviations from spec: none in code — the rule, exception type, gate, refusal, and status paths are in place. Known gaps (not deviations): end-to-end oracle comparison not executed (oracle mp4 absent from this machine); `KillRuleTracker.note_design/note_reprocess` not yet wired into archetype_studio update paths; no spec-H composite assembler beyond the EP-248-era engine, so full renders not attempted; clips 2-13 (ep250) and 0/3/4 + 1,5-12 (ep249) need Cutroom work first (Mosaic runs, body-relative captions, one Manim artifact per clip).
