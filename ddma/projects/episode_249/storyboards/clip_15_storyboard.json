@@ -13,14 +13,17 @@
     "equation_text": "t thermal = \u2212 \u03b2 1 ln \u03c1",
     "equation_norm": "t thermal = \u2212 \u03b2 1 ln \u03c1",
     "equation_section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
-    "reuse_of": "4",
+    "reuse_of": "18",
     "anchor": null,
     "diagram": null,
     "reports": [
-      "deterministic-design-call: deterministic title+transcript overlap",
-      "formula-reuse: same equation as clip 4 (reported, never silent)"
+      "directive: use the thermal-time equation",
+      "directive-honored: equation 6",
+      "formula-reuse: same equation as clip 18 (reported, never silent)"
     ],
-    "reason": "deterministic title+transcript overlap"
+    "reason": "directive picked catalog member",
+    "directive": "use the thermal-time equation",
+    "directive_report": "directive-honored: equation 6"
   },
   "scenes": [
     {
