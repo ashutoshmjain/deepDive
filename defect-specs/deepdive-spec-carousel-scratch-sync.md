@@ -87,3 +87,8 @@ restarted from the pulled tree first (8088/3000/8000/8001 all
 200; one absolute-path duplicate :8000 spawn killed again).
 This routine supersedes the manual remove-unbuilt prompt; the
 ongoing sync (auto-sync spec) is the permanent mechanism.
+
+V3/V4-live CONFIRMED post-deploy (2026-11-26, ~4 min after push
+974d2f97): 248.html 7 cards, 249.html 21, 250.html 3; no
+"Coming soon" on any page; all 31 carousel videos HEAD 200
+(7+21+3 checked individually, zero dead).
