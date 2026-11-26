@@ -253,3 +253,55 @@ encode settings — size was never a pass criterion).
 Assembly-run state committed here: episode_249 plan.json (segment/
 rendered reconciliation for the shipped master) + src 249-7.mp4 sync.
 Root plans untouched; scratch segment dirs stay untracked by design.
+
+## Build summary VI — Beats chapter list reads H2 data (2026-11-25)
+
+Root cause (verified in code at remote head `4acb3881`): the chapter list
+(`get_longform_all_chapter_mappings`, served as `/api/beats/index`) read
+only the retired beat-file mapping. `openable` missed H2 artifacts (clip
+249-0 reported `openable=false` while 249-2 was true only because a generic
+local `249-2-mosaic.mp4` fallback exists — resolving without the clip's
+`mosaic_run_id` finds 2 but never 0), `has_beats` read retired beat files,
+and windows were beat-mapped on the 3254.21-based header total from the
+open question (b). Episodes with full H2 coverage had no path to report it.
+
+Fix (`ddma/archetype_studio.py` +149/-6, mirrored code-only to mdIngest):
+three H2 helpers + five wiring edits in `get_longform_all_chapter_mappings`
+/ `get_longform_timeline_index`. (a) `openable` now ORs three H2 terms on
+top of the unchanged existing terms: clip in the H2 composite set,
+`249-N-manim.mp4` exists (local or hub), hub run file by plan
+`mosaic_run_id` via `spec_h.canonical_run_artifact_path` hub-first (exact
+run-ID artifact only). (b) `has_beats` on H2-covered episodes is the H2
+Manim artifact existence only (old beat-file term dropped, no fallback);
+`manim_retrigger`, `set_clip_visual_source`, and `beats.html` untouched (no
+dropdown/picker). (c) H2-covered episodes (every plan clip resolves a
+run-file-probed composite duration — e.g. all 21 clips of 249) get
+cursor-based windows from run-file durations plus the composite cursor
+total; the legacy path is byte-identical otherwise. Episodes without full
+H2 coverage (e.g. 248) keep legacy windows / `has_beats`. Read-only: never
+substitutes, never triggers a run, never writes any plan; no 250 contact.
+
+Verification: live on `:8001 /api/beats/index?ep=249`: total 1883.66,
+clip 1 = 144.3–265.03 (2:24–4:25), clip 0 = 0.0–144.3, clip 20 ends
+1883.66, all 21 clips `openable`/`has_beats` True; `get_longform_chapter_beats(249,1)`
+matches. (a) clip P0 selectable: list gates on `openable` only
+(`beats.html:550`), number strip renders every chapter (`beats.html:386-387`)
+and only `openable===false` blocks (`beats.html:394`); clip 0 live
+`openable=True`. (b) clip 1 Manim toggle: `btn-engine-manim.disabled`
+follows `hasBeats` (`beats.html:610`), `No Manim yet` hint only when
+`!hasBeats` (`beats.html:617-630`); live `has_beats`/`has_mosaic` True so
+toggle enabled and hint hidden; `/api/beats/beats?ep=249&clip_num=1`
+confirms `has_beats` True. (c) header `Part N: title (m:ss-m:ss)` via
+`formatDuration` (`beats.html:634,1177-1181`); live title `8D Totality`
+gives `Part 1: 8D Totality (2:24-4:25)`. (d) no dropdown/reuse picker in
+clip flow: exactly one `<select>` (`#beats-ep` top bar, pre-existing), zero
+matches for reuse/listbox/combobox; clip visual-source switching uses
+Mosaic/Manim toggle buttons via `setClipEngine` POST (`beats.html:737-743`).
+Suites: `test_spec_h2_composite_assembler` + `test_spec_h_composite_longform`
+= 36/36 OK. Guardrails kept: no Mosaic runs (read-only ffprobe/exists
+checks), no plan writes (`ddma/plan.json`, `ddma/docs/plan.json` untouched),
+no 250 contact.
+
+Gaps carried: none new — no 249 composite re-render was needed (master
+from summary V stands); `composite_timeline` chapters branch still
+unexercised over HTTP (chapter math proven in-process).
