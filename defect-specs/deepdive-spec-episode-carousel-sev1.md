@@ -67,6 +67,11 @@ from the pulled tree before implementing (8088/3000/8000/8001 all
 200); one duplicate-listener pair on :8000/:8001 from an
 absolute-path supervisor spawn was killed, singles verified.
 
+V2-live CONFIRMED post-deploy (2026-11-26, ~4 min after push
+9682aed7): 248.html 23 cards, 249.html 21, 250.html 14; new
+249 videos 200 (249-10, 249-15 probed); 248-8..23 still 404 as
+reported in V3.
+
 ## Guardrails
 
 - Pull all first (both deepDive and mdIngest clones), restart all four servers from the pulled tree, then implement. Commit + push all when done (deepDive carries the .md changes; mdIngest only if code changed, which it should not).
