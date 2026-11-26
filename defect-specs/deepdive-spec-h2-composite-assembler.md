@@ -223,3 +223,33 @@ push/gate and the movie-vs-oracle comparison remain undone; `composite_timeline`
 chapters branch still unexercised over HTTP. Plan/data churn from the
 design runs (episode_249 rev106 → rev154, src syncs, storyboards) left
 UNCOMMITTED by design — code + spec only in these commits.
+
+## Build summary V — 249 master assembled, pushed, gated, compared (PASS with noted gaps)
+
+Assembly: all 21 clips via the H2 assembler (Manim left + Mosaic
+right + strip + karaoke + footer), concat seg_0→seg_20 in order.
+Per-clip report: 21/21 `ok`, every duration `run-file-probe`, probed
+segment total 1883.668 s. Master `ddma/clips/249-longform-master.mp4`:
+100,722,836 B, 1920x1080 H.264+AAC, container 1883.688 s.
+Push via app endpoint: success to hub `episodes/249/249-longform.mp4`,
+meta SHA-256 `53e5a87a…eeb2e`, `ready_for_distribution:true`,
+`stings_stripped:true`. Gate: ok (`draft-relative structural check`).
+
+Oracle comparison (`249-composite-full.mp4`, 93,749,687 B, 1883.689 s):
+durations PASS (Δ 0.001 s, within 1 s); clip order PASS (0→20);
+frame PASS (1920x1080 both); strip/captions/footer PASS (spot frames
+show identical layout, karaoke highlight, footer bars); SSIM at
+t=150/900/1500 s: 0.914/0.916/0.942 — right (Mosaic) pane identical
+(same run files, same dot patterns/titles), layout identical.
+GAPS (nothing silently accepted): (1) left (Manim) pane content differs
+— fresh storyboard renders (e.g. clip 1 "ONTOLOGICAL FALLACY / ROBOT
+UNPLUGGED" robot) vs the trial's original art (clip 1 "8D Totality"
+circle); expected by construction, since the design group re-rendered
+all 21 Manim artifacts, but the pixels are not the trial's. (2) clips
+3–4 carry karaoke captions instead of the prototype static title band —
+the intended fix. (3) file size differs (100.7 vs 93.7 MB, different
+encode settings — size was never a pass criterion).
+
+Assembly-run state committed here: episode_249 plan.json (segment/
+rendered reconciliation for the shipped master) + src 249-7.mp4 sync.
+Root plans untouched; scratch segment dirs stay untracked by design.
