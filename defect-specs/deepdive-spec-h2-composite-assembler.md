@@ -329,3 +329,63 @@ inspection + live data: callers pass raw `clip_num`, clip 0 exists
 and is openable in the live index, header formats Part 0 from 0.0.
 Suites 36/36 in both clones after the mirror. No Mosaic runs, no
 substitutions, no 250 contact, no plan writes.
+
+## Build summary VIII — clip-level Manim panel replaces micro-beats pane (retired beat-finesse UI)
+
+Context (ep 249, Beats Studio): the lower pane under the player still
+showed the retired 8s-beat system — "MICRO-BEATS IN ACTIVE CLIP",
+"PART 1 / BEAT 1/1", archetypes/clip_N_gemini_scenes.py paths, spoken
+dialogue, Producer Feedback, Manim code view, Save to Personal Beats,
+Regenerate This Beat. The chapter-list fix never touched this pane.
+
+Fix (beats.html, page only; no server/data changes beyond one
+read-only endpoint):
+- Deleted tpl-beats-editor, the right "EXPAND / TAB" pane and its tab,
+  the preview overlay, and 10 beat functions (renderLfBeatPills,
+  selectLfBeat, fetchLfChapterProgressive, loadPersonalBeats, beat
+  feedback/save/regenerate/update/mosaic-retrigger, tab switching).
+  All call sites now route to renderClipSurface/renderClipManimPanel.
+- New clip-level Manim panel (lf-manim-panel) shows the ONE artifact
+  per active clip: title, equation (preferred) or anchor text
+  (label + arrow keyed to the hook sentence) or hook title, storyboard
+  status + scene count + duration (Manim ready / n scenes), and the two
+  clip-level actions Design this clip (designArtifacts 'clip') and
+  Retrigger Manim-only (compositeRetrigger 'manim'). Episode-scope
+  design (h2-249-1) untouched. No dropdown, no reuse picker added.
+- New read-only server route GET /api/beats/storyboard
+  (beats_server.py, +33 lines; H2 index untouched): ep-249-only, takes
+  clip_num, returns hook_title + full storyboard JSON (equation or
+  anchor labels + scenes + total_duration); 400 off-episode, 404 with
+  reported-exception text when no storyboard. The old /api/beats/beats
+  returns empty beats for H2 clips, so the design source of truth
+  (storyboards/clip_N_storyboard.json) is read directly instead.
+  has_beats beat-file toggle logic unchanged (still the
+  Manim-existence signal); render path null-guarded; two-column grid
+  after right-pane removal.
+- Kept: player, chapter list, strip, top buttons, mosaic-only template
+  (renamed copy to "No Manim Yet"), span guards, pointer-flip and
+  retrigger behavior.
+
+Verification (all on live servers restarted from this tree):
+- Served page: zero of 16 retired strings present
+  (MICRO-BEATS, gemini_scenes, Personal Beats, tpl-beats-editor,
+  lf-beat-, Regenerate This Beat, Producer Feedback, Spoken Dialogue,
+  loadPersonalBeats, selectLfBeat(, renderLfBeatPills, update_beat,
+  tab-expand-right, beats-right-pane); all 4 new markers present
+  (lf-manim-panel, renderClipManimPanel, renderClipSurface,
+  /api/beats/storyboard).
+- Storyboard endpoint live: 249/1 -> 200, 8 scenes, 120.72s, first
+  scene label ONTOLOGICAL FALLACY; ep 250 -> 400; clip 99 -> 404 with
+  reported-exception text. node --check on the patched page: clean.
+- Panel renderer exercised in node with DOM stub + real clip-1
+  storyboard: output shows title, Anchor ROBOT / NO SOCKET, Manim
+  ready, 8 scenes, 120.72s, 249-1-manim.mp4, both correct buttons;
+  zero banned words.
+- Suites: H1+H2 36/36 OK in both clones; full discover 42 runs with
+  1 error in test_mosaic_pipeline_recovery
+  (test_safe_load_json_resilience...) — proven pre-existing by
+  re-running it with my two files stashed (fails identically on the
+  clean tree); imports run_curator only, which this job never touched.
+- Ep 249 only; ep 250 untouched (probe only for the 400 guard).
+  No Mosaic runs, no substitutions, caption data via storyboards,
+  no plan writes (ddma/plan.json, ddma/docs/plan.json untouched).
