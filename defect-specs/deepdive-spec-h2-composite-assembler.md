@@ -600,3 +600,201 @@ Deviations / honest notes:
 - V2's physical click and V5's in-browser panel render were covered by
   served-HTML checks + the real-functions node harness, not a live
   browser — that is the verification boundary of this environment.
+
+## Build summary XI — equations-as-math BLOCKED (no TeX source), plan-title footer, player 16:9, oracle immunity
+
+Commits: none in this job (batch commits once after footer V2, per the
+job spec). Code mirrored to mdIngest (uncommitted). Spec file
+`defect-specs/deepdive-spec-h2-equations-katex-fit.md` saved in
+deepDive (untracked, goes out with the batch).
+
+Math path (A/B): STOPPED before any render change, per the spec's own
+stop rule. Renderer availability first: no LaTeX on the machine
+(pdflatex/xelatex/lualatex all absent; Manim is Text-only here), no
+KaTeX module — but npm works, so KaTeX was installed machine-global
+(`npm i -g katex`, resolved via NODE_PATH) and verified rendering.
+The blocker is the SOURCE, not the renderer: the spec's claim that
+"the real LaTeX source lives in the episode page's katex-display
+blocks" is false. Fetched 249.html live (179,390 B): all 7
+katex-display blocks contain pre-rendered KaTeX HTML only
+(`katex-html` spans, no MathML, no annotations) — zero TeX markers of
+15 kinds checked (no math/tex, data-tex, text/x-tex, katex.render,
+renderMathInElement, \frac, \sum, \int, \sqrt, \eta, \rho, \beta,
+\ln). The catalog carries only plain-text norms, not TeX.
+Reconstructing TeX from rendered HTML or hand-writing it would be
+inventing, so A/B stopped with no code change: equations render as
+before (plain Text), fitting logic untouched. A future data-only fix
+is straightforward — the footer pipeline already threads strings
+through — if the user supplies the 9 equations' TeX.
+
+C (plan-title footer): `_render_stage_body` takes the above-line title
+from the transient in-memory `_render_title` hint (plan title injected
+per stage by the re-render driver; storyboard files never edited),
+falling back to the stage title. Design focus stays below-left.
+Footer title is uppercase plan title as before ("8D TOTALITY").
+
+E (oracle immunity): `test_fresh_assembly_total_matches_oracle` now
+reads `projects/episode_249/plan.json` (hub fallback preserved),
+never the shared root copy. Test-only change.
+
+F (player): removed `max-height: 360px` from `#lf-studio-video-player`
+(one line); width 100% + aspect-ratio 16/9 now governs. Served HTML
+verified (cap string gone).
+
+Re-rendered from existing storyboards (no design): clips 1, 3, 13
+only (footer V2's remaining 20 explicitly not run).
+
+Verification (ep 249 only):
+- V1 PASS: clip 1 footer reads above "8D TOTALITY", below-left
+  "ULTIMATE ANCHOR", below-right "deepDive podcast · Ep 249" (frame
+  evidence). No duplication, no collision, legible.
+- V2 FAIL (blocked): clip 3 equation still plain Text, still wraps
+  mid-symbol (frame evidence). Real math needs the missing TeX source.
+- V3 FAIL (blocked): clip 13 still huge Text overflow, "a t p ("
+  cut off (frame evidence). Same blocker. (Observed mechanism, for
+  the record: short progressive rows get scaled UP to fit width by
+  the old `scale_to_fit_width(6.4)` — the fit rewrite belongs to B.)
+- V4 PASS (CSS grounds): served page carries the uncapped element;
+  16:9 box + 16:9 source fills edge-to-edge mathematically
+  (object-fit contain at matching aspect = exact fit), strip and
+  panes at true positions. Player is taller now (correct landscape).
+  No headless browser in this env — noted, not claimed otherwise.
+- V5 PASS: all 21 storyboards byte-identical (hashes match pre-render;
+  newest board mtime predates this job); all plan
+  `infographic_scenes` byte-identical (clips 1/3/13 hashes match).
+  No Mosaic invocation exists in any command run this job; the only
+  hub writes are the compile path's pre-existing manim-reel syncs
+  (249-1/3/13) and its plan-metadata reconcile (durations/sigs, never
+  scenes) — reported, not new behavior.
+- V6 PASS: 70 tests in BOTH clones, single known pre-existing error
+  (untouched file). New tests: footer total/ellipsis truncation,
+  chrome plan-title hint, center drawtext (footer job), all green.
+- V7 PASS: with 250's 14-clip plan temporarily in the root copy, the
+  oracle test PASSES (no longer reads root); root restored
+  byte-identical; suite re-run green.
+
+Deviations / honest notes:
+- B's `Part {clip_num + 1}` (footer job) contradicts that job's V1
+  literal "Part 1 of 21" and the studio's 0-based Part naming, so the
+  filter emits `Part {clip_num}`; V1's segment proves it. Flagged for
+  the user's call at the footer gate.
+- Long section names cannot fit the sub-row single-line at 14px
+  (measured: ~10.5px/cap, budget ~36 chars). Kept 14px + word-boundary
+  truncation with ellipsis ("MATHEMATICAL FOUNDATIONS OF THE…");
+  shrink-to-fit would go illegible (~8px for 65 chars). If the user
+  supplies short equation display names, they flow through
+  `_render_focus` with zero code change.
+- 8088/3000 were NOT restarted (user active on 250; their code
+  unchanged); :8000/:8001 restarted onto the pulled tree.
+- Root `ddma/plan.json` flip-flop is tooling behavior: every design /
+  compile save-plan fans the episode plan out to the root copy (and
+  the user's 250 Cutroom work flips it to 250's). `docs/plan.json`
+  still holds 250's (untouched). Both stay uncommitted.
+- External activity during the job: the live 249 master was
+  re-spliced at 6:11 by an action outside this job (none of this
+  job's commands write the master); V3/V4 master checks after
+  approval must re-verify against the then-current master.
+
+## Build summary XII — Patch reload fix (ep 249, clip 1 verified live)
+
+Commits: deepDive c763d286 (this batch) + mdIngest 4f09142 (code-only mirror). This
+commit also carries the still-uncommitted footer-V1 files
+(two-row footer, center drawtext, chrome_249.png) and the KaTeX-job
+files (plan-title chrome, player 16:9, oracle fix) — their own
+summaries (footer V2's, and XI above) travel as specified; nothing
+here re-runs footer V2. Spec file
+`defect-specs/deepdive-spec-h2-patch-reload-fix.md` saved in deepDive.
+
+A (reload): after a successful patch the player reloads from the
+KNOWN master URL (`timeline.video_url`, i.e. `/api/beats/video?ep=249`)
+with `&t=<now>` appended — never from the stripped current src.
+`applyPlaybackSource` compares with the `t` parameter ignored
+(`stripCacheBuster`), so later calls cannot strip the buster; the
+settled URL carries both `ep=249` and the buster. Seek moved into a
+one-shot `loadedmetadata` listener (10 s fallback resolve); no
+synchronous `currentTime` after `load()`. Failures still touch
+nothing and surface the server's refusal.
+
+B (headers): `serve_media_file` sends `Cache-Control: no-cache` on
+200 and 206 (verified live on both). Same helper serves
+`/api/beats/video` and `/api/beats/clip_media`. No no-store, no
+versioned URLs elsewhere.
+
+C (honest timing): all "~8s" strings removed (grep: zero). Button
+"Patch (takes a few minutes)", in-progress toast says the same,
+plus a live elapsed-seconds ticker on the button (1 s interval,
+cleared in `finally` with label restore). Measured clip-1 patch on
+this machine: 116 s wall (harness-timed, server round trip). No
+re-encode change (exact cuts vs speed left for the user, as ordered).
+
+E (placement): Patch button moved from the top row into the
+clip-level Manim panel next to "Design this clip" (same id
+`btn-patch-lf-chapter`, same handler). Top row otherwise unchanged.
+
+F (gate): disabled until a completed Design this clip for the ACTIVE
+clip; re-evaluates per clip on select. Derived from stored state
+(artifact mtime vs master mtime from the storyboard endpoint — new
+read-only fields `manim_artifact_mtime`/`master_mtime`): no artifact
+→ "Run Design this clip first."; no master → "No master to patch
+into yet."; artifact newer → enabled; else "Up to date — run Design
+this clip again to enable Patch." (title attribute mirrors the hint).
+Design completion refreshes the active clip's panel, so the gate flips
+without a reload; after a successful patch the panel refresh makes it
+disable again. Survives reload by construction (file mtimes, verified
+by stateless re-fetch). Open question (not implemented, as ordered):
+a Mosaic-only retrigger also changes the segment — should it also
+enable Patch?
+
+D (episode memory): `ddma-episode` localStorage key (same pattern as
+`ddma-theme`). No `?ep=` → stored episode if still listed; else latest
+numeric episode; `?ep=` and picker changes update the store.
+
+Verification (ep 249 only):
+- V1 PASS: live clip-1 patch via the REAL handler (stub-DOM harness,
+  real HTTP): toast names ep 249; final player URL
+  `/api/beats/video?ep=249&t=…` (ep + buster, never the 248-bare
+  form); seek 144.4 (= chapter start + 0.1); 2:24 frame shows the
+  CURRENTLY STORED clip-1 design (8D TOTALITY / ULTIMATE ANCHOR /
+  Ep 249). Handler performs a single src assignment with no
+  visibility toggles (no grey-flash path in code); no 248 URL is ever
+  constructed (proven by URL provenance + harness read-back). No
+  headless browser in this env for pixel-watching the reload —
+  noted, not claimed.
+- V2 PASS: plain reload after patch shows the new segment (master
+  re-spliced 10:32); `Cache-Control: no-cache` confirmed on 200 and
+  206 responses.
+- V3 PASS (real page functions, 5 scenarios): stored 249 → 249,
+  stored 248 → 248, none → latest (250), `?ep=248` → 248 + store,
+  picker change → store. No `?ep=` refresh keeps the episode.
+- V4 PASS: zero "~8s" in the served page; ticker armed and firing
+  (harness); measured clip-1 patch 116 s reported.
+- V5 PASS: master 1883.757 → 1883.787 s (gate held, Δ 0.03 s); 248
+  byte-identical + mtime-unchanged; 250 untouched by this job (its
+  worktree changes are the user's 08:12 publish, left alone); no
+  Mosaic run in any command this job ran (only manim render +
+  compile-clip --source manim paths; server logs were not captured
+  on the restarted instances — stated, not covered up).
+- V6 PASS: 70 tests in BOTH clones, single known pre-existing error.
+  Helper-level test = node harness executing the real
+  `buildBustedMasterUrl`/`stripCacheBuster` (ep preserved, buster
+  appended, strip 3/3) + the handler/ticker/panel harnesses above.
+- V7 PASS: Patch button rendered once, in the panel; top row has
+  Play Clip/Play Full/Push/Design artifacts/both Retriggers, no Patch.
+- V8 PASS: 404 clip → disabled + first-run hint (real panel
+  function); clip 1 pre-patch enabled (artifact newer); post-patch
+  disabled/up-to-date (endpoint mtimes); plain Design-this-clip
+  re-cast (60 s, done, identical anchor design) → enabled again.
+  Reload survival holds by stored-state construction.
+- V9 PASS: `~8s` grep over the served page: zero; elapsed label shown
+  while patching (ticker proof above).
+
+Deviations / honest notes:
+- Footer V1's open `Part {clip_num}` vs `+1` question still stands
+  (segment filter emits `Part {clip_num}`); the V2 job owns the call.
+- The live-patch harness needed a fetch base-prefix shim (browsers
+  resolve site-relative URLs; node does not) — handler code itself
+  unchanged and byte-identical to the served page.
+- 8088/3000 left running (user active, code unchanged).
+- This job's clip-1 design re-cast reproduced the identical anchor
+  design (deterministic path); the 6:11 external master splice is now
+  superseded by this job's 10:32 patch (verified frame above).

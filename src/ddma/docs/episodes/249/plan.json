@@ -8260,23 +8260,23 @@
         "source_start": 134.18,
         "source_end": 244.78,
         "_audio_sig": "aaf474f3a10a438c4ff71e70336e5a3c",
-        "_compiled_sig": "6949fd0203eb4c139cf6fb7a59065fbd",
+        "_compiled_sig": "7daa8cd71e34f8a5334fe1aa41212eca",
         "infographic_scenes": [
             {
                 "start": 0.0,
                 "end": 3.0,
                 "kind": "title",
-                "title": "8D Totality",
-                "text": "8D Totality",
+                "title": "Ultimate Anchor",
+                "text": "Ultimate Anchor",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
                 "archetype": "fresh-title",
                 "footer_label": "TITLE",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 0.0,
                     "stage_index": 0,
                     "stage_count": 6
@@ -8284,99 +8284,99 @@
             },
             {
                 "start": 3.0,
-                "end": 28.43,
-                "kind": "formula",
-                "title": "8D Totality",
-                "text": "So let's just jump right in. Clip one, the eight -dimensional totality. Reality is an eight -dimensional unbracketed sentence and your brain is the editor. Okay. Let's unpack this. To understand where our 3D reality come",
+                "end": 26.15,
+                "kind": "anchor",
+                "title": "Ultimate Anchor",
+                "text": "Is infinity a boundless horizon or a terminal wall? That is the big question, really. Okay. Let's  unpack  this. When  we  look  at  the  physical  universe  or,  you  know,  when  we  look  at  quantum  mechanics  or  e",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
-                "archetype": "fresh-formula",
-                "footer_label": "FORMULA",
+                "archetype": "fresh-anchor",
+                "footer_label": "ANCHOR",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 0.2,
                     "stage_index": 1,
                     "stage_count": 6
                 }
             },
             {
-                "start": 28.43,
-                "end": 45.72,
-                "kind": "formula",
-                "title": "8D Totality",
-                "text": "Okay. Octonians? That sounds super intimidating. Paint a picture for us. Okay. Think of an eight -dimensional non -associative space. Right. The best analogy is imagining you're reading a massive sentence, but there are ",
+                "start": 26.15,
+                "end": 53.11,
+                "kind": "anchor",
+                "title": "Ultimate Anchor",
+                "text": "So  to  map  that  kind  of  physical  universe,  we  need  a  mathematical  system  that  is  entirely  foolproof. Absolutely  foolproof. Right. We  need  a  system  with  unbreakable  structural  integrity. But  what  ",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
-                "archetype": "fresh-formula",
-                "footer_label": "FORMULA",
+                "archetype": "fresh-anchor",
+                "footer_label": "ANCHOR",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 0.4,
                     "stage_index": 2,
                     "stage_count": 6
                 }
             },
             {
-                "start": 45.72,
-                "end": 70.73,
-                "kind": "formula",
-                "title": "8D Totality",
-                "text": "So just a wall of letters? Exactly. No punctuation, no spaces. It's a continuous, undefined totality. It holds all the potential meaning, but you can't actually read a specific story from it. Because it's completely unbr",
+                "start": 53.11,
+                "end": 83.77,
+                "kind": "anchor",
+                "title": "Ultimate Anchor",
+                "text": "The  absolute  essence  of  a  division  algebra  is  that  it's  this  pristine,  continuous  mathematical  space. It  is  an  algebraic  environment  that  is  completely  and  utterly  free  of  structural  traps. Fre",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
-                "archetype": "fresh-formula",
-                "footer_label": "FORMULA",
+                "archetype": "fresh-anchor",
+                "footer_label": "ANCHOR",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 0.6,
                     "stage_index": 3,
                     "stage_count": 6
                 }
             },
             {
-                "start": 70.73,
-                "end": 104.84,
-                "kind": "formula",
-                "title": "8D Totality",
-                "text": "Okay. So like grouping the letters into actual words? Yep. And the people mentions the stash of a sociohedron, which is just the geometric space of all those possible brackets. So wait, let me push back on this. If the u",
+                "start": 83.77,
+                "end": 110.37,
+                "kind": "anchor",
+                "title": "Ultimate Anchor",
+                "text": "I  want  to  make  sure  we  are  visualizing  this  correctly  rather  than  relying  on,  like,  abstract  terms. In  our  previous  notes,  we  used  this  idea  of  a  flawless,  infinitely  stretching  highway. Yes,",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
-                "archetype": "fresh-formula",
-                "footer_label": "FORMULA",
+                "archetype": "fresh-anchor",
+                "footer_label": "ANCHOR",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 0.8,
                     "stage_index": 4,
                     "stage_count": 6
                 }
             },
             {
-                "start": 104.84,
+                "start": 110.37,
                 "end": 120.72,
-                "kind": "formula",
-                "title": "8D Totality",
-                "text": "They literally strip away five dimensions. We don't perceive the 8D totality because we biologically can't. That is wild. Yeah. Coming up in the next clip, we're going to see what happens to those lost dimensions. They b",
+                "kind": "anchor",
+                "title": "Ultimate Anchor",
+                "text": "It  scales  logically. But  what  happens  if  the  algebra  isn't  a  division  algebra? Imagine  if  suddenly,  right  in  the  middle  of  that  pristine  road,  there  is  a  pothole. But  a  very  specific  kind  of",
                 "labels": [
-                    "8D TOTALITY"
+                    "ULTIMATE ANCHOR"
                 ],
-                "archetype": "fresh-formula",
-                "footer_label": "FORMULA",
+                "archetype": "fresh-anchor",
+                "footer_label": "ANCHOR",
                 "visual": {
-                    "type": "formula",
-                    "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
-                    "section": "1. Mathematical Foundations of the Octonionic Substrate",
+                    "type": "anchor",
+                    "label": "ULTIMATE ANCHOR",
+                    "hook": "Clip one, the ultimate anchor.",
                     "progress": 1.0,
                     "stage_index": 5,
                     "stage_count": 6
