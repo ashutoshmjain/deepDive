@@ -697,7 +697,7 @@ Deviations / honest notes:
 
 ## Build summary XII — Patch reload fix (ep 249, clip 1 verified live)
 
-Commits: deepDive c763d286 (this batch) + mdIngest 4f09142 (code-only mirror). This
+Commits: deepDive 225dcc48 (this batch) + mdIngest 4f09142 (code-only mirror). This
 commit also carries the still-uncommitted footer-V1 files
 (two-row footer, center drawtext, chrome_249.png) and the KaTeX-job
 files (plan-title chrome, player 16:9, oracle fix) — their own
