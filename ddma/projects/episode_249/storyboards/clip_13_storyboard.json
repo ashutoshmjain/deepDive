@@ -1,91 +1,268 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 13,
   "clip_title": "Chiral Mirror",
-  "total_duration": 78.19,
-  "custom_directive": "",
+  "total_duration": 78.32,
+  "design": {
+    "kind": "formula",
+    "title": "Chiral Mirror",
+    "equation_text": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+    "equation_norm": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+    "equation_section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+    "reuse_of": null,
+    "anchor": null,
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic title+transcript overlap"
+    ],
+    "reason": "deterministic title+transcript overlap"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 15.64,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "Chiral Mirror",
+      "text": "Chiral Mirror",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 15.64,
-      "end": 31.28,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 22.95,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "The chiral mirror. Physical matter and cognitive intelligence are inseparable chiral replicas of the exact same knot. Okay, let's unpack this carefully. A quark, which is plus MC squared, cannot be mathematically separat",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 31.28,
-      "end": 46.91,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 22.95,
+      "end": 36.51,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "Wait, why? Because physical manifestation, the bluing spasm, and cognitive observation, decoding the state info, are dual brackets. So the forward sequence builds the physical mass. Right.",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 46.91,
-      "end": 62.55,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 36.51,
+      "end": 55.51,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "And the reverse sequence represents cognitive reflection, intelligence untangling the physical structure back to the observer. Let me get this straight. You're saying intelligence isn't just an emergent property of wet b",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 62.55,
-      "end": 78.19,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "start": 55.51,
+      "end": 72.81,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "In this framework, it is a fundamental geometric bracket required to observe the physical knot in the first place. That is just, it's staggering. Physical creation and primordial intelligence are tethered together. At th",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 72.81,
+      "end": 78.32,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "Coming up in the next clip, we tackle the strangest topology in physics. Spin one half. The quantum weirdness.",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Chiral Mirror",
+      "text": "Chiral Mirror",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 22.95,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "The chiral mirror. Physical matter and cognitive intelligence are inseparable chiral replicas of the exact same knot. Okay, let's unpack this carefully. A quark, which is plus MC squared, cannot be mathematically separat",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 22.95,
+      "end": 36.51,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "Wait, why? Because physical manifestation, the bluing spasm, and cognitive observation, decoding the state info, are dual brackets. So the forward sequence builds the physical mass. Right.",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 36.51,
+      "end": 55.51,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "And the reverse sequence represents cognitive reflection, intelligence untangling the physical structure back to the observer. Let me get this straight. You're saying intelligence isn't just an emergent property of wet b",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 55.51,
+      "end": 72.81,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "In this framework, it is a fundamental geometric bracket required to observe the physical knot in the first place. That is just, it's staggering. Physical creation and primordial intelligence are tethered together. At th",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 72.81,
+      "end": 78.32,
+      "kind": "formula",
+      "title": "Chiral Mirror",
+      "text": "Coming up in the next clip, we tackle the strangest topology in physics. Spin one half. The quantum weirdness.",
+      "labels": [
+        "CHIRAL MIRROR"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "\u03b1 t \u03c1 ( A ) = \u0394 i t A \u0394 \u2212 i t \u2200 A \u2208 M , t \u2208 R",
+        "section": "4. Dimensional Loss, Associative Bracketing, and the Origin of Time",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }

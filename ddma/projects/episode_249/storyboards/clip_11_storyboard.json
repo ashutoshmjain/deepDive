@@ -1,91 +1,271 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 11,
   "clip_title": "Anticolors",
   "total_duration": 77.52,
-  "custom_directive": "",
+  "design": {
+    "kind": "anchor",
+    "title": "Anticolors",
+    "equation_text": null,
+    "equation_norm": null,
+    "equation_section": "",
+    "reuse_of": null,
+    "anchor": {
+      "label": "ANTICOLORS",
+      "hook": "To undo the knot, you can't just move forward."
+    },
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic: no catalog equation clears threshold"
+    ],
+    "reason": "deterministic: no catalog equation clears threshold"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 15.5,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "Anticolors",
+      "text": "Anticolors",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 15.5,
-      "end": 31.01,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 14.55,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Anticolors. To undo the knot, you can't just move forward. You must walk backward through the exact same steps. So, we know red is the forward path i, j, k.",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 31.01,
-      "end": 46.51,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 14.55,
+      "end": 33.49,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "But what is anti -red? I'd instinctively think you just apply another forward sequence, like tying another knot on top. But the paper states you can't do that. To return to the flat vacuum, you must apply the inverse ope",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 46.51,
-      "end": 62.02,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 33.49,
+      "end": 56.21,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Okay, so the reverse anticyclic path flips the algebraic sign from negative one to positive one. Yes, and that positive scalar boundary is the geometric root of antimatter. So, what happens if a forward color, like red a",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 62.02,
+      "start": 56.21,
+      "end": 70.93,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "The structural knotting meets the untangling sequence. And the topological distortion just cancels out perfectly to zero. The knot untangles entirely back into the scalar vacuum. The mass dissolves.",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 70.93,
       "end": 77.52,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Boom. Coming up in the next clip, we redefine electric charge as a global chiral mirror. From colors to electromagnetism.",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Anticolors",
+      "text": "Anticolors",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 14.55,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Anticolors. To undo the knot, you can't just move forward. You must walk backward through the exact same steps. So, we know red is the forward path i, j, k.",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 14.55,
+      "end": 33.49,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "But what is anti -red? I'd instinctively think you just apply another forward sequence, like tying another knot on top. But the paper states you can't do that. To return to the flat vacuum, you must apply the inverse ope",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 33.49,
+      "end": 56.21,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Okay, so the reverse anticyclic path flips the algebraic sign from negative one to positive one. Yes, and that positive scalar boundary is the geometric root of antimatter. So, what happens if a forward color, like red a",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 56.21,
+      "end": 70.93,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "The structural knotting meets the untangling sequence. And the topological distortion just cancels out perfectly to zero. The knot untangles entirely back into the scalar vacuum. The mass dissolves.",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 70.93,
+      "end": 77.52,
+      "kind": "anchor",
+      "title": "Anticolors",
+      "text": "Boom. Coming up in the next clip, we redefine electric charge as a global chiral mirror. From colors to electromagnetism.",
+      "labels": [
+        "ANTICOLORS"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ANTICOLORS",
+        "hook": "To undo the knot, you can't just move forward.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }

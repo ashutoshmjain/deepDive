@@ -1,91 +1,271 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 9,
   "clip_title": "Color Charge",
   "total_duration": 75.69,
-  "custom_directive": "",
+  "design": {
+    "kind": "anchor",
+    "title": "Color Charge",
+    "equation_text": null,
+    "equation_norm": null,
+    "equation_section": "",
+    "reuse_of": null,
+    "anchor": {
+      "label": "COLOR CHARGE",
+      "hook": "Clip nine, color charge."
+    },
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic: no catalog equation clears threshold"
+    ],
+    "reason": "deterministic: no catalog equation clears threshold"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 15.14,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "Color Charge",
+      "text": "Color Charge",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 15.14,
-      "end": 30.28,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 26.2,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "Red, blue, and green aren't quantum magic. They are just the three possible paths to tie a knot. So in standard quantum chromodynamics, color charge uses these incredibly complex SU3 matrices. Right, it's usually treated",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 30.28,
-      "end": 45.41,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 26.2,
+      "end": 38.11,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "It's simply the permutation order of the three orthogonal rotations we just talked about. Oh. So we can just map it out. IJK is red, JKI is blue, and KIJ is green. Exactly.",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 45.41,
-      "end": 60.55,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 38.11,
+      "end": 56.06,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "They all form the exact same topological physical mass, that negative one boundary. But their internal state information is different. Yes. And the paper posits that this internal state information is the primordial foun",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 60.55,
+      "start": 56.06,
+      "end": 66.77,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "Yeah. It's the how you got there, not just the what you built. It's embedded information. Spatial memory before biological brains even existed. You got it.",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 66.77,
       "end": 75.69,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "That's profound. Coming up in the next clip, how these three colors lock together to form the building blocks of you and me. Protons and neutrons.",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Color Charge",
+      "text": "Color Charge",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 26.2,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "Red, blue, and green aren't quantum magic. They are just the three possible paths to tie a knot. So in standard quantum chromodynamics, color charge uses these incredibly complex SU3 matrices. Right, it's usually treated",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 26.2,
+      "end": 38.11,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "It's simply the permutation order of the three orthogonal rotations we just talked about. Oh. So we can just map it out. IJK is red, JKI is blue, and KIJ is green. Exactly.",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 38.11,
+      "end": 56.06,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "They all form the exact same topological physical mass, that negative one boundary. But their internal state information is different. Yes. And the paper posits that this internal state information is the primordial foun",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 56.06,
+      "end": 66.77,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "Yeah. It's the how you got there, not just the what you built. It's embedded information. Spatial memory before biological brains even existed. You got it.",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 66.77,
+      "end": 75.69,
+      "kind": "anchor",
+      "title": "Color Charge",
+      "text": "That's profound. Coming up in the next clip, how these three colors lock together to form the building blocks of you and me. Protons and neutrons.",
+      "labels": [
+        "COLOR CHARGE"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "COLOR CHARGE",
+        "hook": "Clip nine, color charge.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }

@@ -1,103 +1,271 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 16,
   "clip_title": "Chiral Equilibrium",
   "total_duration": 88.2,
-  "custom_directive": "",
+  "design": {
+    "kind": "anchor",
+    "title": "Chiral Equilibrium",
+    "equation_text": null,
+    "equation_norm": null,
+    "equation_section": "",
+    "reuse_of": null,
+    "anchor": {
+      "label": "CHIRAL EQUILIBRIUM",
+      "hook": "Clip 16, chiral vector equilibrium."
+    },
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic: no catalog equation clears threshold"
+    ],
+    "reason": "deterministic: no catalog equation clears threshold"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 14.7,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "Chiral Equilibrium",
+      "text": "Chiral Equilibrium",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 14.7,
-      "end": 29.4,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 23.1,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "The universe isn't a closed box of energy, it's an elegantly balanced scale. What's fascinating here is that classical physics treats the universe as a closed container, static energy conservation. The first law of therm",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 29.4,
-      "end": 44.1,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 23.1,
+      "end": 38.77,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "Okay, let me make sure I have the math right. The net energetic cost of the entire universe, relative to the singularity observer, is identically zero at all times. Identically zero. Negative one plus positive one equals",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 44.1,
-      "end": 58.8,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 38.77,
+      "end": 53.88,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "So structural mass energy plus mc squared is perfectly counterbalanced by cognitive comprehension minus ic squared? The universe doesn't have a fixed energy limit. It has a symmetry requirement. That is just brilliant.",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 58.8,
-      "end": 73.5,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "start": 53.88,
+      "end": 76.93,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "And I want to pause real quick. If this kind of paradigm shifting logic sparks your own theories, and you have AI -based independent research, head over to shoe -tree .com, that's S -H -U -T -R -I .com. Definitely submit",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
     },
     {
-      "start": 73.5,
+      "start": 76.93,
       "end": 88.2,
-      "archetype": "flywheel_gear",
-      "title": "COMPOUNDING MOMENTUM",
-      "insight": "Reinvestment cycles creating self-sustaining kinetic inertia",
-      "metaphor": "Compounding flywheel accelerating with each loop",
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "Okay, back to the equilibrium. Coming up in the next clip, we use this to prove why a proton lives forever, but a free neutron dies in 15 minutes. Real world application.",
       "labels": [
-        "INPUT",
-        "INERTIA"
-      ]
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Chiral Equilibrium",
+      "text": "Chiral Equilibrium",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 23.1,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "The universe isn't a closed box of energy, it's an elegantly balanced scale. What's fascinating here is that classical physics treats the universe as a closed container, static energy conservation. The first law of therm",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 23.1,
+      "end": 38.77,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "Okay, let me make sure I have the math right. The net energetic cost of the entire universe, relative to the singularity observer, is identically zero at all times. Identically zero. Negative one plus positive one equals",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 38.77,
+      "end": 53.88,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "So structural mass energy plus mc squared is perfectly counterbalanced by cognitive comprehension minus ic squared? The universe doesn't have a fixed energy limit. It has a symmetry requirement. That is just brilliant.",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 53.88,
+      "end": 76.93,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "And I want to pause real quick. If this kind of paradigm shifting logic sparks your own theories, and you have AI -based independent research, head over to shoe -tree .com, that's S -H -U -T -R -I .com. Definitely submit",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 76.93,
+      "end": 88.2,
+      "kind": "anchor",
+      "title": "Chiral Equilibrium",
+      "text": "Okay, back to the equilibrium. Coming up in the next clip, we use this to prove why a proton lives forever, but a free neutron dies in 15 minutes. Real world application.",
+      "labels": [
+        "CHIRAL EQUILIBRIUM"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "CHIRAL EQUILIBRIUM",
+        "hook": "Clip 16, chiral vector equilibrium.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }

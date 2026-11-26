@@ -1,91 +1,271 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 17,
   "clip_title": "Imbalance Delta",
   "total_duration": 77.07,
-  "custom_directive": "",
+  "design": {
+    "kind": "anchor",
+    "title": "Imbalance Delta",
+    "equation_text": null,
+    "equation_norm": null,
+    "equation_section": "",
+    "reuse_of": null,
+    "anchor": {
+      "label": "IMBALANCE DELTA",
+      "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance."
+    },
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic: no catalog equation clears threshold"
+    ],
+    "reason": "deterministic: no catalog equation clears threshold"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 15.41,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "Imbalance Delta",
+      "text": "Imbalance Delta",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 15.41,
-      "end": 30.83,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 25.01,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "The imbalance delta. The secret to immortality in the subatomic realm is perfect cognitive balance. So how does this apply to actual particles? The paper defines the chiral imbalance delta. Delta being the difference bet",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 30.83,
-      "end": 46.24,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 25.01,
+      "end": 40.89,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "Right. Inside a proton, the three quark knot achieves exact chiral equilibrium with its cognitive state. So delta is zero. Exactly. The entropic decay rate is zero, making the proton completely stable.",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 46.24,
-      "end": 61.66,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 40.89,
+      "end": 55.4,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "But an isolated free neutron? It loses its nuclear binding context. A non -zero chiral delta appears. Ah, so there's uncompensated tension. And that tension causes it to decay rapidly.",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 61.66,
+      "start": 55.4,
+      "end": 76.04,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "Beta decay in about 880 seconds. Just about 15 minutes. Again, direct yourself to the Deep Dive website to view the decay rate mathematical derivations. It's perfectly mapped out. Coming up in the next clip, what happens",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 76.04,
       "end": 77.07,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "It becomes an observer. The phase boundary.",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Imbalance Delta",
+      "text": "Imbalance Delta",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 25.01,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "The imbalance delta. The secret to immortality in the subatomic realm is perfect cognitive balance. So how does this apply to actual particles? The paper defines the chiral imbalance delta. Delta being the difference bet",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 25.01,
+      "end": 40.89,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "Right. Inside a proton, the three quark knot achieves exact chiral equilibrium with its cognitive state. So delta is zero. Exactly. The entropic decay rate is zero, making the proton completely stable.",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 40.89,
+      "end": 55.4,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "But an isolated free neutron? It loses its nuclear binding context. A non -zero chiral delta appears. Ah, so there's uncompensated tension. And that tension causes it to decay rapidly.",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 55.4,
+      "end": 76.04,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "Beta decay in about 880 seconds. Just about 15 minutes. Again, direct yourself to the Deep Dive website to view the decay rate mathematical derivations. It's perfectly mapped out. Coming up in the next clip, what happens",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 76.04,
+      "end": 77.07,
+      "kind": "anchor",
+      "title": "Imbalance Delta",
+      "text": "It becomes an observer. The phase boundary.",
+      "labels": [
+        "IMBALANCE DELTA"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "IMBALANCE DELTA",
+        "hook": "The secret to immortality in the subatomic realm is perfect cognitive balance.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }

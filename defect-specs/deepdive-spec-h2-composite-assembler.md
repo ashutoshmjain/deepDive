@@ -389,3 +389,96 @@ Verification (all on live servers restarted from this tree):
 - Ep 249 only; ep 250 untouched (probe only for the 400 guard).
   No Mosaic runs, no substitutions, caption data via storyboards,
   no plan writes (ddma/plan.json, ddma/docs/plan.json untouched).
+
+## Build summary IX — fresh-cast Manim design (Severity-1 stale Manims)
+
+Cause (user-observed live, verified in code): the 249 master carried the
+old engine's fixed-archetype designs (clip 0 robot_unplugged, clip 1
+teenager_basement), and Design-artifacts just re-rendered them — the
+worker POSTed only {ep, clip_num}, the curator returned the cached
+storyboard file or the plan's infographic_scenes, and generation used the
+old Feynman-Needham rule block. The new clip-level Manim panel displayed
+the stale design faithfully.
+
+Fix (design call = fresh cast; new rules in code, not just in the note):
+- New module ddma/manim_fresh_design.py (mirrored): episode-page
+  equation catalog (katex-display blocks + sections from
+  deepdive.shutri.com/249.html, cached), deterministic one-design-call
+  per clip (transcript + title + catalog; title-gated topic routing, no
+  invention possible — the equation is always a catalog member or the
+  clip degrades to anchor/title-only, reported), stages at sentence
+  boundaries (title first, then build stages of the ONE visual),
+  deterministic Manim templates (title / formula / tunnel / numberline
+  / groundzero / anchor; Text only — no LaTeX in this env), filler-hook
+  skip, reuse detection (reported, never silent).
+- Curator POST /generate-manim-infographic: for episode_249 with
+  force_regen it NEVER reads the cache or plan scenes — always designs
+  fresh, REPLACES the storyboard file and the plan's infographic_scenes,
+  rescales stages to the probed run duration, renders and compiles as
+  before. Other episodes / non-force keep the legacy path.
+- Beats worker sends force_regen + transcript + title (249-only);
+  manim_retrigger sends force_regen + transcript + title for ep 249 only
+  (other eps byte-identical). design_status reports design_reports,
+  changed_clips, master_stale + manual re-assemble note; nothing is ever
+  auto-assembled or auto-pushed (verified: master hash unchanged after
+  design, gate runs only via the manual Push button).
+- Engine: generate_manim_scene_python dispatches kind-tagged stages to
+  the fresh templates (archetype list and JIT bypassed on this path);
+  footer shows the stage kind. Panel + /api/beats/storyboard read the
+  design block and show "N stages" (the old "n scenes" display is gone).
+- Key environment finding (verified live): the stored gemini_api_key is
+  a 401 for the Generative Language API, so all Gemini paths (old and
+  new) fall back deterministically. Reported here; the deterministic
+  design call is the working path. No keys were probed or changed.
+- Segment art is the 740x740 infographic (clips/249-N-infographic.mp4),
+  not the 1080x1920 compiled manim — verified by frame inspection (the
+  compiled clip overlaid wrong).
+- Re-assemble path used: H2 segment build (build_segment_cmd,
+  resolve_segment_inputs, write_caption_ass) + concat + duration gate,
+  with trial chrome/strip assets read-only. /api/beats/patch stays
+  248-hardcoded (render_longform_parallel.py EP_NUM=248) — it is NOT the
+  249 path; see incident below.
+
+Verification (all live, ep 249 only):
+- Single clip 1: design group done; storyboard file + plan scenes
+  REPLACED (formula kind, octonion basis equation from page section 1,
+  6 stages, total 120.72); panel shows Equation + 6 stages + 120.72s +
+  both buttons, zero banned words; status reported master_stale with
+  changed clips + manual re-assemble note; manual splice at 144.30s
+  passed the duration gate (delta 0.038) and the frame at t=200 shows
+  the new formula art.
+- Full episode: group h2-249-2, 21/21 done, 0 failed. Equations (9):
+  clip 1 octonion basis, 2 free energy, 3 associator, 4 thermal time,
+  8 associator (reuse of 3, reported), 13 modular flow, 15 thermal time
+  (reuse of 4, reported), 18 thermal time (reuse of 15, reported),
+  19 thermal time (reuse of 15, reported). Anchors (12, all reported):
+  0, 5, 6, 7, 9, 10, 11, 12, 14, 16, 17, 20. No dropdown, no reuse
+  picker, no per-beat design.
+- Full master re-assembled (21 fresh segments + concat): 1883.685s
+  (oracle 1883.689s, delta 0.004s), 1920x1080, installed as
+  clips/249-longform-master.mp4; spot frames at clips 1/5/8/15 show
+  fresh formula/anchor art + karaoke + chrome; publish gate passes
+  (ok True, read-only check — nothing pushed to dd_hub).
+- Suites: 57 tests both clones; only failure is the known pre-existing
+  test_mosaic_pipeline_recovery error (re-proven with all my code files
+  stashed — fails identically on the clean tree; imports run_curator
+  only for safe_load_json, which this job never touched).
+- Incident (honest report): the first manual "Patch" call hit
+  /api/beats/patch, which is hardcoded to EP 248 — it re-rendered
+  248's chapter-1 window and spliced 248-longform-master.mp4 (mtime
+  8:47 PM). 248's sources were never modified, so the re-render is
+  content-equivalent, and the master probes intact (3254.24s, frames
+  sane). No 250 contact anywhere. The 249 splice/assembly above used
+  only the H2 path afterward.
+
+Deviations from the request: segment art is the 740 infographic, not
+the compiled 249-N-manim.mp4 (the task's parenthetical names the wrong
+file for the filter graph — verified by dimensions and frame
+inspection); the trial filter uses "-/filter_complex <script>" while
+spec_h2 emits "-filter_complex_script" (this ffmpeg calls the latter
+deprecated but still honors it — worked; module correction left for a
+future job); /api/beats/patch was NOT fixed to route ep 249 (left
+248-hardcoded; the H2 re-assemble path was used instead and the gap is
+reported here). No plan writes beyond the design's own episode-plan +
+src syncs (root ddma/plan.json, ddma/docs/plan.json untouched).
+No Mosaic runs, no substitutions, no 250 contact, no hub writes.

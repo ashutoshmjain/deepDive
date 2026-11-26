@@ -1,127 +1,268 @@
 {
   "_rule_engine": {
-    "standard": "Feynman-Needham Pedagogical Standard",
-    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
-    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
-    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
-    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
-    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
-    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
-    "archetypes_guide": {
-      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
-      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
-      "funnel_filter": "Bottlenecks, selection, throughput compression",
-      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
-      "network_artery": "Interconnection, trade routes vs isolation fallacy",
-      "foundation_stack": "Solid base vs fragile top layers",
-      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
-      "circuit_switch": "Logic gate, threshold barrier, state trigger",
-      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
-      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
-    }
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
   },
   "clip_num": 1,
   "clip_title": "8D Totality",
   "total_duration": 120.72,
-  "custom_directive": "",
+  "design": {
+    "kind": "formula",
+    "title": "8D Totality",
+    "equation_text": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+    "equation_norm": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+    "equation_section": "1. Mathematical Foundations of the Octonionic Substrate",
+    "reuse_of": null,
+    "anchor": null,
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic title+transcript overlap"
+    ],
+    "reason": "deterministic title+transcript overlap"
+  },
   "scenes": [
     {
       "start": 0.0,
-      "end": 15.09,
-      "archetype": "robot_unplugged",
-      "title": "ONTOLOGICAL FALLACY",
-      "insight": "Confusing autonomy with total isolation",
-      "metaphor": "Physical robot wandering with dead battery",
+      "end": 3.0,
+      "kind": "title",
+      "title": "8D Totality",
+      "text": "8D Totality",
       "labels": [
-        "ROBOT",
-        "NO SOCKET"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
     },
     {
-      "start": 15.09,
-      "end": 30.18,
-      "archetype": "balance_scale",
-      "title": "AUTONOMY FULCRUM",
-      "insight": "Autonomy is balancing income against compute burn",
-      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "start": 3.0,
+      "end": 28.43,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "So let's just jump right in. Clip one, the eight -dimensional totality. Reality is an eight -dimensional unbracketed sentence and your brain is the editor. Okay. Let's unpack this. To understand where our 3D reality come",
       "labels": [
-        "BURN",
-        "REVENUE"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
     },
     {
-      "start": 30.18,
-      "end": 45.27,
-      "archetype": "leaky_bucket",
-      "title": "THERMODYNAMIC LOSS",
-      "insight": "Systems radiate entropy and must take in continuous fuel",
-      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "start": 28.43,
+      "end": 45.72,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "Okay. Octonians? That sounds super intimidating. Paint a picture for us. Okay. Think of an eight -dimensional non -associative space. Right. The best analogy is imagining you're reading a massive sentence, but there are ",
       "labels": [
-        "ENTROPY",
-        "INFLOW"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
     },
     {
-      "start": 45.27,
-      "end": 60.36,
-      "archetype": "network_artery",
-      "title": "INTERCONNECTED TRADE",
-      "insight": "True independence requires external commercial arteries",
-      "metaphor": "Node revived by high-speed trade connection",
+      "start": 45.72,
+      "end": 70.73,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "So just a wall of letters? Exactly. No punctuation, no spaces. It's a continuous, undefined totality. It holds all the potential meaning, but you can't actually read a specific story from it. Because it's completely unbr",
       "labels": [
-        "ISOLATION",
-        "COMPUTE",
-        "CAPITAL",
-        "DATA"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
     },
     {
-      "start": 60.36,
-      "end": 75.45,
-      "archetype": "funnel_filter",
-      "title": "THROUGHPUT FILTER",
-      "insight": "Selection pressure separating viable systems from noise",
-      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "start": 70.73,
+      "end": 104.84,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "Okay. So like grouping the letters into actual words? Yep. And the people mentions the stash of a sociohedron, which is just the geometric space of all those possible brackets. So wait, let me push back on this. If the u",
       "labels": [
-        "NOISE",
-        "SIGNAL"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
     },
     {
-      "start": 75.45,
-      "end": 90.54,
-      "archetype": "flywheel_gear",
-      "title": "COMPOUNDING MOMENTUM",
-      "insight": "Reinvestment cycles creating self-sustaining kinetic inertia",
-      "metaphor": "Compounding flywheel accelerating with each loop",
-      "labels": [
-        "INPUT",
-        "INERTIA"
-      ]
-    },
-    {
-      "start": 90.54,
-      "end": 105.63,
-      "archetype": "foundation_stack",
-      "title": "ARCHITECTURAL LAYERS",
-      "insight": "Foundational physical layer supporting cognitive software",
-      "metaphor": "Structural granite blocks anchoring top tier",
-      "labels": [
-        "PHYSICS",
-        "LOGIC"
-      ]
-    },
-    {
-      "start": 105.63,
+      "start": 104.84,
       "end": 120.72,
-      "archetype": "circuit_switch",
-      "title": "ECONOMIC TRIGGER",
-      "insight": "State change when economic viability threshold is crossed",
-      "metaphor": "High-voltage knife switch closing circuit",
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "They literally strip away five dimensions. We don't perceive the 8D totality because we biologically can't. That is wild. Yeah. Coming up in the next clip, we're going to see what happens to those lost dimensions. They b",
       "labels": [
-        "OPEN",
-        "CLOSED"
-      ]
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "8D Totality",
+      "text": "8D Totality",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 28.43,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "So let's just jump right in. Clip one, the eight -dimensional totality. Reality is an eight -dimensional unbracketed sentence and your brain is the editor. Okay. Let's unpack this. To understand where our 3D reality come",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 28.43,
+      "end": 45.72,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "Okay. Octonians? That sounds super intimidating. Paint a picture for us. Okay. Think of an eight -dimensional non -associative space. Right. The best analogy is imagining you're reading a massive sentence, but there are ",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 45.72,
+      "end": 70.73,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "So just a wall of letters? Exactly. No punctuation, no spaces. It's a continuous, undefined totality. It holds all the potential meaning, but you can't actually read a specific story from it. Because it's completely unbr",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 70.73,
+      "end": 104.84,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "Okay. So like grouping the letters into actual words? Yep. And the people mentions the stash of a sociohedron, which is just the geometric space of all those possible brackets. So wait, let me push back on this. If the u",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 104.84,
+      "end": 120.72,
+      "kind": "formula",
+      "title": "8D Totality",
+      "text": "They literally strip away five dimensions. We don't perceive the 8D totality because we biologically can't. That is wild. Yeah. Coming up in the next clip, we're going to see what happens to those lost dimensions. They b",
+      "labels": [
+        "8D TOTALITY"
+      ],
+      "archetype": "fresh-formula",
+      "footer_label": "FORMULA",
+      "visual": {
+        "type": "formula",
+        "full": "x = x 0 e 0 + i = 1 \u2211 7 x i e i",
+        "section": "1. Mathematical Foundations of the Octonionic Substrate",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
     }
   ]
 }
