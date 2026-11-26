@@ -305,3 +305,27 @@ no 250 contact.
 Gaps carried: none new — no 249 composite re-render was needed (master
 from summary V stands); `composite_timeline` chapters branch still
 unexercised over HTTP (chapter math proven in-process).
+
+## Build summary VII — clip 0 selectable (`normClipNum`, P0 click lands on P0)
+
+Root cause (user-observed live, verified at `722c5da0`): `selectLfChapter`
+did `parseInt(clipNum, 10) || 1` — `parseInt(0)` is `0`, falsy, so
+`0 || 1` is `1`. Every P0 click (list and number strip) selected clip 1.
+Seven more `|| 1` clip-number sites in the same file would have clobbered
+clip 0 back to 1 for Design-this-clip, both retriggers, Patch, chapter
+fetch, Manim switch, source toggle, and Mosaic retrigger. Server side
+was fine (`int(clip_num)` passes 0 through); purely page JavaScript.
+Episode 248 never showed it — its clips are numbered 1–23.
+
+Fix: one `normClipNum(v)` helper (parsed integer when numeric,
+including 0; default 1 only for missing/NaN) + all 8 call sites.
+The `(ch.end || 1)` span-duration guard is untouched — not a clip default.
+
+Verification: node --check clean; helper semantics exact
+(0→0, 1→1, "3"→3, missing/NaN→1); served page carries the fix;
+Design-this-clip for clip 0 planned job clip 0 and finished `done`
+(c0 artifact re-rendered, no errors). Click path verified by
+inspection + live data: callers pass raw `clip_num`, clip 0 exists
+and is openable in the live index, header formats Part 0 from 0.0.
+Suites 36/36 in both clones after the mirror. No Mosaic runs, no
+substitutions, no 250 contact, no plan writes.
