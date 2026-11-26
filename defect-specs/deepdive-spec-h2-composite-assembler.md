@@ -482,3 +482,121 @@ future job); /api/beats/patch was NOT fixed to route ep 249 (left
 reported here). No plan writes beyond the design's own episode-plan +
 src syncs (root ddma/plan.json, ddma/docs/plan.json untouched).
 No Mosaic runs, no substitutions, no 250 contact, no hub writes.
+
+## Build summary X — per-clip design instruction box + single-copy buttons + 249 Patch fix
+
+Commits: deepDive 2964c11b (code + tests + H3 spec copy + vendored
+assets + clip-15 design state), mdIngest 9824dd1 (code-only mirror of
+the 4 code files + the new test file). defect-specs/ stays
+deepDive-only; storyboards / plan scenes / catalog cache never fan out
+to mdIngest.
+
+Part A — instruction box (all three hops, both fresh-cast entry points):
+- Page: the below-player surface is ALWAYS the Manim panel
+  (renderClipSurface no longer branches on has_beats; the Mosaic-only
+  template is gone). The panel shows title / equation-or-anchor /
+  status / 6-stage count as before, plus ONE textarea
+  (#lf-manim-directive, placeholder naming the thermal-time example),
+  the last honored outcome under the box, and the single Design button.
+  No-Manim state (storyboard 404) renders "No Manim yet" + box +
+  button, never a bare error line. The box prefills from the
+  storyboard's stored design.directive per clip; unsent text is not
+  carried across clips.
+- Page wiring: designArtifacts('clip') and switchClipToManim() read the
+  box and send it as directive. Episode-scope design ignores the box.
+- Beats server: clip-scope design_artifacts carries the directive onto
+  the job; the worker forwards it in its curator POST; manim_retrigger
+  forwards it in its curator POST.
+- Curator fresh path (249 + force_regen) passes the directive into
+  design_clip_artifact(directive=...) — no longer dropped.
+- Honoring (deterministic, never invented): unnegated "anchor" forces
+  anchor ("directive-honored: forced anchor"); an equation name picks
+  the best catalog member by topic/norm overlap (threshold >= 4, always
+  a catalog member); a naming-but-unmatched directive degrades to
+  anchor WITH "directive-unmatched: ...; degraded to anchor"; anything
+  else is a topic hint (deterministic +2*overlap boost + Gemini
+  instruction, catalog validation as backstop); empty directive =
+  byte-identical old behavior (no directive keys stored).
+- Reporting: design_status jobs now carry directive +
+  directive_report per job (the curator already returned design +
+  reports; the status snapshot was dropping them); the storyboard's
+  design dict stores design.directive + design.directive_report.
+- Retrigger Manim-only carries the directive too (it re-casts fresh),
+  so a later retrigger cannot silently discard the instruction.
+  Nothing touches the Mosaic side, durations, or assembly; design
+  completion still reports master-stale only (verified live:
+  "Nothing was auto-assembled or pushed").
+
+Part B — single-copy review (beats.html 954 -> 872 lines):
+- B1 "Design this clip" moved INTO the panel (top-row copy deleted).
+- B2 "Retrigger Manim-only" stays top-row only (panel duplicate
+  deleted). B3 surface "Retrigger Mosaic" button deleted (strict
+  subset; beatsMosaicRetrigger() kept — compositeRetrigger calls it).
+- B4 surface "Switch this clip to Manim" button deleted (same
+  fresh-cast call as Design this clip for 249; switchClipToManim()
+  kept — compositeRetrigger('manim') calls it).
+- B5 tpl-mosaic-only-actions gone entirely. B6 engine toggle gone
+  (both buttons + label + hint span + setClipEngine() +
+  selectLfChapter styling refs); /api/beats/set_engine and
+  visual_source untouched. B7 replay button + replayActiveSpan() +
+  all three touchpoints gone. KEEP list verified present, one copy
+  each: episode picker, pane collapse/expand, System Settings, Play
+  Clip / Play Full, Patch, Push, episode Design artifacts, both
+  top-row Retriggers, chapter buttons, strip segments, native
+  controls, h2-design-panel.
+- B8 Patch fix: render_longform_parallel.py --patch takes NO episode
+  (verified: patch_longform_chapter(int(argv[2])), EP_NUM hardcoded
+  "248"). The 249 case now routes through the H2 segment re-stitch
+  (same path as compositeRetrigger); other episodes keep the legacy
+  script. The success message names the episode actually patched
+  ("Part 15 patched into ep 249 master").
+
+Verification (ep 249 only):
+- V1 PASS: all 11 removed ids/handlers gone; 5 kept top-row buttons +
+  box exactly once each; single "Design this clip" in panel; only
+  surviving `|| 1` is the line-254 duration fallback; both script
+  blocks node --check clean.
+- V2 PASS (served page + static): box + kept strip present, dupes
+  absent in the served HTML; normClipNum intact at all 8 call sites;
+  P0 guard unchanged from the pinned fix. No headless browser in this
+  env, so the physical click was not exercised — noted, not claimed.
+- V3 PASS: 6 new directive unit tests green; full suites 63 tests in
+  BOTH clones with the single known pre-existing
+  test_mosaic_pipeline_recovery error (untouched file, left as-is).
+- V4 PASS (content-neutral, live): clip 15 "use the thermal-time
+  equation" -> kind formula, SAME equation_norm byte-for-byte
+  ('t thermal = -b 1 ln r', section 4.), same 6 stages; storyboard
+  diff is only directive keys + reuse_of + reason; design_status
+  reported directive + "directive-honored: equation 6" + reuse +
+  master-stale; panel data source returns directive + outcome for
+  clip 15; clips 18/19 boards untouched (only clip_15 modified).
+- V5 PASS: storyboard endpoint 404s clip 99 as specified; the REAL
+  page functions (extracted, node harness) render "No Manim yet" +
+  box + Design with zero retired text on the 404 path, and the
+  directive + outcome on the 200 path.
+- V6 PASS (live, clip 15): 249 master 121021099 -> 117168718 B,
+  1883.685 -> 1883.724s (delta 0.039s, gate held); 248 master
+  byte-identical (sha match) and mtime-unchanged; message names
+  ep 249.
+- V7 PASS: no 250 files touched in either clone; fresh server logs
+  show no Mosaic/push/hub lines; no auto-assemble or auto-push in the
+  new code paths (design reports master-stale only); storyboards byte
+  identical except the clip-15 acceptance re-cast; no Manim template,
+  font-size, or footer change (engine file untouched).
+
+Deviations / honest notes:
+- reuse_of flipped 4 -> 18 on the clip-15 re-cast: the norm is
+  identical (clips 4, 15, 18 all carry it, verified via the endpoint),
+  so this is dict-ordering noise in the prior-map loop, not a content
+  change. Reported, never silent — same as the old reuse_of 4.
+- Server hygiene: two processes were bound to each of :8000 and :8001
+  (same 5:11 AM restart batch). All four were killed and single fresh
+  instances launched from the current deepDive tree; all four ports
+  re-verified 200 (storyboard endpoint serves the fresh-cast design).
+  8088 + mdbook were single-bound and left running.
+- ddma/plan.json shows a 5:33 AM re-serialization (same session as the
+  clip-15 design); it carries no directive content and stays
+  uncommitted, exactly as found, with ddma/docs/plan.json.
+- V2's physical click and V5's in-browser panel render were covered by
+  served-HTML checks + the real-functions node harness, not a live
+  browser — that is the verification boundary of this environment.
