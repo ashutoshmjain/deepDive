@@ -1,0 +1,91 @@
+{
+  "_rule_engine": {
+    "standard": "Feynman-Needham Pedagogical Standard",
+    "canvas": "1080x1080 square Manim window, centered at y in [420, 1500] on 1080x1920 vertical canvas",
+    "theme": "Pure Monochrome Shining White (#FFFFFF, #E2E8F0) on Black Glossy Background (#000000)",
+    "pacing": "Minimum 2-4 visual changes per minute (~15-second pacing, 8-12 scenes for 120-180s clip)",
+    "visual_philosophy": "Super-Dumb bold figurative storytelling. Zero small telemetry/data clutter.",
+    "line_weights": "Bold 4px-14px lines with luminous glows. No super-thin lines.",
+    "safe_zones": "Captions at y\u2248500..555. Top chrome y in [0, 450] strictly clear.",
+    "archetypes_guide": {
+      "balance_scale": "Fulcrum, economic equilibrium, burn vs revenue",
+      "leaky_bucket": "Thermodynamic loss, inflow vs drainage",
+      "funnel_filter": "Bottlenecks, selection, throughput compression",
+      "flywheel_gear": "Compounding loops, rotational inertia, acceleration",
+      "network_artery": "Interconnection, trade routes vs isolation fallacy",
+      "foundation_stack": "Solid base vs fragile top layers",
+      "robot_unplugged": "The physical robot fallacy (dead battery, missing plug)",
+      "circuit_switch": "Logic gate, threshold barrier, state trigger",
+      "pulse_resonance": "Frequency alignment, acoustic harmony, signal clarity",
+      "teenager_basement": "Genius teenager coding in basement with happy tail-wagging dog"
+    }
+  },
+  "clip_num": 13,
+  "clip_title": "Chiral Mirror",
+  "total_duration": 78.19,
+  "custom_directive": "",
+  "scenes": [
+    {
+      "start": 0.0,
+      "end": 15.64,
+      "archetype": "robot_unplugged",
+      "title": "ONTOLOGICAL FALLACY",
+      "insight": "Confusing autonomy with total isolation",
+      "metaphor": "Physical robot wandering with dead battery",
+      "labels": [
+        "ROBOT",
+        "NO SOCKET"
+      ]
+    },
+    {
+      "start": 15.64,
+      "end": 31.28,
+      "archetype": "balance_scale",
+      "title": "AUTONOMY FULCRUM",
+      "insight": "Autonomy is balancing income against compute burn",
+      "metaphor": "Mechanical fulcrum scale balancing satoshis vs electricity",
+      "labels": [
+        "BURN",
+        "REVENUE"
+      ]
+    },
+    {
+      "start": 31.28,
+      "end": 46.91,
+      "archetype": "leaky_bucket",
+      "title": "THERMODYNAMIC LOSS",
+      "insight": "Systems radiate entropy and must take in continuous fuel",
+      "metaphor": "Reservoir leaking fluid with active replacement pump",
+      "labels": [
+        "ENTROPY",
+        "INFLOW"
+      ]
+    },
+    {
+      "start": 46.91,
+      "end": 62.55,
+      "archetype": "network_artery",
+      "title": "INTERCONNECTED TRADE",
+      "insight": "True independence requires external commercial arteries",
+      "metaphor": "Node revived by high-speed trade connection",
+      "labels": [
+        "ISOLATION",
+        "COMPUTE",
+        "CAPITAL",
+        "DATA"
+      ]
+    },
+    {
+      "start": 62.55,
+      "end": 78.19,
+      "archetype": "funnel_filter",
+      "title": "THROUGHPUT FILTER",
+      "insight": "Selection pressure separating viable systems from noise",
+      "metaphor": "Aperture funnel concentrating high-signal flow",
+      "labels": [
+        "NOISE",
+        "SIGNAL"
+      ]
+    }
+  ]
+}
