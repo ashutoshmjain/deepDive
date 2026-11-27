@@ -1054,3 +1054,87 @@ place (untracked, like the other scratch dirs). Equation
 caches stay untracked (like ep249's). Local 249 master
 rewritten by the sanctioned manual Patch (gitignored,
 local-only, re-gated).
+
+## Build summary XVI - generalize re-issued under the 250-1 no-run constraint (250-1 reverted, unlock re-verified without running it)
+
+The first attempt (XV) violated the then-unwritten rule: it
+designed/rendered 250-1 to prove the unlock. The re-issued
+prompt forbids Muse Code from running anything for 250-1
+(the user validates it manually with the Anchor sample
+prompt). This job reverts every XV 250-1 output and
+re-verifies the unlock WITHOUT touching 250-1. Code and
+assets are unchanged from XV (same generalization, same
+verified pair); only data + summaries moved.
+
+Revert (surgical, clip-1 only, everything else preserved):
+deleted `clips/250-1-infographic.mp4` +
+`clips/250-1-manim.mp4` (gitignored), `git rm` of
+`projects/episode_250/storyboards/clip_1_storyboard.json`
+(dir gone), removed `infographic_scenes` from clip 1 and
+restored `_compiled_sig` to `2d3aa080` in all five 250 plan
+copies (episode cache, site copy, hub plan, both root working
+copies), deleted the ep250 equation cache and the
+`scratch/250-patch/` workdir. The user's concurrent 250-3
+publish (commit f643025c: 250-3 mp4, published flags, 5-card
+carousel sync) is preserved everywhere including the hub
+(10:35 save): the stripper touched only clip-1
+design keys. The 250-3 `mosaic run 09:42` predates this job's
+first mutating call (user's own Cutroom work, not this job).
+
+Frame-asset provenance (prompt's fallback path — no chrome
+generator exists in the repo or the POC folders; `strip_v6.py`
+was found and matches the strip design): pixel-inspected the
+installed pair. Chrome 1920x1080: all 3825 bright pixels in
+rows 994-1027 (zero above y=950) = rule rows 994-995 (1720px
+wide) + left blob x147-191 ("Manim", 5 glyphs) + right blob
+x1764-1809 ("Mosaic", 6 glyphs); no center text, no digits, no
+other blobs. Strip 1920x120 3.000s: frames at 0.2/1.5/2.8s
+show SATOSHA (x534-645) + mic (x943-976, blink phase varies)
++ SATOSHI (x1278-1381), left/right identical across frames;
+no episode text, no digits. The pair carries no
+episode-specific content -- the installed byte copies stand
+as VERIFIED, not substitution.
+
+V1 PASS: empty-body POST 250/99 -> 500 "Clip 99 not found in
+plan" (no 400 refusal, no design run).
+V2 PASS (250-1 untouched): both mp4s absent; storyboards dir
+absent; storyboard endpoint 404 for 250-1; clip 1 carries NO
+`infographic_scenes` in all five plan copies (14 clips each);
+sig restored.
+V3 PASS: `_h2_patch_clip(ep, clip_num)` (line 256), route
+`in ("249","250")`; zero "249" literals in the function or
+the endpoint block; live 250-5 Patch refuses instantly with
+the episode-parameterized message ("clip 5 has no Manim
+infographic yet (design it first...)") -- allowed non-250-1
+clip, no render. No 249 Patch run in this job (V4-untouched
+holds for new writes).
+V4 PASS (249 regression, read-only): timeline 21 chapters,
+clip 0 at 0-144.3; 249-1 storyboard serves (anchor); all 249
+projects git-clean; master 1883.688s (duration gate holds).
+Known collateral (reported, not hidden): the XV clip-20 Patch
+re-encoded the local gitignored master; content is
+duration-identical and gated, no further Patch ran here.
+V5 PASS: chrome_250/strip_250 present (7421 B / 13413 B,
+SHA-equal to the 249 pair); zero "249" in the function,
+endpoint block, and 250 plan/storyboard path.
+V6 PASS: `manim_fresh_design.py` zero-diff vs 3c179f8a
+(directive behavior untouched); 250 catalog fetched read-only
+(7 entries, 250's own sections: Zero Divisor, Cancellation
+Law -- not 249's); suites deepDive 94 + mdIngest 94, 1 error
+each = the known pre-existing mosaic-recovery corrupt.json
+error (file untouched in both clones).
+V7 PASS: in-scope code has no Mosaic/push invocations (only
+docstrings/comments/plan reads; the endpoint's save path
+never executed -- V1's clip-99 raises before any save);
+filesystem confirms no 250-1 outputs and no new Mosaic files
+from this job; hub 250 plan verified sceneless (only touch
+was the revert strip). No auto-assemble, no auto-push, no
+design/render/compile/Patch for 250-1 in this job.
+
+Committed: the stripped cache + meta + site copy (keeping
+the user's 250-3 flags), the storyboard removal, the new
+prompt text, this summary. Hub + root plans stripped in
+place (no commit concept for hub; roots stay UNCOMMITTED as
+instructed). 249 master: XV re-encode stands (gitignored,
+gated). 250-1 is left entirely for the user's manual
+validation.
