@@ -968,3 +968,89 @@ V2 content, tool's established mobile-review path). The
 the new sub-row (old engine off-limits). `beats.html:482`
 title-only display branch left as dead code (no design can
 produce the kind anymore).
+
+## Build summary XV - H2 wiring generalized 249 -> any episode (250-1 unlocked)
+
+The 249-only refusals are gone; everything downstream was
+already episode-parameterized. Fourth lock found during the
+build: `/api/beats/storyboard` had the same 249-only refusal +
+hardcoded path (read-only panel endpoint, needed for the
+unlock to be observable) -- generalized with the rest and
+reported here.
+
+Beats (`ddma/beats_server.py`): `_h2_refused` always accepts
+(kept as a hook so call sites stay structured); H2_EPISODE
+stays the default when no episode is given; new
+`_h2_load_episode_plan_clips(ep)` reads
+`projects/episode_<ep>/plan.json` (never the shared root copy,
+which flips to whichever episode Cutroom last loaded -- the
+root loader is now unused and removed); worker, timeline,
+design/retrigger/storyboard endpoints and manim_retrigger all
+read the SELECTED episode's plan; `_h2_patch_clip_249` ->
+`_h2_patch_clip(ep, clip_num)` (plan path, chrome/strip,
+infographic name, work dir, master, messages all
+parameterized; route serves 249 + 250, legacy script path kept
+for other episodes).
+Curator (`ddma/scratch/run_curator.py`,
+`/generate-manim-infographic`): `episode_249`-only 400
+replaced by `episode_<digits>` shape validation; fresh-design
+gate drops the `== episode_249` term; catalog fetch is
+`fetch_episode_equations(ep_num)` for the requested episode.
+No other behavior changes (catalog-membership guard, render +
+compile steps, Patch gate untouched).
+Frame assets: `ddma/assets/chrome_250.png` + `strip_250.mp4`
+are byte copies of the 249 pair (SHA-256 equal; contents are
+episode-independent: black frame + rule + Manim/Mosaic labels,
+3.0s host-strip loop). deepDive-only (mdIngest carries no
+assets dir).
+
+V1 PASS: POST for episode_250 clip 99 returns 500 "Clip 99 not
+found in plan projects/episode_250/plan.json" -- proceeds past
+the gate exactly like 249 (no 400 refusal for either).
+V2 PASS: "Design this clip" for 250-1 → group h2-250-1, job
+done, 0 failed; `clips/250-1-infographic.mp4` 740x740 (6.5MB)
++ `clips/250-1-manim.mp4` 1080x1920 (6.1MB); 250 plan carries
+6 `infographic_scenes`; design report present
+("deterministic-design-call: deterministic: no catalog
+equation clears threshold" -- Gemini key 401, deterministic
+path, kind anchor, title "Ultimate Anchor", zero "249" strings
+in the 250-1 plan entry and storyboard).
+V3 PASS: 250-1 Patch refuses cleanly ("250 master missing
+(refused)", no substitution); 249 clip-20 Patch → "Part 20
+patched into ep 249 master", master 1883.688s (gate held),
+248 master byte-identical + mtime-untouched.
+V4 PASS (249 regression): timeline serves 21 chapters from the
+episode plan (clip 0 at 0-144.3 = run-file duration);
+storyboard endpoint serves 249 clip 1 (anchor); all 249
+storyboards byte-identical (git clean); no 249 design/render
+behavior change (same engine, templates, footer).
+V5 PASS: chrome_250/strip_250 exist in `ddma/assets/`,
+SHA-equal to the 249 pair; 0 "249" strings in the 250-1 plan
+entry, storyboard, and render path.
+V6 PASS: directive behavior unchanged (`manim_fresh_design.py`
+untouched; 250-1 ran empty-directive = today's behavior);
+250 catalog is 250's own page (8 katex-display blocks,
+`ep250_equations_v2.json` cached today, 250 sections);
+suites green: deepDive 94 + mdIngest 94, 1
+error each = the known pre-existing
+`test_mosaic_pipeline_recovery` corrupt.json error (file
+untouched, git clean, in both clones).
+V7 PASS: no Mosaic invocation in the endpoint block (the one
+"mosaic" hit is the "Never touches Mosaic" comment) or the
+worker; no new Mosaic files today (the `250-3-mosaic.mp4`
+09:42 write predates this job's first mutating call -- user's
+own concurrent 250 Cutroom work, not this job); only hub
+touch is the design's own hub-first plan save (250 plan now
+carries clip-1 scenes -- V2-specified output); no media/push;
+no auto-assemble (master-stale reported, master changed only
+by the manual Patch).
+
+Collateral notes: the design save wrote four plan copies at
+10:09-10:11 (episode cache, site copy, both root working
+copies). Committed: episode cache + site copy (design output);
+root `ddma/plan.json` + `ddma/docs/plan.json` left UNCOMMITTED
+as instructed. `ddma/scratch/250-patch/` work dir left in
+place (untracked, like the other scratch dirs). Equation
+caches stay untracked (like ep249's). Local 249 master
+rewritten by the sanctioned manual Patch (gitignored,
+local-only, re-gated).

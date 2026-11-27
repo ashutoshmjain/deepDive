@@ -1,0 +1,271 @@
+{
+  "_rule_engine": {
+    "standard": "H2 fresh-cast: title plus one artifact, stages at sentence boundaries",
+    "theme": "Pure Monochrome Shining White on Black",
+    "no_archetypes": true
+  },
+  "clip_num": 1,
+  "clip_title": "Ultimate Anchor",
+  "total_duration": 134.65,
+  "design": {
+    "kind": "anchor",
+    "title": "Ultimate Anchor",
+    "equation_text": null,
+    "equation_norm": null,
+    "equation_section": "",
+    "reuse_of": null,
+    "anchor": {
+      "label": "ULTIMATE ANCHOR",
+      "hook": "Clip one, the ultimate anchor."
+    },
+    "diagram": null,
+    "reports": [
+      "deterministic-design-call: deterministic: no catalog equation clears threshold"
+    ],
+    "reason": "deterministic: no catalog equation clears threshold"
+  },
+  "scenes": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Ultimate Anchor",
+      "text": "Ultimate Anchor",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 28.82,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "Is infinity a boundless horizon or a terminal wall? That is the big question, really. Okay. Let's  unpack  this. When  we  look  at  the  physical  universe  or,  you  know,  when  we  look  at  quantum  mechanics  or  e",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 28.82,
+      "end": 58.89,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "So  to  map  that  kind  of  physical  universe,  we  need  a  mathematical  system  that  is  entirely  foolproof. Absolutely  foolproof. Right. We  need  a  system  with  unbreakable  structural  integrity. But  what  ",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 58.89,
+      "end": 93.09,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "The  absolute  essence  of  a  division  algebra  is  that  it's  this  pristine,  continuous  mathematical  space. It  is  an  algebraic  environment  that  is  completely  and  utterly  free  of  structural  traps. Fre",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 93.09,
+      "end": 122.76,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "I  want  to  make  sure  we  are  visualizing  this  correctly  rather  than  relying  on,  like,  abstract  terms. In  our  previous  notes,  we  used  this  idea  of  a  flawless,  infinitely  stretching  highway. Yes,",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 122.76,
+      "end": 134.65,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "It  scales  logically. But  what  happens  if  the  algebra  isn't  a  division  algebra? Imagine  if  suddenly,  right  in  the  middle  of  that  pristine  road,  there  is  a  pothole. But  a  very  specific  kind  of",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ],
+  "stages": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "kind": "title",
+      "title": "Ultimate Anchor",
+      "text": "Ultimate Anchor",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-title",
+      "footer_label": "TITLE",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.0,
+        "stage_index": 0,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 3.0,
+      "end": 28.82,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "Is infinity a boundless horizon or a terminal wall? That is the big question, really. Okay. Let's  unpack  this. When  we  look  at  the  physical  universe  or,  you  know,  when  we  look  at  quantum  mechanics  or  e",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.2,
+        "stage_index": 1,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 28.82,
+      "end": 58.89,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "So  to  map  that  kind  of  physical  universe,  we  need  a  mathematical  system  that  is  entirely  foolproof. Absolutely  foolproof. Right. We  need  a  system  with  unbreakable  structural  integrity. But  what  ",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.4,
+        "stage_index": 2,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 58.89,
+      "end": 93.09,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "The  absolute  essence  of  a  division  algebra  is  that  it's  this  pristine,  continuous  mathematical  space. It  is  an  algebraic  environment  that  is  completely  and  utterly  free  of  structural  traps. Fre",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.6,
+        "stage_index": 3,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 93.09,
+      "end": 122.76,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "I  want  to  make  sure  we  are  visualizing  this  correctly  rather  than  relying  on,  like,  abstract  terms. In  our  previous  notes,  we  used  this  idea  of  a  flawless,  infinitely  stretching  highway. Yes,",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 0.8,
+        "stage_index": 4,
+        "stage_count": 6
+      }
+    },
+    {
+      "start": 122.76,
+      "end": 134.65,
+      "kind": "anchor",
+      "title": "Ultimate Anchor",
+      "text": "It  scales  logically. But  what  happens  if  the  algebra  isn't  a  division  algebra? Imagine  if  suddenly,  right  in  the  middle  of  that  pristine  road,  there  is  a  pothole. But  a  very  specific  kind  of",
+      "labels": [
+        "ULTIMATE ANCHOR"
+      ],
+      "archetype": "fresh-anchor",
+      "footer_label": "ANCHOR",
+      "visual": {
+        "type": "anchor",
+        "label": "ULTIMATE ANCHOR",
+        "hook": "Clip one, the ultimate anchor.",
+        "progress": 1.0,
+        "stage_index": 5,
+        "stage_count": 6
+      }
+    }
+  ]
+}
