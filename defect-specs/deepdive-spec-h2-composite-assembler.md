@@ -1138,3 +1138,62 @@ place (no commit concept for hub; roots stay UNCOMMITTED as
 instructed). 249 master: XV re-encode stands (gitignored,
 gated). 250-1 is left entirely for the user's manual
 validation.
+
+## Build summary XVII - client-side 249-only checks generalized (unlock "Design this clip" for 250)
+
+Follow-up to XV-XVI: the server accepted any episode, but the
+page's own JavaScript refused 250 before any request left the
+browser. No server changes in this job (server + directive
+code zero-diff vs 3c179f8a). Six edits in `ddma/beats.html`
+(the only code file touched): removed both `if (cleanId !==
+'249')` toast-and-return guards (`designArtifacts`,
+`compositeRetrigger`); episode-scope confirm generalized to
+`all {chapters} clips of ep {id}` (falls back to "all clips
+of ep {id}" with no timeline loaded; 249 text preserved when
+21 chapters loaded); "Design artifacts" button title dropped
+"(ep 249 only)"; section comment now "Any episode"; design
+progress panel `(ep 249)` now parses the group id
+(`h2-{ep}-{seq}`, falls back to the selected episode) --
+same lock class, would have mislabeled the user's 250-1
+validation run.
+
+V1 PASS (harness, stubbed fetch, zero live contact): 250
+clip-scope with a directive shows the confirm ("Design the
+Manim artifact for Part 1?...") and CANCEL sends nothing (no
+fetch, no 249 toast); CONFIRM would send `{ep:250,
+clip_num:1, directive}` -- the correct shape. After: no
+250-1 mp4s, no storyboards dir, storyboard endpoint 404s for
+250-1, all five 250 plan copies sceneless (14 clips).
+V2 PASS: live 249-19 design ran clean (group h2-249-2, done,
+0 failed); the re-cast is byte-identical to the working board
+(deterministic). Fidelity incident, found and repaired: the
+working 249-19 board had already lost its `equation_tex` line
+vs HEAD before this job's design call (so the re-cast
+rendered norm-fallback artifacts at 12:17); restored the
+exact HEAD line via checkout (committed TeX, not invention)
+and re-rendered 249-19 through the repo path
+(`ddma/scratch/rerender_tex_249.py 19`, TeX-gated, no design)
+-- artifacts are TeX renders again. Master untouched in this
+job (mtime 10:16 XV); plan.meta rev bumped by the real run
+(legitimate bookkeeping).
+V3 PASS: harness shows no 249 toast and the planner fetch
+`{ep:250, clip 1, manim}`; live planner-only POST returns 200
+with the 250 scope (duration+frame locked). The client chain
+would next call `switchClipToManim` (render path) -- which is
+exactly why no live 250-1 click was made; recorded, not run.
+V4 PASS: `manim_fresh_design.py` zero-diff (directive
+behavior intact); 250 catalog untouched this job (XVI
+verified 7 entries, 250's own sections); suites deepDive 94 +
+mdIngest 94, 1 error each = the known pre-existing
+mosaic-recovery corrupt.json error (file untouched).
+V5 PASS: client-only change (no Mosaic/push invocations added;
+only docstrings/comments/plan reads in scope); no 250-1
+design/render/compile/Patch (files, storyboards, plans all
+confirm); no auto-assemble/push; hub 250 plan sceneless.
+
+Collateral: the 249 re-render's compile-clip flipped the
+shared root `ddma/plan.json` to 249's plan (same flip class
+as the Cutroom-load flip); restored from the sibling docs
+root (250's 14-clip working copy, sceneless) -- both roots
+uncommitted as instructed. 250-1 left entirely for the
+user's manual validation.
