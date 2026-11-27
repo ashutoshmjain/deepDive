@@ -19,7 +19,8 @@
     "reports": [
       "deterministic-design-call: deterministic title+transcript overlap"
     ],
-    "reason": "deterministic title+transcript overlap"
+    "reason": "deterministic title+transcript overlap",
+    "equation_tex": "F = \\mathbb{E}_{q(\\eta)} \\left[ \\ln q(\\eta) - \\ln p(\\eta, s) \\right] = D_{\\mathrm{KL}}\\left(q(\\eta) \\,||\\, p(\\eta | s)\\right) - \\ln p(s)"
   },
   "scenes": [
     {

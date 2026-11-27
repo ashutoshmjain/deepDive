@@ -23,7 +23,8 @@
     ],
     "reason": "directive picked catalog member",
     "directive": "use the thermal-time equation",
-    "directive_report": "directive-honored: equation 6"
+    "directive_report": "directive-honored: equation 6",
+    "equation_tex": "t_{\\mathrm{thermal}} = -\\frac{1}{\\beta} \\ln \\rho"
   },
   "scenes": [
     {

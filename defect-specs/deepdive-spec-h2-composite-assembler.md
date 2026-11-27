@@ -798,3 +798,173 @@ Deviations / honest notes:
 - This job's clip-1 design re-cast reproduced the identical anchor
   design (deterministic path); the 6:11 external master splice is now
   superseded by this job's 10:32 patch (verified frame above).
+
+## Build summary XIII - equations-as-math resumed from src/249.md (TeX thread + KaTeX-gated SVG render, clips 1/3/13)
+
+STOP lifted: the 7 display TeX equations live in the repo at
+`src/249.md` (14 `$$` delimiters, one-to-one with the page's 7
+katex-display blocks). Reading the author's own source markdown is
+not inventing. No re-design: equation choices, stages, and plan
+scenes unchanged apart from the added TeX field.
+
+TeX-to-norm mapping (EPISODE_TEX_SOURCES index -> norm head):
+- 0 octonion basis `x = x_0 e_0 + ...` -> NO clip chose it (unused).
+- 1 associator `[x,y,z] = (xy)z - x(yz) != 0` -> clips 3, 8.
+- 2 Moufang `(ux)(yu) = u(xy)u` -> unused. 3 octonion product
+  `L_x y` -> unused.
+- 4 free energy `F = E_q(n)[ln q - ln p] = D_KL - ln p(s)` ->
+  clip 2 (full norm, `||` rendering).
+- 5 modular flow `a_t^r(A) = D^it A D^-it ...` -> clip 13.
+- 6 thermal time `t_thermal = -1/b ln r` -> clips 4, 15, 18, 19
+  (norms show the fraction order loss `b 1`; TeX is complete).
+All 7 TeX + all split rows pass the KaTeX strict gate (KaTeX 0.19.1
+via npm global, node v24.13.0, NODE_PATH). Unmapped norm -> None ->
+caller must refuse, never invent.
+
+Code (`ddma/manim_fresh_design.py`, +208, CRLF restored):
+`EPISODE_TEX_SOURCES`, `match_tex_for_norm`,
+`split_tex_rows` (depth-0 `=`/operand-led `+`/`-` only, never
+unary/inside groups), `render_tex_rows_svg` (KaTeX gate, measure-
+first: single row when the whole fits ROW_MAX_PT=440, else split;
+matplotlib mathtext -> SVG), formula codegen emits `SVGMobject`
+row group scaled to the pane (width 5.8u, height-capped) when
+`_render_svg_rows` present, old Text path otherwise. Render driver
+`scratch/rerender_tex_249.py` injects transient hints in memory
+only (`_render_title` = plan title, `_render_ep`, `_render_svg_rows`;
+refuses when TeX missing) and mirrors the curator render+compile
+path; no board/plan write, no server change.
+Migration `scratch/thread_tex_249.py` added `equation_tex` to the
+8 formula boards (2,3,4,8,13,15,18,19); git diff per board is
+exactly the one added line.
+
+V1 PASS (clip 1 frame): above `8D TOTALITY`, below-left `ULTIMATE
+ANCHOR`, below-right `deepDive podcast - Ep 249`; no duplication,
+no collision, legible.
+V2 PASS with correction (clip 3 frame): real math `[x,y,z] =
+(xy)z - x(yz) != 0`, single row, full, proper glyphs. Correction:
+the board's design choice is the ASSOCIATOR, not free energy --
+the spec's V2 named free energy from the stale v2 note/master
+(the master still shows the older free-energy render; the current
+board re-cast to associator). Threading follows the board.
+V3 PASS (clip 13 frame): modular flow as real math, single row,
+fits fully; the `a t p (` overflow is gone.
+V4 BLOCKED-by-design, reported (clip 1 is anchor-designed: 6
+stages, no formula stage, no equation choice; rendering octonion
+math there would be a re-design, forbidden. Re-rendered with the
+correct plan-title footer; no math applicable. Octonion TeX stays
+in the table, chosen by no clip).
+V5 PASS: 8 boards differ by exactly the added `equation_tex` line
+each (git diff shown for clip 3); anchor boards + all plan scenes
+byte-identical (`projects/episode_249/plan.json` unmodified in git
+status). Re-renders were local subprocesses only -- zero HTTP
+calls to any server, no Mosaic/push/hub involvement.
+V6 PASS: deepDive full suite 84 tests, 1 error = the known
+pre-existing `test_mosaic_pipeline_recovery` corrupt.json error in
+an untouched file; new `test_manim_fresh_tex` 14/14 OK. mdIngest
+mirror (module + test, code-only) 14/14 OK.
+Re-rendered: clips 1 (5068820 B, `8D Totality`), 3 (3483160 B,
+`Division Algebras`), 13 (3129450 B, `Chiral Mirror`).
+
+Deviations / honest notes:
+- Math rows render whole per scene (token-progressive reveal is
+  lost on formula stages -- inherent to rendering real math).
+- Below-left focus on formula clips shows the truncated section
+  title (footer job's `_stage_focus`, unchanged here).
+- The old engine's `Archetype: KineticVector` footer line still
+  sits under the new sub-row (old engine off-limits).
+- Production-path (curator) injection deferred: re-renders used
+  the local driver; the V2 batch reuses `rerender_tex_249.py`.
+- Unrelated working-tree modifications left untouched:
+  `ddma/plan.json`, `ddma/docs/plan.json`,
+  `projects/episode_250/*` (external flips, pre-existing).
+- No commit, no push in this job -- batch commits after V2.
+
+## Build summary XIV - Manim footer V2 (final templates, 21 re-renders, local master re-assembled + gated)
+
+Settled rulings implemented exactly: plan title above the divider
+(shrink-to-fit, never truncate); below-left the clip-constant
+ARCHETYPE (supersedes the focus rule); below-right exactly
+`deepDive podcast · Ep 249`; composite center `N/21` (blank on
+clip 0); every stage's sentence text on the pane top band;
+`title-only` dropped from FRESH_KINDS + design prompt + engine
+kinds (fallback = anchor; the retired branch was unreachable, so
+it was removed, not kept); diagram bounded to the pane + no-repeat
+recorded; clip-0 long title fits in full; V1 font sizes kept.
+
+ROOT PLAN GUARD TRIPPED AND CLEARED: at job start the root
+`ddma/plan.json` held 250's 14-clip plan (user's concurrent 250
+work). Per the guard the inputs were verified before proceeding:
+every 249 assembly input is 249-pinned (episode plan
+`projects/episode_249/plan.json`, 249 storyboards/boards,
+249-N-manim artifacts, run files by mosaic_run_id from the 249
+plan, 249 chrome/strip assets, local master path). The only code
+path that reads the root plan (`_h2_load_plan_clips`) serves the
+UI index/design/retrigger endpoints, none of which are in the
+re-render or re-assembly path (all local driver calls). Proceeded
+with 249-pinned inputs; root plan untouched (still 250's,
+uncommitted, as instructed). Reverting or overwriting the user's
+250 working state was never an option.
+
+V1 PASS (re-rendered artifact frames): clip 1 shows above
+`8D TOTALITY`, below-left `ANCHOR`, below-right the strict
+credit; clip 3 shows above `DIVISION ALGEBRAS`, below-left
+`FORMULA`. (No duplication: clip 1's anchor design is unchanged.)
+V2 PASS (re-assembled master frames): clip 0 shows NO center
+text; clip 1 shows `1/21`; chrome reads Manim/Mosaic at the
+sides. V3 PASS: sentence text visible on the pane in every
+checked stage (clips 0/1/3/13 frames). Two pre-existing warts
+reported, untouched (stage-text `[:220]` design truncation cuts
+mid-word on long stages, e.g. clip 0 "Today we are g", clip 13
+"property of wet b" -- stored stage content, changing it would
+be a re-design).
+V4 PASS: clip 0 footer reads the full `WHAT EXACTLY IS REALITY?`
+(no clip, no ellipsis; shrink path present in codegen).
+V5 PASS -- full archetype table (design kinds from the boards):
+13 ANCHOR (0,1,5,6,7,9,10,11,12,14,16,17,20), 8 FORMULA
+(2,3,4,8,13,15,18,19), 0 DIAGRAM. Footer tags match throughout;
+no clip fell back (no title-only designs exist). Expected counts
+verified exactly.
+V6 PASS: local master `clips/249-longform-master.mp4` =
+1883.684s (segments sum 1883.663s vs run-file sum 1883.69s;
+within 0.5s). Publish gate PASS (`verify_publish_clip_gate`:
+ok, edge_pixels 12540, temporal_diff 2995, no draft file so the
+spatial/temporal branch applied -- structural, no absolute
+brightness threshold). Master is local-only (hub untouched, no
+push). Note: the pre-existing `clips/249-longform-master.mp4`
+(10:32 Patch-era) was overwritten by the V2 build -- it is a
+local build artifact, not the hub master.
+V7 PASS: TeX resume verified landed BEFORE this job (8 boards
+carry equation_tex + KaTeX->SVG path in the module); all formula
+clips rendered real TeX math (clip 3 associator, clip 13
+modular flow, both full single rows; the 6:17 free-energy frame
+in the old master is the stale pre-recast design, superseded).
+V8 PASS: 0 DIAGRAM clips in 249 (table above); diagram
+constructs bounded in code (rings r<=2.3, tunnel half-diag
+~2.76, numberline +/-3.2 -- all within the +/-4.0 pane); shared
+shapes are rebuilt per clip, never copied (same rule as
+formulas); no reuse occurred (nothing to report). Rule recorded
+as standing.
+V9 PASS: all 21 storyboards + the 249 plan byte-identical to the
+pre-job baseline (sha check vs recorded hashes); the plan
+carries no equation_tex (TeX lives in storyboards only -- the
+spec's "plan scenes" wording resolved: plan scenes unchanged,
+period). compile-clip's hub-first plan load left content
+byte-identical (sha a55c0d6a, same as baseline). No design
+changed, no Gemini calls (deterministic path only).
+V10 PASS: deepDive 94 tests / mdIngest 94 tests, 1 error each =
+the known pre-existing `test_mosaic_pipeline_recovery`
+corrupt.json error in an untouched file. New/updated: footer V2
+contract tests, title-only-retired test, N/21 + blank-0 center
+test, arch-fallback + sentence tests.
+
+Collateral notes: compile-clip's active-master safeguard fired
+once as designed (clip 7 is the only manim-sourced clip): it
+copied the V2 render to `src/ddma/docs/episodes/249/clips/` and
+the hub manims reel. The site file was REVERTED (publication
+belongs to the publish flow, not this re-render) and is
+unchanged in the final diff; the hub reel copy stands (correct
+V2 content, tool's established mobile-review path). The
+`Archetype: KineticVector` engine footer line still sits under
+the new sub-row (old engine off-limits). `beats.html:482`
+title-only display branch left as dead code (no design can
+produce the kind anymore).

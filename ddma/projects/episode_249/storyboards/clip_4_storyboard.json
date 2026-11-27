@@ -19,7 +19,8 @@
     "reports": [
       "deterministic-design-call: deterministic title+transcript overlap"
     ],
-    "reason": "deterministic title+transcript overlap"
+    "reason": "deterministic title+transcript overlap",
+    "equation_tex": "t_{\\mathrm{thermal}} = -\\frac{1}{\\beta} \\ln \\rho"
   },
   "scenes": [
     {

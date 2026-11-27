@@ -19,7 +19,8 @@
     "reports": [
       "deterministic-design-call: deterministic title+transcript overlap"
     ],
-    "reason": "deterministic title+transcript overlap"
+    "reason": "deterministic title+transcript overlap",
+    "equation_tex": "[x, y, z] \\equiv (xy)z - x(yz) \\neq 0"
   },
   "scenes": [
     {

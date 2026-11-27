@@ -19,7 +19,8 @@
     "reports": [
       "deterministic-design-call: deterministic title+transcript overlap"
     ],
-    "reason": "deterministic title+transcript overlap"
+    "reason": "deterministic title+transcript overlap",
+    "equation_tex": "\\alpha_t^\\rho(A) = \\Delta^{it} A \\Delta^{-it} \\quad \\forall A \\in \\mathcal{M}, \\; t \\in \\mathbb{R}"
   },
   "scenes": [
     {
