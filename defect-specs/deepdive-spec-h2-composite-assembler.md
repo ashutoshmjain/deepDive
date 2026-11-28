@@ -1412,3 +1412,73 @@ catalog intact); suites green: deepDive 96 tests + mdIngest 96 tests (2 new in
 V6 PASS: zero Mosaic runs, zero hub writes, zero auto-assemble, zero auto-push,
 zero Patch runs; Mosaic button untouched; render path (`manim_infographic_engine.py`,
 `manim_fresh_design.py`, `run_curator.py`) diff is zero.
+
+## Build summary XX - Manim panel video uses Manim-only lookup (never shadowed by hub Mosaic short)
+
+Spec file `defect-specs/deepdive-spec-h2-manim-panel-video-source.md` saved in
+deepDive (mdIngest is code-only).
+
+V1 DIAGNOSIS (candidate-order shadowing verified in code at `ad43c019`):
+The Manim panel video (`ddma/beats.html:520`) requested
+`/api/beats/clip_media?ep=<ep>&clip_num=<cNum>&t=<artMtime>`, served by
+`find_clip_media` (`ddma/beats_server.py:407-428`). That function returns the
+FIRST existing non-empty file in this candidate order:
+1. `DD_HUB_ROOT / "episodes" / ep / "{ep}-{c}-manim.mp4"`
+2. `DD_HUB_ROOT / "episodes" / ep / "{ep}-{c}-infographic.mp4"`
+3. `DD_HUB_ROOT / "episodes" / ep / "{ep}-{c}-mosaic.mp4"`
+4. `DD_HUB_ROOT / "episodes" / ep / "{ep}-{c}.mp4"` (compiled Mosaic short)
+5. `DDMA_DIR / "clips" / "{ep}-{c}-manim.mp4"`
+6. `DDMA_DIR / "clips" / "{ep}-{c}-infographic.mp4"`
+7. `DDMA_DIR / "clips" / "{ep}-{c}-mosaic.mp4"`
+8. `DDMA_DIR / "clips" / "{ep}-{c}.mp4"`
+For episode 250 clip 1, the Manim renders (`250-1-manim.mp4` 6.1 MB,
+`250-1-infographic.mp4` 6.5 MB, storyboard `total_duration: 134.65s` = 2:15)
+live ONLY in the local clone (`ddma/clips/`), while the hub holds the compiled
+Mosaic short (`250-1.mp4`, 7.6 MB, ffprobe `140.367s` = 2:20, plan
+`rendered_duration: 140.37s`). Because candidate 4 (hub `250-1.mp4`) precedes
+candidates 5-6 (local `250-1-manim.mp4` / `250-1-infographic.mp4`), candidate 4
+shadows the local Manim files and wins, causing the Manim panel video player to
+play the 2:20 compiled Mosaic short instead of the 2:15 Manim anchor render.
+
+FIX (Manim-only resolver for the panel video; general `find_clip_media` and top
+player untouched):
+- `ddma/beats_server.py`: added `find_manim_clip_media(clean_id, clip_num)`
+  alongside the unchanged `find_clip_media`. It checks ONLY:
+  1. `DD_HUB_ROOT / "episodes" / clean_id / f"{clean_id}-{c}-manim.mp4"`
+  2. `DD_HUB_ROOT / "episodes" / clean_id / f"{clean_id}-{c}-infographic.mp4"`
+  3. `DDMA_DIR / "clips" / f"{clean_id}-{c}-manim.mp4"`
+  4. `DDMA_DIR / "clips" / f"{clean_id}-{c}-infographic.mp4"`
+  and returns `None` (HTTP 404) when neither Manim file exists — never falling
+  back to Mosaic or plain compiled shorts. In `GET /api/beats/clip_media`, when
+  `source=manim` is passed, it dispatches to `find_manim_clip_media(ep, clip_num)`;
+  otherwise it calls `find_clip_media(ep, clip_num)` as before.
+- `ddma/beats.html`: in `renderClipManimPanel` (line 520), the Manim panel video
+  requests `/api/beats/clip_media?ep=<ep>&clip_num=<cNum>&source=manim&t=<artMtime>`,
+  and the block that overwrote `topVideoEl.src` with the panel's `mediaSrc` is
+  removed so the top player (`beats.html:229`) stays strictly on the general
+  `/api/beats/clip_media` path.
+
+V2 PASS (verified in code + unit test `test_manim_only_clip_media_ignores_hub_mosaic_short`
++ Node DOM harness): when hub `250-1.mp4` exists alongside local
+`250-1-manim.mp4` / `250-1-infographic.mp4`, `find_manim_clip_media("250", 1)`
+returns the local Manim file (`250-1-manim.mp4`, or `250-1-infographic.mp4` if
+only the infographic is present), and returns `None` (HTTP 404) when both Manim
+files are absent — never the hub Mosaic short. The rendered panel video URL for
+250-1 carries `&source=manim`. Live Windows confirmation by the user: after
+`git pull` + server restart, open episode 250 clip 1 and play the Manim panel
+video — it must show "ULTIMATE ANCHOR" in large text at top + down arrow + hook
+at bottom on black (not AI imagery / perspective grid) with duration ~2:15
+(134.65s), not 2:20.
+V3 PASS: the top player (`ddma/beats.html:229`) and `find_clip_media`
+(`ddma/beats_server.py:407-428`) are completely unchanged (0 diff lines in
+`find_clip_media` and `applyPlaybackSource`; handler diff in `/api/beats/clip_media`
+is 3 lines adding the `source == "manim"` branch). Landing-path diff (`hasManim`,
+`has_beats`, `archetype_studio.py`) is zero.
+V4 PASS (249 regression): no 249 file, storyboard, master, or plan touched;
+249 Manim panel video resolves `249-<c>-manim.mp4` via `source=manim`.
+V5 PASS: test suites green in both clones — `deepDive` 97 tests + `mdIngest` 97
+tests (95 pass, 1 skip, 1 known pre-existing error in
+`test_mosaic_pipeline_recovery.test_safe_load_json_resilience_to_missing_and_corrupt_files`
+in an untouched file).
+V6 PASS: zero Mosaic runs, zero hub writes, zero auto-assemble/push, zero Patch
+runs, render path zero-diff.
