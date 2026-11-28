@@ -1306,3 +1306,109 @@ instructed. A junk 1-stage 249-19 design (my manual 500-repro
 POST with transcript 'x') rendered+landed mid-diagnosis and
 was fully reverted (board+plan+meta via git checkout) before
 the TeX fix; the proper V4 re-ran after.
+
+## Build summary XIX - completed Manim render lands in the panel (Issue 143)
+
+Commits: deepDive (this commit) / mdIngest `7761086` (code-only mirror).
+Spec file `defect-specs/deepdive-spec-h2-design-landing-panel.md` saved in
+deepDive.
+
+V1 DIAGNOSIS (exact panel read chain, verified in code at 9eddc76c):
+(1) Panel read source (`ddma/beats.html:454-511`, `renderClipManimPanel`):
+initializes `let hasManim = Boolean(chInfo && chInfo.has_beats);` (line 465),
+then fetches `GET /api/beats/storyboard?ep=<ep>&clip_num=<cNum>`
+(`ddma/beats_server.py:612-653`), which reads
+`projects/episode_<ep>/storyboards/clip_<cNum>_storyboard.json` and returns
+`storyboard`, `manim_artifact_mtime` (`clips/<ep>-<cNum>-infographic.mp4`),
+and `master_mtime`. The panel does NOT read `infographic_ready` from any plan
+copy. On HTTP 200, `renderClipManimPanel` populates `focusHtml` (`Anchor:
+ULTIMATE ANCHOR - Clip one, the ultimate anchor.`), `stageNote` (`6 stages,
+134.65s`), `outcomeHtml`, and `artMtime`, but NEVER sets `hasManim = true`!
+So when `chInfo.has_beats` is `false`, `statusLine` (`beats.html:503-505`)
+and `headHtml` (`beats.html:506-511`) both branch on `hasManim === false` and
+render `"No Manim yet"` TWICE (once under `focusHtml` in the header card, and
+once in the status line) and disable Patch with `"Run Design this clip
+first."` (`beats.html:517`: `if (!hasManim || artMtime == null)`).
+(2) Why `chInfo.has_beats` is `false` even after a page reload
+(`ddma/archetype_studio.py:1305-1350, 1381-1382, 1423`):
+`get_longform_all_chapter_mappings` sets
+`chapters[c_num]["has_beats"] = (h2_manim if h2_covered else legacy_has_beats)`
+(line 1423), where `h2_covered` requires `_h2_composite_durations` to find a
+non-empty `mosaic_run_id` and run-file-probed duration for EVERY clip in the
+episode plan (all-or-nothing, lines 1323-1329). Episode 250 has 14 clips (0-13)
+and only clips 0-3 have a `mosaic_run_id` (clips 4-13 have `mosaic_run_id:
+None`), so `_h2_composite_durations` returns `{}` and `h2_covered` is `False`.
+It therefore ignores `h2_manim` (`_h2_manim_artifact_exists`) and falls back to
+`legacy_has_beats` (`clip_01_gemini_scenes.py`, the retired 248 beat-file path,
+absent for 250) -> `has_beats` is permanently `False` on every `/api/beats/index`
+load!
+(3) Three compounding staleness/gate links in the same read chain:
+(a) In-memory `lfTimelineIndex`: when `renderDesignStatus` (`beats.html:708-711`)
+sees `data.finished`, it calls `selectLfChapter(lfActiveClipNum, false)`, which
+passes the cached `chInfo` from `lfTimelineIndex.chapters` (loaded once at
+`initLongformBeatStudio`, never re-fetched on design completion) with
+`chInfo.has_beats === false`;
+(b) Server-side `_lf_cache_key` (`archetype_studio.py:1135-1146`): hashes only
+`plan.json`, `podcast_edit.json`, `clip_*_gemini_scenes.py`, `clip_*_meta.json`,
+and `*-mosaic*.mp4` -- it omits `*-manim.mp4`, `*-infographic.mp4`, and
+`clip_*_storyboard.json`;
+(c) Patch gate when `masterMtime == null` (`beats.html:520-522`): even with
+`hasManim === true` and `artMtime != null`, the `else if (masterMtime == null)`
+branch left `patchEnabled = false` for any episode without a longform master yet
+(250 has no master yet).
+(4) Group ID & confirm dialog check: `group_id = f"h2-{ep}-{H2_DESIGN_SEQ[0]}"`
+(`beats_server.py:1006-1007`) is a monotonic process counter (`h2-250-1`,
+`h2-250-2`, `h2-250-3`), not a clip number; `designArtifacts` (`beats.html:678`)
+passes `data.group` directly to `pollDesignStatus(data.group)`, so the client
+always tracks the latest group it started. `confirm(...)` is still present at
+`beats.html:669` (unchanged); browsers can suppress repeated native confirm
+dialogs per origin.
+
+FIX (panel landing only; render + progress path untouched):
+- `ddma/archetype_studio.py`: `chapters[c_num]["has_beats"]` now evaluates
+  `(h2_manim if h2_covered else (h2_manim or legacy_has_beats))` so any clip with
+  an H2 Manim artifact reports `has_beats: True` even on partially-cut episodes
+  like 250; `_h2_manim_artifact_exists` checks both `{ep}-{c}-manim.mp4` and
+  `{ep}-{c}-infographic.mp4` (local and hub); `_lf_cache_key` includes
+  `{ep}-*-manim.mp4`, `{ep}-*-infographic.mp4`, and `clip_*_storyboard.json`.
+- `ddma/beats_server.py`: `/api/beats/storyboard` resolves `manim_artifact_mtime`
+  across `{ep}-{clip_num}-infographic.mp4` and `{ep}-{clip_num}-manim.mp4`
+  (local and hub); `find_clip_media` includes `{ep}-{c}-infographic.mp4` as a
+  playable fallback right after `{ep}-{c}-manim.mp4`.
+- `ddma/beats.html` (`renderClipManimPanel`): when `/api/beats/storyboard`
+  succeeds and `manim_artifact_mtime` is a number, sets `hasManim = true` and
+  updates `chInfo.has_beats = true` in-place (landing immediately on design
+  completion without requiring a full index re-fetch); renders the stages list
+  (`#lf-manim-stages-list`, showing each stage's number, time span, kind, and
+  text) and a playable infographic video (`#lf-manim-infographic-video`, bound
+  to `/api/beats/clip_media` with cache-buster `t=<artMtime>`, plus refreshing
+  the top clip player when in clip-media mode); enables the Patch button
+  (`patchEnabled = true`) whenever `hasManim && artMtime != null &&
+  (masterMtime == null || artMtime > masterMtime)` while keeping the informational
+  hint `"No master to patch into yet."` when `masterMtime == null` (Patch itself
+  is NOT run).
+
+V2 PASS (verified in code + Node DOM harness + unit tests on WSL against the
+committed `h2-250-1` / `h2-250-3` completed 250-1 design state; live Windows
+confirmation by user after pull + server restart): `renderClipManimPanel(1, chInfo)`
+with `chInfo.has_beats: false` and the real 250-1 storyboard + artifact mtime
+flips `chInfo.has_beats` to `true`, removes both `"No Manim yet"` lines, and
+renders: `Manim ready - 6 stages, 134.65s - 250-1-manim.mp4`, kind ANCHOR with
+`Anchor: ULTIMATE ANCHOR - Clip one, the ultimate anchor.`, `#lf-manim-stages-list`
+(all 6 stages), playable `#lf-manim-infographic-video`, and `#btn-patch-lf-chapter`
+enabled. Reload survival verified by `test_partial_coverage_episode_reports_h2_manim_has_beats`:
+`get_longform_timeline_index("250")` returns `has_beats: True` for clip 1 when
+the artifact is on disk.
+V3 PASS:XVIII's % progress block in `renderDesignStatus` (`beats.html:695-700`)
+and `_h2_run_design_group` / `run_curator.py` are untouched (0 diff lines in
+the progress/render path).
+V4 PASS (249 regression): 249 timelines, storyboards (all 21 git-clean), and
+local master are untouched; `h2_covered` episodes continue to evaluate
+`has_beats = h2_manim`.
+V5 PASS: `manim_fresh_design.py` zero-diff (H3 directive behavior and 250
+catalog intact); suites green: deepDive 96 tests + mdIngest 96 tests (2 new in
+`TestIssue143ManimPanelLanding`), 1 known pre-existing
+`test_mosaic_pipeline_recovery` error in an untouched file.
+V6 PASS: zero Mosaic runs, zero hub writes, zero auto-assemble, zero auto-push,
+zero Patch runs; Mosaic button untouched; render path (`manim_infographic_engine.py`,
+`manim_fresh_design.py`, `run_curator.py`) diff is zero.
