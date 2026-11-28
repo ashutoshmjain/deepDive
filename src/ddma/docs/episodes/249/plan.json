@@ -51730,7 +51730,7 @@
         "source_start": 1509.3,
         "source_end": 1562.2,
         "_audio_sig": "4aff10c059cbd2737e06786dec1b5fc1",
-        "_compiled_sig": "07ab34a36e6c747490041a14e5c0eae9",
+        "_compiled_sig": "a95c759b877d66015d0888aac7648bb4",
         "published": true,
         "published_url": "https://github.com/ashutoshmjain/deepDive/blob/master/src/ddma/docs/episodes/249/clips/249-19.mp4",
         "infographic_scenes": [
@@ -51854,7 +51854,8 @@
                     "stage_count": 6
                 }
             }
-        ]
+        ],
+        "infographic_ready": true
     },
     {
         "num": 20,

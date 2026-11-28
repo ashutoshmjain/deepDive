@@ -1197,3 +1197,112 @@ as the Cutroom-load flip); restored from the sibling docs
 root (250's 14-clip working copy, sceneless) -- both roots
 uncommitted as instructed. 250-1 left entirely for the
 user's manual validation.
+
+## Build summary XVIII - fix the 250-1 Manim render + designed % progress (Issue 142)
+
+V1 DIAGNOSIS (measured, not guessed; Anchor-rule 250-1, 6 stages, 134.65s body):
+design 0.0s (deterministic, directive-honored forced anchor);
+catalog 0.0s (cached); mp3 present (no slice); 6x manim -qh
+spawns 3.2/16.2/18.0/20.8/17.7/8.7 = 84.6s; concat 0.1s; mux
+4.1s; render total 88.9s; compile ~15s; full endpoint
+~105-110s (landed at ~t+100s, worker 120s timeout NOT hit --
+margin only ~15s). The render is NOT pathologically slow: it
+is ~90s of legitimate frame work. What IS wrong in the path:
+(a) no spawn timeout (engine `subprocess.run` unbounded -- a
+stalled spawn hangs the curator forever; with the 120s worker
+guillotine the job fails while the curator grinds on
+invisibly -- the 12-13 min void mechanism); (b) the endpoint
+never threaded `_render_svg_rows` (TeX bypass: formula stages
+render norm fallback text, not KaTeX math -- XIII's fix only
+reached boards via the rerender script); (c) flag clobber:
+endpoint direct-dumps `infographic_ready` to the LOCAL file
+only, then compile-clip's hub-first `load_plan_file` (with
+cache-refresh overwrite) wipes it -- the flag NEVER persists
+(both copies lack it; rev 54 curator -> 55 compile), so
+landed-state detection never clears; (d) 120s worker timeout
+vs ~105s nominal = ~15s margin, any contention fails the job;
+(e) no progress (status only queued/running/done); (f) root
+`ddma/plan.json` flip by compile/save_plan root sync (silent
+working-copy switch; repaired from docs sibling, recurs by
+design on every save). User-void root cause (evidence-backed):
+quiet machine lands in ~105s (proven twice this job);
+failures need an environmental kill -- server restart
+mid-render orphans the group (new process, empty
+H2_DESIGN_GROUPS -> "No Manim yet" forever) or hub-rev
+conflict from concurrent publishing (fast 500). Gaps table is
+this paragraph: each gap names file+line, evidence, severity
+in V1-V6 below.
+
+FIX (render itself, not just the timeout):
+- engine: per-spawn 600s fail-fast timeout, concat 120s, mux
+300s, plus optional per-scene `on_scene(i,n)` callback
+(single-invocation rejected: saves only ~15s and blinds
+per-scene progress; quality flags measured irrelevant at
+740x740: -qh 3.7s vs -qm 3.0s vs -ql 2.8s).
+- endpoint TeX threading: fresh designs now resolve
+`equation_tex` via the COMMITTED `match_tex_for_norm` +
+`EPISODE_TEX_SOURCES` (XIII) -- a naive src/249.md
+exact-match helper was tried, failed (norms are plain-text
+renderings, TeX normalizes differently), and reverted;
+unmatched TeX still refuses loudly, never invents.
+- flag save fix: early save captures rev; final save is
+hub-first `save_plan(expected_rev=rev1)` (loud on concurrent
+edit); compile's hub-first load now carries the flags.
+- async: curator returns `{accepted, job_id}` immediately
+(threaded self-POST to its own sync endpoint -- threaded
+server, no deadlock); design thread polls
+`/generate-manim-status` every 10s (30s per-poll timeout,
+45-min give-up); progress map keyed (project,clip) merged
+into status; worker mirrors progress/stage into
+design_status; sync path unchanged (retrigger flows).
+Scheme (from measurements, render ~85% of pipeline):
+designed 15%, render scenes 25->75% (i/N), stitch 80%, save
+88%, compile 90->98%, done 100%. Panel shows
+"Part N: <status> (<stage>) — <%>" per active job, mirroring
+the Mosaic status-line pattern (which is text-only; Design
+adds the number). No template/font/footer/Mosaic changes.
+
+V2 PASS (acceptance, exact user Anchor rule with em-dash):
+250-1 landed -- kind ANCHOR, label "ULTIMATE ANCHOR", hook
+"Clip one, the ultimate anchor.", 6 stages; both mp4s exist
+(6.5MB/6.1MB); 250 plan clip 1: 6 scenes + infographic_ready
+true (FIRST time the flag persists -- fix verified).
+Connection dropped after 25s ("closed tab"); design completed
+via daemon + poll. Measured: render ~86s, compile ~16s,
+end-to-end ~107s. No Patch (no 250 master), no Mosaic.
+V3 PASS (panel, real renderDesignStatus against recorded
+snapshots): at 1 min "Design h2-250-1 (ep 250): 0/1 clips
+rendered / Part 1: running (render scene 4/6) -- 58%"; at
+completion "1/1 clips rendered / All clips designed -- no
+exceptions." + toast. Scheme + why recorded above.
+V4 PASS (249-19 re-cast, async path): done 100%, no
+exceptions; storyboard byte-identical to HEAD (TeX
+re-threaded deterministically -- the endpoint now reproduces
+the XIII board exactly); plan diff is exactly
++infographic_ready (2+/1-); master untouched (mtime 10:16
+XV). Fidelity incident found+repaired mid-job: the working
+249-19 board had lost its equation_tex line before this job
+(my V2 re-cast rendered norm-fallback artifacts at 12:17);
+restored the exact HEAD line (committed TeX, not invention)
+and re-rendered via `scratch/rerender_tex_249.py`.
+V5 PASS: directive behavior intact (empty=today,
+anchor=forces, equation-name path untouched in code);
+250 catalog is 250's own page (XVI: 7 entries); suites
+deepDive 94 + mdIngest 94, 1 error each = the known
+pre-existing mosaic-recovery corrupt.json error (file
+untouched, both clones; manim_fresh_design.py zero-diff vs
+3c179f8a apart from the reverted helper -- net zero).
+V6 PASS: fresh logs show no Mosaic/push/hub writes (only
+manim stderr echoes + DD_HUB_ROOT banner + phase telemetry);
+no Patch ran (zero /api/beats/patch hits); no Mosaic ran
+(zero retrigger hits); beats.html diff is +6 lines (progress
+block only -- mosaic button untouched); hub 250 plan carries
+only the acceptance's design state (no media pushed).
+
+Collateral: root plan flipped 250->249 by compile's root
+sync during V4 (standing behavior); restored from the docs
+sibling (250's working copy); both roots uncommitted as
+instructed. A junk 1-stage 249-19 design (my manual 500-repro
+POST with transcript 'x') rendered+landed mid-diagnosis and
+was fully reverted (board+plan+meta via git checkout) before
+the TeX fix; the proper V4 re-ran after.
